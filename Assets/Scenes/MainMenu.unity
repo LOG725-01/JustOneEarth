@@ -333,6 +333,41 @@ PrefabInstance:
       propertyPath: m_MinValue
       value: 0.0000001
       objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442682306}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetSFXVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioMixerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
     - target: {fileID: 4459686807065044110, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
         type: 3}
       propertyPath: m_Name
@@ -1067,6 +1102,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MinValue
       value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442682306}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMusicVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioMixerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4459686807065044110, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
         type: 3}
@@ -3264,6 +3334,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1382291095}
   m_CullTransparentMesh: 1
+--- !u!114 &1442682306 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 3306663685301325222, guid: f6d6a9c305bafe84681e7b035710d039,
+    type: 3}
+  m_PrefabInstance: {fileID: 289272323}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3581c2c0449bc7748b55ccd64b9d7176, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1569049752
 GameObject:
   m_ObjectHideFlags: 0
@@ -4527,6 +4609,41 @@ PrefabInstance:
         type: 3}
       propertyPath: m_MinValue
       value: 0.0000001
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Mode
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 1442682306}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_CallState
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: SetMasterVolume
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: AudioMixerManager, Assembly-CSharp
+      objectReference: {fileID: 0}
+    - target: {fileID: 4151345434444207714, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
+        type: 3}
+      propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_Arguments.m_ObjectArgumentAssemblyTypeName
+      value: UnityEngine.Object, UnityEngine
       objectReference: {fileID: 0}
     - target: {fileID: 4459686807065044110, guid: 511f3b13172f2ac4fb4dd7527cc429ca,
         type: 3}
