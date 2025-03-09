@@ -1,0 +1,140 @@
+@startuml
+allow_mixing
+skinparam ComponentBackgroundColor LightSkyBlue
+title Hiérarchie des scripts et GameObjects
+
+class GameManager{
+    - PLAYER_AMOUNT : int
+    - gameMode : GameMode
+    + gameState : GameState
+    + playerInput : PlayerInput 
+    + Start()
+    + Update()
+    + HandlePlayerInput()
+}
+note right of GameManager::Update()
+Trigger AI move when 
+it's the AI's turn.
+
+OnPlayerInput?.Invoke(move);    
+end note
+
+class GameState {
+    + players : Lis<Player>
+    + currentPlayerTurn : int
+    + turnCounter : int
+    + currentBoard : Board
+    + CreateBoard()
+    + addPlayer(player : Player)
+    + HasPlayerWon(player : Player) : bool
+    + GetPlayableCards(player : Player) : List<Card>
+    + PlayCard(cardAction : Card) : GameState
+}
+
+abstract class Player{
+    + points : int
+    + currentRessources : Dictionary<RessourceTypeEnum, int>
+    + ownedTiles : List<Tile>
+    + cards : List<Card>
+    + AddCard(card : Card)
+    + RemoveCard(card : Card)
+    + AddOwnedTile(tile : Tile)
+    + RemoveOwnedTile(tile : Tile)
+    + ComputeRessources()
+}
+
+class HumanPlayer{
+    + GetBestPlayableCard() : Card
+}
+note left of HumanPlayer
+In two player
+mode both players
+are HumanPlayer
+end note
+
+class AIPlayer{
+    + GetBestPlayableCard() : Card
+    - MiniMax() : int
+}
+note left of AIPlayer::GetBestPlayableCard
+AI behavior logic
+end note
+
+class Card {
+    + cost : Dictionary<RessourceTypes, int>
+    + effectList : List<ICardEffect>
+    + AddEffect(ICardEffect effect)
+    + AddCost(RessourceTypes ressource, int quantity)
+    + ApplyEffects(gameState : GameState)
+}
+
+interface ICardEffect{
+    + ApplyEffect()
+}
+
+class CardEffect{
+    + ApplyEffect()
+}
+
+class Board {
+    + tiles : List<Tile>
+    + CreateBoard() : Board
+}
+note left of Board::CreateBoard
+  Responsible for
+  procedural creation
+end note
+
+class Tile {
+    + producedRessources : Dictionary<RessourceTypeEnum, int>
+    + tileType : TileTypeEnum
+}
+
+class PlayerInput {
+    + player : RealPlayer
+    + Update()
+}
+note right of PlayerInput::Update()
+// Notify all observers that 
+// a move has been made.
+OnPlayerInput?.Invoke(move);    
+end note
+
+class MonoBehavior #LightGreen
+
+component GameManagerPrefab
+component PlayerInputPrefab
+
+Card ---r---|> MonoBehavior
+
+HumanPlayer -o "\t1" PlayerInput : " Has"
+
+GameManagerPrefab -d-o "1..1" GameManager : "Has"
+PlayerInputPrefab -d-o GameManagerPrefab
+
+HumanPlayer -d-o "1..2 " GameManager : " Has"
+AIPlayer -r-o "0..1" GameManager : " Has"
+PlayerInput ---o "1" GameManager : "Has"
+
+Card -u-o "0..*" Player : "\t\t\t\nHas"
+Card o-d- "1..*" CardEffect : " Has"
+CardEffect -r-|> ICardEffect
+
+HumanPlayer --l--|> Player
+AIPlayer -u-|> Player
+
+GameManager -d-|> MonoBehavior
+GameState -l-o "1..1 " GameManager : " Has"
+
+Tile -u-|> MonoBehavior
+Board -r-o "  1  " GameState : " Has"
+Tile -d-o "91  " Board : " Has"
+
+PlayerInput -r-o "1" PlayerInputPrefab : "Has"
+
+legend
+    GameManager is the entry point of the game logic.
+    Player and Card classes group implements the strategy pattern.
+end legend
+
+@enduml
