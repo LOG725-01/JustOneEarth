@@ -4,39 +4,44 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private const int PLAYER_AMOUNT = 2;
     private GameMode gameMode;
 
     [SerializeField] public GameObject playerInputPrefab;
 
     GameState gameState;
-    PlayerInput playerInput;
+    private List<PlayerInputNotifier> playerInputNotifier = new List<PlayerInputNotifier>;
 
     private void Start()
     {
         gameState = new GameState();
 
-        GameObject inputObject = Instantiate(playerInputPrefab);
-        playerInput = inputObject.GetComponent<PlayerInput>();
+        playerInputNotifier.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
-        // TODO : add OnPlayerInput to playerInput
-        playerInput.OnPlayerInput += HandlePlayerInput;
+        foreach (var notifier in notifiers)
+        {
+            playerInputNotifier.OnGameObjectClicked += HandleGameObjectClick;
+        }
 
+        // TODO : Call to create board 
         // TODO : add players to gameState according to game mode (player vs player or player vs AI)
         // TODO : create GameManager from SceneManager and set gameMode 
     }
 
-    private void HandlePlayerInput(Card card)
+    private void HandlePlayerInput(GameObject clickedObject)
     {
-        gameState = gameState.PlayCard(card);
-
-        gameState.turnCount++;
-        gameState.currentPlayerTurn = (gameState.currentPlayerTurn + 1) % PLAYER_AMOUNT;
-        // TODO : Update game visuals here
+        if (clickedObject.TryGetComponent<IClickable>(out var clickable))
+        {
+            clickable.OnClick(gameState);
+        }
+        else
+        {
+            Debug.Log("Clicked object has no specific click behavior.");
+        }
     }
 
     private void Update()
     {
+        //AI turn to play
         Player player = gameState.players.ElementAt(gameState.currentPlayerTurn);
 
         if (player.GetType() == typeof(AIPlayer))
@@ -45,7 +50,7 @@ public class GameManager : MonoBehaviour
             gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
 
             gameState.turnCount++;
-            gameState.currentPlayerTurn = (gameState.currentPlayerTurn + 1) % PLAYER_AMOUNT;
+            gameState.SetCurrentPlayerTurnNext();
             // TODO : Update game visuals here
         }
     }
