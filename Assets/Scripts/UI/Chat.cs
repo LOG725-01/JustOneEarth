@@ -38,9 +38,9 @@ public class Chat : MonoBehaviour
         AddLine(userName + " : " + message);
     }
 
-    public void AddAnnoucement(string userName, string annoucemen)
+    public void AddAnnouncement(string userName, string announcement)
     {
-        AddLine(userName + " " + annoucemen);
+        AddLine(userName + " " + announcement);
     }
 
     // @brief Event for the input field

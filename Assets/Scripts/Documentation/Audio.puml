@@ -1,0 +1,39 @@
+@startuml Audio
+allow_mixing
+skinparam ComponentBackgroundColor LightSkyBlue
+title Hiérarchie du systéme audio
+
+class AudioManager  {
+    + {static} AudioManager Instance
+    - AudioSource audioSourceObject
+    - GameObject MusicSource
+    - void SetAudioClip(AudioSource audioSource, AudioClip clip, float volume, bool loop)
+    - float PlayAudioClip(AudioClip clip, Vector3 position, float volume)
+}
+
+class AudioMixerManager  {
+    + {static} AudioMixerManager Instance
+    + {static} float masterVolume
+    + {static} float musicVolume
+    + {static} float sfxVolume
+    - AudioMixer audioMixer
+    - string masterVolumeParameter
+    - string musicVolumeParameter
+    - string sfxVolumeParameter
+    - Slider masterVolumeSlider
+    - Slider musicVolumeSlider
+    - Slider sfxVolumeSlider
+    - void Awake()
+    - void SetVolume(string typeOfVolume, float volume)
+    + void SetMasterVolume(float volume)
+    + void SetMusicVolume(float volume)
+    + void SetSFXVolume(float volume)
+}
+
+component AudioSourceObjectPrefab
+component AudioMixerManagerPrefab
+
+AudioMixerManagerPrefab --o AudioMixerManager : "Has"
+AudioManager --o AudioSourceObjectPrefab : "Has"
+
+@enduml

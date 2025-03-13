@@ -1,0 +1,96 @@
+@startuml UI
+allow_mixing
+skinparam ComponentBackgroundColor LightSkyBlue
+
+class InGameMenu {
+    - GameObject inGameMenu
+    - void Update()
+}
+note left of InGameMenu
+  open the In Game Menu
+  when escape is pressed
+end note
+
+class SecondaryButtonsActivation {
+    + {static} void SetActiveObject(GameObject gameObject)
+}
+note right of SecondaryButtonsActivation
+  open and close 
+  the right side
+  of the menu 
+end note
+
+class Chat {
+    + {static} Chat Instance
+    - TextMeshProUGUI chatLog
+    - TMP_InputField chatInput
+    - string chatText
+    +void Clean()
+    -void AddLine(string line)
+    +void AddChatMessage(string userName, string message)
+    +void AddAnnouncement(string userName, string announcement)
+    +void AddChatMessage(string message)
+}
+note right of Chat
+AddChatMessage(string message) :
+  Event Method 
+  for the player
+  text input
+end note
+
+class SceneChanger {
+    + {static} SceneChanger Instance;
+    - string gameScene
+    - string homeScene
+    - GameObject gameManagerPrefab
+    - GameMode gameMode
+    
+    - {static} void SceneChange(string scene)
+    + void GameStart()
+    + void Home()
+    + void QuitApp()
+}
+component SceneManagerPrefab
+component GameManagerPrefab
+
+abstract Observer {
+    + {abstract} void ObserverUpdate(GameObject subject)
+}
+class ScoreObserver {
+    - Slider slider
+    - TextMeshProUGUI scoreText
+    - void Awake()
+    - void Display(int score)
+}
+class ResourceObserver {
+    - TextMeshProUGUI resourcesNumber
+}
+class ResourceIncomeObserver {
+    - TextMeshProUGUI resourceIncome
+    - string suffix
+}
+
+class MaxScoreUpdate
+{
+    - Slider slider
+    - TextMeshProUGUI maxScoreText
+    + SetTotalScore(int value)
+}
+component RessourceVisualPrefab
+component ScoreVisualPrefab
+component SkillVisualPrefab
+
+ScoreObserver --l--|> Observer
+ResourceObserver --l--|> Observer
+ResourceIncomeObserver --l--|> Observer
+
+SceneManagerPrefab --o SceneChanger : "Has"
+SceneManagerPrefab -l--o GameManagerPrefab : "Has"
+
+RessourceVisualPrefab --o ResourceIncomeObserver : "Has"
+RessourceVisualPrefab --o ResourceObserver : "Has"
+
+ScoreVisualPrefab --o MaxScoreUpdate : "Has"
+ScoreVisualPrefab --o ScoreObserver : "Has"
+
+@enduml
