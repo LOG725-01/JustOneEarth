@@ -51,7 +51,7 @@ public class GameState : MonoBehaviour
 
     public void CreateBoard()
     {
-        currentBoard = currentBoard.CreateBoard();
+        currentBoard.CreateBoard();
     }
 
     public Board GetCurrentBoard()
