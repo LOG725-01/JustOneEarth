@@ -23,7 +23,7 @@ public class GenerationConfig
         TextAsset jsonFile = Resources.Load<TextAsset>("generation_config");
         if (jsonFile == null)
         {
-            Debug.LogError("Fichier JSON de configuration non trouvé !");
+            Debug.LogError("Fichier JSON de configuration non trouvï¿½ !");
             return null;
         }
 
