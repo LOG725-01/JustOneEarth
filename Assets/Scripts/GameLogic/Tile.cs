@@ -5,23 +5,41 @@ using UnityEngine;
 public class Tile : MonoBehaviour, IClickable
 {
     public Dictionary<RessourceTypes, int> producedRessources = new Dictionary<RessourceTypes, int>();
-    TileType tileType;
+    public TileType tileType;
 
-    public Tile()
+    public void Initialize(TileType type)
     {
-
+        this.tileType = type;
+        AssignResources();
     }
 
-    public Tile(Dictionary<RessourceTypes, int> producedRessources, TileType tileType)
+    private void AssignResources()
     {
-        this.producedRessources = producedRessources;
-        this.tileType = tileType;
-    }
+        producedRessources.Clear(); // Réinitialiser les ressources
 
+        switch (tileType)
+        {
+            case TileType.Forests:
+                producedRessources[RessourceTypes.Trees] = Random.Range(3, 7);  // Forêts produisent du bois
+                break;
+            case TileType.Mountains:
+                producedRessources[RessourceTypes.Minerals] = Random.Range(2, 6); // Montagnes produisent des minéraux
+                break;
+            case TileType.Lakes:
+                producedRessources[RessourceTypes.Water] = Random.Range(4, 8); // Lacs produisent de l’eau
+                break;
+            case TileType.Plains:
+                producedRessources[RessourceTypes.Sun] = Random.Range(1, 5); // Plaines absorbent l'énergie solaire
+                break;
+            case TileType.Deserts:
+                producedRessources[RessourceTypes.Oil] = Random.Range(1, 3); // Déserts peuvent contenir du pétrole
+                break;
+        }
+    }
     public void OnClick(GameState gameState)
     {
-        gameState.currentInstancePlayer.ChangeSelectedTile(this);
+        // TODO : Set player selected Tile
 
-        // TODO : Update game visuals here
+        // TODO : Update game visuals here for ressources display
     }
 }
