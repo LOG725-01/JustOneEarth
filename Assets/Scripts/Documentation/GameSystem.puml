@@ -8,7 +8,7 @@ class GameManager{
     - gameMode : GameMode
     + gameState : GameState
     + PlayerInputNotifier : PlayerInputNotifier 
-    + Start()
+    + StartGame()
     + Update()
     + HandlePlayerInput()
 }
@@ -26,7 +26,8 @@ class GameState {
     + turnCounter : int
     + currentBoard : Board
     + CreateBoard()
-    + addPlayer(player : Player)
+    + GetCurrentBoard()
+    + addPlayers(player : Player)
     + HasPlayerWon(player : Player) : bool
     + GetPlayableCards(player : Player) : List<Card>
     + PlayCard(cardAction : Card) : GameState
@@ -38,8 +39,8 @@ abstract class Player{
     + currentRessources : Dictionary<RessourceTypeEnum, int>
     + ownedTiles : List<Tile>
     + cards : List<Card>
-    + AddCard(card : Card)
-    + RemoveCard(card : Card)
+    + AddCardInHand(card : Card)
+    + RemoveCardFromHand(card : Card)
     + AddOwnedTile(tile : Tile)
     + RemoveOwnedTile(tile : Tile)
     + ComputeRessources()

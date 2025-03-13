@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
@@ -6,25 +7,31 @@ public class GameManager : MonoBehaviour
 {
     private GameMode gameMode;
 
-    [SerializeField] public GameObject playerInputPrefab;
-
     GameState gameState;
-    private List<PlayerInputNotifier> playerInputNotifier = new List<PlayerInputNotifier>;
 
-    private void Start()
+    private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
+
+    public void setGameMode(GameMode gameMode)
+    {
+        this.gameMode = gameMode;
+    }
+
+    public void StartGame()
     {
         gameState = new GameState();
 
-        playerInputNotifier.AddRange(FindObjectsOfType<PlayerInputNotifier>());
+        gameState.AddPlayers(gameMode);
 
-        foreach (var notifier in notifiers)
+        gameState.CreateBoard();
+
+        playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
+
+        foreach (var notifier in playerInputNotifiers)
         {
-            playerInputNotifier.OnGameObjectClicked += HandleGameObjectClick;
+            notifier.OnGameObjectClicked += HandlePlayerInput;
         }
 
-        // TODO : Call to create board 
-        // TODO : add players to gameState according to game mode (player vs player or player vs AI)
-        // TODO : create GameManager from SceneManager and set gameMode 
+        // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
     }
 
     private void HandlePlayerInput(GameObject clickedObject)
@@ -41,16 +48,17 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        //AI turn to play
+        // Check if AI turn to play
         Player player = gameState.players.ElementAt(gameState.currentPlayerTurn);
 
         if (player.GetType() == typeof(AIPlayer))
         {
+            // AI play
             AIPlayer aiPlayer = (AIPlayer)player;
             gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
 
             gameState.turnCount++;
-            gameState.SetCurrentPlayerTurnNext();
+            gameState.SetCurrentPlayerTurnToNextPlayer();
             // TODO : Update game visuals here
         }
     }

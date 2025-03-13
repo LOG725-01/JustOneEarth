@@ -13,17 +13,18 @@ public abstract class Player
         { RessourceTypes.Sun, 0 },
         { RessourceTypes.Oil, 0 }
     };
-    List<Tile> ownedTiles = new List<Tile>();
-    List<Card> cards = new List<Card>();
+    public List<Tile> ownedTiles = new List<Tile>();
+    public List<Card> cards = new List<Card>();
+    public Tile selectedTile = null;
 
     public abstract Card GetBestPlayableCard();
 
-    public void AddCard(Card card)
+    public void AddCardInHand(Card card)
     {
         cards.Add(card);
     }
 
-    public void RemoveCard(Card card)
+    public void RemoveCardFromHand(Card card)
     {
         cards.Remove(card);
     }
@@ -36,6 +37,11 @@ public abstract class Player
     public void RemoveOwnedTile(Tile tile)
     {
         ownedTiles.Remove(tile);
+    }
+
+    public void ChangeSelectedTile(Tile tile)
+    {
+        selectedTile = tile;
     }
 
     public void ComputeRessources()

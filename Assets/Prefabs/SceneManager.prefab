@@ -46,3 +46,5 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   gameScene: Game
   homeScene: MainMenu
+  gameManagerPrefab: {fileID: 1584049092688899793, guid: 47fdea9236a82b64db234b56d4b124b8,
+    type: 3}

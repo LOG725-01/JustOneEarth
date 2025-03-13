@@ -1,11 +1,10 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using UnityEngine;
 
 public class PlayerInputNotifier : MonoBehaviour
 {
     // Define an event using Action
-    public static event Action<GameObject> OnGameObjectClicked;
+    public event Action<GameObject> OnGameObjectClicked;
 
     // Called when the GameObject is clicked.
     private void OnMouseDown()

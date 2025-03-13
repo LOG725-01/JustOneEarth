@@ -7,7 +7,12 @@ public class Tile : MonoBehaviour, IClickable
     public Dictionary<RessourceTypes, int> producedRessources = new Dictionary<RessourceTypes, int>();
     TileType tileType;
 
-    Tile(Dictionary<RessourceTypes, int> producedRessources, TileType tileType)
+    public Tile()
+    {
+
+    }
+
+    public Tile(Dictionary<RessourceTypes, int> producedRessources, TileType tileType)
     {
         this.producedRessources = producedRessources;
         this.tileType = tileType;
@@ -15,8 +20,7 @@ public class Tile : MonoBehaviour, IClickable
 
     public void OnClick(GameState gameState)
     {
-        // TODO : Set player selected Tile
-        gameState = gameState.
+        gameState.currentInstancePlayer.ChangeSelectedTile(this);
 
         // TODO : Update game visuals here
     }

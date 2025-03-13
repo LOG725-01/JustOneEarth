@@ -10,6 +10,8 @@ public class Board : MonoBehaviour
     public Board CreateBoard()
     {
         // TODO : Implement procedural creation logic here
-        throw new NotImplementedException();
+        Tile tile = new();
+        tiles.Add(tile);
+        return this;
     }
 }
