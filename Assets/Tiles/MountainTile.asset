@@ -13,7 +13,8 @@ MonoBehaviour:
   m_Name: MountainTile
   m_EditorClassIdentifier: 
   m_DefaultSprite: {fileID: 21300000, guid: 1fb7eb681e8bb32488102e5954c63bf9, type: 3}
-  m_DefaultGameObject: {fileID: 0}
+  m_DefaultGameObject: {fileID: 9099654419945426364, guid: fdda2f1aa9a762644ae0f23691945658,
+    type: 3}
   m_DefaultColliderType: 1
   m_TilingRules: []
   m_FlatTop: 0
