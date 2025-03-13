@@ -15,24 +15,24 @@ public class Tile : MonoBehaviour, IClickable
 
     private void AssignResources()
     {
-        producedRessources.Clear(); // Réinitialiser les ressources
+        producedRessources.Clear();
 
         switch (tileType)
         {
             case TileType.Forests:
-                producedRessources[RessourceTypes.Trees] = Random.Range(3, 7);  // Forêts produisent du bois
+                producedRessources[RessourceTypes.Trees] = Random.Range(3, 7); 
                 break;
             case TileType.Mountains:
-                producedRessources[RessourceTypes.Minerals] = Random.Range(2, 6); // Montagnes produisent des minéraux
+                producedRessources[RessourceTypes.Minerals] = Random.Range(2, 6); 
                 break;
             case TileType.Lakes:
-                producedRessources[RessourceTypes.Water] = Random.Range(4, 8); // Lacs produisent de l’eau
+                producedRessources[RessourceTypes.Water] = Random.Range(4, 8);
                 break;
             case TileType.Plains:
-                producedRessources[RessourceTypes.Sun] = Random.Range(1, 5); // Plaines absorbent l'énergie solaire
+                producedRessources[RessourceTypes.Sun] = Random.Range(1, 5);
                 break;
             case TileType.Deserts:
-                producedRessources[RessourceTypes.Oil] = Random.Range(1, 3); // Déserts peuvent contenir du pétrole
+                producedRessources[RessourceTypes.Oil] = Random.Range(1, 3);
                 break;
         }
     }

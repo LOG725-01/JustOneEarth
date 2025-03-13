@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3916085937449097238}
   - component: {fileID: 1034925683052115959}
   - component: {fileID: 7917765825151540593}
+  - component: {fileID: 9217030503202229690}
   m_Layer: 0
   m_Name: Tile
   m_TagString: Untagged
@@ -18,14 +19,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3916085937449097238
-Transform:
+--- !u!224 &3916085937449097238
+RectTransform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 9099654419945426364}
-  serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
@@ -33,6 +33,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 0, y: 0}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1034925683052115959
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -45,6 +50,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d6f607690b529964d94d96882259a74d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  tileType: 0
 --- !u!114 &7917765825151540593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -57,3 +63,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8d3d8aa25665e21408be82decce503ca, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!222 &9217030503202229690
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 9099654419945426364}
+  m_CullTransparentMesh: 1

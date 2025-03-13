@@ -2,22 +2,25 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Tilemaps;
 
 public class Board : MonoBehaviour
 {
-    public GameObject tilePrefab;
-    private List<Tile> tiles = new List<Tile>();
+    public Tilemap tilemap;
+    public TileBase forestTile, mountainTile, lakeTile, plainTile, desertTile;
+
+
     private TileType[,] grid;
     public int radius = 4;
 
-    private GenerationConfig config; // Configuration chargée du JSON
+    private GenerationConfig config;
 
     private void Start()
     {
         config = GenerationConfig.LoadFromJson();
         if (config == null)
         {
-            Debug.LogError("Échec du chargement de la configuration !");
+            Debug.LogError("Ã‰chec du chargement de la configuration");
             return;
         }
 
@@ -26,11 +29,7 @@ public class Board : MonoBehaviour
 
     public void CreateBoard()
     {
-        tiles.Clear();
         grid = new TileType[radius * 2 + 1, radius * 2 + 1];
-
-        float hexWidth = 1.732f;
-        float hexHeight = 2f;
 
         Dictionary<TileType, float> probabilities = new Dictionary<TileType, float>
         {
@@ -48,9 +47,6 @@ public class Board : MonoBehaviour
 
             for (int r = r1; r <= r2; r++)
             {
-                float xPos = hexWidth * (q + r * 0.5f);
-                float zPos = hexHeight * (r * 0.75f);
-
                 TileType selectedType;
                 do
                 {
@@ -59,13 +55,26 @@ public class Board : MonoBehaviour
 
                 grid[q + radius, r + radius] = selectedType;
 
-                GameObject tileObj = Instantiate(tilePrefab, new Vector3(xPos, 0, zPos), Quaternion.identity, transform);
-                Tile tile = tileObj.GetComponent<Tile>();
-                tile.Initialize(selectedType);
-                tiles.Add(tile);
+                Vector3Int tilePosition = new Vector3Int(q, r, 0);
+                tilemap.SetTile(tilePosition, GetTile(selectedType));
             }
         }
+
     }
+
+    private TileBase GetTile(TileType type)
+    {
+        switch (type)
+        {
+            case TileType.Forests: return forestTile;
+            case TileType.Mountains: return mountainTile;
+            case TileType.Lakes: return lakeTile;
+            case TileType.Plains: return plainTile;
+            case TileType.Deserts: return desertTile;
+            default: return null;
+        }
+    }
+
 
     private TileType GetRandomTileType(Dictionary<TileType, float> probabilities)
     {
