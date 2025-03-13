@@ -1,0 +1,11 @@
+{
+  "forestProbability": 30,
+  "mountainProbability": 15,
+  "lakeProbability": 20,
+  "plainProbability": 25,
+  "desertProbability": 10,
+  "preventLargeDeserts": true,
+  "maxDesertClusterRatio": 0.4,
+  "forceLakeNearMountains": true,
+  "forceForestNearLakes": true
+}

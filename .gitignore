@@ -71,3 +71,14 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# === Éviter de committer des fichiers temporaires Unity Code Assist (JetBrains, etc.) ===
+/Packages/com.merry-yellow.code-assist/
+/Packages/packages-lock.json
+
+# === Ignore les fichiers de logs et backups ===
+/Logs/
+/Backups/
+
+# === Ignore les fichiers spécifiques à Visual Studio Code ===
+.vscode/
