@@ -1,17 +1,9 @@
 using UnityEngine;
 
-public class ButtonController : MonoBehaviour
+public class ButtonController : AnimationController
 {
-    [SerializeField] private Animator animator;
     private ButtonListController listController = null;
     private int listControllerIndex = -1;
-    private string currentAnimation = "normal";
-
-    private void ChangeAnimation(string animation, float crossfade = 0.2f)
-    {
-        currentAnimation = animation;
-        animator.CrossFade(animation, crossfade);
-    }
 
     public void SetListController(ButtonListController _listController, int index)
     {
