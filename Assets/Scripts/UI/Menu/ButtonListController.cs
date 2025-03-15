@@ -37,9 +37,11 @@ public class ButtonListController : MonoBehaviour
     {
         for (int i = 0; i < buttonControllers.Length; i++)
         {
-            if (i == button) { 
-                buttonControllers[i].PressAnimation();
-                SecondaryButtonsActivation.SetActiveObject(panels[i]);
+            if (i == button) {
+                bool isActive = panels[i].activeSelf;
+                if (isActive) buttonControllers[i].NormalAnimation(true);
+                else buttonControllers[i].PressAnimation();
+                panels[i].SetActive(!isActive);
             }
             else { 
                 buttonControllers[i].NormalAnimation(true);
