@@ -8,7 +8,9 @@ public class Board : MonoBehaviour
 {
     public Tilemap tilemap;
     public TileBase forestTile, mountainTile, lakeTile, plainTile, desertTile;
-
+    public Tilemap tilemapDetails; // Tilemap pour les détails (arbres, montagnes)
+    public TileBase forestOverlayTile;
+    public TileBase mountainOverlayTile;
 
     private TileType[,] grid;
     public int radius = 4;
@@ -28,39 +30,72 @@ public class Board : MonoBehaviour
     }
 
     public void CreateBoard()
+{
+    grid = new TileType[radius * 2 + 1, radius * 2 + 1];
+
+    Dictionary<TileType, float> probabilities = new Dictionary<TileType, float>
     {
-        grid = new TileType[radius * 2 + 1, radius * 2 + 1];
+        { TileType.Forests, config.forestProbability / 100f },
+        { TileType.Mountains, config.mountainProbability / 100f },
+        { TileType.Lakes, config.lakeProbability / 100f },
+        { TileType.Plains, config.plainProbability / 100f },
+        { TileType.Deserts, config.desertProbability / 100f }
+    };
 
-        Dictionary<TileType, float> probabilities = new Dictionary<TileType, float>
+    for (int q = -radius; q <= radius; q++)
+    {
+        int r1 = Mathf.Max(-radius, -q - radius);
+        int r2 = Mathf.Min(radius, -q + radius);
+
+        for (int r = r1; r <= r2; r++)
         {
-            { TileType.Forests, config.forestProbability / 100f },
-            { TileType.Mountains, config.mountainProbability / 100f },
-            { TileType.Lakes, config.lakeProbability / 100f },
-            { TileType.Plains, config.plainProbability / 100f },
-            { TileType.Deserts, config.desertProbability / 100f }
-        };
-
-        for (int q = -radius; q <= radius; q++)
-        {
-            int r1 = Mathf.Max(-radius, -q - radius);
-            int r2 = Mathf.Min(radius, -q + radius);
-
-            for (int r = r1; r <= r2; r++)
+            TileType selectedType;
+            do
             {
-                TileType selectedType;
-                do
-                {
-                    selectedType = GetRandomTileType(probabilities);
-                } while (!ValidateTilePlacement(selectedType, q, r));
+                selectedType = GetRandomTileType(probabilities);
+            } while (!ValidateTilePlacement(selectedType, q, r));
 
-                grid[q + radius, r + radius] = selectedType;
+            grid[q + radius, r + radius] = selectedType;
 
-                Vector3Int tilePosition = new Vector3Int(q, r, 0);
-                tilemap.SetTile(tilePosition, GetTile(selectedType));
+            // Conversion des coordonnées axiales en coordonnées monde
+            Vector3 worldPos = AxialToIsometric(q, r);
+            Vector3Int tilePosition = tilemap.WorldToCell(worldPos);
+
+            tilemap.SetTile(tilePosition, GetTile(selectedType));
+                Debug.Log($"Ajout de {selectedType} à {tilePosition}");
+                Debug.Log($"Selected type forest ? {selectedType == TileType.Forests}");
+                // Ajout des détails (arbres, montagnes...)
+            if (selectedType == TileType.Forests)
+            {
+                tilemapDetails.SetTile(tilePosition, forestOverlayTile);
             }
+            else if (selectedType == TileType.Mountains)
+            {
+                tilemapDetails.SetTile(tilePosition, mountainOverlayTile);
+            }
+            }
+    }
+}
+
+    private Vector3 AxialToIsometric(int q, int r)
+    {
+        float hexWidth = 78f / 256f;  // Largeur de l'hexagone en Unity Units
+        float hexHeight = (79f * Mathf.Sqrt(3) / 2) / 256f; // Hauteur correcte
+
+        float x = hexWidth * q;
+        float y = hexHeight * r * 0.75f;  // Facteur 0.75 pour ajuster l'espace vertical
+
+        // Décalage des lignes impaires
+        if (r % 2 != 0)
+        {
+            x += hexWidth / 2;
         }
 
+        return new Vector3(x, y, 0);
     }
+
+
+
 
     private TileBase GetTile(TileType type)
     {

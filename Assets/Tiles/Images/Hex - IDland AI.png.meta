@@ -1,0 +1,353 @@
+fileFormatVersion: 2
+guid: 50e02d76f28ed214bb1b77a5095c147b
+TextureImporter:
+  internalIDToNameTable: []
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 0
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 256
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 3
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 3
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: Mountain
+      rect:
+        serializedVersion: 2
+        x: 573
+        y: 940
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: bac0382e7d41bc44e90f965c4291d8a7
+      internalID: 1450453866
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_8
+      rect:
+        serializedVersion: 2
+        x: 697
+        y: 816
+        width: 79
+        height: 65
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 149f65a23e37dd949802dfb96bbc6014
+      internalID: 2100827493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_15
+      rect:
+        serializedVersion: 2
+        x: 696
+        y: 707
+        width: 79
+        height: 93
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 17dc273929241cb4f8db2ed33e831c2a
+      internalID: 51667231
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_26
+      rect:
+        serializedVersion: 2
+        x: 799
+        y: 524
+        width: 78
+        height: 64
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 50aa87ca15740554ca0ae91ab0eca13e
+      internalID: 469604807
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_38
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 298
+        width: 78
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0ab798d5025c39f49b5dbe8a51a4eba8
+      internalID: -238060560
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_40
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 298
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 7cfcbbab4b260dd49a91f8e042f67f14
+      internalID: -1646191130
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_41
+      rect:
+        serializedVersion: 2
+        x: 293
+        y: 299
+        width: 78
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 0bd613b4b05281e4da46c947695d0224
+      internalID: 2089092860
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_45
+      rect:
+        serializedVersion: 2
+        x: 686
+        y: 299
+        width: 79
+        height: 79
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 4020fb65c09af524e8d425f2a86bc45c
+      internalID: 457434580
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Hex - IDland AI_46
+      rect:
+        serializedVersion: 2
+        x: 797
+        y: 299
+        width: 79
+        height: 80
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: ce2551c867cf39e42a78f671db240ef1
+      internalID: 413798557
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    physicsShape: []
+    bones: []
+    spriteID: 5f6225fb502c2bf4b9245693f70155dc
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    nameFileIdTable:
+      Hex - IDland AI_0: -1807095809
+      Hex - IDland AI_10: 992531826
+      Hex - IDland AI_11: -1470764311
+      Hex - IDland AI_12: 794646849
+      Hex - IDland AI_13: 1017314965
+      Hex - IDland AI_14: 116240490
+      Hex - IDland AI_15: 51667231
+      Hex - IDland AI_16: 324987776
+      Hex - IDland AI_17: -1019773022
+      Hex - IDland AI_18: 521602926
+      Hex - IDland AI_19: 45973993
+      Hex - IDland AI_2: -86238789
+      Hex - IDland AI_20: 777660679
+      Hex - IDland AI_21: -1353971695
+      Hex - IDland AI_22: -1383967657
+      Hex - IDland AI_23: 1900073703
+      Hex - IDland AI_24: -786327006
+      Hex - IDland AI_25: 369212208
+      Hex - IDland AI_26: 469604807
+      Hex - IDland AI_27: -99643331
+      Hex - IDland AI_28: -1377530400
+      Hex - IDland AI_29: 1969378866
+      Hex - IDland AI_3: -2143835472
+      Hex - IDland AI_30: 2117117580
+      Hex - IDland AI_31: -311084179
+      Hex - IDland AI_32: 1719097919
+      Hex - IDland AI_33: -247393288
+      Hex - IDland AI_34: -662156534
+      Hex - IDland AI_35: 667771126
+      Hex - IDland AI_36: 1165780857
+      Hex - IDland AI_37: -1322753653
+      Hex - IDland AI_38: -238060560
+      Hex - IDland AI_39: -428607865
+      Hex - IDland AI_4: 165148802
+      Hex - IDland AI_40: -1646191130
+      Hex - IDland AI_41: 2089092860
+      Hex - IDland AI_42: -635162683
+      Hex - IDland AI_43: -881718878
+      Hex - IDland AI_44: -890800994
+      Hex - IDland AI_45: 457434580
+      Hex - IDland AI_46: 413798557
+      Hex - IDland AI_47: -526641632
+      Hex - IDland AI_48: -1415353574
+      Hex - IDland AI_49: -446849491
+      Hex - IDland AI_5: 1075944988
+      Hex - IDland AI_6: -1660163554
+      Hex - IDland AI_7: -1685734437
+      Hex - IDland AI_8: 2100827493
+      Hex - IDland AI_9: 189371731
+      Mountain: 1450453866
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

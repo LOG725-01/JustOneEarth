@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 55f747e8af38fbe4d8819f37be6fd5aa, type: 3}
   m_Name: DesertTile
   m_EditorClassIdentifier: 
-  m_DefaultSprite: {fileID: 21300000, guid: 5b305e85e1e851944a47818275e57149, type: 3}
+  m_DefaultSprite: {fileID: 2089092860, guid: 50e02d76f28ed214bb1b77a5095c147b, type: 3}
   m_DefaultGameObject: {fileID: 9099654419945426364, guid: fdda2f1aa9a762644ae0f23691945658,
     type: 3}
   m_DefaultColliderType: 1
