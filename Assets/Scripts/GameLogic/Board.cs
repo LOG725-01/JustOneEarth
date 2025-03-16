@@ -17,7 +17,7 @@ public class Board : MonoBehaviour
     private GenerationConfig config;
     Dictionary<TileType, float> probabilities;
 
-    private void Start()
+    private void Awake()
     {
         config = GenerationConfig.LoadFromJson();
         if (config == null)
