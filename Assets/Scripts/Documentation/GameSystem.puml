@@ -81,9 +81,15 @@ class CardEffect{
 }
 
 class Board {
-    + tiles : List<Tile>
-    + CreateBoard() : Board
+    + tilemap : Tilemap 
+    + forestTile, mountainTile, lakeTile, plainTile, desertTile : TileBase
+    + grid : TileType[]
+    + CreateBoard() : void
+    + GetTile(TileType type) : TileBase
+    + GetRandomTileType(Dictionary<TileType, float> probabilities) : TileType
+    + ValidateTilePlacement(TileType type, int q, int r) : Bool
 }
+
 note left of Board::CreateBoard
   Responsible for
   procedural creation
@@ -92,7 +98,9 @@ end note
 class Tile {
     + producedRessources : Dictionary<RessourceTypeEnum, int>
     + tileType : TileTypeEnum
+    + AssignResources()
     + OnClick()
+    + Initialize(TileType type)
 }
 
 class PlayerInputNotifier {
