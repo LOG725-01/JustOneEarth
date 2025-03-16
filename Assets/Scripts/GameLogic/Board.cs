@@ -2,20 +2,20 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Tilemaps;
 
 public class Board : MonoBehaviour
 {
-    public Tilemap tilemap;
-    public TileBase forestTile, mountainTile, lakeTile, plainTile, desertTile;
-    public Tilemap tilemapDetails; // Tilemap pour les détails (arbres, montagnes)
-    public TileBase forestOverlayTile;
-    public TileBase mountainOverlayTile;
+    public GameObject forestPrefab;
+    public GameObject mountainPrefab;
+    public GameObject lakePrefab;
+    public GameObject plainPrefab;
+    public GameObject desertPrefab;
 
     private TileType[,] grid;
-    public int radius = 4;
+    public int radius = 5;
 
     private GenerationConfig config;
+    Dictionary<TileType, float> probabilities;
 
     private void Start()
     {
@@ -30,10 +30,10 @@ public class Board : MonoBehaviour
     }
 
     public void CreateBoard()
-{
-    grid = new TileType[radius * 2 + 1, radius * 2 + 1];
+    {
+        grid = new TileType[radius * 2 + 1, radius * 2 + 1]; // Plus besoin du nullable
 
-    Dictionary<TileType, float> probabilities = new Dictionary<TileType, float>
+        probabilities = new Dictionary<TileType, float>
     {
         { TileType.Forests, config.forestProbability / 100f },
         { TileType.Mountains, config.mountainProbability / 100f },
@@ -42,116 +42,131 @@ public class Board : MonoBehaviour
         { TileType.Deserts, config.desertProbability / 100f }
     };
 
-    for (int q = -radius; q <= radius; q++)
-    {
-        int r1 = Mathf.Max(-radius, -q - radius);
-        int r2 = Mathf.Min(radius, -q + radius);
-
-        for (int r = r1; r <= r2; r++)
+        for (int q = -radius; q <= radius; q++)
         {
-            TileType selectedType;
-            do
+            int r1 = Mathf.Max(-radius, -q - radius);
+            int r2 = Mathf.Min(radius, -q + radius);
+
+            for (int r = r1; r <= r2; r++)
             {
-                selectedType = GetRandomTileType(probabilities);
-            } while (!ValidateTilePlacement(selectedType, q, r));
+                //Applique un bruit de Perlin
+                if (!IsTileGenerated(q, r))
+                {
+                    grid[q + radius, r + radius] = TileType.None;
+                    continue;
+                }
 
-            grid[q + radius, r + radius] = selectedType;
-
-            // Conversion des coordonnées axiales en coordonnées monde
-            Vector3 worldPos = AxialToIsometric(q, r);
-            Vector3Int tilePosition = tilemap.WorldToCell(worldPos);
-
-            tilemap.SetTile(tilePosition, GetTile(selectedType));
-                Debug.Log($"Ajout de {selectedType} à {tilePosition}");
-                Debug.Log($"Selected type forest ? {selectedType == TileType.Forests}");
-                // Ajout des détails (arbres, montagnes...)
-            if (selectedType == TileType.Forests)
-            {
-                tilemapDetails.SetTile(tilePosition, forestOverlayTile);
+                TileType selectedType = GetRandomTileType(probabilities);
+                grid[q + radius, r + radius] = selectedType;
             }
-            else if (selectedType == TileType.Mountains)
-            {
-                tilemapDetails.SetTile(tilePosition, mountainOverlayTile);
-            }
-            }
-    }
-}
-
-    private Vector3 AxialToIsometric(int q, int r)
-    {
-        float hexWidth = 78f / 256f;  // Largeur de l'hexagone en Unity Units
-        float hexHeight = (79f * Mathf.Sqrt(3) / 2) / 256f; // Hauteur correcte
-
-        float x = hexWidth * q;
-        float y = hexHeight * r * 0.75f;  // Facteur 0.75 pour ajuster l'espace vertical
-
-        // Décalage des lignes impaires
-        if (r % 2 != 0)
-        {
-            x += hexWidth / 2;
         }
+        FixLonelyLakes();     //Remplace les lacs aux bords de la carte
+        for (int q = -radius; q <= radius; q++)
+        {
+            int r1 = Mathf.Max(-radius, -q - radius);
+            int r2 = Mathf.Min(radius, -q + radius);
 
-        return new Vector3(x, y, 0);
+            for (int r = r1; r <= r2; r++)
+            {
+                if (grid[q + radius, r + radius] == TileType.None)
+                    continue;
+
+                Vector3 worldPos = AxialToIsometric(q, r);
+                Instantiate(GetTilePrefab(grid[q + radius, r + radius]), worldPos, Quaternion.identity);
+            }
+        }
+    }
+    
+    private bool IsTileGenerated(int q, int r)
+    {
+        float noiseValue = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
+        return noiseValue > 0.4335f;
     }
 
+    private void FixLonelyLakes()
+    {
+        for (int q = -radius; q <= radius; q++)
+        {
+            for (int r = -radius; r <= radius; r++)
+            {
+                if (!IsInsideMap(q, r)) continue;
 
+                if (grid[q + radius, r + radius] == TileType.Lakes && CountNeighbors(q, r) !=6)
+                {
+                    grid[q + radius, r + radius] = GetRandomTileType(probabilities,TileType.Lakes);
+                }
+            }
+        }
+    }
+    private int CountNeighbors(int q, int r)
+    {
+        List<Vector2Int> directions = new List<Vector2Int>
+    {
+        new Vector2Int(1, 0), new Vector2Int(-1, 0),  // Droite, Gauche
+        new Vector2Int(0, 1), new Vector2Int(0, -1),  // Haut, Bas
+        new Vector2Int(1, -1), new Vector2Int(-1, 1)  // Diagonales
+    };
 
+        int count = 0;
+        foreach (var dir in directions)
+        {
+            int neighborQ = q + dir.x;
+            int neighborR = r + dir.y;
 
-    private TileBase GetTile(TileType type)
+            if (IsInsideMap(neighborQ, neighborR))
+            {
+                if (grid[neighborQ + radius, neighborR + radius] != TileType.None)
+                {
+                    count++;
+                }
+            }
+        }
+        return count;
+    }
+
+    private bool IsInsideMap(int q, int r)
+    {
+        return Math.Abs(q) <= radius && Math.Abs(r) <= radius && Math.Abs(-q - r) <= radius;
+    }
+
+    private GameObject GetTilePrefab(TileType type)
     {
         switch (type)
         {
-            case TileType.Forests: return forestTile;
-            case TileType.Mountains: return mountainTile;
-            case TileType.Lakes: return lakeTile;
-            case TileType.Plains: return plainTile;
-            case TileType.Deserts: return desertTile;
+            case TileType.Forests: return forestPrefab;
+            case TileType.Mountains: return mountainPrefab;
+            case TileType.Lakes: return lakePrefab;
+            case TileType.Plains: return plainPrefab;
+            case TileType.Deserts: return desertPrefab;
             default: return null;
         }
     }
+    private Vector3 AxialToIsometric(int q, int r)
+    {
+        float hexWidth = 1f;
+        float hexHeight = hexWidth * Mathf.Sqrt(3) / 2;
 
+        float x = hexWidth * (q + r * 0.5f);
+        float z = hexHeight * r;
 
-    private TileType GetRandomTileType(Dictionary<TileType, float> probabilities)
+        return new Vector3(x, 0, z);
+    }
+
+    private TileType GetRandomTileType(Dictionary<TileType, float> probabilities, TileType? excludeType = null)
     {
         float roll = UnityEngine.Random.value;
         float cumulative = 0f;
 
         foreach (var entry in probabilities)
         {
+            if (excludeType.HasValue && entry.Key == excludeType.Value)
+                continue;
+
             cumulative += entry.Value;
             if (roll <= cumulative)
                 return entry.Key;
         }
 
         return TileType.Plains;
-    }
-
-    private bool ValidateTilePlacement(TileType type, int q, int r)
-    {
-        if (type == TileType.Deserts && config.preventLargeDeserts)
-        {
-            int desertCount = 0;
-            int totalNeighbors = 0;
-
-            for (int dq = -1; dq <= 1; dq++)
-            {
-                for (int dr = -1; dr <= 1; dr++)
-                {
-                    int neighborQ = q + dq;
-                    int neighborR = r + dr;
-
-                    if (neighborQ >= -radius && neighborQ <= radius && neighborR >= -radius && neighborR <= radius)
-                    {
-                        totalNeighbors++;
-                        if (grid[neighborQ + radius, neighborR + radius] == TileType.Deserts)
-                            desertCount++;
-                    }
-                }
-            }
-
-            return (desertCount / (float)totalNeighbors) < config.maxDesertClusterRatio;
-        }
-
-        return true;
     }
 }
