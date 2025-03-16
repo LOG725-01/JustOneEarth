@@ -1,9 +1,10 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using Mirror; // Importation pour gérer le réseau
 using UnityEngine;
 
-public class GameManager : MonoBehaviour
+public class GameManager : NetworkBehaviour
 {
     private GameMode gameMode;
 
@@ -31,9 +32,15 @@ public class GameManager : MonoBehaviour
             notifier.OnGameObjectClicked += HandlePlayerInput;
         }
 
+        if (NetworkServer.active)
+        {
+            Debug.Log("Partie en multijoueur (serveur hôte actif)");
+        }
+
         // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
     }
 
+    [Command] // Cette fonction s'exécute sur le serveur et est appelée par un client
     private void HandlePlayerInput(GameObject clickedObject)
     {
         if (clickedObject.TryGetComponent<IClickable>(out var clickable))
@@ -48,6 +55,8 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!isServer) return;
+
         // Check if AI turn to play
         Player player = gameState.players.ElementAt(gameState.currentPlayerTurn);
 
