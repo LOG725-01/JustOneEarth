@@ -2067,7 +2067,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 694821166}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.13634025
+  m_Size: 0.13634026
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -5407,7 +5407,7 @@ MonoBehaviour:
   panSpeed: 5
   zoomSpeed: 5
   minZoom: 2
-  maxZoom: 10
+  maxZoom: 7
 --- !u!1 &1364574306
 GameObject:
   m_ObjectHideFlags: 0
@@ -8372,6 +8372,58 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1918184449}
   m_CullTransparentMesh: 1
+--- !u!1 &1963798678
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1963798680}
+  - component: {fileID: 1963798681}
+  m_Layer: 0
+  m_Name: CloudSpawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1963798680
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963798678}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1963798681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1963798678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 914b7b9de29133c4f988b8dd181468ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  cloudPrefab: {fileID: 7236893190109385892, guid: d6c3a4f012531d045887608f148d4895,
+    type: 3}
+  cloudCount: 2
+  minHeight: 1
+  maxHeight: 1
+  minScale: 1
+  maxScale: 3
+  minDistance: 1
 --- !u!1001 &1971504445
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -9519,3 +9571,4 @@ SceneRoots:
   - {fileID: 1650928597}
   - {fileID: 2031677704}
   - {fileID: 374974173}
+  - {fileID: 1963798680}
