@@ -4,5 +4,6 @@ public enum TileType
     Mountains,
     Lakes,
     Plains,
-    Deserts
+    Deserts,
+    None
 }

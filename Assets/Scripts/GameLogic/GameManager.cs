@@ -12,6 +12,8 @@ public class GameManager : NetworkBehaviour
 
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
 
+    private bool gameStarted = false;
+
     public void setGameMode(GameMode gameMode)
     {
         this.gameMode = gameMode;
@@ -23,8 +25,10 @@ public class GameManager : NetworkBehaviour
 
         gameState.AddPlayers(gameMode);
 
-        gameState.CreateBoard();
-
+        //TODO : fix nullexception when not commented
+        //gameState.CreateBoard();
+        
+        playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
         foreach (var notifier in playerInputNotifiers)
@@ -38,6 +42,7 @@ public class GameManager : NetworkBehaviour
         }
 
         // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
+        gameStarted = true;
     }
 
     [Command] // Cette fonction s'exécute sur le serveur et est appelée par un client
@@ -49,26 +54,32 @@ public class GameManager : NetworkBehaviour
         }
         else
         {
+            TileInfo.Instance.Clear();
             Debug.Log("Clicked object has no specific click behavior.");
         }
     }
 
     private void Update()
     {
+<<<<<<< HEAD
         if (!isServer) return;
 
+=======
+        if (!gameStarted) return;
+>>>>>>> 984a9dff1392a7ec9a127b9c53cf97c636b5936e
         // Check if AI turn to play
-        Player player = gameState.players.ElementAt(gameState.currentPlayerTurn);
+        Player player = gameState.getCurrentPlayingPlayer();
 
-        if (player.GetType() == typeof(AIPlayer))
-        {
-            // AI play
-            AIPlayer aiPlayer = (AIPlayer)player;
-            gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
+        if (player != null) 
+            if (player.GetType() == typeof(AIPlayer))
+            {
+                // AI play
+                AIPlayer aiPlayer = (AIPlayer)player;
+                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
 
-            gameState.turnCount++;
-            gameState.SetCurrentPlayerTurnToNextPlayer();
-            // TODO : Update game visuals here
-        }
+                gameState.turnCount++;
+                gameState.SetCurrentPlayerTurnToNextPlayer();
+                // TODO : Update game visuals here
+            }
     }
 }

@@ -30,6 +30,7 @@ public class Chat : AnimationController
         chatText = "";
         chatLog.text = chatText;
         chatInput.text = "";
+        lastLine.text = "";
     }
 
     public void OpenClose()

@@ -40,6 +40,7 @@ public class Tile : MonoBehaviour, IClickable
     {
         // TODO : Set player selected Tile
 
-        // TODO : Update game visuals here for ressources display
+        // Update game visuals here for ressources display
+        TileInfo.Instance.ChangeInfo(gameObject);
     }
 }
