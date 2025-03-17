@@ -7,7 +7,7 @@ public class PlayerInputNotifier : MonoBehaviour
     public event Action<GameObject> OnGameObjectClicked;
 
     // Called when the GameObject is clicked.
-    private void OnMouseDown()
+    public void OnMouseDown()
     {
         // Notify all observers that this GameObject was clicked.
         OnGameObjectClicked?.Invoke(gameObject);

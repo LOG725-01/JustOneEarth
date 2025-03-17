@@ -280,6 +280,9 @@ GameObject:
   - component: {fileID: 6568561902341281264}
   - component: {fileID: 192558761460121362}
   - component: {fileID: 2322197777355105756}
+  - component: {fileID: 5676170512507911331}
+  - component: {fileID: 5074363722626928688}
+  - component: {fileID: 5518034891594085354}
   m_Layer: 5
   m_Name: RessouceVisual
   m_TagString: Untagged
@@ -359,9 +362,55 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c4a4b9cf9a6df8243a734166690f9616, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ressourcesNumber: {fileID: 815017407790560440}
-  ressourcesPerTurn: {fileID: 5721502828438831466}
-  perTurn: par tour
+  resourcesNumber: {fileID: 815017407790560440}
+--- !u!114 &5676170512507911331
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437643597956659330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 37d7865a6a2928344aaba84fc7512aec, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  resourceIncome: {fileID: 5721502828438831466}
+  suffix: par tour
+--- !u!95 &5074363722626928688
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437643597956659330}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: b597c35d330410941a9947c58dfeb2f8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5518034891594085354
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3437643597956659330}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecae10e43ee381549ab5bdf30f2d3578, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 5074363722626928688}
 --- !u!1 &3498059316572967741
 GameObject:
   m_ObjectHideFlags: 0

@@ -89,6 +89,7 @@ public class GameState : MonoBehaviour
 
     public Player getCurrentPlayingPlayer()
     {
+        if (players.Count <= currentPlayerTurn) return null;
         return players.ElementAt<Player>(currentPlayerTurn);
     }
 }

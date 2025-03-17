@@ -11,6 +11,8 @@ public class GameManager : MonoBehaviour
 
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
 
+    private bool gameStarted = false;
+
     public void setGameMode(GameMode gameMode)
     {
         this.gameMode = gameMode;
@@ -22,8 +24,10 @@ public class GameManager : MonoBehaviour
 
         gameState.AddPlayers(gameMode);
 
-        gameState.CreateBoard();
-
+        //TODO : fix nullexception when not commented
+        //gameState.CreateBoard();
+        
+        playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
         foreach (var notifier in playerInputNotifiers)
@@ -32,6 +36,7 @@ public class GameManager : MonoBehaviour
         }
 
         // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
+        gameStarted = true;
     }
 
     private void HandlePlayerInput(GameObject clickedObject)
@@ -42,24 +47,27 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            TileInfo.Instance.Clear();
             Debug.Log("Clicked object has no specific click behavior.");
         }
     }
 
     private void Update()
     {
+        if (!gameStarted) return;
         // Check if AI turn to play
-        Player player = gameState.players.ElementAt(gameState.currentPlayerTurn);
+        Player player = gameState.getCurrentPlayingPlayer();
 
-        if (player.GetType() == typeof(AIPlayer))
-        {
-            // AI play
-            AIPlayer aiPlayer = (AIPlayer)player;
-            gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
+        if (player != null) 
+            if (player.GetType() == typeof(AIPlayer))
+            {
+                // AI play
+                AIPlayer aiPlayer = (AIPlayer)player;
+                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
 
-            gameState.turnCount++;
-            gameState.SetCurrentPlayerTurnToNextPlayer();
-            // TODO : Update game visuals here
-        }
+                gameState.turnCount++;
+                gameState.SetCurrentPlayerTurnToNextPlayer();
+                // TODO : Update game visuals here
+            }
     }
 }
