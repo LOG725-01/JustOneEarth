@@ -48,6 +48,10 @@ public class Card : AnimationController, IClickable
             //Update game visuals here
             SelectedVisual();
         }
+        else
+        {
+            NormalVisual();
+        }
     }
 
     private void SelectedVisual()
