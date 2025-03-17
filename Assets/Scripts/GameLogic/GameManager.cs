@@ -26,7 +26,7 @@ public class GameManager : MonoBehaviour
 
         //TODO : fix nullexception when not commented
         //gameState.CreateBoard();
-
+        
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
@@ -47,6 +47,7 @@ public class GameManager : MonoBehaviour
         }
         else
         {
+            TileInfo.Instance.Clear();
             Debug.Log("Clicked object has no specific click behavior.");
         }
     }
