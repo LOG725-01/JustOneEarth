@@ -7,13 +7,13 @@ public class CameraController : MonoBehaviour
     public float panSpeed = 5f; // Vitesse du drag avec la souris
     public float zoomSpeed = 5f; // Vitesse du zoom
     public float minZoom = 2f; // Zoom minimum
-    public float maxZoom = 10f; // Zoom maximum
+    public float maxZoom = 7f; // Zoom maximum
 
     private Vector3 dragOrigin;
 
     private void Start()
     {
-        cam.transform.position = new Vector3(-8, 10, -7.5f);
+        cam.transform.position = new Vector3(-6.5f, 7, -6f);
         cam.transform.rotation = Quaternion.Euler(45, 45, 0);
     }
 
