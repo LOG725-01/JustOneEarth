@@ -1,11 +1,20 @@
+using System;
 using System.Collections.Generic;
-using System.Linq;
+using TMPro;
 using UnityEngine;
 
-public class Card : MonoBehaviour, IClickable
+public class Card : AnimationController, IClickable
 {
     List<ICardEffect> effectList = new List<ICardEffect>();
     Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
+
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI ressourceText;
+
+    public void Start()
+    {
+        NormalVisual();
+    }
 
     public void AddEffect(ICardEffect effect)
     {
@@ -15,6 +24,8 @@ public class Card : MonoBehaviour, IClickable
     public void AddCost(RessourceTypes ressource, int quantity)
     {
         cost.Add(ressource, quantity);
+        ressourceText.text = quantity.ToString();
+        //TODO : update ressource icon
     }
 
     public void ApplyEffects(GameState gameState)
@@ -34,7 +45,18 @@ public class Card : MonoBehaviour, IClickable
         
             gameState.turnCount++;
             gameState.SetCurrentPlayerTurnToNextPlayer();
-            // TODO : Update game visuals here
+            //Update game visuals here
+            SelectedVisual();
         }
+    }
+
+    private void SelectedVisual()
+    {
+        ChangeAnimation("Selected");
+
+    }
+    private void NormalVisual()
+    {
+        ChangeAnimation("Normal");
     }
 }
