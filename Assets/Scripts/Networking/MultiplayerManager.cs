@@ -1,147 +1,66 @@
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using Mirror;
 using TMPro;
-using System.Net;
-using System.Net.Sockets;
-using System.Net.NetworkInformation;
 
 public class MultiplayerManager : NetworkManager
 {
-    public TMP_Text multiplayerStatus; // Associe ce champ à "multiplayer_status" dans l'Inspector
-    public Button HOST_BTN;
-    public Button JOIN_BTN;
+    [Header("UI Elements")]
+    public TMP_Text multiplayerStatus;
+    public Button LaunchMultiplayerBTN;
 
-    private float connectionTimeout = 300f; // Temps max avant d'abandonner une connexion (5 min)
-    private float connectionTimer;
-    private bool isJoining = false;
-
-    public void HostGame()
+    private void Start()
     {
-
-        if (NetworkClient.active || NetworkServer.active) return; // Empêche plusieurs connexions
-
-        if (IsServerAlreadyRunning()) // Vérifie si un serveur est déjà actif
+        if (FindObjectsOfType<NetworkManager>().Length > 1)
         {
-            multiplayerStatus.text = "Un serveur est déjà en cours.";
+            Debug.LogWarning("[MultiplayerManager] Une autre instance détectée, suppression...");
+            Destroy(gameObject);
             return;
         }
 
-        multiplayerStatus.text = "Hébergement en cours...";
+        Debug.Log("[MultiplayerManager] Start() - Initialisation");
 
-        HOST_BTN.interactable = false; // Désactive le bouton
-        JOIN_BTN.interactable = false;
-
-        StartHost();
-    }
-
-    public void JoinGame()
-    {
-        if (NetworkClient.active || NetworkServer.active) return; // Empêche plusieurs connexions
-
-        multiplayerStatus.text = "Connexion en cours...";
-
-        HOST_BTN.interactable = false; // Désactive le bouton
-        JOIN_BTN.interactable = false;
-
-        isJoining = true;
-        connectionTimer = connectionTimeout;
-        // Forcer la connexion au serveur local
-        networkAddress = "127.0.0.1";
-        StartClient();
-    }
-
-    public override void OnClientConnect()
-    {
-
-        base.OnClientConnect();
-
-        HOST_BTN.interactable = false; // Désactive le bouton
-        JOIN_BTN.interactable = false;
-
-        // Vérifie si ce client est l'hôte
-        if (NetworkServer.active && NetworkClient.isConnected)
+        if (SceneChanger.Instance == null)
         {
-            multiplayerStatus.text = "Serveur hébergé avec succès !";
+            Debug.LogError("[MultiplayerManager] SceneChanger.Instance est null !");
+            return;
+        }
+
+        Debug.Log("[MultiplayerManager] Mode sélectionné : " + SceneChanger.Instance.CurrentMode);
+
+        if (SceneChanger.Instance.CurrentMode == MultiplayerMode.Host)
+        {
+            gameObject.AddComponent<MultiplayerHostManager>().Initialize(this);
+        }
+        else if (SceneChanger.Instance.CurrentMode == MultiplayerMode.Client)
+        {
+            gameObject.AddComponent<MultiplayerClientManager>().Initialize(this);
+        }
+
+        if (LaunchMultiplayerBTN != null)
+        {
+            Debug.Log("[MultiplayerManager] Configuration du bouton 'Lancer la partie'.");
+            LaunchMultiplayerBTN.gameObject.SetActive(false);
+            LaunchMultiplayerBTN.onClick.RemoveAllListeners();
+            LaunchMultiplayerBTN.onClick.AddListener(StartMultiplayerGame);
         }
         else
         {
-            multiplayerStatus.text = "Connecté avec succès !";
-        }
-
-        isJoining = false;
-    }
-
-    public override void OnClientDisconnect()
-    {
-        base.OnClientDisconnect();
-
-        HOST_BTN.interactable = true; // Réactive le bouton après déconnexion
-        JOIN_BTN.interactable = true;
-
-        multiplayerStatus.text = "Déconnecté du serveur.";
-    }
-    public override void Update()
-    {
-        if (isJoining)
-        {
-            connectionTimer -= Time.deltaTime;
-            if (connectionTimer <= 0)
-            {
-                StopClient();
-                multiplayerStatus.text = "Échec de connexion (timeout).";
-                isJoining = false;
-
-                // Réactiver les boutons en cas d'échec
-                HOST_BTN.interactable = true;
-                JOIN_BTN.interactable = true;
-            }
+            Debug.LogWarning("[MultiplayerManager] LaunchMultiplayerBTN est null !");
         }
     }
 
-    /// <summary>
-    /// Vérifie si un serveur est déjà actif sur le réseau en essayant de se connecter à lui.
-    /// </summary>
-    /// <returns>True si un serveur est trouvé, False sinon.</returns>
-    private bool IsServerAlreadyRunning()
+    public void StartMultiplayerGame()
     {
-        string localIP = GetLocalIPAddress();
-        int port = transport is TelepathyTransport ? ((TelepathyTransport)transport).port : 7777;
-
-        try
+        if (NetworkServer.active)
         {
-            using (TcpClient client = new TcpClient())
-            {
-                client.Connect(localIP, port);
-                return true; // Une connexion a réussi, un serveur est donc actif
-            }
+            Debug.Log("[MultiplayerManager] Démarrage de la partie multijoueur...");
+            SceneManager.LoadScene("MultiplayerGame");
         }
-        catch (SocketException)
+        else
         {
-            return false; // Aucune connexion possible, aucun serveur actif
+            Debug.LogWarning("[MultiplayerManager] StartMultiplayerGame() appelé, mais ce n'est pas un serveur !");
         }
-    }
-
-    /// <summary>
-    /// Récupère l'adresse IP locale de la machine.
-    /// </summary>
-    /// <returns>Adresse IP sous forme de string.</returns>
-    private string GetLocalIPAddress()
-    {
-        foreach (NetworkInterface netInterface in NetworkInterface.GetAllNetworkInterfaces())
-        {
-            if (netInterface.OperationalStatus == OperationalStatus.Up &&
-                netInterface.NetworkInterfaceType != NetworkInterfaceType.Loopback)
-            {
-                foreach (UnicastIPAddressInformation ip in netInterface.GetIPProperties().UnicastAddresses)
-                {
-                    if (ip.Address.AddressFamily == AddressFamily.InterNetwork)
-                    {
-                        return ip.Address.ToString();
-                    }
-                }
-            }
-        }
-        return "127.0.0.1"; // Valeur par défaut si aucune adresse locale trouvée
     }
 }

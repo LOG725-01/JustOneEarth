@@ -1,20 +1,24 @@
 using System;
 using System.Collections.Generic;
 using System.Linq;
-using Mirror; // Importation pour gérer le réseau
 using UnityEngine;
 
-public class GameManager : NetworkBehaviour
+public class GameManager : MonoBehaviour
 {
     private GameMode gameMode;
-
-    GameState gameState;
-
+    private GameState gameState;
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
-
     private bool gameStarted = false;
 
-    public void setGameMode(GameMode gameMode)
+    public static GameManager Instance { get; private set; }
+
+    private void Awake()
+    {
+        if (Instance == null) Instance = this;
+        else Destroy(gameObject);
+    }
+
+    public void SetGameMode(GameMode gameMode)
     {
         this.gameMode = gameMode;
     }
@@ -22,12 +26,11 @@ public class GameManager : NetworkBehaviour
     public void StartGame()
     {
         gameState = new GameState();
-
         gameState.AddPlayers(gameMode);
 
-        //TODO : fix nullexception when not commented
-        //gameState.CreateBoard();
-        
+        // TODO : fix NullReferenceException when uncommented
+        // gameState.CreateBoard();
+
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
@@ -36,16 +39,10 @@ public class GameManager : NetworkBehaviour
             notifier.OnGameObjectClicked += HandlePlayerInput;
         }
 
-        if (NetworkServer.active)
-        {
-            Debug.Log("Partie en multijoueur (serveur hôte actif)");
-        }
-
-        // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
+        Debug.Log("Partie en solo commencée !");
         gameStarted = true;
     }
 
-    [Command] // Cette fonction s'exécute sur le serveur et est appelée par un client
     private void HandlePlayerInput(GameObject clickedObject)
     {
         if (clickedObject.TryGetComponent<IClickable>(out var clickable))
@@ -55,31 +52,23 @@ public class GameManager : NetworkBehaviour
         else
         {
             TileInfo.Instance.Clear();
-            Debug.Log("Clicked object has no specific click behavior.");
+            Debug.Log("L'objet cliqué n'a pas de comportement spécifique.");
         }
     }
 
     private void Update()
     {
-<<<<<<< HEAD
-        if (!isServer) return;
-
-=======
         if (!gameStarted) return;
->>>>>>> 984a9dff1392a7ec9a127b9c53cf97c636b5936e
-        // Check if AI turn to play
+
+        // Vérifier si c'est au tour de l'IA de jouer
         Player player = gameState.getCurrentPlayingPlayer();
 
-        if (player != null) 
-            if (player.GetType() == typeof(AIPlayer))
-            {
-                // AI play
-                AIPlayer aiPlayer = (AIPlayer)player;
-                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
-
-                gameState.turnCount++;
-                gameState.SetCurrentPlayerTurnToNextPlayer();
-                // TODO : Update game visuals here
-            }
+        if (player != null && player is AIPlayer aiPlayer)
+        {
+            gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
+            gameState.turnCount++;
+            gameState.SetCurrentPlayerTurnToNextPlayer();
+            // TODO : Mettre à jour les visuels du jeu ici
+        }
     }
 }
