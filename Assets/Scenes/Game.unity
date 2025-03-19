@@ -2028,6 +2028,8 @@ MonoBehaviour:
     type: 3}
   desertPrefab: {fileID: 3071476736509204881, guid: 1a10bda8a1f9b4147bb8a72baf012761,
     type: 3}
+  animalPrefab: {fileID: 805399902319865245, guid: 1b445b3f721b8af4c8be29909d88c1f1,
+    type: 3}
   radius: 5
 --- !u!4 &374974173
 Transform:

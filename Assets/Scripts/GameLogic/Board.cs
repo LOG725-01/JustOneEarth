@@ -10,6 +10,7 @@ public class Board : MonoBehaviour
     public GameObject lakePrefab;
     public GameObject plainPrefab;
     public GameObject desertPrefab;
+    public GameObject animalPrefab;
 
     private TileType[,] grid;
     public int radius = 5;
@@ -28,7 +29,27 @@ public class Board : MonoBehaviour
 
         CreateBoard();
     }
+    private void PlaceAnimals()
+    {
+        Debug.Log("PlaceAnimals() appelé !");
 
+        foreach (Transform tile in transform) // Parcourt tous les enfants du Board
+        {
+            Tile tileScript = tile.GetComponent<Tile>();
+            if (tileScript != null && tileScript.tileType == TileType.Plains)
+            {
+                Debug.Log($"Tuile 'Plains' trouvée à {tile.position}");
+
+                // 50% de chance d'avoir un animal
+                if (UnityEngine.Random.value < 0.5f)
+                {
+                    Vector3 spawnPos = tile.position + Vector3.up * 0.26f; // Décalage vertical
+                    GameObject animal = Instantiate(animalPrefab, spawnPos, Quaternion.identity, tile);
+                    Debug.Log($"Animal placé à {spawnPos}");
+                }
+            }
+        }
+    }
     public void CreateBoard()
     {
         grid = new TileType[radius * 2 + 1, radius * 2 + 1]; // Plus besoin du nullable
@@ -72,9 +93,11 @@ public class Board : MonoBehaviour
                     continue;
 
                 Vector3 worldPos = AxialToIsometric(q, r);
-                Instantiate(GetTilePrefab(grid[q + radius, r + radius]), worldPos, Quaternion.identity);
+                GameObject newTile = Instantiate(GetTilePrefab(grid[q + radius, r + radius]), worldPos, Quaternion.identity);
+                newTile.transform.parent = transform;
             }
         }
+        PlaceAnimals();
     }
     
     private bool IsTileGenerated(int q, int r)
