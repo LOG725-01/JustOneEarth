@@ -33,7 +33,7 @@ public class MultiplayerManager : NetworkManager
         {
             gameObject.AddComponent<MultiplayerHostManager>().Initialize(this);
         }
-        else if (SceneChanger.Instance.CurrentMode == MultiplayerMode.Client)
+        else if (SceneChanger.Instance.CurrentMode == MultiplayerMode.Client) // vérifier
         {
             gameObject.AddComponent<MultiplayerClientManager>().Initialize(this);
         }
