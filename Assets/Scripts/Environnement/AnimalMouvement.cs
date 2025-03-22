@@ -2,138 +2,220 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+public enum AnimalState
+{
+    Idle,
+    Sitted,
+    Moving,
+    AttackingPrey,
+    AttackingPredator,
+    GotHit,
+    Eat,
+}
+
 public class AnimalMouvement : MonoBehaviour
 {
-    public float maxSpeed = 1f; // Vitesse max de déplacement
-    public float acceleration = 0.5f; // Accélération progressive
-    public float rotationSpeed = 120f; // Vitesse de rotation
+    [SerializeField] private bool isPredator;
+    public bool IsPredator { get => isPredator; }
 
+    public Coroutine coroutine;
     private Tile currentTile; // tuile actuelle
-    private bool isMoving = false; 
+    private AnimalState isMoving = AnimalState.Idle;
 
-    private static HashSet<Tile> occupiedTiles = new HashSet<Tile>(); // Liste des tuiles déjà occupées par un animal
+    private int TiredCounter;
+    private readonly float Ydifference = 0.2f;
+
+    private bool debug = false;
+
+    [SerializeField] private AnimalAnimatorController animalAnimator;
 
     private void Start()
     {
+        Idle();
+        Init();
+    }
+
+    private void Init()
+    {
+        TiredCounter = Random.Range(3, 6);
         currentTile = GetTileUnder();
+        coroutine = StartCoroutine(MoveRoutine());
+    }
 
-        if (currentTile != null)
-        {
-            occupiedTiles.Add(currentTile);
-        }
-
-        StartCoroutine(MoveRoutine());
+    public void SetDebug()
+    {
+        debug = true;
     }
 
     private IEnumerator MoveRoutine()
     {
         while (true)
         {
-            yield return new WaitForSeconds(Random.Range(3f, 6f));
-
-            if (!isMoving)
+            if (debug) Debug.Log(isMoving);
+            switch (isMoving)
             {
-                Tile nextTile = GetRandomAvailablePlainTile();
-
-                if (nextTile != null)
-                {
-                    yield return StartCoroutine(RotateTowardsTarget(nextTile.transform.position));
-                    yield return StartCoroutine(MoveToTile(nextTile));
-                    currentTile = nextTile;
-                }
-                else
-                {
-                    yield return StartCoroutine(MoveOnSameTile());
-                }
+                case AnimalState.Idle:
+                    yield return Moving();
+                    break;
+                case AnimalState.Sitted:
+                    yield return new WaitForSeconds(Stand());
+                    yield return Moving();
+                    break;
+                case AnimalState.AttackingPredator:
+                    yield return new WaitForSeconds(Attack());
+                    animalAnimator.WalkBackwardAnimation();
+                    yield return new WaitForSeconds(0.5f);
+                    Idle();
+                    break;
+                case AnimalState.AttackingPrey:
+                    yield return new WaitForSeconds(Attack());
+                    Idle();
+                    break;
+                case AnimalState.Eat:
+                    yield return new WaitForSeconds(Shuffle());
+                    animalAnimator.WalkBackwardAnimation();
+                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(Eat());
+                    Idle();
+                    break;
+                case AnimalState.GotHit:
+                    yield return new WaitForSeconds(GotHit());
+                    animalAnimator.WalkBackwardAnimation();
+                    yield return new WaitForSeconds(1f);
+                    Idle();
+                    break;
             }
+            yield return new WaitForSeconds(Random.Range(0f, 3f));
         }
+    }
+
+    private IEnumerator Moving()
+    {
+        Tile nextTile = GetRandomAvailablePlainTile();
+        yield return MoveToTile(nextTile);
+        currentTile = nextTile;
     }
 
     private IEnumerator MoveToTile(Tile targetTile)
     {
-        isMoving = true;
+        isMoving = AnimalState.Moving;
+        Vector3 endPos = GetRandomPosition(targetTile);
+        yield return RotateTowardsTarget(endPos);
+        float distanceBefore = Vector3.Distance(transform.position, endPos);
+        float distanceAfter = distanceBefore;
 
-        occupiedTiles.Remove(currentTile);
-        occupiedTiles.Add(targetTile);
-
-        Vector3 startPos = transform.position;
-        Vector3 endPos = targetTile.transform.position + Vector3.up * 0.26f;
-
-        float distance = Vector3.Distance(startPos, endPos);
-        float journeyTime = distance / maxSpeed;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < journeyTime)
+        animalAnimator.WalkRandomAnimation();
+        while (distanceBefore - distanceAfter >= 0)
         {
-            transform.position = Vector3.Lerp(startPos, endPos, elapsedTime / journeyTime);
-            elapsedTime += Time.deltaTime;
+            distanceBefore = distanceAfter;
+            distanceAfter = Vector3.Distance(transform.position, endPos);
             yield return null;
         }
 
-        transform.position = endPos;
-        isMoving = false;
+        //transform.position = endPos;
+        TiredCounter--;
+        if (TiredCounter == 0) yield return new WaitForSeconds(Sit());
+        else Idle();
     }
-
-    private IEnumerator MoveOnSameTile()
-    {
-        isMoving = true;
-
-
-        float tileSize = 1f;
-
-        Vector3 tileCenter = currentTile.transform.position + Vector3.up * 0.26f;
-
-        Vector3 randomOffset = new Vector3(Random.Range(-tileSize / 2 + 0.25f, tileSize / 2 - 0.25f),
-                                           0,
-                                           Random.Range(-tileSize / 2 + 0.25f, tileSize / 2 - 0.25f));
-        Vector3 targetPos = tileCenter + randomOffset;
-
-        yield return StartCoroutine(RotateTowardsTarget(targetPos));
-
-        float distance = Vector3.Distance(transform.position, targetPos);
-        float journeyTime = Mathf.Max(distance / maxSpeed, 0.5f);
-        Vector3 startPos = transform.position;
-        float elapsedTime = 0f;
-
-        while (elapsedTime < journeyTime)
-        {
-            transform.position = Vector3.Lerp(startPos, targetPos, elapsedTime / journeyTime);
-            elapsedTime += Time.deltaTime;
-            yield return null;
-        }
-
-        transform.position = targetPos; 
-        isMoving = false;
-    }
-
-
-
-
-
 
     private IEnumerator RotateTowardsTarget(Vector3 targetPos)
     {
         Vector3 direction = (targetPos - transform.position).normalized;
-        direction.y = 0; 
+        direction.y = 0;
 
         if (direction != Vector3.zero)
         {
-
             Quaternion targetRotation = Quaternion.LookRotation(direction);
 
-            while (Quaternion.Angle(transform.rotation, targetRotation) > 1f)
-            {
+            float angle = SignedAngle(targetRotation);
 
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+            if (angle > 0f) animalAnimator.TurnAnimation(false);
+            else animalAnimator.TurnAnimation(true);
 
-                transform.rotation = Quaternion.Euler(0, transform.rotation.eulerAngles.y, 0);
-
-                yield return null;
-            }
+            yield return new WaitWhile(() => Mathf.Abs(SignedAngle(targetRotation)) > 1f);
         }
     }
 
+    private void OnCollisionEnter(Collision collision)
+    {
+        OnTriggerEnter(collision.collider);
+    }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.TryGetComponent<AnimalMouvement>(out var otherAnimal))
+        {
+            StopCoroutine(coroutine);
+            // Case where 2 predators (goat) touch each other
+            if (otherAnimal.IsPredator & IsPredator) 
+                isMoving = AnimalState.AttackingPredator;
+            // Case where 2 preys (sheep) touch each other
+            else if (!otherAnimal.IsPredator & !IsPredator)
+                isMoving = AnimalState.Eat;
+            // Case where a prey (sheep) and a predator (goat) touch each other
+            else {
+                if (IsPredator) isMoving = AnimalState.AttackingPrey;
+                else isMoving = AnimalState.GotHit;
+            }
+            Init();
+        }
+    }
+
+    private void Idle()
+    {
+        isMoving = AnimalState.Idle;
+        animalAnimator.IdleAnimation();
+    }
+    private float Sit()
+    {
+        TiredCounter = Random.Range(3, 6);
+        isMoving = AnimalState.Sitted;
+        return animalAnimator.SitStandAnimation(true);
+    }
+    private float Stand()
+    {
+        return animalAnimator.SitStandAnimation(false);
+    }
+    private float Attack()
+    {
+        return animalAnimator.AttackAnimation();
+    }
+
+    private float GotHit()
+    {
+        return animalAnimator.GotHitAnimation();
+    }
+
+    private float Eat()
+    {
+        return animalAnimator.EatAnimation();
+    }
+
+    private float Shuffle()
+    {
+        return animalAnimator.ShuffleAnimation();
+    }
+
+    private float SignedAngle(Quaternion targetRotation)
+    {
+        return Mathf.DeltaAngle(Angle(transform.rotation), Angle(targetRotation));
+    }
+    private static float Angle(Quaternion rotation) {
+        Vector3 forward = rotation * Vector3.forward;
+        return Mathf.Atan2(forward.x, forward.z) * Mathf.Rad2Deg;
+    }
+    private Vector3 GetRandomPosition(Tile tile)
+    {
+        float tileSize = 1f;
+
+        Vector3 tileCenter = tile.transform.position;
+
+        Vector3 randomOffset = new Vector3(Random.Range(-tileSize / 2 + 0.25f, tileSize / 2 - 0.25f),
+                                           0,
+                                           Random.Range(-tileSize / 2 + 0.25f, tileSize / 2 - 0.25f));
+        
+        return tileCenter + randomOffset + Vector3.up * Ydifference;
+    }
     private Tile GetTileUnder()
     {
         RaycastHit hit;
@@ -143,24 +225,26 @@ public class AnimalMouvement : MonoBehaviour
         }
         return null;
     }
-
     private Tile GetRandomAvailablePlainTile()
     {
-        List<Tile> adjacentTiles = new List<Tile>();
+        List<Tile> adjacentTiles = new List<Tile>{currentTile};
 
         Vector3[] directions = {
-            new Vector3(1, 0, 0), new Vector3(-1, 0, 0),
-            new Vector3(0, 0, 1), new Vector3(0, 0, -1)
+            new Vector3(1, 0, 0),
+            new Vector3(-1, 0, 0),
+            new Vector3(0.5f, 0, 0.87f),
+            new Vector3(0.5f, 0, -0.87f),
+            new Vector3(-0.5f, 0, 0.87f),
+            new Vector3(-0.5f, 0, -0.87f)
         };
 
         foreach (Vector3 dir in directions)
         {
-            RaycastHit hit;
-            if (Physics.Raycast(transform.position + dir, Vector3.down, out hit, 2f))
+            if (Physics.Raycast(transform.position + dir, Vector3.down, out RaycastHit hit, 2f))
             {
                 Tile tile = hit.collider.GetComponent<Tile>();
 
-                if (tile != null && tile.tileType == TileType.Plains && !occupiedTiles.Contains(tile))
+                if (tile != null && tile.tileType == TileType.Plains)
                 {
                     adjacentTiles.Add(tile);
                 }
@@ -171,6 +255,6 @@ public class AnimalMouvement : MonoBehaviour
         {
             return adjacentTiles[Random.Range(0, adjacentTiles.Count)];
         }
-        return null;
+        return currentTile;
     }
 }

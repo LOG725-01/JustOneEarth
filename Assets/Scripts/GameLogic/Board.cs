@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,7 +9,7 @@ public class Board : MonoBehaviour
     public GameObject lakePrefab;
     public GameObject plainPrefab;
     public GameObject desertPrefab;
-    public GameObject animalPrefab;
+    public GameObject[] animalPrefabs;
 
     private TileType[,] grid;
     public int radius = 5;
@@ -31,21 +30,21 @@ public class Board : MonoBehaviour
     }
     private void PlaceAnimals()
     {
-        Debug.Log("PlaceAnimals() appelé !");
-
+        bool debug = true;
         foreach (Transform tile in transform) // Parcourt tous les enfants du Board
         {
             Tile tileScript = tile.GetComponent<Tile>();
             if (tileScript != null && tileScript.tileType == TileType.Plains)
             {
-                Debug.Log($"Tuile 'Plains' trouvée à {tile.position}");
-
                 // 50% de chance d'avoir un animal
                 if (UnityEngine.Random.value < 0.5f)
                 {
-                    Vector3 spawnPos = tile.position + Vector3.up * 0.26f; // Décalage vertical
-                    GameObject animal = Instantiate(animalPrefab, spawnPos, Quaternion.identity, tile);
-                    Debug.Log($"Animal placé à {spawnPos}");
+                    Vector3 spawnPos = tile.position + Vector3.up * 0.2f; // Décalage vertical
+                    GameObject animal = Instantiate(
+                        animalPrefabs[UnityEngine.Random.Range(0, animalPrefabs.Length)], 
+                        spawnPos, Quaternion.identity, tile);
+                    if(debug) animal.GetComponent<AnimalMouvement>().SetDebug();
+                    debug = false;
                 }
             }
         }
