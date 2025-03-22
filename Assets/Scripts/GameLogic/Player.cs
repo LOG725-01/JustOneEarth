@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Player
+public abstract class Player : MonoBehaviour
 {
     public int points = 0;
     public List<Observer> observers = new List<Observer>();
@@ -50,18 +50,33 @@ public abstract class Player
 
     public void ComputeRessources()
     {
+        Debug.Log("[Player] Début du calcul des ressources...");
+
         foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
+        {
             currentRessources[resource] = 0;
+            Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
+        }
 
         foreach (Tile tile in ownedTiles)
         {
+            Debug.Log($"[Player] Analyse de la tuile : {tile.gameObject.name}, Type : {tile.tileType}");
+
             foreach (var kvp in tile.producedRessources)
             {
                 currentRessources[kvp.Key] += kvp.Value;
+                Debug.Log($"[Player] +{kvp.Value} {kvp.Key} depuis {tile.gameObject.name} (Total : {currentRessources[kvp.Key]})");
             }
         }
 
+        Debug.Log("[Player] Calcul des ressources terminé. Résumé :");
+        foreach (var res in currentRessources)
+        {
+            Debug.Log($"[Player] {res.Key} = {res.Value}");
+        }
+
         NotifyObservers();
+        Debug.Log("[Player] Observateurs notifiés.");
     }
 
 
@@ -72,15 +87,15 @@ public abstract class Player
     }
     public void NotifyObservers()
     {
-        if (uiDisplayObject == null)
+        if (gameObject == null)
         {
-            Debug.LogWarning("Player's uiDisplayObject is null, can't notify observers.");
+            Debug.LogWarning("Player is null, can't notify observers.");
             return;
         }
 
         foreach (var observer in observers)
         {
-            observer.ObserverUpdate(uiDisplayObject);
+            observer.ObserverUpdate(gameObject);
         }
     }
 

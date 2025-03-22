@@ -12,7 +12,6 @@ public class GameState : MonoBehaviour
     public List<Player> players = new List<Player>();
     // This is the player of the running game instance, it is used for multiplayer purposes. Do not confuse with the player currently playing.
     public Player currentInstancePlayer;
-    GameObject playerUIObject = GameObject.Find("HUD");
     public int currentPlayerTurn = 0;
     public int turnCount = 0;
     private Board currentBoard = new Board();
@@ -20,7 +19,6 @@ public class GameState : MonoBehaviour
     public void AddPlayers(GameMode gameMode)
     {
         currentInstancePlayer = new HumanPlayer();
-        currentInstancePlayer.uiDisplayObject = playerUIObject;
 
         if (gameMode == GameMode.PVE)
         {
