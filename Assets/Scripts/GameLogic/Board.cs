@@ -118,6 +118,7 @@ public class Board : MonoBehaviour
         }
 
         Debug.Log("[Board] Génération du plateau terminée !");
+        LogAllTiles();
     }
 
     private bool IsTileGenerated(int q, int r)
@@ -271,5 +272,21 @@ public class Board : MonoBehaviour
         Debug.LogWarning("[Board] Aucune tuile sélectionnée par probabilités, retour par défaut : Plains");
         return TileType.Plains;
     }
+
+    public void LogAllTiles()
+    {
+        Tile[] tiles = FindObjectsOfType<Tile>();
+        Debug.Log($"[Board] --- Résumé des tuiles générées ({tiles.Length}) ---");
+
+        foreach (Tile tile in tiles)
+        {
+            string resSummary = tile.producedRessources.Count > 0
+                ? string.Join(", ", tile.producedRessources)
+                : "Aucune";
+
+            Debug.Log($"→ {tile.name} | Type: {tile.tileType} | Ressources: {resSummary}");
+        }
+    }
+
 
 }
