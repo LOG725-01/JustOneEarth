@@ -16,12 +16,6 @@ public class GameState : MonoBehaviour
     public int turnCount = 0;
     private Board currentBoard;
 
-
-    public void CreateBoard()
-    {
-        currentBoard.CreateBoard();
-    }
-
     public Board GetCurrentBoard()
     {
         return currentBoard;

@@ -10,7 +10,6 @@ public class GameManager : MonoBehaviour
 
     GameState gameState;
 
-    [SerializeField] private Player humanPlayer;
     [SerializeField] private Board board;
     [SerializeField] private HumanPlayer humanPlayerPrefab;
     [SerializeField] private AIPlayer aiPlayerPrefab;
@@ -29,9 +28,6 @@ public class GameManager : MonoBehaviour
 
     private void Awake()
     {
-        if (humanPlayer == null)
-            humanPlayer = FindObjectOfType<HumanPlayer>();
-
         if (board == null)
             board = FindObjectOfType<Board>();
     }
@@ -56,8 +52,14 @@ public class GameManager : MonoBehaviour
 
         gameState.currentInstancePlayer = humanPlayerInstance;
 
-        //TODO : fix nullexception when not commented
-        //gameState.CreateBoard();
+        board.OnBoardGenerated += () =>
+        {
+            Debug.Log($"[OnBoardGenerated] Invoker");
+            var allTiles = board.GetAllTiles();
+            InitializePlayerStartingResources(humanPlayerInstance, allTiles);
+            AssignStartingTiles(humanPlayerInstance, allTiles, 3);
+            RegisterObserversToPlayer(humanPlayerInstance);
+        };
 
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
@@ -71,16 +73,6 @@ public class GameManager : MonoBehaviour
         {
             notifier.OnGameObjectClicked += HandlePlayerInput;
         }
-
-        board.OnBoardGenerated += () =>
-        {
-            var allTiles = board.GetAllTiles();
-            InitializePlayerStartingResources(humanPlayerInstance, allTiles);
-            AssignStartingTiles(humanPlayerInstance, allTiles, 3);
-            RegisterObserversToPlayer(humanPlayerInstance);
-        };
-
-
         // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
         gameStarted = true;
     }
@@ -170,19 +162,48 @@ public class GameManager : MonoBehaviour
 
     private void AssignStartingTiles(Player player, List<Tile> tiles, int count)
     {
-        var unowned = tiles.FindAll(t => t.owner == null);
+        Debug.Log($"[GameManager] Assignation des tuiles — Total disponibles : {tiles.Count}");
+
+        var unowned = tiles.FindAll(t => t != null && t.owner == null);
+
+        Debug.Log($"[GameManager] Tuiles sans propriétaire : {unowned.Count}");
+
+        if (unowned.Count == 0)
+        {
+            Debug.LogWarning("[GameManager] Aucune tuile unowned trouvée !");
+            return;
+        }
+
+        Debug.Log($"[AssignStartingTiles] Total tiles en entrée : {tiles.Count}");
+
+        foreach (var tile in tiles)
+        {
+            Debug.Log($"[AssignStartingTiles] Tuile : {tile.name}, type: {tile.tileType}, owner: {(tile.owner == null ? "Aucun" : tile.owner.name)}");
+        }
+
         for (int i = 0; i < count && unowned.Count > 0; i++)
         {
             var tile = unowned[UnityEngine.Random.Range(0, unowned.Count)];
-            player.AddOwnedTile(tile);
-            tile.owner = player;
-            unowned.Remove(tile);
 
-            Debug.Log($"[GameManager] Tuile assignée au joueur : {tile.name}");
+            if (tile == null)
+            {
+                Debug.LogWarning("[GameManager] Tuile null rencontrée !");
+                continue;
+            }
+
+            player.AddOwnedTile(tile); // Appelle log dans Player.cs
+            tile.owner = player;
+
+            Debug.Log($"[GameManager] Tuile assignée : {tile.name}, Type : {tile.tileType}");
+
+            unowned.Remove(tile);
         }
+
+        Debug.Log($"[GameManager] Tuiles finales du joueur : {player.ownedTiles.Count}");
 
         player.ComputeRessources();
     }
+
 
     void RegisterObserversToPlayer(Player player)
     {

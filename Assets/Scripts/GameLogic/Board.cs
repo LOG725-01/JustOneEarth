@@ -30,6 +30,10 @@ public class Board : MonoBehaviour
         }
 
         Debug.Log("[Board] Configuration chargée avec succès.");
+    }
+
+    private void Start()
+    {
         CreateBoard();
     }
 
@@ -98,8 +102,6 @@ public class Board : MonoBehaviour
                     Debug.LogWarning($"[Board] Aucun prefab trouvé pour le type {type} à ({q},{r}) !");
                     continue;
                 }
-
-                Instantiate(prefab, worldPos, Quaternion.identity);
 
                 GameObject tileObj = Instantiate(prefab, worldPos, Quaternion.identity);
 
