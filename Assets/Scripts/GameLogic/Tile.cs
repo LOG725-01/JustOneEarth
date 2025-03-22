@@ -6,6 +6,7 @@ public class Tile : MonoBehaviour, IClickable
 {
     public Dictionary<RessourceTypes, int> producedRessources = new Dictionary<RessourceTypes, int>();
     public TileType tileType;
+    public Player owner;
 
     public void Initialize(TileType type)
     {

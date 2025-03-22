@@ -21,7 +21,8 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         gameState = new GameState();
-
+        var observers = FindObjectsOfType<Observer>();
+        var player = gameState.getCurrentPlayingPlayer();
         gameState.AddPlayers(gameMode);
 
         //TODO : fix nullexception when not commented
@@ -29,6 +30,11 @@ public class GameManager : MonoBehaviour
         
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
+
+        foreach (var obs in observers)
+        {
+            player.RegisterObserver(obs);
+        }
 
         foreach (var notifier in playerInputNotifiers)
         {
@@ -52,6 +58,29 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    public void PlayCardFromUI(Card card)
+    {
+        var player = gameState.getCurrentPlayingPlayer();
+
+        if (player is HumanPlayer human)
+        {
+            if (card.CanBePlayed(human.currentRessources) && human.selectedTile != null)
+            {
+                card.ApplyEffects(gameState);
+                human.RemoveCardFromHand(card);
+                human.ComputeRessources();
+
+                gameState.turnCount++;
+                gameState.SetCurrentPlayerTurnToNextPlayer();
+            }
+            else
+            {
+                Debug.Log("Carte non jouable ou tuile non sélectionnée.");
+            }
+        }
+    }
+
+
     private void Update()
     {
         if (!gameStarted) return;
@@ -68,6 +97,11 @@ public class GameManager : MonoBehaviour
                 gameState.turnCount++;
                 gameState.SetCurrentPlayerTurnToNextPlayer();
                 // TODO : Update game visuals here
+            }
+            else if (player is HumanPlayer)
+            {
+                // Le joueur humain peut interagir manuellement
+                // Rien à faire ici : ses actions passent par les événements (clics, boutons UI, etc.)
             }
     }
 }

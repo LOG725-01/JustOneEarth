@@ -35,6 +35,19 @@ public class Card : AnimationController, IClickable
             effect.ApplyEffect(gameState);
         }
     }
+    public Dictionary<RessourceTypes, int> GetCost()
+    {
+        return new Dictionary<RessourceTypes, int>(cost); // Copie défensive
+    }
+    public bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
+    {
+        foreach (var entry in cost)
+        {
+            if (!playerResources.ContainsKey(entry.Key) || playerResources[entry.Key] < entry.Value)
+                return false;
+        }
+        return true;
+    }
 
     public void OnClick(GameState gameState)
     {

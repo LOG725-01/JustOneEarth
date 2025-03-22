@@ -5,6 +5,9 @@ using UnityEngine;
 public abstract class Player
 {
     public int points = 0;
+    public List<Observer> observers = new List<Observer>();
+    public GameObject uiDisplayObject;
+    
     public Dictionary<RessourceTypes, int> currentRessources = new Dictionary<RessourceTypes, int>()
     {
         { RessourceTypes.Trees, 0 },
@@ -31,6 +34,7 @@ public abstract class Player
 
     public void AddOwnedTile(Tile tile)
     {
+        tile.owner = this;
         ownedTiles.Add(tile);
     }
 
@@ -46,19 +50,38 @@ public abstract class Player
 
     public void ComputeRessources()
     {
-        // Reset current resources for each resource type
         foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
-        {
             currentRessources[resource] = 0;
-        }
 
-        // Accumulate resources produced by each tile
         foreach (Tile tile in ownedTiles)
         {
-            foreach (KeyValuePair<RessourceTypes, int> kvp in tile.producedRessources)
+            foreach (var kvp in tile.producedRessources)
             {
                 currentRessources[kvp.Key] += kvp.Value;
             }
         }
+
+        NotifyObservers();
     }
+
+
+    public void RegisterObserver(Observer observer)
+    {
+        if (!observers.Contains(observer))
+            observers.Add(observer);
+    }
+    public void NotifyObservers()
+    {
+        if (uiDisplayObject == null)
+        {
+            Debug.LogWarning("Player's uiDisplayObject is null, can't notify observers.");
+            return;
+        }
+
+        foreach (var observer in observers)
+        {
+            observer.ObserverUpdate(uiDisplayObject);
+        }
+    }
+
 }
