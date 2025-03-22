@@ -11,6 +11,8 @@ public class Board : MonoBehaviour
     public GameObject plainPrefab;
     public GameObject desertPrefab;
 
+    public event Action OnBoardGenerated;
+
     private TileType[,] grid;
     public int radius = 5;
 
@@ -119,6 +121,7 @@ public class Board : MonoBehaviour
 
         Debug.Log("[Board] Génération du plateau terminée !");
         LogAllTiles();
+        OnBoardGenerated?.Invoke();
     }
 
     private bool IsTileGenerated(int q, int r)
@@ -288,5 +291,39 @@ public class Board : MonoBehaviour
         }
     }
 
+    public List<Tile> GetAllTiles()
+    {
+        return new List<Tile>(FindObjectsOfType<Tile>());
+    }
 
+    public void InitializePlayerResources(Player player)
+    {
+        Dictionary<RessourceTypes, int> totalResources = new();
+
+        // Parcours toutes les tuiles générées
+        foreach (TileType type in Enum.GetValues(typeof(TileType)))
+        {
+            totalResources[(RessourceTypes)type] = 0;
+        }
+
+        foreach (Tile tile in FindObjectsOfType<Tile>())
+        {
+            foreach (var kvp in tile.producedRessources)
+            {
+                if (!totalResources.ContainsKey(kvp.Key))
+                    totalResources[kvp.Key] = 0;
+
+                totalResources[kvp.Key] += kvp.Value;
+            }
+        }
+
+        // Initialise les ressources du joueur à 10 % du total
+        foreach (var kvp in totalResources)
+        {
+            int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
+            player.currentRessources[kvp.Key] = initialAmount;
+
+            Debug.Log($"[Board] Ressource initiale pour {kvp.Key} : {initialAmount} (10% de {kvp.Value})");
+        }
+    }
 }

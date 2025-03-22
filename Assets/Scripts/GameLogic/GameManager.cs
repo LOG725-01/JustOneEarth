@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -9,6 +10,14 @@ public class GameManager : MonoBehaviour
 
     GameState gameState;
 
+    [SerializeField] private Player humanPlayer;
+    [SerializeField] private Board board;
+    [SerializeField] private HumanPlayer humanPlayerPrefab;
+    [SerializeField] private AIPlayer aiPlayerPrefab;
+
+    private HumanPlayer humanPlayerInstance;
+    private AIPlayer aiPlayerInstance;
+
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
 
     private bool gameStarted = false;
@@ -18,16 +27,38 @@ public class GameManager : MonoBehaviour
         this.gameMode = gameMode;
     }
 
+    private void Awake()
+    {
+        if (humanPlayer == null)
+            humanPlayer = FindObjectOfType<HumanPlayer>();
+
+        if (board == null)
+            board = FindObjectOfType<Board>();
+    }
+
+
     public void StartGame()
     {
-        gameState = new GameState();
+        gameState = new GameObject("GameState").AddComponent<GameState>();
+        gameState.SetBoard(board);
         var observers = FindObjectsOfType<Observer>();
-        var player = gameState.getCurrentPlayingPlayer();
-        gameState.AddPlayers(gameMode);
+
+
+        // Instanciation dans la scène
+        humanPlayerInstance = Instantiate(humanPlayerPrefab);
+        aiPlayerInstance = Instantiate(aiPlayerPrefab);
+
+        Player player = humanPlayerInstance;
+
+        // Passage à GameState
+        gameState.players.Add(humanPlayerInstance);
+        gameState.players.Add(aiPlayerInstance);
+
+        gameState.currentInstancePlayer = humanPlayerInstance;
 
         //TODO : fix nullexception when not commented
         //gameState.CreateBoard();
-        
+
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
@@ -40,6 +71,15 @@ public class GameManager : MonoBehaviour
         {
             notifier.OnGameObjectClicked += HandlePlayerInput;
         }
+
+        board.OnBoardGenerated += () =>
+        {
+            var allTiles = board.GetAllTiles();
+            InitializePlayerStartingResources(humanPlayerInstance, allTiles);
+            AssignStartingTiles(humanPlayerInstance, allTiles, 3);
+            RegisterObserversToPlayer(humanPlayerInstance);
+        };
+
 
         // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
         gameStarted = true;
@@ -103,5 +143,56 @@ public class GameManager : MonoBehaviour
                 // Le joueur humain peut interagir manuellement
                 // Rien à faire ici : ses actions passent par les événements (clics, boutons UI, etc.)
             }
+    }
+
+    private void InitializePlayerStartingResources(Player player, List<Tile> tiles)
+    {
+        Dictionary<RessourceTypes, int> totalResources = new();
+
+        foreach (RessourceTypes type in System.Enum.GetValues(typeof(RessourceTypes)))
+            totalResources[type] = 0;
+
+        foreach (var tile in tiles)
+        {
+            foreach (var kvp in tile.producedRessources)
+                totalResources[kvp.Key] += kvp.Value;
+        }
+
+        foreach (var kvp in totalResources)
+        {
+            int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
+            player.currentRessources[kvp.Key] = initialAmount;
+            Debug.Log($"[GameManager] Ressource de départ : {kvp.Key} = {initialAmount}");
+        }
+
+        player.NotifyObservers();
+    }
+
+    private void AssignStartingTiles(Player player, List<Tile> tiles, int count)
+    {
+        var unowned = tiles.FindAll(t => t.owner == null);
+        for (int i = 0; i < count && unowned.Count > 0; i++)
+        {
+            var tile = unowned[UnityEngine.Random.Range(0, unowned.Count)];
+            player.AddOwnedTile(tile);
+            tile.owner = player;
+            unowned.Remove(tile);
+
+            Debug.Log($"[GameManager] Tuile assignée au joueur : {tile.name}");
+        }
+
+        player.ComputeRessources();
+    }
+
+    void RegisterObserversToPlayer(Player player)
+    {
+        Observer[] observers = FindObjectsOfType<Observer>();
+
+        foreach (var obs in observers)
+        {
+            player.RegisterObserver(obs);
+        }
+
+        player.NotifyObservers(); // Force un premier affichage
     }
 }

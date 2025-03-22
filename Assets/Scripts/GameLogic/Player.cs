@@ -6,7 +6,6 @@ public abstract class Player : MonoBehaviour
 {
     public int points = 0;
     public List<Observer> observers = new List<Observer>();
-    public GameObject uiDisplayObject;
     
     public Dictionary<RessourceTypes, int> currentRessources = new Dictionary<RessourceTypes, int>()
     {
@@ -36,6 +35,7 @@ public abstract class Player : MonoBehaviour
     {
         tile.owner = this;
         ownedTiles.Add(tile);
+        Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
     }
 
     public void RemoveOwnedTile(Tile tile)
@@ -98,5 +98,4 @@ public abstract class Player : MonoBehaviour
             observer.ObserverUpdate(gameObject);
         }
     }
-
 }

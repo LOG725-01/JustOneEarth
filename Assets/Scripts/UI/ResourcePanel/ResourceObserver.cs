@@ -12,6 +12,7 @@ public class ResourceObserver : Observer
         {
             int amount = player.currentRessources[resourceType];
             resourcesNumber.text = amount.ToString();
+            Debug.Log($"[ResourceObserver] {resourceType} mis à jour : {amount}");
         }
     }
 }
