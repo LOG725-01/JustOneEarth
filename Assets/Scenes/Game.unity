@@ -1649,6 +1649,11 @@ MonoBehaviour:
     type: 3}
   desertPrefab: {fileID: 3071476736509204881, guid: 1a10bda8a1f9b4147bb8a72baf012761,
     type: 3}
+  animalPrefabs:
+  - {fileID: 3960520632956209504, guid: 813147f9daaae89439457e3cefa45a78, type: 3}
+  - {fileID: 6801724758315813758, guid: 8c16b9a1037e27b4494f324cdd675ec2, type: 3}
+  - {fileID: 5277245531795708601, guid: 92aa1604d598b304da59253aa234fa18, type: 3}
+  - {fileID: 4027616786645511909, guid: b59c74ce8c45f3a4b8ff6af77e153b5a, type: 3}
   radius: 5
 --- !u!4 &374974173
 Transform:

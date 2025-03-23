@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -10,6 +9,7 @@ public class Board : MonoBehaviour
     public GameObject lakePrefab;
     public GameObject plainPrefab;
     public GameObject desertPrefab;
+    public GameObject[] animalPrefabs;
 
     public event Action OnBoardGenerated;
 
@@ -36,7 +36,27 @@ public class Board : MonoBehaviour
     {
         CreateBoard();
     }
-
+    private void PlaceAnimals()
+    {
+        bool debug = true;
+        foreach (Transform tile in transform) // Parcourt tous les enfants du Board
+        {
+            Tile tileScript = tile.GetComponent<Tile>();
+            if (tileScript != null && tileScript.tileType == TileType.Plains)
+            {
+                // 50% de chance d'avoir un animal
+                if (UnityEngine.Random.value < 0.5f)
+                {
+                    Vector3 spawnPos = tile.position + Vector3.up * 0.2f; // Décalage vertical
+                    GameObject animal = Instantiate(
+                        animalPrefabs[UnityEngine.Random.Range(0, animalPrefabs.Length)], 
+                        spawnPos, Quaternion.identity, tile);
+                    if(debug) animal.GetComponent<AnimalMouvement>().SetDebug();
+                    debug = false;
+                }
+            }
+        }
+    }
     public void CreateBoard()
     {
         Debug.Log("[Board] Début de la génération du plateau...");
@@ -124,6 +144,7 @@ public class Board : MonoBehaviour
         Debug.Log("[Board] Génération du plateau terminée !");
         LogAllTiles();
         OnBoardGenerated?.Invoke();
+        PlaceAnimals();
     }
 
     private bool IsTileGenerated(int q, int r)
