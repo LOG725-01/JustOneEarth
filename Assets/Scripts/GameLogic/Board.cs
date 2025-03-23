@@ -123,7 +123,7 @@ public class Board : MonoBehaviour
                     continue;
                 }
 
-                GameObject tileObj = Instantiate(prefab, worldPos, Quaternion.identity);
+                GameObject tileObj = Instantiate(prefab, worldPos, Quaternion.identity, transform);
 
                 Tile tileComponent = tileObj.GetComponent<Tile>();
                 if (tileComponent != null)
