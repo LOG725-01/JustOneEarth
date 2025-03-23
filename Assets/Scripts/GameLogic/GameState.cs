@@ -14,45 +14,7 @@ public class GameState : MonoBehaviour
     public Player currentInstancePlayer;
     public int currentPlayerTurn = 0;
     public int turnCount = 0;
-    private Board currentBoard = new Board();
-
-    public void AddPlayers(GameMode gameMode)
-    {
-        currentInstancePlayer = new HumanPlayer();
-
-        if(gameMode == GameMode.PVE)
-        {
-            players.Add(currentInstancePlayer);
-            players.Add(new AIPlayer());
-        }
-        else if(gameMode == GameMode.PVP)
-        {
-            players.Add(currentInstancePlayer);
-            players.Add(new HumanPlayer());
-        }
-
-        Shuffle(players);
-    }
-
-    private void Shuffle(List<Player> list)
-    {
-        System.Random rng = new System.Random();
-
-        int n = list.Count;
-        while (n > 1)
-        {
-            n--;
-            int k = rng.Next(n + 1);
-            Player value = list[k];
-            list[k] = list[n];
-            list[n] = value;
-        }
-    }
-
-    public void CreateBoard()
-    {
-        currentBoard.CreateBoard();
-    }
+    private Board currentBoard;
 
     public Board GetCurrentBoard()
     {
@@ -91,5 +53,9 @@ public class GameState : MonoBehaviour
     {
         if (players.Count <= currentPlayerTurn) return null;
         return players.ElementAt<Player>(currentPlayerTurn);
+    }
+    public void SetBoard(Board board)
+    {
+        currentBoard = board;
     }
 }

@@ -2,9 +2,11 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Player
+public abstract class Player : MonoBehaviour
 {
     public int points = 0;
+    public List<Observer> observers = new List<Observer>();
+    
     public Dictionary<RessourceTypes, int> currentRessources = new Dictionary<RessourceTypes, int>()
     {
         { RessourceTypes.Trees, 0 },
@@ -31,7 +33,9 @@ public abstract class Player
 
     public void AddOwnedTile(Tile tile)
     {
+        tile.owner = this;
         ownedTiles.Add(tile);
+        Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
     }
 
     public void RemoveOwnedTile(Tile tile)
@@ -46,19 +50,52 @@ public abstract class Player
 
     public void ComputeRessources()
     {
-        // Reset current resources for each resource type
+        Debug.Log("[Player] Début du calcul des ressources...");
+
         foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
         {
             currentRessources[resource] = 0;
+            Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
         }
 
-        // Accumulate resources produced by each tile
         foreach (Tile tile in ownedTiles)
         {
-            foreach (KeyValuePair<RessourceTypes, int> kvp in tile.producedRessources)
+            Debug.Log($"[Player] Analyse de la tuile : {tile.gameObject.name}, Type : {tile.tileType}");
+
+            foreach (var kvp in tile.producedRessources)
             {
                 currentRessources[kvp.Key] += kvp.Value;
+                Debug.Log($"[Player] +{kvp.Value} {kvp.Key} depuis {tile.gameObject.name} (Total : {currentRessources[kvp.Key]})");
             }
+        }
+
+        Debug.Log("[Player] Calcul des ressources terminé. Résumé :");
+        foreach (var res in currentRessources)
+        {
+            Debug.Log($"[Player] {res.Key} = {res.Value}");
+        }
+
+        NotifyObservers();
+        Debug.Log("[Player] Observateurs notifiés.");
+    }
+
+
+    public void RegisterObserver(Observer observer)
+    {
+        if (!observers.Contains(observer))
+            observers.Add(observer);
+    }
+    public void NotifyObservers()
+    {
+        if (gameObject == null)
+        {
+            Debug.LogWarning("Player is null, can't notify observers.");
+            return;
+        }
+
+        foreach (var observer in observers)
+        {
+            observer.ObserverUpdate(gameObject);
         }
     }
 }

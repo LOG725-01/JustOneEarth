@@ -4,12 +4,22 @@ using UnityEngine;
 public class ResourceIncomeObserver : Observer
 {
     [SerializeField] private TextMeshProUGUI resourceIncome;
+    [SerializeField] private string suffix = " par tour";
+    [SerializeField] private RessourceTypes resourceType;
 
-    [SerializeField] private string suffix = "par tour";
     public override void ObserverUpdate(GameObject subject)
     {
-        throw new System.NotImplementedException();
-        resourceIncome.text = "Quantity" + " " + suffix;
-    }
+        if (subject.TryGetComponent<Player>(out var player))
+        {
+            int gain = 0;
 
+            foreach (var tile in player.ownedTiles)
+            {
+                if (tile.producedRessources.ContainsKey(resourceType))
+                    gain += tile.producedRessources[resourceType];
+            }
+
+            resourceIncome.text = "+" + gain.ToString() + " " + suffix;
+        }
+    }
 }
