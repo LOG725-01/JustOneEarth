@@ -16,19 +16,34 @@ public abstract class Player : MonoBehaviour
         { RessourceTypes.Oil, 0 }
     };
     public List<Tile> ownedTiles = new List<Tile>();
-    public List<Card> cards = new List<Card>();
+    public List<Card> deck = new List<Card>();
+    public List<Card> hand = new List<Card>();
+    public List<Card> discardPile = new List<Card>();
     public Tile selectedTile = null;
 
     public abstract Card GetBestPlayableCard();
 
-    public void AddCardInHand(Card card)
+    public void AddCardInDeck(Card card)
     {
-        cards.Add(card);
+        deck.Add(card);
     }
 
-    public void RemoveCardFromHand(Card card)
+    public void MoveCardFromDeckToHand(Card card)
     {
-        cards.Remove(card);
+        if (deck.Contains(card))
+        {
+            deck.Remove(card);
+            hand.Add(card);
+        }
+    }
+
+    public void MoveCardFromHandToDiscardPile(Card card)
+    {
+        if (hand.Contains(card))
+        { 
+            hand.Remove(card);
+            discardPile.Add(card);
+        }
     }
 
     public void AddOwnedTile(Tile tile)
@@ -79,12 +94,12 @@ public abstract class Player : MonoBehaviour
         Debug.Log("[Player] Observateurs notifiés.");
     }
 
-
     public void RegisterObserver(Observer observer)
     {
         if (!observers.Contains(observer))
             observers.Add(observer);
     }
+
     public void NotifyObservers()
     {
         if (gameObject == null)
