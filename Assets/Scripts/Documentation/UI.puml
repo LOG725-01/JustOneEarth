@@ -2,30 +2,94 @@
 allow_mixing
 skinparam ComponentBackgroundColor LightSkyBlue
 
-class InGameMenu {
-    - GameObject inGameMenu
-    - void Update()
-}
-note left of InGameMenu
-  open the In Game Menu
-  when escape is pressed
-end note
+!include toImport.puml
 
-class SecondaryButtonsActivation {
-    + {static} void SetActiveObject(GameObject gameObject)
+package Menu {
+    class ButtonController {
+        -ButtonListController listController
+        -int listControllerIndex
+
+        +void SetListController(ButtonListController _listController, int index)
+        +void HighlightAnimation()
+        +void NormalAnimation(bool force)
+        +void PressAnimation()
+        +void Select()
+    }
+
+    note left of ButtonController::Select
+    called when 
+    button is pressed
+    end note
+
+
+    class ButtonListController {
+        -ButtonController[] buttonControllers
+        -GameObject[] panels
+
+        -void OnValidate()
+        -void Awake()
+        +void AllNormal()
+        +void PressButton(int button)
+        +void OnDisable()
+    }
+
+    class InGameMenu {
+        - GameObject inGameMenu
+        - void Update()
+    }
+    note left of InGameMenu
+    open the In Game Menu
+    when escape is pressed
+    end note
+
 }
-note right of SecondaryButtonsActivation
-  open and close 
-  the right side
-  of the menu 
-end note
+
+package ResourcePanel {
+    class ResourceAnimationController {
+        +void Open()
+        +void Close()
+    }
+
+    class ResourceObserver {
+        - TextMeshProUGUI resourcesNumber
+    }
+    class ResourceIncomeObserver {
+        - TextMeshProUGUI resourceIncome
+        - string suffix
+        - RessourceTypes resourceType
+    }
+
+    class ResourcesPanel {
+        -TextMeshProUGUI buttonText
+        -ResourceAnimationController[] resources
+        -bool isOpened
+
+        -void Awake()
+        +void OpenClose()
+        -void Open()
+        -void Close()
+    }
+
+    component ResourceVisualPrefab
+}
 
 class Chat {
     + {static} Chat Instance
     - TextMeshProUGUI chatLog
+    - TextMeshProUGUI lastLine
+    - TextMeshProUGUI buttonText
     - TMP_InputField chatInput
     - string chatText
+    - bool isOpened
+    - bool wasOpened
+    -void Awake()
+    -void Start()
     +void Clean()
+    +void OpenClose()
+    +void InputSelect()
+    +void InputDeselect()
+    -void Open()
+    -void Close()
     -void AddLine(string line)
     +void AddChatMessage(string userName, string message)
     +void AddAnnouncement(string userName, string announcement)
@@ -38,57 +102,64 @@ AddChatMessage(string message) :
   text input
 end note
 
-class SceneChanger {
-    + {static} SceneChanger Instance;
-    - string gameScene
-    - string homeScene
-    - GameObject gameManagerPrefab
-    - GameMode gameMode
-    
-    - {static} void SceneChange(string scene)
-    + void GameStart()
-    + void Home()
-    + void QuitApp()
-}
-component SceneManagerPrefab
-component GameManagerPrefab
-
-abstract Observer {
-    + {abstract} void ObserverUpdate(GameObject subject)
-}
 class ScoreObserver {
     - Slider slider
     - TextMeshProUGUI scoreText
     - void Awake()
     - void Display(int score)
 }
-class ResourceObserver {
-    - TextMeshProUGUI resourcesNumber
-}
-class ResourceIncomeObserver {
-    - TextMeshProUGUI resourceIncome
-    - string suffix
-}
 
-class MaxScoreUpdate
-{
+class MaxScoreUpdate {
     - Slider slider
     - TextMeshProUGUI maxScoreText
-    + SetTotalScore(int value)
+    +void SetTotalScore(int value)
 }
-component RessourceVisualPrefab
+
+class TileInfo{
+    +{static} TileInfo Instance
+
+    -GameObject tileInfoObject
+
+    -TextMeshProUGUI tileTypeText
+    -TextMeshProUGUI ressourceText
+    -TextMeshProUGUI conditionText
+    -TextMeshProUGUI ownerText
+
+    - void Awake()
+
+    + void ChangeInfo(GameObject tileObject)
+
+    - void SetTexts(
+        string tileType, 
+        int resources, 
+        string resourceType, 
+        bool isOwner = true, 
+        string condition = "", 
+        string owner = "Civilisation")
+
+    +void Clear()
+}
+
 component ScoreVisualPrefab
-component SkillVisualPrefab
+
+
+Menu.ButtonController --l--|> AnimationController
+ResourcePanel.ResourcesPanel --l--|> AnimationController
+ResourcePanel.ResourceAnimationController --l--|> AnimationController
+
+Chat --l--|> AnimationController
 
 ScoreObserver --l--|> Observer
-ResourceObserver --l--|> Observer
-ResourceIncomeObserver --l--|> Observer
+ResourcePanel.ResourceObserver --l--|> Observer
+ResourcePanel.ResourceIncomeObserver --l--|> Observer
 
-SceneManagerPrefab --o SceneChanger : "Has"
-SceneManagerPrefab -l--o GameManagerPrefab : "Has"
+Menu.ButtonListController -l--o Menu.ButtonController : "Has"
+Menu.ButtonController --o Menu.ButtonListController : "Has"
 
-RessourceVisualPrefab --o ResourceIncomeObserver : "Has"
-RessourceVisualPrefab --o ResourceObserver : "Has"
+ResourcePanel.ResourceAnimationController --o ResourcePanel.ResourcesPanel : "Has"
+
+ResourcePanel.ResourceVisualPrefab --o ResourcePanel.ResourceIncomeObserver : "Has"
+ResourcePanel.ResourceVisualPrefab --o ResourcePanel.ResourceObserver : "Has"
 
 ScoreVisualPrefab --o MaxScoreUpdate : "Has"
 ScoreVisualPrefab --o ScoreObserver : "Has"
