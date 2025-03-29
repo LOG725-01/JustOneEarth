@@ -54,6 +54,7 @@ public class GameState : MonoBehaviour
         if (players.Count <= currentPlayerTurn) return null;
         return players.ElementAt<Player>(currentPlayerTurn);
     }
+    
     public void SetBoard(Board board)
     {
         currentBoard = board;

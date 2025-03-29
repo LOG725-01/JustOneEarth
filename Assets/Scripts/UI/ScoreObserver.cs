@@ -21,7 +21,7 @@ public class ScoreObserver : Observer
 
     public override void ObserverUpdate(GameObject subject)
     {
-        throw new System.NotImplementedException();
+        
         int score = 0;
         if (slider.maxValue < score) { Display((int)slider.maxValue); }
         else if (score <= 0) { Display(0); }
