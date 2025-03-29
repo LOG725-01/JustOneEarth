@@ -55,11 +55,11 @@ enum AnimalState {
 class AnimalMouvement {
     -bool isPredator
     +bool IsPredator { get }
-    +Coroutine coroutine;
+    +Coroutine coroutine
     -Tile currentTile
     -AnimalState isMoving
-    -int TiredCounter;
-    -AnimalAnimatorController animalAnimator;
+    -int TiredCounter
+    -AnimalAnimatorController animalAnimator
 
     -void Start()
     -void Init()
@@ -84,7 +84,7 @@ class AnimalMouvement {
 }
 class CloudMovement {
     +float speed
-    -Vector3 direction;
+    -Vector3 direction
     // Limites de la map
     -float minX
     -float maxX 
@@ -141,5 +141,161 @@ CloudMovement -l--o CloudPrefab : "Has"
 
 AnimalPrefab -l--o AnimalMouvement : "Has"
 AnimalPrefab -l--o AnimalAnimatorController : "Has"
+
+@enduml
+
+@startuml Animals 
+
+allow_mixing
+skinparam ComponentBackgroundColor LightSkyBlue
+
+abstract AnimationController {
+    # Animator animator
+    # string currentAnimation
+
+    # void ChangeAnimation(string animation, float crossfade = 0.2f)
+}
+
+class AnimalAnimatorController {
+    -string idle
+    -string idleValue
+    -string forward
+    -string forwardValue
+    -string turn
+    -string turnValue
+    -string shuffle
+    -string shuffleValue
+    -string sit
+    -string stand
+    -string eat
+    -string backward
+    -string attack
+    -string gotHit
+
+    -float sitStandDuration
+    -float turnDuration
+    -float gotHitDuration
+    -float attackDuration
+    -float shuffleDuration
+    -float eatDuration
+
+    -void Start()
+    -void SetValue(string name, float value)
+    -void SetRandomValue(string name)
+    +void IdleAnimation()
+    +void WalkRandomAnimation()
+    +void RunAnimation()
+    +void WalkBackwardAnimation()
+    +float TurnAnimation(bool turnLeft)
+    +float ShuffleAnimation()
+    +float SitStandAnimation(bool sitDown)
+    +float EatAnimation()
+    +float AttackAnimation()
+    +float GotHitAnimation()
+}
+
+enum AnimalState {
+    Idle
+    Sitted
+    Moving
+    AttackingPrey
+    AttackingPredator
+    GotHit
+    Eat
+}
+class AnimalMouvement {
+    -bool isPredator
+    +bool IsPredator { get }
+    -Coroutine coroutine
+    -Tile currentTile
+    -AnimalState isMoving
+    -int TiredCounter
+    -AnimalAnimatorController animalAnimator
+
+    -void Start()
+    -void Init()
+    -IEnumerator MoveRoutine()
+    -IEnumerator Moving()
+    -IEnumerator MoveToTile(Tile targetTile)
+    -IEnumerator RotateTowardsTarget(Vector3 targetPos)
+    -void OnCollisionEnter(Collision collision)
+    -void OnTriggerEnter(Collider other)
+    -void Idle()
+    -float Sit()
+    -float Stand()
+    -float Attack()
+    -float GotHit()
+    -float Eat()
+    -float Shuffle()
+    -float SignedAngle(Quaternion targetRotation)
+    -static float Angle(Quaternion rotation) 
+    -Vector3 GetRandomPosition(Tile tile)
+    -Tile GetTileUnder()
+    -Tile GetRandomAvailablePlainTile()
+}
+
+AnimalAnimatorController --l--|> AnimationController
+
+Tile -l--o AnimalMouvement
+AnimalState -l--o AnimalMouvement
+AnimalAnimatorController -l--o AnimalMouvement
+
+@enduml
+
+@startuml Animals2
+
+allow_mixing
+left to right direction
+skinparam ComponentBackgroundColor LightSkyBlue
+
+class AnimalAnimatorController {
+    -float sitStandDuration
+    -float turnDuration
+    -float gotHitDuration
+    -float attackDuration
+    -float shuffleDuration
+    -float eatDuration
+
+    -void Start()
+    +void IdleAnimation()
+    +void WalkRandomAnimation()
+    +void RunAnimation()
+    +void WalkBackwardAnimation()
+    +float TurnAnimation(bool turnLeft)
+    +float ShuffleAnimation()
+    +float SitStandAnimation(bool sitDown)
+    +float EatAnimation()
+    +float AttackAnimation()
+    +float GotHitAnimation()
+}
+
+
+class AnimalMouvement {
+    -bool isPredator
+    +bool IsPredator { get }
+    -AnimalState isMoving
+    -int TiredCounter
+    -AnimalAnimatorController animalAnimator
+
+    -void Start()
+    -IEnumerator MoveRoutine()
+    -void OnCollisionEnter(Collision collision)
+}
+
+class Board {
+    + GameObject[] animalPrefabs
+
+    - void PlaceAnimals()
+    + CreateBoard() : void
+}
+
+component AnimalPrefab
+
+AnimalAnimatorController -l--o AnimalMouvement
+
+AnimalPrefab -l--o AnimalMouvement
+AnimalPrefab -l--o AnimalAnimatorController
+
+Board --o AnimalPrefab
 
 @enduml
