@@ -73,11 +73,6 @@ public class GameManager : MonoBehaviour
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
-        foreach (var obs in observers)
-        {
-            player.RegisterObserver(obs);
-        }
-
         foreach (var notifier in playerInputNotifiers)
         {
             notifier.OnGameObjectClicked += HandlePlayerInput;
