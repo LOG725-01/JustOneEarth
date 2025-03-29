@@ -1,0 +1,145 @@
+@startuml Environment
+allow_mixing
+skinparam ComponentBackgroundColor LightSkyBlue
+
+!include toImport.puml
+
+class AnimalAnimatorController
+{
+    -string idle = "IdleBlend"
+    -string idleValue = "Idle"
+    -string forward = "ForwardBlend"
+    -string forwardValue = "Forward"
+    -string turn = "TurnBlend"
+    -string turnValue = "Turn"
+    -string shuffle = "ShuffleBlend"
+    -string shuffleValue = "Shuffle"
+    -string sit = "Sit"
+    -string stand = "Stand"
+    -string eat = "Eat"
+    -string backward = "Backward"
+    -string attack = "Attack"
+    -string gotHit = "GotHit"
+
+    -float sitStandDuration
+    -float turnDuration
+    -float gotHitDuration
+    -float attackDuration
+    -float shuffleDuration
+    -float eatDuration
+
+    -void Start()
+    -void SetValue(string name, float value)
+    -void SetRandomValue(string name)
+    +void IdleAnimation()
+    +void WalkRandomAnimation()
+    +void RunAnimation()
+    +void WalkBackwardAnimation()
+    +float TurnAnimation(bool turnLeft)
+    +float ShuffleAnimation()
+    +float SitStandAnimation(bool sitDown)
+    +float EatAnimation()
+    +float AttackAnimation()
+    +float GotHitAnimation()
+}
+
+enum AnimalState {
+    Idle
+    Sitted
+    Moving
+    AttackingPrey
+    AttackingPredator
+    GotHit
+    Eat
+}
+class AnimalMouvement {
+    -bool isPredator
+    +bool IsPredator { get }
+    +Coroutine coroutine;
+    -Tile currentTile
+    -AnimalState isMoving
+    -int TiredCounter;
+    -AnimalAnimatorController animalAnimator;
+
+    -void Start()
+    -void Init()
+    -IEnumerator MoveRoutine()
+    -IEnumerator Moving()
+    -IEnumerator MoveToTile(Tile targetTile)
+    -IEnumerator RotateTowardsTarget(Vector3 targetPos)
+    -void OnCollisionEnter(Collision collision)
+    -void OnTriggerEnter(Collider other)
+    -void Idle()
+    -float Sit()
+    -float Stand()
+    -float Attack()
+    -float GotHit()
+    -float Eat()
+    -float Shuffle()
+    -float SignedAngle(Quaternion targetRotation)
+    -static float Angle(Quaternion rotation) 
+    -Vector3 GetRandomPosition(Tile tile)
+    -Tile GetTileUnder()
+    -Tile GetRandomAvailablePlainTile()
+}
+class CloudMovement {
+    +float speed
+    -Vector3 direction;
+    // Limites de la map
+    -float minX
+    -float maxX 
+    -float minZ
+    -float maxZ
+    -CloudSpawner spawner
+
+    void Start()
+    void Update()
+    void RecycleCloud(float newX)
+}
+
+class CloudSpawner {
+    +GameObject cloudPrefab
+    +int cloudCount
+    +float minHeight
+    +float maxHeight
+
+    -float minX
+    -float maxX 
+    -float minZ
+    -float maxZ
+    -Board board
+    -List<Vector3> spawnedClouds
+
+    +float minScale
+    +float maxScale
+    +float minDistance
+
+    void Start()
+    +float GetMinX()
+    +float GetMaxX()
+    +float GetMinZ()
+    +float GetMaxZ()
+    void SpawnClouds()
+    bool IsPositionValid(Vector3 newPos)
+}
+
+component CloudPrefab
+component AnimalPrefab
+
+AnimalAnimatorController --l--|> AnimationController
+
+Tile -l--o AnimalMouvement : "Has"
+AnimalState -l--o AnimalMouvement : "Has"
+AnimalAnimatorController -l--o AnimalMouvement : "Has"
+
+CloudSpawner -l--o CloudMovement : "Has"
+
+CloudPrefab --o CloudSpawner : "Has"
+Board --o CloudSpawner : "Has"
+
+CloudMovement -l--o CloudPrefab : "Has"
+
+AnimalPrefab -l--o AnimalMouvement : "Has"
+AnimalPrefab -l--o AnimalAnimatorController : "Has"
+
+@enduml

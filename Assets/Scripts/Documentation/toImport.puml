@@ -1,0 +1,12 @@
+// @startuml ee
+
+abstract AnimationController {
+    # Animator animator
+    # string currentAnimation
+
+    # void ChangeAnimation(string animation, float crossfade = 0.2f)
+}
+
+abstract Observer {
+    + {abstract} void ObserverUpdate(GameObject subject)
+}
