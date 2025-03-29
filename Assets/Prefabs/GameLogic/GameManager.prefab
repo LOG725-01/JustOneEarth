@@ -44,7 +44,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cfcd536f4597ea49b4d916055a72265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  humanPlayer: {fileID: 0}
+  cardPrefab: {fileID: 332050406384195850, guid: 5506d9759be98214c97a3c0e83dfb50c,
+    type: 3}
   board: {fileID: 0}
   humanPlayerPrefab: {fileID: 3653038199808072157, guid: fce014801fe34584d93c45fec93085ea,
     type: 3}

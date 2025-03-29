@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
+using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -10,12 +11,15 @@ public class GameManager : MonoBehaviour
 
     GameState gameState;
 
-    [SerializeField] private Board board;
+    [SerializeField] GameObject cardPrefab;
+
     [SerializeField] private HumanPlayer humanPlayerPrefab;
     [SerializeField] private AIPlayer aiPlayerPrefab;
 
     private HumanPlayer humanPlayerInstance;
     private AIPlayer aiPlayerInstance;
+    
+    private Board board;
 
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
 
@@ -26,10 +30,11 @@ public class GameManager : MonoBehaviour
         this.gameMode = gameMode;
     }
 
-    private void Awake()
+    private void Start()
     {
         if (board == null)
             board = FindObjectOfType<Board>();
+        StartGame();
     }
 
 
@@ -61,6 +66,10 @@ public class GameManager : MonoBehaviour
             RegisterObserversToPlayer(humanPlayerInstance);
         };
 
+        PopulatePlayerDeck();
+
+        DrawCardToHand(humanPlayerInstance);
+
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
 
@@ -73,7 +82,7 @@ public class GameManager : MonoBehaviour
         {
             notifier.OnGameObjectClicked += HandlePlayerInput;
         }
-        // TODO : add card playing logic. Dont forget to add new cards and remove used cards in playerInputNotifiers
+
         gameStarted = true;
     }
 
@@ -89,29 +98,6 @@ public class GameManager : MonoBehaviour
             Debug.Log("Clicked object has no specific click behavior.");
         }
     }
-
-    public void PlayCardFromUI(Card card)
-    {
-        var player = gameState.getCurrentPlayingPlayer();
-
-        if (player is HumanPlayer human)
-        {
-            if (card.CanBePlayed(human.currentRessources) && human.selectedTile != null)
-            {
-                card.ApplyEffects(gameState);
-                human.RemoveCardFromHand(card);
-                human.ComputeRessources();
-
-                gameState.turnCount++;
-                gameState.SetCurrentPlayerTurnToNextPlayer();
-            }
-            else
-            {
-                Debug.Log("Carte non jouable ou tuile non sélectionnée.");
-            }
-        }
-    }
-
 
     private void Update()
     {
@@ -135,6 +121,49 @@ public class GameManager : MonoBehaviour
                 // Le joueur humain peut interagir manuellement
                 // Rien à faire ici : ses actions passent par les événements (clics, boutons UI, etc.)
             }
+    }
+    
+    private void DrawCardToHand(Player player)
+    {
+        if (player.deck.Count > 0)
+        {
+            System.Random random = new System.Random();
+            int randomIndex = random.Next(0, player.deck.Count);
+
+            Card drawnCard = player.deck[randomIndex];
+
+            player.MoveCardFromDeckToHand(drawnCard);
+
+            GameObject hand = GameObject.Find("CardHand");
+            drawnCard.gameObject.transform.SetParent(hand.transform, false);
+        }
+    }
+
+    private Card CreateCardInDeck(CardData cardData)
+    {
+        GameObject cardHand = GameObject.Find("Deck");
+        GameObject cardObject = Instantiate(cardPrefab, cardHand.transform);
+        Card card = cardObject.GetComponent<Card>();
+
+        TextMeshProUGUI name = cardObject.transform.Find("Name").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI description = cardObject.transform.Find("Description").GetComponent<TextMeshProUGUI>();
+
+        name.text = cardData.cardName;
+        description.text = cardData.description;
+
+        card.InitializeCard(name, description, cardData.effectList, cardData.cost);
+
+        return card;
+    }
+
+    private void PopulatePlayerDeck()
+    {
+        for (int i = 0; i < 10; i++) 
+        {
+            CardData cardData = new Card01();
+            Card card = CreateCardInDeck(cardData);
+            humanPlayerInstance.AddCardInDeck(card);
+        }
     }
 
     private void InitializePlayerStartingResources(Player player, List<Tile> tiles)
@@ -203,7 +232,6 @@ public class GameManager : MonoBehaviour
 
         player.ComputeRessources();
     }
-
 
     void RegisterObserversToPlayer(Player player)
     {

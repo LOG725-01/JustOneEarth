@@ -2,6 +2,7 @@ using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.XR;
 
 public class Card : AnimationController, IClickable
 {
@@ -10,6 +11,14 @@ public class Card : AnimationController, IClickable
 
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
+
+    public void InitializeCard(TextMeshProUGUI titleText, TextMeshProUGUI ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
+    {
+        this.titleText = titleText;
+        this.ressourceText = ressourceText;
+        this.effectList = effectList;
+        this.cost = cost;
+    }
 
     public void Start()
     {
@@ -35,10 +44,12 @@ public class Card : AnimationController, IClickable
             effect.ApplyEffect(gameState);
         }
     }
+    
     public Dictionary<RessourceTypes, int> GetCost()
     {
         return new Dictionary<RessourceTypes, int>(cost); // Copie défensive
     }
+    
     public bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
     {
         foreach (var entry in cost)
@@ -51,15 +62,24 @@ public class Card : AnimationController, IClickable
 
     public void OnClick(GameState gameState)
     {
+        Debug.Log("card clicked");
         // Check if its the turn of the player clicking
         if(gameState.getCurrentPlayingPlayer() == gameState.currentInstancePlayer)
         {
-            gameState = gameState.PlayCard(this);
-        
-            gameState.turnCount++;
-            gameState.SetCurrentPlayerTurnToNextPlayer();
-            //Update game visuals here
-            SelectedVisual();
+            // Check if card can be played and if a tile is selected
+            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
+            {
+                gameState = gameState.PlayCard(this);
+                gameState.turnCount++;
+                gameState.SetCurrentPlayerTurnToNextPlayer();
+                gameState.currentInstancePlayer.MoveCardFromHandToDiscardPile(this);
+
+                GameObject hand = GameObject.Find("DiscardPile");
+                this.gameObject.transform.SetParent(hand.transform, false);
+
+                //Update game visuals here
+                SelectedVisual();
+            }
         }
         else
         {
@@ -72,6 +92,7 @@ public class Card : AnimationController, IClickable
         ChangeAnimation("Selected");
 
     }
+    
     private void NormalVisual()
     {
         ChangeAnimation("Normal");
