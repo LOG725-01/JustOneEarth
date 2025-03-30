@@ -15,13 +15,12 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private HumanPlayer humanPlayerPrefab;
     [SerializeField] private AIPlayer aiPlayerPrefab;
-    [SerializeField] private GameObject boardPrefab;
-    [SerializeField] private GameObject cloudSpawnerPrefab;
+
 
     private HumanPlayer humanPlayerInstance;
     private AIPlayer aiPlayerInstance;
-    
-    private Board board;
+
+    [SerializeField] public Board board;
 
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
 
@@ -34,62 +33,41 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(InitializeGame());
-    }
-
-    private IEnumerator InitializeGame()
-    {
-
-        if (boardPrefab != null)
-        {
-            GameObject boardObject = Instantiate(boardPrefab);
-            board = boardObject.GetComponent<Board>();
-
-            if (board == null)
-            {
-                yield break;
-            }
-
-        }
-
-        if (cloudSpawnerPrefab != null)
-        {
-            GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
-            CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent<CloudSpawner>();
-
-            cloudSpawner.Initialize(board); 
-        }
-
-        yield return new WaitUntil(() => board.IsGenerated);
-
+        if (board == null)
+            board = FindObjectOfType<Board>();
         StartGame();
     }
 
 
     public void StartGame()
     {
-        if (board == null)
+        if (board != null)
         {
-            Debug.LogError("[GameManager] Board introuvable");
-            return;
+            Board boardObject = Instantiate(board);
+            board = boardObject.GetComponent<Board>();
+
+
         }
+
+        
 
         gameState = new GameObject("GameState").AddComponent<GameState>();
         gameState.SetBoard(board);
         var observers = FindObjectsOfType<Observer>();
+
 
         humanPlayerInstance = Instantiate(humanPlayerPrefab);
         aiPlayerInstance = Instantiate(aiPlayerPrefab);
 
         Player player = humanPlayerInstance;
 
-        // Passage ï¿½ GameState
+
         gameState.players.Add(humanPlayerInstance);
         gameState.players.Add(aiPlayerInstance);
 
         gameState.currentInstancePlayer = humanPlayerInstance;
 
-        if (board.IsGenerated)
+        board.OnBoardGenerated += () =>
         {
             Debug.Log($"[OnBoardGenerated] Invoker");
             var allTiles = board.GetAllTiles();
@@ -128,28 +106,26 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-        if (!gameStarted) return;
-        // Check if AI turn to play
+
         Player player = gameState.getCurrentPlayingPlayer();
 
-        if (player != null) 
+        if (player != null)
             if (player.GetType() == typeof(AIPlayer))
             {
-                // AI play
+
                 AIPlayer aiPlayer = (AIPlayer)player;
                 gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
 
                 gameState.turnCount++;
                 gameState.SetCurrentPlayerTurnToNextPlayer();
-                // TODO : Update game visuals here
+
             }
             else if (player is HumanPlayer)
             {
-                // Le joueur humain peut interagir manuellement
-                // Rien à faire ici : ses actions passent par les événements (clics, boutons UI, etc.)
+
             }
     }
-    
+
     private void DrawCardToHand(Player player)
     {
         if (player.deck.Count > 0)
@@ -185,7 +161,7 @@ public class GameManager : MonoBehaviour
 
     private void PopulatePlayerDeck()
     {
-        for (int i = 0; i < 10; i++) 
+        for (int i = 0; i < 10; i++)
         {
             CardData cardData = new Card01();
             Card card = CreateCardInDeck(cardData);
@@ -210,7 +186,7 @@ public class GameManager : MonoBehaviour
         {
             int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
             player.currentRessources[kvp.Key] = initialAmount;
-            Debug.Log($"[GameManager] Ressource de départ : {kvp.Key} = {initialAmount}");
+            Debug.Log($"[GameManager] Ressource de depart : {kvp.Key} = {initialAmount}");
         }
 
         player.NotifyObservers();
@@ -218,19 +194,19 @@ public class GameManager : MonoBehaviour
 
     private void AssignStartingTiles(Player player, List<Tile> tiles, int count)
     {
-        Debug.Log($"[GameManager] Assignation des tuiles — Total disponibles : {tiles.Count}");
+        Debug.Log($"[GameManager] Assignation des tuiles Total disponibles : {tiles.Count}");
 
         var unowned = tiles.FindAll(t => t != null && t.owner == null);
 
-        Debug.Log($"[GameManager] Tuiles sans propriétaire : {unowned.Count}");
+        Debug.Log($"[GameManager] Tuiles sans proprietaire : {unowned.Count}");
 
         if (unowned.Count == 0)
         {
-            Debug.LogWarning("[GameManager] Aucune tuile unowned trouvée !");
+            Debug.LogWarning("[GameManager] Aucune tuile unowned trouvee !");
             return;
         }
 
-        Debug.Log($"[AssignStartingTiles] Total tiles en entrée : {tiles.Count}");
+        Debug.Log($"[AssignStartingTiles] Total tiles en entree : {tiles.Count}");
 
         foreach (var tile in tiles)
         {
@@ -243,14 +219,14 @@ public class GameManager : MonoBehaviour
 
             if (tile == null)
             {
-                Debug.LogWarning("[GameManager] Tuile null rencontrée !");
+                Debug.LogWarning("[GameManager] Tuile null rencontree !");
                 continue;
             }
 
             player.AddOwnedTile(tile); // Appelle log dans Player.cs
             tile.owner = player;
 
-            Debug.Log($"[GameManager] Tuile assignée : {tile.name}, Type : {tile.tileType}");
+            Debug.Log($"[GameManager] Tuile assignee : {tile.name}, Type : {tile.tileType}");
 
             unowned.Remove(tile);
         }
@@ -269,6 +245,6 @@ public class GameManager : MonoBehaviour
             player.RegisterObserver(obs);
         }
 
-        player.NotifyObservers(); // Force un premier affichage
+        player.NotifyObservers();
     }
 }
