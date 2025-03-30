@@ -35,13 +35,12 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
-        StartCoroutine(CreateBoard());
+        CreateBoard();
     }
 
-    private IEnumerator CreateBoard()
+    private void CreateBoard()
     {
-        // Simuler un délai pour la génération du Board
-        yield return new WaitForSeconds(1.0f);
+
 
         Debug.Log("[Board] Génération du plateau...");
 
@@ -128,7 +127,7 @@ public class Board : MonoBehaviour
 
         //Debug.Log("[Board] Génération du plateau terminée !");
         LogAllTiles();
-        OnBoardGenerated?.Invoke();
+
         PlaceAnimals();
 
         IsGenerated = true;
