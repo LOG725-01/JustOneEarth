@@ -1373,6 +1373,21 @@ PrefabInstance:
       propertyPath: resourceType
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.8490566
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.55180645
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.42132428
+      objectReference: {fileID: 0}
     - target: {fileID: 8572669736562271747, guid: 83cfa3cae88326243bea2c2f5c71d9da,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -2453,6 +2468,21 @@ PrefabInstance:
       propertyPath: resourceType
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.4203132
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.82968754
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.90188676
+      objectReference: {fileID: 0}
     - target: {fileID: 8572669736562271747, guid: 83cfa3cae88326243bea2c2f5c71d9da,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -3461,6 +3491,21 @@ PrefabInstance:
       propertyPath: resourceType
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 8572669736562271747, guid: 83cfa3cae88326243bea2c2f5c71d9da,
         type: 3}
       propertyPath: m_AnchorMax.y
@@ -4283,6 +4328,21 @@ PrefabInstance:
         type: 3}
       propertyPath: resourceType
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.6150943
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.6150943
       objectReference: {fileID: 0}
     - target: {fileID: 8572669736562271747, guid: 83cfa3cae88326243bea2c2f5c71d9da,
         type: 3}
@@ -6765,6 +6825,21 @@ PrefabInstance:
         type: 3}
       propertyPath: m_fontSize
       value: 34.9
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.b
+      value: 0.2459736
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.g
+      value: 0.5144831
+      objectReference: {fileID: 0}
+    - target: {fileID: 6800045196978798628, guid: 83cfa3cae88326243bea2c2f5c71d9da,
+        type: 3}
+      propertyPath: m_Color.r
+      value: 0.7283019
       objectReference: {fileID: 0}
     - target: {fileID: 8572669736562271747, guid: 83cfa3cae88326243bea2c2f5c71d9da,
         type: 3}
