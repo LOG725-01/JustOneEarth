@@ -6,24 +6,30 @@ title Hiérarchie des scripts et GameObjects
 !include toImport.puml
 
 class GameManager{
+    - PlayerType playerType
     - gameMode : GameMode
     + gameState : GameState
-    - Board board
-    - HumanPlayer humanPlayerPrefab
-    - AIPlayer aiPlayerPrefab
-    - HumanPlayer humanPlayerInstance
-    - AIPlayer aiPlayerInstance
-    - List<PlayerInputNotifier> playerInputNotifiers
-    - bool gameStarted
-    + void setGameMode(GameMode gameMode)
-    + void Awake()
-    + void StartGame()
-    - void HandlePlayerInput(GameObject clickedObject)
-    + void PlayCardFromUI(Card card)
-    + Update()
-    - void InitializePlayerStartingResources(Player player, List<Tile> tiles)
-    - void AssignStartingTiles(Player player, List<Tile> tiles, int count)
-    void RegisterObserversToPlayer(Player player)
+    - board : Board
+    - cardPrefab : GameObject
+    - cloudSpawnerPrefab : GameObject
+    - humanPlayerPrefab : HumanPlayer
+    - aiPlayerPrefab : AIPlayer
+    - humanPlayerInstance : HumanPlayer
+    - aiPlayerInstance : AIPlayer
+    - playerInputNotifiers : List<PlayerInputNotifier>
+    - gameStarted : bool
+
+
+    - Start() : void 
+    + StartGame() : void
+    - HandlePlayerInput(GameObject clickedObject) : void
+    + Update() : void
+    - DrawCardToHand(Player player) : void
+    - CreateCardInDeck(CardData cardData) : Card
+    - PopulatePlayerDeck() : void
+    - InitializePlayerStartingResources(Player player, List<Tile> tiles) : void
+    - AssignStartingTiles(Player player, List<Tile> tiles, int count) : void
+    + RegisterObserversToPlayer(Player player) : void
 }
 note right of GameManager::Update()
 Trigger AI move when 
@@ -33,39 +39,45 @@ OnPlayerInput?.Invoke(move);
 end note
 
 class GameState {
-    + players : Lis<Player>
+    - PLAYER_AMOUNT : int
+    - WINNING_POINTS_AMOUNT : int
+    + players : List<Player>
     + Player currentInstancePlayer
     + currentPlayerTurn : int
     + turnCount : int
-    + currentBoard : Board
-    + GetCurrentBoard()
-    + addPlayers(player : Player)
+    - currentBoard : Board
+
+
+    + GetCurrentBoard() : Board
     + HasPlayerWon(player : Player) : bool
     + GetPlayableCards(player : Player) : List<Card>
     + PlayCard(cardAction : Card) : GameState
-    + SetCurrentPlayerTurnToNextPlayer()
+    + SetCurrentPlayerTurnToNextPlayer() : void
     + GetNextPlayingPlayerIndex() : int
     + getCurrentPlayingPlayer() : Player
-    + SetBoard(Board board)
+    + SetBoard(Board board) : void
 }
 
 abstract class Player{
     + points : int
     + observers : List<Observer>
-    + currentRessources : Dictionary<RessourceTypeEnum, int>
+    + currentRessources : Dictionary<RessourceTypes, int>
     + ownedTiles : List<Tile>
-    + cards : List<Card>
+    + deck : List<Card>
+    + hand : List<Card>
+    + discardPile : List<Card>
     + Tile selectedTile
 
-    + {abstract} Card GetBestPlayableCard()
-    + AddCardInHand(card : Card)
-    + RemoveCardFromHand(card : Card)
-    + AddOwnedTile(tile : Tile)
-    + RemoveOwnedTile(tile : Tile)
-    + ChangeSelectedTile(Tile tile)
-    + ComputeRessources()
-    + RegisterObserver(Observer observer)
-    + NotifyObservers()
+    + {abstract} GetBestPlayableCard() : Card
+    + AddCardInDeck(card : Card) : void
+    + MoveCardFromDeckToHand(card : Card) : void
+    + MoveCardFromHandToDiscardPile(card : Card) : void
+    + AddOwnedTile(tile : Tile) : void
+    + RemoveOwnedTile(tile : Tile) : void
+    + ChangeSelectedTile(Tile tile) : void
+    + ComputeRessources() : void
+    + RegisterObserver(Observer observer) : void
+    + NotifyObservers() : void
 }
 
 class HumanPlayer{
@@ -85,15 +97,17 @@ class Card {
     + effectList : List<ICardEffect>
     - TextMeshProUGUI titleText
     - TextMeshProUGUI ressourceText
+
+    + InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost) : void
     + Start()
-    + AddEffect(ICardEffect effect)
-    + AddCost(RessourceTypes ressource, int quantity)
-    + ApplyEffects(gameState : GameState)
-    + Dictionary<RessourceTypes, int> GetCost()
-    + bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
-    + OnClick(GameState gameState)
-    + void SelectedVisual()
-    + void NormalVisual()
+    + AddEffect(ICardEffect effect) : void
+    + AddCost(RessourceTypes ressource, int quantity) : void
+    + GetCost() : Dictionary<RessourceTypes, int>
+    + ApplyEffects(gameState : GameState) : void
+    + CanBePlayed(Dictionary<RessourceTypes, int> playerResources) : bool
+    + OnClick(GameState gameState) : void
+    + SelectedVisual() : void
+    + NormalVisual() : void
 }
 
 interface ICardEffect{
@@ -105,31 +119,32 @@ class GainPointEffect{
 }
 
 class Board {
-    + GameObject forestPrefab
-    + GameObject mountainPrefab
-    + GameObject lakePrefab
-    + GameObject plainPrefab
-    + GameObject desertPrefab
-    + GameObject[] animalPrefabs
-    + event Action OnBoardGenerated
-    - TileType[] grid
-    + int radius
-    - GenerationConfig config
-    Dictionary<TileType, float> probabilities
+    + forestPrefab : GameObject
+    + mountainPrefab : GameObject
+    + lakePrefab : GameObject
+    + plainPrefab : GameObject
+    + desertPrefab : GameObject
+    + animalPrefabs : GameObject[]
+    + OnBoardGenerated : event Action
+    - grid : TileType[,]
+    + radius : int
+    - config : GenerationConfig
+    + probabilities : Dictionary<TileType, float>
 
-    + Start()
-    - void PlaceAnimals()
+    + isGenerated : bool
+    + Awake() : void
     + CreateBoard() : void
-    - bool IsTileGenerated(int q, int r)
-    - void FixLonelyLakes()
-    - int CountNeighbors(int q, int r)
-    - bool IsInsideMap(int q, int r)
-    - GameObject GetTilePrefab(TileType type)
-    - Vector3 AxialToIsometric(int q, int r)
+    - PlaceAnimals() : void
+    - IsTileGenerated(int q, int r) : bool
+    - FixLonelyLakes() : void
+    - CountNeighbors(int q, int r) : int
+    - IsInsideMap(int q, int r) : bool
+    - GetTilePrefab(TileType type) : GameObject
+    - AxialToIsometric(int q, int r) : Vector3
     - GetRandomTileType(Dictionary<TileType, float> probabilities) : TileType
-    + void LogAllTiles()
-    + List<Tile> GetAllTiles()
-    + void InitializePlayerResources(Player player)
+    + LogAllTiles() : void
+    + GetAllTiles() : List<Tile>
+    + InitializePlayerResources(Player player) : void
 }
 
 note left of Board::CreateBoard
@@ -140,16 +155,16 @@ end note
 class Tile {
     + producedRessources : Dictionary<RessourceTypeEnum, int>
     + tileType : TileTypeEnum
-    + Player owner
+    + owner : Player
 
-    - AssignResources()
-    + OnClick()
-    + Initialize(TileType type)
+    - AssignResources() : void
+    + OnClick() : void
+    + Initialize(TileType type) : void
 }
 
 class PlayerInputNotifier {
     + OnGameObjectClicked : event Action<GameObject>
-    + OnMouseDown()
+    + OnMouseDown() : void
 }
 note right of PlayerInputNotifier::Update()
 // Notify all observers that 
@@ -158,7 +173,7 @@ OnPlayerInput?.Invoke(move);
 end note
 
 interface IClickable {
-    OnClick()
+    OnClick() : void
 }
 
 class GenerationConfig {
@@ -172,34 +187,39 @@ class GenerationConfig {
     + bool forceLakeNearMountains
     + bool forceForestNearLakes
 
-    + static GenerationConfig LoadFromJson()
+    + static LoadFromJson() : GenerationConfig
 }
 
 class CameraController {
-    - Camera cam;
-    + float moveSpeed
-    + float panSpeed
-    + float zoomSpeed
-    + float minZoom 
-    + float maxZoom
-    - Vector3 dragOrigin
-    - void Start()
-    - void Update()
-    - void HandlePan()
-    - void HandleZoom()
+    - cam : Camera
+    + moveSpeed : float
+    + panSpeed : float
+    + zoomSpeed : float
+    + minZoom : float
+    + maxZoom : float
+    - dragOrigin : Vector3
+    - Start() : void
+    - Update() : void
+    - HandlePan() : void
+    - HandleZoom() : void
 }
 
 class SceneChanger {
-    + {static} SceneChanger Instance;
-    - string gameScene
-    - string homeScene
-    - GameObject gameManagerPrefab
-    - GameMode gameMode
-    - void Start()
-    - {static} void SceneChange(string scene)
-    + void GameStart()
-    + void Home()
-    + void QuitApp()
+    + {static} Instance : SceneChanger
+    - gameScene : string
+    - homeScene : string
+    - gameManagerPrefab : GameObject
+    - gameMode : GameMode
+    - Awake() : void
+    - OnSceneLoaded(Scene scene, LoadSceneMode mode) : void
+    - OnEnable() : void
+    - OnDisable() : void
+    - {static} SceneChange(string scene) : void
+    + GameStartCivilisation() : void
+    + GameStartWorld() : void
+    + GameStart() : void
+    + Home() : void
+    + QuitApp() : void
 }
 
 class MonoBehavior #LightGreen
