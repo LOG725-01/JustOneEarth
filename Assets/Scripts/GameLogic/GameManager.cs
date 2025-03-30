@@ -1,7 +1,4 @@
-using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using TMPro;
 using UnityEngine;
 
@@ -150,16 +147,10 @@ public class GameManager : MonoBehaviour
     private Card CreateCardInDeck(CardData cardData)
     {
         GameObject cardHand = GameObject.Find("Deck");
-        GameObject cardObject = Instantiate(cardPrefab, cardHand.transform);
-        Card card = cardObject.GetComponent<Card>();
+        Card card = Instantiate(cardPrefab, cardHand.transform).GetComponent<Card>();
 
-        TextMeshProUGUI name = cardObject.transform.Find("Name").GetComponent<TextMeshProUGUI>();
-        TextMeshProUGUI description = cardObject.transform.Find("Description").GetComponent<TextMeshProUGUI>();
-
-        name.text = cardData.cardName;
-        description.text = cardData.description;
-
-        card.InitializeCard(name, description, cardData.effectList, cardData.cost);
+        card.InitializeCard(cardData.cardName, cardData.description, 
+            cardData.effectList, cardData.cost);
 
         return card;
     }
@@ -168,7 +159,7 @@ public class GameManager : MonoBehaviour
     {
         for (int i = 0; i < 10; i++)
         {
-            CardData cardData = new Card01();
+            CardData cardData = ScriptableObject.CreateInstance<Card01>();
             Card card = CreateCardInDeck(cardData);
             humanPlayerInstance.AddCardInDeck(card);
         }

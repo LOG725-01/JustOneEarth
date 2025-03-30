@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class Card : AnimationController, IClickable
 {
@@ -12,10 +10,10 @@ public class Card : AnimationController, IClickable
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
 
-    public void InitializeCard(TextMeshProUGUI titleText, TextMeshProUGUI ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
+    public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
     {
-        this.titleText = titleText;
-        this.ressourceText = ressourceText;
+        this.titleText.text = titleText;
+        this.ressourceText.text = ressourceText;
         this.effectList = effectList;
         this.cost = cost;
     }
@@ -66,16 +64,18 @@ public class Card : AnimationController, IClickable
         // Check if its the turn of the player clicking
         if(gameState.getCurrentPlayingPlayer() == gameState.currentInstancePlayer)
         {
+            Debug.Log("currentInstancePlayer");
             // Check if card can be played and if a tile is selected
             if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
             {
+                Debug.Log("CanBePlayed");
                 gameState = gameState.PlayCard(this);
                 gameState.turnCount++;
                 gameState.SetCurrentPlayerTurnToNextPlayer();
                 gameState.currentInstancePlayer.MoveCardFromHandToDiscardPile(this);
 
                 GameObject hand = GameObject.Find("DiscardPile");
-                this.gameObject.transform.SetParent(hand.transform, false);
+                gameObject.transform.SetParent(hand.transform, false);
 
                 //Update game visuals here
                 SelectedVisual();
