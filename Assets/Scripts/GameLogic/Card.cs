@@ -10,6 +10,7 @@ public class Card : AnimationController, IClickable
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
 
+    public bool debug = false;
     public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
     {
         this.titleText.text = titleText;
@@ -50,8 +51,11 @@ public class Card : AnimationController, IClickable
     
     public bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
     {
+        if (debug) Debug.Log("[Card] CanBePlayed called");
         foreach (var entry in cost)
         {
+            if (debug) Debug.Log("[Card] cost values : " + entry.Key.ToString() + " : " + entry.Value.ToString());
+            if (debug) Debug.Log("[Card] playerResources values : " + playerResources.ContainsKey(entry.Key).ToString() + " : " + playerResources[entry.Key].ToString());
             if (!playerResources.ContainsKey(entry.Key) || playerResources[entry.Key] < entry.Value)
                 return false;
         }
@@ -60,16 +64,16 @@ public class Card : AnimationController, IClickable
 
     public void OnClick(GameState gameState)
     {
-        Debug.Log("card clicked");
+        if (debug) Debug.Log("[Card] card clicked");
         // Check if its the turn of the player clicking
         if(gameState.getCurrentPlayingPlayer() == gameState.currentInstancePlayer)
         {
-            Debug.Log("currentInstancePlayer");
+            if (debug) Debug.Log("[Card] current Instance Player is current playing player");
             // Check if card can be played and if a tile is selected
-
+            if (debug) Debug.Log("[Card] selected tile : " + gameState.currentInstancePlayer.selectedTile.ToString());
             if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
             {
-                Debug.Log("CanBePlayed");
+                if (debug) Debug.Log("[Card] CanBePlayed");
                 gameState = gameState.PlayCard(this);
                 gameState.turnCount++;
                 gameState.SetCurrentPlayerTurnToNextPlayer();

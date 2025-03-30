@@ -5,6 +5,11 @@ using UnityEngine;
 public abstract class Player : MonoBehaviour
 {
     public int points = 0;
+    public int Points { get => points; 
+    set {
+            points = value;
+            NotifyObservers();
+        } }
     public List<Observer> observers = new List<Observer>();
     
     public Dictionary<RessourceTypes, int> currentRessources = new Dictionary<RessourceTypes, int>()

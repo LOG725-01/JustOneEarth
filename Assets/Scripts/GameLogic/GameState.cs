@@ -22,7 +22,7 @@ public class GameState : MonoBehaviour
 
     public bool HasPlayerWon(Player player)
     {
-        if(player.points >= WINNING_POINTS_AMOUNT) return true;
+        if(player.Points >= WINNING_POINTS_AMOUNT) return true;
         return false;
     }
 
@@ -35,6 +35,9 @@ public class GameState : MonoBehaviour
     public GameState PlayCard(Card card)
     {
         card.ApplyEffects(this);
+        turnCount++;
+        SetCurrentPlayerTurnToNextPlayer();
+        currentInstancePlayer.MoveCardFromHandToDiscardPile(card);
         return this;
     }
 
