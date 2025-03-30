@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class GameManager : MonoBehaviour
 {
-    private GameMode gameMode;
+    private PlayerType playerType;
 
     GameState gameState;
 
@@ -24,11 +24,6 @@ public class GameManager : MonoBehaviour
 
     private bool gameStarted = false;
 
-    public void setGameMode(GameMode gameMode)
-    {
-        this.gameMode = gameMode;
-    }
-
     private void Start()
     {
         if (board == null)
@@ -36,9 +31,12 @@ public class GameManager : MonoBehaviour
         StartGame();
     }
 
-
     public void StartGame()
     {
+        playerType = SceneChanger.PlayerType;
+
+        PlayerTurnUi.Instance.SetTurn(playerType);
+
         if (board != null)
         {
             Board boardObject = Instantiate(board);
