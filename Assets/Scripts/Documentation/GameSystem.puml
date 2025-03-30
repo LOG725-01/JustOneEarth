@@ -5,25 +5,31 @@ title Hiérarchie des scripts et GameObjects
 
 !include toImport.puml
 
-class GameManager{
+class GameManager {
     - gameMode : GameMode
     + gameState : GameState
-    - Board board
     - HumanPlayer humanPlayerPrefab
     - AIPlayer aiPlayerPrefab
     - HumanPlayer humanPlayerInstance
     - AIPlayer aiPlayerInstance
+    - GameObject cardPrefab
+    - GameObject boardPrefab
+    - GameObject cloudSpawnerPrefab
     - List<PlayerInputNotifier> playerInputNotifiers
     - bool gameStarted
     + void setGameMode(GameMode gameMode)
-    + void Awake()
+    - IEnumerator InitializeGame()
     + void StartGame()
+    + void Start()
     - void HandlePlayerInput(GameObject clickedObject)
     + void PlayCardFromUI(Card card)
-    + Update()
+    + void Update()
     - void InitializePlayerStartingResources(Player player, List<Tile> tiles)
     - void AssignStartingTiles(Player player, List<Tile> tiles, int count)
-    void RegisterObserversToPlayer(Player player)
+    - void RegisterObserversToPlayer(Player player)
+    - void DrawCardToHand(Player player)
+    - Card CreateCardInDeck(CardData cardData)
+    - void PopulatePlayerDeck()
 }
 note right of GameManager::Update()
 Trigger AI move when 
@@ -112,14 +118,15 @@ class Board {
     + GameObject desertPrefab
     + GameObject[] animalPrefabs
     + event Action OnBoardGenerated
-    - TileType[] grid
+    - TileType[,] grid
     + int radius
     - GenerationConfig config
     Dictionary<TileType, float> probabilities
+    + bool IsGenerated
 
     + Start()
+    - IEnumerator CreateBoard()
     - void PlaceAnimals()
-    + CreateBoard() : void
     - bool IsTileGenerated(int q, int r)
     - void FixLonelyLakes()
     - int CountNeighbors(int q, int r)
