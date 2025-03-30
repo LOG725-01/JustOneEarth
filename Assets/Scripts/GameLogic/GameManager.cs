@@ -62,6 +62,7 @@ public class GameManager : MonoBehaviour
 
         yield return new WaitUntil(() => board.IsGenerated);
 
+        StartGame();
     }
 
 
@@ -82,6 +83,7 @@ public class GameManager : MonoBehaviour
 
         Player player = humanPlayerInstance;
 
+        // Passage � GameState
         gameState.players.Add(humanPlayerInstance);
         gameState.players.Add(aiPlayerInstance);
 
@@ -95,10 +97,6 @@ public class GameManager : MonoBehaviour
             AssignStartingTiles(humanPlayerInstance, allTiles, 3);
             RegisterObserversToPlayer(humanPlayerInstance);
         };
-        var allTiles = board.GetAllTiles();
-        InitializePlayerStartingResources(humanPlayerInstance, allTiles);
-        AssignStartingTiles(humanPlayerInstance, allTiles, 3);
-        RegisterObserversToPlayer(humanPlayerInstance);
 
         PopulatePlayerDeck();
 
@@ -114,7 +112,6 @@ public class GameManager : MonoBehaviour
 
         gameStarted = true;
     }
-
 
     private void HandlePlayerInput(GameObject clickedObject)
     {
