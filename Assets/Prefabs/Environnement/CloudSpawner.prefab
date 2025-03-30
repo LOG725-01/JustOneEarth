@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1584049092688899793
+--- !u!1 &4141680717243987134
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,22 +8,22 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 5032871292603207637}
-  - component: {fileID: 9051178577978540509}
+  - component: {fileID: 4650170241231361655}
+  - component: {fileID: 3821214150926934108}
   m_Layer: 0
-  m_Name: GameManager
+  m_Name: CloudSpawner
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &5032871292603207637
+--- !u!4 &4650170241231361655
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584049092688899793}
+  m_GameObject: {fileID: 4141680717243987134}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -32,25 +32,23 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &9051178577978540509
+--- !u!114 &3821214150926934108
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1584049092688899793}
+  m_GameObject: {fileID: 4141680717243987134}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cfcd536f4597ea49b4d916055a72265, type: 3}
+  m_Script: {fileID: 11500000, guid: 914b7b9de29133c4f988b8dd181468ba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 332050406384195850, guid: 5506d9759be98214c97a3c0e83dfb50c,
+  cloudPrefab: {fileID: 7236893190109385892, guid: d6c3a4f012531d045887608f148d4895,
     type: 3}
-  humanPlayerPrefab: {fileID: 3653038199808072157, guid: fce014801fe34584d93c45fec93085ea,
-    type: 3}
-  aiPlayerPrefab: {fileID: 1972786255784142586, guid: fc1a0ce93e3954d4eb0f2f90075936fc,
-    type: 3}
-  boardPrefab: {fileID: 525612564829058452, guid: 378b9b6156dd6bb4c89cddec7e2d8f7d,
-    type: 3}
-  cloudSpawnerPrefab: {fileID: 4141680717243987134, guid: 75b962a9576aef744a51865f787f3347,
-    type: 3}
+  cloudCount: 2
+  minHeight: 1
+  maxHeight: 1
+  minScale: 1
+  maxScale: 3
+  minDistance: 1

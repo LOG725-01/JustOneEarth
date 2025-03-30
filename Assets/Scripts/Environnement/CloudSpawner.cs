@@ -9,15 +9,14 @@ public class CloudSpawner : MonoBehaviour
 
     private float minX, maxX, minZ, maxZ;
     private Board board;
-    private List<Vector3> spawnedClouds = new List<Vector3>(); // Stocke les positions des nuages existants
+    private List<Vector3> spawnedClouds = new List<Vector3>();
 
-    public float minScale = 0.8f, maxScale = 1.5f; // Taille aléatoire
-    public float minDistance = 1f; // Distance minimale entre deux nuages
+    public float minScale = 0.8f, maxScale = 1.5f;
+    public float minDistance = 1f;
 
-    void Start()
+    public void Initialize(Board board)
     {
-        board = FindObjectOfType<Board>();
-
+        this.board = board;
         if (board != null)
         {
             float boardSize = board.radius * 2;
@@ -25,14 +24,14 @@ public class CloudSpawner : MonoBehaviour
             maxX = boardSize / 2f;
             minZ = -boardSize / 2f;
             maxZ = boardSize / 2f;
+
+            Debug.Log("[CloudSpawner] Board initialisé pour la génération des nuages.");
+            SpawnClouds();
         }
         else
         {
-            Debug.LogError("Board introuvable dans la scène !");
-            return;
+            Debug.LogError("[CloudSpawner] Board introuvable !");
         }
-
-        SpawnClouds();
     }
     public float GetMinX() { return minX; }
     public float GetMaxX() { return maxX; }
@@ -40,13 +39,12 @@ public class CloudSpawner : MonoBehaviour
     public float GetMaxZ() { return maxZ; }
     void SpawnClouds()
     {
-        int attempts = 0; // Évite une boucle infinie
-        for (int i = 0; i < cloudCount*board.radius; i++)
+        int attempts = 0;
+        for (int i = 0; i < cloudCount * board.radius; i++)
         {
             Vector3 position;
             bool validPosition = false;
 
-            // Tente de trouver un emplacement valide
             while (!validPosition && attempts < 100)
             {
                 attempts++;
@@ -59,9 +57,9 @@ public class CloudSpawner : MonoBehaviour
                 if (IsPositionValid(position))
                 {
                     validPosition = true;
-                    spawnedClouds.Add(position); // Ajoute la position à la liste des nuages existants
+                    spawnedClouds.Add(position);
 
-                    float rotationY =  0f;
+                    float rotationY = 0f;
                     Quaternion rotation = Quaternion.Euler(0, rotationY, 0);
 
                     float randomScale = Random.Range(minScale, maxScale);
@@ -72,18 +70,19 @@ public class CloudSpawner : MonoBehaviour
                 }
             }
         }
+
+        Debug.Log("[CloudSpawner] Nuages générés.");
     }
 
-    // Vérifie si un nouveau nuage est trop proche des autres
     bool IsPositionValid(Vector3 newPos)
     {
         foreach (Vector3 existingPos in spawnedClouds)
         {
-            if (Vector3.Distance(newPos, existingPos) < minDistance*board.radius)
+            if (Vector3.Distance(newPos, existingPos) < minDistance * board.radius)
             {
-                return false; // Trop proche d'un autre nuage
+                return false;
             }
         }
-        return true; // La position est valide
+        return true;
     }
 }

@@ -1,4 +1,5 @@
 using System;
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -18,7 +19,7 @@ public class Board : MonoBehaviour
 
     private GenerationConfig config;
     Dictionary<TileType, float> probabilities;
-
+    public bool IsGenerated { get; private set; } = false;
     private void Awake()
     {
         //Debug.Log("[Board] Chargement de la configuration...");
@@ -34,31 +35,16 @@ public class Board : MonoBehaviour
 
     private void Start()
     {
-        CreateBoard();
+        StartCoroutine(CreateBoard());
     }
-    private void PlaceAnimals()
+
+    private IEnumerator CreateBoard()
     {
-        bool debug = true;
-        foreach (Transform tile in transform) // Parcourt tous les enfants du Board
-        {
-            Tile tileScript = tile.GetComponent<Tile>();
-            if (tileScript != null && tileScript.tileType == TileType.Plains)
-            {
-                // 50% de chance d'avoir un animal
-                if (UnityEngine.Random.value < 0.5f)
-                {
-                    Vector3 spawnPos = tile.position + Vector3.up * 0.2f; // Décalage vertical
-                    GameObject animal = Instantiate(
-                        animalPrefabs[UnityEngine.Random.Range(0, animalPrefabs.Length)], 
-                        spawnPos, Quaternion.identity, tile);
-                    if(debug) animal.GetComponent<AnimalMouvement>().SetDebug();
-                    debug = false;
-                }
-            }
-        }
-    }
-    public void CreateBoard()
-    {
+        // Simuler un délai pour la génération du Board
+        yield return new WaitForSeconds(1.0f);
+
+        Debug.Log("[Board] Génération du plateau...");
+
         //Debug.Log("[Board] Début de la génération du plateau...");
         grid = new TileType[radius * 2 + 1, radius * 2 + 1];
 
@@ -75,28 +61,28 @@ public class Board : MonoBehaviour
         foreach (var pair in probabilities)
             //Debug.Log($"  - {pair.Key}: {pair.Value * 100f}%");
 
-        for (int q = -radius; q <= radius; q++)
-        {
-            int r1 = Mathf.Max(-radius, -q - radius);
-            int r2 = Mathf.Min(radius, -q + radius);
-
-            for (int r = r1; r <= r2; r++)
+            for (int q = -radius; q <= radius; q++)
             {
-                float noise = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
-                //Debug.Log($"[Board] Perlin Noise pour ({q},{r}) = {noise}");
+                int r1 = Mathf.Max(-radius, -q - radius);
+                int r2 = Mathf.Min(radius, -q + radius);
 
-                if (!IsTileGenerated(q, r))
+                for (int r = r1; r <= r2; r++)
                 {
-                    grid[q + radius, r + radius] = TileType.None;
-                    //Debug.Log($"[Board] Tuile ignorée (noise trop faible) à ({q},{r})");
-                    continue;
-                }
+                    float noise = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
+                    //Debug.Log($"[Board] Perlin Noise pour ({q},{r}) = {noise}");
 
-                TileType selectedType = GetRandomTileType(probabilities);
-                grid[q + radius, r + radius] = selectedType;
-                //Debug.Log($"[Board] Tuile générée à ({q},{r}) : {selectedType}");
+                    if (!IsTileGenerated(q, r))
+                    {
+                        grid[q + radius, r + radius] = TileType.None;
+                        //Debug.Log($"[Board] Tuile ignorée (noise trop faible) à ({q},{r})");
+                        continue;
+                    }
+
+                    TileType selectedType = GetRandomTileType(probabilities);
+                    grid[q + radius, r + radius] = selectedType;
+                    //Debug.Log($"[Board] Tuile générée à ({q},{r}) : {selectedType}");
+                }
             }
-        }
 
         //Debug.Log("[Board] Correction des lacs isolés...");
         FixLonelyLakes();
@@ -144,7 +130,38 @@ public class Board : MonoBehaviour
         LogAllTiles();
         OnBoardGenerated?.Invoke();
         PlaceAnimals();
+
+        IsGenerated = true;
+
+        // Notifier que le Board est prêt
+        OnBoardGenerated?.Invoke();
+        Debug.Log("[Board] Plateau généré avec succès.");
     }
+
+    
+
+    private void PlaceAnimals()
+    {
+        bool debug = true;
+        foreach (Transform tile in transform) // Parcourt tous les enfants du Board
+        {
+            Tile tileScript = tile.GetComponent<Tile>();
+            if (tileScript != null && tileScript.tileType == TileType.Plains)
+            {
+                // 50% de chance d'avoir un animal
+                if (UnityEngine.Random.value < 0.5f)
+                {
+                    Vector3 spawnPos = tile.position + Vector3.up * 0.2f; // Décalage vertical
+                    GameObject animal = Instantiate(
+                        animalPrefabs[UnityEngine.Random.Range(0, animalPrefabs.Length)], 
+                        spawnPos, Quaternion.identity, tile);
+                    if(debug) animal.GetComponent<AnimalMouvement>().SetDebug();
+                    debug = false;
+                }
+            }
+        }
+    }
+
 
     private bool IsTileGenerated(int q, int r)
     {

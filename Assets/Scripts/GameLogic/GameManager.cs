@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private HumanPlayer humanPlayerPrefab;
     [SerializeField] private AIPlayer aiPlayerPrefab;
+    [SerializeField] private GameObject boardPrefab;
+    [SerializeField] private GameObject cloudSpawnerPrefab;
 
     private HumanPlayer humanPlayerInstance;
     private AIPlayer aiPlayerInstance;
@@ -32,26 +34,54 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (board == null)
-            board = FindObjectOfType<Board>();
-        StartGame();
+        StartCoroutine(InitializeGame());
+    }
+
+    private IEnumerator InitializeGame()
+    {
+
+        if (boardPrefab != null)
+        {
+            GameObject boardObject = Instantiate(boardPrefab);
+            board = boardObject.GetComponent<Board>();
+
+            if (board == null)
+            {
+                yield break;
+            }
+
+        }
+
+        if (cloudSpawnerPrefab != null)
+        {
+            GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
+            CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent<CloudSpawner>();
+
+            cloudSpawner.Initialize(board); 
+        }
+
+        yield return new WaitUntil(() => board.IsGenerated);
+
     }
 
 
     public void StartGame()
     {
+        if (board == null)
+        {
+            Debug.LogError("[GameManager] Board introuvable");
+            return;
+        }
+
         gameState = new GameObject("GameState").AddComponent<GameState>();
         gameState.SetBoard(board);
         var observers = FindObjectsOfType<Observer>();
 
-
-        // Instanciation dans la scène
         humanPlayerInstance = Instantiate(humanPlayerPrefab);
         aiPlayerInstance = Instantiate(aiPlayerPrefab);
 
         Player player = humanPlayerInstance;
 
-        // Passage à GameState
         gameState.players.Add(humanPlayerInstance);
         gameState.players.Add(aiPlayerInstance);
 
@@ -65,6 +95,10 @@ public class GameManager : MonoBehaviour
             AssignStartingTiles(humanPlayerInstance, allTiles, 3);
             RegisterObserversToPlayer(humanPlayerInstance);
         };
+        var allTiles = board.GetAllTiles();
+        InitializePlayerStartingResources(humanPlayerInstance, allTiles);
+        AssignStartingTiles(humanPlayerInstance, allTiles, 3);
+        RegisterObserversToPlayer(humanPlayerInstance);
 
         PopulatePlayerDeck();
 
@@ -80,6 +114,7 @@ public class GameManager : MonoBehaviour
 
         gameStarted = true;
     }
+
 
     private void HandlePlayerInput(GameObject clickedObject)
     {
