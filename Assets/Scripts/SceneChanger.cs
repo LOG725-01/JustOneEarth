@@ -19,27 +19,6 @@ public class SceneChanger : MonoBehaviour
         if (currentScene == "") currentScene = homeScene;
     }
 
-
-    /*private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        if (scene.name == gameScene)
-        {
-            Debug.Log("[SceneChanger] Scne charge, initialisation GameManager");
-            Instantiate(gameManagerPrefab);
-        }
-    }
-
-    private void OnEnable()
-    {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
-    }*/
-    
-
     static private void SceneChange(string scene)
     {
         currentScene = scene;

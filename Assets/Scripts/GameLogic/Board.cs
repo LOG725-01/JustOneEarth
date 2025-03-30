@@ -33,12 +33,7 @@ public class Board : MonoBehaviour
         //Debug.Log("[Board] Configuration chargée avec succès.");
     }
 
-    private void Start()
-    {
-        CreateBoard();
-    }
-
-    private void CreateBoard()
+    public void CreateBoard()
     {
 
 

@@ -43,6 +43,7 @@ public class GameManager : MonoBehaviour
         {
             Board boardObject = Instantiate(board);
             board = boardObject.GetComponent<Board>();
+            board.CreateBoard();
         }
 
         if (cloudSpawnerPrefab != null)
@@ -83,7 +84,7 @@ public class GameManager : MonoBehaviour
         DrawCardToHand(humanPlayerInstance);
 
         playerInputNotifiers.Clear();
-        playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>());
+        playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>(true));
 
         foreach (var notifier in playerInputNotifiers)
         {
