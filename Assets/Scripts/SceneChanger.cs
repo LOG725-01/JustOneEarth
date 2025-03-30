@@ -12,8 +12,6 @@ public class SceneChanger : MonoBehaviour
     // TODO : gameMode must be changed dynamically when game starts using the selected mode from the interface
     private GameMode gameMode = GameMode.PVE;
 
-    
-
     private void Awake()
     {
         if (Instance != null) { if (Instance != this) Destroy(this); }
@@ -22,7 +20,7 @@ public class SceneChanger : MonoBehaviour
     }
 
 
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    /*private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == gameScene)
         {
@@ -39,7 +37,7 @@ public class SceneChanger : MonoBehaviour
     private void OnDisable()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
-    }
+    }*/
     
 
     static private void SceneChange(string scene)
