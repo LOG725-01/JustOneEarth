@@ -58,28 +58,28 @@ public class AnimalMouvement : MonoBehaviour
                     yield return Moving();
                     break;
                 case AnimalState.Sitted:
-                    yield return new WaitForSeconds(Stand());
+                    yield return new WaitForSeconds(animalAnimator.SitStandAnimation(false));
                     yield return Moving();
                     break;
                 case AnimalState.AttackingPredator:
-                    yield return new WaitForSeconds(Attack());
+                    yield return new WaitForSeconds(animalAnimator.AttackAnimation());
                     animalAnimator.WalkBackwardAnimation();
                     yield return new WaitForSeconds(0.5f);
                     Idle();
                     break;
                 case AnimalState.AttackingPrey:
-                    yield return new WaitForSeconds(Attack());
+                    yield return new WaitForSeconds(animalAnimator.AttackAnimation());
                     Idle();
                     break;
                 case AnimalState.Eat:
-                    yield return new WaitForSeconds(Shuffle());
+                    yield return new WaitForSeconds(animalAnimator.ShuffleAnimation());
                     animalAnimator.WalkBackwardAnimation();
                     yield return new WaitForSeconds(0.5f);
-                    yield return new WaitForSeconds(Eat());
+                    yield return new WaitForSeconds(animalAnimator.EatAnimation());
                     Idle();
                     break;
                 case AnimalState.GotHit:
-                    yield return new WaitForSeconds(GotHit());
+                    yield return new WaitForSeconds(animalAnimator.GotHitAnimation());
                     animalAnimator.WalkBackwardAnimation();
                     yield return new WaitForSeconds(1f);
                     Idle();
@@ -114,7 +114,12 @@ public class AnimalMouvement : MonoBehaviour
 
         //transform.position = endPos;
         TiredCounter--;
-        if (TiredCounter == 0) yield return new WaitForSeconds(Sit());
+        if (TiredCounter == 0)
+        {
+            TiredCounter = Random.Range(3, 6);
+            isMoving = AnimalState.Sitted;
+            yield return new WaitForSeconds(animalAnimator.SitStandAnimation(true));
+        }
         else Idle();
     }
 
@@ -165,35 +170,6 @@ public class AnimalMouvement : MonoBehaviour
     {
         isMoving = AnimalState.Idle;
         animalAnimator.IdleAnimation();
-    }
-    private float Sit()
-    {
-        TiredCounter = Random.Range(3, 6);
-        isMoving = AnimalState.Sitted;
-        return animalAnimator.SitStandAnimation(true);
-    }
-    private float Stand()
-    {
-        return animalAnimator.SitStandAnimation(false);
-    }
-    private float Attack()
-    {
-        return animalAnimator.AttackAnimation();
-    }
-
-    private float GotHit()
-    {
-        return animalAnimator.GotHitAnimation();
-    }
-
-    private float Eat()
-    {
-        return animalAnimator.EatAnimation();
-    }
-
-    private float Shuffle()
-    {
-        return animalAnimator.ShuffleAnimation();
     }
 
     private float SignedAngle(Quaternion targetRotation)
