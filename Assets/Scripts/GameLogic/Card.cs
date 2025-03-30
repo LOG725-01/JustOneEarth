@@ -78,6 +78,8 @@ public class Card : AnimationController, IClickable
                 gameState.turnCount++;
                 gameState.SetCurrentPlayerTurnToNextPlayer();
                 gameState.currentInstancePlayer.MoveCardFromHandToDiscardPile(this);
+                gameState.currentInstancePlayer.AddOwnedTile(gameState.currentInstancePlayer.selectedTile);
+                gameState.currentInstancePlayer.TrySpendResources(cost);
 
                 GameObject hand = GameObject.Find("DiscardPile");
                 gameObject.transform.SetParent(hand.transform, false);

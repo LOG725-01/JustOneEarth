@@ -120,4 +120,27 @@ public abstract class Player : MonoBehaviour
             observer.ObserverUpdate(gameObject);
         }
     }
+
+    public bool TrySpendResources(Dictionary<RessourceTypes, int> cost)
+    {
+        // Vérifie si le joueur a assez de ressources
+        foreach (var res in cost)
+        {
+            if (!currentRessources.ContainsKey(res.Key) || currentRessources[res.Key] < res.Value)
+            {
+                if (debug) Debug.LogWarning($"[Player] Ressource insuffisante : {res.Key} requis = {res.Value}, disponible = {currentRessources[res.Key]}");
+                return false; // Ressource manquante
+            }
+        }
+
+        // Retire les ressources
+        foreach (var res in cost)
+        {
+            currentRessources[res.Key] -= res.Value;
+            if (debug) Debug.Log($"[Player] -{res.Value} {res.Key} (Nouveau total : {currentRessources[res.Key]})");
+        }
+
+        NotifyObservers(); // Met à jour les UI/écouteurs
+        return true;
+    }
 }
