@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private HumanPlayer humanPlayerPrefab;
     [SerializeField] private AIPlayer aiPlayerPrefab;
+    [SerializeField] private GameObject boardPrefab;
+    [SerializeField] private GameObject cloudSpawnerPrefab;
 
     private HumanPlayer humanPlayerInstance;
     private AIPlayer aiPlayerInstance;
@@ -32,26 +34,56 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        if (board == null)
-            board = FindObjectOfType<Board>();
+        StartCoroutine(InitializeGame());
+    }
+
+    private IEnumerator InitializeGame()
+    {
+
+        if (boardPrefab != null)
+        {
+            GameObject boardObject = Instantiate(boardPrefab);
+            board = boardObject.GetComponent<Board>();
+
+            if (board == null)
+            {
+                yield break;
+            }
+
+        }
+
+        if (cloudSpawnerPrefab != null)
+        {
+            GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
+            CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent<CloudSpawner>();
+
+            cloudSpawner.Initialize(board); 
+        }
+
+        yield return new WaitUntil(() => board.IsGenerated);
+
         StartGame();
     }
 
 
     public void StartGame()
     {
+        if (board == null)
+        {
+            Debug.LogError("[GameManager] Board introuvable");
+            return;
+        }
+
         gameState = new GameObject("GameState").AddComponent<GameState>();
         gameState.SetBoard(board);
         var observers = FindObjectsOfType<Observer>();
 
-
-        // Instanciation dans la scène
         humanPlayerInstance = Instantiate(humanPlayerPrefab);
         aiPlayerInstance = Instantiate(aiPlayerPrefab);
 
         Player player = humanPlayerInstance;
 
-        // Passage à GameState
+        // Passage ï¿½ GameState
         gameState.players.Add(humanPlayerInstance);
         gameState.players.Add(aiPlayerInstance);
 

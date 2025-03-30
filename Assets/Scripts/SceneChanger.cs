@@ -21,22 +21,26 @@ public class SceneChanger : MonoBehaviour
         if (currentScene == "") currentScene = homeScene;
     }
 
-    private void Start()
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
-        if (currentScene != homeScene)
+        if (scene.name == gameScene)
         {
-            GameObject gameManagerObject = Instantiate(gameManagerPrefab);
-
-            // Move the spawned object to the correct scene
-            Scene targetScene = SceneManager.GetSceneByName(gameScene);
-            SceneManager.MoveGameObjectToScene(gameManagerObject, targetScene);
-
-            Debug.Log(gameManagerObject.scene.name);
-
-            gameManagerPrefab.GetComponent<GameManager>().setGameMode(gameMode);
-            gameManagerPrefab.GetComponent<GameManager>().StartGame();
+            Debug.Log("[SceneChanger] Scne charge, initialisation GameManager");
+            Instantiate(gameManagerPrefab);
         }
     }
+
+    private void OnEnable()
+    {
+        SceneManager.sceneLoaded += OnSceneLoaded;
+    }
+
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+    
 
     static private void SceneChange(string scene)
     {

@@ -1,0 +1,62 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &525612564829058452
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1459600964050971101}
+  - component: {fileID: 3263724246756503873}
+  m_Layer: 0
+  m_Name: Board
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1459600964050971101
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525612564829058452}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &3263724246756503873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 525612564829058452}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8bef7645fac314c9334eb01f76f0fb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forestPrefab: {fileID: 8821519211399611794, guid: 9c88a5a0b95573e47ac16116daa7c8fe,
+    type: 3}
+  mountainPrefab: {fileID: 5491941545888889990, guid: 8a6e60bec99a89c42a8589b02724a9da,
+    type: 3}
+  lakePrefab: {fileID: 6577846409743846364, guid: a35046a635c98b64b84dcee759b87d5c,
+    type: 3}
+  plainPrefab: {fileID: 8079462019649907346, guid: a7416b1e757dbf44cb6684828f7160fc,
+    type: 3}
+  desertPrefab: {fileID: 3071476736509204881, guid: 1a10bda8a1f9b4147bb8a72baf012761,
+    type: 3}
+  animalPrefabs:
+  - {fileID: 3960520632956209504, guid: 813147f9daaae89439457e3cefa45a78, type: 3}
+  - {fileID: 6801724758315813758, guid: 8c16b9a1037e27b4494f324cdd675ec2, type: 3}
+  - {fileID: 5277245531795708601, guid: 92aa1604d598b304da59253aa234fa18, type: 3}
+  - {fileID: 4027616786645511909, guid: b59c74ce8c45f3a4b8ff6af77e153b5a, type: 3}
+  radius: 5
