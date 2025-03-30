@@ -24,7 +24,7 @@ public class SceneChanger : MonoBehaviour
     {
         if (scene.name == gameScene)
         {
-            Debug.Log("[SceneChanger] Scne charge, initialisation GameManager");
+            Debug.Log("[SceneChanger] Scene chargé, initialisation GameManager");
             Instantiate(gameManagerPrefab);
         }
     }

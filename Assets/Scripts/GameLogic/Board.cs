@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -20,9 +19,14 @@ public class Board : MonoBehaviour
     private GenerationConfig config;
     Dictionary<TileType, float> probabilities;
     public bool IsGenerated { get; private set; } = false;
+
+    public bool debug = false;
+    public bool debugAnimal = false;
+    public bool debugTile = false;
+
     private void Awake()
     {
-        //Debug.Log("[Board] Chargement de la configuration...");
+        if (debug) Debug.Log("[Board] Chargement de la configuration...");
         config = GenerationConfig.LoadFromJson();
         if (config == null)
         {
@@ -30,16 +34,14 @@ public class Board : MonoBehaviour
             return;
         }
 
-        //Debug.Log("[Board] Configuration chargée avec succès.");
+        if (debug) Debug.Log("[Board] Configuration chargée avec succès.");
     }
 
     public void CreateBoard()
     {
+        if (debug) Debug.Log("[Board] Génération du plateau...");
 
-
-        Debug.Log("[Board] Génération du plateau...");
-
-        //Debug.Log("[Board] Début de la génération du plateau...");
+        if (debug) Debug.Log("[Board] Début de la génération du plateau...");
         grid = new TileType[radius * 2 + 1, radius * 2 + 1];
 
         probabilities = new Dictionary<TileType, float>
@@ -51,9 +53,9 @@ public class Board : MonoBehaviour
             { TileType.Deserts, config.desertProbability / 100f }
         };
 
-        //Debug.Log("[Board] Probabilités assignées :");
+        if (debug) Debug.Log("[Board] Probabilités assignées :");
         foreach (var pair in probabilities)
-            //Debug.Log($"  - {pair.Key}: {pair.Value * 100f}%");
+            if (debug) Debug.Log($"  - {pair.Key}: {pair.Value * 100f}%");
 
             for (int q = -radius; q <= radius; q++)
             {
@@ -63,25 +65,25 @@ public class Board : MonoBehaviour
                 for (int r = r1; r <= r2; r++)
                 {
                     float noise = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
-                    //Debug.Log($"[Board] Perlin Noise pour ({q},{r}) = {noise}");
+                    if (debug) Debug.Log($"[Board] Perlin Noise pour ({q},{r}) = {noise}");
 
                     if (!IsTileGenerated(q, r))
                     {
                         grid[q + radius, r + radius] = TileType.None;
-                        //Debug.Log($"[Board] Tuile ignorée (noise trop faible) à ({q},{r})");
+                        if (debug) Debug.Log($"[Board] Tuile ignorée (noise trop faible) à ({q},{r})");
                         continue;
                     }
 
                     TileType selectedType = GetRandomTileType(probabilities);
                     grid[q + radius, r + radius] = selectedType;
-                    //Debug.Log($"[Board] Tuile générée à ({q},{r}) : {selectedType}");
+                    if (debug) Debug.Log($"[Board] Tuile générée à ({q},{r}) : {selectedType}");
                 }
             }
 
-        //Debug.Log("[Board] Correction des lacs isolés...");
+        if (debug) Debug.Log("[Board] Correction des lacs isolés...");
         FixLonelyLakes();
 
-        //Debug.Log("[Board] Instanciation des préfabriqués...");
+        if (debug) Debug.Log("[Board] Instanciation des préfabriqués...");
         for (int q = -radius; q <= radius; q++)
         {
             int r1 = Mathf.Max(-radius, -q - radius);
@@ -108,19 +110,19 @@ public class Board : MonoBehaviour
                 Tile tileComponent = tileObj.GetComponent<Tile>();
                 if (tileComponent != null)
                 {
-                    tileComponent.Initialize(type); // ⬅️ Ceci assigne le TileType ET génère les ressources
-                    //Debug.Log($"[Board] Tuile initialisée avec type {type} et ressources : " + string.Join(", ", tileComponent.producedRessources));
+                    tileComponent.Initialize(type, debugTile); // ⬅️ Ceci assigne le TileType ET génère les ressources
+                    if (debug) Debug.Log($"[Board] Tuile initialisée avec type {type} et ressources : " + string.Join(", ", tileComponent.producedRessources));
                 }
                 else
                 {
                     Debug.LogWarning($"[Board] Le prefab {prefab.name} n'a pas de composant Tile !");
                 }
 
-                //Debug.Log($"[Board] Instancié {type} à {worldPos}");
+                if (debug) Debug.Log($"[Board] Instancié {type} à {worldPos}");
             }
         }
 
-        //Debug.Log("[Board] Génération du plateau terminée !");
+        if (debug) Debug.Log("[Board] Génération du plateau terminée !");
         LogAllTiles();
 
         PlaceAnimals();
@@ -136,7 +138,6 @@ public class Board : MonoBehaviour
 
     private void PlaceAnimals()
     {
-        bool debug = true;
         foreach (Transform tile in transform) // Parcourt tous les enfants du Board
         {
             Tile tileScript = tile.GetComponent<Tile>();
@@ -149,8 +150,8 @@ public class Board : MonoBehaviour
                     GameObject animal = Instantiate(
                         animalPrefabs[UnityEngine.Random.Range(0, animalPrefabs.Length)], 
                         spawnPos, Quaternion.identity, tile);
-                    if(debug) animal.GetComponent<AnimalMouvement>().SetDebug();
-                    debug = false;
+                    if(debugAnimal) animal.GetComponent<AnimalMouvement>().SetDebug();
+                    debugAnimal = false;
                 }
             }
         }
@@ -162,7 +163,7 @@ public class Board : MonoBehaviour
         float noiseValue = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
         bool generated = noiseValue > 0.4335f;
 
-        //Debug.Log($"[Board] PerlinNoise ({q}, {r}) = {noiseValue:F4} → {(generated ? "Générée" : "Ignorée")}");
+        if (debug) Debug.Log($"[Board] PerlinNoise ({q}, {r}) = {noiseValue:F4} → {(generated ? "Générée" : "Ignorée")}");
 
         return generated;
     }
@@ -178,7 +179,7 @@ public class Board : MonoBehaviour
 
                 if (grid[q + radius, r + radius] == TileType.Lakes && CountNeighbors(q, r) != 6)
                 {
-                    //Debug.Log($"[Board] Lac isolé détecté à ({q},{r}) → remplacement...");
+                    if (debug) Debug.Log($"[Board] Lac isolé détecté à ({q},{r}) → remplacement...");
                     grid[q + radius, r + radius] = GetRandomTileType(probabilities, TileType.Lakes);
                 }
             }
@@ -194,7 +195,7 @@ public class Board : MonoBehaviour
     };
 
         int count = 0;
-        //Debug.Log($"[Board] → Comptage des voisins pour la tuile ({q}, {r})");
+        if (debug) Debug.Log($"[Board] → Comptage des voisins pour la tuile ({q}, {r})");
 
         foreach (var dir in directions)
         {
@@ -208,27 +209,27 @@ public class Board : MonoBehaviour
                 if (neighborType != TileType.None)
                 {
                     count++;
-                    //Debug.Log($"  ✓ Voisin à ({neighborQ}, {neighborR}) : {neighborType}");
+                    if (debug) Debug.Log($"  ✓ Voisin à ({neighborQ}, {neighborR}) : {neighborType}");
                 }
                 else
                 {
-                    //Debug.Log($"  ✗ Voisin à ({neighborQ}, {neighborR}) : vide");
+                    if (debug) Debug.Log($"  ✗ Voisin à ({neighborQ}, {neighborR}) : vide");
                 }
             }
             else
             {
-                //Debug.Log($"  ⛔ Hors de la carte : ({neighborQ}, {neighborR})");
+                if (debug) Debug.Log($"  ⛔ Hors de la carte : ({neighborQ}, {neighborR})");
             }
         }
 
-        //Debug.Log($"[Board] Nombre total de voisins valides : {count}");
+        if (debug) Debug.Log($"[Board] Nombre total de voisins valides : {count}");
         return count;
     }
     private bool IsInsideMap(int q, int r)
     {
         bool inside = Math.Abs(q) <= radius && Math.Abs(r) <= radius && Math.Abs(-q - r) <= radius;
 
-        //Debug.Log($"[Board] Vérification IsInsideMap({q}, {r}) → {(inside ? "✔️ À l’intérieur" : "❌ Hors limites")}");
+        if (debug) Debug.Log($"[Board] Vérification IsInsideMap({q}, {r}) → {(inside ? "✔️ À l’intérieur" : "❌ Hors limites")}");
 
         return inside;
     }
@@ -239,23 +240,23 @@ public class Board : MonoBehaviour
         switch (type)
         {
             case TileType.Forests:
-                //Debug.Log("[Board] Préfabriqué demandé pour : Forests");
+                if (debug) Debug.Log("[Board] Préfabriqué demandé pour : Forests");
                 return forestPrefab;
 
             case TileType.Mountains:
-                //Debug.Log("[Board] Préfabriqué demandé pour : Mountains");
+                if (debug) Debug.Log("[Board] Préfabriqué demandé pour : Mountains");
                 return mountainPrefab;
 
             case TileType.Lakes:
-                //Debug.Log("[Board] Préfabriqué demandé pour : Lakes");
+                if (debug) Debug.Log("[Board] Préfabriqué demandé pour : Lakes");
                 return lakePrefab;
 
             case TileType.Plains:
-                //Debug.Log("[Board] Préfabriqué demandé pour : Plains");
+                if (debug) Debug.Log("[Board] Préfabriqué demandé pour : Plains");
                 return plainPrefab;
 
             case TileType.Deserts:
-                //Debug.Log("[Board] Préfabriqué demandé pour : Deserts");
+                if (debug) Debug.Log("[Board] Préfabriqué demandé pour : Deserts");
                 return desertPrefab;
 
             default:
@@ -273,7 +274,7 @@ public class Board : MonoBehaviour
         float z = hexHeight * r;
 
         Vector3 position = new Vector3(x, 0, z);
-        //Debug.Log($"[Board] Conversion AxialToIsometric → ({q}, {r}) → WorldPos : {position}");
+        if (debug) Debug.Log($"[Board] Conversion AxialToIsometric → ({q}, {r}) → WorldPos : {position}");
 
         return position;
     }
@@ -284,22 +285,22 @@ public class Board : MonoBehaviour
         float roll = UnityEngine.Random.value;
         float cumulative = 0f;
 
-        //Debug.Log($"[Board] Sélection aléatoire d'une tuile... Roll = {roll:F4}" + (excludeType.HasValue ? $" (exclusion : {excludeType.Value})" : ""));
+        if (debug) Debug.Log($"[Board] Sélection aléatoire d'une tuile... Roll = {roll:F4}" + (excludeType.HasValue ? $" (exclusion : {excludeType.Value})" : ""));
 
         foreach (var entry in probabilities)
         {
             if (excludeType.HasValue && entry.Key == excludeType.Value)
             {
-                //Debug.Log($"[Board] → Ignoré : {entry.Key} (exclu)");
+                if (debug) Debug.Log($"[Board] → Ignoré : {entry.Key} (exclu)");
                 continue;
             }
 
             cumulative += entry.Value;
-            //Debug.Log($"[Board] → Cumul {entry.Key} : {cumulative:F4}");
+            if (debug) Debug.Log($"[Board] → Cumul {entry.Key} : {cumulative:F4}");
 
             if (roll <= cumulative)
             {
-                //Debug.Log($"[Board] ✅ Tuile sélectionnée : {entry.Key}");
+                if (debug) Debug.Log($"[Board] ✅ Tuile sélectionnée : {entry.Key}");
                 return entry.Key;
             }
         }
@@ -311,7 +312,7 @@ public class Board : MonoBehaviour
     public void LogAllTiles()
     {
         Tile[] tiles = FindObjectsOfType<Tile>();
-        //Debug.Log($"[Board] --- Résumé des tuiles générées ({tiles.Length}) ---");
+        if (debug) Debug.Log($"[Board] --- Résumé des tuiles générées ({tiles.Length}) ---");
 
         foreach (Tile tile in tiles)
         {
@@ -319,7 +320,7 @@ public class Board : MonoBehaviour
                 ? string.Join(", ", tile.producedRessources)
                 : "Aucune";
 
-            //Debug.Log($"→ {tile.name} | Type: {tile.tileType} | Ressources: {resSummary}");
+            if (debug) Debug.Log($"→ {tile.name} | Type: {tile.tileType} | Ressources: {resSummary}");
         }
     }
 
@@ -355,7 +356,7 @@ public class Board : MonoBehaviour
             int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
             player.currentRessources[kvp.Key] = initialAmount;
 
-            //Debug.Log($"[Board] Ressource initiale pour {kvp.Key} : {initialAmount} (10% de {kvp.Value})");
+            if (debug) Debug.Log($"[Board] Ressource initiale pour {kvp.Key} : {initialAmount} (10% de {kvp.Value})");
         }
     }
 }

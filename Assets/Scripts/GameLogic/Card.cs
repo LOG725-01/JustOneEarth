@@ -66,6 +66,7 @@ public class Card : AnimationController, IClickable
         {
             Debug.Log("currentInstancePlayer");
             // Check if card can be played and if a tile is selected
+
             if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
             {
                 Debug.Log("CanBePlayed");

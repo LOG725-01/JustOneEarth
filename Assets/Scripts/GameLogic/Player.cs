@@ -21,6 +21,8 @@ public abstract class Player : MonoBehaviour
     public List<Card> discardPile = new List<Card>();
     public Tile selectedTile = null;
 
+    public bool debug = false;
+
     public abstract Card GetBestPlayableCard();
 
     public void AddCardInDeck(Card card)
@@ -50,7 +52,7 @@ public abstract class Player : MonoBehaviour
     {
         tile.owner = this;
         ownedTiles.Add(tile);
-        Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
+        if (debug) Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
     }
 
     public void RemoveOwnedTile(Tile tile)
@@ -65,33 +67,33 @@ public abstract class Player : MonoBehaviour
 
     public void ComputeRessources()
     {
-        Debug.Log("[Player] Début du calcul des ressources...");
+        if (debug) Debug.Log("[Player] Début du calcul des ressources...");
 
         foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
         {
             currentRessources[resource] = 0;
-            Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
+            if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
         }
 
         foreach (Tile tile in ownedTiles)
         {
-            Debug.Log($"[Player] Analyse de la tuile : {tile.gameObject.name}, Type : {tile.tileType}");
+            if (debug) Debug.Log($"[Player] Analyse de la tuile : {tile.gameObject.name}, Type : {tile.tileType}");
 
             foreach (var kvp in tile.producedRessources)
             {
                 currentRessources[kvp.Key] += kvp.Value;
-                Debug.Log($"[Player] +{kvp.Value} {kvp.Key} depuis {tile.gameObject.name} (Total : {currentRessources[kvp.Key]})");
+                if (debug) Debug.Log($"[Player] +{kvp.Value} {kvp.Key} depuis {tile.gameObject.name} (Total : {currentRessources[kvp.Key]})");
             }
         }
 
-        Debug.Log("[Player] Calcul des ressources terminé. Résumé :");
+        if (debug) Debug.Log("[Player] Calcul des ressources terminé. Résumé :");
         foreach (var res in currentRessources)
         {
-            Debug.Log($"[Player] {res.Key} = {res.Value}");
+            if (debug) Debug.Log($"[Player] {res.Key} = {res.Value}");
         }
 
         NotifyObservers();
-        Debug.Log("[Player] Observateurs notifiés.");
+        if (debug) Debug.Log("[Player] Observateurs notifiés.");
     }
 
     public void RegisterObserver(Observer observer)

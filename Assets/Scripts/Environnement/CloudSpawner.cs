@@ -14,6 +14,7 @@ public class CloudSpawner : MonoBehaviour
     public float minScale = 0.8f, maxScale = 1.5f;
     public float minDistance = 1f;
 
+    public bool debug = false;
     public void Initialize(Board board)
     {
         this.board = board;
@@ -25,7 +26,7 @@ public class CloudSpawner : MonoBehaviour
             minZ = -boardSize / 2f;
             maxZ = boardSize / 2f;
 
-            Debug.Log("[CloudSpawner] Board initialisé pour la génération des nuages.");
+            if (debug) Debug.Log("[CloudSpawner] Board initialisé pour la génération des nuages.");
             SpawnClouds();
         }
         else
@@ -71,7 +72,7 @@ public class CloudSpawner : MonoBehaviour
             }
         }
 
-        Debug.Log("[CloudSpawner] Nuages générés.");
+        if (debug) Debug.Log("[CloudSpawner] Nuages générés.");
     }
 
     bool IsPositionValid(Vector3 newPos)

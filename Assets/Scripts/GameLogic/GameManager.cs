@@ -1,6 +1,28 @@
 using System.Collections.Generic;
 using UnityEngine;
 
+struct DebugValues
+{
+    public bool gameManager;
+    public bool board;
+    public bool animal;
+    public bool tile;
+    public bool player;
+    public bool gameState;
+    public bool cloud;
+   
+    public DebugValues(bool _)
+    {
+        gameManager = false;
+        board = false;
+        animal = false;
+        tile = false;
+        player = false;
+        gameState = false;
+        cloud = false;
+    }
+}
+
 public class GameManager : MonoBehaviour
 {
     private PlayerType playerType;
@@ -22,6 +44,8 @@ public class GameManager : MonoBehaviour
 
     private bool gameStarted = false;
 
+    DebugValues debugValues;
+
     private void Start()
     {
         if (board == null)
@@ -36,15 +60,19 @@ public class GameManager : MonoBehaviour
         PlayerTurnUi.Instance.SetTurn(playerType);
 
         humanPlayerInstance = Instantiate(humanPlayerPrefab);
+        humanPlayerInstance.debug = debugValues.player;
         aiPlayerInstance = Instantiate(aiPlayerPrefab);
 
         if (board != null)
         {
             Board boardObject = Instantiate(board);
             board = boardObject.GetComponent<Board>();
+            board.debug = debugValues.board;
+            board.debugAnimal = debugValues.animal;
+            board.debugTile = debugValues.tile;
             board.OnBoardGenerated += () =>
             {
-                Debug.Log($"[OnBoardGenerated] Invoker");
+                if (debugValues.gameManager) Debug.Log($"[OnBoardGenerated] Invoker");
                 var allTiles = board.GetAllTiles();
                 InitializePlayerStartingResources(humanPlayerInstance, allTiles);
                 AssignStartingTiles(humanPlayerInstance, allTiles, 3);
@@ -57,7 +85,7 @@ public class GameManager : MonoBehaviour
         {
             GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
             CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent<CloudSpawner>();
-
+            cloudSpawner.debug = debugValues.cloud;
             cloudSpawner.Initialize(board);
         }
 
@@ -95,7 +123,7 @@ public class GameManager : MonoBehaviour
         else
         {
             TileInfo.Instance.Clear();
-            Debug.Log("Clicked object has no specific click behavior.");
+            if (debugValues.gameManager) Debug.Log("Clicked object has no specific click behavior.");
         }
     }
 
@@ -174,7 +202,7 @@ public class GameManager : MonoBehaviour
         {
             int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
             player.currentRessources[kvp.Key] = initialAmount;
-            Debug.Log($"[GameManager] Ressource de depart : {kvp.Key} = {initialAmount}");
+            if (debugValues.gameManager) Debug.Log($"[GameManager] Ressource de depart : {kvp.Key} = {initialAmount}");
         }
 
         player.NotifyObservers();
@@ -182,11 +210,11 @@ public class GameManager : MonoBehaviour
 
     private void AssignStartingTiles(Player player, List<Tile> tiles, int count)
     {
-        Debug.Log($"[GameManager] Assignation des tuiles Total disponibles : {tiles.Count}");
+        if (debugValues.gameManager) Debug.Log($"[GameManager] Assignation des tuiles Total disponibles : {tiles.Count}");
 
         var unowned = tiles.FindAll(t => t != null && t.owner == null);
 
-        Debug.Log($"[GameManager] Tuiles sans proprietaire : {unowned.Count}");
+        if (debugValues.gameManager) Debug.Log($"[GameManager] Tuiles sans proprietaire : {unowned.Count}");
 
         if (unowned.Count == 0)
         {
@@ -194,11 +222,11 @@ public class GameManager : MonoBehaviour
             return;
         }
 
-        Debug.Log($"[AssignStartingTiles] Total tiles en entree : {tiles.Count}");
+        if (debugValues.gameManager) Debug.Log($"[AssignStartingTiles] Total tiles en entree : {tiles.Count}");
 
         foreach (var tile in tiles)
         {
-            Debug.Log($"[AssignStartingTiles] Tuile : {tile.name}, type: {tile.tileType}, owner: {(tile.owner == null ? "Aucun" : tile.owner.name)}");
+            if (debugValues.gameManager) Debug.Log($"[AssignStartingTiles] Tuile : {tile.name}, type: {tile.tileType}, owner: {(tile.owner == null ? "Aucun" : tile.owner.name)}");
         }
 
         for (int i = 0; i < count && unowned.Count > 0; i++)
@@ -214,12 +242,12 @@ public class GameManager : MonoBehaviour
             player.AddOwnedTile(tile); // Appelle log dans Player.cs
             tile.owner = player;
 
-            Debug.Log($"[GameManager] Tuile assignee : {tile.name}, Type : {tile.tileType}");
+            if (debugValues.gameManager) Debug.Log($"[GameManager] Tuile assignee : {tile.name}, Type : {tile.tileType}");
 
             unowned.Remove(tile);
         }
 
-        Debug.Log($"[GameManager] Tuiles finales du joueur : {player.ownedTiles.Count}");
+        if (debugValues.gameManager) Debug.Log($"[GameManager] Tuiles finales du joueur : {player.ownedTiles.Count}");
 
         player.ComputeRessources();
     }
