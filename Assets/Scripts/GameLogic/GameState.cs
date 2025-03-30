@@ -1,5 +1,4 @@
 using System;
-using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
@@ -41,6 +40,7 @@ public class GameState : MonoBehaviour
 
     public void SetCurrentPlayerTurnToNextPlayer()
     {
+        PlayerTurnUi.Instance.NextTurn();
         currentPlayerTurn = (currentPlayerTurn + 1) % PLAYER_AMOUNT;
     }
 
@@ -59,4 +59,5 @@ public class GameState : MonoBehaviour
     {
         currentBoard = board;
     }
+
 }

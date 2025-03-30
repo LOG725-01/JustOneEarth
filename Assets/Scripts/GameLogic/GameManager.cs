@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using TMPro;
 using UnityEngine;
 
 public class GameManager : MonoBehaviour
@@ -12,7 +11,6 @@ public class GameManager : MonoBehaviour
 
     [SerializeField] private HumanPlayer humanPlayerPrefab;
     [SerializeField] private AIPlayer aiPlayerPrefab;
-
 
     private HumanPlayer humanPlayerInstance;
     private AIPlayer aiPlayerInstance;
@@ -37,10 +35,21 @@ public class GameManager : MonoBehaviour
 
         PlayerTurnUi.Instance.SetTurn(playerType);
 
+        humanPlayerInstance = Instantiate(humanPlayerPrefab);
+        aiPlayerInstance = Instantiate(aiPlayerPrefab);
+
         if (board != null)
         {
             Board boardObject = Instantiate(board);
             board = boardObject.GetComponent<Board>();
+            board.OnBoardGenerated += () =>
+            {
+                Debug.Log($"[OnBoardGenerated] Invoker");
+                var allTiles = board.GetAllTiles();
+                InitializePlayerStartingResources(humanPlayerInstance, allTiles);
+                AssignStartingTiles(humanPlayerInstance, allTiles, 3);
+                RegisterObserversToPlayer(humanPlayerInstance);
+            };
             board.CreateBoard();
         }
 
@@ -57,25 +66,10 @@ public class GameManager : MonoBehaviour
         var observers = FindObjectsOfType<Observer>();
 
 
-        humanPlayerInstance = Instantiate(humanPlayerPrefab);
-        aiPlayerInstance = Instantiate(aiPlayerPrefab);
-
-        Player player = humanPlayerInstance;
-
-
         gameState.players.Add(humanPlayerInstance);
         gameState.players.Add(aiPlayerInstance);
 
         gameState.currentInstancePlayer = humanPlayerInstance;
-
-        board.OnBoardGenerated += () =>
-        {
-            Debug.Log($"[OnBoardGenerated] Invoker");
-            var allTiles = board.GetAllTiles();
-            InitializePlayerStartingResources(humanPlayerInstance, allTiles);
-            AssignStartingTiles(humanPlayerInstance, allTiles, 3);
-            RegisterObserversToPlayer(humanPlayerInstance);
-        };
 
         PopulatePlayerDeck();
 
@@ -113,7 +107,6 @@ public class GameManager : MonoBehaviour
         if (player != null)
             if (player.GetType() == typeof(AIPlayer))
             {
-
                 AIPlayer aiPlayer = (AIPlayer)player;
                 gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
 
