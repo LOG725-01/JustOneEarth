@@ -4870,7 +4870,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 115197521}
   m_Direction: 2
   m_Value: 0
-  m_Size: 0.13570744
+  m_Size: 0.13570745
   m_NumberOfSteps: 0
   m_OnValueChanged:
     m_PersistentCalls:
@@ -6480,7 +6480,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3394632497057166180, guid: d416ea66a75f4694b9fe42dd2e221136,
+          type: 3}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: QuitApp
         m_Mode: 1
@@ -7950,7 +7951,8 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 3394632497057166180, guid: d416ea66a75f4694b9fe42dd2e221136,
+          type: 3}
         m_TargetAssemblyTypeName: SceneChanger, Assembly-CSharp
         m_MethodName: Home
         m_Mode: 1

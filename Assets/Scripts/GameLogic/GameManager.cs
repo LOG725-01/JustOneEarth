@@ -89,7 +89,7 @@ public class GameManager : MonoBehaviour
 
         gameState.currentInstancePlayer = humanPlayerInstance;
 
-        board.OnBoardGenerated += () =>
+        if (board.IsGenerated)
         {
             Debug.Log($"[OnBoardGenerated] Invoker");
             var allTiles = board.GetAllTiles();
