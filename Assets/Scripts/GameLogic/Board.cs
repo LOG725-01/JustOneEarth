@@ -63,13 +63,13 @@ public class Board : MonoBehaviour
         grid = new TileType[radius * 2 + 1, radius * 2 + 1];
 
         probabilities = new Dictionary<TileType, float>
-    {
-        { TileType.Forests, config.forestProbability / 100f },
-        { TileType.Mountains, config.mountainProbability / 100f },
-        { TileType.Lakes, config.lakeProbability / 100f },
-        { TileType.Plains, config.plainProbability / 100f },
-        { TileType.Deserts, config.desertProbability / 100f }
-    };
+        {
+            { TileType.Forests, config.forestProbability / 100f },
+            { TileType.Mountains, config.mountainProbability / 100f },
+            { TileType.Lakes, config.lakeProbability / 100f },
+            { TileType.Plains, config.plainProbability / 100f },
+            { TileType.Deserts, config.desertProbability / 100f }
+        };
 
         //Debug.Log("[Board] Probabilités assignées :");
         foreach (var pair in probabilities)
