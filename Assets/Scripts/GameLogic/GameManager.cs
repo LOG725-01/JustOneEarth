@@ -21,6 +21,7 @@ public class GameManager : MonoBehaviour
     private AIPlayer aiPlayerInstance;
 
     [SerializeField] public Board board;
+    [SerializeField] private GameObject cloudSpawnerPrefab;
 
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
 
@@ -45,11 +46,15 @@ public class GameManager : MonoBehaviour
         {
             Board boardObject = Instantiate(board);
             board = boardObject.GetComponent<Board>();
-
-
         }
 
-        
+        if (cloudSpawnerPrefab != null)
+        {
+            GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
+            CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent<CloudSpawner>();
+
+            cloudSpawner.Initialize(board);
+        }
 
         gameState = new GameObject("GameState").AddComponent<GameState>();
         gameState.SetBoard(board);
