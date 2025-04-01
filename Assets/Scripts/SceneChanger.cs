@@ -6,13 +6,12 @@ public class SceneChanger : MonoBehaviour
     public static SceneChanger Instance;
     private static string currentScene = "";
 
+    private static PlayerType playerType = PlayerType.Civilisation;
+
+    public static PlayerType PlayerType {  get { return playerType; } }
+
     [SerializeField] private string gameScene, homeScene;
-    [SerializeField] private GameObject gameManagerPrefab;
-
-    // TODO : gameMode must be changed dynamically when game starts using the selected mode from the interface
-    private GameMode gameMode = GameMode.PVE;
-
-    
+    [SerializeField] private GameObject gameManagerPrefab;    
 
     private void Awake()
     {
@@ -21,12 +20,11 @@ public class SceneChanger : MonoBehaviour
         if (currentScene == "") currentScene = homeScene;
     }
 
-
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == gameScene)
         {
-            Debug.Log("[SceneChanger] Scne charge, initialisation GameManager");
+            Debug.Log("[SceneChanger] Scene chargé, initialisation GameManager");
             Instantiate(gameManagerPrefab);
         }
     }
@@ -40,7 +38,6 @@ public class SceneChanger : MonoBehaviour
     {
         SceneManager.sceneLoaded -= OnSceneLoaded;
     }
-    
 
     static private void SceneChange(string scene)
     {
@@ -48,12 +45,24 @@ public class SceneChanger : MonoBehaviour
         SceneManager.LoadScene(scene);
     }
 
+    public void GameStartCivilisation()
+    {
+        playerType = PlayerType.Civilisation;
+        GameStart();
+    }
+
+    public void GameStartWorld()
+    {
+        playerType = PlayerType.World;
+        GameStart();
+    }
+
     public void GameStart()
     {
-        // TODO : fix gameManagerObject creation
         SceneChange(gameScene);
-        
     }
+
+
 
     public void Home()
     {

@@ -1,8 +1,6 @@
-using System;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
-using UnityEngine.XR;
 
 public class Card : AnimationController, IClickable
 {
@@ -12,10 +10,11 @@ public class Card : AnimationController, IClickable
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
 
-    public void InitializeCard(TextMeshProUGUI titleText, TextMeshProUGUI ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
+    public bool debug = false;
+    public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
     {
-        this.titleText = titleText;
-        this.ressourceText = ressourceText;
+        this.titleText.text = titleText;
+        this.ressourceText.text = ressourceText;
         this.effectList = effectList;
         this.cost = cost;
     }
@@ -52,8 +51,11 @@ public class Card : AnimationController, IClickable
     
     public bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
     {
+        if (debug) Debug.Log("[Card] CanBePlayed called");
         foreach (var entry in cost)
         {
+            if (debug) Debug.Log("[Card] cost values : " + entry.Key.ToString() + " : " + entry.Value.ToString());
+            if (debug) Debug.Log("[Card] playerResources values : " + playerResources.ContainsKey(entry.Key).ToString() + " : " + playerResources[entry.Key].ToString());
             if (!playerResources.ContainsKey(entry.Key) || playerResources[entry.Key] < entry.Value)
                 return false;
         }
@@ -62,20 +64,25 @@ public class Card : AnimationController, IClickable
 
     public void OnClick(GameState gameState)
     {
-        Debug.Log("card clicked");
+        if (debug) Debug.Log("[Card] card clicked");
         // Check if its the turn of the player clicking
         if(gameState.getCurrentPlayingPlayer() == gameState.currentInstancePlayer)
         {
+            if (debug) Debug.Log("[Card] current Instance Player is current playing player");
             // Check if card can be played and if a tile is selected
+            if (debug) Debug.Log("[Card] selected tile : " + gameState.currentInstancePlayer.selectedTile.ToString());
             if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
             {
+                if (debug) Debug.Log("[Card] CanBePlayed");
                 gameState = gameState.PlayCard(this);
                 gameState.turnCount++;
                 gameState.SetCurrentPlayerTurnToNextPlayer();
                 gameState.currentInstancePlayer.MoveCardFromHandToDiscardPile(this);
+                gameState.currentInstancePlayer.AddOwnedTile(gameState.currentInstancePlayer.selectedTile);
+                gameState.currentInstancePlayer.TrySpendResources(cost);
 
                 GameObject hand = GameObject.Find("DiscardPile");
-                this.gameObject.transform.SetParent(hand.transform, false);
+                gameObject.transform.SetParent(hand.transform, false);
 
                 //Update game visuals here
                 SelectedVisual();

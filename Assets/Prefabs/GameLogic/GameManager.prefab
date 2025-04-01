@@ -44,10 +44,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9cfcd536f4597ea49b4d916055a72265, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  cardPrefab: {fileID: 332050406384195850, guid: 5506d9759be98214c97a3c0e83dfb50c,
+  cardPrefab: {fileID: 1421084962484503425, guid: c24d154c95ccddb4fb27b303dcd75765,
     type: 3}
   humanPlayerPrefab: {fileID: 3653038199808072157, guid: fce014801fe34584d93c45fec93085ea,
     type: 3}
   aiPlayerPrefab: {fileID: 1972786255784142586, guid: fc1a0ce93e3954d4eb0f2f90075936fc,
     type: 3}
   board: {fileID: 3263724246756503873, guid: 378b9b6156dd6bb4c89cddec7e2d8f7d, type: 3}
+  cloudSpawnerPrefab: {fileID: 4141680717243987134, guid: 75b962a9576aef744a51865f787f3347,
+    type: 3}

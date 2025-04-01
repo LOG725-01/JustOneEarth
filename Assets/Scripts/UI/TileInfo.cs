@@ -35,7 +35,10 @@ public class TileInfo : MonoBehaviour
                 }
             }
 
-            SetTexts(tile.tileType.ToString(), resources, resourceType);
+            string ownerName = tile.owner != null ? tile.owner.name : "Aucun";
+            bool isOwner = tile.owner != null;
+
+            SetTexts(tile.tileType.ToString(), resources, resourceType, isOwner, "", ownerName);
         }
     }
 
@@ -51,7 +54,7 @@ public class TileInfo : MonoBehaviour
         ressourceText.text = "+ " + resources.ToString() + " " + resourceType;
         if (isOwner) conditionText.text = string.Empty;
         else conditionText.text = condition;
-        ownerText.text = owner;
+        ownerText.text = "Propriétaire : " + owner;
         tileInfoObject.SetActive(true);
     }
 

@@ -1,4 +1,3 @@
-using Unity.VisualScripting;
 
 public class Card01 : CardData
 {

@@ -21,10 +21,12 @@ public class ScoreObserver : Observer
 
     public override void ObserverUpdate(GameObject subject)
     {
+        if (subject.TryGetComponent<Player>(out var player))
+        {
+            if (slider.maxValue < player.Points) { Display((int)slider.maxValue); }
+            else if (player.Points <= 0) { Display(0); }
+            else { Display(player.Points); }
+        }
         
-        int score = 0;
-        if (slider.maxValue < score) { Display((int)slider.maxValue); }
-        else if (score <= 0) { Display(0); }
-        else { Display(score); }
     }
 }

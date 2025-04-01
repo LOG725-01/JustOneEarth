@@ -5,6 +5,11 @@ using UnityEngine;
 public abstract class Player : MonoBehaviour
 {
     public int points = 0;
+    public int Points { get => points; 
+    set {
+            points = value;
+            NotifyObservers();
+        } }
     public List<Observer> observers = new List<Observer>();
     
     public Dictionary<RessourceTypes, int> currentRessources = new Dictionary<RessourceTypes, int>()
@@ -20,6 +25,8 @@ public abstract class Player : MonoBehaviour
     public List<Card> hand = new List<Card>();
     public List<Card> discardPile = new List<Card>();
     public Tile selectedTile = null;
+
+    public bool debug = false;
 
     public abstract Card GetBestPlayableCard();
 
@@ -50,7 +57,7 @@ public abstract class Player : MonoBehaviour
     {
         tile.owner = this;
         ownedTiles.Add(tile);
-        Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
+        if (debug) Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
     }
 
     public void RemoveOwnedTile(Tile tile)
@@ -65,33 +72,33 @@ public abstract class Player : MonoBehaviour
 
     public void ComputeRessources()
     {
-        Debug.Log("[Player] Début du calcul des ressources...");
+        if (debug) Debug.Log("[Player] Début du calcul des ressources...");
 
         foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
         {
             currentRessources[resource] = 0;
-            Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
+            if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
         }
 
         foreach (Tile tile in ownedTiles)
         {
-            Debug.Log($"[Player] Analyse de la tuile : {tile.gameObject.name}, Type : {tile.tileType}");
+            if (debug) Debug.Log($"[Player] Analyse de la tuile : {tile.gameObject.name}, Type : {tile.tileType}");
 
             foreach (var kvp in tile.producedRessources)
             {
                 currentRessources[kvp.Key] += kvp.Value;
-                Debug.Log($"[Player] +{kvp.Value} {kvp.Key} depuis {tile.gameObject.name} (Total : {currentRessources[kvp.Key]})");
+                if (debug) Debug.Log($"[Player] +{kvp.Value} {kvp.Key} depuis {tile.gameObject.name} (Total : {currentRessources[kvp.Key]})");
             }
         }
 
-        Debug.Log("[Player] Calcul des ressources terminé. Résumé :");
+        if (debug) Debug.Log("[Player] Calcul des ressources terminé. Résumé :");
         foreach (var res in currentRessources)
         {
-            Debug.Log($"[Player] {res.Key} = {res.Value}");
+            if (debug) Debug.Log($"[Player] {res.Key} = {res.Value}");
         }
 
         NotifyObservers();
-        Debug.Log("[Player] Observateurs notifiés.");
+        if (debug) Debug.Log("[Player] Observateurs notifiés.");
     }
 
     public void RegisterObserver(Observer observer)
@@ -112,5 +119,28 @@ public abstract class Player : MonoBehaviour
         {
             observer.ObserverUpdate(gameObject);
         }
+    }
+
+    public bool TrySpendResources(Dictionary<RessourceTypes, int> cost)
+    {
+        // Vérifie si le joueur a assez de ressources
+        foreach (var res in cost)
+        {
+            if (!currentRessources.ContainsKey(res.Key) || currentRessources[res.Key] < res.Value)
+            {
+                if (debug) Debug.LogWarning($"[Player] Ressource insuffisante : {res.Key} requis = {res.Value}, disponible = {currentRessources[res.Key]}");
+                return false; // Ressource manquante
+            }
+        }
+
+        // Retire les ressources
+        foreach (var res in cost)
+        {
+            currentRessources[res.Key] -= res.Value;
+            if (debug) Debug.Log($"[Player] -{res.Value} {res.Key} (Nouveau total : {currentRessources[res.Key]})");
+        }
+
+        NotifyObservers(); // Met à jour les UI/écouteurs
+        return true;
     }
 }
