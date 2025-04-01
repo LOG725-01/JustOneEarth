@@ -116,6 +116,7 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlayerInput(GameObject clickedObject)
     {
+
         if (clickedObject.TryGetComponent<IClickable>(out var clickable))
         {
             clickable.OnClick(gameState);
@@ -123,6 +124,7 @@ public class GameManager : MonoBehaviour
         else
         {
             TileInfo.Instance.Clear();
+            Tile.DeselectTile();
             if (debugValues.gameManager) Debug.Log("Clicked object has no specific click behavior.");
         }
     }
