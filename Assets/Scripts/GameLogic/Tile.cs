@@ -9,7 +9,7 @@ public class Tile : MonoBehaviour, IClickable
 
     public bool debug = false;
 
-
+    private static Tile selectedTile;
     public void Initialize(TileType type, bool _debug = false)
     {
         tileType = type;
@@ -54,10 +54,52 @@ public class Tile : MonoBehaviour, IClickable
     }
     public void OnClick(GameState gameState)
     {
+        if (selectedTile == this)
+        {
+            return;
+        }
+
+        if (selectedTile != null && selectedTile != this)
+        {
+            selectedTile.ResetElevation();
+        }
+
+        ElevateTile();
+
+        selectedTile = this;
+
         gameState.currentInstancePlayer.selectedTile = this;
         if (debug) Debug.Log($"[Tile] Tuile cliquée : {gameObject.name}, Type : {tileType}, Propriétaire : {(owner != null ? owner.name : "Aucun")}");
 
         TileInfo.Instance.ChangeInfo(gameObject);
         if (debug) Debug.Log($"[Tile] Affichage des informations de la tuile mis à jour.");
+
+    }
+
+    private void ElevateTile()
+    {
+        Vector3 elevatedPosition = transform.position + new Vector3(0, 0.2f, 0); // Surélévation de 0.5 unités
+        transform.position = elevatedPosition;
+        if (debug) Debug.Log($"[Tile] Tuile surélevée : {gameObject.name}");
+    }
+
+    private void ResetElevation()
+    {
+        Vector3 originalPosition = transform.position - new Vector3(0, 0.2f, 0); // Réinitialiser la position
+        transform.position = originalPosition;
+        if (debug) Debug.Log($"[Tile] Tuile réinitialisée : {gameObject.name}");
+    }
+
+    public static void DeselectTile()
+    {
+        if (selectedTile != null)
+        {
+            selectedTile.ResetElevation();
+            selectedTile = null;
+        }
+    }
+    public static Tile GetSelectedTile()
+    {
+        return selectedTile;
     }
 }

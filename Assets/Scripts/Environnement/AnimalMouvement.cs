@@ -39,6 +39,23 @@ public class AnimalMouvement : MonoBehaviour
     {
         TiredCounter = Random.Range(3, 6);
         currentTile = GetTileUnder();
+        if (currentTile != null)
+        {
+            Transform animalContainer = currentTile.transform.Find("AnimalContainer");
+            if (animalContainer != null)
+            {
+                transform.parent = animalContainer;
+            }
+            else
+            {
+                // Créer le conteneur s'il n'existe pas encore
+                GameObject container = new GameObject("AnimalContainer");
+                container.transform.parent = currentTile.transform;
+                container.transform.localPosition = Vector3.zero;
+                transform.parent = container.transform;
+            }
+        }
+
         coroutine = StartCoroutine(MoveRoutine());
     }
 
@@ -94,6 +111,17 @@ public class AnimalMouvement : MonoBehaviour
         Tile nextTile = GetRandomAvailablePlainTile();
         yield return MoveToTile(nextTile);
         currentTile = nextTile;
+        Transform animalContainer = currentTile.transform.Find("AnimalContainer");
+        if (animalContainer == null)
+        {
+            GameObject container = new GameObject("AnimalContainer");
+            container.transform.parent = currentTile.transform;
+            container.transform.localPosition = Vector3.zero;
+            animalContainer = container.transform;
+        }
+        transform.parent = animalContainer;
+        transform.localPosition = new Vector3(transform.localPosition.x, Ydifference, transform.localPosition.z);
+
     }
 
     private IEnumerator MoveToTile(Tile targetTile)
@@ -233,4 +261,5 @@ public class AnimalMouvement : MonoBehaviour
         }
         return currentTile;
     }
+
 }
