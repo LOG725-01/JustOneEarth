@@ -39,6 +39,23 @@ public class AnimalMouvement : MonoBehaviour
     {
         TiredCounter = Random.Range(3, 6);
         currentTile = GetTileUnder();
+        if (currentTile != null)
+        {
+            Transform animalContainer = currentTile.transform.Find("AnimalContainer");
+            if (animalContainer != null)
+            {
+                transform.parent = animalContainer;
+            }
+            else
+            {
+                // Créer le conteneur s'il n'existe pas encore
+                GameObject container = new GameObject("AnimalContainer");
+                container.transform.parent = currentTile.transform;
+                container.transform.localPosition = Vector3.zero;
+                transform.parent = container.transform;
+            }
+        }
+
         coroutine = StartCoroutine(MoveRoutine());
     }
 
@@ -93,7 +110,6 @@ public class AnimalMouvement : MonoBehaviour
     {
         Tile nextTile = GetRandomAvailablePlainTile();
         yield return MoveToTile(nextTile);
-        currentTile = nextTile;
     }
 
     private IEnumerator MoveToTile(Tile targetTile)
@@ -111,6 +127,17 @@ public class AnimalMouvement : MonoBehaviour
             distanceAfter = Vector3.Distance(transform.position, endPos);
             yield return null;
         }
+        currentTile = targetTile;
+        Transform animalContainer = currentTile.transform.Find("AnimalContainer");
+        if (animalContainer == null)
+        {
+            GameObject container = new GameObject("AnimalContainer");
+            container.transform.parent = currentTile.transform;
+            container.transform.localPosition = Vector3.zero;
+            animalContainer = container.transform;
+        }
+        transform.parent = animalContainer;
+        transform.localPosition = new Vector3(transform.localPosition.x, Ydifference, transform.localPosition.z);
 
         //transform.position = endPos;
         TiredCounter--;
@@ -131,13 +158,28 @@ public class AnimalMouvement : MonoBehaviour
         if (direction != Vector3.zero)
         {
             Quaternion targetRotation = Quaternion.LookRotation(direction);
+            float rotationSpeed = 200f;
 
             float angle = SignedAngle(targetRotation);
 
-            if (angle > 0f) animalAnimator.TurnAnimation(false);
-            else animalAnimator.TurnAnimation(true);
+            if (angle > 0f)
+            {
+                animalAnimator.TurnAnimation(false);
+            }
+            else
+            {
+                animalAnimator.TurnAnimation(true);
+            }
 
-            yield return new WaitWhile(() => Mathf.Abs(SignedAngle(targetRotation)) > 1f);
+            while (Quaternion.Angle(transform.rotation, targetRotation) > 0.1f)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                yield return null;
+            }
+
+            transform.rotation = targetRotation;
+
+            animalAnimator.IdleAnimation();
         }
     }
 
@@ -233,4 +275,5 @@ public class AnimalMouvement : MonoBehaviour
         }
         return currentTile;
     }
+
 }
