@@ -7,8 +7,12 @@ class AudioManager  {
     + {static} AudioManager Instance
     - AudioSource audioSourceObject
     - GameObject MusicSource
+    - AudioClip uiClose
+    - AudioClip uiOpen
     - void SetAudioClip(AudioSource audioSource, AudioClip clip, float volume, bool loop)
     - float PlayAudioClip(AudioClip clip, Vector3 position, float volume)
+    + void UiClose()
+    + void UiOpen()
 }
 
 class AudioMixerManager  {
