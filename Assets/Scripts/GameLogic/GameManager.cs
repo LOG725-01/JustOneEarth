@@ -34,6 +34,10 @@ public class GameManager : MonoBehaviour
     [SerializeField] private HumanPlayer humanPlayerPrefab;
     [SerializeField] private AIPlayer aiPlayerPrefab;
 
+    [SerializeField] private GameObject deckPrefab;
+    [SerializeField] private GameObject discardPrefab;
+    [SerializeField] private GameObject handPrefab;
+
     private HumanPlayer humanPlayerInstance;
     private AIPlayer aiPlayerInstance;
 
@@ -60,8 +64,25 @@ public class GameManager : MonoBehaviour
         PlayerTurnUi.Instance.SetTurn(playerType);
 
         humanPlayerInstance = Instantiate(humanPlayerPrefab);
+        humanPlayerInstance.name = "humanPlayer";
+
+        GameObject humanPlayerDeck = Instantiate(deckPrefab);
+        humanPlayerDeck.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerHand = Instantiate(handPrefab);
+        humanPlayerHand.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerDiscard = Instantiate(discardPrefab);
+        humanPlayerDiscard.transform.SetParent(humanPlayerInstance.gameObject.transform);
+
         humanPlayerInstance.debug = debugValues.player;
         aiPlayerInstance = Instantiate(aiPlayerPrefab);
+        aiPlayerInstance.name = "aiPlayer";
+
+        GameObject aiPlayerDeck = Instantiate(deckPrefab);
+        aiPlayerDeck.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerHand = Instantiate(handPrefab);
+        aiPlayerHand.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerDiscard = Instantiate(discardPrefab);
+        aiPlayerDiscard.transform.SetParent(aiPlayerInstance.gameObject.transform);
 
         if (board != null)
         {
@@ -99,9 +120,11 @@ public class GameManager : MonoBehaviour
 
         gameState.currentInstancePlayer = humanPlayerInstance;
 
-        PopulatePlayerDeck();
+        PopulateDeck(humanPlayerDeck, humanPlayerInstance);
+        PopulateDeck(aiPlayerDeck, aiPlayerInstance);
 
-        DrawCardToHand(humanPlayerInstance);
+        gameState.DrawCardToHand(humanPlayerInstance);
+        gameState.DrawCardToHand(aiPlayerInstance);
 
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>(true));
@@ -136,11 +159,8 @@ public class GameManager : MonoBehaviour
             if (player.GetType() == typeof(AIPlayer))
             {
                 AIPlayer aiPlayer = (AIPlayer)player;
-                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard());
-
-                gameState.turnCount++;
-                gameState.SetCurrentPlayerTurnToNextPlayer();
-
+                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
+                gameState.DrawCardToHand(player);
             }
             else if (player is HumanPlayer)
             {
@@ -148,40 +168,13 @@ public class GameManager : MonoBehaviour
             }
     }
 
-    private void DrawCardToHand(Player player)
-    {
-        if (player.deck.Count > 0)
-        {
-            System.Random random = new System.Random();
-            int randomIndex = random.Next(0, player.deck.Count);
-
-            Card drawnCard = player.deck[randomIndex];
-
-            player.MoveCardFromDeckToHand(drawnCard);
-
-            GameObject hand = GameObject.Find("CardHand");
-            drawnCard.gameObject.transform.SetParent(hand.transform, false);
-        }
-    }
-
-    private Card CreateCardInDeck(CardData cardData)
-    {
-        GameObject cardHand = GameObject.Find("Deck");
-        Card card = Instantiate(cardPrefab, cardHand.transform).GetComponent<Card>();
-
-        card.InitializeCard(cardData.cardName, cardData.description, 
-            cardData.effectList, cardData.cost);
-
-        return card;
-    }
-
-    private void PopulatePlayerDeck()
+    private void PopulateDeck(GameObject deck, Player player)
     {
         for (int i = 0; i < 10; i++)
         {
             CardData cardData = ScriptableObject.CreateInstance<Card01>();
-            Card card = CreateCardInDeck(cardData);
-            humanPlayerInstance.AddCardInDeck(card);
+            Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
+            player.AddCardInDeck(card);
         }
     }
 

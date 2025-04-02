@@ -6,7 +6,10 @@ public class AIPlayer : Player
     public override Card GetBestPlayableCard()
     {
         //Use MiniMax here
-        throw new NotImplementedException();
+        System.Random random = new System.Random();
+        int randomIndex = random.Next(0, this.hand.Count);
+
+        return this.hand[randomIndex];
     }
 
     private int MiniMax()

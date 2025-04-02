@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
@@ -5,7 +6,7 @@ using UnityEngine;
 public class Card : AnimationController, IClickable
 {
     List<ICardEffect> effectList = new List<ICardEffect>();
-    Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
+    public Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
 
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
@@ -74,15 +75,9 @@ public class Card : AnimationController, IClickable
             if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
             {
                 if (debug) Debug.Log("[Card] CanBePlayed");
-                gameState = gameState.PlayCard(this);
-                gameState.turnCount++;
-                gameState.SetCurrentPlayerTurnToNextPlayer();
-                gameState.currentInstancePlayer.MoveCardFromHandToDiscardPile(this);
-                gameState.currentInstancePlayer.AddOwnedTile(gameState.currentInstancePlayer.selectedTile);
-                gameState.currentInstancePlayer.TrySpendResources(cost);
+                gameState = gameState.PlayCard(this, gameState.getCurrentPlayingPlayer());
 
-                GameObject hand = GameObject.Find("DiscardPile");
-                gameObject.transform.SetParent(hand.transform, false);
+                StartCoroutine(gameState.DrawCardToHandAfterDelay(3));
 
                 //Update game visuals here
                 SelectedVisual();
@@ -104,4 +99,5 @@ public class Card : AnimationController, IClickable
     {
         ChangeAnimation("Normal");
     }
+
 }
