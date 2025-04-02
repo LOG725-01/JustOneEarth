@@ -39,8 +39,16 @@ public class ButtonListController : MonoBehaviour
         {
             if (i == button) {
                 bool isActive = panels[i].activeSelf;
-                if (isActive) buttonControllers[i].NormalAnimation(true);
-                else buttonControllers[i].PressAnimation();
+                if (isActive)
+                {
+                    AudioManager.Instance.UiClose();
+                    buttonControllers[i].NormalAnimation(true);
+                }
+                else 
+                {
+                    AudioManager.Instance.UiOpen();
+                    buttonControllers[i].PressAnimation(); 
+                }
                 panels[i].SetActive(!isActive);
             }
             else { 

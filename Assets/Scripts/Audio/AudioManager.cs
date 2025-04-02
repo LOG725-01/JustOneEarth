@@ -7,6 +7,9 @@ public class AudioManager : MonoBehaviour
     [SerializeField] private AudioSource audioSourceObject;
     [SerializeField] private GameObject MusicSource;
 
+    [SerializeField] private AudioClip uiClose;
+    [SerializeField] private AudioClip uiOpen;
+
     private void Awake()
     {
         if (Instance != null) { if (Instance != this) Destroy(this); }
@@ -45,5 +48,16 @@ public class AudioManager : MonoBehaviour
 
         Destroy(audioSource.gameObject, clipLength );
         return clipLength;
+    }
+
+
+    public void UiClose()
+    {
+        PlayAudioClip(uiClose, Camera.main.transform.position, 1f);
+    }
+
+    public void UiOpen()
+    {
+        PlayAudioClip(uiOpen, Camera.main.transform.position, 1f);
     }
 }

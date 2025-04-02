@@ -30,7 +30,9 @@ public class ButtonController : AnimationController
 
     public void Select()
     {
-        if (listController == null) { PressAnimation(); }
+        if (listController == null) {
+            AudioManager.Instance.UiOpen();
+            PressAnimation(); }
         else { listController.PressButton(listControllerIndex); }
     }
 
