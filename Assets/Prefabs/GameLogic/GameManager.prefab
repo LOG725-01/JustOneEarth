@@ -50,6 +50,12 @@ MonoBehaviour:
     type: 3}
   aiPlayerPrefab: {fileID: 1972786255784142586, guid: fc1a0ce93e3954d4eb0f2f90075936fc,
     type: 3}
+  deckPrefab: {fileID: 6273994300949649051, guid: c2f407eff6e2f594db2e6c60790a5b9a,
+    type: 3}
+  discardPrefab: {fileID: 4589826012720997478, guid: db0bd3854f0b1d04b84562c9d6df06b6,
+    type: 3}
+  handPrefab: {fileID: 834065535144439710, guid: 5eba47e756a76f844ae257bc8b168d22,
+    type: 3}
   board: {fileID: 3263724246756503873, guid: 378b9b6156dd6bb4c89cddec7e2d8f7d, type: 3}
   cloudSpawnerPrefab: {fileID: 4141680717243987134, guid: 75b962a9576aef744a51865f787f3347,
     type: 3}
