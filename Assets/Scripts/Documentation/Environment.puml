@@ -221,12 +221,6 @@ class AnimalMouvement {
     -void OnCollisionEnter(Collision collision)
     -void OnTriggerEnter(Collider other)
     -void Idle()
-    -float Sit()
-    -float Stand()
-    -float Attack()
-    -float GotHit()
-    -float Eat()
-    -float Shuffle()
     -float SignedAngle(Quaternion targetRotation)
     -static float Angle(Quaternion rotation) 
     -Vector3 GetRandomPosition(Tile tile)
@@ -236,16 +230,16 @@ class AnimalMouvement {
 
 AnimalAnimatorController --l--|> AnimationController
 
-Tile -l--o AnimalMouvement
-AnimalState -l--o AnimalMouvement
-AnimalAnimatorController -l--o AnimalMouvement
+AnimalMouvement -l--o Tile
+AnimalMouvement -l--o AnimalState
+AnimalMouvement -l--o AnimalAnimatorController
+
 
 @enduml
 
 @startuml Animals2
 
 allow_mixing
-left to right direction
 skinparam ComponentBackgroundColor LightSkyBlue
 
 class AnimalAnimatorController {
@@ -291,7 +285,7 @@ class Board {
 
 component AnimalPrefab
 
-AnimalAnimatorController -l--o AnimalMouvement
+AnimalMouvement -l--o AnimalAnimatorController
 
 AnimalPrefab -l--o AnimalMouvement
 AnimalPrefab -l--o AnimalAnimatorController
