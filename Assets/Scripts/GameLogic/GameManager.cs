@@ -44,6 +44,9 @@ public class GameManager : MonoBehaviour
     [SerializeField] public Board board;
     [SerializeField] private GameObject cloudSpawnerPrefab;
 
+    private InGameMenu inGameMenu;
+    private bool isMenuOpen = false;
+
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
 
     private bool gameStarted = false;
@@ -55,8 +58,44 @@ public class GameManager : MonoBehaviour
         if (board == null)
             board = FindObjectOfType<Board>();
         StartGame();
+        inGameMenu = FindObjectOfType<InGameMenu>();
     }
 
+    private void Update()
+    {
+
+        Player player = gameState.getCurrentPlayingPlayer();
+
+        if (player != null)
+            if (player.GetType() == typeof(AIPlayer))
+            {
+                AIPlayer aiPlayer = (AIPlayer)player;
+                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
+                gameState.DrawCardToHand(player);
+            }
+            else if (player is HumanPlayer)
+            {
+
+            }
+        if (Input.GetButtonDown("Cancel"))
+        {
+            HandleEscapePress();
+        }
+    }
+    private void HandleEscapePress()
+    {
+        Player currentPlayer = gameState.currentInstancePlayer;
+        if (currentPlayer.selectedTile != null)
+        {
+            DeselectCurrentTile();
+            return;
+        }
+        if (inGameMenu != null)
+        {
+            inGameMenu.ToggleMenu();
+            isMenuOpen = inGameMenu.IsMenuOpen();
+        }
+    }
     public void StartGame()
     {
         playerType = SceneChanger.PlayerType;
@@ -153,23 +192,6 @@ public class GameManager : MonoBehaviour
         Debug.Log("[HandlePlayerInput] Clicked object has no specific click behavior.");
     }
 
-    private void Update()
-    {
-
-        Player player = gameState.getCurrentPlayingPlayer();
-
-        if (player != null)
-            if (player.GetType() == typeof(AIPlayer))
-            {
-                AIPlayer aiPlayer = (AIPlayer)player;
-                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
-                gameState.DrawCardToHand(player);
-            }
-            else if (player is HumanPlayer)
-            {
-
-            }
-    }
 
     private void PopulateDeck(GameObject deck, Player player)
     {
