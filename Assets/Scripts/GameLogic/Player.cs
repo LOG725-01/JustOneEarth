@@ -143,4 +143,14 @@ public abstract class Player : MonoBehaviour
         NotifyObservers(); // Met à jour les UI/écouteurs
         return true;
     }
+
+    public void DeselectTile()
+    {
+        if (selectedTile != null)
+        {
+            selectedTile.ResetElevation();
+            selectedTile = null;
+            if (debug) Debug.Log("[Player] Tuile désélectionnée.");
+        }
+    }
 }

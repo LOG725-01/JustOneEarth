@@ -143,13 +143,14 @@ public class GameManager : MonoBehaviour
         if (clickedObject.TryGetComponent<IClickable>(out var clickable))
         {
             clickable.OnClick(gameState);
+            return;
         }
         else
         {
-            TileInfo.Instance.Clear();
-            Tile.DeselectTile();
-            if (debugValues.gameManager) Debug.Log("Clicked object has no specific click behavior.");
+            DeselectCurrentTile();
         }
+
+        Debug.Log("[HandlePlayerInput] Clicked object has no specific click behavior.");
     }
 
     private void Update()
@@ -257,5 +258,12 @@ public class GameManager : MonoBehaviour
         }
 
         player.NotifyObservers();
+    }
+
+    private void DeselectCurrentTile()
+    {
+        Player currentPlayer = gameState.currentInstancePlayer;
+        currentPlayer.DeselectTile();
+        TileInfo.Instance.Clear();
     }
 }
