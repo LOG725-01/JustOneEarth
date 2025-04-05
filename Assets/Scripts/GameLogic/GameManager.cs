@@ -27,7 +27,7 @@ public class GameManager : MonoBehaviour
 {
     private PlayerType playerType;
 
-    GameState gameState;
+    private GameState gameState;
 
     [SerializeField] GameObject cardPrefab;
 
@@ -63,7 +63,6 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
-
         Player player = gameState.GetCurrentPlayingPlayer();
 
         if (player != null)
@@ -84,12 +83,6 @@ public class GameManager : MonoBehaviour
     }
     private void HandleEscapePress()
     {
-        Player currentPlayer = gameState.currentInstancePlayer;
-        if (currentPlayer.selectedTile != null)
-        {
-            DeselectCurrentTile();
-            return;
-        }
         if (inGameMenu != null)
         {
             inGameMenu.ToggleMenu();
@@ -152,8 +145,7 @@ public class GameManager : MonoBehaviour
 
         gameState = new GameObject("GameState").AddComponent<GameState>();
         gameState.SetBoard(board);
-        var observers = FindObjectsOfType<Observer>();
-
+        PlayerInputDetection.Instance.GameState = gameState;
 
         switch (playerType)
         {
@@ -191,7 +183,6 @@ public class GameManager : MonoBehaviour
 
     private void HandlePlayerInput(GameObject clickedObject)
     {
-
         if (clickedObject.TryGetComponent<IClickable>(out var clickable))
         {
             clickable.OnClick(gameState);
@@ -201,10 +192,8 @@ public class GameManager : MonoBehaviour
         {
             DeselectCurrentTile();
         }
-
         Debug.Log("[HandlePlayerInput] Clicked object has no specific click behavior.");
     }
-
 
     private void PopulateDeck(GameObject deck, Player player)
     {
@@ -291,14 +280,11 @@ public class GameManager : MonoBehaviour
         {
             player.RegisterObserver(obs);
         }
-
         player.NotifyObservers();
     }
-
     private void DeselectCurrentTile()
     {
-        Player currentPlayer = gameState.currentInstancePlayer;
-        currentPlayer.DeselectTile();
+        gameState.currentInstancePlayer.DeselectTile();
         TileInfo.Instance.Clear();
     }
 }

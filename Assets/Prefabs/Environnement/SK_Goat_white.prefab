@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6314839000364531379}
   - component: {fileID: 5106456846103055662}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite33
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -96,7 +96,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4510488949643030477}
   - component: {fileID: 5131812289196890392}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite34
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -181,7 +181,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1595608174288496270}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ankle_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -213,7 +213,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2908545322336622680}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Knee_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -246,7 +246,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7769280087511213320}
   - component: {fileID: 5005721229976689602}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite11
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -331,7 +331,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2636334109333681941}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: KneeFront_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -364,7 +364,7 @@ GameObject:
   m_Component:
   - component: {fileID: 9118681725875014671}
   - component: {fileID: 5882719060539676678}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -450,7 +450,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3115692061390652589}
   - component: {fileID: 2745967924649849723}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite16
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -535,7 +535,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2094777897206742318}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Neck1_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -568,7 +568,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1554061579595862526}
   - component: {fileID: 7327641796029203839}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite12
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -654,7 +654,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6550531540731807713}
   - component: {fileID: 1468867441097578949}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite27
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -740,7 +740,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5695813865906007424}
   - component: {fileID: 3225906163386760833}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite23
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -826,7 +826,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1923680472174993194}
   - component: {fileID: 8921066146805546335}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite32
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -911,7 +911,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4794603104250874581}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rump_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -944,7 +944,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6057511056466215413}
   - component: {fileID: 8306273048235914411}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite35
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1029,7 +1029,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5792468965838387633}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail0_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1062,7 +1062,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8835630265619814378}
   - component: {fileID: 1867220806619828350}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite17
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1148,7 +1148,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5361138358396503298}
   - component: {fileID: 8882063533835372620}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite20
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1233,7 +1233,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6386542304372610819}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Jaw_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1264,7 +1264,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7030507342528968069}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HipFront_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1296,7 +1296,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1812636567627364573}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Head_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1333,7 +1333,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2837721859493645005}
   - component: {fileID: 4557062031543686506}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite8
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1418,7 +1418,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4480441960772240434}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Rump_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1450,7 +1450,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 8975911682133639321}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Root_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1483,7 +1483,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1526928955586644344}
   - component: {fileID: 266115843114586350}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite31
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1568,7 +1568,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3707597783589623529}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spine2_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1603,7 +1603,7 @@ GameObject:
   m_Component:
   - component: {fileID: 5937893386569066000}
   - component: {fileID: 713062577896727405}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite15
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1689,7 +1689,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1892423500135439663}
   - component: {fileID: 8243892489659168761}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite26
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1774,7 +1774,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1351458532921678478}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Knee_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1808,7 +1808,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1945330560374183959}
   - component: {fileID: 1393721687476925372}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite18
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1893,7 +1893,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5219138824657089366}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AnkleFront_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -1926,7 +1926,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8497491781902340196}
   - component: {fileID: 3736662296089885387}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite22
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2011,7 +2011,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3467434178779971447}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ToesFront_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2042,7 +2042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6045323631838108318}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eye_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2073,7 +2073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4783137987747238721}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Toes_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2105,7 +2105,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4156644205202286260}
   - component: {fileID: 7152725566230114503}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite14
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2191,7 +2191,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6371245684329745406}
   - component: {fileID: 1768722709031260898}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite13
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2277,7 +2277,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2933952729357516630}
   - component: {fileID: 1028505181925397482}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2362,7 +2362,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1092113288909685100}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Spine1_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2394,7 +2394,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5872884206410908907}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: AnkleFront_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2427,7 +2427,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4559866835068966914}
   - component: {fileID: 8105489542988733211}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite29
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2515,7 +2515,7 @@ GameObject:
   m_Component:
   - component: {fileID: 214466364865860275}
   - component: {fileID: 5786635813178522638}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite25
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2601,7 +2601,7 @@ GameObject:
   m_Component:
   - component: {fileID: 6511705541536815124}
   - component: {fileID: 2187279650912672388}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite9
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2687,7 +2687,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3514566294384328542}
   - component: {fileID: 4461208469790487410}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2773,7 +2773,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7712484961110631658}
   - component: {fileID: 140513478529632744}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite10
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2859,7 +2859,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2248435798993208506}
   - component: {fileID: 4378877418362339321}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite3
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2944,7 +2944,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 141863177542215848}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: KneeFront_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -2976,7 +2976,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5763353207535690356}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Goat_White
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3042,7 +3042,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2140467437877262949}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Toes_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3073,7 +3073,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 9108118156801200384}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: breast_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3106,7 +3106,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 995052789984222148}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Tail1_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3137,7 +3137,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3570858257605920842}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: mamilla3_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3169,7 +3169,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4992633698648412344}
   - component: {fileID: 3187562520160907360}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite28
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3254,7 +3254,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4173660148458128357}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: mamilla3_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3285,7 +3285,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4253722090047424150}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: HipFront_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3317,7 +3317,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7128556299069774789}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hip_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3355,7 +3355,7 @@ GameObject:
   - component: {fileID: 3962482615187471516}
   - component: {fileID: 259466634126134734}
   - component: {fileID: 3749214682373616867}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: SK_Goat_white
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3484,7 +3484,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3878413065211426772}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RumpFront_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3516,7 +3516,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 134190921018497237}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ankle_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3549,7 +3549,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2771998636229590405}
   - component: {fileID: 3805651933938213021}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite30
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3634,7 +3634,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2006127555735223001}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ear1_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3665,7 +3665,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7825866816968439470}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: ToesFront_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3696,7 +3696,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6700957318818859010}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: RumpFront_R_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3729,7 +3729,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3256365198069675047}
   - component: {fileID: 3075436788908355752}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite21
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3815,7 +3815,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7122739220479650425}
   - component: {fileID: 1238487756415958639}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite24
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3901,7 +3901,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2537248643344520699}
   - component: {fileID: 6324061162854843396}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite19
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -3987,7 +3987,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4313149661220457206}
   - component: {fileID: 4781069693946419824}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite4
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4073,7 +4073,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1555085764171042278}
   - component: {fileID: 3014767083787882686}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite7
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4158,7 +4158,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7098379935913232432}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Pelvis_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4194,7 +4194,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 6636098844808358643}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Ear1_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4225,7 +4225,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2677008221977802080}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Base_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4257,7 +4257,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 4162397974063629032}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Neck_M_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4289,7 +4289,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7477924187032927486}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Eye_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4320,7 +4320,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1090023794697583391}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Hip_L_joint
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -4353,7 +4353,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4629413496572037274}
   - component: {fileID: 2490369053935781401}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: GoatWhite6
   m_TagString: Untagged
   m_Icon: {fileID: 0}
