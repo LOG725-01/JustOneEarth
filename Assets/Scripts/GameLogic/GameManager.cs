@@ -282,4 +282,9 @@ public class GameManager : MonoBehaviour
         }
         player.NotifyObservers();
     }
+    private void DeselectCurrentTile()
+    {
+        gameState.currentInstancePlayer.DeselectTile();
+        TileInfo.Instance.Clear();
+    }
 }
