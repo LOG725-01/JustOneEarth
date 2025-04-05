@@ -13,10 +13,10 @@ struct DebugValues
    
     public DebugValues(bool _)
     {
-        gameManager = false;
-        board = false;
+        gameManager = true;
+        board = true;
         animal = false;
-        tile = false;
+        tile = true;
         player = true;
         gameState = true;
         cloud = false;

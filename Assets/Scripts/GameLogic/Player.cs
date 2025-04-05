@@ -31,7 +31,7 @@ public abstract class Player : MonoBehaviour
     public Tile selectedTile = null;
     
 
-    public bool debug = false;
+    public bool debug = true;
 
     public abstract Card GetBestPlayableCard();
 
@@ -81,10 +81,13 @@ public abstract class Player : MonoBehaviour
     {
         if (debug) Debug.Log("[Player] Début du calcul des ressources...");
 
-        foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
+        if (ownedTiles.Count == 3)
         {
-            currentRessources[resource] = 0;
-            if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
+            foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
+            {
+                currentRessources[resource] = 0;
+                if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
+            }
         }
 
         foreach (Tile tile in ownedTiles)
