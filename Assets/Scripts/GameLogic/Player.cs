@@ -63,6 +63,7 @@ public abstract class Player : MonoBehaviour
         if (tile == null) return;
         tile.owner = this;
         ownedTiles.Add(tile);
+        tile.UpdateBorder();
         if (debug) Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
     }
 

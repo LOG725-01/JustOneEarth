@@ -6,6 +6,9 @@ public class Tile : MonoBehaviour, IClickable
     public Dictionary<RessourceTypes, int> producedRessources = new Dictionary<RessourceTypes, int>();
     public TileType tileType;
     public Player owner;
+    [SerializeField] private GameObject borderRedPrefab;
+    [SerializeField] private GameObject borderBluePrefab;
+    private GameObject currentBorder;
 
     public bool debug = false;
 
@@ -18,7 +21,18 @@ public class Tile : MonoBehaviour, IClickable
         if (debug) Debug.Log($"[Tile] Initialisation : {gameObject.name} - Type : {tileType} - Ressources : " +
                   string.Join(", ", producedRessources));
     }
+    public void UpdateBorder()
+    {
+        if (currentBorder != null)
+            Destroy(currentBorder);
 
+        if (owner == null)
+            return;
+
+        GameObject borderPrefab = owner is HumanPlayer ? borderBluePrefab : borderRedPrefab;
+
+        currentBorder = Instantiate(borderPrefab, transform);
+    }
     private void AssignResources()
     {
         producedRessources.Clear();

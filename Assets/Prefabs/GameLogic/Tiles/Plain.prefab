@@ -61,7 +61,7 @@ PrefabInstance:
     - target: {fileID: 919132149155446097, guid: 30659ce8c4e505d4b81a56a54496b389,
         type: 3}
       propertyPath: m_Name
-      value: grass
+      value: Plain
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -133,3 +133,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileType: 3
+  owner: {fileID: 0}
+  borderRedPrefab: {fileID: 1758162442177177977, guid: 91b7b18774a9bae4da20c29a3f93a61c,
+    type: 3}
+  borderBluePrefab: {fileID: 3835987515242407974, guid: 6127eaa32eb033a4bb31ed43576b4ed5,
+    type: 3}
+  debug: 0
