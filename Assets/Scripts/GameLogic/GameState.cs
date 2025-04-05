@@ -94,7 +94,6 @@ public class GameState : MonoBehaviour
             int randomIndex = random.Next(0, player.deck.Count);
 
             Card drawnCard = player.deck[randomIndex];
-
             player.MoveCardFromDeckToHand(drawnCard);
 
             Transform hand;
