@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
@@ -45,6 +46,7 @@ public class GameManager : MonoBehaviour
     [SerializeField] private GameObject cloudSpawnerPrefab;
 
     private InGameMenu inGameMenu;
+    private bool isAiTurn = false;
     private bool isMenuOpen = false;
 
     private List<PlayerInputNotifier> playerInputNotifiers = new List<PlayerInputNotifier>();
@@ -63,24 +65,36 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+        if (!isAiTurn) { 
         Player player = gameState.GetCurrentPlayingPlayer();
 
         if (player != null)
             if (player.GetType() == typeof(AIPlayer))
             {
-                AIPlayer aiPlayer = (AIPlayer)player;
-                gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
-                gameState.DrawCardToHand(player);
+                isAiTurn = true;
+                StartCoroutine(AITurn());
             }
             else if (player is HumanPlayer)
             {
 
             }
+        }
         if (Input.GetButtonDown("Cancel"))
         {
             HandleEscapePress();
         }
     }
+
+    private IEnumerator AITurn()
+    {
+        yield return new WaitForSeconds(2);
+        Player player = gameState.GetCurrentPlayingPlayer();
+        AIPlayer aiPlayer = (AIPlayer)player;
+        gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
+        gameState.DrawCardToHand(player);
+        isAiTurn = false;
+    }
+
     private void HandleEscapePress()
     {
         if (inGameMenu != null)

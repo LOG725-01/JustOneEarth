@@ -260,6 +260,11 @@ PrefabInstance:
       propertyPath: m_TargetGraphic
       value: 
       objectReference: {fileID: 0}
+    - target: {fileID: 6991832748260250009, guid: 0aa44d0fa3cd7f6408e96d176e480379,
+        type: 3}
+      propertyPath: playerType
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8650298149515596666, guid: 0aa44d0fa3cd7f6408e96d176e480379,
         type: 3}
       propertyPath: m_AnchorMax.x
