@@ -40,6 +40,11 @@ public abstract class Player : MonoBehaviour
         deck.Add(card);
     }
 
+    public void GiveCard(Card card)
+    {
+        hand.Add(card);
+    }
+
     public void MoveCardFromDeckToHand(Card card)
     {
         if (deck.Contains(card))
@@ -52,7 +57,7 @@ public abstract class Player : MonoBehaviour
     public void MoveCardFromHandToDiscardPile(Card card)
     {
         if (hand.Contains(card))
-        { 
+        {
             hand.Remove(card);
             discardPile.Add(card);
         }
