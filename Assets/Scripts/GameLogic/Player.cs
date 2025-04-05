@@ -4,12 +4,16 @@ using UnityEngine;
 
 public abstract class Player : MonoBehaviour
 {
-    public int points = 0;
+    private int points = 0;
     public int Points { get => points; 
     set {
             points = value;
             NotifyObservers();
         } }
+
+    private PlayerType playerType = PlayerType.Civilisation;
+    public PlayerType PlayerType { get => playerType; set => playerType = value; }
+
     public List<Observer> observers = new List<Observer>();
     
     public Dictionary<RessourceTypes, int> currentRessources = new Dictionary<RessourceTypes, int>()
@@ -25,6 +29,7 @@ public abstract class Player : MonoBehaviour
     public List<Card> hand = new List<Card>();
     public List<Card> discardPile = new List<Card>();
     public Tile selectedTile = null;
+    
 
     public bool debug = false;
 
@@ -55,6 +60,7 @@ public abstract class Player : MonoBehaviour
 
     public void AddOwnedTile(Tile tile)
     {
+        if (tile == null) return;
         tile.owner = this;
         ownedTiles.Add(tile);
         if (debug) Debug.Log($"[Player] Tuile {tile.name} ajoutée au joueur.");
@@ -153,4 +159,5 @@ public abstract class Player : MonoBehaviour
             if (debug) Debug.Log("[Player] Tuile désélectionnée.");
         }
     }
+
 }
