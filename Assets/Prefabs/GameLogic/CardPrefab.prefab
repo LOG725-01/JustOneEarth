@@ -96,6 +96,7 @@ MonoBehaviour:
   animator: {fileID: 6607890748447087896}
   titleText: {fileID: 5064271511011568790}
   ressourceText: {fileID: 2838189883073639000}
+  debug: 0
 --- !u!114 &7761544458954762246
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -169,7 +170,7 @@ GameObject:
   - component: {fileID: 2574650219956366150}
   - component: {fileID: 3456214728426665311}
   - component: {fileID: 2838189883073639000}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Description
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -303,7 +304,7 @@ GameObject:
   - component: {fileID: 6868951687118778234}
   - component: {fileID: 5596286251499641163}
   - component: {fileID: 5064271511011568790}
-  m_Layer: 5
+  m_Layer: 2
   m_Name: Name
   m_TagString: Untagged
   m_Icon: {fileID: 0}

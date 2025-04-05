@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 522698140919153478}
   - component: {fileID: -7024632689235798238}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Cloud
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -46,8 +46,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 1
-  driftAmount: 0
-  driftSpeed: 0.5
 --- !u!1001 &7272577136996662896
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -106,10 +104,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -3421796697017627320, guid: b1b3b29a91a08cf42b5f8e290813ff4e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b1b3b29a91a08cf42b5f8e290813ff4e,
         type: 3}
       propertyPath: m_Name
       value: low_poly_cloud
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: b1b3b29a91a08cf42b5f8e290813ff4e,
+        type: 3}
+      propertyPath: m_Layer
+      value: 2
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
