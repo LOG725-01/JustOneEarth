@@ -110,7 +110,7 @@ public class Board : MonoBehaviour
                 Tile tileComponent = tileObj.GetComponent<Tile>();
                 if (tileComponent != null)
                 {
-                    tileComponent.Initialize(type, debugTile); // ⬅️ Ceci assigne le TileType ET génère les ressources
+                    tileComponent.Initialize(type, debugTile);
                     if (debug) Debug.Log($"[Board] Tuile initialisée avec type {type} et ressources : " + string.Join(", ", tileComponent.producedRessources));
                 }
                 else
@@ -138,7 +138,7 @@ public class Board : MonoBehaviour
 
     private void PlaceAnimals()
     {
-        foreach (Transform tile in transform) // Parcourt tous les enfants du Board
+        foreach (Transform tile in transform)
         {
             Tile tileScript = tile.GetComponent<Tile>();
             if (tileScript != null && tileScript.tileType == TileType.Plains)
@@ -218,7 +218,7 @@ public class Board : MonoBehaviour
             }
             else
             {
-                if (debug) Debug.Log($"  ⛔ Hors de la carte : ({neighborQ}, {neighborR})");
+                if (debug) Debug.Log($" Hors de la carte : ({neighborQ}, {neighborR})");
             }
         }
 
@@ -229,7 +229,7 @@ public class Board : MonoBehaviour
     {
         bool inside = Math.Abs(q) <= radius && Math.Abs(r) <= radius && Math.Abs(-q - r) <= radius;
 
-        if (debug) Debug.Log($"[Board] Vérification IsInsideMap({q}, {r}) → {(inside ? "✔️ À l’intérieur" : "❌ Hors limites")}");
+        if (debug) Debug.Log($"[Board] Vérification IsInsideMap({q}, {r}) → {(inside ? "À l’intérieur" : "Hors limites")}");
 
         return inside;
     }
@@ -300,7 +300,7 @@ public class Board : MonoBehaviour
 
             if (roll <= cumulative)
             {
-                if (debug) Debug.Log($"[Board] ✅ Tuile sélectionnée : {entry.Key}");
+                if (debug) Debug.Log($"[Board] Tuile sélectionnée : {entry.Key}");
                 return entry.Key;
             }
         }

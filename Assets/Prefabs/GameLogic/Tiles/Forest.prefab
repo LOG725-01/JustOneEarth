@@ -121,6 +121,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tileType: 0
+  owner: {fileID: 0}
+  borderRedPrefab: {fileID: 1758162442177177977, guid: 91b7b18774a9bae4da20c29a3f93a61c,
+    type: 3}
+  borderBluePrefab: {fileID: 3835987515242407974, guid: 6127eaa32eb033a4bb31ed43576b4ed5,
+    type: 3}
+  debug: 0
 --- !u!114 &4731389924780715595
 MonoBehaviour:
   m_ObjectHideFlags: 0
