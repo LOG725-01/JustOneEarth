@@ -1,24 +1,31 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
-using System.Linq;
 using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    private const int PLAYER_AMOUNT = 2;
     private const int WINNING_POINTS_AMOUNT = 100;
-    // Players are stored in order of turn. First player will be at index 0, second at 1
-    public List<Player> players = new List<Player>();
+
+    private Player playerCivilisation = null;
+    private Player playerWorld = null;
+    public Player PlayerCivilisation { set =>  playerCivilisation = value; }
+    public Player PlayerWorld { set => playerWorld = value; }
     // This is the player of the running game instance, it is used for multiplayer purposes. Do not confuse with the player currently playing.
     public Player currentInstancePlayer;
-    public int currentPlayerTurn = 0;
-    public int turnCount = 0;
+    private PlayerType currentPlayerTurn = PlayerType.Civilisation;
+    private int turnCount = 0;
     private Board currentBoard;
+
+    public bool debug = false;
 
     public Board GetCurrentBoard()
     {
         return currentBoard;
+    }
+    public void SetFirstPlayer(PlayerType playerType)
+    {
+        currentPlayerTurn = playerType;
     }
 
     public bool HasPlayerWon(Player player)
@@ -26,6 +33,7 @@ public class GameState : MonoBehaviour
         if(player.Points >= WINNING_POINTS_AMOUNT) return true;
         return false;
     }
+
 
     public List<Card> GetPlayableCards(Player player)
     {
@@ -35,12 +43,13 @@ public class GameState : MonoBehaviour
 
     public GameState PlayCard(Card card, Player player)
     {
+        if (debug) Debug.Log("[GameStage] play a card by " + player.PlayerType.ToString());
         card.ApplyEffects(this);
         turnCount++;
-        SetCurrentPlayerTurnToNextPlayer();
         player.MoveCardFromHandToDiscardPile(card);
-        player.AddOwnedTile(currentInstancePlayer.selectedTile);
+        player.AddOwnedTile(player.selectedTile);
         player.TrySpendResources(card.cost);
+        SetCurrentPlayerTurnToNextPlayer();
 
         Transform hand = player.transform.Find("Discard(Clone)");
         card.gameObject.transform.SetParent(hand, false);
@@ -49,21 +58,28 @@ public class GameState : MonoBehaviour
 
     public void SetCurrentPlayerTurnToNextPlayer()
     {
-        PlayerTurnUi.Instance.NextTurn();
-        currentPlayerTurn = (currentPlayerTurn + 1) % PLAYER_AMOUNT;
+        switch (currentPlayerTurn)
+        {
+            case PlayerType.Civilisation:
+                currentPlayerTurn = PlayerType.World;
+                break;
+            case PlayerType.World:
+                currentPlayerTurn = PlayerType.Civilisation;
+                break;
+        }
+        PlayerTurnUi.Instance.SetTurn(currentPlayerTurn);
     }
 
-    public int GetNextPlayingPlayerIndex()
+    public Player GetCurrentPlayingPlayer()
     {
-        return (currentPlayerTurn + 1) % PLAYER_AMOUNT;
+        return currentPlayerTurn switch
+        {
+            PlayerType.Civilisation => playerCivilisation,
+            PlayerType.World => playerWorld,
+            _ => null,
+        };
     }
 
-    public Player getCurrentPlayingPlayer()
-    {
-        if (players.Count <= currentPlayerTurn) return null;
-        return players.ElementAt<Player>(currentPlayerTurn);
-    }
-    
     public void SetBoard(Board board)
     {
         currentBoard = board;
@@ -97,7 +113,7 @@ public class GameState : MonoBehaviour
     public IEnumerator DrawCardToHandAfterDelay(float delay)
     {
         yield return new WaitForSeconds(delay);
-        DrawCardToHand(getCurrentPlayingPlayer());
+        DrawCardToHand(GetCurrentPlayingPlayer());
     }
 
     public Card CreateCardGameObject(CardData cardData, GameObject deck, GameObject cardPrefab)

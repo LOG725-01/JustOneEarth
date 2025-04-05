@@ -131,7 +131,7 @@ public class Board : MonoBehaviour
 
         // Notifier que le Board est prêt
         OnBoardGenerated?.Invoke();
-        Debug.Log("[Board] Plateau généré avec succès.");
+        if (debug) Debug.Log("[Board] Plateau généré avec succès.");
     }
 
     

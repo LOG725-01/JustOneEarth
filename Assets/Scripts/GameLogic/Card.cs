@@ -52,7 +52,6 @@ public class Card : AnimationController, IClickable
     
     public bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
     {
-        if (debug) Debug.Log("[Card] CanBePlayed called");
         foreach (var entry in cost)
         {
             if (debug) Debug.Log("[Card] cost values : " + entry.Key.ToString() + " : " + entry.Value.ToString());
@@ -67,7 +66,7 @@ public class Card : AnimationController, IClickable
     {
         if (debug) Debug.Log("[Card] card clicked");
         // Check if its the turn of the player clicking
-        if(gameState.getCurrentPlayingPlayer() == gameState.currentInstancePlayer)
+        if(gameState.GetCurrentPlayingPlayer() == gameState.currentInstancePlayer)
         {
             if (debug) Debug.Log("[Card] current Instance Player is current playing player");
             // Check if card can be played and if a tile is selected
@@ -75,7 +74,7 @@ public class Card : AnimationController, IClickable
             if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
             {
                 if (debug) Debug.Log("[Card] CanBePlayed");
-                gameState = gameState.PlayCard(this, gameState.getCurrentPlayingPlayer());
+                gameState = gameState.PlayCard(this, gameState.GetCurrentPlayingPlayer());
 
                 StartCoroutine(gameState.DrawCardToHandAfterDelay(3));
 

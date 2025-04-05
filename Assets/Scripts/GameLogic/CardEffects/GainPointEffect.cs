@@ -8,7 +8,7 @@ public class GainPointEffect : ICardEffect
     public void ApplyEffect(GameState gameState)
     {
         // Returns the player currently playing
-        Player playingPlayer = gameState.players.ElementAt<Player>(gameState.currentPlayerTurn);
+        Player playingPlayer = gameState.GetCurrentPlayingPlayer();
 
         playingPlayer.Points += 1;
     }

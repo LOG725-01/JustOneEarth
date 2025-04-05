@@ -7,9 +7,9 @@ public class AIPlayer : Player
     {
         //Use MiniMax here
         System.Random random = new System.Random();
-        int randomIndex = random.Next(0, this.hand.Count);
+        int randomIndex = random.Next(0, hand.Count);
 
-        return this.hand[randomIndex];
+        return hand[randomIndex];
     }
 
     private int MiniMax()

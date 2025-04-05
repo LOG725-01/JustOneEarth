@@ -35,7 +35,7 @@ public class TileInfo : MonoBehaviour
                 }
             }
 
-            string ownerName = tile.owner != null ? tile.owner.name : "Aucun";
+            string ownerName = tile.owner != null ? tile.owner.PlayerType.ToString() : "Aucun";
             bool isOwner = tile.owner != null;
 
             SetTexts(tile.tileType.ToString(), resources, resourceType, isOwner, "", ownerName);

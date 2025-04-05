@@ -7,8 +7,6 @@ public class PlayerTurnUi : MonoBehaviour
     public static PlayerTurnUi Instance;
 
     [SerializeField] private TextMeshProUGUI turnText;
-
-    private PlayerType currentPlayerTurn;
     
     private void Awake()
     {
@@ -29,29 +27,13 @@ public class PlayerTurnUi : MonoBehaviour
         }
     }
 
-    public PlayerType NextTurn()
-    {
-        switch (currentPlayerTurn)
-        {
-            case PlayerType.Civilisation:
-                World();
-                break;
-            case PlayerType.World:
-                Civilisation();
-                break;
-        }
-        return currentPlayerTurn;
-    }
-
     private void Civilisation()
     {
-        currentPlayerTurn = PlayerType.Civilisation;
         turnText.text = "Tour de la Civilisation";
     }
 
     private void World()
     {
-        currentPlayerTurn = PlayerType.World;
         turnText.text = "Tour du Monde";
     }
 
