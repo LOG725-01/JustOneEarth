@@ -17,8 +17,8 @@ struct DebugValues
         board = false;
         animal = false;
         tile = false;
-        player = false;
-        gameState = false;
+        player = true;
+        gameState = true;
         cloud = false;
     }
 }
@@ -64,7 +64,7 @@ public class GameManager : MonoBehaviour
     private void Update()
     {
 
-        Player player = gameState.getCurrentPlayingPlayer();
+        Player player = gameState.GetCurrentPlayingPlayer();
 
         if (player != null)
             if (player.GetType() == typeof(AIPlayer))
@@ -104,6 +104,7 @@ public class GameManager : MonoBehaviour
 
         humanPlayerInstance = Instantiate(humanPlayerPrefab);
         humanPlayerInstance.name = "humanPlayer";
+        humanPlayerInstance.PlayerType = playerType;
 
         GameObject humanPlayerDeck = Instantiate(deckPrefab);
         humanPlayerDeck.transform.SetParent(humanPlayerInstance.gameObject.transform);
@@ -154,10 +155,22 @@ public class GameManager : MonoBehaviour
         var observers = FindObjectsOfType<Observer>();
 
 
-        gameState.players.Add(humanPlayerInstance);
-        gameState.players.Add(aiPlayerInstance);
-
+        switch (playerType)
+        {
+            case PlayerType.Civilisation:
+                aiPlayerInstance.PlayerType = PlayerType.World;
+                gameState.PlayerCivilisation = humanPlayerInstance;
+                gameState.PlayerWorld = aiPlayerInstance;
+                break;
+            case PlayerType.World:
+                aiPlayerInstance.PlayerType = PlayerType.Civilisation;
+                gameState.PlayerCivilisation = aiPlayerInstance;
+                gameState.PlayerWorld = humanPlayerInstance;
+                break;
+        }
+        gameState.SetFirstPlayer(playerType);
         gameState.currentInstancePlayer = humanPlayerInstance;
+        gameState.debug = debugValues.gameState;
 
         PopulateDeck(humanPlayerDeck, humanPlayerInstance);
         PopulateDeck(aiPlayerDeck, aiPlayerInstance);
