@@ -16,6 +16,7 @@ public class GameState : MonoBehaviour
     private PlayerType currentPlayerTurn = PlayerType.Civilisation;
     private int turnCount = 0;
     private Board currentBoard;
+    public Card lastPlayedCard;
 
     public bool debug = false;
 
@@ -54,6 +55,7 @@ public class GameState : MonoBehaviour
 
         Transform hand = player.transform.Find("Discard(Clone)");
         card.gameObject.transform.SetParent(hand, false);
+        lastPlayedCard = card;
         return this;
     }
 

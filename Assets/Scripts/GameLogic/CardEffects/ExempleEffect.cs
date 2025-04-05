@@ -22,6 +22,9 @@ public class ExempleEffect : ICardEffect
         // Get playingPlayer owneTiles
         // playingPlayer.ownedTiles;
 
+        // Exemple pour une carte uniquement jouable sur une forêt
+        // allowedTileTypes.Add(TileType.Foret); 
+
 
         throw new System.NotImplementedException();
     }

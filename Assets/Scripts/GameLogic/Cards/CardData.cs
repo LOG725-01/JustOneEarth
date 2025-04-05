@@ -8,4 +8,5 @@ public class CardData : ScriptableObject
     public string description;
     public Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
     public List<ICardEffect> effectList = new List<ICardEffect>();
+    public List<TileType> allowedTileTypes = new List<TileType>();
 }
