@@ -1,4 +1,3 @@
-
 public class Card01 : CardData
 {
     private void OnEnable()

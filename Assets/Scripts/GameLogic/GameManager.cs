@@ -53,6 +53,15 @@ public class GameManager : MonoBehaviour
 
     DebugValues debugValues;
 
+    private System.Type[] availableCardTypes = new System.Type[]
+    {
+        typeof(Card01),
+        typeof(Card02),
+        typeof(Card03),
+        typeof(Card04)
+        // Ajoutez les cartes ici
+    };
+
     private void Start()
     {
         if (board == null)
@@ -170,6 +179,7 @@ public class GameManager : MonoBehaviour
         gameState.DrawCardToHand(humanPlayerInstance);
         gameState.DrawCardToHand(aiPlayerInstance);
 
+
         playerInputNotifiers.Clear();
         playerInputNotifiers.AddRange(FindObjectsOfType<PlayerInputNotifier>(true));
 
@@ -197,9 +207,17 @@ public class GameManager : MonoBehaviour
 
     private void PopulateDeck(GameObject deck, Player player)
     {
-        for (int i = 0; i < 10; i++)
+        System.Random random = new System.Random();
+
+        for (int i = 0; i < 20; i++)
         {
-            CardData cardData = ScriptableObject.CreateInstance<Card01>();
+            // Sélectionne un type aléatoire parmi les cartes disponibles
+            int index = random.Next(availableCardTypes.Length);
+            System.Type cardType = availableCardTypes[index];
+
+            // Crée dynamiquement une instance du type sélectionné
+            CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
+
             Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
             player.AddCardInDeck(card);
         }
