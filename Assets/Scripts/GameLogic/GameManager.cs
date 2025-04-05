@@ -55,10 +55,8 @@ public class GameManager : MonoBehaviour
 
     private System.Type[] availableCardTypes = new System.Type[]
     {
-        typeof(Card01),
-        typeof(Card02),
-        typeof(Card03),
-        typeof(Card04)
+        typeof(GetOnePointCard),
+        typeof(FreeCard)
         // Ajoutez les cartes ici
     };
 
