@@ -8,6 +8,7 @@ public class Tile : MonoBehaviour, IClickable
     public Player owner;
     [SerializeField] private GameObject borderRedPrefab;
     [SerializeField] private GameObject borderBluePrefab;
+    [SerializeField] private GameObject ParticlePrefab;
     private GameObject currentBorder;
 
     public bool debug = false;
@@ -102,6 +103,11 @@ public class Tile : MonoBehaviour, IClickable
         Vector3 originalPosition = transform.position - new Vector3(0, 0.2f, 0); // Réinitialiser la position
         transform.position = originalPosition;
         if (debug) Debug.Log($"[Tile] Tuile réinitialisée : {gameObject.name}");
+    }
+
+    public void SpawnParticle()
+    {
+        Instantiate(ParticlePrefab, transform);
     }
 
 }
