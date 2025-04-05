@@ -49,6 +49,7 @@ public class GameState : MonoBehaviour
         player.MoveCardFromHandToDiscardPile(card);
         player.AddOwnedTile(player.selectedTile);
         player.TrySpendResources(card.cost);
+        player.ComputeRessources();
         SetCurrentPlayerTurnToNextPlayer();
 
         Transform hand = player.transform.Find("Discard(Clone)");
