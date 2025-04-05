@@ -8,7 +8,7 @@ public class RessourceButtonHandler : MonoBehaviour
     public static RessourceButtonHandler Instance;
 
     private Player player;
-    public Player Player { set =>  player = value; }
+    public Player Player { set => player = value; }
 
     private void Awake()
     {

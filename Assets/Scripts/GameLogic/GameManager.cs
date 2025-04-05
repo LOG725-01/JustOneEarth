@@ -120,6 +120,8 @@ public class GameManager : MonoBehaviour
         humanPlayerInstance.name = "humanPlayer";
         humanPlayerInstance.PlayerType = playerType;
 
+        RessourceButtonHandler.Instance.Player = humanPlayerInstance;
+
         GameObject humanPlayerDeck = Instantiate(deckPrefab);
         humanPlayerDeck.transform.SetParent(humanPlayerInstance.gameObject.transform);
         GameObject humanPlayerHand = Instantiate(handPrefab);
