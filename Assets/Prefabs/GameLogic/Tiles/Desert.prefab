@@ -122,4 +122,6 @@ MonoBehaviour:
     type: 3}
   borderBluePrefab: {fileID: 3835987515242407974, guid: 6127eaa32eb033a4bb31ed43576b4ed5,
     type: 3}
+  ParticlePrefab: {fileID: 3962562201518218624, guid: 67dd508ae027f4046b4ba987f64b7e79,
+    type: 3}
   debug: 0
