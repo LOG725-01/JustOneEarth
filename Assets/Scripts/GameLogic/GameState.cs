@@ -45,6 +45,7 @@ public class GameState : MonoBehaviour
     public GameState PlayCard(Card card, Player player)
     {
         if (debug) Debug.Log("[GameStage] play a card by " + player.PlayerType.ToString());
+        lastPlayedCard = card;
         card.ApplyEffects(this);
         turnCount++;
         player.MoveCardFromHandToDiscardPile(card);
@@ -55,7 +56,6 @@ public class GameState : MonoBehaviour
 
         Transform hand = player.transform.Find("Discard(Clone)");
         card.gameObject.transform.SetParent(hand, false);
-        lastPlayedCard = card;
         return this;
     }
 

@@ -7,19 +7,17 @@ public class Card : AnimationController, IClickable
 {
     List<ICardEffect> effectList = new List<ICardEffect>();
     public Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
-    public List<TileType> allowedTileTypes = new List<TileType>();
 
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
 
     public bool debug = false;
-    public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost, List<TileType> allowedTileTypes)
+    public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
     {
         this.titleText.text = titleText;
         this.ressourceText.text = ressourceText;
         this.effectList = effectList;
         this.cost = cost;
-        this.allowedTileTypes = allowedTileTypes;
     }
 
     public void Start()
