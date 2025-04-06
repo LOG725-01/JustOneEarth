@@ -104,6 +104,12 @@ public class GameManager : MonoBehaviour
 
     private void HandleEscapePress()
     {
+        Player currentPlayer = gameState.currentInstancePlayer;
+        if (currentPlayer.selectedTile != null)
+        {
+            DeselectCurrentTile();
+            return;
+        }
         if (inGameMenu != null)
         {
             inGameMenu.ToggleMenu();
