@@ -1,5 +1,6 @@
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 public class Chat : AnimationController
 {
@@ -37,6 +38,7 @@ public class Chat : AnimationController
     {
         if (isOpened) Close();
         else Open();
+        EventSystem.current.SetSelectedGameObject(null);
     }
 
     public void InputSelect()
@@ -74,7 +76,10 @@ public class Chat : AnimationController
 
     public void AddChatMessage(string userName, string message)
     {
-        AddLine(userName + " : " + message);
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            AddLine(userName + " : " + message);
+        }
     }
 
     public void AddAnnouncement(string userName, string announcement)
@@ -88,5 +93,9 @@ public class Chat : AnimationController
         //TODO : get player username
         AddChatMessage("player0", message);
         chatInput.text = "";
+    }
+    public bool IsChatInputSelected()
+    {
+        return chatInput.isFocused;
     }
 }
