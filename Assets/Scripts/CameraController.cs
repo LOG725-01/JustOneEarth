@@ -25,6 +25,7 @@ public class CameraController : MonoBehaviour
 
     private void HandlePan()
     {
+
         if (Input.GetMouseButtonDown(1))
         {
             dragOrigin = Input.mousePosition;
@@ -32,25 +33,41 @@ public class CameraController : MonoBehaviour
 
         if (Input.GetMouseButton(1))
         {
-            Vector3 difference = cam.ScreenToViewportPoint(dragOrigin - Input.mousePosition);
-            Vector3 move = new Vector3(difference.x * panSpeed, 0, difference.y * panSpeed);
+            Vector3 currentMousePos = Input.mousePosition;
+            Vector3 delta = dragOrigin - currentMousePos;
+
+            Vector3 right = cam.transform.right;
+            Vector3 forward = cam.transform.forward;
+
+            right.y = 0f;
+            forward.y = 0f;
+
+            right.Normalize();
+            forward.Normalize();
+
+
+            Vector3 move = (right * delta.x + forward * delta.y) * panSpeed * Time.deltaTime;
 
             cam.transform.position += move;
-            dragOrigin = Input.mousePosition;
+            dragOrigin = currentMousePos;
         }
+
+        if (Chat.Instance != null && Chat.Instance.IsChatInputSelected())
+            return;
 
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveZ = Input.GetAxisRaw("Vertical");
 
-        Vector3 forward = cam.transform.forward;
-        Vector3 right = cam.transform.right;
+        Vector3 camRight = cam.transform.right;
+        Vector3 camForward = cam.transform.forward;
 
-        forward.y = 0; // Empeche la caméra de se deplacer en hauteur
-        right.y = 0;
-        forward.Normalize();
-        right.Normalize();
+        camRight.y = 0f;
+        camForward.y = 0f;
 
-        Vector3 movement = (right * moveX + forward * moveZ).normalized * moveSpeed * Time.deltaTime;
+        camRight.Normalize();
+        camForward.Normalize();
+
+        Vector3 movement = (camRight * moveX + camForward * moveZ).normalized * moveSpeed * Time.deltaTime;
         cam.transform.position += movement;
     }
 
