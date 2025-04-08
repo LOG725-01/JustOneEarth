@@ -57,7 +57,8 @@ public class GameManager : MonoBehaviour
 
     private System.Type[] availableCardTypes = new System.Type[]
     {
-        typeof(GetOnePointCard)
+        typeof(GetOnePointCard),
+        typeof(MineralSurge)
         // Ajoutez les cartes ici
     };
 
@@ -240,7 +241,7 @@ public class GameManager : MonoBehaviour
     {
         List<System.Type> combinedCardTypes = new List<System.Type>();
         combinedCardTypes.AddRange(availableCardTypes);     // Cartes communes
-        combinedCardTypes.AddRange(specificCardTypes);      // Cartes spécifiques
+        combinedCardTypes.AddRange(specificCardTypes);      // Cartes spÃ©cifiques
 
         System.Random random = new System.Random();
         for (int i = 0; i < 20; i++)
