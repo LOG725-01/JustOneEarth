@@ -4,10 +4,6 @@ public class GetOnePointCard : CardData
     {
         cardName = "Forest boon";
         description = "Get +1 point";
-        cost.Add(RessourceTypes.Trees, 2);
-        cost.Add(RessourceTypes.Minerals, 1);
-
-        OnlyForestTiles exempleForestTile = new OnlyForestTiles();
-        conditionList.Add(exempleForestTile);
+        cost.Add(RessourceTypes.Trees, 1);
     }
 }
