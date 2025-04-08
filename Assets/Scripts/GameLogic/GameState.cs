@@ -121,8 +121,7 @@ public class GameState : MonoBehaviour
         Card card = Instantiate(cardPrefab, deck.transform).GetComponent<Card>();
 
         card.InitializeCard(cardData.cardName, cardData.description,
-            cardData.effectList, cardData.cost);
-
+            cardData.effectList, cardData.cost, cardData.conditionList);
         return card;
     }
 }

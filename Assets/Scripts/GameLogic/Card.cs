@@ -10,14 +10,19 @@ public class Card : AnimationController, IClickable
 
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
+    private List<ICardCondition> conditions = new List<ICardCondition>();
+
+
 
     public bool debug = false;
-    public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost)
+    public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost, 
+        List<ICardCondition> conditionList)
     {
         this.titleText.text = titleText;
         this.ressourceText.text = ressourceText;
         this.effectList = effectList;
         this.cost = cost;
+        this.conditions = conditionList;
     }
 
     public void Start()
@@ -50,7 +55,7 @@ public class Card : AnimationController, IClickable
         return new Dictionary<RessourceTypes, int>(cost); // Copie défensive
     }
     
-    public bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
+    public bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources, GameState gameState, Player player)
     {
         foreach (var entry in cost)
         {
@@ -59,6 +64,13 @@ public class Card : AnimationController, IClickable
             if (!playerResources.ContainsKey(entry.Key) || playerResources[entry.Key] < entry.Value)
                 return false;
         }
+
+        foreach (var condition in conditions)
+        {
+            if (!condition.IsMet(gameState, player))
+                return false;
+        }
+
         return true;
     }
 
@@ -71,7 +83,7 @@ public class Card : AnimationController, IClickable
             if (debug) Debug.Log("[Card] current Instance Player is current playing player");
             // Check if card can be played and if a tile is selected
             if (debug) Debug.Log("[Card] selected tile : " + gameState.currentInstancePlayer.selectedTile.ToString());
-            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources) && gameState.currentInstancePlayer.selectedTile != null)
+            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources,gameState, gameState.currentInstancePlayer) && gameState.currentInstancePlayer.selectedTile != null)
             {
                 if (debug) Debug.Log("[Card] CanBePlayed");
                 gameState = gameState.PlayCard(this, gameState.GetCurrentPlayingPlayer());
@@ -97,6 +109,11 @@ public class Card : AnimationController, IClickable
     private void NormalVisual()
     {
         ChangeAnimation("Normal");
+    }
+
+    public void AddCondition(ICardCondition condition)
+    {
+        conditions.Add(condition);
     }
 
 }

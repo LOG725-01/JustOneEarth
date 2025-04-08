@@ -7,5 +7,7 @@ public class GetOnePointCard : CardData
         cost.Add(RessourceTypes.Trees, 1);
         GainPointEffect gainPointEffect = new GainPointEffect();
         effectList.Add(gainPointEffect);
+        ExempleForestTile exempleForestTile = new ExempleForestTile();
+        conditionList.Add(exempleForestTile);
     }
 }
