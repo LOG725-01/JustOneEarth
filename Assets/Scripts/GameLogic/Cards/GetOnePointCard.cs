@@ -4,10 +4,10 @@ public class GetOnePointCard : CardData
     {
         cardName = "Forest boon";
         description = "Get +1 point";
-        cost.Add(RessourceTypes.Trees, 1);
-        GainPointEffect gainPointEffect = new GainPointEffect();
-        effectList.Add(gainPointEffect);
-        ExempleForestTile exempleForestTile = new ExempleForestTile();
+        cost.Add(RessourceTypes.Trees, 2);
+        cost.Add(RessourceTypes.Minerals, 1);
+
+        OnlyForestTiles exempleForestTile = new OnlyForestTiles();
         conditionList.Add(exempleForestTile);
     }
 }

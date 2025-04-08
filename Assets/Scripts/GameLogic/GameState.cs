@@ -2,6 +2,7 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.Experimental.GraphView.GraphView;
 
 public class GameState : MonoBehaviour
 {
@@ -14,7 +15,7 @@ public class GameState : MonoBehaviour
     // This is the player of the running game instance, it is used for multiplayer purposes. Do not confuse with the player currently playing.
     public Player currentInstancePlayer;
     private PlayerType currentPlayerTurn = PlayerType.Civilisation;
-    private int turnCount = 0;
+    public int turnCount = 0;
     private Board currentBoard;
     public Card lastPlayedCard;
 
@@ -48,28 +49,29 @@ public class GameState : MonoBehaviour
         lastPlayedCard = card;
         card.ApplyEffects(this);
         turnCount++;
-        player.MoveCardFromHandToDiscardPile(card);
-        player.AddOwnedTile(player.selectedTile);
+        if (!card.GetIsPersistent())
+        {
+            player.MoveCardFromHandToDiscardPile(card);
+            Transform hand = player.transform.Find("Discard(Clone)");
+            card.gameObject.transform.SetParent(hand, false);
+        }
+
+        if (card.GetAddOwnedTile())
+        {
+            player.AddOwnedTile(player.selectedTile);
+        }
+        
         player.TrySpendResources(card.cost);
-        player.ComputeRessources();
+        player.ComputeRessources(this);
         SetCurrentPlayerTurnToNextPlayer();
 
-        Transform hand = player.transform.Find("Discard(Clone)");
-        card.gameObject.transform.SetParent(hand, false);
         return this;
     }
 
     public void SetCurrentPlayerTurnToNextPlayer()
     {
-        switch (currentPlayerTurn)
-        {
-            case PlayerType.Civilisation:
-                currentPlayerTurn = PlayerType.World;
-                break;
-            case PlayerType.World:
-                currentPlayerTurn = PlayerType.Civilisation;
-                break;
-        }
+        currentPlayerTurn = (currentPlayerTurn == PlayerType.Civilisation) ? PlayerType.World : PlayerType.Civilisation;
+        GetCurrentPlayingPlayer().DrawCard(this);
         PlayerTurnUi.Instance.SetTurn(currentPlayerTurn);
     }
 
@@ -90,26 +92,31 @@ public class GameState : MonoBehaviour
 
     public void DrawCardToHand(Player player)
     {
-        if (player.deck.Count > 0)
+        int nonPersistentCount = player.hand.FindAll(c => !c.GetIsPersistent()).Count;
+
+        if (nonPersistentCount >= Player.MaxHandSize)
+            return;
+
+        if (player.deck.Count == 0 && player.discardPile.Count > 0)
         {
-            System.Random random = new System.Random();
-            int randomIndex = random.Next(0, player.deck.Count);
-
-            Card drawnCard = player.deck[randomIndex];
-            player.MoveCardFromDeckToHand(drawnCard);
-
-            Transform hand;
-
-            if (player is HumanPlayer)
-            {
-                hand = GameObject.Find("PlayerHand").transform;
-            }
-            else
-            {
-                hand = player.transform.Find("Hand(Clone)");
-            }
-            drawnCard.gameObject.transform.SetParent(hand, false);
+            // Mélanger la défausse dans le deck
+            player.ShuffleDiscardIntoDeck();
         }
+
+        if (player.deck.Count == 0)
+            return; // Plus rien à piocher
+
+        System.Random random = new System.Random();
+        int randomIndex = random.Next(0, player.deck.Count);
+
+        Card drawnCard = player.deck[randomIndex];
+        player.MoveCardFromDeckToHand(drawnCard);
+
+        Transform handTransform = (player is HumanPlayer)
+            ? GameObject.Find("PlayerHand").transform
+            : player.transform.Find("Hand(Clone)");
+
+        drawnCard.gameObject.transform.SetParent(handTransform, false);
     }
 
     public IEnumerator DrawCardToHandAfterDelay(float delay)
@@ -123,7 +130,7 @@ public class GameState : MonoBehaviour
         Card card = Instantiate(cardPrefab, deck.transform).GetComponent<Card>();
 
         card.InitializeCard(cardData.cardName, cardData.description,
-            cardData.effectList, cardData.cost, cardData.conditionList);
+            cardData.effectList, cardData.cost, cardData.conditionList, cardData.addOwnedTile, cardData.isPersistent);
         return card;
     }
 }

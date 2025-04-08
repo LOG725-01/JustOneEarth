@@ -11,18 +11,21 @@ public class Card : AnimationController, IClickable
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
     private List<ICardCondition> conditions = new List<ICardCondition>();
-
+    private bool addOwnedTile;
+    private bool isPersistent;
 
 
     public bool debug = false;
     public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost, 
-        List<ICardCondition> conditionList)
+        List<ICardCondition> conditionList, bool addOwnedTile, bool isPersistent)
     {
         this.titleText.text = titleText;
         this.ressourceText.text = ressourceText;
         this.effectList = effectList;
         this.cost = cost;
         this.conditions = conditionList;
+        this.addOwnedTile = addOwnedTile;
+        this.isPersistent = isPersistent;
     }
 
     public void Start()
@@ -83,12 +86,10 @@ public class Card : AnimationController, IClickable
             if (debug) Debug.Log("[Card] current Instance Player is current playing player");
             // Check if card can be played and if a tile is selected
             if (debug) Debug.Log("[Card] selected tile : " + gameState.currentInstancePlayer.selectedTile.ToString());
-            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources,gameState, gameState.currentInstancePlayer) && gameState.currentInstancePlayer.selectedTile != null)
+            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources,gameState, gameState.currentInstancePlayer))
             {
                 if (debug) Debug.Log("[Card] CanBePlayed");
                 gameState = gameState.PlayCard(this, gameState.GetCurrentPlayingPlayer());
-
-                StartCoroutine(gameState.DrawCardToHandAfterDelay(3));
 
                 //Update game visuals here
                 SelectedVisual();
@@ -114,6 +115,19 @@ public class Card : AnimationController, IClickable
     public void AddCondition(ICardCondition condition)
     {
         conditions.Add(condition);
+    }
+    public bool GetAddOwnedTile() { return addOwnedTile; }
+    public bool GetIsPersistent() { return isPersistent; }
+    public bool TryPlay(GameState gameState, Player player)
+    {
+        if (!CanBePlayed(player.currentRessources, gameState, player))
+            return false;
+
+        ApplyEffects(gameState);
+        if (addOwnedTile) player.AddOwnedTile(player.selectedTile);
+        if (!isPersistent) player.MoveCardFromHandToDiscardPile(this);
+
+        return true;
     }
 
 }
