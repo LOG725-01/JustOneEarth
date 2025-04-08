@@ -29,7 +29,8 @@ public abstract class Player : MonoBehaviour
     public List<Card> hand = new List<Card>();
     public List<Card> discardPile = new List<Card>();
     public Tile selectedTile = null;
-    
+
+    public const int MaxHandSize = 3;
 
     public bool debug = true;
 
@@ -56,6 +57,7 @@ public abstract class Player : MonoBehaviour
 
     public void MoveCardFromHandToDiscardPile(Card card)
     {
+        if (card.GetIsPersistent()) return;
         if (hand.Contains(card))
         {
             hand.Remove(card);
@@ -168,5 +170,39 @@ public abstract class Player : MonoBehaviour
             if (debug) Debug.Log("[Player] Tuile désélectionnée.");
         }
     }
+    public void ShuffleDiscardIntoDeck()
+    {
+        deck.AddRange(discardPile);
+        discardPile.Clear();
 
+        // Optionnel : mélanger le deck
+        for (int i = 0; i < deck.Count; i++)
+        {
+            Card temp = deck[i];
+            int randomIndex = UnityEngine.Random.Range(i, deck.Count);
+            deck[i] = deck[randomIndex];
+            deck[randomIndex] = temp;
+        }
+    }
+    public void DrawCard(GameState gameState)
+    {
+        int nonPersistentCount = hand.FindAll(c => !c.GetIsPersistent()).Count;
+        if (nonPersistentCount >= MaxHandSize) return;
+
+        if (deck.Count == 0 && discardPile.Count > 0)
+            ShuffleDiscardIntoDeck();
+
+        if (deck.Count == 0) return;
+
+        var randomIndex = UnityEngine.Random.Range(0, deck.Count);
+        Card card = deck[randomIndex];
+        deck.RemoveAt(randomIndex);
+        hand.Add(card);
+
+        Transform handTransform = this is HumanPlayer ?
+            GameObject.Find("PlayerHand").transform :
+            transform.Find("Hand(Clone)");
+
+        card.transform.SetParent(handTransform, false);
+    }
 }

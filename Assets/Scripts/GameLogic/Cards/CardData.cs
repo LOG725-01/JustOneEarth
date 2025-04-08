@@ -8,4 +8,6 @@ public class CardData : ScriptableObject
     public Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
     public List<ICardEffect> effectList = new List<ICardEffect>();
     public List<ICardCondition> conditionList = new List<ICardCondition>();
+    public bool addOwnedTile = true;
+    public bool isPersistent = false;
 }

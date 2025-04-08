@@ -58,7 +58,6 @@ public class GameManager : MonoBehaviour
     private System.Type[] availableCardTypes = new System.Type[]
     {
         typeof(GetOnePointCard),
-        typeof(FreeCard)
         // Ajoutez les cartes ici
     };
 
@@ -196,6 +195,8 @@ public class GameManager : MonoBehaviour
         PopulateDeck(humanPlayerDeck, humanPlayerInstance);
         PopulateDeck(aiPlayerDeck, aiPlayerInstance);
 
+        AddPersistentCardToHand(humanPlayerInstance);
+
         gameState.DrawCardToHand(humanPlayerInstance);
         gameState.DrawCardToHand(aiPlayerInstance);
 
@@ -228,7 +229,6 @@ public class GameManager : MonoBehaviour
     private void PopulateDeck(GameObject deck, Player player)
     {
         System.Random random = new System.Random();
-
         for (int i = 0; i < 20; i++)
         {
             // Sélectionne un type aléatoire parmi les cartes disponibles
@@ -242,7 +242,18 @@ public class GameManager : MonoBehaviour
             player.AddCardInDeck(card);
         }
     }
+    private void AddPersistentCardToHand(Player player)
+    {
+        CardData freeCardData = ScriptableObject.CreateInstance<FreeCard>();
 
+        Transform handTransform = (player is HumanPlayer)
+            ? GameObject.Find("PlayerHand").transform
+            : player.transform.Find("Hand(Clone)");
+
+        Card freeCard = gameState.CreateCardGameObject(freeCardData, handTransform.gameObject, cardPrefab);
+
+        player.hand.Add(freeCard);
+    }
     private void InitializePlayerStartingResources(Player player, List<Tile> tiles)
     {
         Dictionary<RessourceTypes, int> totalResources = new();
