@@ -1,0 +1,115 @@
+<html>
+<head>
+    <title>Assets/Scripts/Environnement/CloudSpawner.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/Environnement/CloudSpawner.cs (<b>77</b> lines of code) (<a href="CloudSpawner.cs">raw</a>):</h3>
+<div id="editor">using UnityEngine;
+using System.Collections.Generic;
+
+public class CloudSpawner : MonoBehaviour
+{
+    public GameObject cloudPrefab;
+    public int cloudCount = 2;
+    public float minHeight = 1f, maxHeight = 2f;
+
+    private float minX, maxX, minZ, maxZ;
+    private Board board;
+    private List&lt;Vector3&gt; spawnedClouds = new List&lt;Vector3&gt;();
+
+    public float minScale = 0.8f, maxScale = 1.5f;
+    public float minDistance = 1f;
+
+    public bool debug = false;
+    public void Initialize(Board board)
+    {
+        this.board = board;
+        if (board != null)
+        {
+            float boardSize = board.radius * 2;
+            minX = -boardSize / 2f;
+            maxX = boardSize / 2f;
+            minZ = -boardSize / 2f;
+            maxZ = boardSize / 2f;
+
+            if (debug) Debug.Log(&quot;[CloudSpawner] Board initialis� pour la g�n�ration des nuages.&quot;);
+            SpawnClouds();
+        }
+        else
+        {
+            Debug.LogError(&quot;[CloudSpawner] Board introuvable !&quot;);
+        }
+    }
+    public float GetMinX() { return minX; }
+    public float GetMaxX() { return maxX; }
+    public float GetMinZ() { return minZ; }
+    public float GetMaxZ() { return maxZ; }
+    void SpawnClouds()
+    {
+        int attempts = 0;
+        for (int i = 0; i &lt; cloudCount * board.radius; i++)
+        {
+            Vector3 position;
+            bool validPosition = false;
+
+            while (!validPosition &amp;&amp; attempts &lt; 100)
+            {
+                attempts++;
+                position = new Vector3(
+                    Random.Range(minX, maxX),
+                    Random.Range(minHeight, maxHeight),
+                    Random.Range(minZ, maxZ)
+                );
+
+                if (IsPositionValid(position))
+                {
+                    validPosition = true;
+                    spawnedClouds.Add(position);
+
+                    float rotationY = 0f;
+                    Quaternion rotation = Quaternion.Euler(0, rotationY, 0);
+
+                    float randomScale = Random.Range(minScale, maxScale);
+
+                    GameObject newCloud = Instantiate(cloudPrefab, position, rotation);
+                    newCloud.transform.localScale = new Vector3(randomScale, randomScale, randomScale);
+                    newCloud.transform.parent = transform;
+                }
+            }
+        }
+
+        if (debug) Debug.Log(&quot;[CloudSpawner] Nuages g�n�r�s.&quot;);
+    }
+
+    bool IsPositionValid(Vector3 newPos)
+    {
+        foreach (Vector3 existingPos in spawnedClouds)
+        {
+            if (Vector3.Distance(newPos, existingPos) &lt; minDistance * board.radius)
+            {
+                return false;
+            }
+        }
+        return true;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

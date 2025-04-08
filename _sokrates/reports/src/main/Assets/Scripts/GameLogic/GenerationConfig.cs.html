@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/GenerationConfig.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/GenerationConfig.cs (<b>26</b> lines of code) (<a href="GenerationConfig.cs">raw</a>):</h3>
+<div id="editor">using System;
+using System.IO;
+using UnityEngine;
+
+[Serializable]
+public class GenerationConfig
+{
+    public float forestProbability;
+    public float mountainProbability;
+    public float lakeProbability;
+    public float plainProbability;
+    public float desertProbability;
+
+    public bool preventLargeDeserts;
+    public float maxDesertClusterRatio;
+
+    public bool forceLakeNearMountains;
+    public bool forceForestNearLakes;
+
+    // Charger la configuration depuis le fichier JSON dans Ressources
+    public static GenerationConfig LoadFromJson()
+    {
+        TextAsset jsonFile = Resources.Load&lt;TextAsset&gt;(&quot;generation_config&quot;);
+        if (jsonFile == null)
+        {
+            Debug.LogError(&quot;Fichier JSON de configuration non trouv� !&quot;);
+            return null;
+        }
+
+        return JsonUtility.FromJson&lt;GenerationConfig&gt;(jsonFile.text);
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

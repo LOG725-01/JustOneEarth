@@ -1,0 +1,95 @@
+<html>
+<head>
+    <title>Assets/Scripts/UI/TileInfo.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/UI/TileInfo.cs (<b>60</b> lines of code) (<a href="TileInfo.cs">raw</a>):</h3>
+<div id="editor">using TMPro;
+using UnityEngine;
+
+public class TileInfo : MonoBehaviour
+{
+    public static TileInfo Instance;
+
+    [SerializeField] private GameObject tileInfoObject;
+
+    [SerializeField] private TextMeshProUGUI tileTypeText;
+    [SerializeField] private TextMeshProUGUI ressourceText;
+    [SerializeField] private TextMeshProUGUI conditionText;
+    [SerializeField] private TextMeshProUGUI ownerText;
+
+    private void Awake()
+    {
+        if (Instance != null) { if (Instance != this) Destroy(this); }
+        else Instance = this;
+        Clear();
+    }
+
+    public void ChangeInfo(GameObject tileObject)
+    {
+        if (tileObject.TryGetComponent&lt;Tile&gt;(out var tile))
+        {
+            string resourceType = &quot;&quot;;
+            int resources = 0;
+            foreach (var item in tile.producedRessources)
+            {
+                if (item.Value &gt; 0)
+                {
+                    resourceType = item.Key.ToString();
+                    resources = item.Value;
+                    break;
+                }
+            }
+
+            string ownerName = tile.owner != null ? tile.owner.PlayerType.ToString() : &quot;Aucun&quot;;
+            bool isOwner = tile.owner != null;
+
+            SetTexts(tile.tileType.ToString(), resources, resourceType, isOwner, &quot;&quot;, ownerName);
+        }
+    }
+
+    private void SetTexts(
+        string tileType, 
+        int resources, 
+        string resourceType, 
+        bool isOwner = true, 
+        string condition = &quot;&quot;, 
+        string owner = &quot;Civilisation&quot;)
+    {
+        tileTypeText.text = tileType;
+        ressourceText.text = &quot;+ &quot; + resources.ToString() + &quot; &quot; + resourceType;
+        if (isOwner) conditionText.text = string.Empty;
+        else conditionText.text = condition;
+        ownerText.text = &quot;Propri�taire : &quot; + owner;
+        tileInfoObject.SetActive(true);
+    }
+
+    public void Clear()
+    {
+        tileInfoObject.SetActive(false);
+        tileTypeText.text = &quot;No tile selected&quot;;
+        ressourceText.text = string.Empty;
+        conditionText.text = string.Empty;
+        ownerText.text = string.Empty;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

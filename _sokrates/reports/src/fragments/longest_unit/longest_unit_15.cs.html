@@ -1,0 +1,56 @@
+<html>
+<head>
+    <title>private void HandleZoom()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private void HandleZoom()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/CameraController.cs [74:107]</i></p>
+<ul>
+    <li><b>27</b> lines of code</li>
+    <li><b>6</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private void HandleZoom()
+    {
+        float scroll = Input.GetAxis(&quot;Mouse ScrollWheel&quot;);
+
+        if (scroll != 0)
+        {
+            Vector3 zoomDirection = cam.transform.forward;
+            Vector3 targetPosition;
+
+            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
+            if (Physics.Raycast(ray, out RaycastHit hit))
+            {
+                targetPosition = hit.point;
+            }
+            else
+            {
+                targetPosition = cam.transform.position + zoomDirection * 10f;
+            }
+
+            float newZoom = Mathf.Clamp(cam.transform.position.y - scroll * zoomSpeed, minZoom, maxZoom);
+
+
+            if ((scroll &gt; 0 &amp;&amp; cam.transform.position.y &lt;= minZoom) ||
+                (scroll &lt; 0 &amp;&amp; cam.transform.position.y &gt;= maxZoom))
+            {
+                return; 
+            }
+
+            // Applique le zoom
+            Vector3 direction = (targetPosition - cam.transform.position).normalized;
+            cam.transform.position += direction * scroll * zoomSpeed;
+            cam.transform.position = new Vector3(cam.transform.position.x, newZoom, cam.transform.position.z);
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

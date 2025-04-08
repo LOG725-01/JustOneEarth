@@ -1,0 +1,388 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/Board.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Board.cs (<b>284</b> lines of code) (<a href="Board.cs">raw</a>):</h3>
+<div id="editor">using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public class Board : MonoBehaviour
+{
+    public GameObject forestPrefab;
+    public GameObject mountainPrefab;
+    public GameObject lakePrefab;
+    public GameObject plainPrefab;
+    public GameObject desertPrefab;
+    public GameObject[] animalPrefabs;
+
+    public event Action OnBoardGenerated;
+
+    private TileType[,] grid;
+    public int radius = 5;
+
+    private GenerationConfig config;
+    Dictionary&lt;TileType, float&gt; probabilities;
+    public bool IsGenerated { get; private set; } = false;
+
+    public bool debug = false;
+    public bool debugAnimal = false;
+    public bool debugTile = false;
+
+    private void Awake()
+    {
+        if (debug) Debug.Log(&quot;[Board] Chargement de la configuration...&quot;);
+        config = GenerationConfig.LoadFromJson();
+        if (config == null)
+        {
+            Debug.LogError(&quot;[Board] &Eacute;chec du chargement de la configuration !&quot;);
+            return;
+        }
+
+        if (debug) Debug.Log(&quot;[Board] Configuration charg&eacute;e avec succ&egrave;s.&quot;);
+    }
+
+    public void CreateBoard()
+    {
+        if (debug) Debug.Log(&quot;[Board] G&eacute;n&eacute;ration du plateau...&quot;);
+
+        if (debug) Debug.Log(&quot;[Board] D&eacute;but de la g&eacute;n&eacute;ration du plateau...&quot;);
+        grid = new TileType[radius * 2 + 1, radius * 2 + 1];
+
+        probabilities = new Dictionary&lt;TileType, float&gt;
+        {
+            { TileType.Forests, config.forestProbability / 100f },
+            { TileType.Mountains, config.mountainProbability / 100f },
+            { TileType.Lakes, config.lakeProbability / 100f },
+            { TileType.Plains, config.plainProbability / 100f },
+            { TileType.Deserts, config.desertProbability / 100f }
+        };
+
+        if (debug) Debug.Log(&quot;[Board] Probabilit&eacute;s assign&eacute;es :&quot;);
+        foreach (var pair in probabilities)
+            if (debug) Debug.Log($&quot;  - {pair.Key}: {pair.Value * 100f}%&quot;);
+
+            for (int q = -radius; q &lt;= radius; q++)
+            {
+                int r1 = Mathf.Max(-radius, -q - radius);
+                int r2 = Mathf.Min(radius, -q + radius);
+
+                for (int r = r1; r &lt;= r2; r++)
+                {
+                    float noise = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
+                    if (debug) Debug.Log($&quot;[Board] Perlin Noise pour ({q},{r}) = {noise}&quot;);
+
+                    if (!IsTileGenerated(q, r))
+                    {
+                        grid[q + radius, r + radius] = TileType.None;
+                        if (debug) Debug.Log($&quot;[Board] Tuile ignor&eacute;e (noise trop faible) &agrave; ({q},{r})&quot;);
+                        continue;
+                    }
+
+                    TileType selectedType = GetRandomTileType(probabilities);
+                    grid[q + radius, r + radius] = selectedType;
+                    if (debug) Debug.Log($&quot;[Board] Tuile g&eacute;n&eacute;r&eacute;e &agrave; ({q},{r}) : {selectedType}&quot;);
+                }
+            }
+
+        if (debug) Debug.Log(&quot;[Board] Correction des lacs isol&eacute;s...&quot;);
+        FixLonelyLakes();
+
+        if (debug) Debug.Log(&quot;[Board] Instanciation des pr&eacute;fabriqu&eacute;s...&quot;);
+        for (int q = -radius; q &lt;= radius; q++)
+        {
+            int r1 = Mathf.Max(-radius, -q - radius);
+            int r2 = Mathf.Min(radius, -q + radius);
+
+            for (int r = r1; r &lt;= r2; r++)
+            {
+                TileType type = grid[q + radius, r + radius];
+
+                if (type == TileType.None)
+                    continue;
+
+                Vector3 worldPos = AxialToIsometric(q, r);
+                GameObject prefab = GetTilePrefab(type);
+
+                if (prefab == null)
+                {
+                    Debug.LogWarning($&quot;[Board] Aucun prefab trouv&eacute; pour le type {type} &agrave; ({q},{r}) !&quot;);
+                    continue;
+                }
+
+                GameObject tileObj = Instantiate(prefab, worldPos, Quaternion.identity, transform);
+
+                Tile tileComponent = tileObj.GetComponent&lt;Tile&gt;();
+                if (tileComponent != null)
+                {
+                    tileComponent.Initialize(type, debugTile);
+                    if (debug) Debug.Log($&quot;[Board] Tuile initialis&eacute;e avec type {type} et ressources : &quot; + string.Join(&quot;, &quot;, tileComponent.producedRessources));
+                }
+                else
+                {
+                    Debug.LogWarning($&quot;[Board] Le prefab {prefab.name} n'a pas de composant Tile !&quot;);
+                }
+
+                if (debug) Debug.Log($&quot;[Board] Instanci&eacute; {type} &agrave; {worldPos}&quot;);
+            }
+        }
+
+        if (debug) Debug.Log(&quot;[Board] G&eacute;n&eacute;ration du plateau termin&eacute;e !&quot;);
+        LogAllTiles();
+
+        PlaceAnimals();
+
+        IsGenerated = true;
+
+        // Notifier que le Board est pr&ecirc;t
+        OnBoardGenerated?.Invoke();
+        if (debug) Debug.Log(&quot;[Board] Plateau g&eacute;n&eacute;r&eacute; avec succ&egrave;s.&quot;);
+    }
+
+    
+
+    private void PlaceAnimals()
+    {
+        foreach (Transform tile in transform)
+        {
+            Tile tileScript = tile.GetComponent&lt;Tile&gt;();
+            if (tileScript != null &amp;&amp; tileScript.tileType == TileType.Plains)
+            {
+                // 50% de chance d'avoir un animal
+                if (UnityEngine.Random.value &lt; 0.5f)
+                {
+                    Vector3 spawnPos = tile.position + Vector3.up * 0.2f; // D&eacute;calage vertical
+                    GameObject animal = Instantiate(
+                        animalPrefabs[UnityEngine.Random.Range(0, animalPrefabs.Length)], 
+                        spawnPos, Quaternion.identity, tile);
+                    if(debugAnimal) animal.GetComponent&lt;AnimalMouvement&gt;().SetDebug();
+                    debugAnimal = false;
+                }
+            }
+        }
+    }
+
+
+    private bool IsTileGenerated(int q, int r)
+    {
+        float noiseValue = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
+        bool generated = noiseValue &gt; 0.4335f;
+
+        if (debug) Debug.Log($&quot;[Board] PerlinNoise ({q}, {r}) = {noiseValue:F4} &rarr; {(generated ? &quot;G&eacute;n&eacute;r&eacute;e&quot; : &quot;Ignor&eacute;e&quot;)}&quot;);
+
+        return generated;
+    }
+
+
+    private void FixLonelyLakes()
+    {
+        for (int q = -radius; q &lt;= radius; q++)
+        {
+            for (int r = -radius; r &lt;= radius; r++)
+            {
+                if (!IsInsideMap(q, r)) continue;
+
+                if (grid[q + radius, r + radius] == TileType.Lakes &amp;&amp; CountNeighbors(q, r) != 6)
+                {
+                    if (debug) Debug.Log($&quot;[Board] Lac isol&eacute; d&eacute;tect&eacute; &agrave; ({q},{r}) &rarr; remplacement...&quot;);
+                    grid[q + radius, r + radius] = GetRandomTileType(probabilities, TileType.Lakes);
+                }
+            }
+        }
+    }
+    private int CountNeighbors(int q, int r)
+    {
+        List&lt;Vector2Int&gt; directions = new List&lt;Vector2Int&gt;
+    {
+        new Vector2Int(1, 0), new Vector2Int(-1, 0),  // Droite, Gauche
+        new Vector2Int(0, 1), new Vector2Int(0, -1),  // Haut, Bas
+        new Vector2Int(1, -1), new Vector2Int(-1, 1)  // Diagonales
+    };
+
+        int count = 0;
+        if (debug) Debug.Log($&quot;[Board] &rarr; Comptage des voisins pour la tuile ({q}, {r})&quot;);
+
+        foreach (var dir in directions)
+        {
+            int neighborQ = q + dir.x;
+            int neighborR = r + dir.y;
+
+            if (IsInsideMap(neighborQ, neighborR))
+            {
+                TileType neighborType = grid[neighborQ + radius, neighborR + radius];
+
+                if (neighborType != TileType.None)
+                {
+                    count++;
+                    if (debug) Debug.Log($&quot;  ✓ Voisin &agrave; ({neighborQ}, {neighborR}) : {neighborType}&quot;);
+                }
+                else
+                {
+                    if (debug) Debug.Log($&quot;  ✗ Voisin &agrave; ({neighborQ}, {neighborR}) : vide&quot;);
+                }
+            }
+            else
+            {
+                if (debug) Debug.Log($&quot; Hors de la carte : ({neighborQ}, {neighborR})&quot;);
+            }
+        }
+
+        if (debug) Debug.Log($&quot;[Board] Nombre total de voisins valides : {count}&quot;);
+        return count;
+    }
+    private bool IsInsideMap(int q, int r)
+    {
+        bool inside = Math.Abs(q) &lt;= radius &amp;&amp; Math.Abs(r) &lt;= radius &amp;&amp; Math.Abs(-q - r) &lt;= radius;
+
+        if (debug) Debug.Log($&quot;[Board] V&eacute;rification IsInsideMap({q}, {r}) &rarr; {(inside ? &quot;&Agrave; l&rsquo;int&eacute;rieur&quot; : &quot;Hors limites&quot;)}&quot;);
+
+        return inside;
+    }
+
+
+    private GameObject GetTilePrefab(TileType type)
+    {
+        switch (type)
+        {
+            case TileType.Forests:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Forests&quot;);
+                return forestPrefab;
+
+            case TileType.Mountains:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Mountains&quot;);
+                return mountainPrefab;
+
+            case TileType.Lakes:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Lakes&quot;);
+                return lakePrefab;
+
+            case TileType.Plains:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Plains&quot;);
+                return plainPrefab;
+
+            case TileType.Deserts:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Deserts&quot;);
+                return desertPrefab;
+
+            default:
+                //Debug.LogWarning($&quot;[Board] Aucun prefab d&eacute;fini pour le type : {type}&quot;);
+                return null;
+        }
+    }
+
+    private Vector3 AxialToIsometric(int q, int r)
+    {
+        float hexWidth = 1f;
+        float hexHeight = hexWidth * Mathf.Sqrt(3) / 2;
+
+        float x = hexWidth * (q + r * 0.5f);
+        float z = hexHeight * r;
+
+        Vector3 position = new Vector3(x, 0, z);
+        if (debug) Debug.Log($&quot;[Board] Conversion AxialToIsometric &rarr; ({q}, {r}) &rarr; WorldPos : {position}&quot;);
+
+        return position;
+    }
+
+
+    private TileType GetRandomTileType(Dictionary&lt;TileType, float&gt; probabilities, TileType? excludeType = null)
+    {
+        float roll = UnityEngine.Random.value;
+        float cumulative = 0f;
+
+        if (debug) Debug.Log($&quot;[Board] S&eacute;lection al&eacute;atoire d'une tuile... Roll = {roll:F4}&quot; + (excludeType.HasValue ? $&quot; (exclusion : {excludeType.Value})&quot; : &quot;&quot;));
+
+        foreach (var entry in probabilities)
+        {
+            if (excludeType.HasValue &amp;&amp; entry.Key == excludeType.Value)
+            {
+                if (debug) Debug.Log($&quot;[Board] &rarr; Ignor&eacute; : {entry.Key} (exclu)&quot;);
+                continue;
+            }
+
+            cumulative += entry.Value;
+            if (debug) Debug.Log($&quot;[Board] &rarr; Cumul {entry.Key} : {cumulative:F4}&quot;);
+
+            if (roll &lt;= cumulative)
+            {
+                if (debug) Debug.Log($&quot;[Board] Tuile s&eacute;lectionn&eacute;e : {entry.Key}&quot;);
+                return entry.Key;
+            }
+        }
+
+        Debug.LogWarning(&quot;[Board] Aucune tuile s&eacute;lectionn&eacute;e par probabilit&eacute;s, retour par d&eacute;faut : Plains&quot;);
+        return TileType.Plains;
+    }
+
+    public void LogAllTiles()
+    {
+        Tile[] tiles = FindObjectsOfType&lt;Tile&gt;();
+        if (debug) Debug.Log($&quot;[Board] --- R&eacute;sum&eacute; des tuiles g&eacute;n&eacute;r&eacute;es ({tiles.Length}) ---&quot;);
+
+        foreach (Tile tile in tiles)
+        {
+            string resSummary = tile.producedRessources.Count &gt; 0
+                ? string.Join(&quot;, &quot;, tile.producedRessources)
+                : &quot;Aucune&quot;;
+
+            if (debug) Debug.Log($&quot;&rarr; {tile.name} | Type: {tile.tileType} | Ressources: {resSummary}&quot;);
+        }
+    }
+
+    public List&lt;Tile&gt; GetAllTiles()
+    {
+        return new List&lt;Tile&gt;(FindObjectsOfType&lt;Tile&gt;());
+    }
+
+    public void InitializePlayerResources(Player player)
+    {
+        Dictionary&lt;RessourceTypes, int&gt; totalResources = new();
+
+        // Parcours toutes les tuiles g&eacute;n&eacute;r&eacute;es
+        foreach (TileType type in Enum.GetValues(typeof(TileType)))
+        {
+            totalResources[(RessourceTypes)type] = 0;
+        }
+
+        foreach (Tile tile in FindObjectsOfType&lt;Tile&gt;())
+        {
+            foreach (var kvp in tile.producedRessources)
+            {
+                if (!totalResources.ContainsKey(kvp.Key))
+                    totalResources[kvp.Key] = 0;
+
+                totalResources[kvp.Key] += kvp.Value;
+            }
+        }
+
+        // Initialise les ressources du joueur &agrave; 10 % du total
+        foreach (var kvp in totalResources)
+        {
+            int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
+            player.currentRessources[kvp.Key] = initialAmount;
+
+            if (debug) Debug.Log($&quot;[Board] Ressource initiale pour {kvp.Key} : {initialAmount} (10% de {kvp.Value})&quot;);
+        }
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

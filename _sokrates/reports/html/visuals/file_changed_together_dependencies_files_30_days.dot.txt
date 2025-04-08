@@ -1,0 +1,80 @@
+graph G {
+    compound="true"
+    rankdir="TB"
+    bgcolor="white"
+    fontname="Tahoma"
+
+    node [
+        fixedsize="false"
+        fontname="Tahoma"
+        color="white"
+        fillcolor="deepskyblue2"
+        fontcolor="black"
+        shape="box"
+        style="filled"
+        penwidth="1.0"
+    ]
+    edge [
+        fontname="Arial"
+        color="#00688b"
+        fontcolor="black"
+        fontsize="12"
+        arrowsize="0.5"
+        penwidth="1.0"
+    ]
+
+
+
+
+    "[Assets/Scripts/GameLogic/GameManager.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 26 ", penwidth="10", color="#00688bFF"];
+    "[Assets/Scripts/GameLogic/Card.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 21 ", penwidth="8", color="#00688bDB"];
+    "[Assets/Scripts/GameLogic/Player.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 20 ", penwidth="7", color="#00688bC9"];
+    "[Assets/Scripts/GameLogic/Player.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 20 ", penwidth="7", color="#00688bC9"];
+    "[Assets/Scripts/GameLogic/Board.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 20 ", penwidth="7", color="#00688bC9"];
+    "[Assets/Scripts/GameLogic/GameManager.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 19 ", penwidth="7", color="#00688bC9"];
+    "[Assets/Scripts/GameLogic/Board.cs]" -- "[Assets/Scripts/GameLogic/Player.cs]" [label=" 15 ", penwidth="5", color="#00688bA5"];
+    "[Assets/Scripts/GameLogic/Board.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 15 ", penwidth="5", color="#00688bA5"];
+    "[Assets/Scripts/GameLogic/Player.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 15 ", penwidth="5", color="#00688bA5"];
+    "[Assets/Scripts/GameLogic/GameManager.cs]" -- "[Assets/Scripts/GameLogic/Tile.cs]" [label=" 14 ", penwidth="5", color="#00688bA5"];
+    "[Assets/Scripts/GameLogic/Board.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 13 ", penwidth="5", color="#00688bA5"];
+    "[Assets/Scripts/GameLogic/Board.cs]" -- "[Assets/Scripts/GameLogic/Tile.cs]" [label=" 12 ", penwidth="4", color="#00688b93"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/GameLogic/Player.cs]" [label=" 11 ", penwidth="4", color="#00688b93"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 11 ", penwidth="4", color="#00688b93"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 11 ", penwidth="4", color="#00688b93"];
+    "[Assets/Scripts/SceneChanger.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 11 ", penwidth="4", color="#00688b93"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 10 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/Player.cs]" -- "[Assets/Scripts/GameLogic/Tile.cs]" [label=" 10 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/GameLogic/Board.cs]" [label=" 10 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/AIPlayer.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 9 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/SceneChanger.cs]" -- "[Assets/Scripts/GameLogic/Board.cs]" [label=" 9 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/Card.cs]" -- "[Assets/Scripts/GameLogic/Cards/CardData.cs]" [label=" 9 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/AIPlayer.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 9 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/Tile.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 9 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/GameState.cs]" -- "[Assets/Scripts/GameLogic/Cards/CardData.cs]" [label=" 9 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/AIPlayer.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 8 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/GameLogic/Card.cs]" -- "[Assets/Scripts/GameLogic/Tile.cs]" [label=" 8 ", penwidth="3", color="#00688b82"];
+    "[Assets/Scripts/SceneChanger.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 7 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/UI/ScoreObserver.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 7 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]" -- "[Assets/Scripts/GameLogic/Cards/CardData.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/GameLogic/Player.cs]" -- "[Assets/Scripts/GameLogic/Cards/CardData.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/GameLogic/AIPlayer.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/UI/ScoreObserver.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/UI/TileInfo.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/GameLogic/AIPlayer.cs]" -- "[Assets/Scripts/GameLogic/Player.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/UI/ScoreObserver.cs]" -- "[Assets/Scripts/GameLogic/GameState.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/SceneChanger.cs]" -- "[Assets/Scripts/GameLogic/Tile.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/UI/ScoreObserver.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/UI/ScoreObserver.cs]" -- "[Assets/Scripts/GameLogic/Player.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/UI/TileInfo.cs]" -- "[Assets/Scripts/GameLogic/GameManager.cs]" [label=" 6 ", penwidth="2", color="#00688b70"];
+    "[Assets/Scripts/Environnement/AnimalMouvement.cs]" -- "[Assets/Scripts/GameLogic/Board.cs]" [label=" 5 ", penwidth="1", color="#00688b5E"];
+    "[Assets/Scripts/GameLogic/GameState.cs]" -- "[Assets/Scripts/GameLogic/Cards/FreeCard.cs]" [label=" 5 ", penwidth="1", color="#00688b5E"];
+    "[Assets/Scripts/UI/ScoreObserver.cs]" -- "[Assets/Scripts/GameLogic/Cards/CardData.cs]" [label=" 5 ", penwidth="1", color="#00688b5E"];
+    "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]" -- "[Assets/Scripts/GameLogic/Card.cs]" [label=" 5 ", penwidth="1", color="#00688b5E"];
+    "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]" -- "[Assets/Scripts/GameLogic/Cards/CardData.cs]" [label=" 5 ", penwidth="1", color="#00688b5E"];
+    "[Assets/Scripts/UI/TileInfo.cs]" -- "[Assets/Scripts/GameLogic/Board.cs]" [label=" 5 ", penwidth="1", color="#00688b5E"];
+    "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]" -- "[Assets/Scripts/GameLogic/Player.cs]" [label=" 5 ", penwidth="1", color="#00688b5E"];
+
+}

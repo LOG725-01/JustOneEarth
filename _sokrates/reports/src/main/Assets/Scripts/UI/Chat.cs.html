@@ -1,0 +1,127 @@
+<html>
+<head>
+    <title>Assets/Scripts/UI/Chat.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/UI/Chat.cs (<b>84</b> lines of code) (<a href="Chat.cs">raw</a>):</h3>
+<div id="editor">using TMPro;
+using UnityEngine;
+using UnityEngine.EventSystems;
+
+public class Chat : AnimationController
+{
+    public static Chat Instance;
+
+    [SerializeField] private TextMeshProUGUI chatLog;
+    [SerializeField] private TextMeshProUGUI lastLine;
+    [SerializeField] private TextMeshProUGUI buttonText;
+    [SerializeField] private TMP_InputField chatInput;
+    private string chatText;
+    private bool isOpened = false;
+    private bool wasOpened = false;
+    
+    private void Awake()
+    {
+        if (Instance != null) { if (Instance != this) Destroy(this); }
+        else Instance = this;
+        Close();
+    }
+
+    private void Start()
+    {
+        Clean();
+    }
+
+    public void Clean()
+    {
+        chatText = &quot;&quot;;
+        chatLog.text = chatText;
+        chatInput.text = &quot;&quot;;
+        lastLine.text = &quot;&quot;;
+    }
+
+    public void OpenClose()
+    {
+        if (isOpened) Close();
+        else Open();
+        EventSystem.current.SetSelectedGameObject(null);
+    }
+
+    public void InputSelect()
+    {
+        wasOpened = isOpened;
+        Open();
+    }
+
+    public void InputDeselect()
+    {
+        if (!wasOpened) Close();
+    }
+
+    private void Open()
+    {
+        isOpened = true;
+        buttonText.text = &quot;Close&quot;;
+        ChangeAnimation(&quot;Opened&quot;);
+    }
+
+
+    private void Close()
+    {
+        isOpened = false;
+        buttonText.text = &quot;Open&quot;;
+        ChangeAnimation(&quot;Closed&quot;);
+    }
+
+    private void AddLine(string line)
+    {
+        chatText += line + &quot;\n&quot;;
+        lastLine.text = line;
+        chatLog.text = chatText;
+    }
+
+    public void AddChatMessage(string userName, string message)
+    {
+        if (Input.GetKeyDown(KeyCode.Return) || Input.GetKeyDown(KeyCode.KeypadEnter))
+        {
+            AddLine(userName + &quot; : &quot; + message);
+        }
+    }
+
+    public void AddAnnouncement(string userName, string announcement)
+    {
+        AddLine(userName + &quot; &quot; + announcement);
+    }
+
+    // @brief Event for the input field
+    public void AddChatMessage(string message)
+    {
+        //TODO : get player username
+        AddChatMessage(&quot;player0&quot;, message);
+        chatInput.text = &quot;&quot;;
+    }
+    public bool IsChatInputSelected()
+    {
+        return chatInput.isFocused;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

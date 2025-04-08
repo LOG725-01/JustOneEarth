@@ -1,0 +1,353 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/GameManager.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/GameManager.cs (<b>264</b> lines of code) (<a href="GameManager.cs">raw</a>):</h3>
+<div id="editor">using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+
+struct DebugValues
+{
+    public bool gameManager;
+    public bool board;
+    public bool animal;
+    public bool tile;
+    public bool player;
+    public bool gameState;
+    public bool cloud;
+   
+    public DebugValues(bool _)
+    {
+        gameManager = true;
+        board = true;
+        animal = false;
+        tile = true;
+        player = true;
+        gameState = true;
+        cloud = false;
+    }
+}
+
+public class GameManager : MonoBehaviour
+{
+    private PlayerType playerType;
+
+    private GameState gameState;
+
+    [SerializeField] GameObject cardPrefab;
+
+    [SerializeField] private HumanPlayer humanPlayerPrefab;
+    [SerializeField] private AIPlayer aiPlayerPrefab;
+
+    [SerializeField] private GameObject deckPrefab;
+    [SerializeField] private GameObject discardPrefab;
+    [SerializeField] private GameObject handPrefab;
+
+    private HumanPlayer humanPlayerInstance;
+    private AIPlayer aiPlayerInstance;
+
+    [SerializeField] public Board board;
+    [SerializeField] private GameObject cloudSpawnerPrefab;
+
+    private InGameMenu inGameMenu;
+    private bool isAiTurn = false;
+    private bool isMenuOpen = false;
+
+    private List&lt;PlayerInputNotifier&gt; playerInputNotifiers = new List&lt;PlayerInputNotifier&gt;();
+
+    private bool gameStarted = false;
+
+    DebugValues debugValues;
+
+    private System.Type[] availableCardTypes = new System.Type[]
+    {
+        typeof(GetOnePointCard),
+        typeof(FreeCard)
+        // Ajoutez les cartes ici
+    };
+
+    private void Start()
+    {
+        if (board == null)
+            board = FindObjectOfType&lt;Board&gt;();
+        StartGame();
+        inGameMenu = FindObjectOfType&lt;InGameMenu&gt;();
+    }
+
+    private void Update()
+    {
+        if (!isAiTurn) { 
+        Player player = gameState.GetCurrentPlayingPlayer();
+
+        if (player != null)
+            if (player.GetType() == typeof(AIPlayer))
+            {
+                isAiTurn = true;
+                StartCoroutine(AITurn());
+            }
+            else if (player is HumanPlayer)
+            {
+
+            }
+        }
+        if (Input.GetButtonDown(&quot;Cancel&quot;))
+        {
+            HandleEscapePress();
+        }
+    }
+
+    private IEnumerator AITurn()
+    {
+        yield return new WaitForSeconds(2);
+        Player player = gameState.GetCurrentPlayingPlayer();
+        AIPlayer aiPlayer = (AIPlayer)player;
+        gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
+        gameState.DrawCardToHand(player);
+        isAiTurn = false;
+    }
+
+    private void HandleEscapePress()
+    {
+        Player currentPlayer = gameState.currentInstancePlayer;
+        if (currentPlayer.selectedTile != null)
+        {
+            DeselectCurrentTile();
+            return;
+        }
+        if (inGameMenu != null)
+        {
+            inGameMenu.ToggleMenu();
+            isMenuOpen = inGameMenu.IsMenuOpen();
+        }
+    }
+    public void StartGame()
+    {
+        playerType = SceneChanger.PlayerType;
+
+        PlayerTurnUi.Instance.SetTurn(playerType);
+
+        humanPlayerInstance = Instantiate(humanPlayerPrefab);
+        humanPlayerInstance.name = &quot;humanPlayer&quot;;
+        humanPlayerInstance.PlayerType = playerType;
+
+        RessourceButtonHandler.Instance.Player = humanPlayerInstance;
+
+        GameObject humanPlayerDeck = Instantiate(deckPrefab);
+        humanPlayerDeck.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerHand = Instantiate(handPrefab);
+        humanPlayerHand.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerDiscard = Instantiate(discardPrefab);
+        humanPlayerDiscard.transform.SetParent(humanPlayerInstance.gameObject.transform);
+
+        humanPlayerInstance.debug = debugValues.player;
+        aiPlayerInstance = Instantiate(aiPlayerPrefab);
+        aiPlayerInstance.name = &quot;aiPlayer&quot;;
+
+        GameObject aiPlayerDeck = Instantiate(deckPrefab);
+        aiPlayerDeck.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerHand = Instantiate(handPrefab);
+        aiPlayerHand.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerDiscard = Instantiate(discardPrefab);
+        aiPlayerDiscard.transform.SetParent(aiPlayerInstance.gameObject.transform);
+
+        if (board != null)
+        {
+            Board boardObject = Instantiate(board);
+            board = boardObject.GetComponent&lt;Board&gt;();
+            board.debug = debugValues.board;
+            board.debugAnimal = debugValues.animal;
+            board.debugTile = debugValues.tile;
+            board.OnBoardGenerated += () =&gt;
+            {
+                if (debugValues.gameManager) Debug.Log($&quot;[OnBoardGenerated] Invoker&quot;);
+                var allTiles = board.GetAllTiles();
+                InitializePlayerStartingResources(humanPlayerInstance, allTiles);
+                AssignStartingTiles(humanPlayerInstance, allTiles, 3);
+                RegisterObserversToPlayer(humanPlayerInstance);
+            };
+            board.CreateBoard();
+        }
+
+        if (cloudSpawnerPrefab != null)
+        {
+            GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
+            CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent&lt;CloudSpawner&gt;();
+            cloudSpawner.debug = debugValues.cloud;
+            cloudSpawner.Initialize(board);
+        }
+
+        gameState = new GameObject(&quot;GameState&quot;).AddComponent&lt;GameState&gt;();
+        gameState.SetBoard(board);
+        PlayerInputDetection.Instance.GameState = gameState;
+
+        switch (playerType)
+        {
+            case PlayerType.Civilisation:
+                aiPlayerInstance.PlayerType = PlayerType.World;
+                gameState.PlayerCivilisation = humanPlayerInstance;
+                gameState.PlayerWorld = aiPlayerInstance;
+                break;
+            case PlayerType.World:
+                aiPlayerInstance.PlayerType = PlayerType.Civilisation;
+                gameState.PlayerCivilisation = aiPlayerInstance;
+                gameState.PlayerWorld = humanPlayerInstance;
+                break;
+        }
+        gameState.SetFirstPlayer(playerType);
+        gameState.currentInstancePlayer = humanPlayerInstance;
+        gameState.debug = debugValues.gameState;
+
+        PopulateDeck(humanPlayerDeck, humanPlayerInstance);
+        PopulateDeck(aiPlayerDeck, aiPlayerInstance);
+
+        gameState.DrawCardToHand(humanPlayerInstance);
+        gameState.DrawCardToHand(aiPlayerInstance);
+
+
+        playerInputNotifiers.Clear();
+        playerInputNotifiers.AddRange(FindObjectsOfType&lt;PlayerInputNotifier&gt;(true));
+
+        foreach (var notifier in playerInputNotifiers)
+        {
+            notifier.OnGameObjectClicked += HandlePlayerInput;
+        }
+
+        gameStarted = true;
+    }
+
+    private void HandlePlayerInput(GameObject clickedObject)
+    {
+        if (clickedObject.TryGetComponent&lt;IClickable&gt;(out var clickable))
+        {
+            clickable.OnClick(gameState);
+            return;
+        }
+        else
+        {
+            DeselectCurrentTile();
+        }
+        Debug.Log(&quot;[HandlePlayerInput] Clicked object has no specific click behavior.&quot;);
+    }
+
+    private void PopulateDeck(GameObject deck, Player player)
+    {
+        System.Random random = new System.Random();
+
+        for (int i = 0; i &lt; 20; i++)
+        {
+            // S�lectionne un type al�atoire parmi les cartes disponibles
+            int index = random.Next(availableCardTypes.Length);
+            System.Type cardType = availableCardTypes[index];
+
+            // Cr�e dynamiquement une instance du type s�lectionn�
+            CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
+
+            Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
+            player.AddCardInDeck(card);
+        }
+    }
+
+    private void InitializePlayerStartingResources(Player player, List&lt;Tile&gt; tiles)
+    {
+        Dictionary&lt;RessourceTypes, int&gt; totalResources = new();
+
+        foreach (RessourceTypes type in System.Enum.GetValues(typeof(RessourceTypes)))
+            totalResources[type] = 0;
+
+        foreach (var tile in tiles)
+        {
+            foreach (var kvp in tile.producedRessources)
+                totalResources[kvp.Key] += kvp.Value;
+        }
+
+        foreach (var kvp in totalResources)
+        {
+            int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
+            player.currentRessources[kvp.Key] = initialAmount;
+            if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Ressource de depart : {kvp.Key} = {initialAmount}&quot;);
+        }
+
+        player.NotifyObservers();
+    }
+
+    private void AssignStartingTiles(Player player, List&lt;Tile&gt; tiles, int count)
+    {
+        if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Assignation des tuiles Total disponibles : {tiles.Count}&quot;);
+
+        var unowned = tiles.FindAll(t =&gt; t != null &amp;&amp; t.owner == null);
+
+        if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuiles sans proprietaire : {unowned.Count}&quot;);
+
+        if (unowned.Count == 0)
+        {
+            Debug.LogWarning(&quot;[GameManager] Aucune tuile unowned trouvee !&quot;);
+            return;
+        }
+
+        if (debugValues.gameManager) Debug.Log($&quot;[AssignStartingTiles] Total tiles en entree : {tiles.Count}&quot;);
+
+        foreach (var tile in tiles)
+        {
+            if (debugValues.gameManager) Debug.Log($&quot;[AssignStartingTiles] Tuile : {tile.name}, type: {tile.tileType}, owner: {(tile.owner == null ? &quot;Aucun&quot; : tile.owner.name)}&quot;);
+        }
+
+        for (int i = 0; i &lt; count &amp;&amp; unowned.Count &gt; 0; i++)
+        {
+            var tile = unowned[UnityEngine.Random.Range(0, unowned.Count)];
+
+            if (tile == null)
+            {
+                Debug.LogWarning(&quot;[GameManager] Tuile null rencontree !&quot;);
+                continue;
+            }
+
+            player.AddOwnedTile(tile); // Appelle log dans Player.cs
+            tile.owner = player;
+
+            if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuile assignee : {tile.name}, Type : {tile.tileType}&quot;);
+
+            unowned.Remove(tile);
+        }
+
+        if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuiles finales du joueur : {player.ownedTiles.Count}&quot;);
+
+        player.ComputeRessources();
+    }
+
+    void RegisterObserversToPlayer(Player player)
+    {
+        Observer[] observers = FindObjectsOfType&lt;Observer&gt;();
+
+        foreach (var obs in observers)
+        {
+            player.RegisterObserver(obs);
+        }
+        player.NotifyObservers();
+    }
+    private void DeselectCurrentTile()
+    {
+        gameState.currentInstancePlayer.DeselectTile();
+        TileInfo.Instance.Clear();
+    }
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

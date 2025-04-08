@@ -1,0 +1,69 @@
+[ {
+  "key" : "primary",
+  "components" : [ {
+    "name" : "Assets",
+    "filesCount" : 52,
+    "linesOfCode" : 2694,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.cs",
+      "value" : 52,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.cs",
+      "value" : 2694,
+      "description" : [ ]
+    } ]
+  } ],
+  "componentDependencies" : [ ],
+  "componentDependenciesErrors" : [ ],
+  "logicalDecomposition" : {
+    "name" : "primary",
+    "scope" : "main",
+    "filters" : [ ],
+    "componentsFolderDepth" : 1,
+    "minComponentsCount" : 0,
+    "components" : [ {
+      "name" : "Assets",
+      "sourceFileFilters" : [ {
+        "pathPattern" : "./Assets/.*",
+        "contentPattern" : "",
+        "exception" : false,
+        "note" : ""
+      } ],
+      "files" : [ ]
+    } ],
+    "metaComponents" : [ ],
+    "groups" : [ ],
+    "includeRemainingFiles" : true,
+    "dependenciesFinder" : {
+      "useBuiltInDependencyFinders" : true,
+      "rules" : [ ],
+      "metaRules" : [ ]
+    },
+    "renderingOptions" : {
+      "orientation" : "TB",
+      "maxNumberOfDependencies" : 100,
+      "renderComponentsWithoutDependencies" : true,
+      "renderIndirectDependencies" : false,
+      "renderInternalIndirectDependencies" : false,
+      "reverseDirection" : false
+    },
+    "includeExternalComponents" : true,
+    "dependencyLinkThreshold" : 1,
+    "duplicationLinkThreshold" : 50,
+    "temporalLinkThreshold" : 1,
+    "maxSearchDepthLines" : 200
+  },
+  "fileCountPerComponent" : [ {
+    "name" : "Assets",
+    "value" : 52,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerComponent" : [ {
+    "name" : "Assets",
+    "value" : 2694,
+    "description" : [ ]
+  } ]
+} ]

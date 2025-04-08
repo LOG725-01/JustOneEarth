@@ -1,0 +1,443 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+    .node {
+        cursor: pointer;
+    }
+
+    .node:hover {
+        stroke: #000;
+        stroke-width: 1.5px;
+    }
+
+    .node--leaf {
+        fill: white;
+    }
+
+    .label {
+        font: 11px "Helvetica Neue", Helvetica, Arial, sans-serif;
+        text-anchor: middle;
+        text-shadow: 0 1px 0 #fff, 1px 0 0 #fff, -1px 0 0 #fff, 0 -1px 0 #fff;
+    }
+
+    .label,
+    .node--root,
+    .node--leaf {
+        pointer-events: none;
+    }
+
+</style>
+<svg width="960" height="960"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+    var svg = d3.select("svg"),
+        margin = 20,
+        diameter = +svg.attr("width"),
+        g = svg.append("g").attr("transform", "translate(" + diameter / 2 + "," + diameter / 2 + ")");
+
+    var color = d3.scaleLinear()
+        .domain([-1, 5])
+        .range(["hsl(152,80%,100%)", "hsl(228,30%,40%)"])
+        .interpolate(d3.interpolateHcl);
+
+    var pack = d3.pack()
+        .size([diameter - margin, diameter - margin])
+        .padding(2);
+
+
+    var root = {
+        "name": "cluster",
+        "children": [ {
+  "name" : "Assets",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "Scripts",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Audio",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "AudioManager.cs (2)",
+        "color" : "",
+        "size" : 2,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "CameraController.cs (10)",
+      "color" : "",
+      "size" : 10,
+      "children" : [ ]
+    }, {
+      "name" : "Environnement",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "AnimalAnimatorController.cs (3)",
+        "color" : "",
+        "size" : 3,
+        "children" : [ ]
+      }, {
+        "name" : "AnimalMouvement.cs (11)",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      }, {
+        "name" : "CloudMouvement.cs (3)",
+        "color" : "",
+        "size" : 3,
+        "children" : [ ]
+      }, {
+        "name" : "CloudSpawner.cs (7)",
+        "color" : "",
+        "size" : 7,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "GameLogic",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "AIPlayer.cs (9)",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      }, {
+        "name" : "Board.cs (40)",
+        "color" : "",
+        "size" : 40,
+        "children" : [ ]
+      }, {
+        "name" : "Card.cs (26)",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "CardConditions",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ExempleForestTile.cs (1)",
+          "color" : "grey",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "ICardCondition.cs (1)",
+          "color" : "grey",
+          "size" : 1,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "CardEffects",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ExempleEffect.cs (6)",
+          "color" : "",
+          "size" : 6,
+          "children" : [ ]
+        }, {
+          "name" : "GainPointEffect.cs (11)",
+          "color" : "",
+          "size" : 11,
+          "children" : [ ]
+        }, {
+          "name" : "GainRessourceOfType.cs (2)",
+          "color" : "",
+          "size" : 2,
+          "children" : [ ]
+        }, {
+          "name" : "ICardEffect.cs (1)",
+          "color" : "grey",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "NextTurnEffect.cs (3)",
+          "color" : "",
+          "size" : 3,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "Cards",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "CardData.cs (10)",
+          "color" : "",
+          "size" : 10,
+          "children" : [ ]
+        }, {
+          "name" : "FreeCard.cs (5)",
+          "color" : "",
+          "size" : 5,
+          "children" : [ ]
+        }, {
+          "name" : "GetOnePointCard.cs (4)",
+          "color" : "",
+          "size" : 4,
+          "children" : [ ]
+        }, {
+          "name" : "MineralSurge.cs (5)",
+          "color" : "",
+          "size" : 5,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "Enum",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "PlayerType.cs (2)",
+          "color" : "",
+          "size" : 2,
+          "children" : [ ]
+        }, {
+          "name" : "RessourceTypes.cs (1)",
+          "color" : "grey",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "TileType.cs (4)",
+          "color" : "",
+          "size" : 4,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "GameManager.cs (54)",
+        "color" : "",
+        "size" : 54,
+        "children" : [ ]
+      }, {
+        "name" : "GameState.cs (33)",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "GenerationConfig.cs (4)",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "HumanPlayer.cs (1)",
+        "color" : "grey",
+        "size" : 1,
+        "children" : [ ]
+      }, {
+        "name" : "IClickable.cs (1)",
+        "color" : "grey",
+        "size" : 1,
+        "children" : [ ]
+      }, {
+        "name" : "Player.cs (25)",
+        "color" : "",
+        "size" : 25,
+        "children" : [ ]
+      }, {
+        "name" : "PlayerInputDetection.cs (2)",
+        "color" : "",
+        "size" : 2,
+        "children" : [ ]
+      }, {
+        "name" : "PlayerInputNotifier.cs (4)",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      }, {
+        "name" : "RessourceButtonHandler.cs (3)",
+        "color" : "",
+        "size" : 3,
+        "children" : [ ]
+      }, {
+        "name" : "Tile.cs (24)",
+        "color" : "",
+        "size" : 24,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "SceneChanger.cs (13)",
+      "color" : "",
+      "size" : 13,
+      "children" : [ ]
+    }, {
+      "name" : "Testing&Debug",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "GameLogger.cs (2)",
+        "color" : "",
+        "size" : 2,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "UI",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "AnimationController.cs (5)",
+        "color" : "",
+        "size" : 5,
+        "children" : [ ]
+      }, {
+        "name" : "Chat.cs (6)",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      }, {
+        "name" : "Menu",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ButtonController.cs (5)",
+          "color" : "",
+          "size" : 5,
+          "children" : [ ]
+        }, {
+          "name" : "ButtonListController.cs (5)",
+          "color" : "",
+          "size" : 5,
+          "children" : [ ]
+        }, {
+          "name" : "InGameMenu.cs (3)",
+          "color" : "",
+          "size" : 3,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "PlayerTurnUi.cs (6)",
+        "color" : "",
+        "size" : 6,
+        "children" : [ ]
+      }, {
+        "name" : "ResourcePanel",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ResourceAnimationController.cs (2)",
+          "color" : "",
+          "size" : 2,
+          "children" : [ ]
+        }, {
+          "name" : "ResourceIncomeObserver.cs (4)",
+          "color" : "",
+          "size" : 4,
+          "children" : [ ]
+        }, {
+          "name" : "ResourceObserver.cs (7)",
+          "color" : "",
+          "size" : 7,
+          "children" : [ ]
+        }, {
+          "name" : "ResourcesPanel.cs (3)",
+          "color" : "",
+          "size" : 3,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "ScoreObserver.cs (8)",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      }, {
+        "name" : "TileInfo.cs (7)",
+        "color" : "",
+        "size" : 7,
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+} ]
+    }
+
+    root = d3.hierarchy(root)
+        .sum(function (d) {
+            return d.size;
+        })
+        .sort(function (a, b) {
+            return b.value - a.value;
+        });
+
+    var focus = root,
+        nodes = pack(root).descendants(),
+        view;
+
+    var circle = g.selectAll("circle")
+        .data(nodes)
+        .enter().append("circle")
+        .attr("class", function (d) {
+            return d.parent ? d.children ? "node" : "node node--leaf" : "node node--root";
+        })
+        .style("fill", function (d) {
+            return d.children ? color(d.depth) : (d.data.color ? d.data.color : null);
+        })
+        .on("click", function (d) {
+            if (focus !== d) zoom(d), d3.event.stopPropagation();
+        });
+
+    var text = g.selectAll("text")
+        .data(nodes)
+        .enter().append("text")
+        .attr("class", "label")
+        .style("fill-opacity", function (d) {
+            return d.parent === root ? 1 : 0;
+        })
+        .style("display", function (d) {
+            return d.parent === root ? "inline" : "none";
+        })
+        .text(function (d) {
+            return d.data.name.length > 33 ? (d.data.name.substr(0, 14) + "..." + d.data.name.substr(d.data.name.length - 14))  : d.data.name;
+        });
+
+    var node = g.selectAll("circle,text");
+
+    svg
+        .style("background", color(-1))
+        .on("click", function () {
+            zoom(root);
+        });
+
+    zoomTo([root.x, root.y, root.r * 2 + margin]);
+
+    function zoom(d) {
+        var focus0 = focus;
+        focus = d;
+
+        var transition = d3.transition()
+            .duration(d3.event.altKey ? 7500 : 750)
+            .tween("zoom", function (d) {
+                var i = d3.interpolateZoom(view, [focus.x, focus.y, focus.r * 2 + margin]);
+                return function (t) {
+                    zoomTo(i(t));
+                };
+            });
+
+        transition.selectAll("text")
+            .filter(function (d) {
+                return d.parent === focus || this.style.display === "inline";
+            })
+            .style("fill-opacity", function (d) {
+                return d.parent === focus ? 1 : 0;
+            })
+            .on("start", function (d) {
+                if (d.parent === focus) this.style.display = "inline";
+            })
+            .on("end", function (d) {
+                if (d.parent !== focus) this.style.display = "none";
+            });
+    }
+
+    function zoomTo(v) {
+        var k = diameter / v[2];
+        view = v;
+        node.attr("transform", function (d) {
+            return "translate(" + (d.x - v[0]) * k + "," + (d.y - v[1]) * k + ")";
+        });
+        circle.attr("r", function (d) {
+            return d.r * k;
+        });
+    }
+
+</script>

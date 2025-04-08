@@ -1,0 +1,50 @@
+<html>
+<head>
+    <title>private TileType GetRandomTileType()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private TileType GetRandomTileType()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [283:310]</i></p>
+<ul>
+    <li><b>23</b> lines of code</li>
+    <li><b>10</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private TileType GetRandomTileType(Dictionary&lt;TileType, float&gt; probabilities, TileType? excludeType = null)
+    {
+        float roll = UnityEngine.Random.value;
+        float cumulative = 0f;
+
+        if (debug) Debug.Log($&quot;[Board] S&eacute;lection al&eacute;atoire d'une tuile... Roll = {roll:F4}&quot; + (excludeType.HasValue ? $&quot; (exclusion : {excludeType.Value})&quot; : &quot;&quot;));
+
+        foreach (var entry in probabilities)
+        {
+            if (excludeType.HasValue &amp;&amp; entry.Key == excludeType.Value)
+            {
+                if (debug) Debug.Log($&quot;[Board] &rarr; Ignor&eacute; : {entry.Key} (exclu)&quot;);
+                continue;
+            }
+
+            cumulative += entry.Value;
+            if (debug) Debug.Log($&quot;[Board] &rarr; Cumul {entry.Key} : {cumulative:F4}&quot;);
+
+            if (roll &lt;= cumulative)
+            {
+                if (debug) Debug.Log($&quot;[Board] Tuile s&eacute;lectionn&eacute;e : {entry.Key}&quot;);
+                return entry.Key;
+            }
+        }
+
+        Debug.LogWarning(&quot;[Board] Aucune tuile s&eacute;lectionn&eacute;e par probabilit&eacute;s, retour par d&eacute;faut : Plains&quot;);
+        return TileType.Plains;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

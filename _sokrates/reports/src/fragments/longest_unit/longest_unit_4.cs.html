@@ -1,0 +1,58 @@
+<html>
+<head>
+    <title>private void ShowOwnedTiles()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private void ShowOwnedTiles()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/RessourceButtonHandler.cs [19:54]</i></p>
+<ul>
+    <li><b>36</b> lines of code</li>
+    <li><b>8</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private void ShowOwnedTiles(RessourceTypes ressourceTypes)
+    {
+        if (player == null)
+        {
+            Debug.LogError(&quot;[RessourceButtonHandler] player is null&quot;);
+            return;
+        }
+        List&lt;Tile&gt; filteredTiles = null;
+        switch (ressourceTypes)
+        {
+            case RessourceTypes.Oil:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Deserts).ToList();
+                break;
+            case RessourceTypes.Sun:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Plains).ToList();
+                break;
+            case RessourceTypes.Water:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Lakes).ToList();
+                break;
+            case RessourceTypes.Trees:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Forests).ToList();
+                break;
+            case RessourceTypes.Minerals:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Mountains).ToList();
+                break;
+        }
+        foreach(Tile tile in filteredTiles)
+        {
+            tile.SpawnParticle();
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

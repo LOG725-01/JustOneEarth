@@ -1,0 +1,94 @@
+<html>
+<head>
+    <title>Assets/Scripts/UI/Menu/ButtonListController.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/UI/Menu/ButtonListController.cs (<b>62</b> lines of code) (<a href="ButtonListController.cs">raw</a>):</h3>
+<div id="editor">using UnityEngine;
+
+public class ButtonListController : MonoBehaviour
+{
+    [SerializeField] private ButtonController[] buttonControllers = null;
+    [SerializeField] private GameObject[] panels = null;
+
+    private void OnValidate()
+    {
+        if (buttonControllers != null)
+        {
+            if (buttonControllers.Length != panels.Length)
+                print(&quot;error each button should have a panel&quot;);
+        }
+        else if (panels != null) {
+            print(&quot;error each panels should have a button&quot;);
+        }
+    }
+
+    private void Awake()
+    {
+        for (int i = 0; i &lt; buttonControllers.Length; i++)
+        {
+            buttonControllers[i].SetListController(this, i);
+        }
+    }
+
+    public void AllNormal()
+    {
+        foreach (var buttonController in buttonControllers)
+        {
+            buttonController.NormalAnimation(true);
+        }
+    }
+
+    public void PressButton(int button)
+    {
+        for (int i = 0; i &lt; buttonControllers.Length; i++)
+        {
+            if (i == button) {
+                bool isActive = panels[i].activeSelf;
+                if (isActive)
+                {
+                    AudioManager.Instance.UiClose();
+                    buttonControllers[i].NormalAnimation(true);
+                }
+                else 
+                {
+                    AudioManager.Instance.UiOpen();
+                    buttonControllers[i].PressAnimation(); 
+                }
+                panels[i].SetActive(!isActive);
+            }
+            else { 
+                buttonControllers[i].NormalAnimation(true);
+                panels[i].SetActive(false);
+            }
+        }
+    }
+
+    public void OnDisable()
+    {
+        for (int i = 0; i &lt; buttonControllers.Length; i++)
+        {
+            panels[i].SetActive(false);
+        }
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

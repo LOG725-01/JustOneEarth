@@ -1,0 +1,198 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/Player.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Player.cs (<b>142</b> lines of code) (<a href="Player.cs">raw</a>):</h3>
+<div id="editor">using System;
+using System.Collections.Generic;
+using UnityEngine;
+
+public abstract class Player : MonoBehaviour
+{
+    private int points = 0;
+    public int Points { get =&gt; points; 
+    set {
+            points = value;
+            NotifyObservers();
+        } }
+
+    private PlayerType playerType = PlayerType.Civilisation;
+    public PlayerType PlayerType { get =&gt; playerType; set =&gt; playerType = value; }
+
+    public List&lt;Observer&gt; observers = new List&lt;Observer&gt;();
+    
+    public Dictionary&lt;RessourceTypes, int&gt; currentRessources = new Dictionary&lt;RessourceTypes, int&gt;()
+    {
+        { RessourceTypes.Trees, 0 },
+        { RessourceTypes.Minerals, 0 },
+        { RessourceTypes.Water, 0 },
+        { RessourceTypes.Sun, 0 },
+        { RessourceTypes.Oil, 0 }
+    };
+    public List&lt;Tile&gt; ownedTiles = new List&lt;Tile&gt;();
+    public List&lt;Card&gt; deck = new List&lt;Card&gt;();
+    public List&lt;Card&gt; hand = new List&lt;Card&gt;();
+    public List&lt;Card&gt; discardPile = new List&lt;Card&gt;();
+    public Tile selectedTile = null;
+    
+
+    public bool debug = true;
+
+    public abstract Card GetBestPlayableCard();
+
+    public void AddCardInDeck(Card card)
+    {
+        deck.Add(card);
+    }
+
+    public void GiveCard(Card card)
+    {
+        hand.Add(card);
+    }
+
+    public void MoveCardFromDeckToHand(Card card)
+    {
+        if (deck.Contains(card))
+        {
+            deck.Remove(card);
+            hand.Add(card);
+        }
+    }
+
+    public void MoveCardFromHandToDiscardPile(Card card)
+    {
+        if (hand.Contains(card))
+        {
+            hand.Remove(card);
+            discardPile.Add(card);
+        }
+    }
+
+    public void AddOwnedTile(Tile tile)
+    {
+        if (tile == null) return;
+        tile.owner = this;
+        ownedTiles.Add(tile);
+        tile.UpdateBorder();
+        if (debug) Debug.Log($&quot;[Player] Tuile {tile.name} ajout�e au joueur.&quot;);
+    }
+
+    public void RemoveOwnedTile(Tile tile)
+    {
+        ownedTiles.Remove(tile);
+    }
+
+    public void ChangeSelectedTile(Tile tile)
+    {
+        selectedTile = tile;
+    }
+
+    public void ComputeRessources()
+    {
+        if (debug) Debug.Log(&quot;[Player] D�but du calcul des ressources...&quot;);
+
+        if (ownedTiles.Count == 3)
+        {
+            foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
+            {
+                currentRessources[resource] = 0;
+                if (debug) Debug.Log($&quot;[Player] Ressource r�initialis�e : {resource} = 0&quot;);
+            }
+        }
+
+        foreach (Tile tile in ownedTiles)
+        {
+            if (debug) Debug.Log($&quot;[Player] Analyse de la tuile : {tile.gameObject.name}, Type : {tile.tileType}&quot;);
+
+            foreach (var kvp in tile.producedRessources)
+            {
+                currentRessources[kvp.Key] += kvp.Value;
+                if (debug) Debug.Log($&quot;[Player] +{kvp.Value} {kvp.Key} depuis {tile.gameObject.name} (Total : {currentRessources[kvp.Key]})&quot;);
+            }
+        }
+
+        if (debug) Debug.Log(&quot;[Player] Calcul des ressources termin�. R�sum� :&quot;);
+        foreach (var res in currentRessources)
+        {
+            if (debug) Debug.Log($&quot;[Player] {res.Key} = {res.Value}&quot;);
+        }
+
+        NotifyObservers();
+        if (debug) Debug.Log(&quot;[Player] Observateurs notifi�s.&quot;);
+    }
+
+    public void RegisterObserver(Observer observer)
+    {
+        if (!observers.Contains(observer))
+            observers.Add(observer);
+    }
+
+    public void NotifyObservers()
+    {
+        if (gameObject == null)
+        {
+            Debug.LogWarning(&quot;Player is null, can't notify observers.&quot;);
+            return;
+        }
+
+        foreach (var observer in observers)
+        {
+            observer.ObserverUpdate(gameObject);
+        }
+    }
+
+    public bool TrySpendResources(Dictionary&lt;RessourceTypes, int&gt; cost)
+    {
+        // V�rifie si le joueur a assez de ressources
+        foreach (var res in cost)
+        {
+            if (!currentRessources.ContainsKey(res.Key) || currentRessources[res.Key] &lt; res.Value)
+            {
+                if (debug) Debug.LogWarning($&quot;[Player] Ressource insuffisante : {res.Key} requis = {res.Value}, disponible = {currentRessources[res.Key]}&quot;);
+                return false; // Ressource manquante
+            }
+        }
+
+        // Retire les ressources
+        foreach (var res in cost)
+        {
+            currentRessources[res.Key] -= res.Value;
+            if (debug) Debug.Log($&quot;[Player] -{res.Value} {res.Key} (Nouveau total : {currentRessources[res.Key]})&quot;);
+        }
+
+        NotifyObservers(); // Met � jour les UI/�couteurs
+        return true;
+    }
+
+    public void DeselectTile()
+    {
+        if (selectedTile != null)
+        {
+            selectedTile.ResetElevation();
+            selectedTile = null;
+            if (debug) Debug.Log(&quot;[Player] Tuile d�s�lectionn�e.&quot;);
+        }
+    }
+
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

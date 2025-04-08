@@ -1,0 +1,46 @@
+<html>
+<head>
+    <title>public void PressButton()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public void PressButton()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/UI/Menu/ButtonListController.cs [36:59]</i></p>
+<ul>
+    <li><b>24</b> lines of code</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    public void PressButton(int button)
+    {
+        for (int i = 0; i &lt; buttonControllers.Length; i++)
+        {
+            if (i == button) {
+                bool isActive = panels[i].activeSelf;
+                if (isActive)
+                {
+                    AudioManager.Instance.UiClose();
+                    buttonControllers[i].NormalAnimation(true);
+                }
+                else 
+                {
+                    AudioManager.Instance.UiOpen();
+                    buttonControllers[i].PressAnimation(); 
+                }
+                panels[i].SetActive(!isActive);
+            }
+            else { 
+                buttonControllers[i].NormalAnimation(true);
+                panels[i].SetActive(false);
+            }
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

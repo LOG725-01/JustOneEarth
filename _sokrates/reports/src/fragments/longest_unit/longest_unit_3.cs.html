@@ -1,0 +1,63 @@
+<html>
+<head>
+    <title>private IEnumerator MoveRoutine()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private IEnumerator MoveRoutine()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [67:107]</i></p>
+<ul>
+    <li><b>41</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private IEnumerator MoveRoutine()
+    {
+        while (true)
+        {
+            if (debug) Debug.Log(isMoving);
+            switch (isMoving)
+            {
+                case AnimalState.Idle:
+                    yield return Moving();
+                    break;
+                case AnimalState.Sitted:
+                    yield return new WaitForSeconds(animalAnimator.SitStandAnimation(false));
+                    yield return Moving();
+                    break;
+                case AnimalState.AttackingPredator:
+                    yield return new WaitForSeconds(animalAnimator.AttackAnimation());
+                    animalAnimator.WalkBackwardAnimation();
+                    yield return new WaitForSeconds(0.5f);
+                    Idle();
+                    break;
+                case AnimalState.AttackingPrey:
+                    yield return new WaitForSeconds(animalAnimator.AttackAnimation());
+                    Idle();
+                    break;
+                case AnimalState.Eat:
+                    yield return new WaitForSeconds(animalAnimator.ShuffleAnimation());
+                    animalAnimator.WalkBackwardAnimation();
+                    yield return new WaitForSeconds(0.5f);
+                    yield return new WaitForSeconds(animalAnimator.EatAnimation());
+                    Idle();
+                    break;
+                case AnimalState.GotHit:
+                    yield return new WaitForSeconds(animalAnimator.GotHitAnimation());
+                    animalAnimator.WalkBackwardAnimation();
+                    yield return new WaitForSeconds(1f);
+                    Idle();
+                    break;
+            }
+            yield return new WaitForSeconds(Random.Range(0f, 3f));
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>
