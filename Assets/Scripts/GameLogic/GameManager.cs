@@ -145,7 +145,7 @@ public class GameManager : MonoBehaviour
         aiPlayerHand.transform.SetParent(aiPlayerInstance.gameObject.transform);
         GameObject aiPlayerDiscard = Instantiate(discardPrefab);
         aiPlayerDiscard.transform.SetParent(aiPlayerInstance.gameObject.transform);
-
+        gameState = new GameObject("GameState").AddComponent<GameState>();
         if (board != null)
         {
             Board boardObject = Instantiate(board);
@@ -171,9 +171,8 @@ public class GameManager : MonoBehaviour
             cloudSpawner.debug = debugValues.cloud;
             cloudSpawner.Initialize(board);
         }
-
-        gameState = new GameObject("GameState").AddComponent<GameState>();
         gameState.SetBoard(board);
+
         PlayerInputDetection.Instance.GameState = gameState;
 
         switch (playerType)
@@ -319,7 +318,7 @@ public class GameManager : MonoBehaviour
 
         if (debugValues.gameManager) Debug.Log($"[GameManager] Tuiles finales du joueur : {player.ownedTiles.Count}");
 
-        player.ComputeRessources();
+        player.ComputeRessources(gameState);
     }
 
     void RegisterObserversToPlayer(Player player)

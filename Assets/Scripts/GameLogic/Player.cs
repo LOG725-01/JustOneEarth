@@ -84,15 +84,18 @@ public abstract class Player : MonoBehaviour
         selectedTile = tile;
     }
 
-    public void ComputeRessources()
+    public void ComputeRessources(GameState gameState)
     {
         if (debug) Debug.Log("[Player] Début du calcul des ressources...");
-
-        foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
+        if (gameState.turnCount == 0)
         {
-            currentRessources[resource] = 0;
-            if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
+            foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
+            {
+                currentRessources[resource] = 0;
+                if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
+            }
         }
+
 
         foreach (Tile tile in ownedTiles)
         {

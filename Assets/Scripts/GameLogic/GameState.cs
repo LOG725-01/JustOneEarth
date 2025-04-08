@@ -15,7 +15,7 @@ public class GameState : MonoBehaviour
     // This is the player of the running game instance, it is used for multiplayer purposes. Do not confuse with the player currently playing.
     public Player currentInstancePlayer;
     private PlayerType currentPlayerTurn = PlayerType.Civilisation;
-    private int turnCount = 0;
+    public int turnCount = 0;
     private Board currentBoard;
     public Card lastPlayedCard;
 
@@ -62,7 +62,7 @@ public class GameState : MonoBehaviour
         }
         
         player.TrySpendResources(card.cost);
-        player.ComputeRessources();
+        player.ComputeRessources(this);
         SetCurrentPlayerTurnToNextPlayer();
 
         return this;
