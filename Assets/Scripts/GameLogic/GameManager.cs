@@ -57,9 +57,19 @@ public class GameManager : MonoBehaviour
 
     private System.Type[] availableCardTypes = new System.Type[]
     {
-        typeof(GetOnePointCard),
-        typeof(CreateVillage)
+        typeof(GetOnePointCard)
         // Ajoutez les cartes ici
+    };
+
+        private System.Type[] civilisationCardTypes = new System.Type[]
+    {
+        typeof(CreateVillage)
+        // Ajoute ici toutes les cartes Civilisation
+    };
+
+    private System.Type[] worldCardTypes = new System.Type[]
+    {
+        // Ajoute ici les cartes World (attaque, effets climatiques, etc.)
     };
 
     private void Start()
@@ -192,8 +202,8 @@ public class GameManager : MonoBehaviour
         gameState.currentInstancePlayer = humanPlayerInstance;
         gameState.debug = debugValues.gameState;
 
-        PopulateDeck(humanPlayerDeck, humanPlayerInstance);
-        PopulateDeck(aiPlayerDeck, aiPlayerInstance);
+        PopulateDeck(humanPlayerDeck, humanPlayerInstance, civilisationCardTypes);
+        PopulateDeck(aiPlayerDeck, aiPlayerInstance, worldCardTypes);
 
         AddPersistentCardToHand(humanPlayerInstance);
 
@@ -226,18 +236,19 @@ public class GameManager : MonoBehaviour
         Debug.Log("[HandlePlayerInput] Clicked object has no specific click behavior.");
     }
 
-    private void PopulateDeck(GameObject deck, Player player)
+    private void PopulateDeck(GameObject deck, Player player, System.Type[] specificCardTypes)
     {
+        List<System.Type> combinedCardTypes = new List<System.Type>();
+        combinedCardTypes.AddRange(availableCardTypes);     // Cartes communes
+        combinedCardTypes.AddRange(specificCardTypes);      // Cartes spécifiques
+
         System.Random random = new System.Random();
         for (int i = 0; i < 20; i++)
         {
-            // Sélectionne un type aléatoire parmi les cartes disponibles
-            int index = random.Next(availableCardTypes.Length);
-            System.Type cardType = availableCardTypes[index];
+            int index = random.Next(combinedCardTypes.Count);
+            System.Type cardType = combinedCardTypes[index];
 
-            // Crée dynamiquement une instance du type sélectionné
             CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
-
             Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
             player.AddCardInDeck(card);
         }
