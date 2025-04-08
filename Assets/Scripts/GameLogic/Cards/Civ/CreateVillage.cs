@@ -7,7 +7,8 @@ public class CreateVillage : CardData
         cost.Add(RessourceTypes.Trees, 1);
         GainPointEffect gainPointEffect = new GainPointEffect();
         effectList.Add(gainPointEffect);
-        OnlyPlainTiles conditionPlainTile = new OnlyPlainTiles();
-        conditionList.Add(conditionPlainTile);
+        targetType = CardTargetType.NeutralTileOnly;
+
+        conditionList.Add(new OnlyPlainTiles());
     }
 }

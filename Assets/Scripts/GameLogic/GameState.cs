@@ -127,8 +127,8 @@ public class GameState : MonoBehaviour
 
     public Card CreateCardGameObject(CardData cardData, GameObject deck, GameObject cardPrefab)
     {
+        cardData.InjectDefaultConditionIfNeeded();
         Card card = Instantiate(cardPrefab, deck.transform).GetComponent<Card>();
-
         card.InitializeCard(cardData.cardName, cardData.description,
             cardData.effectList, cardData.cost, cardData.conditionList, cardData.addOwnedTile, cardData.isPersistent);
         return card;
