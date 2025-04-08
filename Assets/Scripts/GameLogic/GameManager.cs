@@ -58,6 +58,7 @@ public class GameManager : MonoBehaviour
     private System.Type[] availableCardTypes = new System.Type[]
     {
         typeof(GetOnePointCard),
+        typeof(CreateVillage)
         // Ajoutez les cartes ici
     };
 

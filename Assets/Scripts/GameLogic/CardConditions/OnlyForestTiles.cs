@@ -1,4 +1,4 @@
-public class ExempleForestTile : ICardCondition
+public class OnlyForestTiles : ICardCondition
 {
     public bool IsMet(GameState gameState, Player player)
     {

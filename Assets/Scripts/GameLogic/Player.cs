@@ -88,13 +88,10 @@ public abstract class Player : MonoBehaviour
     {
         if (debug) Debug.Log("[Player] Début du calcul des ressources...");
 
-        if (ownedTiles.Count == 3)
+        foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
         {
-            foreach (RessourceTypes resource in Enum.GetValues(typeof(RessourceTypes)))
-            {
-                currentRessources[resource] = 0;
-                if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
-            }
+            currentRessources[resource] = 0;
+            if (debug) Debug.Log($"[Player] Ressource réinitialisée : {resource} = 0");
         }
 
         foreach (Tile tile in ownedTiles)
