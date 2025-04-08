@@ -1,11 +1,15 @@
+using System.Diagnostics;
 using UnityEngine;
+using UnityEngine.Rendering;
 
-public class GainRessourceOfTileType : ICardEffect
+public class GainRessourceOfType : ICardEffect
 {
     private RessourceTypes ressourceType;
     private int amount;
 
-    public GainRessourceOfTileType(RessourceTypes ressourceType, int amount)
+    bool debug = false;
+
+    public GainRessourceOfType(RessourceTypes ressourceType, int amount)
     {
         this.ressourceType = ressourceType;
         this.amount = amount;
@@ -18,13 +22,13 @@ public class GainRessourceOfTileType : ICardEffect
 
         if (tile == null)
         {
-            Debug.LogWarning("[GainRessourceOfTileType] Aucune tuile sélectionnée.");
+            if (debug) UnityEngine.Debug.LogWarning("[GainRessourceOfType] Aucune tuile sélectionnée.");
             return;
         }
 
         if (!tile.TryGetProducedAmount(ressourceType, out int _))
         {
-            Debug.LogWarning($"[GainRessourceOfTileType] La tuile ne produit pas de {ressourceType}.");
+            if (debug) UnityEngine.Debug.LogWarning($"[GainRessourceOfType] La tuile ne produit pas de {ressourceType}.");
             return;
         }
 
@@ -35,6 +39,6 @@ public class GainRessourceOfTileType : ICardEffect
 
         playingPlayer.currentRessources[ressourceType] += amount;
 
-        Debug.Log($"[GainRessourceOfTileType] +{amount} {ressourceType} gagnés pour {playingPlayer.name}");
+        if (debug) UnityEngine.Debug.Log($"[GainRessourceOfType] +{amount} {ressourceType} gagnés pour {playingPlayer.name}");
     }
 }
