@@ -1,9 +1,9 @@
-public class MineralSurge : CardData
+public class RessourcesSurge : CardData
 {
     private void OnEnable()
     {
         cardName = "Mineral Surge";
-        description = "Gagne 5 minerais en dépensent 5 bois (si la tuile en produit).";
+        description = "Exemple : Gagne 5 ressources en fonction de la tuile sélectioner en dépensent 5 bois.";
         cost.Add(RessourceTypes.Trees, 5);
 
         GainRessourceOfTileType gainRessourceOfTileType = new GainRessourceOfTileType(RessourceTypes.Minerals, 5);
