@@ -16,6 +16,7 @@ public class GameState : MonoBehaviour
     private PlayerType currentPlayerTurn = PlayerType.Civilisation;
     private int turnCount = 0;
     private Board currentBoard;
+    public Card lastPlayedCard;
 
     public bool debug = false;
 
@@ -44,6 +45,7 @@ public class GameState : MonoBehaviour
     public GameState PlayCard(Card card, Player player)
     {
         if (debug) Debug.Log("[GameStage] play a card by " + player.PlayerType.ToString());
+        lastPlayedCard = card;
         card.ApplyEffects(this);
         turnCount++;
         player.MoveCardFromHandToDiscardPile(card);

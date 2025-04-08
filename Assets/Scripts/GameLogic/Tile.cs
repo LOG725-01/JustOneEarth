@@ -91,6 +91,15 @@ public class Tile : MonoBehaviour, IClickable
 
     }
 
+    public bool TryGetProducedAmount(RessourceTypes type, out int amount)
+    {
+        return producedRessources.TryGetValue(type, out amount);
+    }
+    public List<RessourceTypes> GetProducedRessourceTypes()
+    {
+        return new List<RessourceTypes>(producedRessources.Keys);
+    }
+
     public void ElevateTile()
     {
         Vector3 elevatedPosition = transform.position + new Vector3(0, 0.2f, 0); // Surélévation de 0.5 unités
