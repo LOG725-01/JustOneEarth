@@ -49,8 +49,15 @@ jobs:
       # Upload to itch.io
       - name: Push build to itch.io via Butler
         run: |
-          curl -L -o butler.zip https://broth.itch.ovh/butler/dl/latest/linux-amd64.zip
-          unzip butler.zip -d butler
-          chmod +x butler/butler/butler
-          ./butler/butler/butler login --api-key ${{ secrets.BUTLER_API_KEY }}
-          ./butler/butler/butler push build/StandaloneWindows64/ Dragost37/JustOneEarth:windows
+          # -L follows redirects
+          # -O specifies output name
+          curl -L -o butler.zip https://broth.itch.ovh/butler/linux-amd64/LATEST/archive/default
+          unzip butler.zip
+          # GNU unzip tends to not set the executable bit even though it's set in the .zip
+          chmod +x butler
+          # just a sanity check run (and also helpful in case you're sharing CI logs)
+          ./butler -V
+          #Butler auth
+          ./butler login --api-key ${{ secrets.BUTLER_API_KEY }}
+          #Butle push to Itch
+          ./butler push build/StandaloneWindows64/ Dragost37/JustOneEarth:windows
