@@ -10,7 +10,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout code
+    - name: Checkout
       uses: actions/checkout@v3
 
     - name: Activate Unity License
@@ -43,7 +43,4 @@ jobs:
     - name: Upload to itch.io
       run: |
         curl -L -o butler.zip https://broth.itch.ovh/butler/dl/latest/linux-amd64.zip
-        unzip butler.zip -d butler
-        chmod +x butler/butler/butler
-        ./butler/butler/butler login --api-key ${{ secrets.BUTLER_API_KEY }}
-        ./butler/butler/butler push build/StandaloneWindows64/ tonuser/tonjeu:windows
+        unzip butler.zip -
