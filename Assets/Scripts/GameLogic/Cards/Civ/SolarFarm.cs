@@ -14,7 +14,8 @@ public class SolarFarm : CardData
         cost.Add(RessourceTypes.Minerals, 5);
 
         GainRessourceOfType gainRessourceOfTileType = new GainRessourceOfType(RessourceTypes.Sun, 4);
-
+        effectList.Add(gainRessourceOfTileType);
+        
         targetType = CardTargetType.NeutralTileOnly;
 
         conditionList.Add(new TileMustBeOfType(TileType.Plains));

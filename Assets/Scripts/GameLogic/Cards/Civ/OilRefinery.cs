@@ -12,7 +12,8 @@ public class OilRefinery : CardData
         cost.Add(RessourceTypes.Water, 4);
 
         GainRessourceOfType gainRessourceOfTileType = new GainRessourceOfType(RessourceTypes.Oil, 4);
-
+        effectList.Add(gainRessourceOfTileType);
+        
         targetType = CardTargetType.NeutralTileOnly;
 
         conditionList.Add(new TileMustBeOfType(TileType.Deserts));
