@@ -62,7 +62,7 @@ public class GameManager : MonoBehaviour
         // Ajoutez les cartes ici
     };
 
-        private System.Type[] civilisationCardTypes = new System.Type[]
+    private System.Type[] civilisationCardTypes = new System.Type[]
     {
         typeof(CreateVillage)
         // Ajoute ici toutes les cartes Civilisation
@@ -203,8 +203,8 @@ public class GameManager : MonoBehaviour
         gameState.currentInstancePlayer = humanPlayerInstance;
         gameState.debug = debugValues.gameState;
 
-        PopulateDeck(humanPlayerDeck, humanPlayerInstance, civilisationCardTypes);
-        PopulateDeck(aiPlayerDeck, aiPlayerInstance, worldCardTypes);
+        PopulateDeck(humanPlayerDeck, humanPlayerInstance);
+        PopulateDeck(aiPlayerDeck, aiPlayerInstance);
 
         AddPersistentCardToHand(humanPlayerInstance);
 
@@ -237,13 +237,21 @@ public class GameManager : MonoBehaviour
         Debug.Log("[HandlePlayerInput] Clicked object has no specific click behavior.");
     }
 
-    private void PopulateDeck(GameObject deck, Player player, System.Type[] specificCardTypes)
+    private void PopulateDeck(GameObject deck, Player player)
     {
-        List<System.Type> combinedCardTypes = new List<System.Type>();
-        combinedCardTypes.AddRange(availableCardTypes);     // Cartes communes
-        combinedCardTypes.AddRange(specificCardTypes);      // Cartes spécifiques
+        List<System.Type> combinedCardTypes = new();
 
-        System.Random random = new System.Random();
+        // Ajouter les cartes communes
+        combinedCardTypes.AddRange(availableCardTypes);
+
+        // Ajouter les cartes spécifiques en fonction du type du joueur
+        if (player.PlayerType == PlayerType.Civilisation)
+            combinedCardTypes.AddRange(civilisationCardTypes);
+        else if (player.PlayerType == PlayerType.World)
+            combinedCardTypes.AddRange(worldCardTypes);
+
+        // Génération aléatoire du deck
+        System.Random random = new();
         for (int i = 0; i < 20; i++)
         {
             int index = random.Next(combinedCardTypes.Count);
@@ -254,6 +262,7 @@ public class GameManager : MonoBehaviour
             player.AddCardInDeck(card);
         }
     }
+
     private void AddPersistentCardToHand(Player player)
     {
         CardData freeCardData = ScriptableObject.CreateInstance<FreeCard>();
