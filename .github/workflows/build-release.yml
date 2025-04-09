@@ -16,13 +16,13 @@ jobs:
     - name: Activate Unity License
       uses: game-ci/unity-activate@v2
       with:
-        unityVersion: 2022.3.5f1
+        unityVersion: 2022.3.56f1
         activationFile: ${{ secrets.UNITY_LICENSE }}
 
     - name: Build for Windows
       uses: game-ci/unity-builder@v2
       with:
-        unityVersion: 2022.3.5f1
+        unityVersion: 2022.3.56f1
         targetPlatform: StandaloneWindows64
 
     - name: Zip build
