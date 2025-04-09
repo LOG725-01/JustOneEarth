@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 struct DebugValues
 {
@@ -64,13 +66,17 @@ public class GameManager : MonoBehaviour
 
     private System.Type[] civilisationCardTypes = new System.Type[]
     {
-        typeof(CreateVillage)
+        typeof(CreateVillage),
+        typeof(CreateDam),
+        typeof(OilRefinery),
+        typeof(SolarFarm),
         // Ajoute ici toutes les cartes Civilisation
     };
 
     private System.Type[] worldCardTypes = new System.Type[]
     {
         // Ajoute ici les cartes World (attaque, effets climatiques, etc.)
+        typeof (Earthquake)
     };
 
     private void Start()
@@ -115,6 +121,13 @@ public class GameManager : MonoBehaviour
 
     private void HandleEscapePress()
     {
+        if (Chat.Instance != null && Chat.Instance.IsOpened())
+        {
+            Chat.Instance.Close();
+            EventSystem.current.SetSelectedGameObject(null); // enlève le focus
+            return;
+        }
+
         Player currentPlayer = gameState.currentInstancePlayer;
         if (currentPlayer.selectedTile != null)
         {
@@ -304,43 +317,41 @@ public class GameManager : MonoBehaviour
 
         var unowned = tiles.FindAll(t => t != null && t.owner == null);
 
-        if (debugValues.gameManager) Debug.Log($"[GameManager] Tuiles sans proprietaire : {unowned.Count}");
-
         if (unowned.Count == 0)
         {
-            Debug.LogWarning("[GameManager] Aucune tuile unowned trouvee !");
+            Debug.LogWarning("[GameManager] Aucune tuile unowned trouvée !");
             return;
         }
 
-        if (debugValues.gameManager) Debug.Log($"[AssignStartingTiles] Total tiles en entree : {tiles.Count}");
+        // Dictionnaire temporaire pour stocker les types déjà assignés
+        HashSet<TileType> usedTypes = new HashSet<TileType>();
 
-        foreach (var tile in tiles)
-        {
-            if (debugValues.gameManager) Debug.Log($"[AssignStartingTiles] Tuile : {tile.name}, type: {tile.tileType}, owner: {(tile.owner == null ? "Aucun" : tile.owner.name)}");
-        }
+        int assigned = 0;
 
-        for (int i = 0; i < count && unowned.Count > 0; i++)
+        while (assigned < count && unowned.Count > 0)
         {
-            var tile = unowned[UnityEngine.Random.Range(0, unowned.Count)];
+            // Trouver une tuile non assignée avec un type encore non utilisé
+            Tile tile = unowned.Find(t => !usedTypes.Contains(t.tileType));
 
             if (tile == null)
             {
-                Debug.LogWarning("[GameManager] Tuile null rencontree !");
-                continue;
+                Debug.LogWarning("[GameManager] Plus de types uniques disponibles pour assignation.");
+                break; // on ne peut plus garantir des types différents
             }
 
-            player.AddOwnedTile(tile); // Appelle log dans Player.cs
+            // Assigner la tuile au joueur
             tile.owner = player;
-
-            if (debugValues.gameManager) Debug.Log($"[GameManager] Tuile assignee : {tile.name}, Type : {tile.tileType}");
-
+            player.AddOwnedTile(tile);
+            usedTypes.Add(tile.tileType);
             unowned.Remove(tile);
-        }
+            assigned++;
 
-        if (debugValues.gameManager) Debug.Log($"[GameManager] Tuiles finales du joueur : {player.ownedTiles.Count}");
+            if (debugValues.gameManager) Debug.Log($"[GameManager] Tuile assignée : {tile.name}, Type : {tile.tileType}");
+        }
 
         player.ComputeRessources(gameState);
     }
+
 
     void RegisterObserversToPlayer(Player player)
     {

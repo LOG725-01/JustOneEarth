@@ -20,7 +20,19 @@ public class Chat : AnimationController
         else Instance = this;
         Close();
     }
-
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T) && !isOpened)
+        {
+            Open();
+            chatInput.Select();
+            chatInput.ActivateInputField();
+        }
+        if (!isOpened && EventSystem.current.currentSelectedGameObject == chatInput.gameObject)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+    }
     private void Start()
     {
         Clean();
@@ -44,7 +56,6 @@ public class Chat : AnimationController
     public void InputSelect()
     {
         wasOpened = isOpened;
-        Open();
     }
 
     public void InputDeselect()
@@ -54,13 +65,14 @@ public class Chat : AnimationController
 
     private void Open()
     {
+        Debug.Log("Chat Open() called");
         isOpened = true;
         buttonText.text = "Close";
         ChangeAnimation("Opened");
     }
 
 
-    private void Close()
+    public void Close()
     {
         isOpened = false;
         buttonText.text = "Open";
@@ -97,5 +109,9 @@ public class Chat : AnimationController
     public bool IsChatInputSelected()
     {
         return chatInput.isFocused;
+    }
+    public bool IsOpened()
+    {
+        return isOpened;
     }
 }

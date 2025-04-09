@@ -121,5 +121,18 @@ public class Tile : MonoBehaviour, IClickable
     {
         Instantiate(ParticlePrefab, transform);
     }
+    public void SetStructure(GameObject structure)
+    {
+        currentStructure = structure;
+    }
 
+    public GameObject GetStructureOnTile()
+    {
+        return currentStructure;
+    }
+
+    public bool HasStructure()
+    {
+        return currentStructure != null;
+    }
 }

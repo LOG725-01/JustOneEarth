@@ -15,9 +15,11 @@ public class PlaceStructureEffect : ICardEffect
     {
         Player player = gameState.GetCurrentPlayingPlayer();
         Tile tile = player.selectedTile;
-        if (tile == null) return;
+        if (tile == null || tile.HasStructure()) return;
 
         GameObject instance = GameObject.Instantiate(structurePrefab, tile.transform);
         instance.transform.localRotation = Quaternion.Euler(rotation);
+        instance.transform.localPosition = Vector3.zero;
+        tile.SetStructure(instance);
     }
 }
