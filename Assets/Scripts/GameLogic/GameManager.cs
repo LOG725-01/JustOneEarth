@@ -144,6 +144,18 @@ public class GameManager : MonoBehaviour
     {
         playerType = SceneChanger.PlayerType;
 
+        // set background color depending on the plyer type chosen
+        switch (playerType)
+        {
+            case PlayerType.Civilisation:
+                Camera.main.backgroundColor = new Color(0.54f, 0.6f, 0.65f);
+                break;
+            case PlayerType.World:
+                Camera.main.backgroundColor = new Color(0.188f, 0.54f, 0.81f);
+                break;
+        }
+        
+
         PlayerTurnUi.Instance.SetTurn(playerType);
 
         humanPlayerInstance = Instantiate(humanPlayerPrefab);
