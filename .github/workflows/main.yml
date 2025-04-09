@@ -29,14 +29,13 @@ jobs:
 
       # Build (Unity Pro authentication)
       - name: Build project (Unity Pro)
-        uses: game-ci/unity-builder@v2
+        uses: game-ci/unity-builder@v4
         env:
+          UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
           UNITY_EMAIL: ${{ secrets.UNITY_EMAIL }}
           UNITY_PASSWORD: ${{ secrets.UNITY_PASSWORD }}
-          UNITY_SERIAL: ${{ secrets.UNITY_SERIAL }}
         with:
           targetPlatform: StandaloneWindows64
-          unityVersion: 2022.3.5f1
 
       # Zip the build
       - name: Zip the Windows build
