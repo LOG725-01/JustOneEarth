@@ -34,7 +34,7 @@ jobs:
           UNITY_LICENSE: ${{ secrets.UNITY_LICENSE }}
         with:
           targetPlatform: StandaloneWindows64
-          unityVersion: 2022.3.56f1 # Version Unity
+          unityVersion: 2022.3.5f1 # Version Unity
 
       # Zip the build
       - name: Zip the Windows build
