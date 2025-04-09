@@ -9,6 +9,8 @@ public class AudioManager : MonoBehaviour
 
     [SerializeField] private AudioClip uiClose;
     [SerializeField] private AudioClip uiOpen;
+    [SerializeField] private AudioClip ressourceSelect;
+    [SerializeField] private AudioClip ressourceDecline;
 
     private void Awake()
     {
@@ -59,5 +61,15 @@ public class AudioManager : MonoBehaviour
     public void UiOpen()
     {
         PlayAudioClip(uiOpen, Camera.main.transform.position, 1f);
+    }
+
+    public void RessourceSelect()
+    {
+        PlayAudioClip(ressourceSelect, Camera.main.transform.position, 1f);
+    }
+
+    public void RessourceDecline()
+    {
+        PlayAudioClip(ressourceDecline, Camera.main.transform.position, 1f);
     }
 }

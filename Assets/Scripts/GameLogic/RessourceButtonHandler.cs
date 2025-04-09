@@ -47,6 +47,8 @@ public class RessourceButtonHandler : MonoBehaviour
                     tile => tile.tileType == TileType.Mountains).ToList();
                 break;
         }
+        if (filteredTiles.Count > 0) AudioManager.Instance.RessourceSelect();
+        else AudioManager.Instance.RessourceDecline();
         foreach(Tile tile in filteredTiles)
         {
             tile.SpawnParticle();
