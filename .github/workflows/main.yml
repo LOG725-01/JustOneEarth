@@ -56,5 +56,5 @@ jobs:
           chmod +x butler
           ./butler -V
           ./butler login
-          ./butler push build/StandaloneWindows64/ Dragost37/JustOneEarth:windows
+          ./butler push build/StandaloneWindows64/ Dragost/JustOneEarth:windows
 
