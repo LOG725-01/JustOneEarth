@@ -43,12 +43,6 @@ jobs:
           zip -r ../../Build-Windows.zip .
           cd ../..
 
-      # Upload as GitHub Artifact (optionnel mais utile pour tests manuels)
-      - uses: actions/upload-artifact@v3
-        with:
-          name: Build-Windows
-          path: Build-Windows.zip
-
       # Upload to itch.io
       - name: Push build to itch.io via Butler
         run: |
