@@ -58,9 +58,19 @@ public class GameManager : MonoBehaviour
     private System.Type[] availableCardTypes = new System.Type[]
     {
         typeof(GetOnePointCard),
-        typeof(MineralSurge),
-        typeof(CreateVillage)
+        typeof(MineralSurge)
         // Ajoutez les cartes ici
+    };
+
+    private System.Type[] civilisationCardTypes = new System.Type[]
+    {
+        typeof(CreateVillage)
+        // Ajoute ici toutes les cartes Civilisation
+    };
+
+    private System.Type[] worldCardTypes = new System.Type[]
+    {
+        // Ajoute ici les cartes World (attaque, effets climatiques, etc.)
     };
 
     private void Start()
@@ -229,20 +239,30 @@ public class GameManager : MonoBehaviour
 
     private void PopulateDeck(GameObject deck, Player player)
     {
-        System.Random random = new System.Random();
+        List<System.Type> combinedCardTypes = new();
+
+        // Ajouter les cartes communes
+        combinedCardTypes.AddRange(availableCardTypes);
+
+        // Ajouter les cartes sp√©cifiques en fonction du type du joueur
+        if (player.PlayerType == PlayerType.Civilisation)
+            combinedCardTypes.AddRange(civilisationCardTypes);
+        else if (player.PlayerType == PlayerType.World)
+            combinedCardTypes.AddRange(worldCardTypes);
+
+        // G√©n√©ration al√©atoire du deck
+        System.Random random = new();
         for (int i = 0; i < 20; i++)
         {
-            // SÈlectionne un type alÈatoire parmi les cartes disponibles
-            int index = random.Next(availableCardTypes.Length);
-            System.Type cardType = availableCardTypes[index];
+            int index = random.Next(combinedCardTypes.Count);
+            System.Type cardType = combinedCardTypes[index];
 
-            // CrÈe dynamiquement une instance du type sÈlectionnÈ
             CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
-
             Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
             player.AddCardInDeck(card);
         }
     }
+
     private void AddPersistentCardToHand(Player player)
     {
         CardData freeCardData = ScriptableObject.CreateInstance<FreeCard>();
