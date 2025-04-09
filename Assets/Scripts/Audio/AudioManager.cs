@@ -55,21 +55,21 @@ public class AudioManager : MonoBehaviour
 
     public void UiClose()
     {
-        PlayAudioClip(uiClose, Camera.main.transform.position, 1f);
+        PlayAudioClip(uiClose, Camera.main.transform.position, 0.5f);
     }
 
     public void UiOpen()
     {
-        PlayAudioClip(uiOpen, Camera.main.transform.position, 1f);
+        PlayAudioClip(uiOpen, Camera.main.transform.position, 0.4f);
     }
 
     public void RessourceSelect()
     {
-        PlayAudioClip(ressourceSelect, Camera.main.transform.position, 1f);
+        PlayAudioClip(ressourceSelect, Camera.main.transform.position, 0.6f);
     }
 
     public void RessourceDecline()
     {
-        PlayAudioClip(ressourceDecline, Camera.main.transform.position, 1f);
+        PlayAudioClip(ressourceDecline, Camera.main.transform.position, 0.6f);
     }
 }
