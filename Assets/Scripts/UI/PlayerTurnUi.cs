@@ -29,12 +29,12 @@ public class PlayerTurnUi : MonoBehaviour
 
     private void Civilisation()
     {
-        turnText.text = "Tour de la Civilisation";
+        turnText.text = "Civilization's turn";
     }
 
     private void World()
     {
-        turnText.text = "Tour du Monde";
+        turnText.text = "World's turn";
     }
 
 }

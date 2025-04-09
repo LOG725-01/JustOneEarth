@@ -1,6 +1,8 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 struct DebugValues
 {
@@ -115,6 +117,13 @@ public class GameManager : MonoBehaviour
 
     private void HandleEscapePress()
     {
+        if (Chat.Instance != null && Chat.Instance.IsOpened())
+        {
+            Chat.Instance.Close();
+            EventSystem.current.SetSelectedGameObject(null); // enlève le focus
+            return;
+        }
+
         Player currentPlayer = gameState.currentInstancePlayer;
         if (currentPlayer.selectedTile != null)
         {

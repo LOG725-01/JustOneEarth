@@ -4,7 +4,7 @@ using UnityEngine;
 public class ResourceIncomeObserver : Observer
 {
     [SerializeField] private TextMeshProUGUI resourceIncome;
-    [SerializeField] private string suffix = " par tour";
+    [SerializeField] private string suffix = " every round";
     [SerializeField] private RessourceTypes resourceType;
 
     public override void ObserverUpdate(GameObject subject)
