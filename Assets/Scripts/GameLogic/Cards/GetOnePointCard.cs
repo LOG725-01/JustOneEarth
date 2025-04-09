@@ -2,7 +2,7 @@ public class GetOnePointCard : CardData
 {
     private void OnEnable()
     {
-        cardName = "PointBurst";
+        cardName = "Point Burst";
         description = "Get +1 score point ! Cost -1 of each ! ";
         cost.Add(RessourceTypes.Trees, 1);
         cost.Add(RessourceTypes.Water, 1);

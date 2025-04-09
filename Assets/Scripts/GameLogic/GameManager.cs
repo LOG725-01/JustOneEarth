@@ -66,13 +66,17 @@ public class GameManager : MonoBehaviour
 
     private System.Type[] civilisationCardTypes = new System.Type[]
     {
-        typeof(CreateVillage)
+        typeof(CreateVillage),
+        typeof(CreateDam),
+        typeof(OilRefinery),
+        typeof(SolarFarm),
         // Ajoute ici toutes les cartes Civilisation
     };
 
     private System.Type[] worldCardTypes = new System.Type[]
     {
         // Ajoute ici les cartes World (attaque, effets climatiques, etc.)
+        typeof (Earthquake)
     };
 
     private void Start()

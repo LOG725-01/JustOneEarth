@@ -58,6 +58,12 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -5754084199372789682, guid: 31d1adeece2fd334ba0a585d7288d593,
+        type: 3}
+      propertyPath: m_Mesh
+      value: 
+      objectReference: {fileID: 8344593929969685637, guid: f4a5cccd9da8f4546a1ec1e77d9d1113,
+        type: 3}
     - target: {fileID: 919132149155446097, guid: 31d1adeece2fd334ba0a585d7288d593,
         type: 3}
       propertyPath: m_Name
@@ -124,4 +130,5 @@ MonoBehaviour:
     type: 3}
   ParticlePrefab: {fileID: 3962562201518218624, guid: 67dd508ae027f4046b4ba987f64b7e79,
     type: 3}
+  housePrefab: {fileID: 0}
   debug: 0
