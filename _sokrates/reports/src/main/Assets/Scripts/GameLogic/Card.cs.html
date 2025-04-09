@@ -1,0 +1,145 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/Card.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Card.cs (<b>94</b> lines of code) (<a href="Card.cs">raw</a>):</h3>
+<div id="editor">using System.Collections;
+using System.Collections.Generic;
+using TMPro;
+using UnityEngine;
+
+public class Card : AnimationController, IClickable
+{
+    List&lt;ICardEffect&gt; effectList = new List&lt;ICardEffect&gt;();
+    public Dictionary&lt;RessourceTypes, int&gt; cost = new Dictionary&lt;RessourceTypes, int&gt;();
+
+    [SerializeField] private TextMeshProUGUI titleText;
+    [SerializeField] private TextMeshProUGUI ressourceText;
+    private List&lt;ICardCondition&gt; conditions = new List&lt;ICardCondition&gt;();
+
+
+
+    public bool debug = false;
+    public void InitializeCard(string titleText, string ressourceText, List&lt;ICardEffect&gt; effectList, Dictionary&lt;RessourceTypes, int&gt; cost, 
+        List&lt;ICardCondition&gt; conditionList)
+    {
+        this.titleText.text = titleText;
+        this.ressourceText.text = ressourceText;
+        this.effectList = effectList;
+        this.cost = cost;
+        this.conditions = conditionList;
+    }
+
+    public void Start()
+    {
+        NormalVisual();
+    }
+
+    public void AddEffect(ICardEffect effect)
+    {
+        effectList.Add(effect);
+    }
+
+    public void AddCost(RessourceTypes ressource, int quantity)
+    {
+        cost.Add(ressource, quantity);
+        ressourceText.text = quantity.ToString();
+        //TODO : update ressource icon
+    }
+
+    public void ApplyEffects(GameState gameState)
+    {
+        foreach (var effect in effectList) 
+        {
+            effect.ApplyEffect(gameState);
+        }
+    }
+    
+    public Dictionary&lt;RessourceTypes, int&gt; GetCost()
+    {
+        return new Dictionary&lt;RessourceTypes, int&gt;(cost); // Copie d�fensive
+    }
+    
+    public bool CanBePlayed(Dictionary&lt;RessourceTypes, int&gt; playerResources, GameState gameState, Player player)
+    {
+        foreach (var entry in cost)
+        {
+            if (debug) Debug.Log(&quot;[Card] cost values : &quot; + entry.Key.ToString() + &quot; : &quot; + entry.Value.ToString());
+            if (debug) Debug.Log(&quot;[Card] playerResources values : &quot; + playerResources.ContainsKey(entry.Key).ToString() + &quot; : &quot; + playerResources[entry.Key].ToString());
+            if (!playerResources.ContainsKey(entry.Key) || playerResources[entry.Key] &lt; entry.Value)
+                return false;
+        }
+
+        foreach (var condition in conditions)
+        {
+            if (!condition.IsMet(gameState, player))
+                return false;
+        }
+
+        return true;
+    }
+
+    public void OnClick(GameState gameState)
+    {
+        if (debug) Debug.Log(&quot;[Card] card clicked&quot;);
+        // Check if its the turn of the player clicking
+        if(gameState.GetCurrentPlayingPlayer() == gameState.currentInstancePlayer)
+        {
+            if (debug) Debug.Log(&quot;[Card] current Instance Player is current playing player&quot;);
+            // Check if card can be played and if a tile is selected
+            if (debug) Debug.Log(&quot;[Card] selected tile : &quot; + gameState.currentInstancePlayer.selectedTile.ToString());
+            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources,gameState, gameState.currentInstancePlayer) &amp;&amp; gameState.currentInstancePlayer.selectedTile != null)
+            {
+                if (debug) Debug.Log(&quot;[Card] CanBePlayed&quot;);
+                gameState = gameState.PlayCard(this, gameState.GetCurrentPlayingPlayer());
+
+                StartCoroutine(gameState.DrawCardToHandAfterDelay(3));
+
+                //Update game visuals here
+                SelectedVisual();
+            }
+        }
+        else
+        {
+            NormalVisual();
+        }
+    }
+
+    private void SelectedVisual()
+    {
+        ChangeAnimation(&quot;Selected&quot;);
+
+    }
+    
+    private void NormalVisual()
+    {
+        ChangeAnimation(&quot;Normal&quot;);
+    }
+
+    public void AddCondition(ICardCondition condition)
+    {
+        conditions.Add(condition);
+    }
+
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

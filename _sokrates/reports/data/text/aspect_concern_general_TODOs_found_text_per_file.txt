@@ -1,0 +1,6 @@
+Assets/Scripts/GameLogic/GameState.cs (1 line):
+	- line 41: // TODO : Add logic to return all playable cards available to player
+
+
+Assets/Scripts/UI/Chat.cs (1 line):
+	- line 93: //TODO : get player username

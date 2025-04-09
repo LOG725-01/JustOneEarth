@@ -1,0 +1,1716 @@
+[ {
+  "relativePath" : "Library/PackageCache/com.unity.inputsystem@1.11.2/Tests/IntegrationTests/IntegrationTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 104,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.inputsystem@1.11.2/Tests/TestFixture/AssemblyInfo.cs",
+  "extension" : "cs",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.inputsystem@1.11.2/Tests/TestFixture/AssetDatabaseUtils.cs",
+  "extension" : "cs",
+  "linesOfCode" : 165,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.inputsystem@1.11.2/Tests/TestFixture/InputTestFixture.cs",
+  "extension" : "cs",
+  "linesOfCode" : 643,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.inputsystem@1.11.2/Tests/TestFixture/InputTestRuntime.cs",
+  "extension" : "cs",
+  "linesOfCode" : 405,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.inputsystem@1.11.2/Tests/TestFixture/ScopedDisposable.cs",
+  "extension" : "cs",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.inputsystem@1.11.2/Tests/TestFixture/WinUserInput.cs",
+  "extension" : "cs",
+  "linesOfCode" : 463,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Properties/AssemblyInfo.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/TestCompilerAttribute.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBitmanipulation.cs",
+  "extension" : "cs",
+  "linesOfCode" : 475,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 360,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool2x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool2x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool2x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 364,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool3x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool3x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool3x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 368,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool4x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool4x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestBool4x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 332,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 882,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble2x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 788,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble2x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 782,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble2x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 784,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 889,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble3x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 782,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble3x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 798,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble3x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 788,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 896,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble4x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 784,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble4x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 788,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestDouble4x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 812,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 882,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat2x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 788,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat2x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 782,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat2x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 784,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 889,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat3x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 782,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat3x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 798,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat3x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 788,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 896,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat4x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 784,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat4x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 788,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestFloat4x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 812,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestHalf.cs",
+  "extension" : "cs",
+  "linesOfCode" : 474,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1118,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt2x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1024,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt2x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1018,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt2x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1020,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1125,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt3x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1018,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt3x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1034,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt3x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1024,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1132,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt4x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1020,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt4x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1024,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestInt4x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1048,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestMath.cs",
+  "extension" : "cs",
+  "linesOfCode" : 2764,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestMath.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 3988,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestMatrix.cs",
+  "extension" : "cs",
+  "linesOfCode" : 988,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestMinMaxAABB.cs",
+  "extension" : "cs",
+  "linesOfCode" : 467,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestPlane.cs",
+  "extension" : "cs",
+  "linesOfCode" : 220,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestQuaternion.cs",
+  "extension" : "cs",
+  "linesOfCode" : 296,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestRigidTransform.cs",
+  "extension" : "cs",
+  "linesOfCode" : 142,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1118,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint2x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1024,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint2x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1018,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint2x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1020,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1125,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint3x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1018,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint3x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1034,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint3x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1024,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1132,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint4x2.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1020,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint4x3.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1024,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUint4x4.gen.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1048,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/Shared/TestUtils.cs",
+  "extension" : "cs",
+  "linesOfCode" : 619,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/TestMath2.cs",
+  "extension" : "cs",
+  "linesOfCode" : 58,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.mathematics@1.2.6/Tests/Tests/TestRandom.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1120,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/BitArrayTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 130,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/CoreRenderPipelinePreferencesTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/CoreUnsafeUtilsTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 194,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Debugging/GetItemTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 87,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Debugging/PanelNameAndOrderTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 95,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Debugging/UndoRedoTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 82,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/DynamicArrayTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 408,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/EditorExampleTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/FixedBufferStringQueueTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/InputRegisteringTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ReflectionUtils.cs",
+  "extension" : "cs",
+  "linesOfCode" : 67,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/RemoveComponentTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 153,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/RemoveRange.Extensions.Tests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 140,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/RenderGraphTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 396,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/ShaderExtensionsTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/ShaderStrippingReportTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 80,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/ShaderStripping/ShaderStrippingTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 165,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/StringExtensionsTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 26,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Swap.Extensions.Tests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Utilities/TimedScopeTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 42,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Editor/Volumes/VolumeComponentTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 293,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Runtime/DebugManagerTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Runtime/ObservableListTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Runtime/RuntimeExampleTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 16,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/Runtime/RuntimeProfilerTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 46,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal-config@14.0.10/Tests/Editor/ConfigurationTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/BuddyAllocatorTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 149,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/EditorTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 176,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/RenderTextureDescriptorDimensionsTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 103,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/ShaderBuildPreprocessorTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 945,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/ShaderPrefilteringTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 358,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/ShaderScriptableStripperTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 1746,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/ShaderStripToolTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 2364,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Editor/UniversalGlobalSettingsTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Runtime/DecalTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Runtime/Light2DTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 127,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Runtime/LightTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Runtime/PixelPerfectCameraTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 286,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/Runtime/RuntimeTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 60,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.searcher@4.9.2/Tests/Editor/SearcherItemCollectionEquivalentConstraint.cs",
+  "extension" : "cs",
+  "linesOfCode" : 62,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.searcher@4.9.2/Tests/Editor/SearcherTreeUtilityTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/IntegrationTests/NamespaceTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/IntegrationTests/SerializationTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 225,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/TestNode.cs",
+  "extension" : "cs",
+  "linesOfCode" : 6,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/TestSlot.cs",
+  "extension" : "cs",
+  "linesOfCode" : 28,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/AbstractMaterialGraphTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 45,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/BlockNodeTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 99,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/DynamicSlotTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 282,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/FixedSlotTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 205,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/ListUtilityTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 106,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/MaterialGraphTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 74,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/MaterialNodeTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 106,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/MaterialSlotTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/MessageManagerTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 272,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/PixelShaderNodeTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/PropertyChunkTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/PropertyGeneratorTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 4,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/PropertyNodeTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 5,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/SerializedGraphTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 532,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/ShaderGeneratorTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 597,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/StackTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 75,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/TargetTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 247,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/Editor/UnitTests/UtilityTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 95,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.sysroot.linux-x86_64@2.0.9/Tests/Editor/EditorExampleTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.sysroot@2.0.10/Tests/Editor/EditorExampleTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.textmeshpro@3.0.7/Tests/Editor/TMP_EditorTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 137,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.textmeshpro@3.0.7/Tests/Runtime/TMP_RuntimeTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 138,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.toolchain.win-x86_64-linux-x86_64@2.0.10/Tests/Editor/EditorExampleTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/AssertionFailureOnOutputVertexCount.cs",
+  "extension" : "cs",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/CanvasElementsMaintainValidPositionsWhenCameraOrthoSizeIsZero.cs",
+  "extension" : "cs",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/CanvasWidthAssertionErrorWithRectTransform.cs",
+  "extension" : "cs",
+  "linesOfCode" : 35,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/RootCanvasTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 59,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Canvas/UISystemProfilerAddMarkerWithNullObjectDoesNotCrash.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/CanvasRenderer/ChangingHierarchyOfCanvasRenderer.cs",
+  "extension" : "cs",
+  "linesOfCode" : 27,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/CanvasRenderer/ParentCanvasIsSane.cs",
+  "extension" : "cs",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Dropdown/DropdownOptionsListDrawer.cs",
+  "extension" : "cs",
+  "linesOfCode" : 31,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/EventSystem/EventTriggerRemoveDuringExecution.cs",
+  "extension" : "cs",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/EventSystem/InterceptedEventsPreviewTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 59,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/CharacterLimitValidation.cs",
+  "extension" : "cs",
+  "linesOfCode" : 38,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/InputField/ContentValidation.cs",
+  "extension" : "cs",
+  "linesOfCode" : 73,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/RectMask2D/RectMask2DCulling.cs",
+  "extension" : "cs",
+  "linesOfCode" : 30,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/RectMask2D/RectTransformPosition.cs",
+  "extension" : "cs",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Slider/SliderRectReferences.cs",
+  "extension" : "cs",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/TestBehaviourBase.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/Text/FontCreatedByScript.cs",
+  "extension" : "cs",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UI/PropertyDrawers/PropertyDrawerTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 95,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/UnityEvent/UnityEventInvoke.cs",
+  "extension" : "cs",
+  "linesOfCode" : 65,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Editor/WrapperWindowFixture.cs",
+  "extension" : "cs",
+  "linesOfCode" : 55,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/ButtonTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 132,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Button/TestButton.cs",
+  "extension" : "cs",
+  "linesOfCode" : 25,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/BridgeScriptForRetainingObjects.cs",
+  "extension" : "cs",
+  "linesOfCode" : 7,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasGroupInheritedAlpha.cs",
+  "extension" : "cs",
+  "linesOfCode" : 140,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasResizeCorrectlyForRenderTexture.cs",
+  "extension" : "cs",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasScalerWithChildTextObjectDoesNotCrash.cs",
+  "extension" : "cs",
+  "linesOfCode" : 40,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasSizeCorrectInAwakeAndStart.cs",
+  "extension" : "cs",
+  "linesOfCode" : 57,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CanvasSizeCorrectInAwakeAndStartScript.cs",
+  "extension" : "cs",
+  "linesOfCode" : 18,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CheckMeshColorsAndColors32Match.cs",
+  "extension" : "cs",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CoroutineWorksIfUIObjectIsAttached.cs",
+  "extension" : "cs",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/CreateSceneUtility.cs",
+  "extension" : "cs",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/NestedCanvas.cs",
+  "extension" : "cs",
+  "linesOfCode" : 81,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/NestedCanvasMaintainsCorrectSize.cs",
+  "extension" : "cs",
+  "linesOfCode" : 48,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/NoActiveCameraInSceneDoesNotCrashEditor.cs",
+  "extension" : "cs",
+  "linesOfCode" : 52,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectangleContainsScreenPointTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectMask2DReparentedToDifferentCanvas.cs",
+  "extension" : "cs",
+  "linesOfCode" : 41,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectMask2DWithNestedCanvasCullsUsingCorrectCanvasRect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/RectTransformValidAfterEnable.cs",
+  "extension" : "cs",
+  "linesOfCode" : 64,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Canvas/SiblingOrderChangesLayout.cs",
+  "extension" : "cs",
+  "linesOfCode" : 68,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Dropdown/DropdownTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 132,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/GraphicRaycasterTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 124,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/GraphicRaycasterWorldSpaceCanvasTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 71,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/DragCallbackCheck.cs",
+  "extension" : "cs",
+  "linesOfCode" : 32,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/FakeBaseInput.cs",
+  "extension" : "cs",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/MouseUpdate.cs",
+  "extension" : "cs",
+  "linesOfCode" : 15,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/PointerClickCallbackCheck.cs",
+  "extension" : "cs",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/PointerEnterCallbackCheck.cs",
+  "extension" : "cs",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests/PointerExitCallbackCheck.cs",
+  "extension" : "cs",
+  "linesOfCode" : 12,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/InputModuleTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 201,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/Physics2DRaycasterTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 115,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/PhysicsRaycasterTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 39,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/RaycastSortingTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 100,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/EventSystem/SelectableTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 411,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/GraphicTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 203,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/ImageTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 482,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/MaskTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 137,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/NavigationTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 139,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/RawImageTest.cs",
+  "extension" : "cs",
+  "linesOfCode" : 61,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/RawImageTestHook.cs",
+  "extension" : "cs",
+  "linesOfCode" : 33,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Graphic/ToggleTestImageHook.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Image/ImageFilledGenerateWork.cs",
+  "extension" : "cs",
+  "linesOfCode" : 37,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Image/ImageTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 103,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Image/TestableImage.cs",
+  "extension" : "cs",
+  "linesOfCode" : 23,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/InputField/DesktopInputFieldTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 95,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/InputField/FakeInputModule.cs",
+  "extension" : "cs",
+  "linesOfCode" : 10,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/InputField/GenericInputFieldTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 257,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/InputField/InputFieldTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 44,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/InputField/TouchInputFieldTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 273,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/AspectRatioFitterTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/ContentSizeFitterTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 113,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/GridLayoutGroupTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 413,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/HorizonalLayoutGroupTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 143,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/LayoutGroupScaling.cs",
+  "extension" : "cs",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Layout/VerticalLayoutGroupTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 149,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/LayoutGroup/LayoutGroupArrangement.cs",
+  "extension" : "cs",
+  "linesOfCode" : 72,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/MaskClipping/RectMask2DClipping.cs",
+  "extension" : "cs",
+  "linesOfCode" : 85,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/NestedLayout/SceneWithNestedLayoutElementsLoads.cs",
+  "extension" : "cs",
+  "linesOfCode" : 137,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/NestedLayout/SceneWithNestedLayoutElementsLoadScript.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollBar/ScrollBarClamp.cs",
+  "extension" : "cs",
+  "linesOfCode" : 111,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollBar/ScrollBarTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 51,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectClamp.cs",
+  "extension" : "cs",
+  "linesOfCode" : 74,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectScale.cs",
+  "extension" : "cs",
+  "linesOfCode" : 90,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectStableLayout.cs",
+  "extension" : "cs",
+  "linesOfCode" : 109,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/ScrollRect/ScrollRectTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 336,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Slider/SliderTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 36,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/TextEditor/TextEditorBackspaceDelete.cs",
+  "extension" : "cs",
+  "linesOfCode" : 265,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/TextEditor/TextEditorTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 420,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Toggle/TestableToggleGroup.cs",
+  "extension" : "cs",
+  "linesOfCode" : 22,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Toggle/ToggleGroupTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 136,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Toggle/ToggleTests.cs",
+  "extension" : "cs",
+  "linesOfCode" : 89,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/ConcreteGraphic.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/ExceptionUtils.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/GraphicTestHelper.cs",
+  "extension" : "cs",
+  "linesOfCode" : 69,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/ImageHook.cs",
+  "extension" : "cs",
+  "linesOfCode" : 43,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/PrivateFieldSetter.cs",
+  "extension" : "cs",
+  "linesOfCode" : 50,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Library/PackageCache/com.unity.ugui@1.0.0/Tests/Runtime/Util/UIBehaviourExtensions.cs",
+  "extension" : "cs",
+  "linesOfCode" : 125,
+  "unitsCount" : 0,
+  "unitsMcCabeIndexSum" : 0,
+  "linesOfCodeInUnits" : 0
+} ]

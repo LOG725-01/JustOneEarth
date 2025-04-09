@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>private GameObject GetTilePrefab()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private GameObject GetTilePrefab()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [238:266]</i></p>
+<ul>
+    <li><b>23</b> lines of code</li>
+    <li><b>11</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private GameObject GetTilePrefab(TileType type)
+    {
+        switch (type)
+        {
+            case TileType.Forests:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Forests&quot;);
+                return forestPrefab;
+
+            case TileType.Mountains:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Mountains&quot;);
+                return mountainPrefab;
+
+            case TileType.Lakes:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Lakes&quot;);
+                return lakePrefab;
+
+            case TileType.Plains:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Plains&quot;);
+                return plainPrefab;
+
+            case TileType.Deserts:
+                if (debug) Debug.Log(&quot;[Board] Pr&eacute;fabriqu&eacute; demand&eacute; pour : Deserts&quot;);
+                return desertPrefab;
+
+            default:
+                //Debug.LogWarning($&quot;[Board] Aucun prefab d&eacute;fini pour le type : {type}&quot;);
+                return null;
+        }
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

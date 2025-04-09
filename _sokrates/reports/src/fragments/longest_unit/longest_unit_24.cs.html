@@ -1,0 +1,45 @@
+<html>
+<head>
+    <title>private void Init()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private void Init()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [38:60]</i></p>
+<ul>
+    <li><b>21</b> lines of code</li>
+    <li><b>3</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private void Init()
+    {
+        TiredCounter = Random.Range(3, 6);
+        currentTile = GetTileUnder();
+        if (currentTile != null)
+        {
+            Transform animalContainer = currentTile.transform.Find(&quot;AnimalContainer&quot;);
+            if (animalContainer != null)
+            {
+                transform.parent = animalContainer;
+            }
+            else
+            {
+                // Cr&eacute;er le conteneur s'il n'existe pas encore
+                GameObject container = new GameObject(&quot;AnimalContainer&quot;);
+                container.transform.parent = currentTile.transform;
+                container.transform.localPosition = Vector3.zero;
+                transform.parent = container.transform;
+            }
+        }
+
+        coroutine = StartCoroutine(MoveRoutine());
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

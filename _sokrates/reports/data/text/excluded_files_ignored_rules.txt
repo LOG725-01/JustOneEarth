@@ -1,0 +1,92 @@
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Hidden files and folders
+path like ".*/[.][a-zA-Z0-9_]+.*"
+30 files:
+
+Library/PackageCache/com.unity.burst@1.8.18/.Runtime/version.txt
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/CustomComposite/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/CustomDevice/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/CustomDeviceUsages/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/GamepadMouseCursor/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/InGameHints/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/InputDeviceTester/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/InputRecorder/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/OnScreenControls/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/RebindingUI/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/SimpleDemo/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/SimpleMultiplayer/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/TouchSamples/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/UIvsGameInput/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/UnityRemote/.sample.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/Visualizers/.sample.json
+Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Tests/.tests.json
+Library/PackageCache/com.unity.render-pipelines.universal-config@14.0.10/Tests/.tests.json
+Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Samples~/URPPackageSamples/.sample.json
+Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Tests/.tests.json
+Library/PackageCache/com.unity.searcher@4.9.2/Samples~/.sample.json
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/.sample.json
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/NodeReference/.sample.json
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProceduralPatterns/.sample.json
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/.sample.json
+Library/PackageCache/com.unity.shadergraph@14.0.11/Tests/.tests.json
+Library/PackageCache/com.unity.sysroot.linux-x86_64@2.0.9/Tests/.tests.json
+Library/PackageCache/com.unity.sysroot@2.0.10/Tests/.tests.json
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/Customization/.sample.json
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/.sample.json
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Too long lines (1000+ characters)
+11 files:
+
+Library/Bee/tundra.log.json
+Library/PackageCache/com.unity.burst@1.8.18/Runtime/Intrinsics/Arm/NEON_AArch64_fp16.cs
+Library/PackageCache/com.unity.collab-proxy@2.7.1/package.json
+Library/PackageCache/com.unity.inputsystem@1.11.2/package.json
+Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Runtime/Tiling/TilingJob.cs
+Library/PackageCache/com.unity.searcher@4.9.2/Samples~/Editor/SearcherExampleHostWindow.cs
+Library/PackageCache/com.unity.searcher@4.9.2/Samples~/Editor/SearcherExampleWindow.cs
+Library/PackageCache/com.unity.searcher@4.9.2/Tests/Editor/SearcherTests.cs
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Scenes/ProductionReadySamplesDescriptions.json
+Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Interface/Licenses/License.CCA3.cs
+UpgradeLog.htm
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Too long file (1000000+ bytes)
+4 files:
+
+Library/Bee/1900b0aE-inputdata.json
+Library/Bee/1900b0aE.dag.json
+Library/PackageCache/com.unity.burst@1.8.18/Runtime/Intrinsics/Arm/NEON.cs
+Library/PackageCache/com.unity.burst@1.8.18/Runtime/Intrinsics/Arm/NEON_AArch64.cs
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+Too many lines (10000)
+1 files:
+
+Library/PackageCache/com.unity.visualscripting@1.9.4/Editor/VisualScripting.Core/Dependencies/DotNetZip/Unity.VisualScripting.IonicZip.xml
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+Git history
+path like ".*/git[-]history[.]txt"
+1 files:
+
+git-history.txt
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+

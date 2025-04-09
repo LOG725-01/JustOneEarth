@@ -1,0 +1,62 @@
+<html>
+<head>
+    <title>private int CountNeighbors()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private int CountNeighbors()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [188:227]</i></p>
+<ul>
+    <li><b>35</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private int CountNeighbors(int q, int r)
+    {
+        List&lt;Vector2Int&gt; directions = new List&lt;Vector2Int&gt;
+    {
+        new Vector2Int(1, 0), new Vector2Int(-1, 0),  // Droite, Gauche
+        new Vector2Int(0, 1), new Vector2Int(0, -1),  // Haut, Bas
+        new Vector2Int(1, -1), new Vector2Int(-1, 1)  // Diagonales
+    };
+
+        int count = 0;
+        if (debug) Debug.Log($&quot;[Board] &rarr; Comptage des voisins pour la tuile ({q}, {r})&quot;);
+
+        foreach (var dir in directions)
+        {
+            int neighborQ = q + dir.x;
+            int neighborR = r + dir.y;
+
+            if (IsInsideMap(neighborQ, neighborR))
+            {
+                TileType neighborType = grid[neighborQ + radius, neighborR + radius];
+
+                if (neighborType != TileType.None)
+                {
+                    count++;
+                    if (debug) Debug.Log($&quot;  ✓ Voisin &agrave; ({neighborQ}, {neighborR}) : {neighborType}&quot;);
+                }
+                else
+                {
+                    if (debug) Debug.Log($&quot;  ✗ Voisin &agrave; ({neighborQ}, {neighborR}) : vide&quot;);
+                }
+            }
+            else
+            {
+                if (debug) Debug.Log($&quot; Hors de la carte : ({neighborQ}, {neighborR})&quot;);
+            }
+        }
+
+        if (debug) Debug.Log($&quot;[Board] Nombre total de voisins valides : {count}&quot;);
+        return count;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

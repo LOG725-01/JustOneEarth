@@ -1,0 +1,60 @@
+<html>
+<head>
+    <title>Assets/Scripts/UI/ScoreObserver.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/UI/ScoreObserver.cs (<b>28</b> lines of code) (<a href="ScoreObserver.cs">raw</a>):</h3>
+<div id="editor">using TMPro;
+using UnityEngine;
+using UnityEngine.UI;
+
+public class ScoreObserver : Observer
+{
+    [SerializeField] private Slider slider;
+
+    [SerializeField] private TextMeshProUGUI scoreText;
+    [SerializeField] private PlayerType playerType;
+
+    private void Awake()
+    {
+        Display((int) slider.value);
+    }
+
+    private void Display(int score)
+    {
+        slider.value = score;
+        scoreText.text = score.ToString();
+    }
+
+    public override void ObserverUpdate(GameObject subject)
+    {
+        if (subject.TryGetComponent&lt;Player&gt;(out var player))
+        {
+            if (player.PlayerType != playerType) return;
+            if (slider.maxValue &lt; player.Points) { Display((int)slider.maxValue); }
+            else if (player.Points &lt;= 0) { Display(0); }
+            else { Display(player.Points); }
+        }
+        
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

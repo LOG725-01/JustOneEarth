@@ -1,0 +1,54 @@
+<html>
+<head>
+    <title>private Tile GetRandomAvailablePlainTile()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private Tile GetRandomAvailablePlainTile()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [246:277]</i></p>
+<ul>
+    <li><b>28</b> lines of code</li>
+    <li><b>6</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private Tile GetRandomAvailablePlainTile()
+    {
+        List&lt;Tile&gt; adjacentTiles = new List&lt;Tile&gt;{currentTile};
+
+        Vector3[] directions = {
+            new Vector3(1, 0, 0),
+            new Vector3(-1, 0, 0),
+            new Vector3(0.5f, 0, 0.87f),
+            new Vector3(0.5f, 0, -0.87f),
+            new Vector3(-0.5f, 0, 0.87f),
+            new Vector3(-0.5f, 0, -0.87f)
+        };
+
+        foreach (Vector3 dir in directions)
+        {
+            if (Physics.Raycast(transform.position + dir, Vector3.down, out RaycastHit hit, 2f))
+            {
+                Tile tile = hit.collider.GetComponent&lt;Tile&gt;();
+
+                if (tile != null &amp;&amp; tile.tileType == TileType.Plains)
+                {
+                    adjacentTiles.Add(tile);
+                }
+            }
+        }
+
+        if (adjacentTiles.Count &gt; 0)
+        {
+            return adjacentTiles[Random.Range(0, adjacentTiles.Count)];
+        }
+        return currentTile;
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

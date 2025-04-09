@@ -1,0 +1,2085 @@
+<head>
+    <style>
+        body {
+            font-family: Sans-serif;
+            font-size: 11px;
+        }
+
+        .slice {
+            cursor: pointer;
+        }
+
+        .slice .main-arc {
+            stroke: #fff;
+            stroke-width: 1px;
+        }
+
+        .slice .hidden-arc {
+            fill: none;
+        }
+
+        .slice text {
+            pointer-events: none;
+            dominant-baseline: middle;
+            text-anchor: middle;
+        }
+    </style>
+
+    <script src='https://d3js.org/d3.v4.min.js'></script>
+</head>
+<body>
+<script>
+    const width = window.innerWidth,
+        height = window.innerHeight,
+        maxRadius = (Math.min(width, height) / 2) - 5;
+
+    const formatNumber = d3.format(',d');
+
+    const x = d3.scaleLinear()
+        .range([0, 2 * Math.PI])
+        .clamp(true);
+
+    const y = d3.scaleSqrt()
+        .range([maxRadius * .1, maxRadius]);
+
+    const color = d3.scaleOrdinal(d3.schemeCategory20);
+
+    const partition = d3.partition();
+
+    const arc = d3.arc()
+        .startAngle(d => x(d.x0))
+        .endAngle(d => x(d.x1))
+        .innerRadius(d => Math.max(0, y(d.y0)))
+        .outerRadius(d => Math.max(0, y(d.y1)));
+
+    const middleArcLine = d => {
+        const halfPi = Math.PI / 2;
+        const angles = [x(d.x0) - halfPi, x(d.x1) - halfPi];
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+
+        const middleAngle = (angles[1] + angles[0]) / 2;
+        const invertDirection = middleAngle > 0 && middleAngle < Math.PI; // On lower quadrants write text ccw
+        if (invertDirection) {
+            angles.reverse();
+        }
+
+        const path = d3.path();
+        path.arc(0, 0, r, angles[0], angles[1], invertDirection);
+        return path.toString();
+    };
+
+    const textFits = d => {
+        const CHAR_SPACE = 6;
+
+        const deltaAngle = x(d.x1) - x(d.x0);
+        const r = Math.max(0, (y(d.y0) + y(d.y1)) / 2);
+        const perimeter = r * deltaAngle;
+
+        return d.data.name.length * CHAR_SPACE < perimeter;
+    };
+
+    const svg = d3.select('body').append('svg')
+        .style('width', '100vw')
+        .style('height', '100vh')
+        .attr('viewBox', `${-width / 2} ${-height / 2} ${width} ${height}`)
+        .on('click', () => focusOn()); // Reset zoom on canvas click
+
+    var rootData = {
+        "name": "",
+        "children": [ {
+  "name" : "AnalysisBash.txt",
+  "color" : "",
+  "size" : 2,
+  "children" : [ ]
+}, {
+  "name" : "Assets",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "Resources",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "generation_config.json",
+      "color" : "",
+      "size" : 11,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "TextMesh Pro",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "Fonts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "LiberationSans - OFL.txt",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "Resources",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "LineBreaking Following Characters.txt",
+        "color" : "",
+        "size" : 1,
+        "children" : [ ]
+      }, {
+        "name" : "LineBreaking Leading Characters.txt",
+        "color" : "",
+        "size" : 1,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "Sprites",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "EmojiOne Attribution.txt",
+        "color" : "",
+        "size" : 2,
+        "children" : [ ]
+      }, {
+        "name" : "EmojiOne.json",
+        "color" : "",
+        "size" : 155,
+        "children" : [ ]
+      } ]
+    } ]
+  } ]
+}, {
+  "name" : "Library",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "Bee",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "artifacts",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "1900b0aE.dag",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Assembly-CSharp-Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Assembly-CSharp.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "PPv2URPConverters.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Burst.CodeGen.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Burst.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Burst.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.CollabProxy.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.InputSystem.ForUI.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.InputSystem.TestFramework.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.InputSystem.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Mathematics.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Mathematics.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.PlasticSCM.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipeline.Universal.ShaderLibrary.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.Core.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.Core.Runtime.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.Core.ShaderLibrary.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.ShaderGraph.ShaderGraphLibrary.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.Universal.Config.Runtime.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.Universal.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.Universal.Runtime.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.RenderPipelines.Universal.Shaders.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Rider.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Searcher.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.ShaderGraph.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.ShaderGraph.Utilities.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Sysroot.Linux_x86_64.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.SysrootPackage.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.TextMeshPro.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.TextMeshPro.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Timeline.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Timeline.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.Toolchain.Win-x86_64-Linux-x86_64.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.Core.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.Core.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.Flow.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.Flow.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.SettingsProvider.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.Shared.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.State.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualScripting.State.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VisualStudio.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "Unity.VSCode.Editor.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "UnityEditor.TestRunner.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "UnityEditor.UI.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "UnityEngine.TestRunner.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "UnityEngine.UI.UnityAdditionalFile.txt",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "fullprofile.json",
+      "color" : "",
+      "size" : 5393,
+      "children" : [ ]
+    } ]
+  }, {
+    "name" : "EditorOnlyScriptingSettings.json",
+    "color" : "",
+    "size" : 1,
+    "children" : [ ]
+  }, {
+    "name" : "EditorOnlyVirtualTextureState.json",
+    "color" : "",
+    "size" : 1,
+    "children" : [ ]
+  }, {
+    "name" : "LastSceneManagerSetup.txt",
+    "color" : "",
+    "size" : 5,
+    "children" : [ ]
+  }, {
+    "name" : "LibraryFormatVersion.txt",
+    "color" : "",
+    "size" : 2,
+    "children" : [ ]
+  }, {
+    "name" : "PackageCache",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "com.unity.burst@1.8.18",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Documentation~",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "projectMetadata.json",
+          "color" : "",
+          "size" : 4,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.collab-proxy@2.7.1",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Lib",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Editor",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "FileSystemWatcherLicense.txt",
+            "color" : "",
+            "size" : 17,
+            "children" : [ ]
+          }, {
+            "name" : "Localization",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "basecommands.en.txt",
+              "color" : "",
+              "size" : 1885,
+              "children" : [ ]
+            }, {
+              "name" : "basecommands.es.txt",
+              "color" : "",
+              "size" : 1888,
+              "children" : [ ]
+            }, {
+              "name" : "basecommands.ja.txt",
+              "color" : "",
+              "size" : 1679,
+              "children" : [ ]
+            }, {
+              "name" : "basecommands.ko.txt",
+              "color" : "",
+              "size" : 1681,
+              "children" : [ ]
+            }, {
+              "name" : "basecommands.zh-Hans.txt",
+              "color" : "",
+              "size" : 1681,
+              "children" : [ ]
+            }, {
+              "name" : "basecommands.zh-Hant.txt",
+              "color" : "",
+              "size" : 1679,
+              "children" : [ ]
+            }, {
+              "name" : "binmergetool.en.txt",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "binmergetool.es.txt",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "binmergetool.ja.txt",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "binmergetool.ko.txt",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "binmergetool.zh-Hans.txt",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "binmergetool.zh-Hant.txt",
+              "color" : "",
+              "size" : 38,
+              "children" : [ ]
+            }, {
+              "name" : "clientcommon.en.txt",
+              "color" : "",
+              "size" : 595,
+              "children" : [ ]
+            }, {
+              "name" : "clientcommon.es.txt",
+              "color" : "",
+              "size" : 596,
+              "children" : [ ]
+            }, {
+              "name" : "clientcommon.ja.txt",
+              "color" : "",
+              "size" : 585,
+              "children" : [ ]
+            }, {
+              "name" : "clientcommon.ko.txt",
+              "color" : "",
+              "size" : 589,
+              "children" : [ ]
+            }, {
+              "name" : "clientcommon.zh-Hans.txt",
+              "color" : "",
+              "size" : 589,
+              "children" : [ ]
+            }, {
+              "name" : "clientcommon.zh-Hant.txt",
+              "color" : "",
+              "size" : 589,
+              "children" : [ ]
+            }, {
+              "name" : "cm-help.en.txt",
+              "color" : "",
+              "size" : 7135,
+              "children" : [ ]
+            }, {
+              "name" : "cm-help.es.txt",
+              "color" : "",
+              "size" : 7211,
+              "children" : [ ]
+            }, {
+              "name" : "cm-help.ja.txt",
+              "color" : "",
+              "size" : 6117,
+              "children" : [ ]
+            }, {
+              "name" : "cm-help.ko.txt",
+              "color" : "",
+              "size" : 6122,
+              "children" : [ ]
+            }, {
+              "name" : "cm-help.zh-Hans.txt",
+              "color" : "",
+              "size" : 6122,
+              "children" : [ ]
+            }, {
+              "name" : "cm-help.zh-Hant.txt",
+              "color" : "",
+              "size" : 6121,
+              "children" : [ ]
+            }, {
+              "name" : "cm.en.txt",
+              "color" : "",
+              "size" : 108,
+              "children" : [ ]
+            }, {
+              "name" : "cm.es.txt",
+              "color" : "",
+              "size" : 75,
+              "children" : [ ]
+            }, {
+              "name" : "cm.ja.txt",
+              "color" : "",
+              "size" : 102,
+              "children" : [ ]
+            }, {
+              "name" : "cm.ko.txt",
+              "color" : "",
+              "size" : 102,
+              "children" : [ ]
+            }, {
+              "name" : "cm.zh-Hans.txt",
+              "color" : "",
+              "size" : 102,
+              "children" : [ ]
+            }, {
+              "name" : "cm.zh-Hant.txt",
+              "color" : "",
+              "size" : 102,
+              "children" : [ ]
+            }, {
+              "name" : "common.en.txt",
+              "color" : "",
+              "size" : 98,
+              "children" : [ ]
+            }, {
+              "name" : "common.es.txt",
+              "color" : "",
+              "size" : 98,
+              "children" : [ ]
+            }, {
+              "name" : "commontypes.en.txt",
+              "color" : "",
+              "size" : 1222,
+              "children" : [ ]
+            }, {
+              "name" : "commontypes.es.txt",
+              "color" : "",
+              "size" : 1222,
+              "children" : [ ]
+            }, {
+              "name" : "commontypes.ja.txt",
+              "color" : "",
+              "size" : 1053,
+              "children" : [ ]
+            }, {
+              "name" : "commontypes.ko.txt",
+              "color" : "",
+              "size" : 1056,
+              "children" : [ ]
+            }, {
+              "name" : "commontypes.zh-Hans.txt",
+              "color" : "",
+              "size" : 1056,
+              "children" : [ ]
+            }, {
+              "name" : "commontypes.zh-Hant.txt",
+              "color" : "",
+              "size" : 1056,
+              "children" : [ ]
+            }, {
+              "name" : "configurehelper.en.txt",
+              "color" : "",
+              "size" : 96,
+              "children" : [ ]
+            }, {
+              "name" : "configurehelper.es.txt",
+              "color" : "",
+              "size" : 96,
+              "children" : [ ]
+            }, {
+              "name" : "configurehelper.ja.txt",
+              "color" : "",
+              "size" : 74,
+              "children" : [ ]
+            }, {
+              "name" : "configurehelper.ko.txt",
+              "color" : "",
+              "size" : 74,
+              "children" : [ ]
+            }, {
+              "name" : "configurehelper.zh-Hans.txt",
+              "color" : "",
+              "size" : 74,
+              "children" : [ ]
+            }, {
+              "name" : "configurehelper.zh-Hant.txt",
+              "color" : "",
+              "size" : 74,
+              "children" : [ ]
+            }, {
+              "name" : "differences.en.txt",
+              "color" : "",
+              "size" : 30,
+              "children" : [ ]
+            }, {
+              "name" : "differences.es.txt",
+              "color" : "",
+              "size" : 30,
+              "children" : [ ]
+            }, {
+              "name" : "differences.ja.txt",
+              "color" : "",
+              "size" : 30,
+              "children" : [ ]
+            }, {
+              "name" : "differences.ko.txt",
+              "color" : "",
+              "size" : 30,
+              "children" : [ ]
+            }, {
+              "name" : "differences.zh-Hans.txt",
+              "color" : "",
+              "size" : 30,
+              "children" : [ ]
+            }, {
+              "name" : "differences.zh-Hant.txt",
+              "color" : "",
+              "size" : 30,
+              "children" : [ ]
+            }, {
+              "name" : "guihelp.en.txt",
+              "color" : "",
+              "size" : 538,
+              "children" : [ ]
+            }, {
+              "name" : "guihelp.es.txt",
+              "color" : "",
+              "size" : 539,
+              "children" : [ ]
+            }, {
+              "name" : "guihelp.ja.txt",
+              "color" : "",
+              "size" : 523,
+              "children" : [ ]
+            }, {
+              "name" : "guihelp.ko.txt",
+              "color" : "",
+              "size" : 523,
+              "children" : [ ]
+            }, {
+              "name" : "guihelp.zh-Hans.txt",
+              "color" : "",
+              "size" : 523,
+              "children" : [ ]
+            }, {
+              "name" : "guihelp.zh-Hant.txt",
+              "color" : "",
+              "size" : 523,
+              "children" : [ ]
+            }, {
+              "name" : "i3.en.txt",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "i3.es.txt",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "i3.ja.txt",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "i3.ko.txt",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "i3.zh-Hans.txt",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "i3.zh-Hant.txt",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            }, {
+              "name" : "images.en.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "images.es.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "images.ja.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "images.ko.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "images.zh-Hans.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "images.zh-Hant.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "mergetool.en.txt",
+              "color" : "",
+              "size" : 812,
+              "children" : [ ]
+            }, {
+              "name" : "mergetool.es.txt",
+              "color" : "",
+              "size" : 824,
+              "children" : [ ]
+            }, {
+              "name" : "mergetool.ja.txt",
+              "color" : "",
+              "size" : 632,
+              "children" : [ ]
+            }, {
+              "name" : "mergetool.ko.txt",
+              "color" : "",
+              "size" : 632,
+              "children" : [ ]
+            }, {
+              "name" : "mergetool.zh-Hans.txt",
+              "color" : "",
+              "size" : 632,
+              "children" : [ ]
+            }, {
+              "name" : "mergetool.zh-Hant.txt",
+              "color" : "",
+              "size" : 632,
+              "children" : [ ]
+            }, {
+              "name" : "plastic-gui.en.txt",
+              "color" : "",
+              "size" : 5964,
+              "children" : [ ]
+            }, {
+              "name" : "plastic-gui.es.txt",
+              "color" : "",
+              "size" : 5963,
+              "children" : [ ]
+            }, {
+              "name" : "plastic-gui.ja.txt",
+              "color" : "",
+              "size" : 3623,
+              "children" : [ ]
+            }, {
+              "name" : "plastic-gui.ko.txt",
+              "color" : "",
+              "size" : 3617,
+              "children" : [ ]
+            }, {
+              "name" : "plastic-gui.zh-Hans.txt",
+              "color" : "",
+              "size" : 3623,
+              "children" : [ ]
+            }, {
+              "name" : "plastic-gui.zh-Hant.txt",
+              "color" : "",
+              "size" : 3623,
+              "children" : [ ]
+            }, {
+              "name" : "semantic.en.txt",
+              "color" : "",
+              "size" : 672,
+              "children" : [ ]
+            }, {
+              "name" : "semantic.es.txt",
+              "color" : "",
+              "size" : 672,
+              "children" : [ ]
+            }, {
+              "name" : "semantic.ja.txt",
+              "color" : "",
+              "size" : 437,
+              "children" : [ ]
+            }, {
+              "name" : "semantic.ko.txt",
+              "color" : "",
+              "size" : 437,
+              "children" : [ ]
+            }, {
+              "name" : "semantic.zh-Hans.txt",
+              "color" : "",
+              "size" : 437,
+              "children" : [ ]
+            }, {
+              "name" : "semantic.zh-Hant.txt",
+              "color" : "",
+              "size" : 437,
+              "children" : [ ]
+            }, {
+              "name" : "workspaceserver.en.txt",
+              "color" : "",
+              "size" : 8,
+              "children" : [ ]
+            }, {
+              "name" : "workspaceserver.es.txt",
+              "color" : "",
+              "size" : 8,
+              "children" : [ ]
+            }, {
+              "name" : "workspaceserver.ja.txt",
+              "color" : "",
+              "size" : 8,
+              "children" : [ ]
+            }, {
+              "name" : "workspaceserver.ko.txt",
+              "color" : "",
+              "size" : 8,
+              "children" : [ ]
+            }, {
+              "name" : "workspaceserver.zh-Hans.txt",
+              "color" : "",
+              "size" : 8,
+              "children" : [ ]
+            }, {
+              "name" : "workspaceserver.zh-Hant.txt",
+              "color" : "",
+              "size" : 8,
+              "children" : [ ]
+            }, {
+              "name" : "xdiff.en.txt",
+              "color" : "",
+              "size" : 62,
+              "children" : [ ]
+            }, {
+              "name" : "xdiff.es.txt",
+              "color" : "",
+              "size" : 62,
+              "children" : [ ]
+            }, {
+              "name" : "xdiff.ja.txt",
+              "color" : "",
+              "size" : 62,
+              "children" : [ ]
+            }, {
+              "name" : "xdiff.ko.txt",
+              "color" : "",
+              "size" : 62,
+              "children" : [ ]
+            }, {
+              "name" : "xdiff.zh-Hans.txt",
+              "color" : "",
+              "size" : 62,
+              "children" : [ ]
+            }, {
+              "name" : "xdiff.zh-Hant.txt",
+              "color" : "",
+              "size" : 62,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 14,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.ext.nunit@1.0.6",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 24,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.ide.rider@3.0.34",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 8,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.ide.visualstudio@2.0.22",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Editor",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "AppleEventIntegration~",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "howtobuild.txt",
+            "color" : "",
+            "size" : 4,
+            "children" : [ ]
+          } ]
+        }, {
+          "name" : "COMIntegration",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "COMIntegration~",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "CMakeLists.txt",
+              "color" : "",
+              "size" : 13,
+              "children" : [ ]
+            }, {
+              "name" : "howtobuild.txt",
+              "color" : "",
+              "size" : 7,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 15,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.ide.vscode@1.2.5",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.inputsystem@1.11.2",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Documentation~",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "config.json",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        }, {
+          "name" : "projectMetadata.json",
+          "color" : "",
+          "size" : 3,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "InputSystem",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Editor",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "ProjectWideActions",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "ProjectWideActionsTemplate.json",
+              "color" : "",
+              "size" : 1057,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 23,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 4,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.mathematics@1.2.6",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Documentation~",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "projectMetadata.json",
+          "color" : "",
+          "size" : 5,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 18,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 5,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.ai@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.androidjni@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.animation@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.assetbundle@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.audio@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.cloth@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.director@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.imageconversion@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.imgui@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.jsonserialize@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.particlesystem@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.physics2d@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.physics@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.screencapture@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.subsystems@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.terrain@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.terrainphysics@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.tilemap@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.ui@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.uielements@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.umbra@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.unityanalytics@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.unitywebrequest@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.unitywebrequestassetbundle@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.unitywebrequestaudio@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.unitywebrequesttexture@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.unitywebrequestwww@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 16,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.vehicles@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 11,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.video@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.vr@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.wind@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.modules.xr@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.render-pipelines.core@14.0.11",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ApiUpdater~",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ValidationWhiteList.txt",
+          "color" : "",
+          "size" : 2,
+          "children" : [ ]
+        } ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      }, {
+        "name" : "Tests",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "Editor",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "ShaderStripping",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Results",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "UI_Default_0_0.json",
+                "color" : "",
+                "size" : 5,
+                "children" : [ ]
+              }, {
+                "name" : "UI_Default_Sprites_Default_5_0.5.json",
+                "color" : "",
+                "size" : 94,
+                "children" : [ ]
+              }, {
+                "name" : "UI_Default_Sprites_Default_5_0.json",
+                "color" : "",
+                "size" : 94,
+                "children" : [ ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.render-pipelines.universal-config@14.0.10",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 10,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.render-pipelines.universal@14.0.11",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Editor",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "RendererFeatures",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "NewRendererFeature.cs.txt",
+            "color" : "",
+            "size" : 42,
+            "children" : [ ]
+          } ]
+        } ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "Runtime",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "External",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "LibTessDotNet",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "LICENSE.txt",
+              "color" : "",
+              "size" : 25,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 41,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 13,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.searcher@4.9.2",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.shadergraph@14.0.11",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 33,
+        "children" : [ ]
+      }, {
+        "name" : "Samples~",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "FeatureExamples",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Scenes",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "FeatureExamplesDescriptions.json",
+              "color" : "",
+              "size" : 287,
+              "children" : [ ]
+            } ]
+          }, {
+            "name" : "SRPCommon",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "TextMesh Pro",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Resources",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Fonts & Materials",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "Inter-LICENSE.txt",
+                    "color" : "",
+                    "size" : 77,
+                    "children" : [ ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        }, {
+          "name" : "ProductionReady",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "SRPCommon",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "TextMesh Pro",
+              "color" : "",
+              "size" : 0,
+              "children" : [ {
+                "name" : "Resources",
+                "color" : "",
+                "size" : 0,
+                "children" : [ {
+                  "name" : "Fonts & Materials",
+                  "color" : "",
+                  "size" : 0,
+                  "children" : [ {
+                    "name" : "Inter-LICENSE.txt",
+                    "color" : "",
+                    "size" : 77,
+                    "children" : [ ]
+                  } ]
+                } ]
+              } ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.sysroot.linux-x86_64@2.0.9",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 27,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.sysroot@2.0.10",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 25,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.test-framework@1.1.33",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 32,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.textmeshpro@3.0.7",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 31,
+        "children" : [ ]
+      }, {
+        "name" : "PackageConversionData.json",
+        "color" : "",
+        "size" : 654,
+        "children" : [ ]
+      }, {
+        "name" : "PackageConversionData_Assets.json",
+        "color" : "",
+        "size" : 184,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.timeline@1.7.6",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Editor",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "StyleSheets",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "res",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "Timeline_DarkSkin.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            }, {
+              "name" : "Timeline_LightSkin.txt",
+              "color" : "",
+              "size" : 52,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 47,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.toolchain.win-x86_64-linux-x86_64@2.0.10",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 29,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 19,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.ugui@1.0.0",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 12,
+        "children" : [ ]
+      } ]
+    }, {
+      "name" : "com.unity.visualscripting@1.9.4",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "Editor",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "SettingsProvider",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "ProjectSettings",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "AssemblyOptionsSettings.cs",
+              "color" : "",
+              "size" : 62,
+              "children" : [ ]
+            }, {
+              "name" : "BackupSettings.cs",
+              "color" : "",
+              "size" : 37,
+              "children" : [ ]
+            }, {
+              "name" : "CustomPropertyProviderSettings.cs",
+              "color" : "",
+              "size" : 36,
+              "children" : [ ]
+            }, {
+              "name" : "LinkerPropertyProviderSettings.cs",
+              "color" : "",
+              "size" : 53,
+              "children" : [ ]
+            }, {
+              "name" : "ScriptReferenceResolverSettings.cs",
+              "color" : "",
+              "size" : 29,
+              "children" : [ ]
+            }, {
+              "name" : "TypeOptionsSettings.cs",
+              "color" : "",
+              "size" : 54,
+              "children" : [ ]
+            } ]
+          } ]
+        }, {
+          "name" : "VisualScripting.Core",
+          "color" : "",
+          "size" : 0,
+          "children" : [ {
+            "name" : "Documentation",
+            "color" : "",
+            "size" : 0,
+            "children" : [ {
+              "name" : "DocumentationGenerator.cs",
+              "color" : "",
+              "size" : 94,
+              "children" : [ ]
+            }, {
+              "name" : "XmlDocumentation.cs",
+              "color" : "",
+              "size" : 334,
+              "children" : [ ]
+            }, {
+              "name" : "XmlDocumentationTags.cs",
+              "color" : "",
+              "size" : 121,
+              "children" : [ ]
+            } ]
+          } ]
+        } ]
+      }, {
+        "name" : "package.json",
+        "color" : "",
+        "size" : 26,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationConfig.json",
+        "color" : "",
+        "size" : 24,
+        "children" : [ ]
+      }, {
+        "name" : "ValidationExceptions.json",
+        "color" : "",
+        "size" : 9,
+        "children" : [ ]
+      } ]
+    } ]
+  }, {
+    "name" : "StateCache",
+    "color" : "",
+    "size" : 0,
+    "children" : [ {
+      "name" : "LayerSettings",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "9e",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "9ecc5c3c162a7aba29bafa64c8b94b7c.json",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "MainStageHierarchy",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "e3",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "e39eb0151902daeb74c7a6fcd88d2e76.json",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        } ]
+      } ]
+    }, {
+      "name" : "SceneView",
+      "color" : "",
+      "size" : 0,
+      "children" : [ {
+        "name" : "ec",
+        "color" : "",
+        "size" : 0,
+        "children" : [ {
+          "name" : "ecb5aaa3e20e44cca2743a1fb3a1eeec.json",
+          "color" : "",
+          "size" : 1,
+          "children" : [ ]
+        } ]
+      } ]
+    } ]
+  } ]
+}, {
+  "name" : "Packages",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "manifest.json",
+    "color" : "",
+    "size" : 47,
+    "children" : [ ]
+  }, {
+    "name" : "packages-lock.json",
+    "color" : "",
+    "size" : 436,
+    "children" : [ ]
+  } ]
+}, {
+  "name" : "ProjectSettings",
+  "color" : "",
+  "size" : 0,
+  "children" : [ {
+    "name" : "BurstAotSettings_StandaloneWindows.json",
+    "color" : "",
+    "size" : 18,
+    "children" : [ ]
+  }, {
+    "name" : "CommonBurstAotSettings.json",
+    "color" : "",
+    "size" : 6,
+    "children" : [ ]
+  }, {
+    "name" : "ProjectVersion.txt",
+    "color" : "",
+    "size" : 2,
+    "children" : [ ]
+  }, {
+    "name" : "SceneTemplateSettings.json",
+    "color" : "",
+    "size" : 167,
+    "children" : [ ]
+  } ]
+} ]
+    }
+
+
+    root = d3.hierarchy(rootData);
+    root.sum(d => d.size);
+
+    const slice = svg.selectAll('g.slice')
+        .data(partition(root).descendants());
+
+    slice.exit().remove();
+
+    const newSlice = slice.enter()
+        .append('g').attr('class', 'slice')
+        .on('click', d => {
+            d3.event.stopPropagation();
+            focusOn(d);
+        });
+
+    newSlice.append('title')
+        .text(d => d.data.name + '\n' + formatNumber(d.value));
+
+    newSlice.append('path')
+        .attr('class', 'main-arc')
+        .style('fill', d => color((d.children ? d : d.parent).data.name))
+        .attr('d', arc);
+
+    newSlice.append('path')
+        .attr('class', 'hidden-arc')
+        .attr('id', (_, i) => `hiddenArc${i}`)
+        .attr('d', middleArcLine);
+
+    const text = newSlice.append('text')
+        .attr('display', d => textFits(d) ? null : 'none');
+
+    // Add white contour
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name)
+        .style('fill', 'none')
+        .style('stroke', '#fff')
+        .style('stroke-width', 5)
+        .style('stroke-linejoin', 'round');
+
+    text.append('textPath')
+        .attr('startOffset', '50%')
+        .attr('xlink:href', (_, i) => `#hiddenArc${i}`)
+        .text(d => d.data.name);
+
+    function focusOn(d = {x0: 0, x1: 1, y0: 0, y1: 1}) {
+        const transition = svg.transition()
+            .duration(750)
+            .tween('scale', () => {
+                const xd = d3.interpolate(x.domain(), [d.x0, d.x1]),
+                    yd = d3.interpolate(y.domain(), [d.y0, 1]);
+                return t => {
+                    x.domain(xd(t));
+                    y.domain(yd(t));
+                };
+            });
+
+        transition.selectAll('path.main-arc')
+            .attrTween('d', d => () => arc(d));
+
+        transition.selectAll('path.hidden-arc')
+            .attrTween('d', d => () => middleArcLine(d));
+
+        transition.selectAll('text')
+            .attrTween('display', d => () => textFits(d) ? null : 'none');
+
+        moveStackToFront(d);
+
+        //
+
+        function moveStackToFront(elD) {
+            svg.selectAll('.slice').filter(d => d === elD)
+                .each(function (d) {
+                    this.parentNode.appendChild(this);
+                    if (d.parent) {
+                        moveStackToFront(d.parent);
+                    }
+                })
+        }
+    }
+</script>
+</body>

@@ -1,0 +1,118 @@
+<html>
+<head>
+    <title>public void CreateBoard()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">public void CreateBoard()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [40:135]</i></p>
+<ul>
+    <li><b>75</b> lines of code</li>
+    <li><b>23</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    public void CreateBoard()
+    {
+        if (debug) Debug.Log(&quot;[Board] G&eacute;n&eacute;ration du plateau...&quot;);
+
+        if (debug) Debug.Log(&quot;[Board] D&eacute;but de la g&eacute;n&eacute;ration du plateau...&quot;);
+        grid = new TileType[radius * 2 + 1, radius * 2 + 1];
+
+        probabilities = new Dictionary&lt;TileType, float&gt;
+        {
+            { TileType.Forests, config.forestProbability / 100f },
+            { TileType.Mountains, config.mountainProbability / 100f },
+            { TileType.Lakes, config.lakeProbability / 100f },
+            { TileType.Plains, config.plainProbability / 100f },
+            { TileType.Deserts, config.desertProbability / 100f }
+        };
+
+        if (debug) Debug.Log(&quot;[Board] Probabilit&eacute;s assign&eacute;es :&quot;);
+        foreach (var pair in probabilities)
+            if (debug) Debug.Log($&quot;  - {pair.Key}: {pair.Value * 100f}%&quot;);
+
+            for (int q = -radius; q &lt;= radius; q++)
+            {
+                int r1 = Mathf.Max(-radius, -q - radius);
+                int r2 = Mathf.Min(radius, -q + radius);
+
+                for (int r = r1; r &lt;= r2; r++)
+                {
+                    float noise = Mathf.PerlinNoise(q * 0.1f, r * 0.1f);
+                    if (debug) Debug.Log($&quot;[Board] Perlin Noise pour ({q},{r}) = {noise}&quot;);
+
+                    if (!IsTileGenerated(q, r))
+                    {
+                        grid[q + radius, r + radius] = TileType.None;
+                        if (debug) Debug.Log($&quot;[Board] Tuile ignor&eacute;e (noise trop faible) &agrave; ({q},{r})&quot;);
+                        continue;
+                    }
+
+                    TileType selectedType = GetRandomTileType(probabilities);
+                    grid[q + radius, r + radius] = selectedType;
+                    if (debug) Debug.Log($&quot;[Board] Tuile g&eacute;n&eacute;r&eacute;e &agrave; ({q},{r}) : {selectedType}&quot;);
+                }
+            }
+
+        if (debug) Debug.Log(&quot;[Board] Correction des lacs isol&eacute;s...&quot;);
+        FixLonelyLakes();
+
+        if (debug) Debug.Log(&quot;[Board] Instanciation des pr&eacute;fabriqu&eacute;s...&quot;);
+        for (int q = -radius; q &lt;= radius; q++)
+        {
+            int r1 = Mathf.Max(-radius, -q - radius);
+            int r2 = Mathf.Min(radius, -q + radius);
+
+            for (int r = r1; r &lt;= r2; r++)
+            {
+                TileType type = grid[q + radius, r + radius];
+
+                if (type == TileType.None)
+                    continue;
+
+                Vector3 worldPos = AxialToIsometric(q, r);
+                GameObject prefab = GetTilePrefab(type);
+
+                if (prefab == null)
+                {
+                    Debug.LogWarning($&quot;[Board] Aucun prefab trouv&eacute; pour le type {type} &agrave; ({q},{r}) !&quot;);
+                    continue;
+                }
+
+                GameObject tileObj = Instantiate(prefab, worldPos, Quaternion.identity, transform);
+
+                Tile tileComponent = tileObj.GetComponent&lt;Tile&gt;();
+                if (tileComponent != null)
+                {
+                    tileComponent.Initialize(type, debugTile);
+                    if (debug) Debug.Log($&quot;[Board] Tuile initialis&eacute;e avec type {type} et ressources : &quot; + string.Join(&quot;, &quot;, tileComponent.producedRessources));
+                }
+                else
+                {
+                    Debug.LogWarning($&quot;[Board] Le prefab {prefab.name} n'a pas de composant Tile !&quot;);
+                }
+
+                if (debug) Debug.Log($&quot;[Board] Instanci&eacute; {type} &agrave; {worldPos}&quot;);
+            }
+        }
+
+        if (debug) Debug.Log(&quot;[Board] G&eacute;n&eacute;ration du plateau termin&eacute;e !&quot;);
+        LogAllTiles();
+
+        PlaceAnimals();
+
+        IsGenerated = true;
+
+        // Notifier que le Board est pr&ecirc;t
+        OnBoardGenerated?.Invoke();
+        if (debug) Debug.Log(&quot;[Board] Plateau g&eacute;n&eacute;r&eacute; avec succ&egrave;s.&quot;);
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

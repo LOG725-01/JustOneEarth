@@ -1,0 +1,41 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/PlayerInputNotifier.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/PlayerInputNotifier.cs (<b>10</b> lines of code) (<a href="PlayerInputNotifier.cs">raw</a>):</h3>
+<div id="editor">using System;
+using UnityEngine;
+
+public class PlayerInputNotifier : MonoBehaviour
+{
+    // Define an event using Action
+    public event Action&lt;GameObject&gt; OnGameObjectClicked;
+
+    // Called when the GameObject is clicked.
+    public void OnMouseDown()
+    {
+        // Notify all observers that this GameObject was clicked.
+        OnGameObjectClicked?.Invoke(gameObject);
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

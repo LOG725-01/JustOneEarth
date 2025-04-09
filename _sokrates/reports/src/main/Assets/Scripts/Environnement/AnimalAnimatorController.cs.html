@@ -1,0 +1,151 @@
+<html>
+<head>
+    <title>Assets/Scripts/Environnement/AnimalAnimatorController.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/Environnement/AnimalAnimatorController.cs (<b>114</b> lines of code) (<a href="AnimalAnimatorController.cs">raw</a>):</h3>
+<div id="editor">using UnityEngine;
+
+public class AnimalAnimatorController : AnimationController
+{
+
+    [SerializeField] private const string idle = &quot;IdleBlend&quot;;
+    [SerializeField] private const string idleValue = &quot;Idle&quot;;
+    [SerializeField] private const string forward = &quot;ForwardBlend&quot;;
+    [SerializeField] private const string forwardValue = &quot;Forward&quot;;
+    [SerializeField] private const string turn = &quot;TurnBlend&quot;;
+    [SerializeField] private const string turnValue = &quot;Turn&quot;;
+    [SerializeField] private const string shuffle = &quot;ShuffleBlend&quot;;
+    [SerializeField] private const string shuffleValue = &quot;Shuffle&quot;;
+    [SerializeField] private const string sit = &quot;Sit&quot;;
+    [SerializeField] private const string stand = &quot;Stand&quot;;
+
+    [SerializeField] private const string eat = &quot;Eat&quot;;
+    [SerializeField] private const string backward = &quot;Backward&quot;;
+    [SerializeField] private const string attack = &quot;Attack&quot;;
+    [SerializeField] private const string gotHit = &quot;GotHit&quot;;
+
+
+    private float sitStandDuration = 2.5f;
+    private float turnDuration = 1.5f;
+    private float gotHitDuration = 1f;
+    private float attackDuration = 1f;
+    private float shuffleDuration;
+    private float eatDuration;
+
+    private void Start()
+    {
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
+        {
+            switch (clip.name)
+            {
+                case &quot;GoatSheep_turn_90_L&quot;:
+                    turnDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_stand_to_sit&quot;:
+                    sitStandDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_hit_reaction&quot;:
+                    gotHitDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_attack01&quot;:
+                    attackDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_shuffle_R&quot;:
+                    shuffleDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_eating&quot;:
+                    eatDuration = clip.length;
+                    break;
+            }
+        }
+    }
+    private void SetValue(string name, float value)
+    {
+        animator.SetFloat(name, value);
+    }
+    private void SetRandomValue(string name)
+    {
+        SetValue(name, Random.Range(0f, 1f));
+    }
+
+    public void IdleAnimation()
+    {
+        SetRandomValue(idleValue);
+        ChangeAnimation(idle);
+    }
+
+    public void WalkRandomAnimation()
+    {
+        if (currentAnimation == forward) return;
+        SetRandomValue(forwardValue);
+        ChangeAnimation(forward);
+    }
+    public void RunAnimation()
+    {
+        SetValue(forwardValue, 1f);
+        ChangeAnimation(forward);
+    }
+    public void WalkBackwardAnimation()
+    {
+        ChangeAnimation(backward);
+    }
+
+    public float TurnAnimation(bool turnLeft)
+    {
+        if (turnLeft) SetValue(turnValue, 0f);
+        else SetValue(turnValue, 1f);
+        ChangeAnimation(turn);
+        return turnDuration;
+    }
+
+    public float ShuffleAnimation()
+    {
+        SetRandomValue(shuffleValue);
+        ChangeAnimation(shuffle);
+        return shuffleDuration;
+    }
+
+    public float SitStandAnimation(bool sitDown)
+    {
+        if (sitDown) ChangeAnimation(sit);
+        else ChangeAnimation(stand);
+        return sitStandDuration;
+    }
+    public float EatAnimation()
+    {
+        ChangeAnimation(eat);
+        return eatDuration;
+    }
+    public float AttackAnimation()
+    {
+        ChangeAnimation(attack);
+        return attackDuration;
+    }
+    public float GotHitAnimation()
+    {
+        ChangeAnimation(gotHit);
+        return gotHitDuration;
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

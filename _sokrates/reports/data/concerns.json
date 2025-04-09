@@ -1,0 +1,53 @@
+[ {
+  "key" : "general",
+  "concerns" : [ {
+    "name" : "TODOs",
+    "filesCount" : 2,
+    "linesOfCode" : 192,
+    "numberOfRegexLineMatches" : 2,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.cs",
+      "value" : 2,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.cs",
+      "value" : 192,
+      "description" : [ ]
+    } ]
+  }, {
+    "name" : "Unclassified",
+    "filesCount" : 50,
+    "linesOfCode" : 2502,
+    "numberOfRegexLineMatches" : 0,
+    "fileCountPerExtension" : [ {
+      "name" : "  *.cs",
+      "value" : 50,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerExtension" : [ {
+      "name" : "  *.cs",
+      "value" : 2502,
+      "description" : [ ]
+    } ]
+  } ],
+  "concernsGroup" : null,
+  "fileCountPerConcern" : [ {
+    "name" : "TODOs",
+    "value" : 2,
+    "description" : [ ]
+  }, {
+    "name" : "Unclassified",
+    "value" : 50,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerConcern" : [ {
+    "name" : "TODOs",
+    "value" : 192,
+    "description" : [ ]
+  }, {
+    "name" : "Unclassified",
+    "value" : 2502,
+    "description" : [ ]
+  } ]
+} ]

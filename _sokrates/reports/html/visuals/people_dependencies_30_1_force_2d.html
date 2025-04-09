@@ -1,0 +1,231 @@
+<head>
+    <style> body {
+        margin: 0;
+    } </style>
+
+    <script src="https://cdn.jsdelivr.net/npm/force-graph"></script>
+</head>
+
+<body>
+<div id="graph"></div>
+
+<script>
+    const gData = {
+  "nodes" : [ {
+    "id" : "dragostgames@gmail.com",
+    "size" : 6
+  }, {
+    "id" : "127026665+flyima256@users.noreply.github.com",
+    "size" : 6
+  }, {
+    "id" : "51228475+miaredjeb@users.noreply.github.com",
+    "size" : 6
+  }, {
+    "id" : "flyima.tfd@laposte.net",
+    "size" : 6
+  }, {
+    "id" : "75060235+dragost37@users.noreply.github.com",
+    "size" : 6
+  }, {
+    "id" : "miabenredjeb@gmail.com",
+    "size" : 6
+  }, {
+    "id" : "yanis012@outlook.com",
+    "size" : 6
+  } ],
+  "links" : [ {
+    "source" : "51228475+miaredjeb@users.noreply.github.com",
+    "target" : "miabenredjeb@gmail.com",
+    "count" : 253
+  }, {
+    "source" : "miabenredjeb@gmail.com",
+    "target" : "51228475+miaredjeb@users.noreply.github.com",
+    "count" : 253
+  }, {
+    "source" : "127026665+flyima256@users.noreply.github.com",
+    "target" : "51228475+miaredjeb@users.noreply.github.com",
+    "count" : 207
+  }, {
+    "source" : "51228475+miaredjeb@users.noreply.github.com",
+    "target" : "127026665+flyima256@users.noreply.github.com",
+    "count" : 207
+  }, {
+    "source" : "127026665+flyima256@users.noreply.github.com",
+    "target" : "miabenredjeb@gmail.com",
+    "count" : 205
+  }, {
+    "source" : "miabenredjeb@gmail.com",
+    "target" : "127026665+flyima256@users.noreply.github.com",
+    "count" : 205
+  }, {
+    "source" : "127026665+flyima256@users.noreply.github.com",
+    "target" : "flyima.tfd@laposte.net",
+    "count" : 188
+  }, {
+    "source" : "flyima.tfd@laposte.net",
+    "target" : "127026665+flyima256@users.noreply.github.com",
+    "count" : 188
+  }, {
+    "source" : "75060235+dragost37@users.noreply.github.com",
+    "target" : "127026665+flyima256@users.noreply.github.com",
+    "count" : 100
+  }, {
+    "source" : "127026665+flyima256@users.noreply.github.com",
+    "target" : "75060235+dragost37@users.noreply.github.com",
+    "count" : 100
+  }, {
+    "source" : "75060235+dragost37@users.noreply.github.com",
+    "target" : "flyima.tfd@laposte.net",
+    "count" : 93
+  }, {
+    "source" : "flyima.tfd@laposte.net",
+    "target" : "75060235+dragost37@users.noreply.github.com",
+    "count" : 93
+  }, {
+    "source" : "yanis012@outlook.com",
+    "target" : "dragostgames@gmail.com",
+    "count" : 38
+  }, {
+    "source" : "dragostgames@gmail.com",
+    "target" : "yanis012@outlook.com",
+    "count" : 38
+  }, {
+    "source" : "flyima.tfd@laposte.net",
+    "target" : "51228475+miaredjeb@users.noreply.github.com",
+    "count" : 37
+  }, {
+    "source" : "51228475+miaredjeb@users.noreply.github.com",
+    "target" : "flyima.tfd@laposte.net",
+    "count" : 37
+  }, {
+    "source" : "flyima.tfd@laposte.net",
+    "target" : "dragostgames@gmail.com",
+    "count" : 29
+  }, {
+    "source" : "dragostgames@gmail.com",
+    "target" : "flyima.tfd@laposte.net",
+    "count" : 29
+  }, {
+    "source" : "flyima.tfd@laposte.net",
+    "target" : "yanis012@outlook.com",
+    "count" : 28
+  }, {
+    "source" : "yanis012@outlook.com",
+    "target" : "flyima.tfd@laposte.net",
+    "count" : 28
+  }, {
+    "source" : "flyima.tfd@laposte.net",
+    "target" : "miabenredjeb@gmail.com",
+    "count" : 28
+  }, {
+    "source" : "miabenredjeb@gmail.com",
+    "target" : "flyima.tfd@laposte.net",
+    "count" : 28
+  }, {
+    "source" : "127026665+flyima256@users.noreply.github.com",
+    "target" : "dragostgames@gmail.com",
+    "count" : 27
+  }, {
+    "source" : "dragostgames@gmail.com",
+    "target" : "127026665+flyima256@users.noreply.github.com",
+    "count" : 27
+  }, {
+    "source" : "127026665+flyima256@users.noreply.github.com",
+    "target" : "yanis012@outlook.com",
+    "count" : 26
+  }, {
+    "source" : "yanis012@outlook.com",
+    "target" : "127026665+flyima256@users.noreply.github.com",
+    "count" : 26
+  }, {
+    "source" : "75060235+dragost37@users.noreply.github.com",
+    "target" : "dragostgames@gmail.com",
+    "count" : 24
+  }, {
+    "source" : "dragostgames@gmail.com",
+    "target" : "75060235+dragost37@users.noreply.github.com",
+    "count" : 24
+  }, {
+    "source" : "yanis012@outlook.com",
+    "target" : "51228475+miaredjeb@users.noreply.github.com",
+    "count" : 23
+  }, {
+    "source" : "51228475+miaredjeb@users.noreply.github.com",
+    "target" : "yanis012@outlook.com",
+    "count" : 23
+  }, {
+    "source" : "dragostgames@gmail.com",
+    "target" : "51228475+miaredjeb@users.noreply.github.com",
+    "count" : 23
+  }, {
+    "source" : "51228475+miaredjeb@users.noreply.github.com",
+    "target" : "dragostgames@gmail.com",
+    "count" : 23
+  }, {
+    "source" : "yanis012@outlook.com",
+    "target" : "miabenredjeb@gmail.com",
+    "count" : 20
+  }, {
+    "source" : "miabenredjeb@gmail.com",
+    "target" : "yanis012@outlook.com",
+    "count" : 20
+  }, {
+    "source" : "dragostgames@gmail.com",
+    "target" : "miabenredjeb@gmail.com",
+    "count" : 18
+  }, {
+    "source" : "miabenredjeb@gmail.com",
+    "target" : "dragostgames@gmail.com",
+    "count" : 18
+  }, {
+    "source" : "75060235+dragost37@users.noreply.github.com",
+    "target" : "miabenredjeb@gmail.com",
+    "count" : 12
+  }, {
+    "source" : "miabenredjeb@gmail.com",
+    "target" : "75060235+dragost37@users.noreply.github.com",
+    "count" : 12
+  }, {
+    "source" : "51228475+miaredjeb@users.noreply.github.com",
+    "target" : "75060235+dragost37@users.noreply.github.com",
+    "count" : 11
+  }, {
+    "source" : "75060235+dragost37@users.noreply.github.com",
+    "target" : "51228475+miaredjeb@users.noreply.github.com",
+    "count" : 11
+  }, {
+    "source" : "yanis012@outlook.com",
+    "target" : "75060235+dragost37@users.noreply.github.com",
+    "count" : 9
+  }, {
+    "source" : "75060235+dragost37@users.noreply.github.com",
+    "target" : "yanis012@outlook.com",
+    "count" : 9
+  } ]
+}
+
+    const maxNodeSize = gData.nodes.map(n => n.size).reduce((a, b) => Math.max(a, b));
+    const maxCount = gData.links.map(l => l.count).reduce((a, b) => Math.max(a, b));
+
+    gData.links = gData.links.map(l => {
+        return {source: l.target, target: l.source, count: l.count}
+    });
+    const colorOf = (node) => {
+        if (!node.id.startsWith("[")) return "rgba(135, 206, 235, 0.6)";
+        return "rgba(100,100,100,0.6)";
+    }
+
+    const elem = document.getElementById('graph');
+    const Graph = ForceGraph()(elem)
+        .graphData(gData)
+        .nodeRelSize(4)
+        .nodeVal(n => Math.max(20 * n.size / maxNodeSize, 0.001))
+        .nodeLabel(n => n.id + " (" + n.size + ")")
+        .nodeColor(n => colorOf(n))
+        .linkDirectionalParticles(1)
+        .linkDirectionalParticleSpeed(d => d.count / maxCount * 0.01)
+        .linkOpacity(0.1)
+        .linkWidth(d => 3 * d.count / maxCount + 0.1);
+
+</script>
+</body>

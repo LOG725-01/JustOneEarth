@@ -1,0 +1,2 @@
+java -jar sokrates-LATEST.jar updateConfig
+java -jar sokrates-LATEST.jar generateReports

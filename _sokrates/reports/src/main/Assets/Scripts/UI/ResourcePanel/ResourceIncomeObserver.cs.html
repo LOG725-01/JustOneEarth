@@ -1,0 +1,51 @@
+<html>
+<head>
+    <title>Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs (<b>21</b> lines of code) (<a href="ResourceIncomeObserver.cs">raw</a>):</h3>
+<div id="editor">using TMPro;
+using UnityEngine;
+
+public class ResourceIncomeObserver : Observer
+{
+    [SerializeField] private TextMeshProUGUI resourceIncome;
+    [SerializeField] private string suffix = &quot; par tour&quot;;
+    [SerializeField] private RessourceTypes resourceType;
+
+    public override void ObserverUpdate(GameObject subject)
+    {
+        if (subject.TryGetComponent&lt;Player&gt;(out var player))
+        {
+            int gain = 0;
+
+            foreach (var tile in player.ownedTiles)
+            {
+                if (tile.producedRessources.ContainsKey(resourceType))
+                    gain += tile.producedRessources[resourceType];
+            }
+
+            resourceIncome.text = &quot;+&quot; + gain.ToString() + &quot; &quot; + suffix;
+        }
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

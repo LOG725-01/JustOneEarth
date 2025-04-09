@@ -1,0 +1,34 @@
+<html>
+<head>
+    <title>private void Awake()</title>
+    <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
+    <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">private void Awake()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [27:38]</i></p>
+<ul>
+    <li><b>11</b> lines of code</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
+</ul>
+<pre>
+<code class="cs">
+    private void Awake()
+    {
+        if (debug) Debug.Log(&quot;[Board] Chargement de la configuration...&quot;);
+        config = GenerationConfig.LoadFromJson();
+        if (config == null)
+        {
+            Debug.LogError(&quot;[Board] &Eacute;chec du chargement de la configuration !&quot;);
+            return;
+        }
+
+        if (debug) Debug.Log(&quot;[Board] Configuration charg&eacute;e avec succ&egrave;s.&quot;);
+    }
+
+</code>
+</pre>
+<script>
+    hljs.initHighlightingOnLoad();
+</script>
+</body>

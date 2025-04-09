@@ -1,0 +1,313 @@
+[ {
+  "relativePath" : "Assets/Scripts/Audio/AudioManager.cs",
+  "extension" : "cs",
+  "linesOfCode" : 38,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/Audio/AudioMixerManager.cs",
+  "extension" : "cs",
+  "linesOfCode" : 44,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/CameraController.cs",
+  "extension" : "cs",
+  "linesOfCode" : 81,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/Environnement/AnimalAnimatorController.cs",
+  "extension" : "cs",
+  "linesOfCode" : 114,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/Environnement/AnimalMouvement.cs",
+  "extension" : "cs",
+  "linesOfCode" : 240,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/Environnement/CloudMouvement.cs",
+  "extension" : "cs",
+  "linesOfCode" : 36,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/Environnement/CloudSpawner.cs",
+  "extension" : "cs",
+  "linesOfCode" : 77,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+  "extension" : "cs",
+  "linesOfCode" : 15,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Board.cs",
+  "extension" : "cs",
+  "linesOfCode" : 284,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+  "extension" : "cs",
+  "linesOfCode" : 94,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs",
+  "extension" : "cs",
+  "linesOfCode" : 10,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs",
+  "extension" : "cs",
+  "linesOfCode" : 5,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 10,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 9,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainRessourceOfType.cs",
+  "extension" : "cs",
+  "linesOfCode" : 35,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 4,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 7,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
+  "extension" : "cs",
+  "linesOfCode" : 10,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Enum/PlayerType.cs",
+  "extension" : "cs",
+  "linesOfCode" : 5,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Enum/RessourceTypes.cs",
+  "extension" : "cs",
+  "linesOfCode" : 8,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Enum/TileType.cs",
+  "extension" : "cs",
+  "linesOfCode" : 9,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
+  "extension" : "cs",
+  "linesOfCode" : 264,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
+  "extension" : "cs",
+  "linesOfCode" : 108,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::TODOs" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/GenerationConfig.cs",
+  "extension" : "cs",
+  "linesOfCode" : 26,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/HumanPlayer.cs",
+  "extension" : "cs",
+  "linesOfCode" : 10,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/IClickable.cs",
+  "extension" : "cs",
+  "linesOfCode" : 4,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Player.cs",
+  "extension" : "cs",
+  "linesOfCode" : 142,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/PlayerInputDetection.cs",
+  "extension" : "cs",
+  "linesOfCode" : 64,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/PlayerInputNotifier.cs",
+  "extension" : "cs",
+  "linesOfCode" : 10,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/RessourceButtonHandler.cs",
+  "extension" : "cs",
+  "linesOfCode" : 70,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
+  "extension" : "cs",
+  "linesOfCode" : 104,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/Observer.cs",
+  "extension" : "cs",
+  "linesOfCode" : 5,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/SceneChanger.cs",
+  "extension" : "cs",
+  "linesOfCode" : 60,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/Testing&Debug/GameLogger.cs",
+  "extension" : "cs",
+  "linesOfCode" : 19,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/AnimationController.cs",
+  "extension" : "cs",
+  "linesOfCode" : 16,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/Chat.cs",
+  "extension" : "cs",
+  "linesOfCode" : 84,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::TODOs" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/MaxScoreUpdate.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/Menu/ButtonController.cs",
+  "extension" : "cs",
+  "linesOfCode" : 32,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/Menu/ButtonListController.cs",
+  "extension" : "cs",
+  "linesOfCode" : 62,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/Menu/InGameMenu.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/PlayerTurnUi.cs",
+  "extension" : "cs",
+  "linesOfCode" : 32,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs",
+  "extension" : "cs",
+  "linesOfCode" : 21,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs",
+  "extension" : "cs",
+  "linesOfCode" : 15,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs",
+  "extension" : "cs",
+  "linesOfCode" : 38,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/ScoreObserver.cs",
+  "extension" : "cs",
+  "linesOfCode" : 28,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
+  "extension" : "cs",
+  "linesOfCode" : 60,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs",
+  "extension" : "cs",
+  "linesOfCode" : 195,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/TutorialInfo/Scripts/Readme.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+} ]
