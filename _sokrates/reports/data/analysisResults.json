@@ -9,7 +9,7 @@
   "metricsList" : {
     "metrics" : [ {
       "id" : "TOTAL_NUMBER_OF_FILES",
-      "value" : 30012,
+      "value" : 29953,
       "description" : "Total number of files in the source folder"
     }, {
       "id" : "NUMBER_OF_FILES_MAIN",
@@ -65,19 +65,19 @@
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER",
-      "value" : 265,
+      "value" : 266,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_OTHER",
-      "value" : 107344,
+      "value" : 110085,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER_EXT_TXT",
-      "value" : 163,
+      "value" : 164,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_OTHER_EXT_TXT",
-      "value" : 99563,
+      "value" : 99565,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER_EXT_JSON",
@@ -85,7 +85,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_OTHER_EXT_JSON",
-      "value" : 6961,
+      "value" : 9700,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER_EXT_CS",
@@ -577,7 +577,7 @@
       "description" : null
     }, {
       "id" : "FILE_CHANGE_HISTORY_TOTAL_AGE_DAYS",
-      "value" : 41,
+      "value" : 42,
       "description" : "The age of the repository in days"
     }, {
       "id" : "FILE_CHANGE_HISTORY_ACTIVE_DAYS",
@@ -673,7 +673,7 @@
       "description" : "Duplication percentage"
     }, {
       "id" : "TOTAL_ANALYSIS_TIME_IN_MILLIS",
-      "value" : 21928,
+      "value" : 131177,
       "description" : "Total analysis time in milliseconds"
     } ]
   },
@@ -783,7 +783,7 @@
       } ]
     } ]
   },
-  "totalNumberOfFilesInScope" : 30012,
+  "totalNumberOfFilesInScope" : 29953,
   "mainAspectAnalysisResults" : {
     "name" : null,
     "filesCount" : 52,
@@ -834,12 +834,12 @@
   },
   "otherAspectAnalysisResults" : {
     "name" : null,
-    "filesCount" : 265,
-    "linesOfCode" : 107344,
+    "filesCount" : 266,
+    "linesOfCode" : 110085,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.txt",
-      "value" : 163,
+      "value" : 164,
       "description" : [ ]
     }, {
       "name" : "  *.json",
@@ -852,11 +852,11 @@
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.txt",
-      "value" : 99563,
+      "value" : 99565,
       "description" : [ ]
     }, {
       "name" : "  *.json",
-      "value" : 6961,
+      "value" : 9700,
       "description" : [ ]
     }, {
       "name" : "  *.cs",
@@ -967,15 +967,6 @@
       } ]
     } ],
     "concernsGroup" : null,
-    "linesOfCodePerConcern" : [ {
-      "name" : "TODOs",
-      "value" : 192,
-      "description" : [ ]
-    }, {
-      "name" : "Unclassified",
-      "value" : 2502,
-      "description" : [ ]
-    } ],
     "fileCountPerConcern" : [ {
       "name" : "TODOs",
       "value" : 2,
@@ -983,6 +974,15 @@
     }, {
       "name" : "Unclassified",
       "value" : 50,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerConcern" : [ {
+      "name" : "TODOs",
+      "value" : 192,
+      "description" : [ ]
+    }, {
+      "name" : "Unclassified",
+      "value" : 2502,
       "description" : [ ]
     } ]
   } ],
@@ -1028,10 +1028,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 46.13956941351151,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 29.250185597624352,
-      "lowRiskPercentage" : 24.610244988864142
+      "lowRiskPercentage" : 24.610244988864142,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "fileSizeDistributionPerExtension" : [ {
       "key" : "cs",
@@ -1057,10 +1057,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 46.13956941351151,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 29.250185597624352,
-      "lowRiskPercentage" : 24.610244988864142
+      "lowRiskPercentage" : 24.610244988864142,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "fileSizeDistributionPerLogicalDecomposition" : [ {
       "name" : "primary",
@@ -1088,10 +1088,10 @@
         "totalValue" : 2694,
         "totalCount" : 52,
         "negligibleRiskPercentage" : 46.13956941351151,
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
         "mediumRiskPercentage" : 29.250185597624352,
-        "lowRiskPercentage" : 24.610244988864142
+        "lowRiskPercentage" : 24.610244988864142,
+        "highRiskPercentage" : 0.0,
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "longestFiles" : [ {
@@ -1773,10 +1773,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 89.12397921306608,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 10.876020786933926
+      "lowRiskPercentage" : 10.876020786933926,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "overallFileFirstModifiedDistribution" : {
       "key" : "",
@@ -1802,10 +1802,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 42.501855976243505,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 57.498144023756495
+      "lowRiskPercentage" : 57.498144023756495,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "overallFileChangeDistribution" : {
       "key" : "",
@@ -1831,10 +1831,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 47.03043801039347,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 52.96956198960653
+      "lowRiskPercentage" : 52.96956198960653,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "overallContributorsCountDistribution" : {
       "key" : "",
@@ -1860,10 +1860,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 11.58129175946548,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 48.812175204157384,
-      "lowRiskPercentage" : 39.60653303637714
+      "lowRiskPercentage" : 39.60653303637714,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "filesWithoutCommitHistoryCount" : 0,
     "filesWithoutCommitHistoryLinesOfCode" : 0,
@@ -1891,10 +1891,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 47.03043801039347,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 52.96956198960653
+      "lowRiskPercentage" : 52.96956198960653,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "lastModifiedDistributionPerExtension" : [ {
       "key" : "cs",
@@ -1920,10 +1920,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 89.12397921306608,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 10.876020786933926
+      "lowRiskPercentage" : 10.876020786933926,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "firstModifiedDistributionPerExtension" : [ {
       "key" : "cs",
@@ -1949,10 +1949,10 @@
       "totalValue" : 2694,
       "totalCount" : 52,
       "negligibleRiskPercentage" : 42.501855976243505,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 57.498144023756495
+      "lowRiskPercentage" : 57.498144023756495,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "changeDistributionPerLogicalDecomposition" : [ {
       "name" : "primary",
@@ -1980,10 +1980,10 @@
         "totalValue" : 2694,
         "totalCount" : 52,
         "negligibleRiskPercentage" : 47.03043801039347,
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
         "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 52.96956198960653
+        "lowRiskPercentage" : 52.96956198960653,
+        "highRiskPercentage" : 0.0,
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "firstModifiedDistributionPerLogicalDecomposition" : [ {
@@ -2012,10 +2012,10 @@
         "totalValue" : 2694,
         "totalCount" : 52,
         "negligibleRiskPercentage" : 42.501855976243505,
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
         "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 57.498144023756495
+        "lowRiskPercentage" : 57.498144023756495,
+        "highRiskPercentage" : 0.0,
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "lastModifiedDistributionPerLogicalDecomposition" : [ {
@@ -2044,10 +2044,10 @@
         "totalValue" : 2694,
         "totalCount" : 52,
         "negligibleRiskPercentage" : 89.12397921306608,
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
         "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 10.876020786933926
+        "lowRiskPercentage" : 10.876020786933926,
+        "highRiskPercentage" : 0.0,
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "oldestFiles" : [ {
@@ -4513,7 +4513,7 @@
     "weeks" : 5,
     "estimatedWorkindDays" : 25,
     "activeDays" : 23,
-    "ageInDays" : 41,
+    "ageInDays" : 42,
     "historyPerExtensionPerYear" : [ {
       "extension" : "cginc",
       "year" : "2025",
@@ -4653,10 +4653,10 @@
       "totalValue" : 2131,
       "totalCount" : 211,
       "negligibleRiskPercentage" : 40.54434537775692,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 7.179727827311122,
       "mediumRiskPercentage" : 31.393711872360395,
-      "lowRiskPercentage" : 20.882214922571563
+      "lowRiskPercentage" : 20.882214922571563,
+      "highRiskPercentage" : 7.179727827311122,
+      "veryHighRiskPercentage" : 0.0
     },
     "conditionalComplexityRiskDistribution" : {
       "key" : "",
@@ -4682,10 +4682,10 @@
       "totalValue" : 2131,
       "totalCount" : 211,
       "negligibleRiskPercentage" : 64.99296105114969,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 8.822149225715627,
-      "lowRiskPercentage" : 26.184889723134678
+      "lowRiskPercentage" : 26.184889723134678,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "unitSizeRiskDistributionPerExtension" : [ {
       "key" : "cs",
@@ -4711,10 +4711,10 @@
       "totalValue" : 2131,
       "totalCount" : 211,
       "negligibleRiskPercentage" : 40.54434537775692,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 7.179727827311122,
       "mediumRiskPercentage" : 31.393711872360395,
-      "lowRiskPercentage" : 20.882214922571563
+      "lowRiskPercentage" : 20.882214922571563,
+      "highRiskPercentage" : 7.179727827311122,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "unitSizeRiskDistributionPerComponent" : [ [ {
       "key" : "Assets",
@@ -4740,10 +4740,10 @@
       "totalValue" : 2131,
       "totalCount" : 211,
       "negligibleRiskPercentage" : 40.54434537775692,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 7.179727827311122,
       "mediumRiskPercentage" : 31.393711872360395,
-      "lowRiskPercentage" : 20.882214922571563
+      "lowRiskPercentage" : 20.882214922571563,
+      "highRiskPercentage" : 7.179727827311122,
+      "veryHighRiskPercentage" : 0.0
     } ] ],
     "longestUnits" : [ {
       "shortName" : "public void StartGame()",
@@ -5770,10 +5770,10 @@
       "totalValue" : 2131,
       "totalCount" : 211,
       "negligibleRiskPercentage" : 64.99296105114969,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 8.822149225715627,
-      "lowRiskPercentage" : 26.184889723134678
+      "lowRiskPercentage" : 26.184889723134678,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "conditionalComplexityRiskDistributionPerComponent" : [ [ {
       "key" : "Assets",
@@ -5799,10 +5799,10 @@
       "totalValue" : 2131,
       "totalCount" : 211,
       "negligibleRiskPercentage" : 64.99296105114969,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
       "mediumRiskPercentage" : 8.822149225715627,
-      "lowRiskPercentage" : 26.184889723134678
+      "lowRiskPercentage" : 26.184889723134678,
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ] ],
     "mostComplexUnits" : [ {
       "shortName" : "public void CreateBoard()",
@@ -6875,7 +6875,7 @@
     }, {
       "email" : "yanis012@outlook.com",
       "commitsCount" : 14,
-      "commitsCount30Days" : 13,
+      "commitsCount30Days" : 12,
       "commitsCount90Days" : 14,
       "commitsCount180Days" : 14,
       "commitsCount365Days" : 14,
@@ -7074,9 +7074,9 @@
       "commitsCount" : 426,
       "committers" : [ "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "miabenredjeb@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "yanis012@outlook.com" ],
       "filesCount" : 64,
-      "commitsCount30Days" : 411,
+      "commitsCount30Days" : 397,
       "committers30Days" : [ "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "miabenredjeb@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "yanis012@outlook.com" ],
-      "filesCount30Days" : 54,
+      "filesCount30Days" : 49,
       "commitsCount90Days" : 426,
       "committers90Days" : [ "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "miabenredjeb@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "yanis012@outlook.com" ],
       "filesCount90Days" : 64,
@@ -7112,7 +7112,7 @@
         "fileUpdates" : 53
       }, {
         "contributor" : "yanis012@outlook.com",
-        "fileUpdates30Days" : 74,
+        "fileUpdates30Days" : 60,
         "fileUpdates90Days" : 76,
         "fileUpdates" : 76
       } ]
@@ -7121,9 +7121,9 @@
       "commitsCount" : 170,
       "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com", "dragostgames@gmail.com", "75060235+dragost37@users.noreply.github.com" ],
       "filesCount" : 46,
-      "commitsCount30Days" : 162,
+      "commitsCount30Days" : 159,
       "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com", "dragostgames@gmail.com", "75060235+dragost37@users.noreply.github.com" ],
-      "filesCount30Days" : 40,
+      "filesCount30Days" : 39,
       "commitsCount90Days" : 170,
       "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com", "dragostgames@gmail.com", "75060235+dragost37@users.noreply.github.com" ],
       "filesCount90Days" : 46,
@@ -7159,7 +7159,7 @@
         "fileUpdates" : 19
       }, {
         "contributor" : "yanis012@outlook.com",
-        "fileUpdates30Days" : 22,
+        "fileUpdates30Days" : 19,
         "fileUpdates90Days" : 22,
         "fileUpdates" : 22
       } ]
@@ -7215,9 +7215,9 @@
       "commitsCount" : 765,
       "committers" : [ "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "miabenredjeb@gmail.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount" : 371,
-      "commitsCount30Days" : 671,
+      "commitsCount30Days" : 647,
       "committers30Days" : [ "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "miabenredjeb@gmail.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "yanis012@outlook.com" ],
-      "filesCount30Days" : 278,
+      "filesCount30Days" : 256,
       "commitsCount90Days" : 765,
       "committers90Days" : [ "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "miabenredjeb@gmail.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount90Days" : 371,
@@ -7253,7 +7253,7 @@
         "fileUpdates" : 133
       }, {
         "contributor" : "yanis012@outlook.com",
-        "fileUpdates30Days" : 49,
+        "fileUpdates30Days" : 25,
         "fileUpdates90Days" : 69,
         "fileUpdates" : 69
       } ]
@@ -7351,7 +7351,7 @@
       "commitsCount" : 54,
       "committers" : [ "127026665+flyima256@users.noreply.github.com", "yanis012@outlook.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com" ],
       "filesCount" : 26,
-      "commitsCount30Days" : 52,
+      "commitsCount30Days" : 51,
       "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "yanis012@outlook.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com" ],
       "filesCount30Days" : 24,
       "commitsCount90Days" : 54,
@@ -7379,7 +7379,7 @@
         "fileUpdates" : 1
       }, {
         "contributor" : "yanis012@outlook.com",
-        "fileUpdates30Days" : 4,
+        "fileUpdates30Days" : 3,
         "fileUpdates90Days" : 5,
         "fileUpdates" : 5
       }, {
@@ -7393,7 +7393,7 @@
       "commitsCount" : 20,
       "committers" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
       "filesCount" : 5,
-      "commitsCount30Days" : 20,
+      "commitsCount30Days" : 19,
       "committers30Days" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
       "filesCount30Days" : 5,
       "commitsCount90Days" : 20,
@@ -7426,51 +7426,9 @@
         "fileUpdates" : 1
       }, {
         "contributor" : "yanis012@outlook.com",
-        "fileUpdates30Days" : 3,
+        "fileUpdates30Days" : 2,
         "fileUpdates90Days" : 3,
         "fileUpdates" : 3
-      } ]
-    }, {
-      "extension" : "asset",
-      "commitsCount" : 71,
-      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
-      "filesCount" : 43,
-      "commitsCount30Days" : 33,
-      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
-      "filesCount30Days" : 10,
-      "commitsCount90Days" : 71,
-      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
-      "filesCount90Days" : 43,
-      "contributorPerExtensionStats" : [ {
-        "contributor" : "127026665+flyima256@users.noreply.github.com",
-        "fileUpdates30Days" : 4,
-        "fileUpdates90Days" : 4,
-        "fileUpdates" : 4
-      }, {
-        "contributor" : "51228475+miaredjeb@users.noreply.github.com",
-        "fileUpdates30Days" : 6,
-        "fileUpdates90Days" : 6,
-        "fileUpdates" : 6
-      }, {
-        "contributor" : "flyima.tfd@laposte.net",
-        "fileUpdates30Days" : 3,
-        "fileUpdates90Days" : 10,
-        "fileUpdates" : 10
-      }, {
-        "contributor" : "75060235+dragost37@users.noreply.github.com",
-        "fileUpdates30Days" : 1,
-        "fileUpdates90Days" : 1,
-        "fileUpdates" : 1
-      }, {
-        "contributor" : "miabenredjeb@gmail.com",
-        "fileUpdates30Days" : 18,
-        "fileUpdates90Days" : 18,
-        "fileUpdates" : 18
-      }, {
-        "contributor" : "yanis012@outlook.com",
-        "fileUpdates30Days" : 1,
-        "fileUpdates90Days" : 32,
-        "fileUpdates" : 32
       } ]
     }, {
       "extension" : "mixer",
@@ -7513,6 +7471,48 @@
         "fileUpdates30Days" : 1,
         "fileUpdates90Days" : 1,
         "fileUpdates" : 1
+      } ]
+    }, {
+      "extension" : "asset",
+      "commitsCount" : 71,
+      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
+      "filesCount" : 43,
+      "commitsCount30Days" : 32,
+      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com" ],
+      "filesCount30Days" : 10,
+      "commitsCount90Days" : 71,
+      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
+      "filesCount90Days" : 43,
+      "contributorPerExtensionStats" : [ {
+        "contributor" : "127026665+flyima256@users.noreply.github.com",
+        "fileUpdates30Days" : 4,
+        "fileUpdates90Days" : 4,
+        "fileUpdates" : 4
+      }, {
+        "contributor" : "51228475+miaredjeb@users.noreply.github.com",
+        "fileUpdates30Days" : 6,
+        "fileUpdates90Days" : 6,
+        "fileUpdates" : 6
+      }, {
+        "contributor" : "flyima.tfd@laposte.net",
+        "fileUpdates30Days" : 3,
+        "fileUpdates90Days" : 10,
+        "fileUpdates" : 10
+      }, {
+        "contributor" : "75060235+dragost37@users.noreply.github.com",
+        "fileUpdates30Days" : 1,
+        "fileUpdates90Days" : 1,
+        "fileUpdates" : 1
+      }, {
+        "contributor" : "miabenredjeb@gmail.com",
+        "fileUpdates30Days" : 18,
+        "fileUpdates90Days" : 18,
+        "fileUpdates" : 18
+      }, {
+        "contributor" : "yanis012@outlook.com",
+        "fileUpdates30Days" : 0,
+        "fileUpdates90Days" : 32,
+        "fileUpdates" : 32
       } ]
     }, {
       "extension" : "fbx",
@@ -7780,9 +7780,9 @@
       } ]
     } ]
   },
-  "numberOfExcludedFiles" : 24486,
+  "numberOfExcludedFiles" : 24426,
   "excludedExtensions" : {
-    "" : 7765,
+    "" : 7708,
     "release" : 1,
     "bin" : 570,
     "catalog" : 1,
@@ -7792,6 +7792,7 @@
     "xml" : 1,
     "pref" : 1,
     "editorconfig" : 1,
+    "jar" : 1,
     "state" : 1,
     "exr" : 31,
     "otf" : 2,
@@ -7814,7 +7815,7 @@
     "template" : 42,
     "terrainlayer" : 4,
     "signature" : 15,
-    "log" : 7,
+    "log" : 3,
     "vsconfig" : 1,
     "suo" : 1,
     "rsp" : 136,
@@ -7903,7 +7904,7 @@
     "xcworkspacedata" : 1,
     "po" : 1
   },
-  "analysisStartTimeMs" : 1744142297800,
-  "maxLinesOfCode" : 107344,
-  "maxFileCount" : 265
+  "analysisStartTimeMs" : 1744210950152,
+  "maxLinesOfCode" : 110085,
+  "maxFileCount" : 266
 }

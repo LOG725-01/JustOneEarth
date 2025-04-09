@@ -12,11 +12,8 @@
 <script>
     const gData = {
   "nodes" : [ {
-    "id" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "size" : 11
-  }, {
     "id" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "size" : 34
+    "size" : 30
   }, {
     "id" : "[Assets/Scripts/Environnement/CloudMouvement.cs]",
     "size" : 2
@@ -28,7 +25,7 @@
     "size" : 3
   }, {
     "id" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "size" : 22
+    "size" : 18
   }, {
     "id" : "[Assets/Scripts/GameLogic/IClickable.cs]",
     "size" : 5
@@ -40,16 +37,13 @@
     "size" : 24
   }, {
     "id" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "size" : 36
+    "size" : 32
   }, {
     "id" : "[Assets/Scripts/UI/Menu/InGameMenu.cs]",
     "size" : 4
   }, {
     "id" : "[Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs]",
     "size" : 17
-  }, {
-    "id" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "size" : 11
   }, {
     "id" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
     "size" : 21
@@ -62,9 +56,6 @@
   }, {
     "id" : "[Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs]",
     "size" : 9
-  }, {
-    "id" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "size" : 11
   }, {
     "id" : "[Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs]",
     "size" : 5
@@ -94,7 +85,7 @@
     "size" : 18
   }, {
     "id" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "size" : 37
+    "size" : 33
   }, {
     "id" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
     "size" : 18
@@ -109,16 +100,16 @@
     "size" : 25
   }, {
     "id" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "size" : 33
+    "size" : 30
   }, {
     "id" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "size" : 20
+    "size" : 16
   }, {
     "id" : "[Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs]",
     "size" : 15
   }, {
     "id" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "size" : 27
+    "size" : 23
   }, {
     "id" : "[Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs]",
     "size" : 5
@@ -139,13 +130,13 @@
     "size" : 2
   }, {
     "id" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "size" : 12
+    "size" : 2
   }, {
     "id" : "[Assets/Scripts/GameLogic/Cards/FreeCard.cs]",
     "size" : 9
   }, {
     "id" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "size" : 35
+    "size" : 31
   }, {
     "id" : "[Assets/Scripts/UI/AnimationController.cs]",
     "size" : 17
@@ -156,122 +147,98 @@
   "links" : [ {
     "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 26
+    "count" : 25
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 26
+    "count" : 25
   }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 21
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 21
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 20
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 20
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "count" : 20
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 20
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 20
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 20
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 19
+    "count" : 20
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "count" : 19
   }, {
+    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
+    "count" : 19
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "count" : 19
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
+    "count" : 19
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "count" : 19
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "count" : 19
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "count" : 18
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "count" : 18
+  }, {
     "source" : "[Assets/Scripts/GameLogic/Board.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 15
+    "count" : 14
   }, {
     "source" : "[Assets/Scripts/GameLogic/Player.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 15
+    "count" : 14
   }, {
     "source" : "[Assets/Scripts/GameLogic/Board.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 15
+    "count" : 14
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 15
+    "count" : 14
   }, {
     "source" : "[Assets/Scripts/GameLogic/Player.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 15
+    "count" : 14
   }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 15
+    "count" : 14
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 14
+    "count" : 13
   }, {
     "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 14
+    "count" : 13
   }, {
     "source" : "[Assets/Scripts/GameLogic/Board.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 13
+    "count" : 12
   }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 13
+    "count" : 12
   }, {
     "source" : "[Assets/Scripts/GameLogic/Board.cs]",
     "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 12
+    "count" : 11
   }, {
     "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 12
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 11
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 11
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 11
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 11
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 11
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "count" : 11
   }, {
     "source" : "[Assets/Scripts/SceneChanger.cs]",
@@ -283,36 +250,28 @@
     "count" : 11
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 10
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 10
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 10
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
     "count" : 10
   }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 10
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
     "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "count" : 10
   }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 9
+    "count" : 10
   }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 9
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "count" : 10
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "count" : 10
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "count" : 10
   }, {
     "source" : "[Assets/Scripts/SceneChanger.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
@@ -322,6 +281,22 @@
     "target" : "[Assets/Scripts/SceneChanger.cs]",
     "count" : 9
   }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "count" : 9
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "count" : 9
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "count" : 9
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "count" : 9
+  }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
     "target" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
     "count" : 9
@@ -330,20 +305,12 @@
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
     "count" : 9
   }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 9
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "count" : 9
   }, {
     "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 9
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
     "count" : 9
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
@@ -353,22 +320,46 @@
     "source" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "count" : 9
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "count" : 8
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "count" : 8
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "count" : 8
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "count" : 8
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "count" : 8
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "count" : 8
   }, {
     "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 8
+    "count" : 7
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 8
+    "count" : 7
   }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
     "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 8
+    "count" : 7
   }, {
     "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 8
+    "count" : 7
   }, {
     "source" : "[Assets/Scripts/SceneChanger.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
@@ -385,6 +376,14 @@
     "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/UI/ScoreObserver.cs]",
     "count" : 7
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "target" : "[Assets/Scripts/UI/ScoreObserver.cs]",
+    "count" : 6
+  }, {
+    "source" : "[Assets/Scripts/UI/ScoreObserver.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "count" : 6
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
     "target" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
@@ -400,22 +399,6 @@
   }, {
     "source" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 6
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 6
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 6
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/UI/ScoreObserver.cs]",
-    "count" : 6
-  }, {
-    "source" : "[Assets/Scripts/UI/ScoreObserver.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "count" : 6
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
@@ -440,14 +423,6 @@
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "target" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
-    "count" : 6
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 6
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 6
   }, {
     "source" : "[Assets/Scripts/UI/ScoreObserver.cs]",
@@ -538,6 +513,14 @@
     "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "count" : 5
   }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "count" : 5
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "count" : 5
+  }, {
     "source" : "[Assets/Scripts/UI/TileInfo.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
     "count" : 5
@@ -587,10 +570,10 @@
     "count" : 5
   }, {
     "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
     "count" : 5
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
     "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 5
   }, {
@@ -650,14 +633,6 @@
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
     "count" : 5
   }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
-    "count" : 4
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 4
-  }, {
     "source" : "[Assets/Scripts/UI/AnimationController.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
     "count" : 4
@@ -674,12 +649,12 @@
     "target" : "[Assets/Scripts/UI/PlayerTurnUi.cs]",
     "count" : 4
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
+    "source" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
     "count" : 4
   }, {
     "source" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
     "count" : 4
   }, {
     "source" : "[Assets/Scripts/UI/ScoreObserver.cs]",
@@ -730,20 +705,20 @@
     "target" : "[Assets/Scripts/Environnement/CloudSpawner.cs]",
     "count" : 4
   }, {
-    "source" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 4
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
-    "count" : 4
-  }, {
     "source" : "[Assets/Scripts/GameLogic/Player.cs]",
     "target" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
     "count" : 4
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
+    "count" : 4
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
+    "count" : 4
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "count" : 4
   }, {
     "source" : "[Assets/Scripts/UI/TileInfo.cs]",
@@ -770,6 +745,14 @@
     "target" : "[Assets/Scripts/Environnement/CloudSpawner.cs]",
     "count" : 4
   }, {
+    "source" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "count" : 4
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
+    "count" : 4
+  }, {
     "source" : "[Assets/Scripts/UI/PlayerTurnUi.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
     "count" : 4
@@ -794,20 +777,20 @@
     "target" : "[Assets/Scripts/UI/TileInfo.cs]",
     "count" : 4
   }, {
-    "source" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 4
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GenerationConfig.cs]",
-    "count" : 4
-  }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
     "target" : "[Assets/Scripts/SceneChanger.cs]",
     "count" : 4
   }, {
     "source" : "[Assets/Scripts/SceneChanger.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
+    "count" : 4
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "count" : 4
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 4
   }, {
     "source" : "[Assets/Scripts/UI/TileInfo.cs]",
@@ -914,12 +897,28 @@
     "target" : "[Assets/Scripts/Environnement/AnimalAnimatorController.cs]",
     "count" : 3
   }, {
+    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
+    "target" : "[Assets/Scripts/CameraController.cs]",
+    "count" : 3
+  }, {
+    "source" : "[Assets/Scripts/CameraController.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
+    "count" : 3
+  }, {
     "source" : "[Assets/Scripts/GameLogic/Board.cs]",
     "target" : "[Assets/Scripts/CameraController.cs]",
     "count" : 3
   }, {
     "source" : "[Assets/Scripts/CameraController.cs]",
     "target" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "count" : 3
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "count" : 3
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
     "count" : 3
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs]",
@@ -1018,28 +1017,12 @@
     "target" : "[Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs]",
     "count" : 3
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/CameraController.cs]",
-    "count" : 3
-  }, {
-    "source" : "[Assets/Scripts/CameraController.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "count" : 3
-  }, {
     "source" : "[Assets/Scripts/GameLogic/Player.cs]",
     "target" : "[Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs]",
     "count" : 3
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 3
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 3
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "count" : 3
   }, {
     "source" : "[Assets/Scripts/Environnement/CloudSpawner.cs]",
@@ -1128,14 +1111,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/TileInfo.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
-    "count" : 2
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 2
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 2
   }, {
     "source" : "[Assets/Scripts/UI/Menu/ButtonController.cs]",
@@ -1242,14 +1217,6 @@
     "target" : "[Assets/Scripts/GameLogic/PlayerInputDetection.cs]",
     "count" : 2
   }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/UI/ScoreObserver.cs]",
-    "count" : 2
-  }, {
-    "source" : "[Assets/Scripts/UI/ScoreObserver.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 2
-  }, {
     "source" : "[Assets/Scripts/SceneChanger.cs]",
     "target" : "[Assets/Scripts/UI/TileInfo.cs]",
     "count" : 2
@@ -1314,6 +1281,14 @@
     "target" : "[Assets/Scripts/GameLogic/RessourceButtonHandler.cs]",
     "count" : 2
   }, {
+    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "target" : "[Assets/Scripts/UI/ScoreObserver.cs]",
+    "count" : 2
+  }, {
+    "source" : "[Assets/Scripts/UI/ScoreObserver.cs]",
+    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "count" : 2
+  }, {
     "source" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "count" : 2
@@ -1376,6 +1351,14 @@
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/GameLogic/RessourceButtonHandler.cs]",
+    "count" : 2
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "count" : 2
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
     "count" : 2
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
@@ -1482,14 +1465,6 @@
     "target" : "[Assets/Scripts/Environnement/AnimalMouvement.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/UI/PlayerTurnUi.cs]",
     "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "count" : 1
@@ -1506,14 +1481,6 @@
     "target" : "[Assets/Scripts/UI/TileInfo.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
     "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 1
@@ -1522,20 +1489,12 @@
     "target" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
+    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
+    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
@@ -1562,30 +1521,6 @@
     "target" : "[Assets/Scripts/UI/Menu/ButtonListController.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/UI/Chat.cs]",
     "count" : 1
@@ -1610,6 +1545,14 @@
     "target" : "[Assets/Scripts/UI/Menu/ButtonListController.cs]",
     "count" : 1
   }, {
+    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "count" : 1
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
+    "count" : 1
+  }, {
     "source" : "[Assets/Scripts/UI/Menu/ButtonController.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
     "count" : 1
@@ -1624,30 +1567,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/Menu/ButtonListController.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs]",
@@ -1706,36 +1625,12 @@
     "target" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
     "target" : "[Assets/Scripts/GameLogic/Cards/FreeCard.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/Cards/FreeCard.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
@@ -1752,14 +1647,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/PlayerTurnUi.cs]",
     "target" : "[Assets/Scripts/Environnement/CloudSpawner.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs]",
@@ -1794,14 +1681,6 @@
     "target" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
     "target" : "[Assets/Scripts/GameLogic/Player.cs]",
     "count" : 1
@@ -1810,28 +1689,12 @@
     "target" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs]",
     "target" : "[Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs]",
     "target" : "[Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/Menu/ButtonController.cs]",
@@ -1858,14 +1721,6 @@
     "target" : "[Assets/Scripts/Environnement/CloudSpawner.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
     "count" : 1
@@ -1880,14 +1735,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/Chat.cs]",
     "target" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "target" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
-    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs]",
@@ -1944,14 +1791,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/Chat.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/AnimationController.cs]",
@@ -1994,30 +1833,6 @@
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
     "target" : "[Assets/Scripts/UI/ScoreObserver.cs]",
     "count" : 1
@@ -2048,14 +1863,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs]",
     "target" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Board.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs]",
@@ -2072,14 +1879,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/Chat.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
@@ -2130,14 +1929,6 @@
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "count" : 1
@@ -2176,14 +1967,6 @@
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "target" : "[Assets/Scripts/UI/Chat.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
@@ -2218,14 +2001,6 @@
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/Environnement/AnimalMouvement.cs]",
     "target" : "[Assets/Scripts/UI/TileInfo.cs]",
     "count" : 1
@@ -2240,14 +2015,6 @@
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "target" : "[Assets/Scripts/UI/Menu/ButtonListController.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
@@ -2266,12 +2033,12 @@
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
+    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
+    "source" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
+    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/Environnement/CloudSpawner.cs]",
@@ -2336,14 +2103,6 @@
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs]",
     "target" : "[Assets/Scripts/UI/AnimationController.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/AnimationController.cs]",
@@ -2418,22 +2177,6 @@
     "target" : "[Assets/Scripts/GameLogic/Enum/PlayerType.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
-    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/Environnement/AnimalMouvement.cs]",
     "target" : "[Assets/Scripts/GameLogic/Card.cs]",
     "count" : 1
@@ -2442,12 +2185,12 @@
     "target" : "[Assets/Scripts/Environnement/AnimalMouvement.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
+    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
+    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/AnimationController.cs]",
@@ -2538,12 +2281,28 @@
     "target" : "[Assets/Scripts/UI/AnimationController.cs]",
     "count" : 1
   }, {
+    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
+    "target" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
+    "count" : 1
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/PlayerInputNotifier.cs]",
+    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
+    "count" : 1
+  }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
     "target" : "[Assets/Scripts/UI/PlayerTurnUi.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/PlayerTurnUi.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs]",
+    "count" : 1
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
+    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "count" : 1
+  }, {
+    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
+    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/Environnement/CloudSpawner.cs]",
@@ -2570,14 +2329,6 @@
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
     "source" : "[Assets/Scripts/UI/Menu/ButtonController.cs]",
     "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "count" : 1
@@ -2600,22 +2351,6 @@
   }, {
     "source" : "[Assets/Scripts/GameLogic/GameState.cs]",
     "target" : "[Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Cards/CardData.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs]",
@@ -2672,14 +2407,6 @@
   }, {
     "source" : "[Assets/Scripts/SceneChanger.cs]",
     "target" : "[Assets/Scripts/Testing&Debug/GameLogger.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
@@ -2770,12 +2497,12 @@
     "target" : "[Assets/Scripts/UI/AnimationController.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
+    "source" : "[Assets/Scripts/GameLogic/IClickable.cs]",
+    "target" : "[Assets/Scripts/GameLogic/GameManager.cs]",
     "count" : 1
   }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/TileType.cs]",
+    "source" : "[Assets/Scripts/GameLogic/GameManager.cs]",
+    "target" : "[Assets/Scripts/GameLogic/IClickable.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
@@ -2784,22 +2511,6 @@
   }, {
     "source" : "[Assets/Scripts/GameLogic/Card.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Card.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Tile.cs]",
-    "target" : "[Assets/Scripts/GameLogic/HumanPlayer.cs]",
     "count" : 1
   }, {
     "source" : "[Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs]",
@@ -2864,22 +2575,6 @@
   }, {
     "source" : "[Assets/Scripts/SceneChanger.cs]",
     "target" : "[Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "target" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/AIPlayer.cs]",
-    "target" : "[Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "count" : 1
-  }, {
-    "source" : "[Assets/Scripts/GameLogic/Player.cs]",
-    "target" : "[Assets/Scripts/GameLogic/Enum/RessourceTypes.cs]",
     "count" : 1
   } ]
 }

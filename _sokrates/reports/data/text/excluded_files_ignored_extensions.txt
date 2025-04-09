@@ -9689,7 +9689,7 @@ Library/PackageCache/com.unity.visualscripting@1.9.4/ValidationExceptions.json.m
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*. files (7765):
+*. files (7708):
 
 Library/AnnotationManager
 Library/ArtifactDB
@@ -10001,7 +10001,6 @@ Library/Artifacts/0a/0a3158f05fafae45d2e5b1434a07ebe5
 Library/Artifacts/0a/0a350c7bd48340834465c13f94cb6d78
 Library/Artifacts/0a/0a36a8088d90b420f97235573bbb52f7
 Library/Artifacts/0a/0a3ff2d4a0ad02afe35f2d658b212898
-Library/Artifacts/0a/0a547bc24d77734483e47ad7bf24008a
 Library/Artifacts/0a/0a643d93f76037d4de5a909238e7c8fe
 Library/Artifacts/0a/0a66f0aa76e974e0f19fcbd44bce49e7
 Library/Artifacts/0a/0a7374f1f19baf7c74d6bf83c74918cf
@@ -10308,7 +10307,6 @@ Library/Artifacts/14/14090984d17586fb6fbd935c6b5c998c
 Library/Artifacts/14/1412e159da5346fbb81e27e2184910d0
 Library/Artifacts/14/1415d70c1925214d2c1853ceda6e659d
 Library/Artifacts/14/1419c5db60547c3ff7b111549bf326f1
-Library/Artifacts/14/141b650a0db494373c1bab104423d10b
 Library/Artifacts/14/142cc5dea0145bd0cd928e12e147c1c0
 Library/Artifacts/14/14315f5ba5f324928b4fa6a31d547422
 Library/Artifacts/14/1436635757e3a5bed37151801bba504f
@@ -10526,6 +10524,7 @@ Library/Artifacts/1a/1a85b0e45b25d40a6e2136b30fa19532
 Library/Artifacts/1a/1a945d13596255b9671e2d47a4ed142b
 Library/Artifacts/1a/1a9741bd6da1499ccd00030ef6ced802
 Library/Artifacts/1a/1aa10571b0fbd326b9e3ed50e74f96c6
+Library/Artifacts/1a/1aa6693c4fb327f545459e0f11766e03
 Library/Artifacts/1a/1ac020268d1613f25a79ffaf2564f975
 Library/Artifacts/1a/1ace8fd2728121f31b1353e831eab147
 Library/Artifacts/1a/1ad0d9378f434f1578d16c794f5f7ab8
@@ -10534,7 +10533,6 @@ Library/Artifacts/1a/1ad63e81c451b8e97d09b71266af7983
 Library/Artifacts/1a/1ad8599348beb1d228f45c61feb79035
 Library/Artifacts/1a/1ada9dd21cafc915548ccdedc0ffd296
 Library/Artifacts/1a/1adc3aa7f39c69418309d50455a44a29
-Library/Artifacts/1a/1adf09909834a0cba3e67676b0f9d1cb
 Library/Artifacts/1a/1adf2682a404da25bc26c136169645b3
 Library/Artifacts/1a/1ae102b75d650fafa0afdcab0b4c4526
 Library/Artifacts/1a/1ae475cffe9789cbd15d8178efd6d6c3
@@ -10618,7 +10616,6 @@ Library/Artifacts/1d/1d4b4d9be75cad26f57a11612eb51021
 Library/Artifacts/1d/1d51117959d03427fa3dcfb12dc1f911
 Library/Artifacts/1d/1d52322925637d3f1e5e0733c5ac82c7
 Library/Artifacts/1d/1d59e0baedee24c6bf071fbcba6b6877
-Library/Artifacts/1d/1d59fa2a840a09bfce67923476346969
 Library/Artifacts/1d/1d5cec828da0ad9a5d14d61398f32909
 Library/Artifacts/1d/1d5e9624764ced8487b79692d80fa4c2
 Library/Artifacts/1d/1d65019b60a8671798902e003f563cfd
@@ -10654,7 +10651,6 @@ Library/Artifacts/1e/1e83e9ea4bb1195c59f0cef44c3f33b6
 Library/Artifacts/1e/1e87317f883e5b7124f8571d58ba2395
 Library/Artifacts/1e/1e8f815866e0d668362af6e4a945cd23
 Library/Artifacts/1e/1e93015393c4f7f12a642b6e6d397b4f
-Library/Artifacts/1e/1e998cee962fca6b5b0a58d503f36f4d
 Library/Artifacts/1e/1eb0d5d782790b330a51ad41164b1c1d
 Library/Artifacts/1e/1eb30906b882092d797bf602f7f2e697
 Library/Artifacts/1e/1ec7bcdfba44e639a789e93ea7a9cd30
@@ -10680,7 +10676,6 @@ Library/Artifacts/1f/1f7c75fb0902b499793fb7729419a969
 Library/Artifacts/1f/1f7d44fe6a98d38e20483d92e17a0120
 Library/Artifacts/1f/1f82ef50b5338e6ee1a94ceac99d3ddb
 Library/Artifacts/1f/1f88896288048c25ad3e0ba60f451232
-Library/Artifacts/1f/1f922f738be7e4de88e9a0eb74543688
 Library/Artifacts/1f/1f9471108f7f49b5e249d7d624c245d7
 Library/Artifacts/1f/1f95ad42961572f89ab621ec408f619b
 Library/Artifacts/1f/1f9d89588a1399f7bd957c5a93082082
@@ -10702,7 +10697,6 @@ Library/Artifacts/20/20107fc014226f4eb9bf9f9cfba2845f
 Library/Artifacts/20/20111d2f3a5f1adbbae39dc667df6664
 Library/Artifacts/20/2013fbbac6d1111274b6958df05e47eb
 Library/Artifacts/20/201976c96e865098b859550076b244d8
-Library/Artifacts/20/2027e238dd7812e55caab36f27ba1b70
 Library/Artifacts/20/2029c0adf8357bc69792678e1e042db0
 Library/Artifacts/20/203a831eafaa858134bbad135e4100f9
 Library/Artifacts/20/2040c44232fc977a0d65ecad89b893f4
@@ -10743,7 +10737,6 @@ Library/Artifacts/21/2139178f43a2ef0e17bde99fbcbdb604
 Library/Artifacts/21/214c5370fe3a428203940601cc649e8e
 Library/Artifacts/21/214dea14dfb53c7a194649bbb6b83ea5
 Library/Artifacts/21/214eed01e3e1e6bc89feb981863192ca
-Library/Artifacts/21/2158223cdccef24ade3747f289364ab6
 Library/Artifacts/21/2162d84c7e1aa715f55bfea7ab8109e1
 Library/Artifacts/21/2163c9b307ff2513158b829219c49466
 Library/Artifacts/21/216595344976b1337fe1db8372587a30
@@ -10868,7 +10861,6 @@ Library/Artifacts/25/254e6da38cb74851aa5e7f8a29c0c996
 Library/Artifacts/25/25688993ce67182a4c4c5b13d259ac08
 Library/Artifacts/25/2568e453c02251f90f6433afa362f842
 Library/Artifacts/25/2573b684559a3afb97804ccbe51b7bd5
-Library/Artifacts/25/2574a4cfbeca44bd4cbf53f1d98ffc50
 Library/Artifacts/25/257a26f1d72abc7714310e203e70b6ac
 Library/Artifacts/25/257afcc9395ffdb21a8108890b04f9c8
 Library/Artifacts/25/2582a55c1955f2d53556125216810295
@@ -10905,7 +10897,6 @@ Library/Artifacts/26/26693cb8917063247dfff77a7f7cb1e8
 Library/Artifacts/26/26729db6e48ee963d99134349a6d5905
 Library/Artifacts/26/2675663955345764353761e833611f35
 Library/Artifacts/26/26800b30df5b29b0b424cb88cdfd86cf
-Library/Artifacts/26/26832422b42113225e1ddd2839bfc1ef
 Library/Artifacts/26/2684cf95b2a394a76c3ef2acef09e99e
 Library/Artifacts/26/26a4dd19fd718fcca2267b50b05f165f
 Library/Artifacts/26/26a4ef80beca1e891d0ac1aacc76d519
@@ -10926,7 +10917,6 @@ Library/Artifacts/26/26fb387a0c6bcd07ddf9faad30918286
 Library/Artifacts/26/26fc0f9f30242172ecb41a6dfa7c0be1
 Library/Artifacts/26/26fd5cd1328944a90490afa5e3f71438
 Library/Artifacts/27/271c3d1e9d2b337a1d4ae31dd53593cf
-Library/Artifacts/27/27204d24e17690b85db79b237120847b
 Library/Artifacts/27/2720eabbfbe1813acd4077536e8668c8
 Library/Artifacts/27/273feaf95075a12ec8a2f1b71ad3b619
 Library/Artifacts/27/2742a214eddcaaeaa43283ab28f0ac0c
@@ -11059,7 +11049,6 @@ Library/Artifacts/2b/2b853f803f065999a6fdf61ee736ad7e
 Library/Artifacts/2b/2b886fb79770d6c72b8ded3078315319
 Library/Artifacts/2b/2b8ab34c831df3b6b415ad516617320f
 Library/Artifacts/2b/2b8ee73048446838134f7db7dff69250
-Library/Artifacts/2b/2b93e25999540488e09f5c714fc0b62d
 Library/Artifacts/2b/2baa43097aff01bc2b06345e330e155c
 Library/Artifacts/2b/2beefb2d781b31e8024249fbef7e8370
 Library/Artifacts/2b/2bf7269814f94dcf1ef964bc9486d509
@@ -11094,7 +11083,6 @@ Library/Artifacts/2c/2cefec3dab02c0dcf428a30307de9a7c
 Library/Artifacts/2c/2cfbf9db5c861d3cd7cca948ae5c98bc
 Library/Artifacts/2d/2d0166838f8b9a13d11bdbcfd4840340
 Library/Artifacts/2d/2d0af6c808ffada9bf4eeb93da1ebf27
-Library/Artifacts/2d/2d0b1f89d8bd3e153bb3166897a9d114
 Library/Artifacts/2d/2d1a62fd075040d1e059c3699bbd5c55
 Library/Artifacts/2d/2d1bf5fa6564990a0ef8891fd591f0e1
 Library/Artifacts/2d/2d219f032b672f8bd57a4b48ffe82c80
@@ -11162,7 +11150,6 @@ Library/Artifacts/2f/2f95f429fc0f13bc240af520707a06ae
 Library/Artifacts/2f/2f9adb90cf88e79fa7c291bd5acc5881
 Library/Artifacts/2f/2f9add9bb003158aad8c8f40886aa35a
 Library/Artifacts/2f/2fb08c8cc1da81ff146bd0febc3f1c31
-Library/Artifacts/2f/2fce96a197839ceeb66863672340da87
 Library/Artifacts/2f/2fcfdde09ec4a9e01b9104c7cfe20852
 Library/Artifacts/2f/2fe472512a92fff0f6dc86d5997155a7
 Library/Artifacts/2f/2fe63357f08efb4caaafe7f08f896ae6
@@ -11275,7 +11262,6 @@ Library/Artifacts/33/33d9ac6f7ed3663aaac09680c79b51d1
 Library/Artifacts/33/33dfbdbf08276ed4617c14f50d898748
 Library/Artifacts/33/33e39030d1f16cead82486aa3729333b
 Library/Artifacts/33/33e94d63f454241523c0ac53368b9282
-Library/Artifacts/33/33ed756ff9e33270779939ef2983269a
 Library/Artifacts/33/33f1a8aa8007f6b57734a20858a5c768
 Library/Artifacts/33/33fecd57f7925e57bd83e79ae01742ca
 Library/Artifacts/34/340d5463b7ae967147b7cab486c7f81f
@@ -11455,7 +11441,6 @@ Library/Artifacts/3a/3a7c8b0bc727b8b623b948cb156b368b
 Library/Artifacts/3a/3a86025aa0b79b5b38c5c50029bb2dc5
 Library/Artifacts/3a/3a9071f06d464e52ccfaeba0e60b2251
 Library/Artifacts/3a/3aa3391e96dd3fe8be01122eda2f3705
-Library/Artifacts/3a/3aa4d97b648f68daa562d3b0a693c824
 Library/Artifacts/3a/3aab8a406ad0813402c76f1b9cc41ee4
 Library/Artifacts/3a/3ac188ec1fbece5b95e0a29b24a8a2ed
 Library/Artifacts/3a/3ad28cbfcfb4ffd54b003a72e00457e9
@@ -11509,7 +11494,6 @@ Library/Artifacts/3c/3c684bde64ed0ab08c2e90ca3a49a822
 Library/Artifacts/3c/3c6b5394d5f5224b93f09b95dbe1dd1b
 Library/Artifacts/3c/3c6c7494c1d62317d1b762f9e2ba58c4
 Library/Artifacts/3c/3c6f5373ab117ea70f2ddcea87772670
-Library/Artifacts/3c/3c744f802be15db7e1ae4db59469a174
 Library/Artifacts/3c/3c74df4322777635f9e1614be17d93db
 Library/Artifacts/3c/3c7ad34516fb5662ab88f3d091a826b3
 Library/Artifacts/3c/3c80d265a64b690731117fda8acfc312
@@ -11589,7 +11573,6 @@ Library/Artifacts/3f/3f6759f7c83d8e90d38edb6182ec2a54
 Library/Artifacts/3f/3f6bf5fc5e1ea00a8194a5d7a584bfc4
 Library/Artifacts/3f/3f6c93e08bb042d87aa54385f0523c74
 Library/Artifacts/3f/3f86119a7d0baa7dbdea54ba0b97f829
-Library/Artifacts/3f/3f8895b775484fdd7b19590a46cbc31a
 Library/Artifacts/3f/3f899ce53f0d0f350fb4477f79bf10e5
 Library/Artifacts/3f/3f8ea0fea94e333347893439000d3de3
 Library/Artifacts/3f/3f9563656c8cc352e3efa871d884efd2
@@ -11602,14 +11585,12 @@ Library/Artifacts/3f/3fadbf6378d4d7ecf89fca62e20b7c93
 Library/Artifacts/3f/3fc2642aa99ec08e5b61422d2f0a8c33
 Library/Artifacts/3f/3fcc4167fb6c8622aeba8e20572d9fa5
 Library/Artifacts/3f/3fd6b39e1dbb5de0edfb0b07dd20d178
-Library/Artifacts/3f/3fd8ef12937150e2fab036d805b77ef5
 Library/Artifacts/3f/3fd947b82e6abec1429c4a54f0417b2c
 Library/Artifacts/3f/3fd97ae739b53c68e2bb056c18c7d8b6
 Library/Artifacts/3f/3fdf07bbb4d213dfa972ad133c5fa0b5
 Library/Artifacts/3f/3fe10f436c558f9b078663c4b265bff6
 Library/Artifacts/3f/3fee489902081fbaf40a67cf3d37a97c
 Library/Artifacts/3f/3ff27fe1e1d1fc5e1c04403d0c0af002
-Library/Artifacts/3f/3ff867f783cf958cfc2cfd70268fedda
 Library/Artifacts/40/40033978a2d7bb85a1b3a24a0c622495
 Library/Artifacts/40/40047c08d3595d382d2c72638311e23a
 Library/Artifacts/40/4008ea83345a640514de6fde7c44ded3
@@ -11678,7 +11659,6 @@ Library/Artifacts/41/41fbe36169f7695a6ccb8dd6434edd81
 Library/Artifacts/42/421dd97df2d4d671d0c0c0d80781f3cd
 Library/Artifacts/42/421f3a79e32a801e7b5a23e25833f034
 Library/Artifacts/42/422193e944c4e500d0ef18e73a04782a
-Library/Artifacts/42/4226731587d9f4f3ad1d2a62fdbce17b
 Library/Artifacts/42/4226f197902468637bb0af7835523fc1
 Library/Artifacts/42/4230c2b68cc1c744d6e7277d06f0e906
 Library/Artifacts/42/4235f90a3e795cd680e8bad8fe003283
@@ -11727,11 +11707,11 @@ Library/Artifacts/43/437152a2bedb3e5f16927b1886cd046d
 Library/Artifacts/43/437377bc5498b22dd0a07eebff859eef
 Library/Artifacts/43/4373ed21aa7f32904389bc5a307b1a00
 Library/Artifacts/43/437402ecdcf963cb9833baa213b56790
+Library/Artifacts/43/437f7e8ce3709453d0982e9e10cd3270
 Library/Artifacts/43/43815383113e0cbf671994f322d1ed17
 Library/Artifacts/43/43880eb3b31a7ab261731eccc09075be
 Library/Artifacts/43/438a6ffe8210d1bfab91734c66074a20
 Library/Artifacts/43/4396ec698700acbe548c18b6aabc0b2c
-Library/Artifacts/43/439a9eaf043032bea2cce593fad1aa6a
 Library/Artifacts/43/439b6dc224e1b09c3f9714a35549715d
 Library/Artifacts/43/43a11292383cf62563e967545e489a0e
 Library/Artifacts/43/43a2a3449f278e0fb70acffb31d5d80b
@@ -11832,6 +11812,7 @@ Library/Artifacts/46/46a47ad78938cc4e65e59c63bbfd8e7c
 Library/Artifacts/46/46afdf7f6303e3be437b136c73af1c73
 Library/Artifacts/46/46bc681b30bcc892c6614916d0db79bf
 Library/Artifacts/46/46bc72d62e9981229bf346061dde7fdf
+Library/Artifacts/46/46ca53c80d4a39191b7e88070bf9d05e
 Library/Artifacts/46/46daef3c72e11b487d6c190e435d51dd
 Library/Artifacts/46/46f02dc87c11f543aec050e669efd756
 Library/Artifacts/46/46f7495e2942d1429440c26993375b76
@@ -11858,7 +11839,6 @@ Library/Artifacts/47/478df2cd34a9776fe209c792ebd30fab
 Library/Artifacts/47/479b7d9f58f43705d54db97e99287e1d
 Library/Artifacts/47/479d13704ec6da1676ce10684f297d96
 Library/Artifacts/47/47a53a5ff0d457fe580b911e4796d652
-Library/Artifacts/47/47a9b5947af92c99c3cf7f1ced003bc6
 Library/Artifacts/47/47b4a04657c44dbefde3ef46d47d5bc7
 Library/Artifacts/47/47b5443aea4f1bc629b02d3deff4aac0
 Library/Artifacts/47/47c1fc593ed3053ebb3115294a1e30b8
@@ -12026,7 +12006,6 @@ Library/Artifacts/4c/4cdf25294751a0638d9636a2aee7f152
 Library/Artifacts/4c/4cece9e0dd511d52b202b741de8506f8
 Library/Artifacts/4c/4cf4dc6ac8beadc340b16a6d3cc70a71
 Library/Artifacts/4c/4cf6350f31b450f3b570f00b05b496b9
-Library/Artifacts/4c/4cfdac3a9f3aacdeb7f41dce01ea179f
 Library/Artifacts/4d/4d155474abe210c22cc978829c1b68bd
 Library/Artifacts/4d/4d2afdb0ed450c3d5c66c90f78dc1bef
 Library/Artifacts/4d/4d2c8cf86b9b4489bb3d857f35a21139
@@ -12069,7 +12048,6 @@ Library/Artifacts/4e/4ea5b1541087eb31fc260425e42f5eb1
 Library/Artifacts/4e/4ea7e645b2ba746670da2ee44b9c9eb6
 Library/Artifacts/4e/4eb08689c7e4371f823967ac36d6de0b
 Library/Artifacts/4e/4ebb2d43f89e1d01bfac08b08ea52a8c
-Library/Artifacts/4e/4ee2561e6163d4ed51a4f2107d46a2cb
 Library/Artifacts/4e/4ee77415426ec25952e39e9ac7283fe0
 Library/Artifacts/4e/4eeb337fe39635a3a33874c10524ac51
 Library/Artifacts/4e/4ef112584e539854c2b55a323c9625e7
@@ -12174,7 +12152,6 @@ Library/Artifacts/52/5229a010a3f46fd6949aa408372bd40f
 Library/Artifacts/52/5232fe0aea11f41277c2c29444fddc75
 Library/Artifacts/52/523883176a8d82a535eac3f9fee4e24d
 Library/Artifacts/52/523abe31cea29bc0cb1fa9250a22dbcc
-Library/Artifacts/52/523ae9eeba01bbfeb60a395bc5336ade
 Library/Artifacts/52/523c952f0781e630a733cd1236b9af78
 Library/Artifacts/52/526c3348c31bb6f054f01c7310f0135c
 Library/Artifacts/52/526df731c5c6e7d7efc192c92b467ab2
@@ -12196,7 +12173,6 @@ Library/Artifacts/52/52dbee2634b85b1cdad8a52d0114dc61
 Library/Artifacts/52/52e011c2eaf4754bf418a138144d5f85
 Library/Artifacts/52/52f0a03f60922334e2eaf6ffd9cfaa5a
 Library/Artifacts/52/52fabf095ea5d6f0768f21e2dc954c12
-Library/Artifacts/53/53045370c493b3d6a5939d44d1ba0f11
 Library/Artifacts/53/53142174e33e0e37b4a45ce777df8453
 Library/Artifacts/53/5314dcadc2721ba777bc84793106a201
 Library/Artifacts/53/5318dce8345ddc539e047d1292bdc4eb
@@ -12356,7 +12332,6 @@ Library/Artifacts/58/5824a9e7b2ec5694067141285a75bfaf
 Library/Artifacts/58/58270cb88cf48cf59dd02d46b86ef580
 Library/Artifacts/58/5833b4132c6427fa6aa9112a29790faf
 Library/Artifacts/58/583effd901fb06ae4b146a714ea0d374
-Library/Artifacts/58/58427e9fbe7518b25856b31aed3d1193
 Library/Artifacts/58/584c39570f353e441e083a72e61fb3e7
 Library/Artifacts/58/5854edc22fbaf571690bcc8c73902372
 Library/Artifacts/58/58596c608dcc9822793bf462d776ed19
@@ -12666,7 +12641,6 @@ Library/Artifacts/62/6229f874b9979c12906c9552fc923d99
 Library/Artifacts/62/623baad80ac13601f2ed73c33a0e055a
 Library/Artifacts/62/62435e2140311af32ccaed6fe7c85729
 Library/Artifacts/62/624658a3a72b29fbaf6650e9c30c4133
-Library/Artifacts/62/624b68de0bb23530ffa06cd5100f36d2
 Library/Artifacts/62/624cb96eddbdd693ce18460f0173aaca
 Library/Artifacts/62/624e66a09a478c618716e385b8d79f14
 Library/Artifacts/62/6253c9d82fd5432fab14a7130b8222f9
@@ -12692,7 +12666,6 @@ Library/Artifacts/63/6303980961a3c95b1bdc7cfa14210ca0
 Library/Artifacts/63/631f153af0957a2282f3fb3bc2d30728
 Library/Artifacts/63/6329edb617ba8a894c14dc5082920ab4
 Library/Artifacts/63/63364e8bb487d06ca320de07e5fb0956
-Library/Artifacts/63/633d4df1f4db360e42f76cab82d9f473
 Library/Artifacts/63/6351e01b0d4d72efb2dd0dce9b68f787
 Library/Artifacts/63/636a1d78e4a77845e2c268d14c65f7fa
 Library/Artifacts/63/63785ce76bdc28d79994275eee8526a1
@@ -12780,7 +12753,6 @@ Library/Artifacts/66/660dcaac40ccd7164ae939eded67023c
 Library/Artifacts/66/661045d2efa71810b489899eae49abec
 Library/Artifacts/66/6634976d9585bcbfc7fa3e9d094e3f09
 Library/Artifacts/66/663c70fbb9f4cec0a7a6ef9d4cb9ab38
-Library/Artifacts/66/664b755426064ce19027521b15ef378f
 Library/Artifacts/66/664efc600057a1f8636682cdac09f194
 Library/Artifacts/66/665065c95b63a811399cc2c11e187910
 Library/Artifacts/66/6658371f052ab9094dc99be207f6c069
@@ -12825,7 +12797,6 @@ Library/Artifacts/67/6774d186f80eb1be13b8636c0be14482
 Library/Artifacts/67/6779ed16f8c7f881b2ddc2e8b4874382
 Library/Artifacts/67/6786bc0bb99b22234a879460a86f89b4
 Library/Artifacts/67/678c64f17d25118e954e8b7fb34b3a8b
-Library/Artifacts/67/679137d64d4b8ea5655112b4863e7434
 Library/Artifacts/67/67940a760f5fc52d16971848c6670cfd
 Library/Artifacts/67/6795cd97ba6d55f610f987e6675d91a7
 Library/Artifacts/67/6795dea2e23b1ba073e8849bf0fd1a36
@@ -13152,7 +13123,6 @@ Library/Artifacts/72/7231c2f4fc86315478f7a8d45b6c7fde
 Library/Artifacts/72/723b9b139aaa89f02aa34e0cb86dc4ec
 Library/Artifacts/72/723d69fb353b63bc6a83053d8e1b5352
 Library/Artifacts/72/7256cb532d08a970ad43e14bfd21febf
-Library/Artifacts/72/725e17a6ddfa06233636704fdc5ccf49
 Library/Artifacts/72/72608bdbd09b5a6ef146db4195f99c1b
 Library/Artifacts/72/726452116c13ec3f84bb09f8021ce66e
 Library/Artifacts/72/72979075badf7682a70cc3c2b6b0b81d
@@ -13226,7 +13196,6 @@ Library/Artifacts/74/74d68c104b2528c29252e3fc71db0c0f
 Library/Artifacts/74/74f799a7f056524e051350e3c3ca6692
 Library/Artifacts/74/74fff5015db4cfa00193f5d9b22605de
 Library/Artifacts/75/750054c4c32d9aec559029062e7689b5
-Library/Artifacts/75/7506e09f0697ead7f00849e1adf43b13
 Library/Artifacts/75/75197e792bb3f760f4559fa236ef1740
 Library/Artifacts/75/752221a27eb2485db1d624137f546a17
 Library/Artifacts/75/7527e330d366c8c79d6e2d537ce3044c
@@ -13261,7 +13230,6 @@ Library/Artifacts/76/7630b0e8cb40a4d4172d96c79170037a
 Library/Artifacts/76/763caf52a6f80d462a1d4ce3cdd20ab7
 Library/Artifacts/76/763ff300b52a6112ead7aa168011e446
 Library/Artifacts/76/764519f2309c7d267cbbe05fb8aa17ea
-Library/Artifacts/76/76480db0d8d4f9e4a00b5beb667cff20
 Library/Artifacts/76/7648fbcba7d9e123c3544daee0c82bf0
 Library/Artifacts/76/765adc97f3976ea65905e2f5a4d9b4be
 Library/Artifacts/76/765d376adaad2c3e5505bfb6a80195a7
@@ -13391,9 +13359,9 @@ Library/Artifacts/7a/7aaafa1200e009a352cf51828170c2f2
 Library/Artifacts/7a/7aab17ed80619294af42c78fae49dff9
 Library/Artifacts/7a/7aab6d11cc33cee084b384bec5eadd25
 Library/Artifacts/7a/7aab92471f08372ce3ee99b9ab4e1f3c
-Library/Artifacts/7a/7aac99a2fdd909e4b1cd08885daafb6d
 Library/Artifacts/7a/7ac541604a98eece156f3dfc27c3fc75
 Library/Artifacts/7a/7ac6fa9cbcb9c8488cdf724c4605bea9
+Library/Artifacts/7a/7acef17ce8599e68d3870faccbc1c8a9
 Library/Artifacts/7a/7ad8507fe24e1218d107f0130faae392
 Library/Artifacts/7a/7add16fca227407a09560b691e6ba124
 Library/Artifacts/7a/7ae2c9322259e859c17941a5ec2fa887
@@ -13623,7 +13591,6 @@ Library/Artifacts/81/81c65edcd09962e3869b8fb68f7ddd3f
 Library/Artifacts/81/81cbba929fed0e966732502fbec02360
 Library/Artifacts/81/81cd2227b3b482f268d85ae4392b443c
 Library/Artifacts/81/81db1e50cc32a192346214c6ebf4cca1
-Library/Artifacts/81/81e42100959aede2665e783755e39a4c
 Library/Artifacts/81/81e83e098b820b1398a9f7ea58722a04
 Library/Artifacts/81/81f762142595620b281414f4737c5ce5
 Library/Artifacts/81/81f9a7ed0434010ec035b86afbf0899f
@@ -13650,7 +13617,6 @@ Library/Artifacts/82/82bba299e42c9bbeb4f27fcd78e24b1a
 Library/Artifacts/82/82bc01038db034ffb4ea4814ba6991d4
 Library/Artifacts/82/82bfbd3e6a910752355fa85bc6f07a09
 Library/Artifacts/82/82c07f0591b95f264cfc81bc39db4770
-Library/Artifacts/82/82c0a4552f1a4148fa0533eb92928b7c
 Library/Artifacts/82/82c94bcebbf0d6c40312d469ca9508b0
 Library/Artifacts/82/82c9f366c24728540b180f90bee8a04c
 Library/Artifacts/82/82cd42eb4bd65572b6e890746eba468e
@@ -13663,7 +13629,6 @@ Library/Artifacts/83/832d228b36c505a0fc29c7eab1404e89
 Library/Artifacts/83/83322f95a55bec31157240150e41732d
 Library/Artifacts/83/8334d505f1377ac0b318a492904291dc
 Library/Artifacts/83/83377ba532eb2f7cd1527bd559deb83c
-Library/Artifacts/83/8342478688b3065e8d2e40ae91bf51f5
 Library/Artifacts/83/834624b73ab2833eb49813656662e2ba
 Library/Artifacts/83/834770c467e71d3d00198a259d6e9bec
 Library/Artifacts/83/834bf78088dd92e760d51e64a172d000
@@ -13929,7 +13894,6 @@ Library/Artifacts/8c/8c35b8f4b33253e7c5f1c7c814ca9511
 Library/Artifacts/8c/8c3a531a0fa48bb79170d8adaa27fb54
 Library/Artifacts/8c/8c3c192d0dbe9b84c041821927d99d6f
 Library/Artifacts/8c/8c3cd05a54903feb3d08e356911dbd6d
-Library/Artifacts/8c/8c420c6b5a15b15050b545a9fbb4212e
 Library/Artifacts/8c/8c46c95e7d06fe75e873596e00dc9684
 Library/Artifacts/8c/8c47b1ee64332d223cfe374596f06161
 Library/Artifacts/8c/8c4882c1f35781b20cd5d081a43076e5
@@ -14225,7 +14189,6 @@ Library/Artifacts/95/95c0dbd1b34af5a11c0cb1bf7b0debc0
 Library/Artifacts/95/95c58c2c62b0b2ee27438713c33853ae
 Library/Artifacts/95/95ce6a34cd9d1dcfeae3d0d87630eeb3
 Library/Artifacts/95/95d6a71277164b86ff24d8f4aa0bc29e
-Library/Artifacts/95/95e21bbcc3f46df4fae5ad55f3db6c66
 Library/Artifacts/95/95e5d0ee01905e8af8e3bc129be2f8b2
 Library/Artifacts/95/95e673781196b85df9f30a3922cc387b
 Library/Artifacts/95/95fb3313263371795291548b8e21ca52
@@ -14390,7 +14353,6 @@ Library/Artifacts/9b/9bca9bce73246fad75e87c0e0beebb6a
 Library/Artifacts/9b/9beb9aeac150490351537377019b46dc
 Library/Artifacts/9b/9bef551674aade941b2940a32f58784a
 Library/Artifacts/9b/9bf19964da61a44565d1a94d5bb9cea6
-Library/Artifacts/9b/9bf3ea332e4ecd31f33e1b8ef9e17044
 Library/Artifacts/9b/9bf479be472afa5da57f21f0deb15c65
 Library/Artifacts/9b/9bfbbbb5cfe01ed20ee7cef2a7b37893
 Library/Artifacts/9b/9bfbe3f482544940b9b8b0827e5441a2
@@ -14406,7 +14368,6 @@ Library/Artifacts/9c/9c6771f482670f345c1fd62209b8f1f2
 Library/Artifacts/9c/9c678eabd093d7206490e48c8629d22e
 Library/Artifacts/9c/9c7027e078a12305b09c2d699baa05fc
 Library/Artifacts/9c/9c7b73478b2e2ce14fd9d1cb358a65a2
-Library/Artifacts/9c/9c8f737d29ab744fbba5de6a78ddb6a3
 Library/Artifacts/9c/9c92489242b5317298eaaf14eab38622
 Library/Artifacts/9c/9c94c8ad8c3d2d8226531b80746b5c2f
 Library/Artifacts/9c/9c95a3a9353a50561a3e7cdcfb09ed1d
@@ -15086,7 +15047,6 @@ Library/Artifacts/b3/b331040d234f2e4b7e3deeef4156c178
 Library/Artifacts/b3/b33c72b3e34411e5d52691290294e791
 Library/Artifacts/b3/b3423b396a228fc920b8e1146fc7e516
 Library/Artifacts/b3/b346588487179a04c55134d2668d339f
-Library/Artifacts/b3/b34a772813c23ed9b476b4d4dd6f1e8f
 Library/Artifacts/b3/b34e8d882c4232bfa7baf866a8228ba1
 Library/Artifacts/b3/b35dfeed2540edc1e7e31eeecde3f518
 Library/Artifacts/b3/b373ef50510cc91f2c968fe9058b0fec
@@ -15144,7 +15104,6 @@ Library/Artifacts/b5/b51d13db70cbcfc2a1d25062a8f853a6
 Library/Artifacts/b5/b5215698fc39a9736d08748d7e76850d
 Library/Artifacts/b5/b530edd7911dc56e3c76908f36aa13c8
 Library/Artifacts/b5/b53add4488f3baa70d23f5de0c24f03b
-Library/Artifacts/b5/b53ff7a81c58b722e622f32023423834
 Library/Artifacts/b5/b556e8a75bc525340672b7122cdb2bc3
 Library/Artifacts/b5/b55a7b45f2c2e2fd904e326274302d5d
 Library/Artifacts/b5/b55b0d3b4805efe67a6f943db0ae3bbf
@@ -15188,7 +15147,6 @@ Library/Artifacts/b6/b6c0a7d28ffb60be3fc7fa1a57f9ec4c
 Library/Artifacts/b6/b6c220c5d7f672036151b5c10974331e
 Library/Artifacts/b6/b6c54be739ebd38702a6faaa51185eb0
 Library/Artifacts/b6/b6d811d20f6c7c1d631ccd6454ddc04c
-Library/Artifacts/b6/b6d975c3649c25e4e49cd401c148051e
 Library/Artifacts/b6/b6de78dce981fc29044ef6808faa0233
 Library/Artifacts/b6/b6e81b053ea3f1205b1832bba9db3dc5
 Library/Artifacts/b6/b6e826d369353ba7d0c412194902e95c
@@ -15369,7 +15327,6 @@ Library/Artifacts/bd/bd2a02fbe518542d01969521de58cc56
 Library/Artifacts/bd/bd2c0320e9e7d7f60c535ac83f082a34
 Library/Artifacts/bd/bd3874f944f357be3b5c5a714b858455
 Library/Artifacts/bd/bd42e09c4ac68df4ff4e96849accaf92
-Library/Artifacts/bd/bd4663a432ecb219101aa299cd867569
 Library/Artifacts/bd/bd4c0fd6d560a462f9818d36cc299db8
 Library/Artifacts/bd/bd4dc1ab8f96f9f032a6c4d91d9db216
 Library/Artifacts/bd/bd533c664151c755d58962a14c8ac23d
@@ -15530,7 +15487,6 @@ Library/Artifacts/c2/c248fe6baa4b5dca0f54f00e602b7ff4
 Library/Artifacts/c2/c272b463738b12c3289da98bc6cf09ba
 Library/Artifacts/c2/c28f17efee00184c1df2776cacddab4c
 Library/Artifacts/c2/c2a0cdf595d82aba2eaf905eca191450
-Library/Artifacts/c2/c2bf95f9623433b90501f551f1732bb2
 Library/Artifacts/c2/c2c33a3898a557fad752ed74bbe39df0
 Library/Artifacts/c2/c2c67baf99b78442e052895ee3f5a470
 Library/Artifacts/c2/c2c84d4d66371410ded21bc082e9e6cf
@@ -15573,7 +15529,6 @@ Library/Artifacts/c3/c3cae44996aa8682cd6e85bcbe79e69a
 Library/Artifacts/c3/c3dae3352725c5029ae3e02a88903df4
 Library/Artifacts/c3/c3e70306409736339af04813f92b40b6
 Library/Artifacts/c4/c403c8331296860caf275867a8e80ed9
-Library/Artifacts/c4/c40a32f72378d2dddfa3d003e4442dec
 Library/Artifacts/c4/c41b979eb3eb8cedd73e9dd4d7470f5f
 Library/Artifacts/c4/c42cb1cdc5fa6498950e064ba9f29688
 Library/Artifacts/c4/c42ffcd8e335aa1851a38eab6a8f330b
@@ -15730,7 +15685,6 @@ Library/Artifacts/c9/c937553b4702bdb05caee1035558c1c9
 Library/Artifacts/c9/c93beb2351e8cfb64410ca04ecc4dfc3
 Library/Artifacts/c9/c944be0b41f1a2666420f165ed47c6b0
 Library/Artifacts/c9/c9719867f3b611fe3534e21ce47c39b9
-Library/Artifacts/c9/c97a21696ffecf961f77f7229b254931
 Library/Artifacts/c9/c97b6e640a505fdf64eca49b50b248d7
 Library/Artifacts/c9/c97b774784467191ff0d2647f82a70a5
 Library/Artifacts/c9/c981fc36aa6192aa7a88107911d1e850
@@ -15890,7 +15844,6 @@ Library/Artifacts/ce/cebec1cd1db1350cf7272ffff85e290f
 Library/Artifacts/ce/cec8b2ca5e03f4e68f76b1603286b9f1
 Library/Artifacts/ce/ced369eab3f7d8ff67bd8a272d22d9b5
 Library/Artifacts/ce/ced61adde2bfcf8d84e74baa5a72aaa4
-Library/Artifacts/ce/cee1c38777ba760d46a91ede7a841789
 Library/Artifacts/ce/cee28434e07f01a592de85fb024908be
 Library/Artifacts/ce/cefbfe7907ec4b4d0acc4522b45d2ab3
 Library/Artifacts/cf/cf0e316c75da860f8b996eed0279befb
@@ -16147,7 +16100,6 @@ Library/Artifacts/d8/d88300f62686f8b36fe23c6510e3ebea
 Library/Artifacts/d8/d883540db3c5fa589b4db287c6cd6fa7
 Library/Artifacts/d8/d8965464e2db6e16f6c0ab9f84b2c2a5
 Library/Artifacts/d8/d89e20dc7ef49b27f0762a7745f4159d
-Library/Artifacts/d8/d8a54f33deeada2bba85b5443f7913df
 Library/Artifacts/d8/d8b90d47cd607f34adca8e7cc7054ef8
 Library/Artifacts/d8/d8bd18d3ac88881028e90c0fd52fadae
 Library/Artifacts/d8/d8beb2f80e53d4d507a174209d9f77b7
@@ -16468,7 +16420,6 @@ Library/Artifacts/e3/e3ae419a7f855a1fe83369d458ac67e1
 Library/Artifacts/e3/e3aeda2f8c42cf3c8282a6a5a64b801f
 Library/Artifacts/e3/e3c7ce8c2eccc7b4c08582348ae0fa1f
 Library/Artifacts/e3/e3cba402d4b6e824b2d2b379264befad
-Library/Artifacts/e3/e3d7fb1ba9b0cbcdba5f2e053a29065e
 Library/Artifacts/e3/e3f70987cd968eb967cf5096ce7fc9fd
 Library/Artifacts/e3/e3fad0276e6b83be7ec21a59663b8024
 Library/Artifacts/e4/e40f7a1a40f1f3311cfef942c190ec27
@@ -16520,7 +16471,6 @@ Library/Artifacts/e5/e53579d72441271eb0a0e886f560ed91
 Library/Artifacts/e5/e55242172c0a0688265c147892a3fcb0
 Library/Artifacts/e5/e5562840cc4168e9f13fa46dccbcdbb0
 Library/Artifacts/e5/e563c1b37785d05e110f8829c3e32a35
-Library/Artifacts/e5/e56776eecb245d915a456461c6a1ffa6
 Library/Artifacts/e5/e570e59a1d4277b94bb6f37892ed15e2
 Library/Artifacts/e5/e58f26b918e4de0d14b5047c4cb83447
 Library/Artifacts/e5/e5a165f80b038da3997eb01df4146bd3
@@ -16591,11 +16541,9 @@ Library/Artifacts/e7/e7e2e333103209ddd7a8728a80089bb3
 Library/Artifacts/e7/e7e6598a8023c2a8589cc58a54847e14
 Library/Artifacts/e7/e7ea334d3f41ce416dd5fc13c72c4cc7
 Library/Artifacts/e7/e7ee889cca7985e553f52e8c760652b4
-Library/Artifacts/e7/e7f2172824aac173d9411949e04d22df
 Library/Artifacts/e8/e819130a8a200603fd829e2d03e049c2
 Library/Artifacts/e8/e82005decf3ee6b0a6bc154df91f658f
 Library/Artifacts/e8/e823f557d010156fc92c217041573c02
-Library/Artifacts/e8/e82707621006963e9a6784a977f3c095
 Library/Artifacts/e8/e830c5b674d4f436a2a3187224a12461
 Library/Artifacts/e8/e830facc4c867ad2211a9c670eae3d9d
 Library/Artifacts/e8/e833aa7c3c23d95a184f4688a1b86153
@@ -16746,7 +16694,6 @@ Library/Artifacts/ec/ec80bc5655aed000352165bca92130cf
 Library/Artifacts/ec/ec8538009aef6e85dcd0acf4a70e43f8
 Library/Artifacts/ec/ec8ca60d5def7ecfc7fb4c6fc7895096
 Library/Artifacts/ec/ecaec2bb989fdc04754d7f0a0040d073
-Library/Artifacts/ec/ecbecc921d548008f3c1f7a929ad99eb
 Library/Artifacts/ec/ecd1d39c36d4f8a9c10972336507c542
 Library/Artifacts/ec/ece2f3ecb749523890342617989ec86a
 Library/Artifacts/ec/ececc51165bc043fde4144683c9f8d38
@@ -16809,7 +16756,6 @@ Library/Artifacts/ee/ee89e5c01f0dbcab2179a2cdd1dea5a6
 Library/Artifacts/ee/ee9492df0372d8aaac4fbcc9a2cf6243
 Library/Artifacts/ee/ee999fcb650c47292c440c1644e88e4c
 Library/Artifacts/ee/ee9b1e912392218b74773093d290112c
-Library/Artifacts/ee/ee9fe913d64b23b5796677251e4276fb
 Library/Artifacts/ee/eea46c12d6854de0a320c0e9ac6f5819
 Library/Artifacts/ee/eea7ce3a899e9740fdb8ae23f16a3e84
 Library/Artifacts/ee/eeaf4d7d1c73248500215cdabf02fa56
@@ -16941,7 +16887,6 @@ Library/Artifacts/f3/f3602a8ff44b814e92f391bf76d7b6f8
 Library/Artifacts/f3/f362e7928e419baaa40bcb591295c76e
 Library/Artifacts/f3/f38787fecf7ab9431c88c6bef45c333e
 Library/Artifacts/f3/f387a5d47f89f8b141c8691a224a4626
-Library/Artifacts/f3/f38d990c8ad15b0912db28b87fe1d4ec
 Library/Artifacts/f3/f39de18ddfa3ab4e550779efe8789a36
 Library/Artifacts/f3/f3a4140691634472778cdb05de471a64
 Library/Artifacts/f3/f3acb36afebb303a21d56afdc10d31d1
@@ -16959,7 +16904,6 @@ Library/Artifacts/f4/f41c69c4c4ccd60221d236c769acd9cd
 Library/Artifacts/f4/f4218fd760bc4dc0647b9fce01887bdf
 Library/Artifacts/f4/f426fcd96dfce5159d2d64fd46bb0938
 Library/Artifacts/f4/f429ea15a615f368d0ca46637845fdb6
-Library/Artifacts/f4/f42e625221097fb0725e99a79e13fffd
 Library/Artifacts/f4/f4397f9ac0f0a2931f5b7cbf31ec55b3
 Library/Artifacts/f4/f43c2f6da18ba5c0bf13dfb129d0284b
 Library/Artifacts/f4/f43ddc316284abd1b7e56c2a5d0b7a5c
@@ -17210,7 +17154,6 @@ Library/Artifacts/fb/fb36d5f1e939420a4c06d5d6a2f909c7
 Library/Artifacts/fb/fb4ba565056af8b7e0d4e5fb17f81fe8
 Library/Artifacts/fb/fb69bf0ce8071b50e3567e72468eb4f9
 Library/Artifacts/fb/fb78cd6c47d8269d89cfce0c19e89a17
-Library/Artifacts/fb/fb79c0d687af9965a3f1929d25da2bd9
 Library/Artifacts/fb/fb7dd67934f1b9adfdbc5271584e38dc
 Library/Artifacts/fb/fb7ddc1dbff41bc4f6510e0a69663763
 Library/Artifacts/fb/fb84b3c9eab3ee7069b372599d03c106
@@ -24563,20 +24506,6 @@ Library/PackageCache/com.unity.visualscripting@1.9.4/Graphics/Structure_16x.ai
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.log files (7):
-
-Logs/AssetImportWorker0-prev.log
-Logs/AssetImportWorker0.log
-Logs/AssetImportWorker1-prev.log
-Logs/AssetImportWorker1.log
-Logs/shadercompiler-AssetImportWorker0.log
-Logs/shadercompiler-UnityShaderCompiler.exe0.log
-Logs/shadercompiler-UnityShaderCompiler.exe1.log
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 *.cginc files (6):
 
 Assets/TextMesh Pro/Shaders/TMPro.cginc
@@ -24758,6 +24687,16 @@ Assets/Free UI Click Sound Effects Pack/AUDIO/Pop/SFX_UI_Click_Designed_Pop_Open
 obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache
 obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
 obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*.log files (3):
+
+Logs/AssetImportWorker0-prev.log
+Logs/AssetImportWorker1-prev.log
+Logs/shadercompiler-UnityShaderCompiler.exe0.log
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -24966,6 +24905,14 @@ Library/UIElements/EditorWindows/UnityEditor.InspectorWindow.pref
 *.editorconfig files (1):
 
 Library/PackageCache/com.unity.ide.rider@3.0.34/.editorconfig
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*.jar files (1):
+
+sokrates-LATEST.jar
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

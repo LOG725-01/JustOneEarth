@@ -1,4 +1,5 @@
 Path	Lines of Code
+AnalysisBash.txt	2
 Assets/Resources/generation_config.json	11
 Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt	29
 Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt	1
@@ -52,7 +53,7 @@ Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.tx
 Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.UnityAdditionalFile.txt	1
 Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt	1
 Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.UnityAdditionalFile.txt	1
-Library/Bee/fullprofile.json	2648
+Library/Bee/fullprofile.json	5393
 Library/EditorOnlyScriptingSettings.json	1
 Library/EditorOnlyVirtualTextureState.json	1
 Library/LastSceneManagerSetup.txt	5
@@ -259,7 +260,7 @@ Library/StateCache/LayerSettings/9e/9ecc5c3c162a7aba29bafa64c8b94b7c.json	1
 Library/StateCache/MainStageHierarchy/e3/e39eb0151902daeb74c7a6fcd88d2e76.json	1
 Library/StateCache/SceneView/ec/ecb5aaa3e20e44cca2743a1fb3a1eeec.json	1
 Packages/manifest.json	47
-Packages/packages-lock.json	442
+Packages/packages-lock.json	436
 ProjectSettings/BurstAotSettings_StandaloneWindows.json	18
 ProjectSettings/CommonBurstAotSettings.json	6
 ProjectSettings/ProjectVersion.txt	2

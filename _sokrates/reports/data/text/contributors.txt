@@ -2,7 +2,7 @@ Contributor	#commits (all time)	#commits (30 days)	#commits (90 days)	#commits (
 flyima.tfd@laposte.net	43	37	43	43	43	2025-03-04	2025-04-05	33%
 miabenredjeb@gmail.com	25	25	25	25	25	2025-03-13	2025-04-07	19%
 dragostgames@gmail.com	19	19	19	19	19	2025-03-12	2025-04-07	14%
-yanis012@outlook.com	14	13	14	14	14	2025-02-27	2025-04-02	10%
+yanis012@outlook.com	14	12	14	14	14	2025-02-27	2025-04-02	10%
 51228475+miaredjeb@users.noreply.github.com	12	12	12	12	12	2025-03-13	2025-04-06	9%
 127026665+flyima256@users.noreply.github.com	11	11	11	11	11	2025-03-16	2025-04-05	8%
 75060235+dragost37@users.noreply.github.com	6	6	6	6	6	2025-03-22	2025-04-07	4%

@@ -1,16 +1,16 @@
 Start of analysis
-Found 30012 files
+Found 29953 files
 52 are in the main's scope  (2694 lines of code)
   *.cs: 52 files, (2694 lines of code)
 245 are in the test's scope  (83614 lines of code)
   *.cs: 245 files, (83614 lines of code)
 0 are in the generated's scope  (0 lines of code)
 0 are in the build and deployment's scope  (0 lines of code)
-265 are in the other's scope  (107344 lines of code)
-  *.txt: 163 files, (99563 lines of code)
-  *.json: 93 files, (6961 lines of code)
+266 are in the other's scope  (110085 lines of code)
+  *.txt: 164 files, (99565 lines of code)
+  *.json: 93 files, (9700 lines of code)
   *.cs: 9 files, (820 lines of code)
-Excluded from analyses 24486 files
+Excluded from analyses 24426 files
 Analysing dependencies...
 52 are in the DECOMPOSITION_primary\Assets's scope  (2694 lines of code)
   *.cs: 52 files, (2694 lines of code)
@@ -37,5 +37,5 @@ Analysing duplication...
   - per component:primary
      - "Assets": 0 duplicated lines vs. 1738 total lines
   - per extension:
-Total analysis time: 21.92s
+Total analysis time: 131.17s
 

@@ -32,15 +32,6 @@
     } ]
   } ],
   "concernsGroup" : null,
-  "linesOfCodePerConcern" : [ {
-    "name" : "TODOs",
-    "value" : 192,
-    "description" : [ ]
-  }, {
-    "name" : "Unclassified",
-    "value" : 2502,
-    "description" : [ ]
-  } ],
   "fileCountPerConcern" : [ {
     "name" : "TODOs",
     "value" : 2,
@@ -48,6 +39,15 @@
   }, {
     "name" : "Unclassified",
     "value" : 50,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerConcern" : [ {
+    "name" : "TODOs",
+    "value" : 192,
+    "description" : [ ]
+  }, {
+    "name" : "Unclassified",
+    "value" : 2502,
     "description" : [ ]
   } ]
 } ]
