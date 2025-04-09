@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Tile.cs (<b>104</b> lines of code) (<a href="Tile.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Tile.cs (<b>118</b> lines of code) (<a href="Tile.cs">raw</a>):</h3>
 <div id="editor">using System.Collections.Generic;
 using UnityEngine;
 
@@ -24,6 +24,9 @@ public class Tile : MonoBehaviour, IClickable
     [SerializeField] private GameObject borderRedPrefab;
     [SerializeField] private GameObject borderBluePrefab;
     [SerializeField] private GameObject ParticlePrefab;
+    [SerializeField] private GameObject housePrefab;
+    private GameObject currentStructure;
+
     private GameObject currentBorder;
 
     public bool debug = false;
@@ -133,7 +136,20 @@ public class Tile : MonoBehaviour, IClickable
     {
         Instantiate(ParticlePrefab, transform);
     }
+    public void SetStructure(GameObject structure)
+    {
+        currentStructure = structure;
+    }
 
+    public GameObject GetStructureOnTile()
+    {
+        return currentStructure;
+    }
+
+    public bool HasStructure()
+    {
+        return currentStructure != null;
+    }
 }
 </div>
 <script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>

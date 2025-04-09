@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/CardData.cs (<b>10</b> lines of code) (<a href="CardData.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/CardData.cs (<b>31</b> lines of code) (<a href="CardData.cs">raw</a>):</h3>
 <div id="editor">using System.Collections.Generic;
 using UnityEngine;
 
@@ -23,6 +23,28 @@ public class CardData : ScriptableObject
     public Dictionary&lt;RessourceTypes, int&gt; cost = new Dictionary&lt;RessourceTypes, int&gt;();
     public List&lt;ICardEffect&gt; effectList = new List&lt;ICardEffect&gt;();
     public List&lt;ICardCondition&gt; conditionList = new List&lt;ICardCondition&gt;();
+    public bool addOwnedTile = true;
+    public bool isPersistent = false;
+    public enum CardTargetType
+    {
+        NeutralTileOnly,
+        EnemyTileOnly,
+        Any
+    }
+    public CardTargetType targetType = CardTargetType.Any;
+
+    public void InjectDefaultConditionIfNeeded()
+    {
+        switch (targetType)
+        {
+            case CardTargetType.NeutralTileOnly:
+                conditionList.Add(new OnlyOnNeutralTile());
+                break;
+            case CardTargetType.EnemyTileOnly:
+                conditionList.Add(new OnlyOnEnemyTile());
+                break;
+        }
+    }
 }</div>
 <script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>

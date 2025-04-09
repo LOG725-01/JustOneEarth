@@ -6,7 +6,11 @@ public class FreeCard : CardData
         description = "Skip current turn for free";
         cost.Add(RessourceTypes.Trees, 0);
 
+        addOwnedTile = false;
+        isPersistent = true;
+
         NextTurnEffect newTurnEffect = new NextTurnEffect();
         effectList.Add(newTurnEffect);
+        
     }
 }

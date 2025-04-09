@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.meta files (9683):
+*.meta files (9712):
 
 Assets/25 Rpg Game Tracks/Ambient 3.wav.meta
 Assets/25 Rpg Game Tracks/Ambient 7.wav.meta
@@ -11,11 +11,16 @@ Assets/Animations/Chat.controller.meta
 Assets/Animations/Ressource.controller.meta
 Assets/Animations/RessourcesPanel.controller.meta
 Assets/Animations.meta
-Assets/Free UI Click Sound Effects Pack/AUDIO/Pop/SFX_UI_Click_Designed_Pop_Negative_Close_1.wav.meta
-Assets/Free UI Click Sound Effects Pack/AUDIO/Pop/SFX_UI_Click_Designed_Pop_Open_2.wav.meta
-Assets/Free UI Click Sound Effects Pack/AUDIO/Pop.meta
-Assets/Free UI Click Sound Effects Pack/AUDIO.meta
-Assets/Free UI Click Sound Effects Pack.meta
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/013_Confirm_03.wav.meta
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/029_Decline_09.wav.meta
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/033_Denied_03.wav.meta
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/092_Pause_04.wav.meta
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/098_Unpause_04.wav.meta
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX.meta
+Assets/Leohpaz/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav.meta
+Assets/Leohpaz/RPG_Essentials_Free/8_Buffs_Heals_SFX.meta
+Assets/Leohpaz/RPG_Essentials_Free.meta
+Assets/Leohpaz.meta
 Assets/Materials/New Material.mat.meta
 Assets/Materials.meta
 Assets/Models/FBX format/BorderBlue.fbx.meta
@@ -39,11 +44,13 @@ Assets/Models/FBX format/building-wall.fbx.meta
 Assets/Models/FBX format/building-walls.fbx.meta
 Assets/Models/FBX format/building-watermill.fbx.meta
 Assets/Models/FBX format/building-wizard-tower.fbx.meta
+Assets/Models/FBX format/dam.fbx.meta
 Assets/Models/FBX format/dirt-lumber.fbx.meta
 Assets/Models/FBX format/dirt.fbx.meta
 Assets/Models/FBX format/grass-forest.fbx.meta
 Assets/Models/FBX format/grass-hill.fbx.meta
 Assets/Models/FBX format/grass.fbx.meta
+Assets/Models/FBX format/oilRefinery.fbx.meta
 Assets/Models/FBX format/path-corner-sharp.fbx.meta
 Assets/Models/FBX format/path-corner.fbx.meta
 Assets/Models/FBX format/path-crossing.fbx.meta
@@ -77,6 +84,7 @@ Assets/Models/FBX format/river-straight.fbx.meta
 Assets/Models/FBX format/sand-desert.fbx.meta
 Assets/Models/FBX format/sand-rocks.fbx.meta
 Assets/Models/FBX format/sand.fbx.meta
+Assets/Models/FBX format/solarFarm.fbx.meta
 Assets/Models/FBX format/stone-hill.fbx.meta
 Assets/Models/FBX format/stone-mountain.fbx.meta
 Assets/Models/FBX format/stone-rocks.fbx.meta
@@ -91,6 +99,7 @@ Assets/Models/FBX format/unit-ship.fbx.meta
 Assets/Models/FBX format/unit-tower.fbx.meta
 Assets/Models/FBX format/unit-tree.fbx.meta
 Assets/Models/FBX format/unit-wall-tower.fbx.meta
+Assets/Models/FBX format/village.fbx.meta
 Assets/Models/FBX format/water-island.fbx.meta
 Assets/Models/FBX format/water-rocks.fbx.meta
 Assets/Models/FBX format/water.fbx.meta
@@ -140,6 +149,7 @@ Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Texture.meta
 Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack.meta
 Assets/Models/UrsaAnimation.meta
 Assets/Models.meta
+Assets/Prefabs/Audio/AudioManager.prefab.meta
 Assets/Prefabs/Audio/AudioMixerManager.prefab.meta
 Assets/Prefabs/Audio/AudioSourceObject.prefab.meta
 Assets/Prefabs/Audio/MusicSource.prefab.meta
@@ -181,6 +191,11 @@ Assets/Prefabs.meta
 Assets/Readme.asset.meta
 Assets/Resources/AudioMixer.mixer.meta
 Assets/Resources/generation_config.json.meta
+Assets/Resources/Structures/dam.prefab.meta
+Assets/Resources/Structures/oilRefinery.prefab.meta
+Assets/Resources/Structures/solarFarm.prefab.meta
+Assets/Resources/Structures/village.prefab.meta
+Assets/Resources/Structures.meta
 Assets/Resources.meta
 Assets/Scenes/Game.unity.meta
 Assets/Scenes/MainMenu.unity.meta
@@ -212,19 +227,31 @@ Assets/Scripts/Environnement.meta
 Assets/Scripts/GameLogic/AIPlayer.cs.meta
 Assets/Scripts/GameLogic/Board.cs.meta
 Assets/Scripts/GameLogic/Card.cs.meta
-Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs.meta
 Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs.meta
+Assets/Scripts/GameLogic/CardConditions/OnlyOnEnemyTile.cs.meta
+Assets/Scripts/GameLogic/CardConditions/OnlyOnNeutralTile.cs.meta
+Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs.meta
+Assets/Scripts/GameLogic/CardConditions/TileMustHaveStructure.cs.meta
 Assets/Scripts/GameLogic/CardConditions.meta
+Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs.meta
 Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs.meta
 Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs.meta
 Assets/Scripts/GameLogic/CardEffects/GainRessourceOfType.cs.meta
 Assets/Scripts/GameLogic/CardEffects/ICardEffect.cs.meta
 Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs.meta
+Assets/Scripts/GameLogic/CardEffects/PlaceStructureEffect.cs.meta
 Assets/Scripts/GameLogic/CardEffects.meta
 Assets/Scripts/GameLogic/Cards/CardData.cs.meta
+Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs.meta
+Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs.meta
+Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs.meta
+Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs.meta
+Assets/Scripts/GameLogic/Cards/Civ.meta
 Assets/Scripts/GameLogic/Cards/FreeCard.cs.meta
 Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs.meta
 Assets/Scripts/GameLogic/Cards/MineralSurge.cs.meta
+Assets/Scripts/GameLogic/Cards/World/Earthquake.cs.meta
+Assets/Scripts/GameLogic/Cards/World.meta
 Assets/Scripts/GameLogic/Cards.meta
 Assets/Scripts/GameLogic/Enum/PlayerType.cs.meta
 Assets/Scripts/GameLogic/Enum/RessourceTypes.cs.meta
@@ -272,6 +299,8 @@ Assets/Settings/URP-Performant.asset.meta
 Assets/Settings.meta
 Assets/Sprites/GameBackground.png.meta
 Assets/Sprites/HomeBackground.png.meta
+Assets/Sprites/icone-d-usine-et-d-industrie-gris.png.meta
+Assets/Sprites/symbole-de-feuille-verte.png.meta
 Assets/Sprites.meta
 Assets/TextMesh Pro/Documentation/TextMesh Pro User Guide 2016.pdf.meta
 Assets/TextMesh Pro/Documentation.meta
@@ -9689,7 +9718,7 @@ Library/PackageCache/com.unity.visualscripting@1.9.4/ValidationExceptions.json.m
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*. files (7708):
+*. files (7742):
 
 Library/AnnotationManager
 Library/ArtifactDB
@@ -9856,7 +9885,6 @@ Library/Artifacts/04/04c20768d110c4034c18514da9fa8035
 Library/Artifacts/04/04cc483b9b583d8e43335774974fdf64
 Library/Artifacts/04/04cecbe4574f3396c84aba178c0c6996
 Library/Artifacts/04/04d015d2928c6fac4a5a0c9b974ab075
-Library/Artifacts/04/04dc638806c0c7ad5e4b6f97814d949b
 Library/Artifacts/04/04e4c29150e135c54cf0a8800cf571fe
 Library/Artifacts/04/04e91ccaec77feff14d35a3684bd36e6
 Library/Artifacts/04/04f1de07e83ed1006f7aa48a28639a51
@@ -10162,7 +10190,6 @@ Library/Artifacts/0f/0f212e5a2f40259a75e72bc0564abeb0
 Library/Artifacts/0f/0f30a23ff07ac24696a021d1dd143f9b
 Library/Artifacts/0f/0f31ed5308004556e4f2ccf0bc7b1347
 Library/Artifacts/0f/0f3319fb912e2763a25cfef06c0bf46d
-Library/Artifacts/0f/0f36325ff7e5dbc41ec6f001cad917bf
 Library/Artifacts/0f/0f3c3245dfbcb0edfd04586998f2ed56
 Library/Artifacts/0f/0f4a5de6fb2984926640468758600080
 Library/Artifacts/0f/0f4b1108b74de4a8f0b49ab2b83d297d
@@ -10194,6 +10221,7 @@ Library/Artifacts/10/10499f1e12156c99b4a8a3bd7cc23ce7
 Library/Artifacts/10/1056e6c18874b403d1a70356c50a578a
 Library/Artifacts/10/105982839ff9c55e871ff2803cf96367
 Library/Artifacts/10/105aedfab7e819ef528755a46895cd41
+Library/Artifacts/10/10817a820692b6e88bfd094611cfd221
 Library/Artifacts/10/108869d10e8432e72223548acc693b2a
 Library/Artifacts/10/1090834abf64881dc49e7c62b182c685
 Library/Artifacts/10/10a0b5c9fbbacdadb4bdb2f2794c2093
@@ -10258,6 +10286,7 @@ Library/Artifacts/12/12a646e9cee648192cccfe2b74606d11
 Library/Artifacts/12/12a7e9cec1092d29134b8cb327cb14af
 Library/Artifacts/12/12ae7e2d184b310dfc1f4c9917408b22
 Library/Artifacts/12/12cc39b857366bb66a5462d74bc4d1cc
+Library/Artifacts/12/12d024d7ef168f116c3a1ca19ab7f2e6
 Library/Artifacts/12/12d23d82be539e9d51464e574edde68c
 Library/Artifacts/12/12e3e6ce8ebe262690827bbd802d7fc4
 Library/Artifacts/12/12f71f2a8ad18bdbec012b30fa1a0774
@@ -10403,6 +10432,7 @@ Library/Artifacts/17/17282c752e986b98f0142d4f1ebaefac
 Library/Artifacts/17/1732999db82624405bdbc14bd6747c14
 Library/Artifacts/17/173f3a02494f8c665df87eb856d05904
 Library/Artifacts/17/1746c13703f56d533d060d1e17f927ed
+Library/Artifacts/17/1748141eb49119e1555bbe628645553d
 Library/Artifacts/17/174ed9eb5d9cf42c85cd7294f3106de0
 Library/Artifacts/17/175890441cfa4353df0b081d8aedbb3e
 Library/Artifacts/17/1760d951e8a90880c2e5989a61bca4ee
@@ -10524,8 +10554,9 @@ Library/Artifacts/1a/1a85b0e45b25d40a6e2136b30fa19532
 Library/Artifacts/1a/1a945d13596255b9671e2d47a4ed142b
 Library/Artifacts/1a/1a9741bd6da1499ccd00030ef6ced802
 Library/Artifacts/1a/1aa10571b0fbd326b9e3ed50e74f96c6
-Library/Artifacts/1a/1aa6693c4fb327f545459e0f11766e03
+Library/Artifacts/1a/1aafc7cb9d927718a7d7adb835340741
 Library/Artifacts/1a/1ac020268d1613f25a79ffaf2564f975
+Library/Artifacts/1a/1ac2985e75a9ce3d2ce6e2d0af9b53c3
 Library/Artifacts/1a/1ace8fd2728121f31b1353e831eab147
 Library/Artifacts/1a/1ad0d9378f434f1578d16c794f5f7ab8
 Library/Artifacts/1a/1ad5b9a750d29be512713c172c7bbbcd
@@ -10569,7 +10600,6 @@ Library/Artifacts/1b/1bc72ee97468687b4c0e34db0ea5e7e2
 Library/Artifacts/1b/1bcef6c789999a7fb50aa8f7a9cb2ba7
 Library/Artifacts/1b/1bd31b3057257849d874b915eb64abf0
 Library/Artifacts/1b/1bdd556ec558f5de00ba0e324d6610b6
-Library/Artifacts/1b/1be62adcc09c8a41ec3447d6f771de84
 Library/Artifacts/1b/1bf357e15de6b85aeb56269d5ca1f083
 Library/Artifacts/1b/1bf7eb7233e66ee16a44af9ecb572903
 Library/Artifacts/1b/1bfd4f178f036b8815b20c7cd0830fca
@@ -10620,6 +10650,7 @@ Library/Artifacts/1d/1d5cec828da0ad9a5d14d61398f32909
 Library/Artifacts/1d/1d5e9624764ced8487b79692d80fa4c2
 Library/Artifacts/1d/1d65019b60a8671798902e003f563cfd
 Library/Artifacts/1d/1d8e101d9cc9a5e69fd6cbd037094801
+Library/Artifacts/1d/1d9141b6820604d69af67c43c91a436f
 Library/Artifacts/1d/1d9168521557e956584e827cbc1f5231
 Library/Artifacts/1d/1d91bf0cceb65e7921dbdb1097356edc
 Library/Artifacts/1d/1d994bdd5ab8ea3e48e10800af69e98a
@@ -10628,6 +10659,7 @@ Library/Artifacts/1d/1da3ad603d873eaabaf285e89f284a09
 Library/Artifacts/1d/1db4f92f2ca4847cf3f2ca867a59d554
 Library/Artifacts/1d/1db7fd94d5c216db8e9acda06ca39d89
 Library/Artifacts/1d/1db897c4fbb6bec75960e3b41681fec5
+Library/Artifacts/1d/1dc51708e80fa40318a1fa21fc9fc47a
 Library/Artifacts/1d/1dd5ffa7d58ae861ccac5286c303fb87
 Library/Artifacts/1d/1dd8e430398ecb8944791e0bb424284f
 Library/Artifacts/1d/1dda4d9a61568e6fe7552dbcea5c5351
@@ -10959,7 +10991,6 @@ Library/Artifacts/28/28a18fd10ec080be4adc0af0976676e6
 Library/Artifacts/28/28aa0ec46f8c826f9889e82deb126a35
 Library/Artifacts/28/28b1d21a43f520718d89e2fdda95bd7f
 Library/Artifacts/28/28d280e926777c28af372480a194ec8d
-Library/Artifacts/28/28d8f48673a863890e0db7bc6adf6d87
 Library/Artifacts/28/28d97f73ae0131f4867d906303e6ef11
 Library/Artifacts/28/28e1f3d32954efc084785466ba7eb0b8
 Library/Artifacts/28/28e3c12d5622a13758dca136adbfcbb3
@@ -11050,6 +11081,7 @@ Library/Artifacts/2b/2b886fb79770d6c72b8ded3078315319
 Library/Artifacts/2b/2b8ab34c831df3b6b415ad516617320f
 Library/Artifacts/2b/2b8ee73048446838134f7db7dff69250
 Library/Artifacts/2b/2baa43097aff01bc2b06345e330e155c
+Library/Artifacts/2b/2be097592ff49d0a0b45f20601787397
 Library/Artifacts/2b/2beefb2d781b31e8024249fbef7e8370
 Library/Artifacts/2b/2bf7269814f94dcf1ef964bc9486d509
 Library/Artifacts/2c/2c0648898b5fd4cd5ed0ef9ee983ee49
@@ -11112,6 +11144,7 @@ Library/Artifacts/2e/2e0cca4831b92774cd98f28ea9cce5ce
 Library/Artifacts/2e/2e0fe4e58232eebdf17c47300f8a5c34
 Library/Artifacts/2e/2e287c51c0ecb578da91107fc355f32b
 Library/Artifacts/2e/2e3e6f6423d71a629c8c0df6100fb7d6
+Library/Artifacts/2e/2e41254803a59d640e1583c3ce7c1f17
 Library/Artifacts/2e/2e5150baf0d8afadca5b06ca38d86d6d
 Library/Artifacts/2e/2e605444ab34d0959e6f2f33b3422105
 Library/Artifacts/2e/2e62bc104007d8612c763343594b0563
@@ -11201,6 +11234,7 @@ Library/Artifacts/31/315a0b8f9511fef0bdbdffc03194ccdc
 Library/Artifacts/31/316527cc38292744d862935dbd760b4f
 Library/Artifacts/31/316731b0779f2c5f09f6cfcfa38e26f1
 Library/Artifacts/31/317890a612368dd8452fb2c0e3a45b59
+Library/Artifacts/31/31826fce697ec4f671f8aef96b1d75b5
 Library/Artifacts/31/319110e11b33ac8c909df577e5f78242
 Library/Artifacts/31/31912fc1d7b7015002f74305c0d8cf4b
 Library/Artifacts/31/31967c839037ccb8fa1ec44f5604dd7e
@@ -11382,6 +11416,7 @@ Library/Artifacts/38/3863ec1cdd7c2d19584f61cc956a4400
 Library/Artifacts/38/387210286b72b65fcc96885f53405c90
 Library/Artifacts/38/3877ecf5d968b423d50ecf3379a92b30
 Library/Artifacts/38/38881e5248761a7e9e937026bc998a57
+Library/Artifacts/38/388edcfae89a1c076412fdb5d11c8771
 Library/Artifacts/38/3893eb14cdb61e781266c22b9cd00932
 Library/Artifacts/38/389e578f3b5b666d2a7850c09e2fdd57
 Library/Artifacts/38/38a8d3ffb4aa3d3b947d2c1d43b1a36a
@@ -11465,6 +11500,7 @@ Library/Artifacts/3b/3b9fa7d4156a49c8894ee41dc3942dec
 Library/Artifacts/3b/3bad73a2433c369b8fc161a67d614eb1
 Library/Artifacts/3b/3bb06f0e6d61e3563680442ec0c418e9
 Library/Artifacts/3b/3bb39b9a779b8e2d28125c288b2d1c7f
+Library/Artifacts/3b/3bb3e3c09730994095d1bb1a9b7d3471
 Library/Artifacts/3b/3bbb2be96226f922ab9b403ba993e4e0
 Library/Artifacts/3b/3bbeab3fcd8b2af984359642806809a3
 Library/Artifacts/3b/3bc00c8576744d8fd51becedf2727b0f
@@ -11500,8 +11536,10 @@ Library/Artifacts/3c/3c80d265a64b690731117fda8acfc312
 Library/Artifacts/3c/3c87fe82b97e5f21bfc2fe6456693eff
 Library/Artifacts/3c/3c932004ac38dd82fb23a7519445b4ab
 Library/Artifacts/3c/3c9d7d52bb1ee6b5da10c68a65cc1236
+Library/Artifacts/3c/3c9e7fdffe7e6e1dfb59b1f6ff3494a0
 Library/Artifacts/3c/3ca0111fa4d9e7f567a5ed49c7989c96
 Library/Artifacts/3c/3cb3382537bd91de56c86c27a83ad354
+Library/Artifacts/3c/3cca09b54dd2506bdb9b75ea8dc6586c
 Library/Artifacts/3c/3cd68ec47fe8327c3c1d1c5ad16966e5
 Library/Artifacts/3c/3cd92b458d18fec6ebe0f94659dbf77f
 Library/Artifacts/3c/3ce2cf4b25c0e845e30d51159c3e73f0
@@ -11622,6 +11660,7 @@ Library/Artifacts/40/40e3bfc7c3eae448a89bfccd18fd9aa2
 Library/Artifacts/40/40ebd9d8c9000624355ecd5f84205513
 Library/Artifacts/40/40ef174879de05c51ccfcf10d7f9e96a
 Library/Artifacts/40/40f0419e08c3d95eb83afb50c6560522
+Library/Artifacts/41/4105865aca427057dd5b7b969d10986a
 Library/Artifacts/41/4115a0c04afb9be22e4a224e9617f6ac
 Library/Artifacts/41/411b4002c942753c456ac95006853a30
 Library/Artifacts/41/412df899564bcff31632d4eb644b21a0
@@ -11795,6 +11834,7 @@ Library/Artifacts/46/464514b9c162eebe2ae132658cd01fe4
 Library/Artifacts/46/464d5d6091446a63fcfe293d2204a021
 Library/Artifacts/46/4653b910eb8f7b13c838e366e0d922f0
 Library/Artifacts/46/4660f3844a346613dd5fc50dd8bba8ce
+Library/Artifacts/46/466a32544af6ddd09d3829197d4671ae
 Library/Artifacts/46/46702852b0502f5c99050550409a69d4
 Library/Artifacts/46/4671091245e4240b0ab8a5216522b278
 Library/Artifacts/46/4676de725381a2a6496a8dc5386b4fcb
@@ -12030,6 +12070,7 @@ Library/Artifacts/4e/4e2583af99c2d9c363114eab74fff5e2
 Library/Artifacts/4e/4e43215a77be5de091b333e6e0365222
 Library/Artifacts/4e/4e4c35c2c589623254634cb9463f1370
 Library/Artifacts/4e/4e50a8b9dce54ed1c5ea6aef1a2b5e27
+Library/Artifacts/4e/4e5440172243e28a40e033a67555b4a7
 Library/Artifacts/4e/4e57f02c40e529f190f782d49811d02c
 Library/Artifacts/4e/4e61d16fef9bf50661eae20dad1c5451
 Library/Artifacts/4e/4e6baf9af8d85bf18a786dec4b341f17
@@ -12138,6 +12179,7 @@ Library/Artifacts/51/51c293619056af7fffaf153a7466d6d6
 Library/Artifacts/51/51c7df04c17850d75a70b7ed52e66db0
 Library/Artifacts/51/51cf04f146fa64aa4a2988b06328bd65
 Library/Artifacts/51/51cf0ab6f9e8121124936e4fdc3665e6
+Library/Artifacts/51/51e391d11eb9c8d1d1364787c1dd2bf7
 Library/Artifacts/51/51e581cf421d9c00b635bc51414012a4
 Library/Artifacts/51/51ef6b7f429b9eebc03fabdaa83ac221
 Library/Artifacts/51/51f426e588a8c0eea9c5c81209881169
@@ -12272,6 +12314,7 @@ Library/Artifacts/56/5607e03f887d4dbf9288928e7216bd93
 Library/Artifacts/56/560c469f89d1c1ff701ddc8890ca57f3
 Library/Artifacts/56/5615f22506679660e21714dbe7d2e781
 Library/Artifacts/56/5616ee600176f01c4d4e551ded8e199d
+Library/Artifacts/56/5619bd4c30e7dc5a5ac06eb42a117362
 Library/Artifacts/56/5633bb0cb3198305be398fecb8b7bf12
 Library/Artifacts/56/56382ecefd0db7d87fd80395b25d27e5
 Library/Artifacts/56/563a8d48822bd7884416be3eb1b62e4b
@@ -12515,7 +12558,6 @@ Library/Artifacts/5e/5e613d73bb82337cb94d875268eabf5a
 Library/Artifacts/5e/5e631ac74bd7a8c343c9a53d4a4905e8
 Library/Artifacts/5e/5e681f8395a1a0ca3aa6a18dd1e67b50
 Library/Artifacts/5e/5e6b495424038de6526bb9cf56ffa3f7
-Library/Artifacts/5e/5e6e051eeaa8b94a4cfd501a745d3532
 Library/Artifacts/5e/5e7efc8efa44183124bd1cb5601ed619
 Library/Artifacts/5e/5e80495284afa6859e254106b56280a4
 Library/Artifacts/5e/5e886694058ee75f80118c0dce3726ea
@@ -12615,6 +12657,7 @@ Library/Artifacts/61/61521ce873fa146992e62cdf52ed93d0
 Library/Artifacts/61/615b495ce6b9c104ca083cf78743f77e
 Library/Artifacts/61/615da78bbd2b940d052bd17861314c00
 Library/Artifacts/61/61614f7848115ec25d0826194ce4b997
+Library/Artifacts/61/6171b57ad97ba0719fcaa3409e8e2a19
 Library/Artifacts/61/6177a05b53730907286370d5975bb0ad
 Library/Artifacts/61/617a9e8ffa6b447c15801ec538952179
 Library/Artifacts/61/61a40248a33522a21875a7172da453eb
@@ -12653,7 +12696,6 @@ Library/Artifacts/62/6290170a8afb7f98f999cbb48d4adfa3
 Library/Artifacts/62/6295dc0c04ef3c3d987f5d2ba873c7f6
 Library/Artifacts/62/629a593db12da0a5f8d1656f2b222ab0
 Library/Artifacts/62/62a35d089219245160c4d83ee2ed63df
-Library/Artifacts/62/62b0246debf91378d11644729fc6b3ec
 Library/Artifacts/62/62c147a801e2703f396335210b34e69a
 Library/Artifacts/62/62c7ab48f83401328dd3b1e135032507
 Library/Artifacts/62/62c81584b3ebaea8830fcd32a070de11
@@ -12757,7 +12799,6 @@ Library/Artifacts/66/664efc600057a1f8636682cdac09f194
 Library/Artifacts/66/665065c95b63a811399cc2c11e187910
 Library/Artifacts/66/6658371f052ab9094dc99be207f6c069
 Library/Artifacts/66/665c22ba012596cb76b3088dfb3b94ab
-Library/Artifacts/66/6662765c7ad7477bd1c674c774fccbf5
 Library/Artifacts/66/666574d68a04f1168da63b58b6f89ec2
 Library/Artifacts/66/6667997a7fc4e7cfcdbb6139fb9d283c
 Library/Artifacts/66/666ff93274c62b23af389a918ba798b2
@@ -12848,6 +12889,7 @@ Library/Artifacts/69/6990ebf725f801c93514c732b7bea092
 Library/Artifacts/69/69914fb13cc63a128854dc4613099531
 Library/Artifacts/69/699573d31fd83a00e2e3ec522386006f
 Library/Artifacts/69/699d3ece6ae01050a98ed5742e3479dd
+Library/Artifacts/69/69a430fb75b4fa09f0b5155a816dddb8
 Library/Artifacts/69/69a5258c2cffc1b9596df489c98ae9c8
 Library/Artifacts/69/69a7d779f4c1642c030278d230d36699
 Library/Artifacts/69/69b23a2ddd5031d3232936aacb2ffd18
@@ -12922,10 +12964,10 @@ Library/Artifacts/6c/6c22d109010739c6e2716e34ed909291
 Library/Artifacts/6c/6c34f98c0582c2b9165cd26ae65a121f
 Library/Artifacts/6c/6c42ab2abf5ada80258e4c1f52ef9465
 Library/Artifacts/6c/6c43b236e3ccca27d5778e8f275e2eb4
+Library/Artifacts/6c/6c44277f6f517d82ad8c2fab1d177ac9
 Library/Artifacts/6c/6c50efdd99b891a283f7859d53eabb1c
 Library/Artifacts/6c/6c538cf4d8275fa04b95c4f1ee8e36c3
 Library/Artifacts/6c/6c5aa8c72c56a605524a94efaf59736e
-Library/Artifacts/6c/6c5dc3ad46b859b0e1c0988ca5d0c277
 Library/Artifacts/6c/6c5ff46e90c70d9a50c6fbd9ce0390ee
 Library/Artifacts/6c/6c60da225a9c340b7c39d250cfe49922
 Library/Artifacts/6c/6c697e50bc94440ad07d1051724003e1
@@ -13082,13 +13124,13 @@ Library/Artifacts/70/709c547240100c0511ffb05904a19e31
 Library/Artifacts/70/709d67066e9ec029cde2493acb4b8012
 Library/Artifacts/70/709ef3b1bd3f6f7696e69cdcb514a7aa
 Library/Artifacts/70/70a24873be3fb713b105a30a5bcd2842
+Library/Artifacts/70/70a607bd47a20c46242bded8ccbe140e
 Library/Artifacts/70/70a68e3460dc9262b156203a7556f0bb
 Library/Artifacts/70/70cb74b549310921b7b4715786c90bc2
 Library/Artifacts/70/70cf3efca56678c0e71d6be0ce4d8e6d
 Library/Artifacts/70/70e78ce6bc27afa7dcf84f5b521d534a
 Library/Artifacts/70/70e9bb1f13508c27ad4f11180780edee
 Library/Artifacts/70/70eefe336d6d079839d0977fc6bd3607
-Library/Artifacts/70/70fe431cf01da84e724dd10b9d8970fe
 Library/Artifacts/71/710b9e8b14882c8c8fc72d04157cfe6b
 Library/Artifacts/71/71205686e7f22b5429855e3abbbd3c33
 Library/Artifacts/71/712645bca0a697f047d273be5b866952
@@ -13169,6 +13211,7 @@ Library/Artifacts/73/73e0b4b757ab299ac113006f014da0e4
 Library/Artifacts/73/73e4d974841120c73a18e8b885af6090
 Library/Artifacts/73/73ea20a0288edb239db02bed0886865e
 Library/Artifacts/73/73eeea759414b29967cff4de5f0e67e0
+Library/Artifacts/73/73f52c83422642fc5d3b990a64576273
 Library/Artifacts/73/73fb058b120d91b38d9f2bacb031f3af
 Library/Artifacts/73/73fbe24bd087fd0475c43db727393ca5
 Library/Artifacts/73/73fcaa3e765bc7913b2f5675d382b70c
@@ -13211,6 +13254,7 @@ Library/Artifacts/75/7565eaef54e8d290f75b1f213d757e0b
 Library/Artifacts/75/75724f32e1ba0893ce9478333f0752ad
 Library/Artifacts/75/7577790a08afa1cf9f191587dcd898c2
 Library/Artifacts/75/75942424a77b21a912aff2235ca744b4
+Library/Artifacts/75/7596a2bb91f660c1c337028b82905508
 Library/Artifacts/75/759aeef7ef5e755e4c4cf7f42cf48b3b
 Library/Artifacts/75/75a04e415bd349634c8b8d195b472e83
 Library/Artifacts/75/75a6bd99ae3564d529a3ea1b550547a3
@@ -13379,7 +13423,6 @@ Library/Artifacts/7b/7b28539d8d4e6cd073447652e9a0e010
 Library/Artifacts/7b/7b2cc14a461d7123c416268fadab295a
 Library/Artifacts/7b/7b428707e3eb298df6fa646cd500ea7d
 Library/Artifacts/7b/7b48b5740ed59363df3059944ef3a977
-Library/Artifacts/7b/7b572f3704166f2e3bcf3660dab1c41d
 Library/Artifacts/7b/7b57eded23a14e818ab8d5bc1561c210
 Library/Artifacts/7b/7b5cd9c2f5d44a83839c9ba4b7a8ac1f
 Library/Artifacts/7b/7b5f5194f933256769d59c8198d45876
@@ -13455,6 +13498,7 @@ Library/Artifacts/7d/7d715675fe7513284bec2dde194421e9
 Library/Artifacts/7d/7d76c2b993cdc1f0987bc8dfcb80ce63
 Library/Artifacts/7d/7d7aa6ab5b349338c4027f80bf90a8d8
 Library/Artifacts/7d/7d815d42bb36ae55d41b3e842dd25ebd
+Library/Artifacts/7d/7d8cd47d10ad18ceb6968d008b3a983a
 Library/Artifacts/7d/7d920eb1cbb3a985e9f1537d27bef034
 Library/Artifacts/7d/7d9250fcaf13984df57dd223e8a0dc18
 Library/Artifacts/7d/7d95daa7063ea259485e9c3dd03dff85
@@ -13493,6 +13537,7 @@ Library/Artifacts/7e/7ee476f172508b8f74b74aa39bf026dd
 Library/Artifacts/7e/7ee9d6c0a2cb12da46ace9f181f20738
 Library/Artifacts/7e/7eecb61ba5164cc418f714036b060e3f
 Library/Artifacts/7e/7eeea56084ce54334e5f08e7a9a1a23d
+Library/Artifacts/7e/7ef1de6d8121264d7af7dca50b068025
 Library/Artifacts/7e/7ef3bcc2b6ab34cbdcbf3eb894fc95ff
 Library/Artifacts/7f/7f000a84b297122809fdcd04461f2123
 Library/Artifacts/7f/7f2c3b7765778284f1c2f91b558fd067
@@ -13532,6 +13577,7 @@ Library/Artifacts/7f/7ff0d8a0079cbe1facff949c14acb043
 Library/Artifacts/7f/7ff33c63e753e2f47eb50e1a6703f90a
 Library/Artifacts/80/8010832e23dcef8c8d230751cf56be7a
 Library/Artifacts/80/80169d1a04196fd4ecda806a2aecfd22
+Library/Artifacts/80/801b4e9e860572ec5d7c1f8d18cc2ea7
 Library/Artifacts/80/802855f3a3c3ede4bcf2ddbb719b76f9
 Library/Artifacts/80/8029df338f551dafb3c30cf04ae6ab15
 Library/Artifacts/80/803512b81dd1cd95ad6942e68bac2c86
@@ -13559,6 +13605,7 @@ Library/Artifacts/80/80b762231f1c15349c91c348a789c688
 Library/Artifacts/80/80bcbe7cb93ffd5060b6f61930d42ea1
 Library/Artifacts/80/80bf0eaabadc6acd278d3226d97c49d7
 Library/Artifacts/80/80bf6dad3dbc44e660baeea87f6274d1
+Library/Artifacts/80/80c767e4716e9541ca971fef6650e251
 Library/Artifacts/80/80ce52aa9cc4e7c7db17eec146e7eee4
 Library/Artifacts/80/80e69191f3fed18e159a99653e3c8ac3
 Library/Artifacts/80/80f92742838f8c49497358600be294ef
@@ -13625,6 +13672,7 @@ Library/Artifacts/82/82ecac96808e9df0a7fd010f46ac4632
 Library/Artifacts/83/83002792bfda441631a57cac68a120fe
 Library/Artifacts/83/8310818d3bfd5f36f396db89b0d11190
 Library/Artifacts/83/831d4bb85a5569edd19b2e1f2f189e8b
+Library/Artifacts/83/831ed7f3504084e15707b43f85978916
 Library/Artifacts/83/832d228b36c505a0fc29c7eab1404e89
 Library/Artifacts/83/83322f95a55bec31157240150e41732d
 Library/Artifacts/83/8334d505f1377ac0b318a492904291dc
@@ -13726,6 +13774,7 @@ Library/Artifacts/86/86bab6f90dd26cfa7ae312b568f64628
 Library/Artifacts/86/86d0a483cf0699751df4d572e47aec81
 Library/Artifacts/86/86d683d162993272c99047bfb9678040
 Library/Artifacts/86/86de238f5027a0805fbb4fa0a7c5d6d9
+Library/Artifacts/86/86e2b5de7fb09cd96fad241f82dbaa09
 Library/Artifacts/86/86e76772611ff25f454c58adfe4e35d1
 Library/Artifacts/86/86e8eff25c5e986204a1ffa7a4f193e3
 Library/Artifacts/86/86e905101a806f18384a91e05b1f9295
@@ -13791,6 +13840,7 @@ Library/Artifacts/89/890d7863b2fbc1cdda999ca11a971447
 Library/Artifacts/89/891c222166471e5d99a5d7e737dcc128
 Library/Artifacts/89/89310c9c24556732c19515835258b819
 Library/Artifacts/89/8936ce55bfb89d12501bb99cdac46080
+Library/Artifacts/89/893773f235989bb0e8bc7cfb3291c101
 Library/Artifacts/89/8937cba13ce1cf922ac9286f51243120
 Library/Artifacts/89/8939fc192d8cb1ee53e0edd538cc2447
 Library/Artifacts/89/8950a452ec15bb5bce85ae85f89d093a
@@ -14016,6 +14066,7 @@ Library/Artifacts/8f/8fef1301e62176dce474607c9a477045
 Library/Artifacts/8f/8ffd64d3fdc9c379a4d3242aa9ee6c49
 Library/Artifacts/90/900185e6a9b6749a69acf88fcfbcce61
 Library/Artifacts/90/90111a5305e2c329e2eb002b0586ef27
+Library/Artifacts/90/901c5fda26b4ddf6a8007e40d1bd8f49
 Library/Artifacts/90/902605f69213e9c40807dab87ad910d8
 Library/Artifacts/90/903255e9558541052009aa37968b36b3
 Library/Artifacts/90/904ecb03f5f87227557f59d63c49859f
@@ -14447,6 +14498,7 @@ Library/Artifacts/9f/9f0d6ae9d8122ec953c2c9f0b2fa9f38
 Library/Artifacts/9f/9f0d97113686e1c4039036bcd4f47a83
 Library/Artifacts/9f/9f2138f6175b97a890c32f86b25f3539
 Library/Artifacts/9f/9f25179a6df8466cdefa820505d6829b
+Library/Artifacts/9f/9f27d08f7452bf60c39114185c0a8bf8
 Library/Artifacts/9f/9f302effe310810c518f49e295f9d7a5
 Library/Artifacts/9f/9f33fa6a628e215b59ba776f12d4dbdf
 Library/Artifacts/9f/9f3e5f8d1148d1cbbe908f32cb4059dd
@@ -14559,6 +14611,7 @@ Library/Artifacts/a2/a27ca9eb494633e698b860949444941d
 Library/Artifacts/a2/a28d55493875fa3a9a8aae5314d5b5b0
 Library/Artifacts/a2/a290e4675f039a3f25fbcf8df724e374
 Library/Artifacts/a2/a296550c2f010c30e65d93ce29c45b7c
+Library/Artifacts/a2/a2a9b633102dae8a5b4e09cff31c7c78
 Library/Artifacts/a2/a2b10aa7662fe56bde38f89751e8a8ba
 Library/Artifacts/a2/a2b994cf5557a9c69ee231b79612dd62
 Library/Artifacts/a2/a2c0794b4cf4a6da2d732a9ee66e8dcb
@@ -14628,6 +14681,7 @@ Library/Artifacts/a5/a500dcb041cb661f6cde18112e11a21c
 Library/Artifacts/a5/a51f25dfefda6f31ae7f4def49fde697
 Library/Artifacts/a5/a52ce862e375ac610e208d41c7205032
 Library/Artifacts/a5/a52edb274ee3204cc4bd75472a82f0cd
+Library/Artifacts/a5/a52fb38815f9c55ab0cb5e89a630abb4
 Library/Artifacts/a5/a5311c26d5a65b298cf8981df62016e3
 Library/Artifacts/a5/a5422ce071bbcc7a216811e5da6248e6
 Library/Artifacts/a5/a542766b6f240f3e04a89de6b37aa48e
@@ -14677,11 +14731,13 @@ Library/Artifacts/a7/a704c31421c7020ebb7adb58970a4735
 Library/Artifacts/a7/a7113a33104b721123480262e817fde2
 Library/Artifacts/a7/a722116f498c2fe16f4acc3c6e9b95d8
 Library/Artifacts/a7/a727ba172aa1cd1ef9e5902454ebf74e
+Library/Artifacts/a7/a72c25b05a85af1e4d42b124e6df5586
 Library/Artifacts/a7/a735ad50cabf8bc959a6d3c815ba4afc
 Library/Artifacts/a7/a744458fa62cacb6344e7cb7aa5b8fbb
 Library/Artifacts/a7/a747041c9f4038a736e07badc6cb34b1
 Library/Artifacts/a7/a747eee5233484604575828dd29c8509
 Library/Artifacts/a7/a754aca864cdf41d1fda6d11977cc8b3
+Library/Artifacts/a7/a760612be9ba3501e8625da38164ee39
 Library/Artifacts/a7/a76ee5efc09dcf06360b0ab2810f7dfa
 Library/Artifacts/a7/a7770b48ed5e936176a48b5c637f7bf1
 Library/Artifacts/a7/a788c7b392e00ab2dc0bf1e15e52830f
@@ -15169,6 +15225,7 @@ Library/Artifacts/b7/b78e49fa95bf9e4ee6a0dc5085167f7e
 Library/Artifacts/b7/b791bc065ea430a3fde02eebb7ef41f4
 Library/Artifacts/b7/b796121bec1d16d2753eb1979a6ac352
 Library/Artifacts/b7/b79d13e6453fbe541c5ada9c29a2ff21
+Library/Artifacts/b7/b7aac01790058b260c6e27e88b477cab
 Library/Artifacts/b7/b7b4961a2eac839b151d40a291edc936
 Library/Artifacts/b7/b7bd56027ac6a103e9a56864102f6f16
 Library/Artifacts/b7/b7bf64eb0d6fb5c5e28b2b003af49de9
@@ -15204,6 +15261,7 @@ Library/Artifacts/b8/b8d522cff6d7686fdd9c761ce8757c04
 Library/Artifacts/b8/b8d645ce0d6ad1bd14ad499c214a7b4c
 Library/Artifacts/b8/b8d7909631fc0d00a65dfc9bba732710
 Library/Artifacts/b8/b8d86dae142c978aa4b1974854487667
+Library/Artifacts/b8/b8dfd88b3aebf65821358db292b7dac9
 Library/Artifacts/b8/b8e91de08e93e60ff4a5cb9a532b3184
 Library/Artifacts/b8/b8fdc8f815357309b7fda77895d4db9b
 Library/Artifacts/b9/b902e2f1b5210a0a0b45de1b0fb43b5f
@@ -15544,7 +15602,6 @@ Library/Artifacts/c4/c472712c21257d807b00335daf34e5a7
 Library/Artifacts/c4/c4769dc2a042dd60105c9002e87409e5
 Library/Artifacts/c4/c4784533eb75c590ade8e6646ad83997
 Library/Artifacts/c4/c48641fbf255159d11ad9995a09170ea
-Library/Artifacts/c4/c48a16adbb53f2a8fef00796bc0908ad
 Library/Artifacts/c4/c48c1b1e3d11e2dcc551308a782a9d5f
 Library/Artifacts/c4/c48c1f5a8e13215098f87d18ab93455a
 Library/Artifacts/c4/c492d56d93b1432cee05b6db47aa201d
@@ -15624,6 +15681,7 @@ Library/Artifacts/c6/c6eb7911d56028a9bb890dae0f6ebb9a
 Library/Artifacts/c6/c6edc2a5941c9a5cbfe1d914d3eded61
 Library/Artifacts/c6/c6fcbbc71a5e556744157eb6054befcd
 Library/Artifacts/c6/c6ff745b52c8a33495b44fd47e4fc161
+Library/Artifacts/c7/c705c0e509ef97430598607ac449f6f6
 Library/Artifacts/c7/c70851fca78f53c5ce502409b25fb0cb
 Library/Artifacts/c7/c70eadeba9e3b32cf217d30c25416b41
 Library/Artifacts/c7/c70f14a253294aa42be247be1b784562
@@ -15644,6 +15702,7 @@ Library/Artifacts/c7/c77b49f284c81e2325ba5e7a545b2cda
 Library/Artifacts/c7/c7857b5be7a791799f01ca9fdc2b3d01
 Library/Artifacts/c7/c7888992567e649f5db07ae88fb2fa5f
 Library/Artifacts/c7/c7925362042fa1c1b5ce50f9de2d7c9f
+Library/Artifacts/c7/c79c99627fea1589d672a0dd4fbfd936
 Library/Artifacts/c7/c7a737e7e6c52c9e16d896a7e497ccb4
 Library/Artifacts/c7/c7a856db869410f7642a3322153fbdd3
 Library/Artifacts/c7/c7a9973fec98985e0ae8a5351b70b928
@@ -15747,6 +15806,7 @@ Library/Artifacts/cb/cb5270a24c243f86f45eebbafc3955e1
 Library/Artifacts/cb/cb553c72e9690fd96c7b19298504aaad
 Library/Artifacts/cb/cb60e7d073eea3c1fbedab715e1a7c27
 Library/Artifacts/cb/cb81f2df9bef0ffaec1f073d1d35745b
+Library/Artifacts/cb/cb82a0ae33a29049f7fa6ee38146086f
 Library/Artifacts/cb/cb87fc8b375be65f22ac2b7848fbeeac
 Library/Artifacts/cb/cb880fdd07b2cca9d923bae800533660
 Library/Artifacts/cb/cb9d48f81d7996edee8865605238b34f
@@ -16000,9 +16060,9 @@ Library/Artifacts/d4/d4ec94242a89ccfa02cdc24a311e5a84
 Library/Artifacts/d4/d4f99200a3c84e563c3276382bbeb1f8
 Library/Artifacts/d4/d4fa3d2da6766a69033b594b1d227065
 Library/Artifacts/d5/d50402e9e204141a92a5fd2f4d8f1046
-Library/Artifacts/d5/d50f73932b97311ae186789c03d362f3
 Library/Artifacts/d5/d520079da6c2a37e1df9361971c059d8
 Library/Artifacts/d5/d52c848c2caf0587c94a05bf626e7e3b
+Library/Artifacts/d5/d546eae0f28b2f2997bf3da116ae6e17
 Library/Artifacts/d5/d547aecf4f3663f467a2cd33c3bb4ea1
 Library/Artifacts/d5/d551db4af36a59b6a94ca94ca052451d
 Library/Artifacts/d5/d55c28ee8a385903da389bd282d8adb6
@@ -16010,6 +16070,7 @@ Library/Artifacts/d5/d563cc4d1b33ce6b9efc1dc871eddae1
 Library/Artifacts/d5/d565db67f90c9d69fa6307d3d07c9550
 Library/Artifacts/d5/d5742c1c1876e7471a29592df3037e50
 Library/Artifacts/d5/d57c72410f0e6a0fbddd1f45e51251aa
+Library/Artifacts/d5/d57f6bf3af85736682cad96e82ae1d33
 Library/Artifacts/d5/d5897a2607af3e7fc2ee6278ed63b8a5
 Library/Artifacts/d5/d58e213dd3391a855a7eaf40f24c35fc
 Library/Artifacts/d5/d59aa6d794275a209b262c9466a35eaa
@@ -16044,7 +16105,6 @@ Library/Artifacts/d6/d68aae8aed1518fe9b224175ef1ff0e7
 Library/Artifacts/d6/d69de768482f7e4e11c74bba55b51375
 Library/Artifacts/d6/d6ab230985e9e84de848960fc39b3856
 Library/Artifacts/d6/d6adb3402597732d6a777591e9137e68
-Library/Artifacts/d6/d6b91285dac9a26189a5e0d0ff358004
 Library/Artifacts/d6/d6c05a4e916e72db78a8907a239942d9
 Library/Artifacts/d6/d6da031f1de7dfe6e69c092829bc44f8
 Library/Artifacts/d6/d6ed4c39576c6bae1640a8cf1859a18c
@@ -16125,7 +16185,6 @@ Library/Artifacts/d9/d985c40cee72288ea6848a1f678fa344
 Library/Artifacts/d9/d99e05a71f8d6fb04322d60027c66e88
 Library/Artifacts/d9/d9ac536fa0abdce20f963eb076411b62
 Library/Artifacts/d9/d9b025029c8e53d2f952e79d25d15365
-Library/Artifacts/d9/d9b931e1ba7f161d01396d1c95d66b8f
 Library/Artifacts/d9/d9c3ce936d18ad100dff21557f3498ae
 Library/Artifacts/d9/d9dd2d9a3b0eaaaf16f335c718ea6e7f
 Library/Artifacts/d9/d9ddda96ea3e345b911920c757a76c6c
@@ -16198,7 +16257,7 @@ Library/Artifacts/db/dbfc3e1e8c5c9f1c8635672584d781ee
 Library/Artifacts/db/dbfdabadd4dbd31d3fc3a71bc42bc6c5
 Library/Artifacts/db/dbfdee5a3b4a7a7c6909441f01aef939
 Library/Artifacts/dc/dc057e977352db3dfb02be739cf0bcb5
-Library/Artifacts/dc/dc0e69c0f112e06de7e502a7062cf905
+Library/Artifacts/dc/dc0dd59c8cb198a92a33b611ba497a00
 Library/Artifacts/dc/dc1493eef0526257529c5a63f74861b8
 Library/Artifacts/dc/dc1786e1efc0268519d81e2d94ad2982
 Library/Artifacts/dc/dc1e8521bc24f65f39535f46580758b9
@@ -16301,6 +16360,7 @@ Library/Artifacts/df/df7b5f9e093968e9856d1ec30efbb59d
 Library/Artifacts/df/df8900681baee89a6b49320c5fd070fc
 Library/Artifacts/df/df94ab879d09eac4160a4d85071c6111
 Library/Artifacts/df/df9a8ede4e71ee480e68f4d0bb5b6310
+Library/Artifacts/df/dfa51377aca83975b35942bb988759e9
 Library/Artifacts/df/dfa8cb895410fd6bbedfb2eb2ac10266
 Library/Artifacts/df/dfac45f7f79974b9a778dcb421c4c23e
 Library/Artifacts/df/dfb31b5f41de29c95e86a08a0134a9c0
@@ -16338,6 +16398,7 @@ Library/Artifacts/e0/e09975ebf20113629af6b16a4ee34eca
 Library/Artifacts/e0/e09c2eaa5faa787f3c1445a7f38e4591
 Library/Artifacts/e0/e0a1f60714ff894e6691540b87cc75dc
 Library/Artifacts/e0/e0a404504f95fa53b34dc10ae117abb6
+Library/Artifacts/e0/e0b33dbe06040d08ecd8bda5206ebd3c
 Library/Artifacts/e0/e0b647717735900ea776c3b89c88f514
 Library/Artifacts/e0/e0ba8bbedeb3563f53ab5986931e7e69
 Library/Artifacts/e0/e0bf086a86a1b7aa53edc537f903fab9
@@ -16703,6 +16764,7 @@ Library/Artifacts/ed/ed1238f2ed960674f870cf4f5c55698e
 Library/Artifacts/ed/ed23302c1e6225f73b0ca0c6c8d0f57e
 Library/Artifacts/ed/ed246f36e422a0b7f4fb28f27d100e47
 Library/Artifacts/ed/ed264e3ec709bbb84a6b4120e98ec25f
+Library/Artifacts/ed/ed288ba65477c05081d45a02f4196160
 Library/Artifacts/ed/ed301a4aca8fc383954f408a5906895d
 Library/Artifacts/ed/ed3313260b72d0208943d7c1f4750bea
 Library/Artifacts/ed/ed353068fbded67c2ade657b1dd3a3f4
@@ -16745,7 +16807,6 @@ Library/Artifacts/ee/ee43d9bcec03f3e7d57b83404aa60dc3
 Library/Artifacts/ee/ee450a984a8130b00a76f2f8c74acbeb
 Library/Artifacts/ee/ee4776c99f02524f40b32f2dc33b5c26
 Library/Artifacts/ee/ee5b20062c5a29dbf410c6ed6ca11361
-Library/Artifacts/ee/ee5e2e34f471c72d890bc8adb11ae8fc
 Library/Artifacts/ee/ee693cad191ee9c00654f404bc78ef9a
 Library/Artifacts/ee/ee6b3079c4dd00c7fe01ecc68d4bcf50
 Library/Artifacts/ee/ee6c33d6fa7ce0602e043e8c98b26487
@@ -16771,7 +16832,6 @@ Library/Artifacts/ef/ef3266110a7a62852522290db437b01f
 Library/Artifacts/ef/ef488779c1fbbcfedbc413886b35dd4f
 Library/Artifacts/ef/ef4953d0ee62bf8a15a56cc2f6d0d47d
 Library/Artifacts/ef/ef4b150d4f116b8f77ab7a8510888906
-Library/Artifacts/ef/ef4f46c1765b5ba2ef76b8b9da69a124
 Library/Artifacts/ef/ef71ff20bcc4133669ce7c954cf60177
 Library/Artifacts/ef/ef793f4c79156c508a231336abd11e16
 Library/Artifacts/ef/ef7c41708acfc7ca22a7c85a37b50406
@@ -16849,6 +16909,7 @@ Library/Artifacts/f2/f22c0cfb9b8fc71e8f5d0e8aca47cf12
 Library/Artifacts/f2/f22fee6503c3fe813aaf58d63e1a1438
 Library/Artifacts/f2/f236008b1d4926063fda3feebead2e60
 Library/Artifacts/f2/f23a0825f6648b887677ddbbdac127f2
+Library/Artifacts/f2/f23b0281a7f7bfe93641ed1c37a43eac
 Library/Artifacts/f2/f2405e357abad7732b10e9842311d479
 Library/Artifacts/f2/f24434aed1d3553268b2e528c456a643
 Library/Artifacts/f2/f244f95ebf246185a6b7a69c606df21f
@@ -17029,6 +17090,7 @@ Library/Artifacts/f7/f7eba8e40e4e5490e25d46d0ff230c78
 Library/Artifacts/f8/f800ed3ac3670fa78518c537715ebb9e
 Library/Artifacts/f8/f814d81cde5d3412577e2abcf40baafe
 Library/Artifacts/f8/f821a9c527e54478ffdfcd7689ca542f
+Library/Artifacts/f8/f824084665b49b2e8fdd4c9385f76cd2
 Library/Artifacts/f8/f82f750da91f05240f100cd88cc728fd
 Library/Artifacts/f8/f82fe82588b58f27d0dcfea1fe4208c6
 Library/Artifacts/f8/f833bffb4928dd0cf2cb7e438ff930c6
@@ -17218,6 +17280,7 @@ Library/Artifacts/fd/fdac63396fdd305c5d14b0e9df25aa80
 Library/Artifacts/fd/fdadc3e22b54bf2d00637e6f783eca0f
 Library/Artifacts/fd/fdb079e94ce4119bd758981e8ad8ed69
 Library/Artifacts/fd/fdb1e1349543f51f847ef7bca1fc0e0a
+Library/Artifacts/fd/fdc35d5a24ff5ca1dc91cf9ccb642236
 Library/Artifacts/fd/fdc4be1486aa40709d1a8e3bd56d9ec7
 Library/Artifacts/fd/fdc8883a74b1493334e63462e64d5c1c
 Library/Artifacts/fd/fddfc5cf3aa95d17302270faaed4118f
@@ -17404,7 +17467,7 @@ Library/SourceAssetDB-lock
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.png files (2312):
+*.png files (2314):
 
 Assets/Models/FBX format/Textures/colormap.png
 Assets/Models/Textures/variation-a.png
@@ -17420,6 +17483,8 @@ Assets/Scripts/Documentation/UI.png
 Assets/Scripts/Documentation/UIIteration2.png
 Assets/Sprites/GameBackground.png
 Assets/Sprites/HomeBackground.png
+Assets/Sprites/icone-d-usine-et-d-industrie-gris.png
+Assets/Sprites/symbole-de-feuille-verte.png
 Assets/TextMesh Pro/Sprites/EmojiOne.png
 Assets/TutorialInfo/Icons/URP.png
 Library/PackageCache/com.unity.burst@1.8.18/Documentation~/images/burst-alias-vectorized.png
@@ -22150,13 +22215,14 @@ Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Weat
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.prefab files (204):
+*.prefab files (209):
 
 Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Prefabs_URP/SK_Goat_dark.prefab
 Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Prefabs_URP/SK_Goat_white.prefab
 Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Prefabs_URP/SK_Sheep_cream.prefab
 Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Prefabs_URP/SK_Sheep_dark.prefab
 Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Prefabs_URP/SK_Sheep_white.prefab
+Assets/Prefabs/Audio/AudioManager.prefab
 Assets/Prefabs/Audio/AudioMixerManager.prefab
 Assets/Prefabs/Audio/AudioSourceObject.prefab
 Assets/Prefabs/Audio/MusicSource.prefab
@@ -22189,6 +22255,10 @@ Assets/Prefabs/UI/PrimaryButton.prefab
 Assets/Prefabs/UI/RessouceVisual.prefab
 Assets/Prefabs/UI/ScoreVisual.prefab
 Assets/Prefabs/UI/SliderWithText.prefab
+Assets/Resources/Structures/dam.prefab
+Assets/Resources/Structures/oilRefinery.prefab
+Assets/Resources/Structures/solarFarm.prefab
+Assets/Resources/Structures/village.prefab
 Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/OnScreenControls/Button.prefab
 Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/OnScreenControls/Stick.prefab
 Library/PackageCache/com.unity.inputsystem@1.11.2/Samples~/RebindingUI/RebindUIPrefab.prefab
@@ -22555,6 +22625,199 @@ Library/Bee/artifacts/mvdfrm/UnityEngine.XRModule.dll_68A24D3B0F83D7BC.mvfrm
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*.fbx files (186):
+
+Assets/Models/FBX format/BorderBlue.fbx
+Assets/Models/FBX format/BorderRed.fbx
+Assets/Models/FBX format/bridge.fbx
+Assets/Models/FBX format/building-archery.fbx
+Assets/Models/FBX format/building-cabin.fbx
+Assets/Models/FBX format/building-castle.fbx
+Assets/Models/FBX format/building-dock.fbx
+Assets/Models/FBX format/building-farm.fbx
+Assets/Models/FBX format/building-house.fbx
+Assets/Models/FBX format/building-market.fbx
+Assets/Models/FBX format/building-mill.fbx
+Assets/Models/FBX format/building-mine.fbx
+Assets/Models/FBX format/building-port.fbx
+Assets/Models/FBX format/building-sheep.fbx
+Assets/Models/FBX format/building-smelter.fbx
+Assets/Models/FBX format/building-tower.fbx
+Assets/Models/FBX format/building-village.fbx
+Assets/Models/FBX format/building-wall.fbx
+Assets/Models/FBX format/building-walls.fbx
+Assets/Models/FBX format/building-watermill.fbx
+Assets/Models/FBX format/building-wizard-tower.fbx
+Assets/Models/FBX format/dam.fbx
+Assets/Models/FBX format/dirt-lumber.fbx
+Assets/Models/FBX format/dirt.fbx
+Assets/Models/FBX format/grass-forest.fbx
+Assets/Models/FBX format/grass-hill.fbx
+Assets/Models/FBX format/grass.fbx
+Assets/Models/FBX format/oilRefinery.fbx
+Assets/Models/FBX format/path-corner-sharp.fbx
+Assets/Models/FBX format/path-corner.fbx
+Assets/Models/FBX format/path-crossing.fbx
+Assets/Models/FBX format/path-end.fbx
+Assets/Models/FBX format/path-intersectionA.fbx
+Assets/Models/FBX format/path-intersectionB.fbx
+Assets/Models/FBX format/path-intersectionC.fbx
+Assets/Models/FBX format/path-intersectionD.fbx
+Assets/Models/FBX format/path-intersectionE.fbx
+Assets/Models/FBX format/path-intersectionF.fbx
+Assets/Models/FBX format/path-intersectionG.fbx
+Assets/Models/FBX format/path-intersectionH.fbx
+Assets/Models/FBX format/path-square-end.fbx
+Assets/Models/FBX format/path-square.fbx
+Assets/Models/FBX format/path-start.fbx
+Assets/Models/FBX format/path-straight.fbx
+Assets/Models/FBX format/river-corner-sharp.fbx
+Assets/Models/FBX format/river-corner.fbx
+Assets/Models/FBX format/river-crossing.fbx
+Assets/Models/FBX format/river-end.fbx
+Assets/Models/FBX format/river-intersectionA.fbx
+Assets/Models/FBX format/river-intersectionB.fbx
+Assets/Models/FBX format/river-intersectionC.fbx
+Assets/Models/FBX format/river-intersectionD.fbx
+Assets/Models/FBX format/river-intersectionE.fbx
+Assets/Models/FBX format/river-intersectionF.fbx
+Assets/Models/FBX format/river-intersectionG.fbx
+Assets/Models/FBX format/river-intersectionH.fbx
+Assets/Models/FBX format/river-start.fbx
+Assets/Models/FBX format/river-straight.fbx
+Assets/Models/FBX format/sand-desert.fbx
+Assets/Models/FBX format/sand-rocks.fbx
+Assets/Models/FBX format/sand.fbx
+Assets/Models/FBX format/solarFarm.fbx
+Assets/Models/FBX format/stone-hill.fbx
+Assets/Models/FBX format/stone-mountain.fbx
+Assets/Models/FBX format/stone-rocks.fbx
+Assets/Models/FBX format/stone.fbx
+Assets/Models/FBX format/unit-house.fbx
+Assets/Models/FBX format/unit-mansion.fbx
+Assets/Models/FBX format/unit-mill.fbx
+Assets/Models/FBX format/unit-ship-large.fbx
+Assets/Models/FBX format/unit-ship.fbx
+Assets/Models/FBX format/unit-tower.fbx
+Assets/Models/FBX format/unit-tree.fbx
+Assets/Models/FBX format/unit-wall-tower.fbx
+Assets/Models/FBX format/village.fbx
+Assets/Models/FBX format/water-island.fbx
+Assets/Models/FBX format/water-rocks.fbx
+Assets/Models/FBX format/water.fbx
+Assets/Models/low_poly_cloud.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Attack01.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Eating.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Hit_Reaction.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Idle.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Idle_Variation.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Run_Forward.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Shuffle_L.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Shuffle_R.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Sit_to_Stand.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Stand_to_Sit.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Trot_Forward.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Walk_Backwards.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Walk_Forward.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Run_Forward_RM.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Trot_Forward_RM.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Turn_90_L_RM.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Turn_90_R_RM.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Walk_Backwards_RM.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Walk_Forward_RM.fbx
+Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Sk_mesh/Goat&Sheep/SK_Goat_Sheep.fbx
+Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Editor/Resources/DebugProbe.fbx
+Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Runtime/RenderPipelineResources/Mesh/UnityMaterialBall.fbx
+Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Samples~/URPPackageSamples/RendererFeatures/DistortTunnel/Plane/plane.fbx
+Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Samples~/URPPackageSamples/RendererFeatures/TrailEffect/SandBoxModel.fbx
+Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Samples~/URPPackageSamples/Shaders/Lit/Models/UVSphere.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/NegativeX.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/NegativeY.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/NegativeZ.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/PositiveX.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/PositiveY.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/PositiveZ.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/flag.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/grass_bladeNoLOD10.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Particles/ParticleStack100.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Particles/ParticleStack25.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Particles/ParticleStack50.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/teapot.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/waterPlane2x2.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Backdrop.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/BackgroundMesh.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/CubePanel.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Curtain.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/FrameCorner.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/FrameSide.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/InfosStand.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Lion.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/NameHolder.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Panel.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/platform_Turntable.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/SamplesFixture.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/SamplesFloorSpotlight.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/SamplesSpotlightModel.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/TurntableBackdrop.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/UnityLogo.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/NegativeX.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/NegativeY.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/NegativeZ.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/PositiveX.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/PositiveY.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/PositiveZ.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/flag.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/grass_bladeNoLOD10.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Particles/ParticleStack100.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Particles/ParticleStack25.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Particles/ParticleStack50.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Rock_A_01.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Rock_A_02.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/teapot.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/waterPlane2x2.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/clover/clover.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Grass/grass_bladeNoLOD10.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Grass/grass_bladeNoLOD15.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Grass/grass_bladeNoLOD30.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Nettle/nettle1.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Pebbles/pebbles.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Water/WaterFall.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Water/waterFall2.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Water/WaterPlane.FBX
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Backdrop.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/BackgroundMesh.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/CubePanel.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Curtain.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/FrameCorner.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/FrameSide.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/InfosStand.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Lion.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/NameHolder.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Panel.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/platform_Turntable.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/SamplesFixture.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/SamplesFloorSpotlight.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/SamplesSpotlightModel.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/TurntableBackdrop.fbx
+Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/UnityLogo.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/Customization/Demo/Animation/Staff_vs_Staff_OneFight_MaleA.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/Customization/Demo/Animation/Staff_vs_Staff_OneFight_MaleB.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Circles-Walk_R.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/JumpDown-Sprt_St.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Nav-Accelerations.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Nav-Turn_on_Spot.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Push-Stmb_Rcvr_Jog_Hv_anim1.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Push-Stmb_Rcvr_Wk_Lt_anim1.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/RunSideFlip.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Stance.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Turns_StartStop-Wk.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Victory-anim1.fbx
+Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Character/Models/DefaultMale.fbx
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 *.mat files (186):
 
 Assets/Materials/New Material.mat
@@ -22743,195 +23006,6 @@ Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Part
 Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Particles/Misc Effects/Materials/ElectricalSparks.mat
 Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Particles/Misc Effects/Materials/SandSwirls.mat
 Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Particles/Misc Effects/Materials/Sparks.mat
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.fbx files (182):
-
-Assets/Models/FBX format/BorderBlue.fbx
-Assets/Models/FBX format/BorderRed.fbx
-Assets/Models/FBX format/bridge.fbx
-Assets/Models/FBX format/building-archery.fbx
-Assets/Models/FBX format/building-cabin.fbx
-Assets/Models/FBX format/building-castle.fbx
-Assets/Models/FBX format/building-dock.fbx
-Assets/Models/FBX format/building-farm.fbx
-Assets/Models/FBX format/building-house.fbx
-Assets/Models/FBX format/building-market.fbx
-Assets/Models/FBX format/building-mill.fbx
-Assets/Models/FBX format/building-mine.fbx
-Assets/Models/FBX format/building-port.fbx
-Assets/Models/FBX format/building-sheep.fbx
-Assets/Models/FBX format/building-smelter.fbx
-Assets/Models/FBX format/building-tower.fbx
-Assets/Models/FBX format/building-village.fbx
-Assets/Models/FBX format/building-wall.fbx
-Assets/Models/FBX format/building-walls.fbx
-Assets/Models/FBX format/building-watermill.fbx
-Assets/Models/FBX format/building-wizard-tower.fbx
-Assets/Models/FBX format/dirt-lumber.fbx
-Assets/Models/FBX format/dirt.fbx
-Assets/Models/FBX format/grass-forest.fbx
-Assets/Models/FBX format/grass-hill.fbx
-Assets/Models/FBX format/grass.fbx
-Assets/Models/FBX format/path-corner-sharp.fbx
-Assets/Models/FBX format/path-corner.fbx
-Assets/Models/FBX format/path-crossing.fbx
-Assets/Models/FBX format/path-end.fbx
-Assets/Models/FBX format/path-intersectionA.fbx
-Assets/Models/FBX format/path-intersectionB.fbx
-Assets/Models/FBX format/path-intersectionC.fbx
-Assets/Models/FBX format/path-intersectionD.fbx
-Assets/Models/FBX format/path-intersectionE.fbx
-Assets/Models/FBX format/path-intersectionF.fbx
-Assets/Models/FBX format/path-intersectionG.fbx
-Assets/Models/FBX format/path-intersectionH.fbx
-Assets/Models/FBX format/path-square-end.fbx
-Assets/Models/FBX format/path-square.fbx
-Assets/Models/FBX format/path-start.fbx
-Assets/Models/FBX format/path-straight.fbx
-Assets/Models/FBX format/river-corner-sharp.fbx
-Assets/Models/FBX format/river-corner.fbx
-Assets/Models/FBX format/river-crossing.fbx
-Assets/Models/FBX format/river-end.fbx
-Assets/Models/FBX format/river-intersectionA.fbx
-Assets/Models/FBX format/river-intersectionB.fbx
-Assets/Models/FBX format/river-intersectionC.fbx
-Assets/Models/FBX format/river-intersectionD.fbx
-Assets/Models/FBX format/river-intersectionE.fbx
-Assets/Models/FBX format/river-intersectionF.fbx
-Assets/Models/FBX format/river-intersectionG.fbx
-Assets/Models/FBX format/river-intersectionH.fbx
-Assets/Models/FBX format/river-start.fbx
-Assets/Models/FBX format/river-straight.fbx
-Assets/Models/FBX format/sand-desert.fbx
-Assets/Models/FBX format/sand-rocks.fbx
-Assets/Models/FBX format/sand.fbx
-Assets/Models/FBX format/stone-hill.fbx
-Assets/Models/FBX format/stone-mountain.fbx
-Assets/Models/FBX format/stone-rocks.fbx
-Assets/Models/FBX format/stone.fbx
-Assets/Models/FBX format/unit-house.fbx
-Assets/Models/FBX format/unit-mansion.fbx
-Assets/Models/FBX format/unit-mill.fbx
-Assets/Models/FBX format/unit-ship-large.fbx
-Assets/Models/FBX format/unit-ship.fbx
-Assets/Models/FBX format/unit-tower.fbx
-Assets/Models/FBX format/unit-tree.fbx
-Assets/Models/FBX format/unit-wall-tower.fbx
-Assets/Models/FBX format/water-island.fbx
-Assets/Models/FBX format/water-rocks.fbx
-Assets/Models/FBX format/water.fbx
-Assets/Models/low_poly_cloud.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Attack01.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Eating.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Hit_Reaction.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Idle.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Idle_Variation.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Run_Forward.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Shuffle_L.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Shuffle_R.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Sit_to_Stand.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Stand_to_Sit.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Trot_Forward.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Walk_Backwards.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/GoatSheep_Walk_Forward.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Run_Forward_RM.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Trot_Forward_RM.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Turn_90_L_RM.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Turn_90_R_RM.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Walk_Backwards_RM.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Animation/Goat&Sheep/RootMotion/GoatSheep_Walk_Forward_RM.fbx
-Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Sk_mesh/Goat&Sheep/SK_Goat_Sheep.fbx
-Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Editor/Resources/DebugProbe.fbx
-Library/PackageCache/com.unity.render-pipelines.core@14.0.11/Runtime/RenderPipelineResources/Mesh/UnityMaterialBall.fbx
-Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Samples~/URPPackageSamples/RendererFeatures/DistortTunnel/Plane/plane.fbx
-Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Samples~/URPPackageSamples/RendererFeatures/TrailEffect/SandBoxModel.fbx
-Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Samples~/URPPackageSamples/Shaders/Lit/Models/UVSphere.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/NegativeX.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/NegativeY.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/NegativeZ.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/PositiveX.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/PositiveY.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Billboard/PositiveZ.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/flag.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/grass_bladeNoLOD10.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Particles/ParticleStack100.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Particles/ParticleStack25.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/Particles/ParticleStack50.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/teapot.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/Common/Meshes/waterPlane2x2.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Backdrop.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/BackgroundMesh.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/CubePanel.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Curtain.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/FrameCorner.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/FrameSide.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/InfosStand.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Lion.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/NameHolder.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/Panel.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/platform_Turntable.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/SamplesFixture.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/SamplesFloorSpotlight.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/SamplesSpotlightModel.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/TurntableBackdrop.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Models/UnityLogo.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/NegativeX.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/NegativeY.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/NegativeZ.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/PositiveX.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/PositiveY.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Billboard/PositiveZ.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/flag.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/grass_bladeNoLOD10.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Particles/ParticleStack100.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Particles/ParticleStack25.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Particles/ParticleStack50.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Rock_A_01.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/Rock_A_02.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/teapot.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Common/Meshes/waterPlane2x2.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/clover/clover.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Grass/grass_bladeNoLOD10.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Grass/grass_bladeNoLOD15.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Grass/grass_bladeNoLOD30.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Nettle/nettle1.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Details/Pebbles/pebbles.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Water/WaterFall.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Water/waterFall2.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/Environment/Water/WaterPlane.FBX
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Backdrop.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/BackgroundMesh.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/CubePanel.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Curtain.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/FrameCorner.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/FrameSide.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/InfosStand.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Lion.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/NameHolder.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/Panel.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/platform_Turntable.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/SamplesFixture.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/SamplesFloorSpotlight.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/SamplesSpotlightModel.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/TurntableBackdrop.fbx
-Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Models/UnityLogo.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/Customization/Demo/Animation/Staff_vs_Staff_OneFight_MaleA.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/Customization/Demo/Animation/Staff_vs_Staff_OneFight_MaleB.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Circles-Walk_R.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/JumpDown-Sprt_St.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Nav-Accelerations.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Nav-Turn_on_Spot.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Push-Stmb_Rcvr_Jog_Hv_anim1.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Push-Stmb_Rcvr_Wk_Lt_anim1.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/RunSideFlip.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Stance.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Turns_StartStop-Wk.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Animation/Victory-anim1.fbx
-Library/PackageCache/com.unity.timeline@1.7.6/Samples~/GameplaySequenceDemo/Character/Models/DefaultMale.fbx
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -24492,6 +24566,21 @@ Library/PackageCache/com.unity.visualscripting@1.9.4/Graphics/Variables.afphoto
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*.wav files (8):
+
+Assets/25 Rpg Game Tracks/Ambient 3.wav
+Assets/25 Rpg Game Tracks/Ambient 7.wav
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/013_Confirm_03.wav
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/029_Decline_09.wav
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/033_Denied_03.wav
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/092_Pause_04.wav
+Assets/Leohpaz/RPG_Essentials_Free/10_UI_Menu_SFX/098_Unpause_04.wav
+Assets/Leohpaz/RPG_Essentials_Free/8_Buffs_Heals_SFX/02_Heal_02.wav
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 *.ai files (7):
 
 Library/PackageCache/com.unity.visualscripting@1.9.4/Graphics/Constant_16x.ai
@@ -24506,6 +24595,33 @@ Library/PackageCache/com.unity.visualscripting@1.9.4/Graphics/Structure_16x.ai
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*.yaml files (7):
+
+.github/workflows/main.yml
+Library/PackageCache/com.unity.collab-proxy@2.7.1/Documentation~/filter.yml
+Library/PackageCache/com.unity.ext.nunit@1.0.6/.gitlab-ci.yml
+Library/PackageCache/com.unity.inputsystem@1.11.2/Documentation~/filter.yml
+Library/PackageCache/com.unity.mathematics@1.2.6/Documentation~/filter.yml
+Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Documentation~/filter.yml
+Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/filter.yml
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*.log files (6):
+
+Logs/AssetImportWorker0-prev.log
+Logs/AssetImportWorker0.log
+Logs/AssetImportWorker1-prev.log
+Logs/AssetImportWorker1.log
+Logs/shadercompiler-AssetImportWorker0.log
+Logs/shadercompiler-UnityShaderCompiler.exe0.log
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 *.cginc files (6):
 
 Assets/TextMesh Pro/Shaders/TMPro.cginc
@@ -24514,19 +24630,6 @@ Assets/TextMesh Pro/Shaders/TMPro_Properties.cginc
 Assets/TextMesh Pro/Shaders/TMPro_Surface.cginc
 Library/PackageCache/com.unity.textmeshpro@3.0.7/Editor Resources/Shaders/TMP_Properties.cginc
 Library/PackageCache/com.unity.textmeshpro@3.0.7/Editor Resources/Shaders/TMP_SDF_SSD.cginc
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.yaml files (6):
-
-Library/PackageCache/com.unity.collab-proxy@2.7.1/Documentation~/filter.yml
-Library/PackageCache/com.unity.ext.nunit@1.0.6/.gitlab-ci.yml
-Library/PackageCache/com.unity.inputsystem@1.11.2/Documentation~/filter.yml
-Library/PackageCache/com.unity.mathematics@1.2.6/Documentation~/filter.yml
-Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Documentation~/filter.yml
-Library/PackageCache/com.unity.timeline@1.7.6/Documentation~/filter.yml
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -24558,11 +24661,11 @@ Assets/Scripts/Documentation/UI.puml
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 *.vsidx files (5):
 
-.vs/LOG725-JustOneEarth/FileContentIndex/2dd07a01-5e6e-4ff5-ac74-09d135e79f84.vsidx
+.vs/LOG725-JustOneEarth/FileContentIndex/47316be0-ff4f-42df-8f3e-ed9149348afd.vsidx
+.vs/LOG725-JustOneEarth/FileContentIndex/55d59774-db0c-4d93-8c72-d87846ddfd58.vsidx
+.vs/LOG725-JustOneEarth/FileContentIndex/5c2c85e4-0d8e-4663-9e19-3dc3e4ae655a.vsidx
+.vs/LOG725-JustOneEarth/FileContentIndex/5f249b28-36ec-4374-9c06-a3bab76db887.vsidx
 .vs/LOG725-JustOneEarth/FileContentIndex/62a80318-aacb-4268-9425-3eb01576691e.vsidx
-.vs/LOG725-JustOneEarth/FileContentIndex/7c7209a6-5a84-46db-bc2d-2794a34364c2.vsidx
-.vs/LOG725-JustOneEarth/FileContentIndex/888f3928-7d4f-4d38-b8ca-2a2e8b073921.vsidx
-.vs/LOG725-JustOneEarth/FileContentIndex/893c3087-4f0a-4abb-999b-79ffc0253d80.vsidx
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 
@@ -24671,32 +24774,11 @@ Library/PackageCache/com.unity.shadergraph@14.0.11/.npmignore
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.wav files (4):
-
-Assets/25 Rpg Game Tracks/Ambient 3.wav
-Assets/25 Rpg Game Tracks/Ambient 7.wav
-Assets/Free UI Click Sound Effects Pack/AUDIO/Pop/SFX_UI_Click_Designed_Pop_Negative_Close_1.wav
-Assets/Free UI Click Sound Effects Pack/AUDIO/Pop/SFX_UI_Click_Designed_Pop_Open_2.wav
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 *.cache files (3):
 
 obj/Debug/Assembly-CSharp-Editor.csproj.AssemblyReference.cache
 obj/Debug/Assembly-CSharp.csproj.AssemblyReference.cache
 obj/Debug/DesignTimeResolveAssemblyReferencesInput.cache
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.log files (3):
-
-Logs/AssetImportWorker0-prev.log
-Logs/AssetImportWorker1-prev.log
-Logs/shadercompiler-UnityShaderCompiler.exe0.log
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

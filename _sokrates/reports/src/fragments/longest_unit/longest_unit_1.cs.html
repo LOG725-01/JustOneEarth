@@ -6,13 +6,120 @@
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
 <h3 style="margin-bottom: 0">public void StartGame()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [119:212]</i></p>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [143:249]</i></p>
 <ul>
-    <li><b>78</b> lines of code</li>
-    <li><b>7</b> McCabe index (conditional complexity)</li>
+    <li><b>88</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
+    public void StartGame()
+    {
+        playerType = SceneChanger.PlayerType;
+
+        // set background color depending on the plyer type chosen
+        switch (playerType)
+        {
+            case PlayerType.Civilisation:
+                Camera.main.backgroundColor = new Color(0.54f, 0.6f, 0.65f);
+                break;
+            case PlayerType.World:
+                Camera.main.backgroundColor = new Color(0.188f, 0.54f, 0.81f);
+                break;
+        }
+        
+
+        PlayerTurnUi.Instance.SetTurn(playerType);
+
+        humanPlayerInstance = Instantiate(humanPlayerPrefab);
+        humanPlayerInstance.name = &quot;humanPlayer&quot;;
+        humanPlayerInstance.PlayerType = playerType;
+
+        RessourceButtonHandler.Instance.Player = humanPlayerInstance;
+
+        GameObject humanPlayerDeck = Instantiate(deckPrefab);
+        humanPlayerDeck.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerHand = Instantiate(handPrefab);
+        humanPlayerHand.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerDiscard = Instantiate(discardPrefab);
+        humanPlayerDiscard.transform.SetParent(humanPlayerInstance.gameObject.transform);
+
+        humanPlayerInstance.debug = debugValues.player;
+        aiPlayerInstance = Instantiate(aiPlayerPrefab);
+        aiPlayerInstance.name = &quot;aiPlayer&quot;;
+
+        GameObject aiPlayerDeck = Instantiate(deckPrefab);
+        aiPlayerDeck.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerHand = Instantiate(handPrefab);
+        aiPlayerHand.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerDiscard = Instantiate(discardPrefab);
+        aiPlayerDiscard.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        gameState = new GameObject(&quot;GameState&quot;).AddComponent&lt;GameState&gt;();
+        if (board != null)
+        {
+            Board boardObject = Instantiate(board);
+            board = boardObject.GetComponent&lt;Board&gt;();
+            board.debug = debugValues.board;
+            board.debugAnimal = debugValues.animal;
+            board.debugTile = debugValues.tile;
+            board.OnBoardGenerated += () =&gt;
+            {
+                if (debugValues.gameManager) Debug.Log($&quot;[OnBoardGenerated] Invoker&quot;);
+                var allTiles = board.GetAllTiles();
+                InitializePlayerStartingResources(humanPlayerInstance, allTiles);
+                AssignStartingTiles(humanPlayerInstance, allTiles, 3);
+                RegisterObserversToPlayer(humanPlayerInstance);
+            };
+            board.CreateBoard();
+        }
+
+        if (cloudSpawnerPrefab != null)
+        {
+            GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
+            CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent&lt;CloudSpawner&gt;();
+            cloudSpawner.debug = debugValues.cloud;
+            cloudSpawner.Initialize(board);
+        }
+        gameState.SetBoard(board);
+
+        PlayerInputDetection.Instance.GameState = gameState;
+
+        switch (playerType)
+        {
+            case PlayerType.Civilisation:
+                aiPlayerInstance.PlayerType = PlayerType.World;
+                gameState.PlayerCivilisation = humanPlayerInstance;
+                gameState.PlayerWorld = aiPlayerInstance;
+                break;
+            case PlayerType.World:
+                aiPlayerInstance.PlayerType = PlayerType.Civilisation;
+                gameState.PlayerCivilisation = aiPlayerInstance;
+                gameState.PlayerWorld = humanPlayerInstance;
+                break;
+        }
+        gameState.SetFirstPlayer(playerType);
+        gameState.currentInstancePlayer = humanPlayerInstance;
+        gameState.debug = debugValues.gameState;
+
+        PopulateDeck(humanPlayerDeck, humanPlayerInstance);
+        PopulateDeck(aiPlayerDeck, aiPlayerInstance);
+
+        AddPersistentCardToHand(humanPlayerInstance);
+
+        gameState.DrawCardToHand(humanPlayerInstance);
+        gameState.DrawCardToHand(aiPlayerInstance);
+
+
+        playerInputNotifiers.Clear();
+        playerInputNotifiers.AddRange(FindObjectsOfType&lt;PlayerInputNotifier&gt;(true));
+
+        foreach (var notifier in playerInputNotifiers)
+        {
+            notifier.OnGameObjectClicked += HandlePlayerInput;
+        }
+
+        gameStarted = true;
+    }
 
 </code>
 </pre>

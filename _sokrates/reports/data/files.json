@@ -1,7 +1,7 @@
 [ {
   "relativePath" : "Assets/Scripts/Audio/AudioManager.cs",
   "extension" : "cs",
-  "linesOfCode" : 38,
+  "linesOfCode" : 48,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -55,19 +55,43 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
   "extension" : "cs",
-  "linesOfCode" : 94,
-  "components" : [ "primary::Assets" ],
-  "concerns" : [ "::Unclassified" ]
-}, {
-  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs",
-  "extension" : "cs",
-  "linesOfCode" : 10,
+  "linesOfCode" : 108,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs",
   "extension" : "cs",
   "linesOfCode" : 5,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/OnlyOnEnemyTile.cs",
+  "extension" : "cs",
+  "linesOfCode" : 9,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/OnlyOnNeutralTile.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustHaveStructure.cs",
+  "extension" : "cs",
+  "linesOfCode" : 8,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -79,7 +103,7 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
   "extension" : "cs",
-  "linesOfCode" : 9,
+  "linesOfCode" : 15,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -101,27 +125,63 @@
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/PlaceStructureEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 21,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
   "extension" : "cs",
-  "linesOfCode" : 10,
+  "linesOfCode" : 31,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs",
+  "extension" : "cs",
+  "linesOfCode" : 21,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
+  "extension" : "cs",
+  "linesOfCode" : 18,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
+  "extension" : "cs",
+  "linesOfCode" : 20,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
   "extension" : "cs",
-  "linesOfCode" : 11,
+  "linesOfCode" : 13,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
   "extension" : "cs",
-  "linesOfCode" : 13,
+  "linesOfCode" : 16,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
   "extension" : "cs",
-  "linesOfCode" : 11,
+  "linesOfCode" : 12,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -145,7 +205,7 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
   "extension" : "cs",
-  "linesOfCode" : 264,
+  "linesOfCode" : 305,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -153,7 +213,7 @@
   "extension" : "cs",
   "linesOfCode" : 108,
   "components" : [ "primary::Assets" ],
-  "concerns" : [ "::TODOs" ]
+  "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GenerationConfig.cs",
   "extension" : "cs",
@@ -175,7 +235,7 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Player.cs",
   "extension" : "cs",
-  "linesOfCode" : 142,
+  "linesOfCode" : 172,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -193,13 +253,13 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/RessourceButtonHandler.cs",
   "extension" : "cs",
-  "linesOfCode" : 70,
+  "linesOfCode" : 72,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
   "extension" : "cs",
-  "linesOfCode" : 104,
+  "linesOfCode" : 118,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -229,7 +289,7 @@
 }, {
   "relativePath" : "Assets/Scripts/UI/Chat.cs",
   "extension" : "cs",
-  "linesOfCode" : 84,
+  "linesOfCode" : 101,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::TODOs" ]
 }, {

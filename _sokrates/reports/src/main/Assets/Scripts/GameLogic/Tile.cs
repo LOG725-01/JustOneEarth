@@ -9,6 +9,9 @@ public class Tile : MonoBehaviour, IClickable
     [SerializeField] private GameObject borderRedPrefab;
     [SerializeField] private GameObject borderBluePrefab;
     [SerializeField] private GameObject ParticlePrefab;
+    [SerializeField] private GameObject housePrefab;
+    private GameObject currentStructure;
+
     private GameObject currentBorder;
 
     public bool debug = false;
@@ -118,5 +121,18 @@ public class Tile : MonoBehaviour, IClickable
     {
         Instantiate(ParticlePrefab, transform);
     }
+    public void SetStructure(GameObject structure)
+    {
+        currentStructure = structure;
+    }
 
+    public GameObject GetStructureOnTile()
+    {
+        return currentStructure;
+    }
+
+    public bool HasStructure()
+    {
+        return currentStructure != null;
+    }
 }

@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Card.cs (<b>94</b> lines of code) (<a href="Card.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Card.cs (<b>108</b> lines of code) (<a href="Card.cs">raw</a>):</h3>
 <div id="editor">using System.Collections;
 using System.Collections.Generic;
 using TMPro;
@@ -26,18 +26,21 @@ public class Card : AnimationController, IClickable
     [SerializeField] private TextMeshProUGUI titleText;
     [SerializeField] private TextMeshProUGUI ressourceText;
     private List&lt;ICardCondition&gt; conditions = new List&lt;ICardCondition&gt;();
-
+    private bool addOwnedTile;
+    private bool isPersistent;
 
 
     public bool debug = false;
     public void InitializeCard(string titleText, string ressourceText, List&lt;ICardEffect&gt; effectList, Dictionary&lt;RessourceTypes, int&gt; cost, 
-        List&lt;ICardCondition&gt; conditionList)
+        List&lt;ICardCondition&gt; conditionList, bool addOwnedTile, bool isPersistent)
     {
         this.titleText.text = titleText;
         this.ressourceText.text = ressourceText;
         this.effectList = effectList;
         this.cost = cost;
         this.conditions = conditionList;
+        this.addOwnedTile = addOwnedTile;
+        this.isPersistent = isPersistent;
     }
 
     public void Start()
@@ -98,12 +101,10 @@ public class Card : AnimationController, IClickable
             if (debug) Debug.Log(&quot;[Card] current Instance Player is current playing player&quot;);
             // Check if card can be played and if a tile is selected
             if (debug) Debug.Log(&quot;[Card] selected tile : &quot; + gameState.currentInstancePlayer.selectedTile.ToString());
-            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources,gameState, gameState.currentInstancePlayer) &amp;&amp; gameState.currentInstancePlayer.selectedTile != null)
+            if (CanBePlayed(gameState.currentInstancePlayer.currentRessources,gameState, gameState.currentInstancePlayer))
             {
                 if (debug) Debug.Log(&quot;[Card] CanBePlayed&quot;);
                 gameState = gameState.PlayCard(this, gameState.GetCurrentPlayingPlayer());
-
-                StartCoroutine(gameState.DrawCardToHandAfterDelay(3));
 
                 //Update game visuals here
                 SelectedVisual();
@@ -129,6 +130,19 @@ public class Card : AnimationController, IClickable
     public void AddCondition(ICardCondition condition)
     {
         conditions.Add(condition);
+    }
+    public bool GetAddOwnedTile() { return addOwnedTile; }
+    public bool GetIsPersistent() { return isPersistent; }
+    public bool TryPlay(GameState gameState, Player player)
+    {
+        if (!CanBePlayed(player.currentRessources, gameState, player))
+            return false;
+
+        ApplyEffects(gameState);
+        if (addOwnedTile) player.AddOwnedTile(player.selectedTile);
+        if (!isPersistent) player.MoveCardFromHandToDiscardPile(this);
+
+        return true;
     }
 
 }

@@ -1,3 +1,4 @@
+using System.Collections.Generic;
 using System.Linq;
 
 /// <summary>
@@ -5,11 +6,16 @@ using System.Linq;
 /// </summary>
 public class GainPointEffect : ICardEffect
 {
+    private int points;
+
+    public GainPointEffect(int points)
+    {
+        this.points = points;
+    }
     public void ApplyEffect(GameState gameState)
     {
-        // Returns the player currently playing
         Player playingPlayer = gameState.GetCurrentPlayingPlayer();
 
-        playingPlayer.Points += 1;
+        playingPlayer.Points += points;
     }
 }

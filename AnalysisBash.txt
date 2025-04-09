@@ -1,2 +1,4 @@
+rm git-history.txt
+java -jar sokrates-LATEST.jar extractGitHistory
 java -jar sokrates-LATEST.jar updateConfig
 java -jar sokrates-LATEST.jar generateReports

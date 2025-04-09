@@ -1,41 +1,41 @@
 Start of analysis
-Found 29953 files
-52 are in the main's scope  (2694 lines of code)
-  *.cs: 52 files, (2694 lines of code)
+Found 30045 files
+62 are in the main's scope  (3014 lines of code)
+  *.cs: 62 files, (3014 lines of code)
 245 are in the test's scope  (83614 lines of code)
   *.cs: 245 files, (83614 lines of code)
 0 are in the generated's scope  (0 lines of code)
 0 are in the build and deployment's scope  (0 lines of code)
-266 are in the other's scope  (110085 lines of code)
-  *.txt: 164 files, (99565 lines of code)
-  *.json: 93 files, (9700 lines of code)
+266 are in the other's scope  (107499 lines of code)
+  *.txt: 164 files, (99567 lines of code)
+  *.json: 93 files, (7112 lines of code)
   *.cs: 9 files, (820 lines of code)
-Excluded from analyses 24426 files
+Excluded from analyses 24508 files
 Analysing dependencies...
-52 are in the DECOMPOSITION_primary\Assets's scope  (2694 lines of code)
-  *.cs: 52 files, (2694 lines of code)
+62 are in the DECOMPOSITION_primary\Assets's scope  (3014 lines of code)
+  *.cs: 62 files, (3014 lines of code)
   - "primary", found 0 dependencies (0 component dependencies)
-2 are in the CONCERN_general\TODOs's scope  (192 lines of code)
-  *.cs: 2 files, (192 lines of code)
-50 are in the CONCERN_general\Unclassified's scope  (2502 lines of code)
-  *.cs: 50 files, (2502 lines of code)
+1 are in the CONCERN_general\TODOs's scope  (101 lines of code)
+  *.cs: 1 files, (101 lines of code)
+61 are in the CONCERN_general\Unclassified's scope  (2913 lines of code)
+  *.cs: 61 files, (2913 lines of code)
 Analysing units...
 Basic unit metrics...
-  - found 211 units (2131 lines of code in units)
-Unit size 864 / 445 / 669 / 153 / 0
+  - found 237 units (2364 lines of code in units)
+Unit size 957 / 555 / 689 / 163 / 0
 Unit size per component:
-Unit Size Component Assets: 864 / 445 / 669 / 153 / 0
+Unit Size Component Assets: 957 / 555 / 689 / 163 / 0
 Unit size per extension:
-Unit Size Extension cs: 864 / 445 / 669 / 153 / 0
-Conditional complexity: 1385 / 558 / 188 / 0 / 0
+Unit Size Extension cs: 957 / 555 / 689 / 163 / 0
+Conditional complexity: 1574 / 633 / 157 / 0 / 0
 Conditional complexity per component:
-Conditional Complexity Component Assets 1385 / 558 / 188 / 0 / 0
+Conditional Complexity Component Assets 1574 / 633 / 157 / 0 / 0
 Conditional complexity per extension:
-Conditional Complexity Component cs: 1385 / 558 / 188 / 0 / 0
+Conditional Complexity Component cs: 1574 / 633 / 157 / 0 / 0
 Analysing duplication...
-  - found 0 duplicates (0 duplicated lines vs. 1738 cleaned lines) in 0 files
+  - found 0 duplicates (0 duplicated lines vs. 1952 cleaned lines) in 0 files
   - per component:primary
-     - "Assets": 0 duplicated lines vs. 1738 total lines
+     - "Assets": 0 duplicated lines vs. 1952 total lines
   - per extension:
-Total analysis time: 131.17s
+Total analysis time: 24.07s
 

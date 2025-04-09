@@ -1,5 +1,5 @@
 Path	Lines of Code
-AnalysisBash.txt	2
+AnalysisBash.txt	4
 Assets/Resources/generation_config.json	11
 Assets/TextMesh Pro/Fonts/LiberationSans - OFL.txt	29
 Assets/TextMesh Pro/Resources/LineBreaking Following Characters.txt	1
@@ -53,7 +53,7 @@ Library/Bee/artifacts/1900b0aE.dag/UnityEditor.TestRunner.UnityAdditionalFile.tx
 Library/Bee/artifacts/1900b0aE.dag/UnityEditor.UI.UnityAdditionalFile.txt	1
 Library/Bee/artifacts/1900b0aE.dag/UnityEngine.TestRunner.UnityAdditionalFile.txt	1
 Library/Bee/artifacts/1900b0aE.dag/UnityEngine.UI.UnityAdditionalFile.txt	1
-Library/Bee/fullprofile.json	5393
+Library/Bee/fullprofile.json	2805
 Library/EditorOnlyScriptingSettings.json	1
 Library/EditorOnlyVirtualTextureState.json	1
 Library/LastSceneManagerSetup.txt	5

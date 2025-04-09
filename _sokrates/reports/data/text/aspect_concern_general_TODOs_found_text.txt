@@ -1,5 +1,4 @@
-Summary: 2 instances, 2 unique
+Summary: 1 instance, 1 unique
 
 Text	Count
 //TODO : get player username	1
-// TODO : Add logic to return all playable cards available to player	1

@@ -1,10 +1,10 @@
 [ {
   "relativePath" : "Assets/Scripts/Audio/AudioManager.cs",
   "extension" : "cs",
-  "linesOfCode" : 38,
-  "unitsCount" : 5,
-  "unitsMcCabeIndexSum" : 8,
-  "linesOfCodeInUnits" : 29
+  "linesOfCode" : 48,
+  "unitsCount" : 7,
+  "unitsMcCabeIndexSum" : 10,
+  "linesOfCodeInUnits" : 37
 }, {
   "relativePath" : "Assets/Scripts/Audio/AudioMixerManager.cs",
   "extension" : "cs",
@@ -64,17 +64,10 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
   "extension" : "cs",
-  "linesOfCode" : 94,
-  "unitsCount" : 11,
-  "unitsMcCabeIndexSum" : 26,
-  "linesOfCodeInUnits" : 81
-}, {
-  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs",
-  "extension" : "cs",
-  "linesOfCode" : 10,
-  "unitsCount" : 1,
-  "unitsMcCabeIndexSum" : 2,
-  "linesOfCodeInUnits" : 6
+  "linesOfCode" : 108,
+  "unitsCount" : 12,
+  "unitsMcCabeIndexSum" : 29,
+  "linesOfCodeInUnits" : 91
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs",
   "extension" : "cs",
@@ -82,6 +75,41 @@
   "unitsCount" : 0,
   "unitsMcCabeIndexSum" : 0,
   "linesOfCodeInUnits" : 0
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/OnlyOnEnemyTile.cs",
+  "extension" : "cs",
+  "linesOfCode" : 9,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 3,
+  "linesOfCodeInUnits" : 5
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/OnlyOnNeutralTile.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 3,
+  "linesOfCodeInUnits" : 6
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 4,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustHaveStructure.cs",
+  "extension" : "cs",
+  "linesOfCode" : 8,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 4
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 3,
+  "linesOfCodeInUnits" : 9
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs",
   "extension" : "cs",
@@ -92,10 +120,10 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
   "extension" : "cs",
-  "linesOfCode" : 9,
-  "unitsCount" : 1,
-  "unitsMcCabeIndexSum" : 1,
-  "linesOfCodeInUnits" : 5
+  "linesOfCode" : 15,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 2,
+  "linesOfCodeInUnits" : 9
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainRessourceOfType.cs",
   "extension" : "cs",
@@ -118,33 +146,75 @@
   "unitsMcCabeIndexSum" : 1,
   "linesOfCodeInUnits" : 4
 }, {
+  "relativePath" : "Assets/Scripts/GameLogic/CardEffects/PlaceStructureEffect.cs",
+  "extension" : "cs",
+  "linesOfCode" : 21,
+  "unitsCount" : 2,
+  "unitsMcCabeIndexSum" : 4,
+  "linesOfCodeInUnits" : 15
+}, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
   "extension" : "cs",
-  "linesOfCode" : 10,
-  "unitsCount" : 0,
-  "unitsMcCabeIndexSum" : 0,
-  "linesOfCodeInUnits" : 0
+  "linesOfCode" : 31,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 3,
+  "linesOfCodeInUnits" : 12
 }, {
-  "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs",
   "extension" : "cs",
-  "linesOfCode" : 11,
+  "linesOfCode" : 21,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
-  "linesOfCodeInUnits" : 8
+  "linesOfCodeInUnits" : 13
 }, {
-  "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs",
+  "extension" : "cs",
+  "linesOfCode" : 17,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 13
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
+  "extension" : "cs",
+  "linesOfCode" : 18,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
+  "extension" : "cs",
+  "linesOfCode" : 20,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
   "extension" : "cs",
   "linesOfCode" : 13,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
   "linesOfCodeInUnits" : 10
 }, {
-  "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
   "extension" : "cs",
-  "linesOfCode" : 11,
+  "linesOfCode" : 16,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
-  "linesOfCodeInUnits" : 8
+  "linesOfCodeInUnits" : 13
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
+  "extension" : "cs",
+  "linesOfCode" : 12,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 9
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 10
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Enum/PlayerType.cs",
   "extension" : "cs",
@@ -169,16 +239,16 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
   "extension" : "cs",
-  "linesOfCode" : 264,
-  "unitsCount" : 12,
-  "unitsMcCabeIndexSum" : 45,
-  "linesOfCodeInUnits" : 225
+  "linesOfCode" : 305,
+  "unitsCount" : 13,
+  "unitsMcCabeIndexSum" : 48,
+  "linesOfCodeInUnits" : 253
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
   "extension" : "cs",
   "linesOfCode" : 108,
   "unitsCount" : 11,
-  "unitsMcCabeIndexSum" : 17,
+  "unitsMcCabeIndexSum" : 21,
   "linesOfCodeInUnits" : 90
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GenerationConfig.cs",
@@ -204,10 +274,10 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Player.cs",
   "extension" : "cs",
-  "linesOfCode" : 142,
-  "unitsCount" : 12,
-  "unitsMcCabeIndexSum" : 39,
-  "linesOfCodeInUnits" : 112
+  "linesOfCode" : 172,
+  "unitsCount" : 14,
+  "unitsMcCabeIndexSum" : 48,
+  "linesOfCodeInUnits" : 141
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/PlayerInputDetection.cs",
   "extension" : "cs",
@@ -225,17 +295,17 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/RessourceButtonHandler.cs",
   "extension" : "cs",
-  "linesOfCode" : 70,
+  "linesOfCode" : 72,
   "unitsCount" : 7,
-  "unitsMcCabeIndexSum" : 16,
-  "linesOfCodeInUnits" : 61
+  "unitsMcCabeIndexSum" : 17,
+  "linesOfCodeInUnits" : 63
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
   "extension" : "cs",
-  "linesOfCode" : 104,
-  "unitsCount" : 9,
-  "unitsMcCabeIndexSum" : 31,
-  "linesOfCodeInUnits" : 91
+  "linesOfCode" : 118,
+  "unitsCount" : 12,
+  "unitsMcCabeIndexSum" : 34,
+  "linesOfCodeInUnits" : 103
 }, {
   "relativePath" : "Assets/Scripts/Observer.cs",
   "extension" : "cs",
@@ -267,10 +337,10 @@
 }, {
   "relativePath" : "Assets/Scripts/UI/Chat.cs",
   "extension" : "cs",
-  "linesOfCode" : 84,
-  "unitsCount" : 13,
-  "unitsMcCabeIndexSum" : 19,
-  "linesOfCodeInUnits" : 70
+  "linesOfCode" : 101,
+  "unitsCount" : 15,
+  "unitsMcCabeIndexSum" : 25,
+  "linesOfCodeInUnits" : 87
 }, {
   "relativePath" : "Assets/Scripts/UI/MaxScoreUpdate.cs",
   "extension" : "cs",

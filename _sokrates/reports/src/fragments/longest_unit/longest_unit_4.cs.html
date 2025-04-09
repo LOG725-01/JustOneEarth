@@ -6,10 +6,10 @@
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
 <h3 style="margin-bottom: 0">private void ShowOwnedTiles()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/RessourceButtonHandler.cs [19:54]</i></p>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/RessourceButtonHandler.cs [19:56]</i></p>
 <ul>
-    <li><b>36</b> lines of code</li>
-    <li><b>8</b> McCabe index (conditional complexity)</li>
+    <li><b>38</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
@@ -44,6 +44,8 @@
                     tile =&gt; tile.tileType == TileType.Mountains).ToList();
                 break;
         }
+        if (filteredTiles.Count &gt; 0) AudioManager.Instance.RessourceSelect();
+        else AudioManager.Instance.RessourceDecline();
         foreach(Tile tile in filteredTiles)
         {
             tile.SpawnParticle();

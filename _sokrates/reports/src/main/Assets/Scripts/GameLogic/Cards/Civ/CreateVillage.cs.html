@@ -1,0 +1,47 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs (<b>17</b> lines of code) (<a href="CreateVillage.cs">raw</a>):</h3>
+<div id="editor">using UnityEngine;
+
+public class CreateVillage : CardData
+{
+    private void OnEnable()
+    {
+        cardName = &quot;Village&quot;;
+        description = &quot;Get +2 point&quot;;
+        cost.Add(RessourceTypes.Trees, 10);
+        cost.Add(RessourceTypes.Minerals, 3);
+        GainPointEffect gainPointEffect = new GainPointEffect(2);
+        effectList.Add(gainPointEffect);
+        targetType = CardTargetType.NeutralTileOnly;
+
+        conditionList.Add(new TileMustBeOfType(TileType.Plains));
+
+        GameObject prefab = Resources.Load&lt;GameObject&gt;(&quot;Structures/village&quot;);
+        effectList.Add(new PlaceStructureEffect(prefab, new Vector3(0, 120, 0)));
+
+    }
+}
+</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

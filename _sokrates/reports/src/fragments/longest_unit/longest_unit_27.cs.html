@@ -1,18 +1,46 @@
 <html>
 <head>
-    <title>public void OnClick()</title>
+    <title>void Init()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">public void OnClick()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Card.cs [77:101]</i></p>
+<h3 style="margin-bottom: 0">void Init()</h3>
+<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [199:226]</i></p>
 <ul>
-    <li><b>20</b> lines of code</li>
-    <li><b>8</b> McCabe index (conditional complexity)</li>
+    <li><b>21</b> lines of code</li>
+    <li><b>2</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
+    void Init()
+    {
+        if (m_Initialized)
+            return;
+        m_BodyStyle = new GUIStyle(EditorStyles.label);
+        m_BodyStyle.wordWrap = true;
+        m_BodyStyle.fontSize = 14;
+        m_BodyStyle.richText = true;
+
+        m_TitleStyle = new GUIStyle(m_BodyStyle);
+        m_TitleStyle.fontSize = 26;
+
+        m_HeadingStyle = new GUIStyle(m_BodyStyle);
+        m_HeadingStyle.fontStyle = FontStyle.Bold;
+        m_HeadingStyle.fontSize = 18;
+
+        m_LinkStyle = new GUIStyle(m_BodyStyle);
+        m_LinkStyle.wordWrap = false;
+
+        // Match selection color which works nicely for both light and dark skins
+        m_LinkStyle.normal.textColor = new Color(0x00 / 255f, 0x78 / 255f, 0xDA / 255f, 1f);
+        m_LinkStyle.stretchWidth = false;
+
+        m_ButtonStyle = new GUIStyle(EditorStyles.miniButton);
+        m_ButtonStyle.fontStyle = FontStyle.Bold;
+
+        m_Initialized = true;
+    }
 
 </code>
 </pre>

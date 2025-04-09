@@ -1,45 +1,41 @@
 <html>
 <head>
-    <title>static void RemoveTutorial()</title>
+    <title>private void PopulateDeck()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">static void RemoveTutorial()</h3>
-<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [24:52]</i></p>
+<h3 style="margin-bottom: 0">private void PopulateDeck()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [265:289]</i></p>
 <ul>
-    <li><b>26</b> lines of code</li>
+    <li><b>18</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    static void RemoveTutorial()
+    private void PopulateDeck(GameObject deck, Player player)
     {
-        if (EditorUtility.DisplayDialog(&quot;Remove Readme Assets&quot;,
-            
-            $&quot;All contents under {s_ReadmeSourceDirectory} will be removed, are you sure you want to proceed?&quot;,
-            &quot;Proceed&quot;,
-            &quot;Cancel&quot;))
+        List&lt;System.Type&gt; combinedCardTypes = new();
+
+        // Ajouter les cartes communes
+        combinedCardTypes.AddRange(availableCardTypes);
+
+        // Ajouter les cartes sp&eacute;cifiques en fonction du type du joueur
+        if (player.PlayerType == PlayerType.Civilisation)
+            combinedCardTypes.AddRange(civilisationCardTypes);
+        else if (player.PlayerType == PlayerType.World)
+            combinedCardTypes.AddRange(worldCardTypes);
+
+        // G&eacute;n&eacute;ration al&eacute;atoire du deck
+        System.Random random = new();
+        for (int i = 0; i &lt; 20; i++)
         {
-            if (Directory.Exists(s_ReadmeSourceDirectory))
-            {
-                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory);
-                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory + &quot;.meta&quot;);
-            }
-            else
-            {
-                Debug.Log($&quot;Could not find the Readme folder at {s_ReadmeSourceDirectory}&quot;);
-            }
+            int index = random.Next(combinedCardTypes.Count);
+            System.Type cardType = combinedCardTypes[index];
 
-            var readmeAsset = SelectReadme();
-            if (readmeAsset != null)
-            {
-                var path = AssetDatabase.GetAssetPath(readmeAsset);
-                FileUtil.DeleteFileOrDirectory(path + &quot;.meta&quot;);
-                FileUtil.DeleteFileOrDirectory(path);
-            }
-
-            AssetDatabase.Refresh();
+            CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
+            Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
+            player.AddCardInDeck(card);
         }
     }
 

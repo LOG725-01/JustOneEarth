@@ -1,31 +1,33 @@
 <html>
 <head>
-    <title>static void SelectReadmeAutomatically()</title>
+    <title>private void OnEnable()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">static void SelectReadmeAutomatically()</h3>
-<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [54:67]</i></p>
+<h3 style="margin-bottom: 0">private void OnEnable()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs [5:20]</i></p>
 <ul>
     <li><b>13</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>1</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    static void SelectReadmeAutomatically()
+    private void OnEnable()
     {
-        if (!SessionState.GetBool(s_ShowedReadmeSessionStateName, false))
-        {
-            var readme = SelectReadme();
-            SessionState.SetBool(s_ShowedReadmeSessionStateName, true);
+        cardName = &quot;Village&quot;;
+        description = &quot;Get +2 point&quot;;
+        cost.Add(RessourceTypes.Trees, 10);
+        cost.Add(RessourceTypes.Minerals, 3);
+        GainPointEffect gainPointEffect = new GainPointEffect(2);
+        effectList.Add(gainPointEffect);
+        targetType = CardTargetType.NeutralTileOnly;
 
-            if (readme &amp;&amp; !readme.loadedLayout)
-            {
-                LoadLayout();
-                readme.loadedLayout = true;
-            }
-        }
+        conditionList.Add(new TileMustBeOfType(TileType.Plains));
+
+        GameObject prefab = Resources.Load&lt;GameObject&gt;(&quot;Structures/village&quot;);
+        effectList.Add(new PlaceStructureEffect(prefab, new Vector3(0, 120, 0)));
+
     }
 
 </code>

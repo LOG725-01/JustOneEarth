@@ -1,18 +1,40 @@
 <html>
 <head>
-    <title>public bool CanBePlayed()</title>
+    <title>private void InitializePlayerStartingResources()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">public bool CanBePlayed()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Card.cs [58:75]</i></p>
+<h3 style="margin-bottom: 0">private void InitializePlayerStartingResources()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [303:324]</i></p>
 <ul>
-    <li><b>16</b> lines of code</li>
-    <li><b>8</b> McCabe index (conditional complexity)</li>
+    <li><b>18</b> lines of code</li>
+    <li><b>6</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
+    private void InitializePlayerStartingResources(Player player, List&lt;Tile&gt; tiles)
+    {
+        Dictionary&lt;RessourceTypes, int&gt; totalResources = new();
+
+        foreach (RessourceTypes type in System.Enum.GetValues(typeof(RessourceTypes)))
+            totalResources[type] = 0;
+
+        foreach (var tile in tiles)
+        {
+            foreach (var kvp in tile.producedRessources)
+                totalResources[kvp.Key] += kvp.Value;
+        }
+
+        foreach (var kvp in totalResources)
+        {
+            int initialAmount = Mathf.FloorToInt(kvp.Value * 0.1f);
+            player.currentRessources[kvp.Key] = initialAmount;
+            if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Ressource de depart : {kvp.Key} = {initialAmount}&quot;);
+        }
+
+        player.NotifyObservers();
+    }
 
 </code>
 </pre>

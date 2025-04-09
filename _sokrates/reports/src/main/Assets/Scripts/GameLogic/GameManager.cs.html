@@ -12,10 +12,12 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/GameManager.cs (<b>264</b> lines of code) (<a href="GameManager.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/GameManager.cs (<b>305</b> lines of code) (<a href="GameManager.cs">raw</a>):</h3>
 <div id="editor">using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
 struct DebugValues
 {
@@ -73,8 +75,23 @@ public class GameManager : MonoBehaviour
     private System.Type[] availableCardTypes = new System.Type[]
     {
         typeof(GetOnePointCard),
-        typeof(FreeCard)
+        typeof(MineralSurge)
         // Ajoutez les cartes ici
+    };
+
+    private System.Type[] civilisationCardTypes = new System.Type[]
+    {
+        typeof(CreateVillage),
+        typeof(CreateDam),
+        typeof(OilRefinery),
+        typeof(SolarFarm),
+        // Ajoute ici toutes les cartes Civilisation
+    };
+
+    private System.Type[] worldCardTypes = new System.Type[]
+    {
+        // Ajoute ici les cartes World (attaque, effets climatiques, etc.)
+        typeof (Earthquake)
     };
 
     private void Start()
@@ -119,6 +136,13 @@ public class GameManager : MonoBehaviour
 
     private void HandleEscapePress()
     {
+        if (Chat.Instance != null &amp;&amp; Chat.Instance.IsOpened())
+        {
+            Chat.Instance.Close();
+            EventSystem.current.SetSelectedGameObject(null); // enl&egrave;ve le focus
+            return;
+        }
+
         Player currentPlayer = gameState.currentInstancePlayer;
         if (currentPlayer.selectedTile != null)
         {
@@ -134,6 +158,18 @@ public class GameManager : MonoBehaviour
     public void StartGame()
     {
         playerType = SceneChanger.PlayerType;
+
+        // set background color depending on the plyer type chosen
+        switch (playerType)
+        {
+            case PlayerType.Civilisation:
+                Camera.main.backgroundColor = new Color(0.54f, 0.6f, 0.65f);
+                break;
+            case PlayerType.World:
+                Camera.main.backgroundColor = new Color(0.188f, 0.54f, 0.81f);
+                break;
+        }
+        
 
         PlayerTurnUi.Instance.SetTurn(playerType);
 
@@ -160,7 +196,7 @@ public class GameManager : MonoBehaviour
         aiPlayerHand.transform.SetParent(aiPlayerInstance.gameObject.transform);
         GameObject aiPlayerDiscard = Instantiate(discardPrefab);
         aiPlayerDiscard.transform.SetParent(aiPlayerInstance.gameObject.transform);
-
+        gameState = new GameObject(&quot;GameState&quot;).AddComponent&lt;GameState&gt;();
         if (board != null)
         {
             Board boardObject = Instantiate(board);
@@ -186,9 +222,8 @@ public class GameManager : MonoBehaviour
             cloudSpawner.debug = debugValues.cloud;
             cloudSpawner.Initialize(board);
         }
-
-        gameState = new GameObject(&quot;GameState&quot;).AddComponent&lt;GameState&gt;();
         gameState.SetBoard(board);
+
         PlayerInputDetection.Instance.GameState = gameState;
 
         switch (playerType)
@@ -210,6 +245,8 @@ public class GameManager : MonoBehaviour
 
         PopulateDeck(humanPlayerDeck, humanPlayerInstance);
         PopulateDeck(aiPlayerDeck, aiPlayerInstance);
+
+        AddPersistentCardToHand(humanPlayerInstance);
 
         gameState.DrawCardToHand(humanPlayerInstance);
         gameState.DrawCardToHand(aiPlayerInstance);
@@ -242,22 +279,42 @@ public class GameManager : MonoBehaviour
 
     private void PopulateDeck(GameObject deck, Player player)
     {
-        System.Random random = new System.Random();
+        List&lt;System.Type&gt; combinedCardTypes = new();
 
+        // Ajouter les cartes communes
+        combinedCardTypes.AddRange(availableCardTypes);
+
+        // Ajouter les cartes sp&eacute;cifiques en fonction du type du joueur
+        if (player.PlayerType == PlayerType.Civilisation)
+            combinedCardTypes.AddRange(civilisationCardTypes);
+        else if (player.PlayerType == PlayerType.World)
+            combinedCardTypes.AddRange(worldCardTypes);
+
+        // G&eacute;n&eacute;ration al&eacute;atoire du deck
+        System.Random random = new();
         for (int i = 0; i &lt; 20; i++)
         {
-            // S�lectionne un type al�atoire parmi les cartes disponibles
-            int index = random.Next(availableCardTypes.Length);
-            System.Type cardType = availableCardTypes[index];
+            int index = random.Next(combinedCardTypes.Count);
+            System.Type cardType = combinedCardTypes[index];
 
-            // Cr�e dynamiquement une instance du type s�lectionn�
             CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
-
             Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
             player.AddCardInDeck(card);
         }
     }
 
+    private void AddPersistentCardToHand(Player player)
+    {
+        CardData freeCardData = ScriptableObject.CreateInstance&lt;FreeCard&gt;();
+
+        Transform handTransform = (player is HumanPlayer)
+            ? GameObject.Find(&quot;PlayerHand&quot;).transform
+            : player.transform.Find(&quot;Hand(Clone)&quot;);
+
+        Card freeCard = gameState.CreateCardGameObject(freeCardData, handTransform.gameObject, cardPrefab);
+
+        player.hand.Add(freeCard);
+    }
     private void InitializePlayerStartingResources(Player player, List&lt;Tile&gt; tiles)
     {
         Dictionary&lt;RessourceTypes, int&gt; totalResources = new();
@@ -287,43 +344,41 @@ public class GameManager : MonoBehaviour
 
         var unowned = tiles.FindAll(t =&gt; t != null &amp;&amp; t.owner == null);
 
-        if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuiles sans proprietaire : {unowned.Count}&quot;);
-
         if (unowned.Count == 0)
         {
-            Debug.LogWarning(&quot;[GameManager] Aucune tuile unowned trouvee !&quot;);
+            Debug.LogWarning(&quot;[GameManager] Aucune tuile unowned trouv&eacute;e !&quot;);
             return;
         }
 
-        if (debugValues.gameManager) Debug.Log($&quot;[AssignStartingTiles] Total tiles en entree : {tiles.Count}&quot;);
+        // Dictionnaire temporaire pour stocker les types d&eacute;j&agrave; assign&eacute;s
+        HashSet&lt;TileType&gt; usedTypes = new HashSet&lt;TileType&gt;();
 
-        foreach (var tile in tiles)
-        {
-            if (debugValues.gameManager) Debug.Log($&quot;[AssignStartingTiles] Tuile : {tile.name}, type: {tile.tileType}, owner: {(tile.owner == null ? &quot;Aucun&quot; : tile.owner.name)}&quot;);
-        }
+        int assigned = 0;
 
-        for (int i = 0; i &lt; count &amp;&amp; unowned.Count &gt; 0; i++)
+        while (assigned &lt; count &amp;&amp; unowned.Count &gt; 0)
         {
-            var tile = unowned[UnityEngine.Random.Range(0, unowned.Count)];
+            // Trouver une tuile non assign&eacute;e avec un type encore non utilis&eacute;
+            Tile tile = unowned.Find(t =&gt; !usedTypes.Contains(t.tileType));
 
             if (tile == null)
             {
-                Debug.LogWarning(&quot;[GameManager] Tuile null rencontree !&quot;);
-                continue;
+                Debug.LogWarning(&quot;[GameManager] Plus de types uniques disponibles pour assignation.&quot;);
+                break; // on ne peut plus garantir des types diff&eacute;rents
             }
 
-            player.AddOwnedTile(tile); // Appelle log dans Player.cs
+            // Assigner la tuile au joueur
             tile.owner = player;
-
-            if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuile assignee : {tile.name}, Type : {tile.tileType}&quot;);
-
+            player.AddOwnedTile(tile);
+            usedTypes.Add(tile.tileType);
             unowned.Remove(tile);
+            assigned++;
+
+            if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuile assign&eacute;e : {tile.name}, Type : {tile.tileType}&quot;);
         }
 
-        if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuiles finales du joueur : {player.ownedTiles.Count}&quot;);
-
-        player.ComputeRessources();
+        player.ComputeRessources(gameState);
     }
+
 
     void RegisterObserversToPlayer(Player player)
     {

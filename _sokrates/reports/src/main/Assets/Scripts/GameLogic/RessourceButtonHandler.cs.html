@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/RessourceButtonHandler.cs (<b>70</b> lines of code) (<a href="RessourceButtonHandler.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/RessourceButtonHandler.cs (<b>72</b> lines of code) (<a href="RessourceButtonHandler.cs">raw</a>):</h3>
 <div id="editor">using System.Collections.Generic;
 using UnityEngine;
 using System.Linq;
@@ -62,6 +62,8 @@ public class RessourceButtonHandler : MonoBehaviour
                     tile =&gt; tile.tileType == TileType.Mountains).ToList();
                 break;
         }
+        if (filteredTiles.Count &gt; 0) AudioManager.Instance.RessourceSelect();
+        else AudioManager.Instance.RessourceDecline();
         foreach(Tile tile in filteredTiles)
         {
             tile.SpawnParticle();

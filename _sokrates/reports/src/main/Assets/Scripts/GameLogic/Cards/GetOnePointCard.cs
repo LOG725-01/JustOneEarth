@@ -2,12 +2,17 @@ public class GetOnePointCard : CardData
 {
     private void OnEnable()
     {
-        cardName = "Forest boon";
-        description = "Get +1 point";
+        cardName = "Point Burst";
+        description = "Get +1 score point ! Cost -1 of each ! ";
         cost.Add(RessourceTypes.Trees, 1);
-        GainPointEffect gainPointEffect = new GainPointEffect();
-        effectList.Add(gainPointEffect);
-        ExempleForestTile exempleForestTile = new ExempleForestTile();
-        conditionList.Add(exempleForestTile);
+        cost.Add(RessourceTypes.Water, 1);
+        cost.Add(RessourceTypes.Oil, 1);
+        cost.Add(RessourceTypes.Minerals, 1);
+        cost.Add(RessourceTypes.Sun, 1);
+
+        addOwnedTile = false;
+
+        GainPointEffect GetOnePointEffect = new GainPointEffect(1);
+        effectList.Add(GetOnePointEffect);
     }
 }

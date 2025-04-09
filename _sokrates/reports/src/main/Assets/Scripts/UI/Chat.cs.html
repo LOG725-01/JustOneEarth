@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/UI/Chat.cs (<b>84</b> lines of code) (<a href="Chat.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/UI/Chat.cs (<b>101</b> lines of code) (<a href="Chat.cs">raw</a>):</h3>
 <div id="editor">using TMPro;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -35,7 +35,19 @@ public class Chat : AnimationController
         else Instance = this;
         Close();
     }
-
+    void Update()
+    {
+        if (Input.GetKeyDown(KeyCode.T) &amp;&amp; !isOpened)
+        {
+            Open();
+            chatInput.Select();
+            chatInput.ActivateInputField();
+        }
+        if (!isOpened &amp;&amp; EventSystem.current.currentSelectedGameObject == chatInput.gameObject)
+        {
+            EventSystem.current.SetSelectedGameObject(null);
+        }
+    }
     private void Start()
     {
         Clean();
@@ -59,7 +71,6 @@ public class Chat : AnimationController
     public void InputSelect()
     {
         wasOpened = isOpened;
-        Open();
     }
 
     public void InputDeselect()
@@ -69,13 +80,14 @@ public class Chat : AnimationController
 
     private void Open()
     {
+        Debug.Log(&quot;Chat Open() called&quot;);
         isOpened = true;
         buttonText.text = &quot;Close&quot;;
         ChangeAnimation(&quot;Opened&quot;);
     }
 
 
-    private void Close()
+    public void Close()
     {
         isOpened = false;
         buttonText.text = &quot;Open&quot;;
@@ -112,6 +124,10 @@ public class Chat : AnimationController
     public bool IsChatInputSelected()
     {
         return chatInput.isFocused;
+    }
+    public bool IsOpened()
+    {
+        return isOpened;
     }
 }
 </div>

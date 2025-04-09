@@ -1,18 +1,58 @@
 <html>
 <head>
-    <title>public void StartGame()</title>
+    <title>private void AssignStartingTiles()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">public void StartGame()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [119:212]</i></p>
+<h3 style="margin-bottom: 0">private void AssignStartingTiles()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [326:365]</i></p>
 <ul>
-    <li><b>78</b> lines of code</li>
+    <li><b>28</b> lines of code</li>
     <li><b>7</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
+    private void AssignStartingTiles(Player player, List&lt;Tile&gt; tiles, int count)
+    {
+        if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Assignation des tuiles Total disponibles : {tiles.Count}&quot;);
+
+        var unowned = tiles.FindAll(t =&gt; t != null &amp;&amp; t.owner == null);
+
+        if (unowned.Count == 0)
+        {
+            Debug.LogWarning(&quot;[GameManager] Aucune tuile unowned trouv&eacute;e !&quot;);
+            return;
+        }
+
+        // Dictionnaire temporaire pour stocker les types d&eacute;j&agrave; assign&eacute;s
+        HashSet&lt;TileType&gt; usedTypes = new HashSet&lt;TileType&gt;();
+
+        int assigned = 0;
+
+        while (assigned &lt; count &amp;&amp; unowned.Count &gt; 0)
+        {
+            // Trouver une tuile non assign&eacute;e avec un type encore non utilis&eacute;
+            Tile tile = unowned.Find(t =&gt; !usedTypes.Contains(t.tileType));
+
+            if (tile == null)
+            {
+                Debug.LogWarning(&quot;[GameManager] Plus de types uniques disponibles pour assignation.&quot;);
+                break; // on ne peut plus garantir des types diff&eacute;rents
+            }
+
+            // Assigner la tuile au joueur
+            tile.owner = player;
+            player.AddOwnedTile(tile);
+            usedTypes.Add(tile.tileType);
+            unowned.Remove(tile);
+            assigned++;
+
+            if (debugValues.gameManager) Debug.Log($&quot;[GameManager] Tuile assign&eacute;e : {tile.name}, Type : {tile.tileType}&quot;);
+        }
+
+        player.ComputeRessources(gameState);
+    }
 
 </code>
 </pre>

@@ -12,21 +12,25 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs (<b>13</b> lines of code) (<a href="GetOnePointCard.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs (<b>16</b> lines of code) (<a href="GetOnePointCard.cs">raw</a>):</h3>
 <div id="editor">public class GetOnePointCard : CardData
 {
     private void OnEnable()
     {
-        cardName = &quot;Forest boon&quot;;
-        description = &quot;Get +1 point&quot;;
+        cardName = &quot;Point Burst&quot;;
+        description = &quot;Get +1 score point ! Cost -1 of each ! &quot;;
         cost.Add(RessourceTypes.Trees, 1);
-        GainPointEffect gainPointEffect = new GainPointEffect();
-        effectList.Add(gainPointEffect);
-        ExempleForestTile exempleForestTile = new ExempleForestTile();
-        conditionList.Add(exempleForestTile);
+        cost.Add(RessourceTypes.Water, 1);
+        cost.Add(RessourceTypes.Oil, 1);
+        cost.Add(RessourceTypes.Minerals, 1);
+        cost.Add(RessourceTypes.Sun, 1);
+
+        addOwnedTile = false;
+
+        GainPointEffect GetOnePointEffect = new GainPointEffect(1);
+        effectList.Add(GetOnePointEffect);
     }
-}
-</div>
+}</div>
 <script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
 <script>
     var editor = ace.edit("editor");

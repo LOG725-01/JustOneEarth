@@ -1,58 +1,57 @@
 <html>
 <head>
-    <title>private IEnumerator MoveRoutine()</title>
+    <title>private int CountNeighbors()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private IEnumerator MoveRoutine()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [67:107]</i></p>
+<h3 style="margin-bottom: 0">private int CountNeighbors()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [188:227]</i></p>
 <ul>
-    <li><b>41</b> lines of code</li>
+    <li><b>35</b> lines of code</li>
     <li><b>9</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private IEnumerator MoveRoutine()
+    private int CountNeighbors(int q, int r)
     {
-        while (true)
+        List&lt;Vector2Int&gt; directions = new List&lt;Vector2Int&gt;
+    {
+        new Vector2Int(1, 0), new Vector2Int(-1, 0),  // Droite, Gauche
+        new Vector2Int(0, 1), new Vector2Int(0, -1),  // Haut, Bas
+        new Vector2Int(1, -1), new Vector2Int(-1, 1)  // Diagonales
+    };
+
+        int count = 0;
+        if (debug) Debug.Log($&quot;[Board] &rarr; Comptage des voisins pour la tuile ({q}, {r})&quot;);
+
+        foreach (var dir in directions)
         {
-            if (debug) Debug.Log(isMoving);
-            switch (isMoving)
+            int neighborQ = q + dir.x;
+            int neighborR = r + dir.y;
+
+            if (IsInsideMap(neighborQ, neighborR))
             {
-                case AnimalState.Idle:
-                    yield return Moving();
-                    break;
-                case AnimalState.Sitted:
-                    yield return new WaitForSeconds(animalAnimator.SitStandAnimation(false));
-                    yield return Moving();
-                    break;
-                case AnimalState.AttackingPredator:
-                    yield return new WaitForSeconds(animalAnimator.AttackAnimation());
-                    animalAnimator.WalkBackwardAnimation();
-                    yield return new WaitForSeconds(0.5f);
-                    Idle();
-                    break;
-                case AnimalState.AttackingPrey:
-                    yield return new WaitForSeconds(animalAnimator.AttackAnimation());
-                    Idle();
-                    break;
-                case AnimalState.Eat:
-                    yield return new WaitForSeconds(animalAnimator.ShuffleAnimation());
-                    animalAnimator.WalkBackwardAnimation();
-                    yield return new WaitForSeconds(0.5f);
-                    yield return new WaitForSeconds(animalAnimator.EatAnimation());
-                    Idle();
-                    break;
-                case AnimalState.GotHit:
-                    yield return new WaitForSeconds(animalAnimator.GotHitAnimation());
-                    animalAnimator.WalkBackwardAnimation();
-                    yield return new WaitForSeconds(1f);
-                    Idle();
-                    break;
+                TileType neighborType = grid[neighborQ + radius, neighborR + radius];
+
+                if (neighborType != TileType.None)
+                {
+                    count++;
+                    if (debug) Debug.Log($&quot;  ✓ Voisin &agrave; ({neighborQ}, {neighborR}) : {neighborType}&quot;);
+                }
+                else
+                {
+                    if (debug) Debug.Log($&quot;  ✗ Voisin &agrave; ({neighborQ}, {neighborR}) : vide&quot;);
+                }
             }
-            yield return new WaitForSeconds(Random.Range(0f, 3f));
+            else
+            {
+                if (debug) Debug.Log($&quot; Hors de la carte : ({neighborQ}, {neighborR})&quot;);
+            }
         }
+
+        if (debug) Debug.Log($&quot;[Board] Nombre total de voisins valides : {count}&quot;);
+        return count;
     }
 
 </code>

@@ -2,17 +2,17 @@
   "key" : "primary",
   "components" : [ {
     "name" : "Assets",
-    "filesCount" : 52,
-    "linesOfCode" : 2694,
+    "filesCount" : 62,
+    "linesOfCode" : 3014,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.cs",
-      "value" : 52,
+      "value" : 62,
       "description" : [ ]
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.cs",
-      "value" : 2694,
+      "value" : 3014,
       "description" : [ ]
     } ]
   } ],
@@ -58,12 +58,12 @@
   },
   "fileCountPerComponent" : [ {
     "name" : "Assets",
-    "value" : 52,
+    "value" : 62,
     "description" : [ ]
   } ],
   "linesOfCodePerComponent" : [ {
     "name" : "Assets",
-    "value" : 2694,
+    "value" : 3014,
     "description" : [ ]
   } ]
 } ]

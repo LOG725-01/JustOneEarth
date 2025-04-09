@@ -12,20 +12,26 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs (<b>9</b> lines of code) (<a href="GainPointEffect.cs">raw</a>):</h3>
-<div id="editor">using System.Linq;
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs (<b>15</b> lines of code) (<a href="GainPointEffect.cs">raw</a>):</h3>
+<div id="editor">using System.Collections.Generic;
+using System.Linq;
 
 /// &lt;summary&gt;
 /// This class serves as an exemple for a single card effect
 /// &lt;/summary&gt;
 public class GainPointEffect : ICardEffect
 {
+    private int points;
+
+    public GainPointEffect(int points)
+    {
+        this.points = points;
+    }
     public void ApplyEffect(GameState gameState)
     {
-        // Returns the player currently playing
         Player playingPlayer = gameState.GetCurrentPlayingPlayer();
 
-        playingPlayer.Points += 1;
+        playingPlayer.Points += points;
     }
 }
 </div>

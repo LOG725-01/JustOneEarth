@@ -1,18 +1,47 @@
 <html>
 <head>
-    <title>private void HandleEscapePress()</title>
+    <title>static void RemoveTutorial()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void HandleEscapePress()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [105:118]</i></p>
+<h3 style="margin-bottom: 0">static void RemoveTutorial()</h3>
+<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [24:52]</i></p>
 <ul>
-    <li><b>14</b> lines of code</li>
-    <li><b>3</b> McCabe index (conditional complexity)</li>
+    <li><b>26</b> lines of code</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
+    static void RemoveTutorial()
+    {
+        if (EditorUtility.DisplayDialog(&quot;Remove Readme Assets&quot;,
+            
+            $&quot;All contents under {s_ReadmeSourceDirectory} will be removed, are you sure you want to proceed?&quot;,
+            &quot;Proceed&quot;,
+            &quot;Cancel&quot;))
+        {
+            if (Directory.Exists(s_ReadmeSourceDirectory))
+            {
+                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory);
+                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory + &quot;.meta&quot;);
+            }
+            else
+            {
+                Debug.Log($&quot;Could not find the Readme folder at {s_ReadmeSourceDirectory}&quot;);
+            }
+
+            var readmeAsset = SelectReadme();
+            if (readmeAsset != null)
+            {
+                var path = AssetDatabase.GetAssetPath(readmeAsset);
+                FileUtil.DeleteFileOrDirectory(path + &quot;.meta&quot;);
+                FileUtil.DeleteFileOrDirectory(path);
+            }
+
+            AssetDatabase.Refresh();
+        }
+    }
 
 </code>
 </pre>

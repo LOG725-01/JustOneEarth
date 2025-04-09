@@ -1,28 +1,29 @@
 <html>
 <head>
-    <title>private void OnValidate()</title>
+    <title>private void Awake()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void OnValidate()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/UI/Menu/ButtonListController.cs [8:18]</i></p>
+<h3 style="margin-bottom: 0">private void Awake()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [27:38]</i></p>
 <ul>
     <li><b>11</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void OnValidate()
+    private void Awake()
     {
-        if (buttonControllers != null)
+        if (debug) Debug.Log(&quot;[Board] Chargement de la configuration...&quot;);
+        config = GenerationConfig.LoadFromJson();
+        if (config == null)
         {
-            if (buttonControllers.Length != panels.Length)
-                print(&quot;error each button should have a panel&quot;);
+            Debug.LogError(&quot;[Board] &Eacute;chec du chargement de la configuration !&quot;);
+            return;
         }
-        else if (panels != null) {
-            print(&quot;error each panels should have a button&quot;);
-        }
+
+        if (debug) Debug.Log(&quot;[Board] Configuration charg&eacute;e avec succ&egrave;s.&quot;);
     }
 
 </code>

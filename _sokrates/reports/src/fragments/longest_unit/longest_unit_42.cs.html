@@ -1,18 +1,34 @@
 <html>
 <head>
-    <title>private void HandleEscapePress()</title>
+    <title>private void FixLonelyLakes()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void HandleEscapePress()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [105:118]</i></p>
+<h3 style="margin-bottom: 0">private void FixLonelyLakes()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [172:187]</i></p>
 <ul>
-    <li><b>14</b> lines of code</li>
-    <li><b>3</b> McCabe index (conditional complexity)</li>
+    <li><b>15</b> lines of code</li>
+    <li><b>7</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
+    private void FixLonelyLakes()
+    {
+        for (int q = -radius; q &lt;= radius; q++)
+        {
+            for (int r = -radius; r &lt;= radius; r++)
+            {
+                if (!IsInsideMap(q, r)) continue;
+
+                if (grid[q + radius, r + radius] == TileType.Lakes &amp;&amp; CountNeighbors(q, r) != 6)
+                {
+                    if (debug) Debug.Log($&quot;[Board] Lac isol&eacute; d&eacute;tect&eacute; &agrave; ({q},{r}) &rarr; remplacement...&quot;);
+                    grid[q + radius, r + radius] = GetRandomTileType(probabilities, TileType.Lakes);
+                }
+            }
+        }
+    }
 
 </code>
 </pre>

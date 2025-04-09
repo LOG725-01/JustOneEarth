@@ -1,65 +1,18 @@
 <html>
 <head>
-    <title>private void HandlePan()</title>
+    <title>public void DrawCard()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void HandlePan()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/CameraController.cs [26:72]</i></p>
+<h3 style="margin-bottom: 0">public void DrawCard()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Player.cs [187:207]</i></p>
 <ul>
-    <li><b>33</b> lines of code</li>
-    <li><b>5</b> McCabe index (conditional complexity)</li>
+    <li><b>16</b> lines of code</li>
+    <li><b>6</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void HandlePan()
-    {
-
-        if (Input.GetMouseButtonDown(1))
-        {
-            dragOrigin = Input.mousePosition;
-        }
-
-        if (Input.GetMouseButton(1))
-        {
-            Vector3 currentMousePos = Input.mousePosition;
-            Vector3 delta = dragOrigin - currentMousePos;
-
-            Vector3 right = cam.transform.right;
-            Vector3 forward = cam.transform.forward;
-
-            right.y = 0f;
-            forward.y = 0f;
-
-            right.Normalize();
-            forward.Normalize();
-
-
-            Vector3 move = (right * delta.x + forward * delta.y) * panSpeed * Time.deltaTime;
-
-            cam.transform.position += move;
-            dragOrigin = currentMousePos;
-        }
-
-        if (Chat.Instance != null &amp;&amp; Chat.Instance.IsChatInputSelected())
-            return;
-
-        float moveX = Input.GetAxisRaw(&quot;Horizontal&quot;);
-        float moveZ = Input.GetAxisRaw(&quot;Vertical&quot;);
-
-        Vector3 camRight = cam.transform.right;
-        Vector3 camForward = cam.transform.forward;
-
-        camRight.y = 0f;
-        camForward.y = 0f;
-
-        camRight.Normalize();
-        camForward.Normalize();
-
-        Vector3 movement = (camRight * moveX + camForward * moveZ).normalized * moveSpeed * Time.deltaTime;
-        cam.transform.position += movement;
-    }
 
 </code>
 </pre>

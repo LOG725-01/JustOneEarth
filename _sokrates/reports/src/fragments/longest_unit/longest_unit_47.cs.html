@@ -1,18 +1,33 @@
 <html>
 <head>
-    <title>void Start()</title>
+    <title>private void OnEnable()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">void Start()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/CloudMouvement.cs [11:26]</i></p>
+<h3 style="margin-bottom: 0">private void OnEnable()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs [3:17]</i></p>
 <ul>
-    <li><b>12</b> lines of code</li>
-    <li><b>2</b> McCabe index (conditional complexity)</li>
+    <li><b>13</b> lines of code</li>
+    <li><b>1</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
+    private void OnEnable()
+    {
+        cardName = &quot;Point Burst&quot;;
+        description = &quot;Get +1 score point ! Cost -1 of each ! &quot;;
+        cost.Add(RessourceTypes.Trees, 1);
+        cost.Add(RessourceTypes.Water, 1);
+        cost.Add(RessourceTypes.Oil, 1);
+        cost.Add(RessourceTypes.Minerals, 1);
+        cost.Add(RessourceTypes.Sun, 1);
+
+        addOwnedTile = false;
+
+        GainPointEffect GetOnePointEffect = new GainPointEffect(1);
+        effectList.Add(GetOnePointEffect);
+    }
 
 </code>
 </pre>

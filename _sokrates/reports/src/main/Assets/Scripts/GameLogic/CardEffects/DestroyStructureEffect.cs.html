@@ -1,6 +1,6 @@
 <html>
 <head>
-    <title>Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs</title>
+    <title>Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs</title>
     <style type="text/css" media="screen">
         #editor {
             position: absolute;
@@ -12,17 +12,21 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/CardConditions/ExempleForestTile.cs (<b>10</b> lines of code) (<a href="ExempleForestTile.cs">raw</a>):</h3>
-<div id="editor">public class ExempleForestTile : ICardCondition
-{
-    public bool IsMet(GameState gameState, Player player)
-    {
-        if (player.selectedTile != null)
-            return player.selectedTile.tileType == TileType.Forests;
-        return false;
-    }
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs (<b>13</b> lines of code) (<a href="DestroyStructureEffect.cs">raw</a>):</h3>
+<div id="editor">using UnityEngine;
 
-    public string GetConditionDescription() =&gt; &quot;Le joueur doit selectionner une tile forest&quot;;
+public class DestroyStructureEffect : ICardEffect
+{
+    public void ApplyEffect(GameState gameState)
+    {
+        Player player = gameState.GetCurrentPlayingPlayer();
+        Tile tile = player.selectedTile;
+        if (tile == null || !tile.HasStructure()) return;
+
+        GameObject structure = tile.GetStructureOnTile();
+        GameObject.Destroy(structure);
+        tile.SetStructure(null);
+    }
 }
 </div>
 <script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>

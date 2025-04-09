@@ -1,32 +1,35 @@
 <html>
 <head>
-    <title>public override void ObserverUpdate()</title>
+    <title>private void OnEnable()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">public override void ObserverUpdate()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs [10:24]</i></p>
+<h3 style="margin-bottom: 0">private void OnEnable()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs [9:26]</i></p>
 <ul>
     <li><b>13</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>1</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    public override void ObserverUpdate(GameObject subject)
+    private void OnEnable()
     {
-        if (subject.TryGetComponent&lt;Player&gt;(out var player))
-        {
-            int gain = 0;
+        cardName = &quot;Dam&quot;;
+        description = &quot;Get +5 Water. Costs -4 Sun, -2 woods&quot;;
+        cost.Add(RessourceTypes.Sun, 0);
+        cost.Add(RessourceTypes.Trees, 0);
 
-            foreach (var tile in player.ownedTiles)
-            {
-                if (tile.producedRessources.ContainsKey(resourceType))
-                    gain += tile.producedRessources[resourceType];
-            }
+        GainRessourceOfType gainRessourceOfTileType = new GainRessourceOfType(RessourceTypes.Water, 5);
+        effectList.Add(gainRessourceOfTileType);
 
-            resourceIncome.text = &quot;+&quot; + gain.ToString() + &quot; &quot; + suffix;
-        }
+        targetType = CardTargetType.NeutralTileOnly;
+
+        conditionList.Add(new TileMustBeOfType(TileType.Lakes));
+
+        GameObject prefab = Resources.Load&lt;GameObject&gt;(&quot;Structures/dam&quot;);
+        effectList.Add(new PlaceStructureEffect(prefab, new Vector3(0, 0, 0)));
+
     }
 
 </code>

@@ -1,52 +1,32 @@
 <html>
 <head>
-    <title>private void ShowOwnedTiles()</title>
+    <title>private void FixLonelyLakes()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void ShowOwnedTiles()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/RessourceButtonHandler.cs [19:54]</i></p>
+<h3 style="margin-bottom: 0">private void FixLonelyLakes()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [172:187]</i></p>
 <ul>
-    <li><b>36</b> lines of code</li>
-    <li><b>8</b> McCabe index (conditional complexity)</li>
+    <li><b>15</b> lines of code</li>
+    <li><b>7</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void ShowOwnedTiles(RessourceTypes ressourceTypes)
+    private void FixLonelyLakes()
     {
-        if (player == null)
+        for (int q = -radius; q &lt;= radius; q++)
         {
-            Debug.LogError(&quot;[RessourceButtonHandler] player is null&quot;);
-            return;
-        }
-        List&lt;Tile&gt; filteredTiles = null;
-        switch (ressourceTypes)
-        {
-            case RessourceTypes.Oil:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Deserts).ToList();
-                break;
-            case RessourceTypes.Sun:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Plains).ToList();
-                break;
-            case RessourceTypes.Water:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Lakes).ToList();
-                break;
-            case RessourceTypes.Trees:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Forests).ToList();
-                break;
-            case RessourceTypes.Minerals:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Mountains).ToList();
-                break;
-        }
-        foreach(Tile tile in filteredTiles)
-        {
-            tile.SpawnParticle();
+            for (int r = -radius; r &lt;= radius; r++)
+            {
+                if (!IsInsideMap(q, r)) continue;
+
+                if (grid[q + radius, r + radius] == TileType.Lakes &amp;&amp; CountNeighbors(q, r) != 6)
+                {
+                    if (debug) Debug.Log($&quot;[Board] Lac isol&eacute; d&eacute;tect&eacute; &agrave; ({q},{r}) &rarr; remplacement...&quot;);
+                    grid[q + radius, r + radius] = GetRandomTileType(probabilities, TileType.Lakes);
+                }
+            }
         }
     }
 
