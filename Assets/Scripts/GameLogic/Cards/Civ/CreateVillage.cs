@@ -1,3 +1,5 @@
+using UnityEngine;
+
 public class CreateVillage : CardData
 {
     private void OnEnable()
@@ -10,5 +12,9 @@ public class CreateVillage : CardData
         targetType = CardTargetType.NeutralTileOnly;
 
         conditionList.Add(new OnlyPlainTiles());
+
+        GameObject prefab = Resources.Load<GameObject>("Structures/village");
+        effectList.Add(new PlaceStructureEffect(prefab, new Vector3(0, 120, 0)));
+
     }
 }

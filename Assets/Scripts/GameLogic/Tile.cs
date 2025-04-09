@@ -9,6 +9,9 @@ public class Tile : MonoBehaviour, IClickable
     [SerializeField] private GameObject borderRedPrefab;
     [SerializeField] private GameObject borderBluePrefab;
     [SerializeField] private GameObject ParticlePrefab;
+    [SerializeField] private GameObject housePrefab;
+    private GameObject currentStructure;
+
     private GameObject currentBorder;
 
     public bool debug = false;
