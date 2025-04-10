@@ -239,6 +239,7 @@ public class GameManager : MonoBehaviour
         PopulateDeck(aiPlayerDeck, aiPlayerInstance);
 
         AddPersistentCardToHand(humanPlayerInstance);
+        AddPersistentCardToHand(aiPlayerInstance);
 
         gameState.DrawCardToHand(humanPlayerInstance);
         gameState.DrawCardToHand(aiPlayerInstance);
