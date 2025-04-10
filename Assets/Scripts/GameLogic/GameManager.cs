@@ -60,7 +60,10 @@ public class GameManager : MonoBehaviour
     private System.Type[] availableCardTypes = new System.Type[]
     {
         typeof(GetOnePointCard),
-        typeof(MineralSurge)
+        typeof(MineralSurge),
+        typeof(WoodSurge),
+        typeof(WaterSurge),
+        typeof(SuperPointBurst)
         // Ajoutez les cartes ici
     };
 
@@ -70,13 +73,17 @@ public class GameManager : MonoBehaviour
         typeof(CreateDam),
         typeof(OilRefinery),
         typeof(SolarFarm),
+        typeof(MechanicalBurst)
         // Ajoute ici toutes les cartes Civilisation
     };
 
     private System.Type[] worldCardTypes = new System.Type[]
     {
         // Ajoute ici les cartes World (attaque, effets climatiques, etc.)
-        typeof (Earthquake)
+        typeof (Earthquake),
+        typeof (NaturalBurst),
+        typeof (SpiritOfTheLake),
+        typeof (SpiritOfTheMountains)
     };
 
     private void Start()
@@ -220,8 +227,8 @@ public class GameManager : MonoBehaviour
                 break;
             case PlayerType.World:
                 aiPlayerInstance.PlayerType = PlayerType.Civilisation;
-                gameState.PlayerCivilisation = aiPlayerInstance;
                 gameState.PlayerWorld = humanPlayerInstance;
+                gameState.PlayerCivilisation = aiPlayerInstance;
                 break;
         }
         gameState.SetFirstPlayer(playerType);

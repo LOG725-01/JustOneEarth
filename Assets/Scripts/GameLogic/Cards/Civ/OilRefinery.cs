@@ -7,7 +7,7 @@ public class OilRefinery : CardData
     private void OnEnable()
     {
         cardName = "Oil Refinery";
-        description = "Get +4 Oil. Costs -4 water, -3 woods";
+        description = "Get +4 Oil. Costs -4 water and -3 woods. Only on desert";
         cost.Add(RessourceTypes.Trees, 3);
         cost.Add(RessourceTypes.Water, 4);
 

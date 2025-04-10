@@ -5,7 +5,7 @@ public class CreateVillage : CardData
     private void OnEnable()
     {
         cardName = "Village";
-        description = "Get +2 point";
+        description = "Get +2 point. Only on plains.";
         cost.Add(RessourceTypes.Trees, 10);
         cost.Add(RessourceTypes.Minerals, 3);
         GainPointEffect gainPointEffect = new GainPointEffect(2);

@@ -5,8 +5,7 @@ public class MineralSurge : CardData
         cardName = "Mineral Surge";
         description = "Get +5 Minerais. Costs -5 Wood.";
         cost.Add(RessourceTypes.Trees, 5);
-        GainRessourceOfType gainRessourceOfTileType = new GainRessourceOfType(RessourceTypes.Minerals, 5);
-        effectList.Add(gainRessourceOfTileType);
+        effectList.Add(new GainRessourceOfType(RessourceTypes.Minerals, 5));
         conditionList.Add(new TileMustBeOfType(TileType.Mountains));
     }
 }
