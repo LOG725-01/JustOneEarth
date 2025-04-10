@@ -5,6 +5,7 @@ abstract AnimationController {
     # string currentAnimation
 
     # void ChangeAnimation(string animation, float crossfade = 0.2f)
+    # void PlayAnimation(string animation)
 }
 
 abstract Observer {

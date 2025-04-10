@@ -4,6 +4,19 @@ skinparam ComponentBackgroundColor LightSkyBlue
 
 !include toImport.puml
 
+enum PlayerType {
+    Civilisation
+    World
+}
+
+enum RessourceTypes {
+    Trees
+    Minerals
+    Water
+    Sun
+    Oil
+}
+
 package Menu {
     class ButtonController {
         -ButtonListController listController
@@ -35,13 +48,9 @@ package Menu {
 
     class InGameMenu {
         - GameObject inGameMenu
-        - void Update()
+        + void ToggleMenu()
+        + bool IsMenuOpen()
     }
-    note left of InGameMenu
-    open the In Game Menu
-    when escape is pressed
-    end note
-
 }
 
 package ResourcePanel {
@@ -52,6 +61,7 @@ package ResourcePanel {
 
     class ResourceObserver {
         - TextMeshProUGUI resourcesNumber
+        - RessourceTypes resourceType
     }
     class ResourceIncomeObserver {
         - TextMeshProUGUI resourceIncome
@@ -84,6 +94,7 @@ class Chat {
     - bool wasOpened
     -void Awake()
     -void Start()
+    -void Update()
     +void Clean()
     +void OpenClose()
     +void InputSelect()
@@ -94,6 +105,8 @@ class Chat {
     +void AddChatMessage(string userName, string message)
     +void AddAnnouncement(string userName, string announcement)
     +void AddChatMessage(string message)
+    +bool IsChatInputSelected()
+    +bool IsOpened()
 }
 note right of Chat
 AddChatMessage(string message) :
@@ -105,6 +118,7 @@ end note
 class ScoreObserver {
     - Slider slider
     - TextMeshProUGUI scoreText
+    - PlayerType playerType
     - void Awake()
     - void Display(int score)
 }
@@ -140,8 +154,40 @@ class TileInfo{
     +void Clear()
 }
 
-component ScoreVisualPrefab
+class RessourceButtonHandler {
+    + static RessourceButtonHandler Instance
+    - Player player
+    + Player Player { set }
 
+    - void Awake()
+    - void ShowOwnedTiles(RessourceTypes ressourceTypes)
+    + void ShowOwnedForest()
+    + void ShowOwnedMontain()
+    + void ShowOwnedPlain()
+    + void ShowOwnedDesert()
+    + void ShowOwnedLake()
+}
+
+class PlayerTurnUi {
+    + {static} PlayerTurnUi Instance;
+    - TextMeshProUGUI turnText;
+    - void Awake()
+    + void SetTurn(PlayerType currentPlayer)
+    - void Civilisation()
+    - void World()
+}
+
+class FinalScreenUI {
+    + {static} FinalScreenUI Instance
+    - GameObject panel
+    - TMP_Text endMessage
+    - Button toMenuButton
+    - void Awake()
+    - void Start()
+    + void Show(string winnerName)
+}
+
+component ScoreVisualPrefab
 
 Menu.ButtonController --l--|> AnimationController
 ResourcePanel.ResourcesPanel --l--|> AnimationController
@@ -163,5 +209,10 @@ ResourcePanel.ResourceVisualPrefab --o ResourcePanel.ResourceObserver : "Has"
 
 ScoreVisualPrefab --o MaxScoreUpdate : "Has"
 ScoreVisualPrefab --o ScoreObserver : "Has"
+
+ScoreObserver --o PlayerType
+ResourcePanel.ResourceObserver --o RessourceTypes
+
+RessourceButtonHandler --o Player
 
 @enduml

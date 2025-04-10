@@ -6,24 +6,39 @@ title Hiérarchie des scripts et GameObjects
 !include toImport.puml
 
 class GameManager{
-    - gameMode : GameMode
-    + gameState : GameState
-    - Board board
+    - PlayerType playerType
+    - GameState gameState
+    GameObject cardPrefab
     - HumanPlayer humanPlayerPrefab
     - AIPlayer aiPlayerPrefab
+    - GameObject deckPrefab
+    - GameObject discardPrefab
+    - GameObject handPrefab
     - HumanPlayer humanPlayerInstance
     - AIPlayer aiPlayerInstance
+    + Board board
+    - GameObject cloudSpawnerPrefab
+    - InGameMenu inGameMenu
+    - bool isAiTurn
+    - bool isMenuOpen
     - List<PlayerInputNotifier> playerInputNotifiers
     - bool gameStarted
-    + void setGameMode(GameMode gameMode)
-    + void Awake()
+    - System.Type[] worldCardTypes
+    - System.Type[] civilisationCardTypes
+    - System.Type[] availableCardTypes
+
+    - void Start()
+    - void Update()
+    - IEnumerator AITurn()
+    - void HandleEscapePress()
     + void StartGame()
     - void HandlePlayerInput(GameObject clickedObject)
-    + void PlayCardFromUI(Card card)
-    + Update()
+    - void PopulateDeck(GameObject deck, Player player)
+    - void AddPersistentCardToHand(Player player)
     - void InitializePlayerStartingResources(Player player, List<Tile> tiles)
     - void AssignStartingTiles(Player player, List<Tile> tiles, int count)
     void RegisterObserversToPlayer(Player player)
+    - void DeselectCurrentTile()
 }
 note right of GameManager::Update()
 Trigger AI move when 
@@ -33,46 +48,66 @@ OnPlayerInput?.Invoke(move);
 end note
 
 class GameState {
-    + players : Lis<Player>
+    - const int WINNING_POINTS_AMOUNT
+    - Player playerCivilisation
+    - Player playerWorld
+    + Player PlayerCivilisation { set }
+    + Player PlayerWorld { set }
     + Player currentInstancePlayer
-    + currentPlayerTurn : int
-    + turnCount : int
-    + currentBoard : Board
-    + GetCurrentBoard()
-    + addPlayers(player : Player)
-    + HasPlayerWon(player : Player) : bool
-    + GetPlayableCards(player : Player) : List<Card>
-    + PlayCard(cardAction : Card) : GameState
-    + SetCurrentPlayerTurnToNextPlayer()
-    + GetNextPlayingPlayerIndex() : int
-    + getCurrentPlayingPlayer() : Player
-    + SetBoard(Board board)
+    - PlayerType currentPlayerTurn
+    + int turnCount
+    - Board currentBoard
+    + Card lastPlayedCard
+
+    + Board GetCurrentBoard()
+    + void SetFirstPlayer(PlayerType playerType)
+    + bool HasPlayerWon(Player player)
+    + List<Card> GetPlayableCards(Player player)
+    + GameState PlayCard(Card card, Player player)
+    + void SetCurrentPlayerTurnToNextPlayer()
+    + Player GetCurrentPlayingPlayer()
+    + void SetBoard(Board board)
+    + void DrawCardToHand(Player player)
+    + IEnumerator DrawCardToHandAfterDelay(float delay)
+    + Card CreateCardGameObject(CardData cardData, GameObject deck, GameObject cardPrefab)
 }
 
-abstract class Player{
-    + points : int
-    + observers : List<Observer>
-    + currentRessources : Dictionary<RessourceTypeEnum, int>
-    + ownedTiles : List<Tile>
-    + cards : List<Card>
+abstract class Player {
+    - int points
+    + int Points { get ; set }
+    - PlayerType playerType
+    + PlayerType PlayerType { get ; set }
+    + List<Observer> observers
+    + Dictionary<RessourceTypes, int> currentRessources
+    + List<Tile> ownedTiles
+    + List<Card> deck
+    + List<Card> hand
+    + List<Card> discardPile
     + Tile selectedTile
+    + const int MaxHandSize
 
-    + {abstract} Card GetBestPlayableCard()
-    + AddCardInHand(card : Card)
-    + RemoveCardFromHand(card : Card)
-    + AddOwnedTile(tile : Tile)
-    + RemoveOwnedTile(tile : Tile)
-    + ChangeSelectedTile(Tile tile)
-    + ComputeRessources()
-    + RegisterObserver(Observer observer)
-    + NotifyObservers()
+    + {abstract} Card GetBestPlayableCard();
+    + void AddCardInDeck(Card card)
+    + void GiveCard(Card card)
+    + void MoveCardFromDeckToHand(Card card)
+    + void MoveCardFromHandToDiscardPile(Card card)
+    + void AddOwnedTile(Tile tile)
+    + void RemoveOwnedTile(Tile tile)
+    + void ChangeSelectedTile(Tile tile)
+    + void ComputeRessources(GameState gameState)
+    + void RegisterObserver(Observer observer)
+    + void NotifyObservers()
+    + bool TrySpendResources(Dictionary<RessourceTypes, int> cost)
+    + void DeselectTile()
+    + void ShuffleDiscardIntoDeck()
+    + void DrawCard(GameState gameState)
 }
 
-class HumanPlayer{
+class HumanPlayer {
     + GetBestPlayableCard() : Card
 }
 
-class AIPlayer{
+class AIPlayer {
     + GetBestPlayableCard() : Card
     - MiniMax() : int
 }
@@ -83,25 +118,24 @@ end note
 class Card {
     + cost : Dictionary<RessourceTypes, int>
     + effectList : List<ICardEffect>
+    - List<ICardCondition> conditions
     - TextMeshProUGUI titleText
     - TextMeshProUGUI ressourceText
+    - bool addOwnedTile
+    - bool isPersistent
     + Start()
     + AddEffect(ICardEffect effect)
     + AddCost(RessourceTypes ressource, int quantity)
     + ApplyEffects(gameState : GameState)
     + Dictionary<RessourceTypes, int> GetCost()
     + bool CanBePlayed(Dictionary<RessourceTypes, int> playerResources)
-    + OnClick(GameState gameState)
+    + void OnClick(GameState gameState)
     + void SelectedVisual()
     + void NormalVisual()
-}
-
-interface ICardEffect{
-    +void ApplyEffect()
-}
-
-class GainPointEffect{
-    + void ApplyEffect()
+    + void AddCondition(ICardCondition condition)
+    + bool GetAddOwnedTile()
+    + bool GetIsPersistent()
+    + bool TryPlay(GameState gameState, Player player)
 }
 
 class Board {
@@ -117,7 +151,7 @@ class Board {
     - GenerationConfig config
     Dictionary<TileType, float> probabilities
 
-    + Start()
+    + Awake()
     - void PlaceAnimals()
     + CreateBoard() : void
     - bool IsTileGenerated(int q, int r)
@@ -138,14 +172,52 @@ note left of Board::CreateBoard
 end note
 
 class Tile {
-    + producedRessources : Dictionary<RessourceTypeEnum, int>
-    + tileType : TileTypeEnum
+    + Dictionary<RessourceTypes, int> producedRessources
+    + TileType tileType
     + Player owner
+    - GameObject borderRedPrefab
+    - GameObject borderBluePrefab
+    - GameObject ParticlePrefab
+    - GameObject housePrefab
+    - GameObject currentStructure
+    - GameObject currentBorder
 
-    - AssignResources()
-    + OnClick()
-    + Initialize(TileType type)
+    + void Initialize(TileType type, bool _debug = false)
+    + void UpdateBorder()
+    - void AssignResources()
+    + void OnClick(GameState gameState)
+    + bool TryGetProducedAmount(RessourceTypes type, out int amount)
+    + List<RessourceTypes> GetProducedRessourceTypes()
+    + void ElevateTile()
+    + void ResetElevation()
+    + void SpawnParticle()
+    + void SetStructure(GameObject structure)
+    + GameObject GetStructureOnTile()
+    + bool HasStructure()
 }
+
+class PlayerInputDetection {
+    + {static} PlayerInputDetection Instance
+    - InputAction mouseClick
+    - LayerMask raycastLayerMask
+    - GameState gameState
+    + GameState GameState { set }
+    - Camera mainCamera
+    - GraphicRaycaster[] raycasters
+    - EventSystem eventSystem
+
+    - void Awake()
+    - void OnEnable()
+    - void OnDisable()
+    - void MousePressed(InputAction.CallbackContext context)
+    - void DeselectCurrentTile()
+}
+note left of PlayerInputDetection
+  detect a left click
+  and select any tile 
+  clicked and deselect the 
+  previously selected one
+end note
 
 class PlayerInputNotifier {
     + OnGameObjectClicked : event Action<GameObject>
@@ -154,7 +226,7 @@ class PlayerInputNotifier {
 note right of PlayerInputNotifier::Update()
 // Notify all observers that 
 // a move has been made.
-OnPlayerInput?.Invoke(move);    
+OnPlayerInput?.Invoke(move);
 end note
 
 interface IClickable {
@@ -176,7 +248,7 @@ class GenerationConfig {
 }
 
 class CameraController {
-    - Camera cam;
+    - Camera cam
     + float moveSpeed
     + float panSpeed
     + float zoomSpeed
@@ -190,13 +262,20 @@ class CameraController {
 }
 
 class SceneChanger {
-    + {static} SceneChanger Instance;
+    + {static} SceneChanger Instance
+    - {static} string currentScene
+    - {static} PlayerType PlayerType 
+    + {static} PlayerType PlayerType { get }
     - string gameScene
     - string homeScene
     - GameObject gameManagerPrefab
-    - GameMode gameMode
-    - void Start()
+    - void Awake()
+    - void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    - void OnEnable()
+    - void OnDisable()
     - {static} void SceneChange(string scene)
+    + void GameStartCivilisation()
+    + void GameStartWorld()
     + void GameStart()
     + void Home()
     + void QuitApp()
@@ -211,6 +290,18 @@ component aiPlayerPrefab
 component TilePrefabs
 component AnimalPrefab
 component CardPrefab
+
+GameState --o PlayerType
+GameState --o Card
+
+GameManager --o PlayerType
+GameManager --o InGameMenu
+
+Player --o PlayerType
+Player --o RessourceTypes
+
+Tile --o TileType
+Tile --o RessourceTypes
 
 GameManagerPrefab -d-o "1..1" GameManager : "Has"
 GameManager -l-o humanPlayerPrefab : "Has"
@@ -229,21 +320,20 @@ Board -r-o "  1  " GameState : " Has"
 Player --u---o "2" GameState : "Has"
 
 Player -d-|> MonoBehavior
-Observer --o Player : "Has"
-Card --o Player : "Has"
-Tile -l--o Player : "Has"
+Player --o Observer : "Has"
+Player --o Card : "Has"
+Player -l--o Tile : "Has"
 
 HumanPlayer --l--|> Player
 AIPlayer -l-|> Player
 
 AnimationController -d-|> MonoBehavior
 
-GainPointEffect .r.> ICardEffect
-
 Card ---r---|> AnimationController
 Card <.d. "\t1" IClickable : " Implements"
 Card -u-o "0..*" Player : "\t\t\t\nHas"
 Card o-d- "1..*" ICardEffect : " Has"
+Card o-d- "1..*" ICardCondition : " Has"
 
 Board -d-|> MonoBehavior
 Board --o AnimalPrefab : "Has"
@@ -259,7 +349,6 @@ CameraController -u-|> MonoBehavior
 humanPlayerPrefab o- "\t1" HumanPlayer : " Has"
 aiPlayerPrefab o- "\t1" AIPlayer : " Has"
 
-TilePrefab o- "\t1" PlayerInputNotifier : "Has"
 TilePrefab -l--o "\t1" Tile : "Has"
 
 CardPrefab o- "\t1" PlayerInputNotifier : "Has"
