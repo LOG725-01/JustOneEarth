@@ -5,10 +5,11 @@ using UnityEngine;
 
 public class GameState : MonoBehaviour
 {
-    private const int WINNING_POINTS_AMOUNT = 100;
+    private const int WINNING_POINTS_AMOUNT = 20;
 
     private Player playerCivilisation = null;
     private Player playerWorld = null;
+    
     public Player PlayerCivilisation { set =>  playerCivilisation = value; }
     public Player PlayerWorld { set => playerWorld = value; }
     // This is the player of the running game instance, it is used for multiplayer purposes. Do not confuse with the player currently playing.
@@ -70,7 +71,14 @@ public class GameState : MonoBehaviour
     public void SetCurrentPlayerTurnToNextPlayer()
     {
         currentPlayerTurn = (currentPlayerTurn == PlayerType.Civilisation) ? PlayerType.World : PlayerType.Civilisation;
-        GetCurrentPlayingPlayer().DrawCard(this);
+        Player player = GetCurrentPlayingPlayer();
+
+        if (HasPlayerWon(player))
+        {
+            PlayerWiningScreen(player);
+        }
+
+        player.DrawCard(this);
         PlayerTurnUi.Instance.SetTurn(currentPlayerTurn);
     }
 
@@ -131,5 +139,11 @@ public class GameState : MonoBehaviour
         card.InitializeCard(cardData.cardName, cardData.description,
             cardData.effectList, cardData.cost, cardData.conditionList, cardData.addOwnedTile, cardData.isPersistent);
         return card;
+    }
+
+    private void PlayerWiningScreen(Player player)
+    {
+        PlayerType playerType = player.PlayerType;
+        FinalScreenUI.Instance.Show(playerType.ToString());
     }
 }

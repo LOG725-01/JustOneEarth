@@ -96,8 +96,9 @@ public class GameManager : MonoBehaviour
 
     private void Update()
     {
+       
         if (!isAiTurn) { 
-        Player player = gameState.GetCurrentPlayingPlayer();
+            Player player = gameState.GetCurrentPlayingPlayer();
 
         if (player != null)
             if (player.GetType() == typeof(AIPlayer))
@@ -124,6 +125,8 @@ public class GameManager : MonoBehaviour
         gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
         gameState.DrawCardToHand(player);
         isAiTurn = false;
+
+        
     }
 
     private void HandleEscapePress()
