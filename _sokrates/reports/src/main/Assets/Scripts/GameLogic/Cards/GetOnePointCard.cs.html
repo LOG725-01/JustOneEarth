@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs (<b>16</b> lines of code) (<a href="GetOnePointCard.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs (<b>15</b> lines of code) (<a href="GetOnePointCard.cs">raw</a>):</h3>
 <div id="editor">public class GetOnePointCard : CardData
 {
     private void OnEnable()
@@ -27,8 +27,7 @@
 
         addOwnedTile = false;
 
-        GainPointEffect GetOnePointEffect = new GainPointEffect(1);
-        effectList.Add(GetOnePointEffect);
+        effectList.Add(new GainPointEffect(1));
     }
 }</div>
 <script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>

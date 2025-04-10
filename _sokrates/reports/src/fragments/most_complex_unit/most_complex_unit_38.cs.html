@@ -1,48 +1,38 @@
 <html>
 <head>
-    <title>private IEnumerator RotateTowardsTarget()</title>
+    <title>public void ChangeInfo()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private IEnumerator RotateTowardsTarget()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [153:184]</i></p>
+<h3 style="margin-bottom: 0">public void ChangeInfo()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/UI/TileInfo.cs [22:43]</i></p>
 <ul>
-    <li><b>26</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>20</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private IEnumerator RotateTowardsTarget(Vector3 targetPos)
+    public void ChangeInfo(GameObject tileObject)
     {
-        Vector3 direction = (targetPos - transform.position).normalized;
-        direction.y = 0;
-
-        if (direction != Vector3.zero)
+        if (tileObject.TryGetComponent&lt;Tile&gt;(out var tile))
         {
-            Quaternion targetRotation = Quaternion.LookRotation(direction);
-            float rotationSpeed = 200f;
-
-            float angle = SignedAngle(targetRotation);
-
-            if (angle &gt; 0f)
+            string resourceType = &quot;&quot;;
+            int resources = 0;
+            foreach (var item in tile.producedRessources)
             {
-                animalAnimator.TurnAnimation(false);
-            }
-            else
-            {
-                animalAnimator.TurnAnimation(true);
+                if (item.Value &gt; 0)
+                {
+                    resourceType = item.Key.ToString();
+                    resources = item.Value;
+                    break;
+                }
             }
 
-            while (Quaternion.Angle(transform.rotation, targetRotation) &gt; 0.1f)
-            {
-                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
-                yield return null;
-            }
+            string ownerName = tile.owner != null ? tile.owner.PlayerType.ToString() : &quot;Aucun&quot;;
+            bool isOwner = tile.owner != null;
 
-            transform.rotation = targetRotation;
-
-            animalAnimator.IdleAnimation();
+            SetTexts(tile.tileType.ToString(), resources, resourceType, isOwner, &quot;&quot;, ownerName);
         }
     }
 

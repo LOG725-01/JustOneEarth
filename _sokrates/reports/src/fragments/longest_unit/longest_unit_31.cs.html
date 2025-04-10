@@ -1,36 +1,37 @@
 <html>
 <head>
-    <title>private void PlaceAnimals()</title>
+    <title>private void HandleEscapePress()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void PlaceAnimals()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [139:158]</i></p>
+<h3 style="margin-bottom: 0">private void HandleEscapePress()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [160:180]</i></p>
 <ul>
-    <li><b>19</b> lines of code</li>
-    <li><b>6</b> McCabe index (conditional complexity)</li>
+    <li><b>20</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void PlaceAnimals()
+    private void HandleEscapePress()
     {
-        foreach (Transform tile in transform)
+        if (Chat.Instance != null &amp;&amp; Chat.Instance.IsOpened())
         {
-            Tile tileScript = tile.GetComponent&lt;Tile&gt;();
-            if (tileScript != null &amp;&amp; tileScript.tileType == TileType.Plains)
-            {
-                // 50% de chance d'avoir un animal
-                if (UnityEngine.Random.value &lt; 0.5f)
-                {
-                    Vector3 spawnPos = tile.position + Vector3.up * 0.2f; // D&eacute;calage vertical
-                    GameObject animal = Instantiate(
-                        animalPrefabs[UnityEngine.Random.Range(0, animalPrefabs.Length)], 
-                        spawnPos, Quaternion.identity, tile);
-                    if(debugAnimal) animal.GetComponent&lt;AnimalMouvement&gt;().SetDebug();
-                    debugAnimal = false;
-                }
-            }
+            Chat.Instance.Close();
+            EventSystem.current.SetSelectedGameObject(null); // enl&egrave;ve le focus
+            return;
+        }
+
+        Player currentPlayer = gameState.currentInstancePlayer;
+        if (currentPlayer.selectedTile != null)
+        {
+            DeselectCurrentTile();
+            return;
+        }
+        if (inGameMenu != null)
+        {
+            inGameMenu.ToggleMenu();
+            isMenuOpen = inGameMenu.IsMenuOpen();
         }
     }
 

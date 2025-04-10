@@ -1,35 +1,33 @@
 <html>
 <head>
-    <title>private void OnEnable()</title>
+    <title>private void FixLonelyLakes()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void OnEnable()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs [9:26]</i></p>
+<h3 style="margin-bottom: 0">private void FixLonelyLakes()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [172:187]</i></p>
 <ul>
-    <li><b>13</b> lines of code</li>
-    <li><b>1</b> McCabe index (conditional complexity)</li>
+    <li><b>15</b> lines of code</li>
+    <li><b>7</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void OnEnable()
+    private void FixLonelyLakes()
     {
-        cardName = &quot;Dam&quot;;
-        description = &quot;Get +5 Water. Costs -4 Sun, -2 woods&quot;;
-        cost.Add(RessourceTypes.Sun, 0);
-        cost.Add(RessourceTypes.Trees, 0);
+        for (int q = -radius; q &lt;= radius; q++)
+        {
+            for (int r = -radius; r &lt;= radius; r++)
+            {
+                if (!IsInsideMap(q, r)) continue;
 
-        GainRessourceOfType gainRessourceOfTileType = new GainRessourceOfType(RessourceTypes.Water, 5);
-        effectList.Add(gainRessourceOfTileType);
-
-        targetType = CardTargetType.NeutralTileOnly;
-
-        conditionList.Add(new TileMustBeOfType(TileType.Lakes));
-
-        GameObject prefab = Resources.Load&lt;GameObject&gt;(&quot;Structures/dam&quot;);
-        effectList.Add(new PlaceStructureEffect(prefab, new Vector3(0, 0, 0)));
-
+                if (grid[q + radius, r + radius] == TileType.Lakes &amp;&amp; CountNeighbors(q, r) != 6)
+                {
+                    if (debug) Debug.Log($&quot;[Board] Lac isol&eacute; d&eacute;tect&eacute; &agrave; ({q},{r}) &rarr; remplacement...&quot;);
+                    grid[q + radius, r + radius] = GetRandomTileType(probabilities, TileType.Lakes);
+                }
+            }
+        }
     }
 
 </code>

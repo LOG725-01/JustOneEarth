@@ -1,33 +1,18 @@
 <html>
 <head>
-    <title>public override void ObserverUpdate()</title>
+    <title>public void UpdateBorder()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">public override void ObserverUpdate()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs [10:24]</i></p>
+<h3 style="margin-bottom: 0">public void UpdateBorder()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Tile.cs [28:39]</i></p>
 <ul>
-    <li><b>13</b> lines of code</li>
+    <li><b>9</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    public override void ObserverUpdate(GameObject subject)
-    {
-        if (subject.TryGetComponent&lt;Player&gt;(out var player))
-        {
-            int gain = 0;
-
-            foreach (var tile in player.ownedTiles)
-            {
-                if (tile.producedRessources.ContainsKey(resourceType))
-                    gain += tile.producedRessources[resourceType];
-            }
-
-            resourceIncome.text = &quot;+&quot; + gain.ToString() + &quot; &quot; + suffix;
-        }
-    }
 
 </code>
 </pre>

@@ -1,54 +1,28 @@
 <html>
 <head>
-    <title>private IEnumerator MoveToTile()</title>
+    <title>public override void ObserverUpdate()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private IEnumerator MoveToTile()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [115:151]</i></p>
+<h3 style="margin-bottom: 0">public override void ObserverUpdate()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/UI/ScoreObserver.cs [23:33]</i></p>
 <ul>
-    <li><b>34</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>10</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private IEnumerator MoveToTile(Tile targetTile)
+    public override void ObserverUpdate(GameObject subject)
     {
-        isMoving = AnimalState.Moving;
-        Vector3 endPos = GetRandomPosition(targetTile);
-        yield return RotateTowardsTarget(endPos);
-        float distanceBefore = Vector3.Distance(transform.position, endPos);
-        float distanceAfter = distanceBefore;
-
-        animalAnimator.WalkRandomAnimation();
-        while (distanceBefore - distanceAfter &gt;= 0)
+        if (subject.TryGetComponent&lt;Player&gt;(out var player))
         {
-            distanceBefore = distanceAfter;
-            distanceAfter = Vector3.Distance(transform.position, endPos);
-            yield return null;
+            if (player.PlayerType != playerType) return;
+            if (slider.maxValue &lt; player.Points) { Display((int)slider.maxValue); }
+            else if (player.Points &lt;= 0) { Display(0); }
+            else { Display(player.Points); }
         }
-        currentTile = targetTile;
-        Transform animalContainer = currentTile.transform.Find(&quot;AnimalContainer&quot;);
-        if (animalContainer == null)
-        {
-            GameObject container = new GameObject(&quot;AnimalContainer&quot;);
-            container.transform.parent = currentTile.transform;
-            container.transform.localPosition = Vector3.zero;
-            animalContainer = container.transform;
-        }
-        transform.parent = animalContainer;
-        transform.localPosition = new Vector3(transform.localPosition.x, Ydifference, transform.localPosition.z);
-
-        //transform.position = endPos;
-        TiredCounter--;
-        if (TiredCounter == 0)
-        {
-            TiredCounter = Random.Range(3, 6);
-            isMoving = AnimalState.Sitted;
-            yield return new WaitForSeconds(animalAnimator.SitStandAnimation(true));
-        }
-        else Idle();
+        
     }
 
 </code>

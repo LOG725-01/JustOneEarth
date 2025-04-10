@@ -19,7 +19,6 @@ public class SceneChanger : MonoBehaviour
         else Instance = this;
         if (currentScene == "") currentScene = homeScene;
     }
-
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         if (scene.name == gameScene)
@@ -28,7 +27,6 @@ public class SceneChanger : MonoBehaviour
             Instantiate(gameManagerPrefab);
         }
     }
-
     private void OnEnable()
     {
         SceneManager.sceneLoaded += OnSceneLoaded;
@@ -61,8 +59,6 @@ public class SceneChanger : MonoBehaviour
     {
         SceneChange(gameScene);
     }
-
-
 
     public void Home()
     {

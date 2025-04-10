@@ -1,40 +1,45 @@
 <html>
 <head>
-    <title>public void PressButton()</title>
+    <title>static void RemoveTutorial()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">public void PressButton()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/UI/Menu/ButtonListController.cs [36:59]</i></p>
+<h3 style="margin-bottom: 0">static void RemoveTutorial()</h3>
+<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [24:52]</i></p>
 <ul>
-    <li><b>24</b> lines of code</li>
+    <li><b>26</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    public void PressButton(int button)
+    static void RemoveTutorial()
     {
-        for (int i = 0; i &lt; buttonControllers.Length; i++)
+        if (EditorUtility.DisplayDialog(&quot;Remove Readme Assets&quot;,
+            
+            $&quot;All contents under {s_ReadmeSourceDirectory} will be removed, are you sure you want to proceed?&quot;,
+            &quot;Proceed&quot;,
+            &quot;Cancel&quot;))
         {
-            if (i == button) {
-                bool isActive = panels[i].activeSelf;
-                if (isActive)
-                {
-                    AudioManager.Instance.UiClose();
-                    buttonControllers[i].NormalAnimation(true);
-                }
-                else 
-                {
-                    AudioManager.Instance.UiOpen();
-                    buttonControllers[i].PressAnimation(); 
-                }
-                panels[i].SetActive(!isActive);
+            if (Directory.Exists(s_ReadmeSourceDirectory))
+            {
+                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory);
+                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory + &quot;.meta&quot;);
             }
-            else { 
-                buttonControllers[i].NormalAnimation(true);
-                panels[i].SetActive(false);
+            else
+            {
+                Debug.Log($&quot;Could not find the Readme folder at {s_ReadmeSourceDirectory}&quot;);
             }
+
+            var readmeAsset = SelectReadme();
+            if (readmeAsset != null)
+            {
+                var path = AssetDatabase.GetAssetPath(readmeAsset);
+                FileUtil.DeleteFileOrDirectory(path + &quot;.meta&quot;);
+                FileUtil.DeleteFileOrDirectory(path);
+            }
+
+            AssetDatabase.Refresh();
         }
     }
 

@@ -1,5 +1,5 @@
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.meta files (9712):
+*.meta files (9719):
 
 Assets/25 Rpg Game Tracks/Ambient 3.wav.meta
 Assets/25 Rpg Game Tracks/Ambient 7.wav.meta
@@ -205,10 +205,9 @@ Assets/Scripts/Audio/AudioManager.cs.meta
 Assets/Scripts/Audio/AudioMixerManager.cs.meta
 Assets/Scripts/Audio.meta
 Assets/Scripts/CameraController.cs.meta
-Assets/Scripts/Documentation/Animals.png.meta
-Assets/Scripts/Documentation/Animals2.png.meta
 Assets/Scripts/Documentation/Audio.png.meta
 Assets/Scripts/Documentation/Audio.puml.meta
+Assets/Scripts/Documentation/Cards.puml.meta
 Assets/Scripts/Documentation/Environment.png.meta
 Assets/Scripts/Documentation/Environment.puml.meta
 Assets/Scripts/Documentation/GameSystem.png.meta
@@ -244,13 +243,20 @@ Assets/Scripts/GameLogic/CardEffects.meta
 Assets/Scripts/GameLogic/Cards/CardData.cs.meta
 Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs.meta
 Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs.meta
+Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs.meta
 Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs.meta
 Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs.meta
 Assets/Scripts/GameLogic/Cards/Civ.meta
 Assets/Scripts/GameLogic/Cards/FreeCard.cs.meta
 Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs.meta
 Assets/Scripts/GameLogic/Cards/MineralSurge.cs.meta
+Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs.meta
+Assets/Scripts/GameLogic/Cards/WaterSurge.cs.meta
+Assets/Scripts/GameLogic/Cards/WoodSurge.cs.meta
 Assets/Scripts/GameLogic/Cards/World/Earthquake.cs.meta
+Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs.meta
+Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs.meta
+Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs.meta
 Assets/Scripts/GameLogic/Cards/World.meta
 Assets/Scripts/GameLogic/Cards.meta
 Assets/Scripts/GameLogic/Enum/PlayerType.cs.meta
@@ -274,6 +280,7 @@ Assets/Scripts/Testing&Debug/GameLogger.cs.meta
 Assets/Scripts/Testing&Debug.meta
 Assets/Scripts/UI/AnimationController.cs.meta
 Assets/Scripts/UI/Chat.cs.meta
+Assets/Scripts/UI/FinalScreenUI.cs.meta
 Assets/Scripts/UI/MaxScoreUpdate.cs.meta
 Assets/Scripts/UI/Menu/ButtonController.cs.meta
 Assets/Scripts/UI/Menu/ButtonListController.cs.meta
@@ -17467,14 +17474,12 @@ Library/SourceAssetDB-lock
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.png files (2314):
+*.png files (2312):
 
 Assets/Models/FBX format/Textures/colormap.png
 Assets/Models/Textures/variation-a.png
 Assets/Models/Textures/variation-b.png
 Assets/Models/UrsaAnimation/LOW POLY CUBIC - Goat and Sheep Pack/Texture/AnimalFarmTexture.png
-Assets/Scripts/Documentation/Animals.png
-Assets/Scripts/Documentation/Animals2.png
 Assets/Scripts/Documentation/Audio.png
 Assets/Scripts/Documentation/Environment.png
 Assets/Scripts/Documentation/GameSystem.png
@@ -24622,6 +24627,19 @@ Logs/shadercompiler-UnityShaderCompiler.exe0.log
 
 
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+*.puml files (6):
+
+Assets/Scripts/Documentation/Audio.puml
+Assets/Scripts/Documentation/Cards.puml
+Assets/Scripts/Documentation/Environment.puml
+Assets/Scripts/Documentation/GameSystem.puml
+Assets/Scripts/Documentation/toImport.puml
+Assets/Scripts/Documentation/UI.puml
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
+
+
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 *.cginc files (6):
 
 Assets/TextMesh Pro/Shaders/TMPro.cginc
@@ -24642,18 +24660,6 @@ Library/PackageCache/com.unity.render-pipelines.universal@14.0.11/Editor/ShaderG
 Library/PackageCache/com.unity.shadergraph@14.0.11/Editor/Generation/Targets/BuiltIn/Editor/ShaderGUI/MaterialAssemblyReference/MaterialAssemblyReference.asmref
 Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/FeatureExamples/SRPCommon/Scripts/RequiredSettings/CoreRP_Runtime_Ref.asmref
 Library/PackageCache/com.unity.shadergraph@14.0.11/Samples~/ProductionReady/SRPCommon/Scripts/RequiredSettings/CoreRP_Runtime_Ref.asmref
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-
-
-
-- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
-*.puml files (5):
-
-Assets/Scripts/Documentation/Audio.puml
-Assets/Scripts/Documentation/Environment.puml
-Assets/Scripts/Documentation/GameSystem.puml
-Assets/Scripts/Documentation/toImport.puml
-Assets/Scripts/Documentation/UI.puml
 - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
 
 

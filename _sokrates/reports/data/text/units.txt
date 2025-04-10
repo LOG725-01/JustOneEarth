@@ -1,9 +1,9 @@
 id: 1
 unit: public void StartGame()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 143
-end line: 249
-size: 88 LOC
+start line: 182
+end line: 293
+size: 92 LOC
 McCabe index: 9
 number of parameters: 0
 
@@ -80,6 +80,15 @@ McCabe index: 6
 number of parameters: 0
 
 id: 10
+unit: private int MiniMax()
+file: Assets/Scripts/GameLogic/AIPlayer.cs
+start line: 80
+end line: 115
+size: 30 LOC
+McCabe index: 5
+number of parameters: 4
+
+id: 11
 unit: private void Start()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 30
@@ -88,7 +97,7 @@ size: 28 LOC
 McCabe index: 8
 number of parameters: 0
 
-id: 11
+id: 12
 unit: private Tile GetRandomAvailablePlainTile()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 246
@@ -97,25 +106,25 @@ size: 28 LOC
 McCabe index: 6
 number of parameters: 0
 
-id: 12
+id: 13
 unit: private void AssignStartingTiles()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 326
-end line: 365
+start line: 372
+end line: 411
 size: 28 LOC
 McCabe index: 7
 number of parameters: 3
 
-id: 13
+id: 14
 unit: public void ComputeRessources()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 87
-end line: 119
+start line: 88
+end line: 120
 size: 28 LOC
 McCabe index: 13
 number of parameters: 1
 
-id: 14
+id: 15
 unit: public override void OnInspectorGUI()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 123
@@ -124,7 +133,7 @@ size: 28 LOC
 McCabe index: 7
 number of parameters: 0
 
-id: 15
+id: 16
 unit: private void HandleZoom()
 file: Assets/Scripts/CameraController.cs
 start line: 74
@@ -133,7 +142,7 @@ size: 27 LOC
 McCabe index: 6
 number of parameters: 0
 
-id: 16
+id: 17
 unit: private void MousePressed()
 file: Assets/Scripts/GameLogic/PlayerInputDetection.cs
 start line: 40
@@ -142,7 +151,7 @@ size: 27 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 17
+id: 18
 unit: private IEnumerator RotateTowardsTarget()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 153
@@ -151,7 +160,7 @@ size: 26 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 18
+id: 19
 unit: static void RemoveTutorial()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 24
@@ -160,7 +169,7 @@ size: 26 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 19
+id: 20
 unit: public void PressButton()
 file: Assets/Scripts/UI/Menu/ButtonListController.cs
 start line: 36
@@ -169,7 +178,7 @@ size: 24 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 20
+id: 21
 unit: protected override void OnHeaderGUI()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 95
@@ -178,7 +187,16 @@ size: 24 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 21
+id: 22
+unit: public override Card GetBestPlayableCard()
+file: Assets/Scripts/GameLogic/AIPlayer.cs
+start line: 14
+end line: 44
+size: 23 LOC
+McCabe index: 4
+number of parameters: 1
+
+id: 23
 unit: private GameObject GetTilePrefab()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 238
@@ -187,7 +205,7 @@ size: 23 LOC
 McCabe index: 11
 number of parameters: 1
 
-id: 22
+id: 24
 unit: private TileType GetRandomTileType()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 283
@@ -196,7 +214,7 @@ size: 23 LOC
 McCabe index: 10
 number of parameters: 2
 
-id: 23
+id: 25
 unit: public void InitializePlayerResources()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 332
@@ -205,7 +223,16 @@ size: 23 LOC
 McCabe index: 7
 number of parameters: 1
 
-id: 24
+id: 26
+unit: private void addAIPlayedCardToChat()
+file: Assets/Scripts/GameLogic/GameManager.cs
+start line: 133
+end line: 158
+size: 23 LOC
+McCabe index: 4
+number of parameters: 1
+
+id: 27
 unit: private void Init()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 38
@@ -214,7 +241,7 @@ size: 21 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 25
+id: 28
 unit: public void ApplyEffect()
 file: Assets/Scripts/GameLogic/CardEffects/GainRessourceOfType.cs
 start line: 18
@@ -223,16 +250,16 @@ size: 21 LOC
 McCabe index: 7
 number of parameters: 1
 
-id: 26
+id: 29
 unit: public GameState PlayCard()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 45
-end line: 68
+start line: 46
+end line: 69
 size: 21 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 27
+id: 30
 unit: void Init()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 199
@@ -241,25 +268,25 @@ size: 21 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 28
+id: 31
 unit: private void HandleEscapePress()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 122
-end line: 142
+start line: 160
+end line: 180
 size: 20 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 29
+id: 32
 unit: public void DrawCardToHand()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 92
-end line: 119
+start line: 100
+end line: 127
 size: 20 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 30
+id: 33
 unit: public void ChangeInfo()
 file: Assets/Scripts/UI/TileInfo.cs
 start line: 22
@@ -268,7 +295,7 @@ size: 20 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 31
+id: 34
 unit: private void PlaceAnimals()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 139
@@ -277,25 +304,43 @@ size: 19 LOC
 McCabe index: 6
 number of parameters: 0
 
-id: 32
+id: 35
+unit: public bool CanBePlayed()
+file: Assets/Scripts/GameLogic/Card.cs
+start line: 62
+end line: 82
+size: 19 LOC
+McCabe index: 9
+number of parameters: 3
+
+id: 36
 unit: public void OnClick()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 80
-end line: 102
+start line: 84
+end line: 106
 size: 19 LOC
 McCabe index: 7
 number of parameters: 1
 
-id: 33
+id: 37
 unit: private void Update()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 90
-end line: 110
+start line: 98
+end line: 119
 size: 19 LOC
 McCabe index: 6
 number of parameters: 0
 
-id: 34
+id: 38
+unit: private void PopulateDeck()
+file: Assets/Scripts/GameLogic/GameManager.cs
+start line: 309
+end line: 334
+size: 19 LOC
+McCabe index: 4
+number of parameters: 2
+
+id: 39
 unit: public void OnClick()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 72
@@ -304,7 +349,7 @@ size: 19 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 35
+id: 40
 unit: public void Initialize()
 file: Assets/Scripts/Environnement/CloudSpawner.cs
 start line: 18
@@ -313,34 +358,25 @@ size: 18 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 36
-unit: private void PopulateDeck()
-file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 265
-end line: 289
-size: 18 LOC
-McCabe index: 4
-number of parameters: 2
-
-id: 37
+id: 41
 unit: private void InitializePlayerStartingResources()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 303
-end line: 324
+start line: 349
+end line: 370
 size: 18 LOC
 McCabe index: 6
 number of parameters: 2
 
-id: 38
+id: 42
 unit: public bool TrySpendResources()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 141
-end line: 162
+start line: 142
+end line: 163
 size: 18 LOC
 McCabe index: 7
 number of parameters: 1
 
-id: 39
+id: 43
 unit: private void OnTriggerEnter()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 191
@@ -349,25 +385,16 @@ size: 16 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 40
-unit: public bool CanBePlayed()
-file: Assets/Scripts/GameLogic/Card.cs
-start line: 61
-end line: 78
-size: 16 LOC
-McCabe index: 8
-number of parameters: 3
-
-id: 41
+id: 44
 unit: public void DrawCard()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 187
-end line: 207
+start line: 190
+end line: 210
 size: 16 LOC
 McCabe index: 6
 number of parameters: 1
 
-id: 42
+id: 45
 unit: private void FixLonelyLakes()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 172
@@ -376,7 +403,7 @@ size: 15 LOC
 McCabe index: 7
 number of parameters: 0
 
-id: 43
+id: 46
 unit: private void SetTexts()
 file: Assets/Scripts/UI/TileInfo.cs
 start line: 45
@@ -385,7 +412,7 @@ size: 15 LOC
 McCabe index: 2
 number of parameters: 6
 
-id: 44
+id: 47
 unit: static Readme SelectReadme()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 77
@@ -394,7 +421,25 @@ size: 15 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 45
+id: 48
+unit: public void OnPointerClick()
+file: Assets/Scripts/GameLogic/Card.cs
+start line: 108
+end line: 121
+size: 14 LOC
+McCabe index: 5
+number of parameters: 1
+
+id: 49
+unit: private SimpleGameState SimulatePlay()
+file: Assets/Scripts/GameLogic/AIPlayer.cs
+start line: 60
+end line: 72
+size: 13 LOC
+McCabe index: 2
+number of parameters: 3
+
+id: 50
 unit: private void OnEnable()
 file: Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs
 start line: 9
@@ -403,7 +448,7 @@ size: 13 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 46
+id: 51
 unit: private void OnEnable()
 file: Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs
 start line: 5
@@ -412,34 +457,43 @@ size: 13 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 47
+id: 52
 unit: private void OnEnable()
-file: Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs
-start line: 3
-end line: 17
+file: Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs
+start line: 7
+end line: 24
 size: 13 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 48
+id: 53
+unit: private void OnEnable()
+file: Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs
+start line: 9
+end line: 27
+size: 13 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 54
 unit: private void HandlePlayerInput()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 251
-end line: 263
+start line: 295
+end line: 307
 size: 13 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 49
+id: 55
 unit: void Update()
 file: Assets/Scripts/UI/Chat.cs
-start line: 23
-end line: 35
+start line: 29
+end line: 41
 size: 13 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 50
+id: 56
 unit: public override void ObserverUpdate()
 file: Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs
 start line: 10
@@ -448,7 +502,7 @@ size: 13 LOC
 McCabe index: 4
 number of parameters: 1
 
-id: 51
+id: 57
 unit: static void SelectReadmeAutomatically()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 54
@@ -457,7 +511,7 @@ size: 13 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 52
+id: 58
 unit: void Start()
 file: Assets/Scripts/Environnement/CloudMouvement.cs
 start line: 11
@@ -466,7 +520,7 @@ size: 12 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 53
+id: 59
 unit: void Update()
 file: Assets/Scripts/Environnement/CloudMouvement.cs
 start line: 28
@@ -475,7 +529,16 @@ size: 12 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 54
+id: 60
+unit: private int EstimateCardValue()
+file: Assets/Scripts/GameLogic/AIPlayer.cs
+start line: 47
+end line: 58
+size: 12 LOC
+McCabe index: 3
+number of parameters: 1
+
+id: 61
 unit: public void LogAllTiles()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 312
@@ -484,52 +547,52 @@ size: 12 LOC
 McCabe index: 5
 number of parameters: 0
 
-id: 55
+id: 62
 unit: public void InjectDefaultConditionIfNeeded()
 file: Assets/Scripts/GameLogic/Cards/CardData.cs
-start line: 21
-end line: 32
+start line: 22
+end line: 33
 size: 12 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 56
+id: 63
 unit: private void OnEnable()
-file: Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs
-start line: 7
-end line: 23
+file: Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs
+start line: 3
+end line: 16
 size: 12 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 57
+id: 64
 unit: private void OnEnable()
-file: Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs
-start line: 9
-end line: 25
+file: Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs
+start line: 3
+end line: 16
 size: 12 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 58
+id: 65
 unit: public void NotifyObservers()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 127
-end line: 139
+start line: 128
+end line: 140
 size: 12 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 59
+id: 66
 unit: public void ShuffleDiscardIntoDeck()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 173
-end line: 186
+start line: 175
+end line: 188
 size: 12 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 60
+id: 67
 unit: public void SetTurn()
 file: Assets/Scripts/UI/PlayerTurnUi.cs
 start line: 17
@@ -538,7 +601,7 @@ size: 12 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 61
+id: 68
 unit: bool IsPositionValid()
 file: Assets/Scripts/Environnement/CloudSpawner.cs
 start line: 78
@@ -547,7 +610,7 @@ size: 11 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 62
+id: 69
 unit: private void Awake()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 27
@@ -556,16 +619,52 @@ size: 11 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 63
+id: 70
 unit: public void InitializeCard()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 19
-end line: 29
+start line: 20
+end line: 30
 size: 11 LOC
 McCabe index: 1
 number of parameters: 7
 
-id: 64
+id: 71
+unit: private void OnEnable()
+file: Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs
+start line: 3
+end line: 16
+size: 11 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 72
+unit: private void OnEnable()
+file: Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs
+start line: 3
+end line: 16
+size: 11 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 73
+unit: private IEnumerator AITurn()
+file: Assets/Scripts/GameLogic/GameManager.cs
+start line: 121
+end line: 131
+size: 11 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 74
+unit: public void SetCurrentPlayerTurnToNextPlayer()
+file: Assets/Scripts/GameLogic/GameState.cs
+start line: 71
+end line: 83
+size: 11 LOC
+McCabe index: 3
+number of parameters: 0
+
+id: 75
 unit: private void OnValidate()
 file: Assets/Scripts/UI/Menu/ButtonListController.cs
 start line: 8
@@ -574,7 +673,7 @@ size: 11 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 65
+id: 76
 unit: bool LinkLabel()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 228
@@ -583,7 +682,7 @@ size: 11 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 66
+id: 77
 unit: private Vector3 AxialToIsometric()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 268
@@ -592,7 +691,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 67
+id: 78
 unit: public void ApplyEffect()
 file: Assets/Scripts/GameLogic/CardEffects/PlaceStructureEffect.cs
 start line: 14
@@ -601,7 +700,16 @@ size: 10 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 68
+id: 79
+unit: private void OnEnable()
+file: Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs
+start line: 5
+end line: 16
+size: 10 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 80
 unit: private void OnEnable()
 file: Assets/Scripts/GameLogic/Cards/FreeCard.cs
 start line: 3
@@ -610,7 +718,16 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 69
+id: 81
+unit: private void OnEnable()
+file: Assets/Scripts/GameLogic/Cards/WoodSurge.cs
+start line: 3
+end line: 12
+size: 10 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 82
 unit: private void OnEnable()
 file: Assets/Scripts/GameLogic/Cards/World/Earthquake.cs
 start line: 5
@@ -619,16 +736,16 @@ size: 10 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 70
+id: 83
 unit: public DebugValues()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 17
-end line: 26
+start line: 18
+end line: 27
 size: 10 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 71
+id: 84
 unit: public static GenerationConfig LoadFromJson()
 file: Assets/Scripts/GameLogic/GenerationConfig.cs
 start line: 21
@@ -637,7 +754,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 72
+id: 85
 unit: private void Open()
 file: Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs
 start line: 22
@@ -646,7 +763,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 73
+id: 86
 unit: private void Close()
 file: Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs
 start line: 33
@@ -655,7 +772,7 @@ size: 10 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 74
+id: 87
 unit: public override void ObserverUpdate()
 file: Assets/Scripts/UI/ScoreObserver.cs
 start line: 23
@@ -664,7 +781,7 @@ size: 10 LOC
 McCabe index: 5
 number of parameters: 1
 
-id: 75
+id: 88
 unit: private Vector3 GetRandomPosition()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 225
@@ -673,7 +790,7 @@ size: 9 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 76
+id: 89
 unit: private Tile GetTileUnder()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 237
@@ -682,16 +799,16 @@ size: 9 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 77
+id: 90
 unit: public bool TryPlay()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 121
-end line: 131
+start line: 143
+end line: 153
 size: 9 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 78
+id: 91
 unit: public void ApplyEffect()
 file: Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs
 start line: 5
@@ -700,70 +817,70 @@ size: 9 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 79
+id: 92
 unit: private void OnEnable()
-file: Assets/Scripts/GameLogic/Cards/MineralSurge.cs
+file: Assets/Scripts/GameLogic/Cards/WaterSurge.cs
 start line: 3
 end line: 11
 size: 9 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 80
-unit: private IEnumerator AITurn()
-file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 112
-end line: 120
+id: 93
+unit: private void OnEnable()
+file: Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs
+start line: 3
+end line: 13
 size: 9 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 81
+id: 94
 unit: private void AddPersistentCardToHand()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 291
-end line: 302
+start line: 336
+end line: 347
 size: 9 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 82
+id: 95
 unit: void RegisterObserversToPlayer()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 368
-end line: 377
+start line: 413
+end line: 422
 size: 9 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 83
+id: 96
 unit: public Player GetCurrentPlayingPlayer()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 77
-end line: 85
+start line: 85
+end line: 93
 size: 9 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 84
+id: 97
 unit: public void MoveCardFromHandToDiscardPile()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 58
-end line: 66
+start line: 59
+end line: 67
 size: 9 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 85
+id: 98
 unit: public void DeselectTile()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 164
-end line: 172
+start line: 165
+end line: 173
 size: 9 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 86
+id: 99
 unit: public void UpdateBorder()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 28
@@ -772,7 +889,7 @@ size: 9 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 87
+id: 100
 unit: private void SetAudioClip()
 file: Assets/Scripts/Audio/AudioManager.cs
 start line: 28
@@ -781,7 +898,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 4
 
-id: 88
+id: 101
 unit: private float PlayAudioClip()
 file: Assets/Scripts/Audio/AudioManager.cs
 start line: 43
@@ -790,7 +907,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 3
 
-id: 89
+id: 102
 unit: private void Awake()
 file: Assets/Scripts/Audio/AudioMixerManager.cs
 start line: 27
@@ -799,34 +916,43 @@ size: 8 LOC
 McCabe index: 6
 number of parameters: 0
 
-id: 90
+id: 103
+unit: private void OnEnable()
+file: Assets/Scripts/GameLogic/Cards/MineralSurge.cs
+start line: 3
+end line: 10
+size: 8 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 104
 unit: public Card CreateCardGameObject()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 127
-end line: 134
+start line: 135
+end line: 142
 size: 8 LOC
 McCabe index: 1
 number of parameters: 3
 
-id: 91
+id: 105
 unit: public void MoveCardFromDeckToHand()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 49
-end line: 56
+start line: 50
+end line: 57
 size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 92
+id: 106
 unit: public void AddOwnedTile()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 68
-end line: 75
+start line: 69
+end line: 76
 size: 8 LOC
 McCabe index: 3
 number of parameters: 1
 
-id: 93
+id: 107
 unit: public void Initialize()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 19
@@ -835,16 +961,16 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 94
+id: 108
 unit: private void OnSceneLoaded()
 file: Assets/Scripts/SceneChanger.cs
-start line: 23
-end line: 30
+start line: 22
+end line: 29
 size: 8 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 95
+id: 109
 unit: public void ToggleMenu()
 file: Assets/Scripts/UI/Menu/InGameMenu.cs
 start line: 7
@@ -853,7 +979,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 96
+id: 110
 unit: public override void ObserverUpdate()
 file: Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs
 start line: 10
@@ -862,7 +988,7 @@ size: 8 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 97
+id: 111
 unit: public void Clear()
 file: Assets/Scripts/UI/TileInfo.cs
 start line: 61
@@ -871,7 +997,7 @@ size: 8 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 98
+id: 112
 unit: public float TurnAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 89
@@ -880,7 +1006,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 99
+id: 113
 unit: private bool IsTileGenerated()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 161
@@ -889,52 +1015,52 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 100
+id: 114
 unit: public void ApplyEffects()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 48
-end line: 54
+start line: 49
+end line: 55
 size: 7 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 101
+id: 115
 unit: private void Start()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 82
-end line: 88
+start line: 90
+end line: 96
 size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 102
+id: 116
 unit: public void Clean()
 file: Assets/Scripts/UI/Chat.cs
-start line: 41
-end line: 47
+start line: 43
+end line: 49
 size: 7 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 103
+id: 117
 unit: private void Open()
 file: Assets/Scripts/UI/Chat.cs
-start line: 66
-end line: 72
+start line: 68
+end line: 74
 size: 7 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 104
+id: 118
 unit: public void AddChatMessage()
 file: Assets/Scripts/UI/Chat.cs
-start line: 89
-end line: 95
+start line: 91
+end line: 97
 size: 7 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 105
+id: 119
 unit: public void Select()
 file: Assets/Scripts/UI/Menu/ButtonController.cs
 start line: 31
@@ -943,7 +1069,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 106
+id: 120
 unit: private void Awake()
 file: Assets/Scripts/UI/Menu/ButtonListController.cs
 start line: 20
@@ -952,7 +1078,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 107
+id: 121
 unit: public void AllNormal()
 file: Assets/Scripts/UI/Menu/ButtonListController.cs
 start line: 28
@@ -961,7 +1087,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 108
+id: 122
 unit: public void OnDisable()
 file: Assets/Scripts/UI/Menu/ButtonListController.cs
 start line: 61
@@ -970,7 +1096,7 @@ size: 7 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 109
+id: 123
 unit: static void LoadLayout()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 69
@@ -979,7 +1105,7 @@ size: 7 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 110
+id: 124
 unit: public void WalkRandomAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 73
@@ -988,7 +1114,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 111
+id: 125
 unit: public float ShuffleAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 97
@@ -997,7 +1123,7 @@ size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 112
+id: 126
 unit: public float SitStandAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 104
@@ -1006,16 +1132,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 113
-unit: public override Card GetBestPlayableCard()
-file: Assets/Scripts/GameLogic/AIPlayer.cs
-start line: 6
-end line: 13
-size: 6 LOC
-McCabe index: 1
-number of parameters: 0
-
-id: 114
+id: 127
 unit: private bool IsInsideMap()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 228
@@ -1024,7 +1141,7 @@ size: 6 LOC
 McCabe index: 4
 number of parameters: 2
 
-id: 115
+id: 128
 unit: public bool IsMet()
 file: Assets/Scripts/GameLogic/CardConditions/OnlyOnNeutralTile.cs
 start line: 5
@@ -1033,16 +1150,7 @@ size: 6 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 116
-unit: public void SetCurrentPlayerTurnToNextPlayer()
-file: Assets/Scripts/GameLogic/GameState.cs
-start line: 70
-end line: 75
-size: 6 LOC
-McCabe index: 2
-number of parameters: 0
-
-id: 117
+id: 129
 unit: private void Awake()
 file: Assets/Scripts/GameLogic/PlayerInputDetection.cs
 start line: 21
@@ -1051,7 +1159,7 @@ size: 6 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 118
+id: 130
 unit: public void ElevateTile()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 106
@@ -1060,7 +1168,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 119
+id: 131
 unit: public void ResetElevation()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 113
@@ -1069,7 +1177,7 @@ size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 120
+id: 132
 unit: private void Awake()
 file: Assets/Scripts/SceneChanger.cs
 start line: 16
@@ -1078,7 +1186,7 @@ size: 6 LOC
 McCabe index: 4
 number of parameters: 0
 
-id: 121
+id: 133
 unit: private void Awake()
 file: Assets/Scripts/UI/Chat.cs
 start line: 17
@@ -1087,34 +1195,34 @@ size: 6 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 122
+id: 134
 unit: public void OpenClose()
 file: Assets/Scripts/UI/Chat.cs
-start line: 49
-end line: 54
+start line: 51
+end line: 56
 size: 6 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 123
+id: 135
 unit: public void Close()
 file: Assets/Scripts/UI/Chat.cs
-start line: 75
-end line: 80
+start line: 77
+end line: 82
 size: 6 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 124
+id: 136
 unit: private void AddLine()
 file: Assets/Scripts/UI/Chat.cs
-start line: 82
-end line: 87
+start line: 84
+end line: 89
 size: 6 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 125
+id: 137
 unit: private void Awake()
 file: Assets/Scripts/UI/TileInfo.cs
 start line: 15
@@ -1123,7 +1231,7 @@ size: 6 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 126
+id: 138
 unit: private void Awake()
 file: Assets/Scripts/Audio/AudioManager.cs
 start line: 15
@@ -1132,7 +1240,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 127
+id: 139
 unit: public void SetMasterVolume()
 file: Assets/Scripts/Audio/AudioMixerManager.cs
 start line: 43
@@ -1141,7 +1249,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 128
+id: 140
 unit: public void SetMusicVolume()
 file: Assets/Scripts/Audio/AudioMixerManager.cs
 start line: 50
@@ -1150,7 +1258,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 129
+id: 141
 unit: public void SetSFXVolume()
 file: Assets/Scripts/Audio/AudioMixerManager.cs
 start line: 57
@@ -1159,7 +1267,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 130
+id: 142
 unit: private void Start()
 file: Assets/Scripts/CameraController.cs
 start line: 14
@@ -1168,7 +1276,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 131
+id: 143
 unit: private void Update()
 file: Assets/Scripts/CameraController.cs
 start line: 20
@@ -1177,7 +1285,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 132
+id: 144
 unit: public void IdleAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 67
@@ -1186,7 +1294,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 133
+id: 145
 unit: public void RunAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 79
@@ -1195,7 +1303,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 134
+id: 146
 unit: public float EatAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 110
@@ -1204,7 +1312,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 135
+id: 147
 unit: public float AttackAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 115
@@ -1213,7 +1321,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 136
+id: 148
 unit: public float GotHitAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 120
@@ -1222,7 +1330,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 137
+id: 149
 unit: private void Start()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 32
@@ -1231,7 +1339,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 138
+id: 150
 unit: private IEnumerator Moving()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 109
@@ -1240,7 +1348,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 139
+id: 151
 unit: private void Idle()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 211
@@ -1249,16 +1357,16 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 140
+id: 152
 unit: public void AddCost()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 41
-end line: 46
+start line: 42
+end line: 47
 size: 5 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 141
+id: 153
 unit: public bool IsMet()
 file: Assets/Scripts/GameLogic/CardConditions/OnlyOnEnemyTile.cs
 start line: 3
@@ -1267,7 +1375,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 2
 
-id: 142
+id: 154
 unit: public void ApplyEffect()
 file: Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs
 start line: 15
@@ -1276,7 +1384,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 143
+id: 155
 unit: public GainRessourceOfType()
 file: Assets/Scripts/GameLogic/CardEffects/GainRessourceOfType.cs
 start line: 12
@@ -1285,7 +1393,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 144
+id: 156
 unit: public PlaceStructureEffect()
 file: Assets/Scripts/GameLogic/CardEffects/PlaceStructureEffect.cs
 start line: 8
@@ -1294,43 +1402,52 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 145
+id: 157
 unit: private void DeselectCurrentTile()
 file: Assets/Scripts/GameLogic/GameManager.cs
-start line: 378
-end line: 382
+start line: 424
+end line: 428
 size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 146
+id: 158
 unit: public bool HasPlayerWon()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 32
-end line: 36
+start line: 33
+end line: 37
 size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 147
+id: 159
 unit: public IEnumerator DrawCardToHandAfterDelay()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 121
-end line: 125
+start line: 129
+end line: 133
 size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 148
+id: 160
+unit: private void PlayerWiningScreen()
+file: Assets/Scripts/GameLogic/GameState.cs
+start line: 144
+end line: 148
+size: 5 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 161
 unit: public void RegisterObserver()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 121
-end line: 125
+start line: 122
+end line: 126
 size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 149
+id: 162
 unit: private void OnEnable()
 file: Assets/Scripts/GameLogic/PlayerInputDetection.cs
 start line: 28
@@ -1339,7 +1456,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 150
+id: 163
 unit: private void OnDisable()
 file: Assets/Scripts/GameLogic/PlayerInputDetection.cs
 start line: 34
@@ -1348,7 +1465,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 151
+id: 164
 unit: private void DeselectCurrentTile()
 file: Assets/Scripts/GameLogic/PlayerInputDetection.cs
 start line: 74
@@ -1357,7 +1474,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 152
+id: 165
 unit: private void Awake()
 file: Assets/Scripts/GameLogic/RessourceButtonHandler.cs
 start line: 13
@@ -1366,34 +1483,34 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 153
+id: 166
 unit: static private void SceneChange()
 file: Assets/Scripts/SceneChanger.cs
-start line: 42
-end line: 46
+start line: 40
+end line: 44
 size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 154
+id: 167
 unit: public void GameStartCivilisation()
 file: Assets/Scripts/SceneChanger.cs
-start line: 48
-end line: 52
+start line: 46
+end line: 50
 size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 155
+id: 168
 unit: public void GameStartWorld()
 file: Assets/Scripts/SceneChanger.cs
-start line: 54
-end line: 58
+start line: 52
+end line: 56
 size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 156
+id: 169
 unit: public static void Log()
 file: Assets/Scripts/Testing&Debug/GameLogger.cs
 start line: 7
@@ -1402,7 +1519,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 157
+id: 170
 unit: public static void Warn()
 file: Assets/Scripts/Testing&Debug/GameLogger.cs
 start line: 13
@@ -1411,7 +1528,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 158
+id: 171
 unit: protected void ChangeAnimation()
 file: Assets/Scripts/UI/AnimationController.cs
 start line: 8
@@ -1420,7 +1537,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 159
+id: 172
 unit: protected void PlayAnimation()
 file: Assets/Scripts/UI/AnimationController.cs
 start line: 14
@@ -1429,16 +1546,34 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 160
+id: 173
 unit: public void AddChatMessage()
 file: Assets/Scripts/UI/Chat.cs
-start line: 103
-end line: 108
+start line: 105
+end line: 110
 size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 161
+id: 174
+unit: private void Awake()
+file: Assets/Scripts/UI/FinalScreenUI.cs
+start line: 11
+end line: 15
+size: 5 LOC
+McCabe index: 3
+number of parameters: 0
+
+id: 175
+unit: public void Show()
+file: Assets/Scripts/UI/FinalScreenUI.cs
+start line: 22
+end line: 26
+size: 5 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 176
 unit: public void SetTotalScore()
 file: Assets/Scripts/UI/MaxScoreUpdate.cs
 start line: 12
@@ -1447,7 +1582,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 162
+id: 177
 unit: public void SetListController()
 file: Assets/Scripts/UI/Menu/ButtonController.cs
 start line: 8
@@ -1456,7 +1591,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 163
+id: 178
 unit: public void HighlightAnimation()
 file: Assets/Scripts/UI/Menu/ButtonController.cs
 start line: 14
@@ -1465,7 +1600,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 164
+id: 179
 unit: public void NormalAnimation()
 file: Assets/Scripts/UI/Menu/ButtonController.cs
 start line: 20
@@ -1474,7 +1609,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 1
 
-id: 165
+id: 180
 unit: private void Awake()
 file: Assets/Scripts/UI/PlayerTurnUi.cs
 start line: 11
@@ -1483,7 +1618,7 @@ size: 5 LOC
 McCabe index: 3
 number of parameters: 0
 
-id: 166
+id: 181
 unit: private void Awake()
 file: Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs
 start line: 10
@@ -1492,7 +1627,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 167
+id: 182
 unit: public void OpenClose()
 file: Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs
 start line: 16
@@ -1501,7 +1636,7 @@ size: 5 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 168
+id: 183
 unit: private void Display()
 file: Assets/Scripts/UI/ScoreObserver.cs
 start line: 17
@@ -1510,7 +1645,7 @@ size: 5 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 169
+id: 184
 unit: public void UiClose()
 file: Assets/Scripts/Audio/AudioManager.cs
 start line: 56
@@ -1519,7 +1654,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 170
+id: 185
 unit: public void UiOpen()
 file: Assets/Scripts/Audio/AudioManager.cs
 start line: 61
@@ -1528,7 +1663,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 171
+id: 186
 unit: public void RessourceSelect()
 file: Assets/Scripts/Audio/AudioManager.cs
 start line: 66
@@ -1537,7 +1672,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 172
+id: 187
 unit: public void RessourceDecline()
 file: Assets/Scripts/Audio/AudioManager.cs
 start line: 71
@@ -1546,7 +1681,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 173
+id: 188
 unit: private void SetVolume()
 file: Assets/Scripts/Audio/AudioMixerManager.cs
 start line: 37
@@ -1555,7 +1690,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 174
+id: 189
 unit: private void SetValue()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 58
@@ -1564,7 +1699,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 175
+id: 190
 unit: private void SetRandomValue()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 62
@@ -1573,7 +1708,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 176
+id: 191
 unit: public void WalkBackwardAnimation()
 file: Assets/Scripts/Environnement/AnimalAnimatorController.cs
 start line: 84
@@ -1582,7 +1717,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 177
+id: 192
 unit: public void SetDebug()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 62
@@ -1591,7 +1726,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 178
+id: 193
 unit: private void OnCollisionEnter()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 186
@@ -1600,7 +1735,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 179
+id: 194
 unit: private float SignedAngle()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 217
@@ -1609,7 +1744,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 180
+id: 195
 unit: private static float Angle()
 file: Assets/Scripts/Environnement/AnimalMouvement.cs
 start line: 221
@@ -1618,7 +1753,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 181
+id: 196
 unit: void RecycleCloud()
 file: Assets/Scripts/Environnement/CloudMouvement.cs
 start line: 44
@@ -1627,16 +1762,16 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 182
-unit: private int MiniMax()
+id: 197
+unit: private int Evaluate()
 file: Assets/Scripts/GameLogic/AIPlayer.cs
-start line: 15
-end line: 18
+start line: 75
+end line: 78
 size: 4 LOC
 McCabe index: 1
-number of parameters: 0
+number of parameters: 1
 
-id: 183
+id: 198
 unit: public List GetAllTiles()
 file: Assets/Scripts/GameLogic/Board.cs
 start line: 327
@@ -1645,61 +1780,70 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 184
+id: 199
 unit: public void Start()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 31
-end line: 34
+start line: 32
+end line: 35
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 185
+id: 200
 unit: public void AddEffect()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 36
-end line: 39
+start line: 37
+end line: 40
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 186
+id: 201
 unit: public Dictionary GetCost()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 56
-end line: 59
+start line: 57
+end line: 60
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 187
+id: 202
 unit: private void SelectedVisual()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 104
-end line: 108
+start line: 123
+end line: 127
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 188
+id: 203
 unit: private void NormalVisual()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 110
-end line: 113
+start line: 129
+end line: 132
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 189
+id: 204
 unit: public void AddCondition()
 file: Assets/Scripts/GameLogic/Card.cs
-start line: 115
-end line: 118
+start line: 134
+end line: 137
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 190
+id: 205
+unit: public void SetGameStateReference()
+file: Assets/Scripts/GameLogic/Card.cs
+start line: 155
+end line: 158
+size: 4 LOC
+McCabe index: 1
+number of parameters: 1
+
+id: 206
 unit: public TileMustBeOfType()
 file: Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs
 start line: 7
@@ -1708,7 +1852,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 191
+id: 207
 unit: public bool IsMet()
 file: Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs
 start line: 12
@@ -1717,7 +1861,7 @@ size: 4 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 192
+id: 208
 unit: public string GetConditionDescription()
 file: Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs
 start line: 17
@@ -1726,7 +1870,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 193
+id: 209
 unit: public bool IsMet()
 file: Assets/Scripts/GameLogic/CardConditions/TileMustHaveStructure.cs
 start line: 3
@@ -1735,7 +1879,7 @@ size: 4 LOC
 McCabe index: 2
 number of parameters: 2
 
-id: 194
+id: 210
 unit: public void ApplyEffect()
 file: Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs
 start line: 7
@@ -1744,7 +1888,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 195
+id: 211
 unit: public GainPointEffect()
 file: Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs
 start line: 11
@@ -1753,7 +1897,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 196
+id: 212
 unit: public void ApplyEffect()
 file: Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs
 start line: 3
@@ -1762,88 +1906,88 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 197
+id: 213
 unit: public Board GetCurrentBoard()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 23
-end line: 26
+start line: 24
+end line: 27
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 198
+id: 214
 unit: public void SetFirstPlayer()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 27
-end line: 30
+start line: 28
+end line: 31
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 199
+id: 215
 unit: public List GetPlayableCards()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 39
-end line: 43
+start line: 40
+end line: 44
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 200
+id: 216
 unit: public void SetBoard()
 file: Assets/Scripts/GameLogic/GameState.cs
-start line: 87
-end line: 90
+start line: 95
+end line: 98
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 201
+id: 217
 unit: public override Card GetBestPlayableCard()
 file: Assets/Scripts/GameLogic/HumanPlayer.cs
 start line: 7
 end line: 11
 size: 4 LOC
 McCabe index: 1
-number of parameters: 0
+number of parameters: 1
 
-id: 202
+id: 218
 unit: public void AddCardInDeck()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 39
-end line: 42
+start line: 40
+end line: 43
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 203
+id: 219
 unit: public void GiveCard()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 44
-end line: 47
+start line: 45
+end line: 48
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 204
+id: 220
 unit: public void RemoveOwnedTile()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 77
-end line: 80
+start line: 78
+end line: 81
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 205
+id: 221
 unit: public void ChangeSelectedTile()
 file: Assets/Scripts/GameLogic/Player.cs
-start line: 82
-end line: 85
+start line: 83
+end line: 86
 size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 206
+id: 222
 unit: public void OnMouseDown()
 file: Assets/Scripts/GameLogic/PlayerInputNotifier.cs
 start line: 10
@@ -1852,7 +1996,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 207
+id: 223
 unit: public void ShowOwnedForest()
 file: Assets/Scripts/GameLogic/RessourceButtonHandler.cs
 start line: 58
@@ -1861,7 +2005,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 208
+id: 224
 unit: public void ShowOwnedMontain()
 file: Assets/Scripts/GameLogic/RessourceButtonHandler.cs
 start line: 63
@@ -1870,7 +2014,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 209
+id: 225
 unit: public void ShowOwnedPlain()
 file: Assets/Scripts/GameLogic/RessourceButtonHandler.cs
 start line: 68
@@ -1879,7 +2023,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 210
+id: 226
 unit: public void ShowOwnedDesert()
 file: Assets/Scripts/GameLogic/RessourceButtonHandler.cs
 start line: 73
@@ -1888,7 +2032,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 211
+id: 227
 unit: public void ShowOwnedLake()
 file: Assets/Scripts/GameLogic/RessourceButtonHandler.cs
 start line: 78
@@ -1897,7 +2041,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 212
+id: 228
 unit: public bool TryGetProducedAmount()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 97
@@ -1906,7 +2050,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 213
+id: 229
 unit: public List GetProducedRessourceTypes()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 101
@@ -1915,7 +2059,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 214
+id: 230
 unit: public void SpawnParticle()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 120
@@ -1924,7 +2068,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 215
+id: 231
 unit: public void SetStructure()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 124
@@ -1933,7 +2077,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 216
+id: 232
 unit: public GameObject GetStructureOnTile()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 129
@@ -1942,7 +2086,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 217
+id: 233
 unit: public bool HasStructure()
 file: Assets/Scripts/GameLogic/Tile.cs
 start line: 134
@@ -1951,52 +2095,52 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 218
+id: 234
 unit: private void OnEnable()
 file: Assets/Scripts/SceneChanger.cs
-start line: 32
-end line: 35
+start line: 30
+end line: 33
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 219
+id: 235
 unit: private void OnDisable()
 file: Assets/Scripts/SceneChanger.cs
-start line: 37
-end line: 40
+start line: 35
+end line: 38
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 220
+id: 236
 unit: public void GameStart()
 file: Assets/Scripts/SceneChanger.cs
-start line: 60
-end line: 63
+start line: 58
+end line: 61
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 221
+id: 237
 unit: public void Home()
 file: Assets/Scripts/SceneChanger.cs
-start line: 67
-end line: 70
+start line: 63
+end line: 66
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 222
+id: 238
 unit: public void QuitApp()
 file: Assets/Scripts/SceneChanger.cs
-start line: 72
-end line: 75
+start line: 68
+end line: 71
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 223
+id: 239
 unit: public static void Error()
 file: Assets/Scripts/Testing&Debug/GameLogger.cs
 start line: 19
@@ -2005,61 +2149,70 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 1
 
-id: 224
+id: 240
 unit: private void Start()
 file: Assets/Scripts/UI/Chat.cs
-start line: 36
-end line: 39
+start line: 24
+end line: 27
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 225
+id: 241
 unit: public void InputSelect()
 file: Assets/Scripts/UI/Chat.cs
-start line: 56
-end line: 59
+start line: 58
+end line: 61
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 226
+id: 242
 unit: public void InputDeselect()
 file: Assets/Scripts/UI/Chat.cs
-start line: 61
-end line: 64
+start line: 63
+end line: 66
 size: 4 LOC
 McCabe index: 2
 number of parameters: 0
 
-id: 227
+id: 243
 unit: public void AddAnnouncement()
 file: Assets/Scripts/UI/Chat.cs
-start line: 97
-end line: 100
+start line: 99
+end line: 102
 size: 4 LOC
 McCabe index: 1
 number of parameters: 2
 
-id: 228
+id: 244
 unit: public bool IsChatInputSelected()
 file: Assets/Scripts/UI/Chat.cs
-start line: 109
-end line: 112
+start line: 111
+end line: 114
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 229
+id: 245
 unit: public bool IsOpened()
 file: Assets/Scripts/UI/Chat.cs
-start line: 113
-end line: 116
+start line: 115
+end line: 118
 size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 230
+id: 246
+unit: private void Start()
+file: Assets/Scripts/UI/FinalScreenUI.cs
+start line: 17
+end line: 20
+size: 4 LOC
+McCabe index: 1
+number of parameters: 0
+
+id: 247
 unit: public void PressAnimation()
 file: Assets/Scripts/UI/Menu/ButtonController.cs
 start line: 26
@@ -2068,7 +2221,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 231
+id: 248
 unit: public bool IsMenuOpen()
 file: Assets/Scripts/UI/Menu/InGameMenu.cs
 start line: 17
@@ -2077,7 +2230,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 232
+id: 249
 unit: private void Civilisation()
 file: Assets/Scripts/UI/PlayerTurnUi.cs
 start line: 30
@@ -2086,7 +2239,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 233
+id: 250
 unit: private void World()
 file: Assets/Scripts/UI/PlayerTurnUi.cs
 start line: 35
@@ -2095,7 +2248,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 234
+id: 251
 unit: public void Open()
 file: Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs
 start line: 3
@@ -2104,7 +2257,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 235
+id: 252
 unit: public void Close()
 file: Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs
 start line: 8
@@ -2113,7 +2266,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 236
+id: 253
 unit: private void Awake()
 file: Assets/Scripts/UI/ScoreObserver.cs
 start line: 12
@@ -2122,7 +2275,7 @@ size: 4 LOC
 McCabe index: 1
 number of parameters: 0
 
-id: 237
+id: 254
 unit: static ReadmeEditor()
 file: Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs
 start line: 19

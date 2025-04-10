@@ -1,35 +1,18 @@
 <html>
 <head>
-    <title>static Readme SelectReadme()</title>
+    <title>public void DrawCard()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">static Readme SelectReadme()</h3>
-<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [77:93]</i></p>
+<h3 style="margin-bottom: 0">public void DrawCard()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Player.cs [190:210]</i></p>
 <ul>
-    <li><b>15</b> lines of code</li>
-    <li><b>2</b> McCabe index (conditional complexity)</li>
+    <li><b>16</b> lines of code</li>
+    <li><b>6</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    static Readme SelectReadme()
-    {
-        var ids = AssetDatabase.FindAssets(&quot;Readme t:Readme&quot;);
-        if (ids.Length == 1)
-        {
-            var readmeObject = AssetDatabase.LoadMainAssetAtPath(AssetDatabase.GUIDToAssetPath(ids[0]));
-
-            Selection.objects = new UnityEngine.Object[] { readmeObject };
-
-            return (Readme)readmeObject;
-        }
-        else
-        {
-            Debug.Log(&quot;Couldn't find a readme&quot;);
-            return null;
-        }
-    }
 
 </code>
 </pre>

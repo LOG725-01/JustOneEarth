@@ -1,0 +1,42 @@
+<html>
+<head>
+    <title>Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs</title>
+    <style type="text/css" media="screen">
+        #editor {
+            position: absolute;
+            top: 40px;
+            right: 0;
+            bottom: 0;
+            left: 0;
+        }
+    </style>
+</head>
+<body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs (<b>14</b> lines of code) (<a href="SpiritOfTheMountains.cs">raw</a>):</h3>
+<div id="editor">public class SpiritOfTheMountains : CardData
+{
+    private void OnEnable()
+    {
+        cardName = &quot;Spirit Of The Mountains&quot;;
+        description = &quot;Get one mountain tile &amp; 4 point ! Cost -6 minerals et -3 woods! &quot;;
+        cost.Add(RessourceTypes.Trees, 3);
+        cost.Add(RessourceTypes.Minerals, 6);
+
+        addOwnedTile = true;
+        targetType = CardTargetType.NeutralTileOnly;
+
+        effectList.Add(new GainPointEffect(4));
+
+        conditionList.Add(new TileMustBeOfType(TileType.Mountains));
+    }
+}</div>
+<script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>
+<script>
+    var editor = ace.edit("editor");
+    editor.session.setMode("ace/mode/csharp");
+    editor.setTheme("ace/theme/xcode");
+    editor.setReadOnly(true);
+    editor.setOption("wrap", true);
+    editor.setPrintMarginColumn(120);
+</script>
+</body>

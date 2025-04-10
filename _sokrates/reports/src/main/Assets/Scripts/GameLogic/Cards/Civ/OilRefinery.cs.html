@@ -12,7 +12,7 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs (<b>18</b> lines of code) (<a href="OilRefinery.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs (<b>19</b> lines of code) (<a href="OilRefinery.cs">raw</a>):</h3>
 <div id="editor">using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -22,12 +22,13 @@ public class OilRefinery : CardData
     private void OnEnable()
     {
         cardName = &quot;Oil Refinery&quot;;
-        description = &quot;Get +4 Oil. Costs -4 water, -3 woods&quot;;
+        description = &quot;Get +4 Oil. Costs -4 water and -3 woods. Only on desert&quot;;
         cost.Add(RessourceTypes.Trees, 3);
         cost.Add(RessourceTypes.Water, 4);
 
         GainRessourceOfType gainRessourceOfTileType = new GainRessourceOfType(RessourceTypes.Oil, 4);
-
+        effectList.Add(gainRessourceOfTileType);
+        
         targetType = CardTargetType.NeutralTileOnly;
 
         conditionList.Add(new TileMustBeOfType(TileType.Deserts));

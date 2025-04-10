@@ -9,23 +9,23 @@
   "metricsList" : {
     "metrics" : [ {
       "id" : "TOTAL_NUMBER_OF_FILES",
-      "value" : 30045,
+      "value" : 30059,
       "description" : "Total number of files in the source folder"
     }, {
       "id" : "NUMBER_OF_FILES_MAIN",
-      "value" : 62,
+      "value" : 70,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN",
-      "value" : 3014,
+      "value" : 3280,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_MAIN_EXT_CS",
-      "value" : 62,
+      "value" : 70,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_MAIN_EXT_CS",
-      "value" : 3014,
+      "value" : 3280,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_TEST",
@@ -45,7 +45,7 @@
       "description" : null
     }, {
       "id" : "TEST_VS_MAIN_LINES_OF_CODE_PERCENTAGE",
-      "value" : 2774.18,
+      "value" : 2549.2,
       "description" : "Test / main code ratio"
     }, {
       "id" : "NUMBER_OF_FILES_GENERATED",
@@ -69,7 +69,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_OTHER",
-      "value" : 107499,
+      "value" : 107505,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER_EXT_TXT",
@@ -85,7 +85,7 @@
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_OTHER_EXT_JSON",
-      "value" : 7112,
+      "value" : 7118,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_OTHER_EXT_CS",
@@ -97,19 +97,19 @@
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ASSETS",
-      "value" : 62,
+      "value" : 70,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ASSETS",
-      "value" : 3014,
+      "value" : 3280,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_DECOMPOSITION_PRIMARY_ASSETS_EXT_CS",
-      "value" : 62,
+      "value" : 70,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_DECOMPOSITION_PRIMARY_ASSETS_EXT_CS",
-      "value" : 3014,
+      "value" : 3280,
       "description" : null
     }, {
       "id" : "NUMBER_OF_DEPENDENCY_LINKS_DECOMPOSITION_PRIMARY",
@@ -141,23 +141,23 @@
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED",
-      "value" : 61,
+      "value" : 69,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED",
-      "value" : 2913,
+      "value" : 3179,
       "description" : null
     }, {
       "id" : "NUMBER_OF_FILES_CONCERN_GENERAL_UNCLASSIFIED_EXT_CS",
-      "value" : 61,
+      "value" : 69,
       "description" : null
     }, {
       "id" : "LINES_OF_CODE_CONCERN_GENERAL_UNCLASSIFIED_EXT_CS",
-      "value" : 2913,
+      "value" : 3179,
       "description" : null
     }, {
       "id" : "NEGLIGIBLE_RISK_FILE_SIZE_COUNT",
-      "value" : 52,
+      "value" : 60,
       "description" : "Number of  files with 100 or less lines of code"
     }, {
       "id" : "LOW_RISK_FILE_SIZE_COUNT",
@@ -177,15 +177,15 @@
       "description" : "Number of  files with more than 1000 lines of code"
     }, {
       "id" : "NEGLIGIBLE_RISK_FILE_SIZE_LOC",
-      "value" : 1269,
+      "value" : 1464,
       "description" : "Lines of code in  files with 100 or less lines of code"
     }, {
       "id" : "LOW_RISK_FILE_SIZE_LOC",
-      "value" : 916,
+      "value" : 949,
       "description" : "Lines of code in  files with 100 to 200 lines of code"
     }, {
       "id" : "MEDIUM_RISK_FILE_SIZE_LOC",
-      "value" : 829,
+      "value" : 867,
       "description" : "Lines of code in  files with 200 to 500 lines of code"
     }, {
       "id" : "HIGH_RISK_FILE_SIZE_LOC",
@@ -197,59 +197,59 @@
       "description" : "Lines of code in  files with more than 1000 lines of code"
     }, {
       "id" : "NUMBER_OF_UNITS",
-      "value" : 237,
+      "value" : 254,
       "description" : "Number of units"
     }, {
       "id" : "LINES_OF_CODE_IN_UNITS",
-      "value" : 2364,
+      "value" : 2583,
       "description" : "Lines of code in units"
     }, {
       "id" : "LINES_OF_CODE_OUTSIDE_UNITS",
-      "value" : 650,
+      "value" : 697,
       "description" : "Lines of code in units"
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_LOC",
-      "value" : 957,
+      "value" : 996,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 40.48223350253807,
+      "value" : 38.55981416957027,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_NEGLIGIBLE_RISK_COUNT",
-      "value" : 172,
+      "value" : 178,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_LOC",
-      "value" : 555,
+      "value" : 655,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_PERCENTAGE",
-      "value" : 23.477157360406093,
+      "value" : 25.358110723964383,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_LOW_RISK_COUNT",
-      "value" : 38,
+      "value" : 46,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_LOC",
-      "value" : 689,
+      "value" : 765,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_PERCENTAGE",
-      "value" : 29.145516074450086,
+      "value" : 29.61672473867596,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_MEDIUM_RISK_COUNT",
-      "value" : 25,
+      "value" : 28,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_LOC",
-      "value" : 163,
+      "value" : 167,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_PERCENTAGE",
-      "value" : 6.895093062605753,
+      "value" : 6.465350367789392,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_HIGH_RISK_COUNT",
@@ -269,47 +269,47 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_NEGLIGIBLE_RISK_LOC",
-      "value" : 957,
+      "value" : 996,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 40.48223350253807,
+      "value" : 38.55981416957027,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 172,
+      "value" : 178,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_LOW_RISK_LOC",
-      "value" : 555,
+      "value" : 655,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_LOW_RISK_PERCENTAGE",
-      "value" : 23.477157360406093,
+      "value" : 25.358110723964383,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_LOW_RISK_COUNT",
-      "value" : 38,
+      "value" : 46,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_MEDIUM_RISK_LOC",
-      "value" : 689,
+      "value" : 765,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 29.145516074450086,
+      "value" : 29.61672473867596,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_MEDIUM_RISK_COUNT",
-      "value" : 25,
+      "value" : 28,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_HIGH_RISK_LOC",
-      "value" : 163,
+      "value" : 167,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_HIGH_RISK_PERCENTAGE",
-      "value" : 6.895093062605753,
+      "value" : 6.465350367789392,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_COMPONENT_ASSETS_HIGH_RISK_COUNT",
@@ -329,47 +329,47 @@
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_NEGLIGIBLE_RISK_LOC",
-      "value" : 957,
+      "value" : 996,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 40.48223350253807,
+      "value" : 38.55981416957027,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 172,
+      "value" : 178,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_LOW_RISK_LOC",
-      "value" : 555,
+      "value" : 655,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_LOW_RISK_PERCENTAGE",
-      "value" : 23.477157360406093,
+      "value" : 25.358110723964383,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_LOW_RISK_COUNT",
-      "value" : 38,
+      "value" : 46,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_MEDIUM_RISK_LOC",
-      "value" : 689,
+      "value" : 765,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 29.145516074450086,
+      "value" : 29.61672473867596,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_MEDIUM_RISK_COUNT",
-      "value" : 25,
+      "value" : 28,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_HIGH_RISK_LOC",
-      "value" : 163,
+      "value" : 167,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_HIGH_RISK_PERCENTAGE",
-      "value" : 6.895093062605753,
+      "value" : 6.465350367789392,
       "description" : null
     }, {
       "id" : "UNIT_SIZE_EXTENSION_CS_HIGH_RISK_COUNT",
@@ -389,23 +389,23 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_LOC",
-      "value" : 1574,
+      "value" : 1786,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 66.58206429780034,
+      "value" : 69.14440572977158,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_NEGLIGIBLE_RISK_COUNT",
-      "value" : 209,
+      "value" : 226,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_LOC",
-      "value" : 633,
+      "value" : 640,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_PERCENTAGE",
-      "value" : 26.776649746192895,
+      "value" : 24.77739063104917,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_LOW_RISK_COUNT",
@@ -417,7 +417,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_PERCENTAGE",
-      "value" : 6.641285956006768,
+      "value" : 6.078203639179249,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_MEDIUM_RISK_COUNT",
@@ -457,23 +457,23 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_NEGLIGIBLE_RISK_LOC",
-      "value" : 1574,
+      "value" : 1786,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 66.58206429780034,
+      "value" : 69.14440572977158,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 209,
+      "value" : 226,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_LOW_RISK_LOC",
-      "value" : 633,
+      "value" : 640,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_LOW_RISK_PERCENTAGE",
-      "value" : 26.776649746192895,
+      "value" : 24.77739063104917,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_LOW_RISK_COUNT",
@@ -485,7 +485,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 6.641285956006768,
+      "value" : 6.078203639179249,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_ASSETS_MEDIUM_RISK_COUNT",
@@ -517,23 +517,23 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_NEGLIGIBLE_RISK_LOC",
-      "value" : 1574,
+      "value" : 1786,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_NEGLIGIBLE_RISK_PERCENTAGE",
-      "value" : 66.58206429780034,
+      "value" : 69.14440572977158,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_NEGLIGIBLE_RISK_COUNT",
-      "value" : 209,
+      "value" : 226,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_LOW_RISK_LOC",
-      "value" : 633,
+      "value" : 640,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_LOW_RISK_PERCENTAGE",
-      "value" : 26.776649746192895,
+      "value" : 24.77739063104917,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_LOW_RISK_COUNT",
@@ -545,7 +545,7 @@
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_MEDIUM_RISK_PERCENTAGE",
-      "value" : 6.641285956006768,
+      "value" : 6.078203639179249,
       "description" : null
     }, {
       "id" : "CONDITIONAL_COMPLEXITY_COMPONENT_CS_MEDIUM_RISK_COUNT",
@@ -577,23 +577,23 @@
       "description" : null
     }, {
       "id" : "FILE_CHANGE_HISTORY_TOTAL_AGE_DAYS",
-      "value" : 42,
+      "value" : 43,
       "description" : "The age of the repository in days"
     }, {
       "id" : "FILE_CHANGE_HISTORY_ACTIVE_DAYS",
-      "value" : 25,
+      "value" : 26,
       "description" : "The number of days with at least one file change"
     }, {
       "id" : "FILE_CHANGE_HISTORY_WEEKS",
-      "value" : 5,
+      "value" : 6,
       "description" : "The number of weeks"
     }, {
       "id" : "FILE_CHANGE_HISTORY_ESTIMATED_WORKING_DAYS",
-      "value" : 25,
+      "value" : 30,
       "description" : "The number of estimated working days in the period"
     }, {
       "id" : "FILE_AGE_NEGLIGIBLE_RISK_COUNT",
-      "value" : 54,
+      "value" : 62,
       "description" : "Number of files 1-30 days days old"
     }, {
       "id" : "FILE_AGE_LOW_RISK_COUNT",
@@ -613,11 +613,11 @@
       "description" : "Number of files 366+ days days old"
     }, {
       "id" : "FILE_AGE_NEGLIGIBLE_RISK_LOC",
-      "value" : 2721,
+      "value" : 2993,
       "description" : "Number of files 1-30 days days old"
     }, {
       "id" : "FILE_AGE_LOW_RISK_LOC",
-      "value" : 293,
+      "value" : 287,
       "description" : "Number of files 31-90 days days old"
     }, {
       "id" : "FILE_AGE_MEDIUM_RISK_LOC",
@@ -649,7 +649,7 @@
       "description" : "Number of duplicated lines"
     }, {
       "id" : "DUPLICATION_NUMBER_OF_CLEANED_LINES",
-      "value" : 1952,
+      "value" : 2120,
       "description" : "Number of lines after cleaning for duplication calculations"
     }, {
       "id" : "DUPLICATION_PERCENTAGE",
@@ -673,7 +673,7 @@
       "description" : "Duplication percentage"
     }, {
       "id" : "TOTAL_ANALYSIS_TIME_IN_MILLIS",
-      "value" : 24076,
+      "value" : 145809,
       "description" : "Total analysis time in milliseconds"
     } ]
   },
@@ -728,7 +728,7 @@
         },
         "metric" : {
           "id" : "LINES_OF_CODE_MAIN",
-          "value" : 3014,
+          "value" : 3280,
           "description" : null
         },
         "status" : "OK"
@@ -783,20 +783,20 @@
       } ]
     } ]
   },
-  "totalNumberOfFilesInScope" : 30045,
+  "totalNumberOfFilesInScope" : 30059,
   "mainAspectAnalysisResults" : {
     "name" : null,
-    "filesCount" : 62,
-    "linesOfCode" : 3014,
+    "filesCount" : 70,
+    "linesOfCode" : 3280,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.cs",
-      "value" : 62,
+      "value" : 70,
       "description" : [ ]
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.cs",
-      "value" : 3014,
+      "value" : 3280,
       "description" : [ ]
     } ]
   },
@@ -835,7 +835,7 @@
   "otherAspectAnalysisResults" : {
     "name" : null,
     "filesCount" : 266,
-    "linesOfCode" : 107499,
+    "linesOfCode" : 107505,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.txt",
@@ -856,7 +856,7 @@
       "description" : [ ]
     }, {
       "name" : "  *.json",
-      "value" : 7112,
+      "value" : 7118,
       "description" : [ ]
     }, {
       "name" : "  *.cs",
@@ -868,17 +868,17 @@
     "key" : "primary",
     "components" : [ {
       "name" : "Assets",
-      "filesCount" : 62,
-      "linesOfCode" : 3014,
+      "filesCount" : 70,
+      "linesOfCode" : 3280,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
         "name" : "  *.cs",
-        "value" : 62,
+        "value" : 70,
         "description" : [ ]
       } ],
       "linesOfCodePerExtension" : [ {
         "name" : "  *.cs",
-        "value" : 3014,
+        "value" : 3280,
         "description" : [ ]
       } ]
     } ],
@@ -924,12 +924,12 @@
     },
     "fileCountPerComponent" : [ {
       "name" : "Assets",
-      "value" : 62,
+      "value" : 70,
       "description" : [ ]
     } ],
     "linesOfCodePerComponent" : [ {
       "name" : "Assets",
-      "value" : 3014,
+      "value" : 3280,
       "description" : [ ]
     } ]
   } ],
@@ -952,37 +952,37 @@
       } ]
     }, {
       "name" : "Unclassified",
-      "filesCount" : 61,
-      "linesOfCode" : 2913,
+      "filesCount" : 69,
+      "linesOfCode" : 3179,
       "numberOfRegexLineMatches" : 0,
       "fileCountPerExtension" : [ {
         "name" : "  *.cs",
-        "value" : 61,
+        "value" : 69,
         "description" : [ ]
       } ],
       "linesOfCodePerExtension" : [ {
         "name" : "  *.cs",
-        "value" : 2913,
+        "value" : 3179,
         "description" : [ ]
       } ]
     } ],
     "concernsGroup" : null,
-    "linesOfCodePerConcern" : [ {
-      "name" : "TODOs",
-      "value" : 101,
-      "description" : [ ]
-    }, {
-      "name" : "Unclassified",
-      "value" : 2913,
-      "description" : [ ]
-    } ],
     "fileCountPerConcern" : [ {
       "name" : "TODOs",
       "value" : 1,
       "description" : [ ]
     }, {
       "name" : "Unclassified",
-      "value" : 61,
+      "value" : 69,
+      "description" : [ ]
+    } ],
+    "linesOfCodePerConcern" : [ {
+      "name" : "TODOs",
+      "value" : 101,
+      "description" : [ ]
+    }, {
+      "name" : "Unclassified",
+      "value" : 3179,
       "description" : [ ]
     } ]
   } ],
@@ -1018,13 +1018,13 @@
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 1269,
-      "lowRiskValue" : 916,
-      "mediumRiskValue" : 829,
+      "negligibleRiskValue" : 1464,
+      "lowRiskValue" : 949,
+      "mediumRiskValue" : 867,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 7,
-      "negligibleRiskCount" : 52,
+      "negligibleRiskCount" : 60,
       "mediumRiskCount" : 3,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1033,13 +1033,13 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 42.10351692103517,
-      "veryHighRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 44.63414634146341,
+      "lowRiskPercentage" : 28.932926829268293,
+      "mediumRiskPercentage" : 26.432926829268293,
       "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 27.50497677504977,
-      "lowRiskPercentage" : 30.39150630391506
+      "veryHighRiskPercentage" : 0.0
     },
     "fileSizeDistributionPerExtension" : [ {
       "key" : "cs",
@@ -1047,13 +1047,13 @@
       "mediumRiskThreshold" : 200,
       "highRiskThreshold" : 500,
       "veryHighRiskThreshold" : 1000,
-      "negligibleRiskValue" : 1269,
-      "lowRiskValue" : 916,
-      "mediumRiskValue" : 829,
+      "negligibleRiskValue" : 1464,
+      "lowRiskValue" : 949,
+      "mediumRiskValue" : 867,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 7,
-      "negligibleRiskCount" : 52,
+      "negligibleRiskCount" : 60,
       "mediumRiskCount" : 3,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1062,13 +1062,13 @@
       "mediumRiskLabel" : "201-500",
       "highRiskLabel" : "501-1000",
       "veryHighRiskLabel" : "1001+",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 42.10351692103517,
-      "veryHighRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 44.63414634146341,
+      "lowRiskPercentage" : 28.932926829268293,
+      "mediumRiskPercentage" : 26.432926829268293,
       "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 27.50497677504977,
-      "lowRiskPercentage" : 30.39150630391506
+      "veryHighRiskPercentage" : 0.0
     } ],
     "fileSizeDistributionPerLogicalDecomposition" : [ {
       "name" : "primary",
@@ -1078,13 +1078,13 @@
         "mediumRiskThreshold" : 200,
         "highRiskThreshold" : 500,
         "veryHighRiskThreshold" : 1000,
-        "negligibleRiskValue" : 1269,
-        "lowRiskValue" : 916,
-        "mediumRiskValue" : 829,
+        "negligibleRiskValue" : 1464,
+        "lowRiskValue" : 949,
+        "mediumRiskValue" : 867,
         "highRiskValue" : 0,
         "veryHighRiskValue" : 0,
         "lowRiskCount" : 7,
-        "negligibleRiskCount" : 52,
+        "negligibleRiskCount" : 60,
         "mediumRiskCount" : 3,
         "highRiskCount" : 0,
         "veryHighRiskCount" : 0,
@@ -1093,22 +1093,22 @@
         "mediumRiskLabel" : "201-500",
         "highRiskLabel" : "501-1000",
         "veryHighRiskLabel" : "1001+",
-        "totalValue" : 3014,
-        "totalCount" : 62,
-        "negligibleRiskPercentage" : 42.10351692103517,
-        "veryHighRiskPercentage" : 0.0,
+        "totalValue" : 3280,
+        "totalCount" : 70,
+        "negligibleRiskPercentage" : 44.63414634146341,
+        "lowRiskPercentage" : 28.932926829268293,
+        "mediumRiskPercentage" : 26.432926829268293,
         "highRiskPercentage" : 0.0,
-        "mediumRiskPercentage" : 27.50497677504977,
-        "lowRiskPercentage" : 30.39150630391506
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "longestFiles" : [ {
       "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
       "extension" : "cs",
-      "linesOfCode" : 305,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 253
+      "linesOfCode" : 343,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 52,
+      "linesOfCodeInUnits" : 283
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Board.cs",
       "extension" : "cs",
@@ -1138,6 +1138,20 @@
       "unitsMcCabeIndexSum" : 48,
       "linesOfCodeInUnits" : 141
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+      "extension" : "cs",
+      "linesOfCode" : 131,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 36,
+      "linesOfCodeInUnits" : 112
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
+      "extension" : "cs",
+      "linesOfCode" : 118,
+      "unitsCount" : 12,
+      "unitsMcCabeIndexSum" : 23,
+      "linesOfCodeInUnits" : 100
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
       "extension" : "cs",
       "linesOfCode" : 118,
@@ -1152,26 +1166,19 @@
       "unitsMcCabeIndexSum" : 23,
       "linesOfCodeInUnits" : 90
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
-    }, {
       "relativePath" : "Assets/Scripts/UI/Chat.cs",
       "extension" : "cs",
       "linesOfCode" : 101,
       "unitsCount" : 15,
       "unitsMcCabeIndexSum" : 25,
       "linesOfCodeInUnits" : 87
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+      "extension" : "cs",
+      "linesOfCode" : 92,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 15,
+      "linesOfCodeInUnits" : 82
     }, {
       "relativePath" : "Assets/Scripts/CameraController.cs",
       "extension" : "cs",
@@ -1292,6 +1299,13 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 10
     }, {
+      "relativePath" : "Assets/Scripts/UI/FinalScreenUI.cs",
+      "extension" : "cs",
+      "linesOfCode" : 24,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 5,
+      "linesOfCodeInUnits" : 14
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/PlaceStructureEffect.cs",
       "extension" : "cs",
       "linesOfCode" : 21,
@@ -1306,6 +1320,13 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 13
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
+      "extension" : "cs",
+      "linesOfCode" : 21,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 13
+    }, {
       "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs",
       "extension" : "cs",
       "linesOfCode" : 21,
@@ -1313,12 +1334,12 @@
       "unitsMcCabeIndexSum" : 4,
       "linesOfCodeInUnits" : 13
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
       "extension" : "cs",
-      "linesOfCode" : 20,
+      "linesOfCode" : 19,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
+      "linesOfCodeInUnits" : 13
     }, {
       "relativePath" : "Assets/Scripts/Testing&Debug/GameLogger.cs",
       "extension" : "cs",
@@ -1326,13 +1347,6 @@
       "unitsCount" : 3,
       "unitsMcCabeIndexSum" : 5,
       "linesOfCodeInUnits" : 14
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
-      "extension" : "cs",
-      "linesOfCode" : 18,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs",
       "extension" : "cs",
@@ -1355,23 +1369,9 @@
       "unitsMcCabeIndexSum" : 3,
       "linesOfCodeInUnits" : 12
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
-      "extension" : "cs",
-      "linesOfCode" : 16,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
-    }, {
       "relativePath" : "Assets/Scripts/UI/AnimationController.cs",
       "extension" : "cs",
       "linesOfCode" : 16,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 10
@@ -1383,6 +1383,20 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 9
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
+    }, {
       "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs",
       "extension" : "cs",
       "linesOfCode" : 15,
@@ -1390,12 +1404,33 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 8
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
       "extension" : "cs",
       "linesOfCode" : 14,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
     }, {
       "relativePath" : "Assets/TutorialInfo/Scripts/Readme.cs",
       "extension" : "cs",
@@ -1417,41 +1452,6 @@
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 10
-    }, {
-      "relativePath" : "Assets/Scripts/UI/MaxScoreUpdate.cs",
-      "extension" : "cs",
-      "linesOfCode" : 13,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 5
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
-      "extension" : "cs",
-      "linesOfCode" : 12,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 9
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/CardConditions/OnlyOnNeutralTile.cs",
-      "extension" : "cs",
-      "linesOfCode" : 11,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 3,
-      "linesOfCodeInUnits" : 6
-    }, {
-      "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs",
-      "extension" : "cs",
-      "linesOfCode" : 11,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 8
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/CardEffects/ExempleEffect.cs",
-      "extension" : "cs",
-      "linesOfCode" : 10,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 4
     } ],
     "filesWithMostUnits" : [ {
       "relativePath" : "Assets/Scripts/Environnement/AnimalMouvement.cs",
@@ -1467,6 +1467,20 @@
       "unitsCount" : 15,
       "unitsMcCabeIndexSum" : 25,
       "linesOfCodeInUnits" : 87
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+      "extension" : "cs",
+      "linesOfCode" : 131,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 36,
+      "linesOfCodeInUnits" : 112
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
+      "extension" : "cs",
+      "linesOfCode" : 343,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 52,
+      "linesOfCodeInUnits" : 283
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Player.cs",
       "extension" : "cs",
@@ -1489,19 +1503,12 @@
       "unitsMcCabeIndexSum" : 91,
       "linesOfCodeInUnits" : 263
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
       "extension" : "cs",
-      "linesOfCode" : 305,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 253
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
+      "linesOfCode" : 118,
       "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
+      "unitsMcCabeIndexSum" : 23,
+      "linesOfCodeInUnits" : 100
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
       "extension" : "cs",
@@ -1509,13 +1516,6 @@
       "unitsCount" : 12,
       "unitsMcCabeIndexSum" : 34,
       "linesOfCodeInUnits" : 103
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
     }, {
       "relativePath" : "Assets/Scripts/SceneChanger.cs",
       "extension" : "cs",
@@ -1551,6 +1551,13 @@
       "unitsCount" : 5,
       "unitsMcCabeIndexSum" : 10,
       "linesOfCodeInUnits" : 27
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+      "extension" : "cs",
+      "linesOfCode" : 92,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 15,
+      "linesOfCodeInUnits" : 82
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/PlayerInputDetection.cs",
       "extension" : "cs",
@@ -1629,19 +1636,19 @@
       "unitsMcCabeIndexSum" : 5,
       "linesOfCodeInUnits" : 14
     }, {
+      "relativePath" : "Assets/Scripts/UI/FinalScreenUI.cs",
+      "extension" : "cs",
+      "linesOfCode" : 24,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 5,
+      "linesOfCodeInUnits" : 14
+    }, {
       "relativePath" : "Assets/Scripts/UI/ScoreObserver.cs",
       "extension" : "cs",
       "linesOfCode" : 28,
       "unitsCount" : 3,
       "unitsMcCabeIndexSum" : 7,
       "linesOfCodeInUnits" : 19
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
       "extension" : "cs",
@@ -1748,19 +1755,26 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 13
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
       "extension" : "cs",
-      "linesOfCode" : 18,
+      "linesOfCode" : 14,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
+      "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
+      "extension" : "cs",
+      "linesOfCode" : 19,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 13
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
       "extension" : "cs",
-      "linesOfCode" : 20,
+      "linesOfCode" : 21,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
+      "linesOfCodeInUnits" : 13
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
       "extension" : "cs",
@@ -1771,38 +1785,24 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
       "extension" : "cs",
-      "linesOfCode" : 16,
+      "linesOfCode" : 15,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
+      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
       "extension" : "cs",
-      "linesOfCode" : 12,
+      "linesOfCode" : 11,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 9
+      "linesOfCodeInUnits" : 8
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
       "extension" : "cs",
-      "linesOfCode" : 14,
+      "linesOfCode" : 15,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 10
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GenerationConfig.cs",
-      "extension" : "cs",
-      "linesOfCode" : 26,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/HumanPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 10,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 4
+      "linesOfCodeInUnits" : 12
     } ]
   },
   "filesHistoryAnalysisResults" : {
@@ -1812,13 +1812,13 @@
       "mediumRiskThreshold" : 90,
       "highRiskThreshold" : 180,
       "veryHighRiskThreshold" : 365,
-      "negligibleRiskValue" : 2721,
-      "lowRiskValue" : 293,
+      "negligibleRiskValue" : 2993,
+      "lowRiskValue" : 287,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 8,
-      "negligibleRiskCount" : 54,
+      "negligibleRiskCount" : 62,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1827,13 +1827,13 @@
       "mediumRiskLabel" : "91-180 days",
       "highRiskLabel" : "181-365 days",
       "veryHighRiskLabel" : "366+ days",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 90.278699402787,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 91.25,
+      "lowRiskPercentage" : 8.75,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 9.721300597213006
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "overallFileFirstModifiedDistribution" : {
       "key" : "",
@@ -1841,13 +1841,13 @@
       "mediumRiskThreshold" : 90,
       "highRiskThreshold" : 180,
       "veryHighRiskThreshold" : 365,
-      "negligibleRiskValue" : 1333,
-      "lowRiskValue" : 1681,
+      "negligibleRiskValue" : 1437,
+      "lowRiskValue" : 1843,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 22,
-      "negligibleRiskCount" : 40,
+      "lowRiskCount" : 24,
+      "negligibleRiskCount" : 46,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1856,13 +1856,13 @@
       "mediumRiskLabel" : "91-180 days",
       "highRiskLabel" : "181-365 days",
       "veryHighRiskLabel" : "366+ days",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 44.22694094226941,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 43.8109756097561,
+      "lowRiskPercentage" : 56.1890243902439,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 55.77305905773059
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "overallFileChangeDistribution" : {
       "key" : "",
@@ -1870,13 +1870,13 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 1444,
-      "lowRiskValue" : 1570,
+      "negligibleRiskValue" : 1547,
+      "lowRiskValue" : 1733,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 12,
-      "negligibleRiskCount" : 50,
+      "lowRiskCount" : 13,
+      "negligibleRiskCount" : 57,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1885,13 +1885,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 47.90975447909754,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 47.16463414634146,
+      "lowRiskPercentage" : 52.83536585365854,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 52.09024552090246
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     },
     "overallContributorsCountDistribution" : {
       "key" : "",
@@ -1899,13 +1899,13 @@
       "mediumRiskThreshold" : 5,
       "highRiskThreshold" : 10,
       "veryHighRiskThreshold" : 25,
-      "negligibleRiskValue" : 302,
-      "lowRiskValue" : 1250,
-      "mediumRiskValue" : 1462,
+      "negligibleRiskValue" : 420,
+      "lowRiskValue" : 1327,
+      "mediumRiskValue" : 1533,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 41,
-      "negligibleRiskCount" : 10,
+      "negligibleRiskCount" : 18,
       "mediumRiskCount" : 11,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1914,13 +1914,13 @@
       "mediumRiskLabel" : "6-10",
       "highRiskLabel" : "11-25",
       "veryHighRiskLabel" : "26+",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 10.01990710019907,
-      "veryHighRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 12.804878048780488,
+      "lowRiskPercentage" : 40.457317073170735,
+      "mediumRiskPercentage" : 46.73780487804878,
       "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 48.50696748506967,
-      "lowRiskPercentage" : 41.47312541473126
+      "veryHighRiskPercentage" : 0.0
     },
     "filesWithoutCommitHistoryCount" : 0,
     "filesWithoutCommitHistoryLinesOfCode" : 0,
@@ -1930,13 +1930,13 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 1444,
-      "lowRiskValue" : 1570,
+      "negligibleRiskValue" : 1547,
+      "lowRiskValue" : 1733,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 12,
-      "negligibleRiskCount" : 50,
+      "lowRiskCount" : 13,
+      "negligibleRiskCount" : 57,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1945,13 +1945,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 47.90975447909754,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 47.16463414634146,
+      "lowRiskPercentage" : 52.83536585365854,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 52.09024552090246
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "lastModifiedDistributionPerExtension" : [ {
       "key" : "cs",
@@ -1959,13 +1959,13 @@
       "mediumRiskThreshold" : 90,
       "highRiskThreshold" : 180,
       "veryHighRiskThreshold" : 365,
-      "negligibleRiskValue" : 2721,
-      "lowRiskValue" : 293,
+      "negligibleRiskValue" : 2993,
+      "lowRiskValue" : 287,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 8,
-      "negligibleRiskCount" : 54,
+      "negligibleRiskCount" : 62,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -1974,13 +1974,13 @@
       "mediumRiskLabel" : "91-180 days",
       "highRiskLabel" : "181-365 days",
       "veryHighRiskLabel" : "366+ days",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 90.278699402787,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 91.25,
+      "lowRiskPercentage" : 8.75,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 9.721300597213006
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "firstModifiedDistributionPerExtension" : [ {
       "key" : "cs",
@@ -1988,13 +1988,13 @@
       "mediumRiskThreshold" : 90,
       "highRiskThreshold" : 180,
       "veryHighRiskThreshold" : 365,
-      "negligibleRiskValue" : 1333,
-      "lowRiskValue" : 1681,
+      "negligibleRiskValue" : 1437,
+      "lowRiskValue" : 1843,
       "mediumRiskValue" : 0,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 22,
-      "negligibleRiskCount" : 40,
+      "lowRiskCount" : 24,
+      "negligibleRiskCount" : 46,
       "mediumRiskCount" : 0,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -2003,13 +2003,13 @@
       "mediumRiskLabel" : "91-180 days",
       "highRiskLabel" : "181-365 days",
       "veryHighRiskLabel" : "366+ days",
-      "totalValue" : 3014,
-      "totalCount" : 62,
-      "negligibleRiskPercentage" : 44.22694094226941,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 0.0,
+      "totalValue" : 3280,
+      "totalCount" : 70,
+      "negligibleRiskPercentage" : 43.8109756097561,
+      "lowRiskPercentage" : 56.1890243902439,
       "mediumRiskPercentage" : 0.0,
-      "lowRiskPercentage" : 55.77305905773059
+      "highRiskPercentage" : 0.0,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "changeDistributionPerLogicalDecomposition" : [ {
       "name" : "primary",
@@ -2019,13 +2019,13 @@
         "mediumRiskThreshold" : 20,
         "highRiskThreshold" : 50,
         "veryHighRiskThreshold" : 100,
-        "negligibleRiskValue" : 1444,
-        "lowRiskValue" : 1570,
+        "negligibleRiskValue" : 1547,
+        "lowRiskValue" : 1733,
         "mediumRiskValue" : 0,
         "highRiskValue" : 0,
         "veryHighRiskValue" : 0,
-        "lowRiskCount" : 12,
-        "negligibleRiskCount" : 50,
+        "lowRiskCount" : 13,
+        "negligibleRiskCount" : 57,
         "mediumRiskCount" : 0,
         "highRiskCount" : 0,
         "veryHighRiskCount" : 0,
@@ -2034,13 +2034,13 @@
         "mediumRiskLabel" : "21-50",
         "highRiskLabel" : "51-100",
         "veryHighRiskLabel" : "101+",
-        "totalValue" : 3014,
-        "totalCount" : 62,
-        "negligibleRiskPercentage" : 47.90975447909754,
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
+        "totalValue" : 3280,
+        "totalCount" : 70,
+        "negligibleRiskPercentage" : 47.16463414634146,
+        "lowRiskPercentage" : 52.83536585365854,
         "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 52.09024552090246
+        "highRiskPercentage" : 0.0,
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "firstModifiedDistributionPerLogicalDecomposition" : [ {
@@ -2051,13 +2051,13 @@
         "mediumRiskThreshold" : 90,
         "highRiskThreshold" : 180,
         "veryHighRiskThreshold" : 365,
-        "negligibleRiskValue" : 1333,
-        "lowRiskValue" : 1681,
+        "negligibleRiskValue" : 1437,
+        "lowRiskValue" : 1843,
         "mediumRiskValue" : 0,
         "highRiskValue" : 0,
         "veryHighRiskValue" : 0,
-        "lowRiskCount" : 22,
-        "negligibleRiskCount" : 40,
+        "lowRiskCount" : 24,
+        "negligibleRiskCount" : 46,
         "mediumRiskCount" : 0,
         "highRiskCount" : 0,
         "veryHighRiskCount" : 0,
@@ -2066,13 +2066,13 @@
         "mediumRiskLabel" : "91-180 days",
         "highRiskLabel" : "181-365 days",
         "veryHighRiskLabel" : "366+ days",
-        "totalValue" : 3014,
-        "totalCount" : 62,
-        "negligibleRiskPercentage" : 44.22694094226941,
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
+        "totalValue" : 3280,
+        "totalCount" : 70,
+        "negligibleRiskPercentage" : 43.8109756097561,
+        "lowRiskPercentage" : 56.1890243902439,
         "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 55.77305905773059
+        "highRiskPercentage" : 0.0,
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "lastModifiedDistributionPerLogicalDecomposition" : [ {
@@ -2083,13 +2083,13 @@
         "mediumRiskThreshold" : 90,
         "highRiskThreshold" : 180,
         "veryHighRiskThreshold" : 365,
-        "negligibleRiskValue" : 2721,
-        "lowRiskValue" : 293,
+        "negligibleRiskValue" : 2993,
+        "lowRiskValue" : 287,
         "mediumRiskValue" : 0,
         "highRiskValue" : 0,
         "veryHighRiskValue" : 0,
         "lowRiskCount" : 8,
-        "negligibleRiskCount" : 54,
+        "negligibleRiskCount" : 62,
         "mediumRiskCount" : 0,
         "highRiskCount" : 0,
         "veryHighRiskCount" : 0,
@@ -2098,13 +2098,13 @@
         "mediumRiskLabel" : "91-180 days",
         "highRiskLabel" : "181-365 days",
         "veryHighRiskLabel" : "366+ days",
-        "totalValue" : 3014,
-        "totalCount" : 62,
-        "negligibleRiskPercentage" : 90.278699402787,
-        "veryHighRiskPercentage" : 0.0,
-        "highRiskPercentage" : 0.0,
+        "totalValue" : 3280,
+        "totalCount" : 70,
+        "negligibleRiskPercentage" : 91.25,
+        "lowRiskPercentage" : 8.75,
         "mediumRiskPercentage" : 0.0,
-        "lowRiskPercentage" : 9.721300597213006
+        "highRiskPercentage" : 0.0,
+        "veryHighRiskPercentage" : 0.0
       } ]
     } ],
     "oldestFiles" : [ {
@@ -2180,10 +2180,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
       "extension" : "cs",
-      "linesOfCode" : 305,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 253
+      "linesOfCode" : 343,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 52,
+      "linesOfCodeInUnits" : 283
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Board.cs",
       "extension" : "cs",
@@ -2199,6 +2199,20 @@
       "unitsMcCabeIndexSum" : 48,
       "linesOfCodeInUnits" : 141
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+      "extension" : "cs",
+      "linesOfCode" : 131,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 36,
+      "linesOfCodeInUnits" : 112
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
+      "extension" : "cs",
+      "linesOfCode" : 118,
+      "unitsCount" : 12,
+      "unitsMcCabeIndexSum" : 23,
+      "linesOfCodeInUnits" : 100
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
       "extension" : "cs",
       "linesOfCode" : 118,
@@ -2206,26 +2220,12 @@
       "unitsMcCabeIndexSum" : 34,
       "linesOfCodeInUnits" : 103
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
       "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
+      "linesOfCode" : 92,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 15,
+      "linesOfCodeInUnits" : 82
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
       "extension" : "cs",
@@ -2425,10 +2425,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
       "extension" : "cs",
-      "linesOfCode" : 16,
+      "linesOfCode" : 15,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
+      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
       "extension" : "cs",
@@ -2453,12 +2453,19 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
       "extension" : "cs",
-      "linesOfCode" : 12,
+      "linesOfCode" : 11,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 9
+      "linesOfCodeInUnits" : 8
     } ],
     "youngestFiles" : [ {
+      "relativePath" : "Assets/Scripts/UI/FinalScreenUI.cs",
+      "extension" : "cs",
+      "linesOfCode" : 24,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 5,
+      "linesOfCodeInUnits" : 14
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs",
       "extension" : "cs",
       "linesOfCode" : 21,
@@ -2468,17 +2475,17 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
       "extension" : "cs",
-      "linesOfCode" : 20,
+      "linesOfCode" : 21,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
+      "linesOfCodeInUnits" : 13
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
       "extension" : "cs",
-      "linesOfCode" : 18,
+      "linesOfCode" : 19,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
+      "linesOfCodeInUnits" : 13
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs",
       "extension" : "cs",
@@ -2487,6 +2494,20 @@
       "unitsMcCabeIndexSum" : 4,
       "linesOfCodeInUnits" : 12
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
       "extension" : "cs",
       "linesOfCode" : 14,
@@ -2494,11 +2515,46 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 10
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs",
       "extension" : "cs",
       "linesOfCode" : 13,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 3,
+      "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WoodSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 13,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WaterSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 12,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 12,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 9
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustHaveStructure.cs",
@@ -2545,10 +2601,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
       "extension" : "cs",
-      "linesOfCode" : 12,
+      "linesOfCode" : 11,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 9
+      "linesOfCodeInUnits" : 8
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs",
       "extension" : "cs",
@@ -2573,10 +2629,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
       "extension" : "cs",
-      "linesOfCode" : 16,
+      "linesOfCode" : 15,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
+      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
       "extension" : "cs",
@@ -2741,10 +2797,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
       "extension" : "cs",
-      "linesOfCode" : 305,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 253
+      "linesOfCode" : 343,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 52,
+      "linesOfCodeInUnits" : 283
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Board.cs",
       "extension" : "cs",
@@ -2752,6 +2808,14 @@
       "unitsCount" : 13,
       "unitsMcCabeIndexSum" : 91,
       "linesOfCodeInUnits" : 263
+    } ],
+    "mostRecentlyChangedFiles" : [ {
+      "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
+      "extension" : "cs",
+      "linesOfCode" : 343,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 52,
+      "linesOfCodeInUnits" : 283
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Player.cs",
       "extension" : "cs",
@@ -2760,40 +2824,26 @@
       "unitsMcCabeIndexSum" : 48,
       "linesOfCodeInUnits" : 141
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
-      "extension" : "cs",
-      "linesOfCode" : 118,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 34,
-      "linesOfCodeInUnits" : 103
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
       "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
+      "linesOfCode" : 131,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 36,
+      "linesOfCodeInUnits" : 112
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
       "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
+      "linesOfCode" : 92,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 15,
+      "linesOfCodeInUnits" : 82
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
       "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 9
+      "linesOfCode" : 31,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 3,
+      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/HumanPlayer.cs",
       "extension" : "cs",
@@ -2802,20 +2852,12 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 4
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Enum/TileType.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
       "extension" : "cs",
-      "linesOfCode" : 9,
-      "unitsCount" : 0,
-      "unitsMcCabeIndexSum" : 0,
-      "linesOfCodeInUnits" : 0
-    } ],
-    "mostRecentlyChangedFiles" : [ {
-      "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
-      "extension" : "cs",
-      "linesOfCode" : 305,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 253
+      "linesOfCode" : 118,
+      "unitsCount" : 12,
+      "unitsMcCabeIndexSum" : 23,
+      "linesOfCodeInUnits" : 100
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
       "extension" : "cs",
@@ -2838,6 +2880,20 @@
       "unitsMcCabeIndexSum" : 17,
       "linesOfCodeInUnits" : 63
     }, {
+      "relativePath" : "Assets/Scripts/SceneChanger.cs",
+      "extension" : "cs",
+      "linesOfCode" : 60,
+      "unitsCount" : 10,
+      "unitsMcCabeIndexSum" : 14,
+      "linesOfCodeInUnits" : 49
+    }, {
+      "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
+      "extension" : "cs",
+      "linesOfCode" : 60,
+      "unitsCount" : 4,
+      "unitsMcCabeIndexSum" : 11,
+      "linesOfCodeInUnits" : 49
+    }, {
       "relativePath" : "Assets/Scripts/Audio/AudioManager.cs",
       "extension" : "cs",
       "linesOfCode" : 48,
@@ -2851,6 +2907,13 @@
       "unitsCount" : 4,
       "unitsMcCabeIndexSum" : 8,
       "linesOfCodeInUnits" : 25
+    }, {
+      "relativePath" : "Assets/Scripts/UI/FinalScreenUI.cs",
+      "extension" : "cs",
+      "linesOfCode" : 24,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 5,
+      "linesOfCodeInUnits" : 14
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/PlaceStructureEffect.cs",
       "extension" : "cs",
@@ -2866,6 +2929,13 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 13
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
+      "extension" : "cs",
+      "linesOfCode" : 21,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 13
+    }, {
       "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs",
       "extension" : "cs",
       "linesOfCode" : 21,
@@ -2873,19 +2943,12 @@
       "unitsMcCabeIndexSum" : 4,
       "linesOfCodeInUnits" : 13
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
-      "extension" : "cs",
-      "linesOfCode" : 20,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
       "extension" : "cs",
-      "linesOfCode" : 18,
+      "linesOfCode" : 19,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
+      "linesOfCodeInUnits" : 13
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs",
       "extension" : "cs",
@@ -2901,19 +2964,33 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 13
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
-      "extension" : "cs",
-      "linesOfCode" : 16,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
       "extension" : "cs",
       "linesOfCode" : 15,
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
       "extension" : "cs",
@@ -2922,6 +2999,20 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 10
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs",
       "extension" : "cs",
       "linesOfCode" : 13,
@@ -2929,12 +3020,33 @@
       "unitsMcCabeIndexSum" : 3,
       "linesOfCodeInUnits" : 9
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WoodSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 13,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WaterSurge.cs",
       "extension" : "cs",
       "linesOfCode" : 12,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 12,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 11,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 8
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustHaveStructure.cs",
       "extension" : "cs",
@@ -2942,34 +3054,6 @@
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 4
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Player.cs",
-      "extension" : "cs",
-      "linesOfCode" : 172,
-      "unitsCount" : 14,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 141
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
-      "extension" : "cs",
-      "linesOfCode" : 31,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 3,
-      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
       "extension" : "cs",
@@ -3048,26 +3132,12 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 4
     }, {
-      "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
-      "extension" : "cs",
-      "linesOfCode" : 60,
-      "unitsCount" : 4,
-      "unitsMcCabeIndexSum" : 11,
-      "linesOfCodeInUnits" : 49
-    }, {
       "relativePath" : "Assets/Scripts/UI/Menu/InGameMenu.cs",
       "extension" : "cs",
       "linesOfCode" : 17,
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 3,
       "linesOfCodeInUnits" : 12
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/Environnement/AnimalMouvement.cs",
       "extension" : "cs",
@@ -3089,76 +3159,6 @@
       "unitsCount" : 5,
       "unitsMcCabeIndexSum" : 8,
       "linesOfCodeInUnits" : 26
-    }, {
-      "relativePath" : "Assets/Scripts/Environnement/CloudSpawner.cs",
-      "extension" : "cs",
-      "linesOfCode" : 77,
-      "unitsCount" : 3,
-      "unitsMcCabeIndexSum" : 12,
-      "linesOfCodeInUnits" : 59
-    }, {
-      "relativePath" : "Assets/Scripts/SceneChanger.cs",
-      "extension" : "cs",
-      "linesOfCode" : 60,
-      "unitsCount" : 10,
-      "unitsMcCabeIndexSum" : 14,
-      "linesOfCodeInUnits" : 49
-    }, {
-      "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 8
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Enum/PlayerType.cs",
-      "extension" : "cs",
-      "linesOfCode" : 5,
-      "unitsCount" : 0,
-      "unitsMcCabeIndexSum" : 0,
-      "linesOfCodeInUnits" : 0
-    }, {
-      "relativePath" : "Assets/Scripts/Environnement/AnimalAnimatorController.cs",
-      "extension" : "cs",
-      "linesOfCode" : 114,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 23,
-      "linesOfCodeInUnits" : 90
-    }, {
-      "relativePath" : "Assets/Scripts/Testing&Debug/GameLogger.cs",
-      "extension" : "cs",
-      "linesOfCode" : 19,
-      "unitsCount" : 3,
-      "unitsMcCabeIndexSum" : 5,
-      "linesOfCodeInUnits" : 14
-    }, {
-      "relativePath" : "Assets/Scripts/UI/AnimationController.cs",
-      "extension" : "cs",
-      "linesOfCode" : 16,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
-    }, {
-      "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourcesPanel.cs",
-      "extension" : "cs",
-      "linesOfCode" : 38,
-      "unitsCount" : 4,
-      "unitsMcCabeIndexSum" : 7,
-      "linesOfCodeInUnits" : 30
-    }, {
-      "relativePath" : "Assets/Scripts/Environnement/CloudMouvement.cs",
-      "extension" : "cs",
-      "linesOfCode" : 36,
-      "unitsCount" : 3,
-      "unitsMcCabeIndexSum" : 6,
-      "linesOfCodeInUnits" : 28
-    }, {
-      "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs",
-      "extension" : "cs",
-      "linesOfCode" : 11,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 8
     } ],
     "mostPreviouslyChangedFiles" : [ {
       "relativePath" : "Assets/TutorialInfo/Scripts/Readme.cs",
@@ -3210,13 +3210,6 @@
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/HumanPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 10,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 4
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/IClickable.cs",
       "extension" : "cs",
       "linesOfCode" : 4,
@@ -3301,13 +3294,6 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 8
     }, {
-      "relativePath" : "Assets/Scripts/SceneChanger.cs",
-      "extension" : "cs",
-      "linesOfCode" : 60,
-      "unitsCount" : 10,
-      "unitsMcCabeIndexSum" : 14,
-      "linesOfCodeInUnits" : 49
-    }, {
       "relativePath" : "Assets/Scripts/Environnement/CloudSpawner.cs",
       "extension" : "cs",
       "linesOfCode" : 77,
@@ -3336,26 +3322,12 @@
       "unitsMcCabeIndexSum" : 41,
       "linesOfCodeInUnits" : 215
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
-    }, {
       "relativePath" : "Assets/Scripts/UI/Menu/InGameMenu.cs",
       "extension" : "cs",
       "linesOfCode" : 17,
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 3,
       "linesOfCodeInUnits" : 12
-    }, {
-      "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
-      "extension" : "cs",
-      "linesOfCode" : 60,
-      "unitsCount" : 4,
-      "unitsMcCabeIndexSum" : 11,
-      "linesOfCodeInUnits" : 49
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/NextTurnEffect.cs",
       "extension" : "cs",
@@ -3434,34 +3406,6 @@
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 10
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
-      "extension" : "cs",
-      "linesOfCode" : 31,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 3,
-      "linesOfCodeInUnits" : 12
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Player.cs",
-      "extension" : "cs",
-      "linesOfCode" : 172,
-      "unitsCount" : 14,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 141
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustHaveStructure.cs",
       "extension" : "cs",
       "linesOfCode" : 8,
@@ -3471,10 +3415,31 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
       "extension" : "cs",
+      "linesOfCode" : 11,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 8
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs",
+      "extension" : "cs",
       "linesOfCode" : 12,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WaterSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 12,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WoodSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 13,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs",
       "extension" : "cs",
@@ -3483,12 +3448,47 @@
       "unitsMcCabeIndexSum" : 3,
       "linesOfCodeInUnits" : 9
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
       "extension" : "cs",
       "linesOfCode" : 14,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
       "extension" : "cs",
@@ -3497,34 +3497,41 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 9
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
-      "extension" : "cs",
-      "linesOfCode" : 16,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs",
       "extension" : "cs",
       "linesOfCode" : 17,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 13
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs",
+      "extension" : "cs",
+      "linesOfCode" : 17,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 4,
+      "linesOfCodeInUnits" : 12
     } ],
     "mostChangedFiles" : [ {
       "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
       "extension" : "cs",
-      "linesOfCode" : 305,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 253
+      "linesOfCode" : 343,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 52,
+      "linesOfCodeInUnits" : 283
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
       "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
+      "linesOfCode" : 118,
+      "unitsCount" : 12,
+      "unitsMcCabeIndexSum" : 23,
+      "linesOfCodeInUnits" : 100
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+      "extension" : "cs",
+      "linesOfCode" : 131,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 36,
+      "linesOfCodeInUnits" : 112
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
       "extension" : "cs",
@@ -3532,13 +3539,6 @@
       "unitsCount" : 12,
       "unitsMcCabeIndexSum" : 34,
       "linesOfCodeInUnits" : 103
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-      "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Board.cs",
       "extension" : "cs",
@@ -3554,19 +3554,19 @@
       "unitsMcCabeIndexSum" : 48,
       "linesOfCodeInUnits" : 141
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 9
-    }, {
       "relativePath" : "Assets/Scripts/SceneChanger.cs",
       "extension" : "cs",
       "linesOfCode" : 60,
       "unitsCount" : 10,
       "unitsMcCabeIndexSum" : 14,
       "linesOfCodeInUnits" : 49
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 2,
+      "unitsMcCabeIndexSum" : 2,
+      "linesOfCodeInUnits" : 9
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
       "extension" : "cs",
@@ -3589,6 +3589,13 @@
       "unitsMcCabeIndexSum" : 7,
       "linesOfCodeInUnits" : 19
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+      "extension" : "cs",
+      "linesOfCode" : 92,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 15,
+      "linesOfCodeInUnits" : 82
+    }, {
       "relativePath" : "Assets/Scripts/Environnement/AnimalMouvement.cs",
       "extension" : "cs",
       "linesOfCode" : 240,
@@ -3603,12 +3610,12 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 8
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+      "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
       "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
+      "linesOfCode" : 60,
+      "unitsCount" : 4,
+      "unitsMcCabeIndexSum" : 11,
+      "linesOfCodeInUnits" : 49
     }, {
       "relativePath" : "Assets/Scripts/Environnement/CloudSpawner.cs",
       "extension" : "cs",
@@ -3626,10 +3633,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
       "extension" : "cs",
-      "linesOfCode" : 16,
+      "linesOfCode" : 15,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
+      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs",
       "extension" : "cs",
@@ -3644,13 +3651,6 @@
       "unitsCount" : 4,
       "unitsMcCabeIndexSum" : 8,
       "linesOfCodeInUnits" : 25
-    }, {
-      "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
-      "extension" : "cs",
-      "linesOfCode" : 60,
-      "unitsCount" : 4,
-      "unitsMcCabeIndexSum" : 11,
-      "linesOfCodeInUnits" : 49
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/PlayerInputNotifier.cs",
       "extension" : "cs",
@@ -3668,10 +3668,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
       "extension" : "cs",
-      "linesOfCode" : 12,
+      "linesOfCode" : 11,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 9
+      "linesOfCodeInUnits" : 8
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
       "extension" : "cs",
@@ -3728,6 +3728,13 @@
       "unitsCount" : 0,
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/HumanPlayer.cs",
+      "extension" : "cs",
+      "linesOfCode" : 10,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 4
     }, {
       "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceAnimationController.cs",
       "extension" : "cs",
@@ -3834,13 +3841,6 @@
       "unitsMcCabeIndexSum" : 3,
       "linesOfCodeInUnits" : 5
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/HumanPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 10,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 4
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/OnlyOnNeutralTile.cs",
       "extension" : "cs",
       "linesOfCode" : 11,
@@ -3848,34 +3848,34 @@
       "unitsMcCabeIndexSum" : 3,
       "linesOfCodeInUnits" : 6
     }, {
-      "relativePath" : "Assets/Scripts/UI/MaxScoreUpdate.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs",
       "extension" : "cs",
-      "linesOfCode" : 13,
+      "linesOfCode" : 12,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 5
+      "linesOfCodeInUnits" : 9
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WaterSurge.cs",
       "extension" : "cs",
-      "linesOfCode" : 13,
+      "linesOfCode" : 12,
       "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 3,
+      "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 9
     } ],
     "filesWithMostContributors" : [ {
       "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
       "extension" : "cs",
-      "linesOfCode" : 305,
-      "unitsCount" : 13,
-      "unitsMcCabeIndexSum" : 48,
-      "linesOfCodeInUnits" : 253
+      "linesOfCode" : 343,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 52,
+      "linesOfCodeInUnits" : 283
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
       "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 11,
-      "unitsMcCabeIndexSum" : 21,
-      "linesOfCodeInUnits" : 90
+      "linesOfCode" : 118,
+      "unitsCount" : 12,
+      "unitsMcCabeIndexSum" : 23,
+      "linesOfCodeInUnits" : 100
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Tile.cs",
       "extension" : "cs",
@@ -3900,17 +3900,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
       "extension" : "cs",
-      "linesOfCode" : 108,
-      "unitsCount" : 12,
-      "unitsMcCabeIndexSum" : 29,
-      "linesOfCodeInUnits" : 91
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 9
+      "linesOfCode" : 131,
+      "unitsCount" : 14,
+      "unitsMcCabeIndexSum" : 36,
+      "linesOfCodeInUnits" : 112
     }, {
       "relativePath" : "Assets/Scripts/SceneChanger.cs",
       "extension" : "cs",
@@ -3918,6 +3911,13 @@
       "unitsCount" : 10,
       "unitsMcCabeIndexSum" : 14,
       "linesOfCodeInUnits" : 49
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/CardEffects/GainPointEffect.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 2,
+      "unitsMcCabeIndexSum" : 2,
+      "linesOfCodeInUnits" : 9
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/CardData.cs",
       "extension" : "cs",
@@ -3940,19 +3940,19 @@
       "unitsMcCabeIndexSum" : 4,
       "linesOfCodeInUnits" : 13
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+      "extension" : "cs",
+      "linesOfCode" : 92,
+      "unitsCount" : 5,
+      "unitsMcCabeIndexSum" : 15,
+      "linesOfCodeInUnits" : 82
+    }, {
       "relativePath" : "Assets/Scripts/UI/ScoreObserver.cs",
       "extension" : "cs",
       "linesOfCode" : 28,
       "unitsCount" : 3,
       "unitsMcCabeIndexSum" : 7,
       "linesOfCodeInUnits" : 19
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs",
       "extension" : "cs",
@@ -3961,19 +3961,19 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 8
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
-      "extension" : "cs",
-      "linesOfCode" : 16,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
-    }, {
       "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
       "extension" : "cs",
       "linesOfCode" : 60,
       "unitsCount" : 4,
       "unitsMcCabeIndexSum" : 11,
       "linesOfCodeInUnits" : 49
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
       "extension" : "cs",
@@ -4005,10 +4005,10 @@
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
       "extension" : "cs",
-      "linesOfCode" : 12,
+      "linesOfCode" : 11,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 9
+      "linesOfCodeInUnits" : 8
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/Enum/TileType.cs",
       "extension" : "cs",
@@ -4023,6 +4023,20 @@
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
+      "extension" : "cs",
+      "linesOfCode" : 19,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 13
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
+      "extension" : "cs",
+      "linesOfCode" : 21,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 13
     }, {
       "relativePath" : "Assets/Scripts/CameraController.cs",
       "extension" : "cs",
@@ -4100,6 +4114,20 @@
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 4
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs",
+      "extension" : "cs",
+      "linesOfCode" : 21,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 13
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/Audio/AudioManager.cs",
       "extension" : "cs",
@@ -4184,34 +4212,6 @@
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 8,
       "linesOfCodeInUnits" : 26
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs",
-      "extension" : "cs",
-      "linesOfCode" : 21,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
-      "extension" : "cs",
-      "linesOfCode" : 18,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
-      "extension" : "cs",
-      "linesOfCode" : 20,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
-      "extension" : "cs",
-      "linesOfCode" : 14,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 10
     } ],
     "filesWithLeastContributors" : [ {
       "relativePath" : "Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs",
@@ -4228,6 +4228,41 @@
       "unitsMcCabeIndexSum" : 10,
       "linesOfCodeInUnits" : 27
     }, {
+      "relativePath" : "Assets/Scripts/UI/FinalScreenUI.cs",
+      "extension" : "cs",
+      "linesOfCode" : 24,
+      "unitsCount" : 3,
+      "unitsMcCabeIndexSum" : 5,
+      "linesOfCodeInUnits" : 14
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 15,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 12
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 11
+    }, {
       "relativePath" : "Assets/TutorialInfo/Scripts/Readme.cs",
       "extension" : "cs",
       "linesOfCode" : 14,
@@ -4235,12 +4270,33 @@
       "unitsMcCabeIndexSum" : 0,
       "linesOfCodeInUnits" : 0
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WoodSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 13,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 10
+    }, {
       "relativePath" : "Assets/Scripts/UI/MaxScoreUpdate.cs",
       "extension" : "cs",
       "linesOfCode" : 13,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 5
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/WaterSurge.cs",
+      "extension" : "cs",
+      "linesOfCode" : 12,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 9
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs",
+      "extension" : "cs",
+      "linesOfCode" : 12,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 9
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/HumanPlayer.cs",
       "extension" : "cs",
@@ -4340,20 +4396,6 @@
       "unitsMcCabeIndexSum" : 4,
       "linesOfCodeInUnits" : 15
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs",
-      "extension" : "cs",
-      "linesOfCode" : 21,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 13
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
-      "extension" : "cs",
-      "linesOfCode" : 20,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
-    }, {
       "relativePath" : "Assets/Scripts/Testing&Debug/GameLogger.cs",
       "extension" : "cs",
       "linesOfCode" : 19,
@@ -4361,26 +4403,12 @@
       "unitsMcCabeIndexSum" : 5,
       "linesOfCodeInUnits" : 14
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
-      "extension" : "cs",
-      "linesOfCode" : 18,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 12
-    }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/TileMustBeTypeOf.cs",
       "extension" : "cs",
       "linesOfCode" : 17,
       "unitsCount" : 3,
       "unitsMcCabeIndexSum" : 4,
       "linesOfCodeInUnits" : 12
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
-      "extension" : "cs",
-      "linesOfCode" : 14,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardEffects/DestroyStructureEffect.cs",
       "extension" : "cs",
@@ -4431,6 +4459,13 @@
       "unitsMcCabeIndexSum" : 6,
       "linesOfCodeInUnits" : 28
     }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateDam.cs",
+      "extension" : "cs",
+      "linesOfCode" : 21,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
+      "linesOfCodeInUnits" : 13
+    }, {
       "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs",
       "extension" : "cs",
       "linesOfCode" : 17,
@@ -4450,6 +4485,13 @@
       "linesOfCode" : 16,
       "unitsCount" : 2,
       "unitsMcCabeIndexSum" : 2,
+      "linesOfCodeInUnits" : 10
+    }, {
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
+      "extension" : "cs",
+      "linesOfCode" : 14,
+      "unitsCount" : 1,
+      "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 10
     }, {
       "relativePath" : "Assets/Scripts/GameLogic/CardConditions/OnlyOnNeutralTile.cs",
@@ -4515,62 +4557,20 @@
       "unitsMcCabeIndexSum" : 2,
       "linesOfCodeInUnits" : 10
     }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
+      "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
       "extension" : "cs",
-      "linesOfCode" : 12,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 1,
-      "linesOfCodeInUnits" : 9
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Enum/TileType.cs",
-      "extension" : "cs",
-      "linesOfCode" : 9,
-      "unitsCount" : 0,
-      "unitsMcCabeIndexSum" : 0,
-      "linesOfCodeInUnits" : 0
-    }, {
-      "relativePath" : "Assets/Scripts/UI/TileInfo.cs",
-      "extension" : "cs",
-      "linesOfCode" : 60,
-      "unitsCount" : 4,
-      "unitsMcCabeIndexSum" : 11,
-      "linesOfCodeInUnits" : 49
-    }, {
-      "relativePath" : "Assets/Scripts/UI/ScoreObserver.cs",
-      "extension" : "cs",
-      "linesOfCode" : 28,
-      "unitsCount" : 3,
-      "unitsMcCabeIndexSum" : 7,
-      "linesOfCodeInUnits" : 19
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
-      "extension" : "cs",
-      "linesOfCode" : 16,
+      "linesOfCode" : 21,
       "unitsCount" : 1,
       "unitsMcCabeIndexSum" : 1,
       "linesOfCodeInUnits" : 13
-    }, {
-      "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 2,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 10
-    }, {
-      "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceObserver.cs",
-      "extension" : "cs",
-      "linesOfCode" : 15,
-      "unitsCount" : 1,
-      "unitsMcCabeIndexSum" : 2,
-      "linesOfCodeInUnits" : 8
     } ],
     "firstDate" : "2025-02-27",
-    "latestDate" : "2025-04-09",
-    "daysBetweenFirstAndLastDate" : 41,
-    "weeks" : 5,
-    "estimatedWorkindDays" : 25,
-    "activeDays" : 25,
-    "ageInDays" : 42,
+    "latestDate" : "2025-04-10",
+    "daysBetweenFirstAndLastDate" : 42,
+    "weeks" : 6,
+    "estimatedWorkindDays" : 30,
+    "activeDays" : 26,
+    "ageInDays" : 43,
     "historyPerExtensionPerYear" : [ {
       "extension" : "prefab",
       "year" : "2025",
@@ -4594,12 +4594,12 @@
     }, {
       "extension" : "meta",
       "year" : "2025",
-      "commitsCount" : 96,
+      "commitsCount" : 100,
       "contributors" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ]
     }, {
       "extension" : "puml",
       "year" : "2025",
-      "commitsCount" : 13,
+      "commitsCount" : 17,
       "contributors" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "flyima.tfd@laposte.net", "miabenredjeb@gmail.com", "yanis012@outlook.com" ]
     }, {
       "extension" : "yaml",
@@ -4614,12 +4614,12 @@
     }, {
       "extension" : "json",
       "year" : "2025",
-      "commitsCount" : 43,
+      "commitsCount" : 45,
       "contributors" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ]
     }, {
       "extension" : "txt",
       "year" : "2025",
-      "commitsCount" : 5,
+      "commitsCount" : 6,
       "contributors" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "yanis012@outlook.com" ]
     }, {
       "extension" : "fbx",
@@ -4669,17 +4669,17 @@
     }, {
       "extension" : "cs",
       "year" : "2025",
-      "commitsCount" : 149,
+      "commitsCount" : 160,
       "contributors" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com", "miabenredjeb@gmail.com" ]
     }, {
       "extension" : "unity",
       "year" : "2025",
-      "commitsCount" : 82,
+      "commitsCount" : 83,
       "contributors" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "flyima.tfd@laposte.net", "75060235+dragost37@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ]
     }, {
       "extension" : "html",
       "year" : "2025",
-      "commitsCount" : 3,
+      "commitsCount" : 4,
       "contributors" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net" ]
     }, {
       "extension" : "mixer",
@@ -4704,22 +4704,22 @@
     } ]
   },
   "unitsAnalysisResults" : {
-    "totalNumberOfUnits" : 237,
-    "linesOfCodeInUnits" : 2364,
+    "totalNumberOfUnits" : 254,
+    "linesOfCodeInUnits" : 2583,
     "unitSizeRiskDistribution" : {
       "key" : "",
       "lowRiskThreshold" : 10,
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 957,
-      "lowRiskValue" : 555,
-      "mediumRiskValue" : 689,
-      "highRiskValue" : 163,
+      "negligibleRiskValue" : 996,
+      "lowRiskValue" : 655,
+      "mediumRiskValue" : 765,
+      "highRiskValue" : 167,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 38,
-      "negligibleRiskCount" : 172,
-      "mediumRiskCount" : 25,
+      "lowRiskCount" : 46,
+      "negligibleRiskCount" : 178,
+      "mediumRiskCount" : 28,
       "highRiskCount" : 2,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -4727,13 +4727,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "totalValue" : 2364,
-      "totalCount" : 237,
-      "negligibleRiskPercentage" : 40.48223350253807,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 6.895093062605753,
-      "mediumRiskPercentage" : 29.145516074450086,
-      "lowRiskPercentage" : 23.477157360406093
+      "totalValue" : 2583,
+      "totalCount" : 254,
+      "negligibleRiskPercentage" : 38.55981416957027,
+      "lowRiskPercentage" : 25.358110723964383,
+      "mediumRiskPercentage" : 29.61672473867596,
+      "highRiskPercentage" : 6.465350367789392,
+      "veryHighRiskPercentage" : 0.0
     },
     "conditionalComplexityRiskDistribution" : {
       "key" : "",
@@ -4741,13 +4741,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 1574,
-      "lowRiskValue" : 633,
+      "negligibleRiskValue" : 1786,
+      "lowRiskValue" : 640,
       "mediumRiskValue" : 157,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 24,
-      "negligibleRiskCount" : 209,
+      "negligibleRiskCount" : 226,
       "mediumRiskCount" : 4,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -4756,13 +4756,13 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "totalValue" : 2364,
-      "totalCount" : 237,
-      "negligibleRiskPercentage" : 66.58206429780034,
-      "veryHighRiskPercentage" : 0.0,
+      "totalValue" : 2583,
+      "totalCount" : 254,
+      "negligibleRiskPercentage" : 69.14440572977158,
+      "lowRiskPercentage" : 24.77739063104917,
+      "mediumRiskPercentage" : 6.078203639179249,
       "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 6.641285956006768,
-      "lowRiskPercentage" : 26.776649746192895
+      "veryHighRiskPercentage" : 0.0
     },
     "unitSizeRiskDistributionPerExtension" : [ {
       "key" : "cs",
@@ -4770,14 +4770,14 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 957,
-      "lowRiskValue" : 555,
-      "mediumRiskValue" : 689,
-      "highRiskValue" : 163,
+      "negligibleRiskValue" : 996,
+      "lowRiskValue" : 655,
+      "mediumRiskValue" : 765,
+      "highRiskValue" : 167,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 38,
-      "negligibleRiskCount" : 172,
-      "mediumRiskCount" : 25,
+      "lowRiskCount" : 46,
+      "negligibleRiskCount" : 178,
+      "mediumRiskCount" : 28,
       "highRiskCount" : 2,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -4785,13 +4785,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "totalValue" : 2364,
-      "totalCount" : 237,
-      "negligibleRiskPercentage" : 40.48223350253807,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 6.895093062605753,
-      "mediumRiskPercentage" : 29.145516074450086,
-      "lowRiskPercentage" : 23.477157360406093
+      "totalValue" : 2583,
+      "totalCount" : 254,
+      "negligibleRiskPercentage" : 38.55981416957027,
+      "lowRiskPercentage" : 25.358110723964383,
+      "mediumRiskPercentage" : 29.61672473867596,
+      "highRiskPercentage" : 6.465350367789392,
+      "veryHighRiskPercentage" : 0.0
     } ],
     "unitSizeRiskDistributionPerComponent" : [ [ {
       "key" : "Assets",
@@ -4799,14 +4799,14 @@
       "mediumRiskThreshold" : 20,
       "highRiskThreshold" : 50,
       "veryHighRiskThreshold" : 100,
-      "negligibleRiskValue" : 957,
-      "lowRiskValue" : 555,
-      "mediumRiskValue" : 689,
-      "highRiskValue" : 163,
+      "negligibleRiskValue" : 996,
+      "lowRiskValue" : 655,
+      "mediumRiskValue" : 765,
+      "highRiskValue" : 167,
       "veryHighRiskValue" : 0,
-      "lowRiskCount" : 38,
-      "negligibleRiskCount" : 172,
-      "mediumRiskCount" : 25,
+      "lowRiskCount" : 46,
+      "negligibleRiskCount" : 178,
+      "mediumRiskCount" : 28,
       "highRiskCount" : 2,
       "veryHighRiskCount" : 0,
       "negligibleRiskLabel" : "1-10",
@@ -4814,13 +4814,13 @@
       "mediumRiskLabel" : "21-50",
       "highRiskLabel" : "51-100",
       "veryHighRiskLabel" : "101+",
-      "totalValue" : 2364,
-      "totalCount" : 237,
-      "negligibleRiskPercentage" : 40.48223350253807,
-      "veryHighRiskPercentage" : 0.0,
-      "highRiskPercentage" : 6.895093062605753,
-      "mediumRiskPercentage" : 29.145516074450086,
-      "lowRiskPercentage" : 23.477157360406093
+      "totalValue" : 2583,
+      "totalCount" : 254,
+      "negligibleRiskPercentage" : 38.55981416957027,
+      "lowRiskPercentage" : 25.358110723964383,
+      "mediumRiskPercentage" : 29.61672473867596,
+      "highRiskPercentage" : 6.465350367789392,
+      "veryHighRiskPercentage" : 0.0
     } ] ],
     "longestUnits" : [ {
       "shortName" : "public void StartGame()",
@@ -4828,14 +4828,14 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 143,
-      "endLine" : 249,
-      "linesOfCode" : 88,
+      "startLine" : 182,
+      "endLine" : 293,
+      "linesOfCode" : 92,
       "mcCabeIndex" : 9,
       "numberOfParameters" : 0,
       "numberOfLiterals" : 0,
@@ -5003,6 +5003,26 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "private int MiniMax()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+        "extension" : "cs",
+        "linesOfCode" : 92,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 15,
+        "linesOfCodeInUnits" : 82
+      },
+      "startLine" : 80,
+      "endLine" : 115,
+      "linesOfCode" : 30,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 4,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "private void Start()",
       "longName" : "",
       "sourceFile" : {
@@ -5048,13 +5068,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 326,
-      "endLine" : 365,
+      "startLine" : 372,
+      "endLine" : 411,
       "linesOfCode" : 28,
       "mcCabeIndex" : 7,
       "numberOfParameters" : 3,
@@ -5073,8 +5093,8 @@
         "unitsMcCabeIndexSum" : 48,
         "linesOfCodeInUnits" : 141
       },
-      "startLine" : 87,
-      "endLine" : 119,
+      "startLine" : 88,
+      "endLine" : 120,
       "linesOfCode" : 28,
       "mcCabeIndex" : 13,
       "numberOfParameters" : 1,
@@ -5223,6 +5243,26 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "public override Card GetBestPlayableCard()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+        "extension" : "cs",
+        "linesOfCode" : 92,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 15,
+        "linesOfCodeInUnits" : 82
+      },
+      "startLine" : 14,
+      "endLine" : 44,
+      "linesOfCode" : 23,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "private GameObject GetTilePrefab()",
       "longName" : "",
       "sourceFile" : {
@@ -5283,6 +5323,26 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "private void addAIPlayedCardToChat()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
+        "extension" : "cs",
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
+      },
+      "startLine" : 133,
+      "endLine" : 158,
+      "linesOfCode" : 23,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "private void Init()",
       "longName" : "",
       "sourceFile" : {
@@ -5328,13 +5388,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
         "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 11,
-        "unitsMcCabeIndexSum" : 21,
-        "linesOfCodeInUnits" : 90
+        "linesOfCode" : 118,
+        "unitsCount" : 12,
+        "unitsMcCabeIndexSum" : 23,
+        "linesOfCodeInUnits" : 100
       },
-      "startLine" : 45,
-      "endLine" : 68,
+      "startLine" : 46,
+      "endLine" : 69,
       "linesOfCode" : 21,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 2,
@@ -5368,13 +5428,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 122,
-      "endLine" : 142,
+      "startLine" : 160,
+      "endLine" : 180,
       "linesOfCode" : 20,
       "mcCabeIndex" : 5,
       "numberOfParameters" : 0,
@@ -5388,13 +5448,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
         "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 11,
-        "unitsMcCabeIndexSum" : 21,
-        "linesOfCodeInUnits" : 90
+        "linesOfCode" : 118,
+        "unitsCount" : 12,
+        "unitsMcCabeIndexSum" : 23,
+        "linesOfCodeInUnits" : 100
       },
-      "startLine" : 92,
-      "endLine" : 119,
+      "startLine" : 100,
+      "endLine" : 127,
       "linesOfCode" : 20,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 1,
@@ -5443,18 +5503,38 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "public bool CanBePlayed()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+        "extension" : "cs",
+        "linesOfCode" : 131,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 36,
+        "linesOfCodeInUnits" : 112
+      },
+      "startLine" : 62,
+      "endLine" : 82,
+      "linesOfCode" : 19,
+      "mcCabeIndex" : 9,
+      "numberOfParameters" : 3,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "public void OnClick()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
         "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 12,
-        "unitsMcCabeIndexSum" : 29,
-        "linesOfCodeInUnits" : 91
+        "linesOfCode" : 131,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 36,
+        "linesOfCodeInUnits" : 112
       },
-      "startLine" : 80,
-      "endLine" : 102,
+      "startLine" : 84,
+      "endLine" : 106,
       "linesOfCode" : 19,
       "mcCabeIndex" : 7,
       "numberOfParameters" : 1,
@@ -5468,16 +5548,36 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 90,
-      "endLine" : 110,
+      "startLine" : 98,
+      "endLine" : 119,
       "linesOfCode" : 19,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 0,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "private void PopulateDeck()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
+        "extension" : "cs",
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
+      },
+      "startLine" : 309,
+      "endLine" : 334,
+      "linesOfCode" : 19,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 2,
       "numberOfLiterals" : 0,
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
@@ -5523,38 +5623,18 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
-      "shortName" : "private void PopulateDeck()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
-        "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
-      },
-      "startLine" : 265,
-      "endLine" : 289,
-      "linesOfCode" : 18,
-      "mcCabeIndex" : 4,
-      "numberOfParameters" : 2,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
       "shortName" : "private void InitializePlayerStartingResources()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 303,
-      "endLine" : 324,
+      "startLine" : 349,
+      "endLine" : 370,
       "linesOfCode" : 18,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 2,
@@ -5573,8 +5653,8 @@
         "unitsMcCabeIndexSum" : 48,
         "linesOfCodeInUnits" : 141
       },
-      "startLine" : 141,
-      "endLine" : 162,
+      "startLine" : 142,
+      "endLine" : 163,
       "linesOfCode" : 18,
       "mcCabeIndex" : 7,
       "numberOfParameters" : 1,
@@ -5603,26 +5683,6 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
-      "shortName" : "public bool CanBePlayed()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-        "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 12,
-        "unitsMcCabeIndexSum" : 29,
-        "linesOfCodeInUnits" : 91
-      },
-      "startLine" : 61,
-      "endLine" : 78,
-      "linesOfCode" : 16,
-      "mcCabeIndex" : 8,
-      "numberOfParameters" : 3,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
       "shortName" : "public void DrawCard()",
       "longName" : "",
       "sourceFile" : {
@@ -5633,8 +5693,8 @@
         "unitsMcCabeIndexSum" : 48,
         "linesOfCodeInUnits" : 141
       },
-      "startLine" : 187,
-      "endLine" : 207,
+      "startLine" : 190,
+      "endLine" : 210,
       "linesOfCode" : 16,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 1,
@@ -5703,6 +5763,46 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "public void OnPointerClick()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+        "extension" : "cs",
+        "linesOfCode" : 131,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 36,
+        "linesOfCodeInUnits" : 112
+      },
+      "startLine" : 108,
+      "endLine" : 121,
+      "linesOfCode" : 14,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "private SimpleGameState SimulatePlay()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+        "extension" : "cs",
+        "linesOfCode" : 92,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 15,
+        "linesOfCodeInUnits" : 82
+      },
+      "startLine" : 60,
+      "endLine" : 72,
+      "linesOfCode" : 13,
+      "mcCabeIndex" : 2,
+      "numberOfParameters" : 3,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "private void OnEnable()",
       "longName" : "",
       "sourceFile" : {
@@ -5722,106 +5822,6 @@
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
       "children" : [ ]
-    }, {
-      "shortName" : "private void OnEnable()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs",
-        "extension" : "cs",
-        "linesOfCode" : 17,
-        "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 1,
-        "linesOfCodeInUnits" : 13
-      },
-      "startLine" : 5,
-      "endLine" : 20,
-      "linesOfCode" : 13,
-      "mcCabeIndex" : 1,
-      "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "private void OnEnable()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
-        "extension" : "cs",
-        "linesOfCode" : 16,
-        "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 1,
-        "linesOfCodeInUnits" : 13
-      },
-      "startLine" : 3,
-      "endLine" : 17,
-      "linesOfCode" : 13,
-      "mcCabeIndex" : 1,
-      "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "private void HandlePlayerInput()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
-        "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
-      },
-      "startLine" : 251,
-      "endLine" : 263,
-      "linesOfCode" : 13,
-      "mcCabeIndex" : 2,
-      "numberOfParameters" : 1,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "void Update()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/UI/Chat.cs",
-        "extension" : "cs",
-        "linesOfCode" : 101,
-        "unitsCount" : 15,
-        "unitsMcCabeIndexSum" : 25,
-        "linesOfCodeInUnits" : 87
-      },
-      "startLine" : 23,
-      "endLine" : 35,
-      "linesOfCode" : 13,
-      "mcCabeIndex" : 5,
-      "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "public override void ObserverUpdate()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs",
-        "extension" : "cs",
-        "linesOfCode" : 21,
-        "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 4,
-        "linesOfCodeInUnits" : 13
-      },
-      "startLine" : 10,
-      "endLine" : 24,
-      "linesOfCode" : 13,
-      "mcCabeIndex" : 4,
-      "numberOfParameters" : 1,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
     } ],
     "conditionalComplexityRiskDistributionPerExtension" : [ {
       "key" : "cs",
@@ -5829,13 +5829,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 1574,
-      "lowRiskValue" : 633,
+      "negligibleRiskValue" : 1786,
+      "lowRiskValue" : 640,
       "mediumRiskValue" : 157,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 24,
-      "negligibleRiskCount" : 209,
+      "negligibleRiskCount" : 226,
       "mediumRiskCount" : 4,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -5844,13 +5844,13 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "totalValue" : 2364,
-      "totalCount" : 237,
-      "negligibleRiskPercentage" : 66.58206429780034,
-      "veryHighRiskPercentage" : 0.0,
+      "totalValue" : 2583,
+      "totalCount" : 254,
+      "negligibleRiskPercentage" : 69.14440572977158,
+      "lowRiskPercentage" : 24.77739063104917,
+      "mediumRiskPercentage" : 6.078203639179249,
       "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 6.641285956006768,
-      "lowRiskPercentage" : 26.776649746192895
+      "veryHighRiskPercentage" : 0.0
     } ],
     "conditionalComplexityRiskDistributionPerComponent" : [ [ {
       "key" : "Assets",
@@ -5858,13 +5858,13 @@
       "mediumRiskThreshold" : 10,
       "highRiskThreshold" : 25,
       "veryHighRiskThreshold" : 50,
-      "negligibleRiskValue" : 1574,
-      "lowRiskValue" : 633,
+      "negligibleRiskValue" : 1786,
+      "lowRiskValue" : 640,
       "mediumRiskValue" : 157,
       "highRiskValue" : 0,
       "veryHighRiskValue" : 0,
       "lowRiskCount" : 24,
-      "negligibleRiskCount" : 209,
+      "negligibleRiskCount" : 226,
       "mediumRiskCount" : 4,
       "highRiskCount" : 0,
       "veryHighRiskCount" : 0,
@@ -5873,13 +5873,13 @@
       "mediumRiskLabel" : "11-25",
       "highRiskLabel" : "26-50",
       "veryHighRiskLabel" : "51+",
-      "totalValue" : 2364,
-      "totalCount" : 237,
-      "negligibleRiskPercentage" : 66.58206429780034,
-      "veryHighRiskPercentage" : 0.0,
+      "totalValue" : 2583,
+      "totalCount" : 254,
+      "negligibleRiskPercentage" : 69.14440572977158,
+      "lowRiskPercentage" : 24.77739063104917,
+      "mediumRiskPercentage" : 6.078203639179249,
       "highRiskPercentage" : 0.0,
-      "mediumRiskPercentage" : 6.641285956006768,
-      "lowRiskPercentage" : 26.776649746192895
+      "veryHighRiskPercentage" : 0.0
     } ] ],
     "mostComplexUnits" : [ {
       "shortName" : "public void CreateBoard()",
@@ -5912,8 +5912,8 @@
         "unitsMcCabeIndexSum" : 48,
         "linesOfCodeInUnits" : 141
       },
-      "startLine" : 87,
-      "endLine" : 119,
+      "startLine" : 88,
+      "endLine" : 120,
       "linesOfCode" : 28,
       "mcCabeIndex" : 13,
       "numberOfParameters" : 1,
@@ -6022,19 +6022,39 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "public bool CanBePlayed()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+        "extension" : "cs",
+        "linesOfCode" : 131,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 36,
+        "linesOfCodeInUnits" : 112
+      },
+      "startLine" : 62,
+      "endLine" : 82,
+      "linesOfCode" : 19,
+      "mcCabeIndex" : 9,
+      "numberOfParameters" : 3,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "public void StartGame()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 143,
-      "endLine" : 249,
-      "linesOfCode" : 88,
+      "startLine" : 182,
+      "endLine" : 293,
+      "linesOfCode" : 92,
       "mcCabeIndex" : 9,
       "numberOfParameters" : 0,
       "numberOfLiterals" : 0,
@@ -6077,26 +6097,6 @@
       "linesOfCode" : 28,
       "mcCabeIndex" : 8,
       "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "public bool CanBePlayed()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
-        "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 12,
-        "unitsMcCabeIndexSum" : 29,
-        "linesOfCodeInUnits" : 91
-      },
-      "startLine" : 61,
-      "endLine" : 78,
-      "linesOfCode" : 16,
-      "mcCabeIndex" : 8,
-      "numberOfParameters" : 3,
       "numberOfLiterals" : 0,
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
@@ -6147,13 +6147,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
         "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 12,
-        "unitsMcCabeIndexSum" : 29,
-        "linesOfCodeInUnits" : 91
+        "linesOfCode" : 131,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 36,
+        "linesOfCodeInUnits" : 112
       },
-      "startLine" : 80,
-      "endLine" : 102,
+      "startLine" : 84,
+      "endLine" : 106,
       "linesOfCode" : 19,
       "mcCabeIndex" : 7,
       "numberOfParameters" : 1,
@@ -6187,13 +6187,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 326,
-      "endLine" : 365,
+      "startLine" : 372,
+      "endLine" : 411,
       "linesOfCode" : 28,
       "mcCabeIndex" : 7,
       "numberOfParameters" : 3,
@@ -6212,8 +6212,8 @@
         "unitsMcCabeIndexSum" : 48,
         "linesOfCodeInUnits" : 141
       },
-      "startLine" : 141,
-      "endLine" : 162,
+      "startLine" : 142,
+      "endLine" : 163,
       "linesOfCode" : 18,
       "mcCabeIndex" : 7,
       "numberOfParameters" : 1,
@@ -6347,13 +6347,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 90,
-      "endLine" : 110,
+      "startLine" : 98,
+      "endLine" : 119,
       "linesOfCode" : 19,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 0,
@@ -6367,13 +6367,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 303,
-      "endLine" : 324,
+      "startLine" : 349,
+      "endLine" : 370,
       "linesOfCode" : 18,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 2,
@@ -6387,13 +6387,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
         "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 11,
-        "unitsMcCabeIndexSum" : 21,
-        "linesOfCodeInUnits" : 90
+        "linesOfCode" : 118,
+        "unitsCount" : 12,
+        "unitsMcCabeIndexSum" : 23,
+        "linesOfCodeInUnits" : 100
       },
-      "startLine" : 92,
-      "endLine" : 119,
+      "startLine" : 100,
+      "endLine" : 127,
       "linesOfCode" : 20,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 1,
@@ -6412,8 +6412,8 @@
         "unitsMcCabeIndexSum" : 48,
         "linesOfCodeInUnits" : 141
       },
-      "startLine" : 187,
-      "endLine" : 207,
+      "startLine" : 190,
+      "endLine" : 210,
       "linesOfCode" : 16,
       "mcCabeIndex" : 6,
       "numberOfParameters" : 1,
@@ -6482,6 +6482,26 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "private int MiniMax()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+        "extension" : "cs",
+        "linesOfCode" : 92,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 15,
+        "linesOfCodeInUnits" : 82
+      },
+      "startLine" : 80,
+      "endLine" : 115,
+      "linesOfCode" : 30,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 4,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "public void LogAllTiles()",
       "longName" : "",
       "sourceFile" : {
@@ -6502,18 +6522,38 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "public void OnPointerClick()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
+        "extension" : "cs",
+        "linesOfCode" : 131,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 36,
+        "linesOfCodeInUnits" : 112
+      },
+      "startLine" : 108,
+      "endLine" : 121,
+      "linesOfCode" : 14,
+      "mcCabeIndex" : 5,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "private void HandleEscapePress()",
       "longName" : "",
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 122,
-      "endLine" : 142,
+      "startLine" : 160,
+      "endLine" : 180,
       "linesOfCode" : 20,
       "mcCabeIndex" : 5,
       "numberOfParameters" : 0,
@@ -6552,8 +6592,8 @@
         "unitsMcCabeIndexSum" : 25,
         "linesOfCodeInUnits" : 87
       },
-      "startLine" : 23,
-      "endLine" : 35,
+      "startLine" : 29,
+      "endLine" : 41,
       "linesOfCode" : 13,
       "mcCabeIndex" : 5,
       "numberOfParameters" : 0,
@@ -6642,6 +6682,26 @@
       "numberOfExpressions" : 0,
       "children" : [ ]
     }, {
+      "shortName" : "public override Card GetBestPlayableCard()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
+        "extension" : "cs",
+        "linesOfCode" : 92,
+        "unitsCount" : 5,
+        "unitsMcCabeIndexSum" : 15,
+        "linesOfCodeInUnits" : 82
+      },
+      "startLine" : 14,
+      "endLine" : 44,
+      "linesOfCode" : 23,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
       "shortName" : "private void Awake()",
       "longName" : "",
       "sourceFile" : {
@@ -6687,16 +6747,36 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
         "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 12,
-        "unitsMcCabeIndexSum" : 29,
-        "linesOfCodeInUnits" : 91
+        "linesOfCode" : 131,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 36,
+        "linesOfCodeInUnits" : 112
       },
-      "startLine" : 121,
-      "endLine" : 131,
+      "startLine" : 143,
+      "endLine" : 153,
       "linesOfCode" : 9,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 2,
+      "numberOfLiterals" : 0,
+      "numberOfStatements" : 0,
+      "numberOfExpressions" : 0,
+      "children" : [ ]
+    }, {
+      "shortName" : "private void addAIPlayedCardToChat()",
+      "longName" : "",
+      "sourceFile" : {
+        "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
+        "extension" : "cs",
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
+      },
+      "startLine" : 133,
+      "endLine" : 158,
+      "linesOfCode" : 23,
+      "mcCabeIndex" : 4,
+      "numberOfParameters" : 1,
       "numberOfLiterals" : 0,
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
@@ -6707,14 +6787,14 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
         "extension" : "cs",
-        "linesOfCode" : 305,
-        "unitsCount" : 13,
-        "unitsMcCabeIndexSum" : 48,
-        "linesOfCodeInUnits" : 253
+        "linesOfCode" : 343,
+        "unitsCount" : 14,
+        "unitsMcCabeIndexSum" : 52,
+        "linesOfCodeInUnits" : 283
       },
-      "startLine" : 265,
-      "endLine" : 289,
-      "linesOfCode" : 18,
+      "startLine" : 309,
+      "endLine" : 334,
+      "linesOfCode" : 19,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 2,
       "numberOfLiterals" : 0,
@@ -6727,13 +6807,13 @@
       "sourceFile" : {
         "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
         "extension" : "cs",
-        "linesOfCode" : 108,
-        "unitsCount" : 11,
-        "unitsMcCabeIndexSum" : 21,
-        "linesOfCodeInUnits" : 90
+        "linesOfCode" : 118,
+        "unitsCount" : 12,
+        "unitsMcCabeIndexSum" : 23,
+        "linesOfCodeInUnits" : 100
       },
-      "startLine" : 45,
-      "endLine" : 68,
+      "startLine" : 46,
+      "endLine" : 69,
       "linesOfCode" : 21,
       "mcCabeIndex" : 4,
       "numberOfParameters" : 2,
@@ -6801,93 +6881,13 @@
       "numberOfStatements" : 0,
       "numberOfExpressions" : 0,
       "children" : [ ]
-    }, {
-      "shortName" : "public void PressButton()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/UI/Menu/ButtonListController.cs",
-        "extension" : "cs",
-        "linesOfCode" : 62,
-        "unitsCount" : 5,
-        "unitsMcCabeIndexSum" : 14,
-        "linesOfCodeInUnits" : 56
-      },
-      "startLine" : 36,
-      "endLine" : 59,
-      "linesOfCode" : 24,
-      "mcCabeIndex" : 4,
-      "numberOfParameters" : 1,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "public override void ObserverUpdate()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/Scripts/UI/ResourcePanel/ResourceIncomeObserver.cs",
-        "extension" : "cs",
-        "linesOfCode" : 21,
-        "unitsCount" : 1,
-        "unitsMcCabeIndexSum" : 4,
-        "linesOfCodeInUnits" : 13
-      },
-      "startLine" : 10,
-      "endLine" : 24,
-      "linesOfCode" : 13,
-      "mcCabeIndex" : 4,
-      "numberOfParameters" : 1,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "static void RemoveTutorial()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs",
-        "extension" : "cs",
-        "linesOfCode" : 195,
-        "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 24,
-        "linesOfCodeInUnits" : 149
-      },
-      "startLine" : 24,
-      "endLine" : 52,
-      "linesOfCode" : 26,
-      "mcCabeIndex" : 4,
-      "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
-    }, {
-      "shortName" : "static void SelectReadmeAutomatically()",
-      "longName" : "",
-      "sourceFile" : {
-        "relativePath" : "Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs",
-        "extension" : "cs",
-        "linesOfCode" : 195,
-        "unitsCount" : 9,
-        "unitsMcCabeIndexSum" : 24,
-        "linesOfCodeInUnits" : 149
-      },
-      "startLine" : 54,
-      "endLine" : 67,
-      "linesOfCode" : 13,
-      "mcCabeIndex" : 4,
-      "numberOfParameters" : 0,
-      "numberOfLiterals" : 0,
-      "numberOfStatements" : 0,
-      "numberOfExpressions" : 0,
-      "children" : [ ]
     } ]
   },
   "duplicationAnalysisResults" : {
     "overallDuplication" : {
       "key" : "system",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 1952,
+      "cleanedLinesOfCode" : 2120,
       "duplicatedLinesOfCode" : 0,
       "numberOfFilesWithDuplicates" : 0,
       "duplicationPercentage" : 0.0
@@ -6895,7 +6895,7 @@
     "duplicationPerComponent" : [ [ {
       "key" : "Assets",
       "numberOfDuplicates" : 0,
-      "cleanedLinesOfCode" : 1952,
+      "cleanedLinesOfCode" : 2120,
       "duplicatedLinesOfCode" : 0,
       "numberOfFilesWithDuplicates" : 0,
       "duplicationPercentage" : 0.0
@@ -6906,14 +6906,14 @@
     "mostFrequentDuplicates" : [ ]
   },
   "contributorsAnalysisResults" : {
-    "latestCommitDate" : "2025-04-09",
+    "latestCommitDate" : "2025-04-10",
     "contributors" : [ {
       "email" : "flyima.tfd@laposte.net",
-      "commitsCount" : 49,
-      "commitsCount30Days" : 43,
-      "commitsCount90Days" : 49,
-      "commitsCount180Days" : 49,
-      "commitsCount365Days" : 49,
+      "commitsCount" : 54,
+      "commitsCount30Days" : 48,
+      "commitsCount90Days" : 54,
+      "commitsCount180Days" : 54,
+      "commitsCount365Days" : 54,
       "firstCommitDate" : "2025-03-04",
       "latestCommitDate" : "2025-04-09",
       "activeYears" : [ "2025" ],
@@ -6923,15 +6923,29 @@
       "rookie" : true
     }, {
       "email" : "miabenredjeb@gmail.com",
-      "commitsCount" : 37,
-      "commitsCount30Days" : 37,
-      "commitsCount90Days" : 37,
-      "commitsCount180Days" : 37,
-      "commitsCount365Days" : 37,
+      "commitsCount" : 39,
+      "commitsCount30Days" : 39,
+      "commitsCount90Days" : 39,
+      "commitsCount180Days" : 39,
+      "commitsCount365Days" : 39,
       "firstCommitDate" : "2025-03-13",
       "latestCommitDate" : "2025-04-09",
       "activeYears" : [ "2025" ],
       "commitDates" : [ "2025-04-09", "2025-04-08", "2025-04-07", "2025-04-05", "2025-04-04", "2025-04-01", "2025-03-30", "2025-03-29", "2025-03-22", "2025-03-19", "2025-03-16", "2025-03-15", "2025-03-13" ],
+      "bot" : false,
+      "active" : true,
+      "rookie" : true
+    }, {
+      "email" : "dragostgames@gmail.com",
+      "commitsCount" : 30,
+      "commitsCount30Days" : 30,
+      "commitsCount90Days" : 30,
+      "commitsCount180Days" : 30,
+      "commitsCount365Days" : 30,
+      "firstCommitDate" : "2025-03-12",
+      "latestCommitDate" : "2025-04-09",
+      "activeYears" : [ "2025" ],
+      "commitDates" : [ "2025-04-09", "2025-04-08", "2025-04-07", "2025-04-05", "2025-03-30", "2025-03-29", "2025-03-22", "2025-03-12" ],
       "bot" : false,
       "active" : true,
       "rookie" : true
@@ -6950,30 +6964,30 @@
       "active" : true,
       "rookie" : true
     }, {
-      "email" : "dragostgames@gmail.com",
-      "commitsCount" : 25,
-      "commitsCount30Days" : 25,
-      "commitsCount90Days" : 25,
-      "commitsCount180Days" : 25,
-      "commitsCount365Days" : 25,
-      "firstCommitDate" : "2025-03-12",
-      "latestCommitDate" : "2025-04-08",
-      "activeYears" : [ "2025" ],
-      "commitDates" : [ "2025-04-08", "2025-04-07", "2025-04-05", "2025-03-30", "2025-03-29", "2025-03-22", "2025-03-12" ],
-      "bot" : false,
-      "active" : true,
-      "rookie" : true
-    }, {
       "email" : "51228475+miaredjeb@users.noreply.github.com",
-      "commitsCount" : 18,
-      "commitsCount30Days" : 18,
-      "commitsCount90Days" : 18,
-      "commitsCount180Days" : 18,
-      "commitsCount365Days" : 18,
+      "commitsCount" : 19,
+      "commitsCount30Days" : 19,
+      "commitsCount90Days" : 19,
+      "commitsCount180Days" : 19,
+      "commitsCount365Days" : 19,
       "firstCommitDate" : "2025-03-13",
       "latestCommitDate" : "2025-04-09",
       "activeYears" : [ "2025" ],
       "commitDates" : [ "2025-04-09", "2025-04-08", "2025-04-06", "2025-04-05", "2025-04-01", "2025-03-31", "2025-03-30", "2025-03-16", "2025-03-13" ],
+      "bot" : false,
+      "active" : true,
+      "rookie" : true
+    }, {
+      "email" : "yanis012@outlook.com",
+      "commitsCount" : 16,
+      "commitsCount30Days" : 14,
+      "commitsCount90Days" : 16,
+      "commitsCount180Days" : 16,
+      "commitsCount365Days" : 16,
+      "firstCommitDate" : "2025-02-27",
+      "latestCommitDate" : "2025-04-10",
+      "activeYears" : [ "2025" ],
+      "commitDates" : [ "2025-04-10", "2025-04-02", "2025-03-29", "2025-03-23", "2025-03-22", "2025-03-13", "2025-03-11", "2025-03-09", "2025-02-27" ],
       "bot" : false,
       "active" : true,
       "rookie" : true
@@ -6991,25 +7005,11 @@
       "bot" : false,
       "active" : true,
       "rookie" : true
-    }, {
-      "email" : "yanis012@outlook.com",
-      "commitsCount" : 14,
-      "commitsCount30Days" : 12,
-      "commitsCount90Days" : 14,
-      "commitsCount180Days" : 14,
-      "commitsCount365Days" : 14,
-      "firstCommitDate" : "2025-02-27",
-      "latestCommitDate" : "2025-04-02",
-      "activeYears" : [ "2025" ],
-      "commitDates" : [ "2025-04-02", "2025-03-29", "2025-03-23", "2025-03-22", "2025-03-13", "2025-03-11", "2025-03-09", "2025-02-27" ],
-      "bot" : false,
-      "active" : true,
-      "rookie" : true
     } ],
     "contributorsPerYear" : [ {
       "timeSlot" : "2025",
       "contributorsCount" : 7,
-      "commitsCount" : 183
+      "commitsCount" : 198
     } ],
     "contributorsPerMonth" : [ {
       "timeSlot" : "2025-02",
@@ -7022,7 +7022,7 @@
     }, {
       "timeSlot" : "2025-04",
       "contributorsCount" : 7,
-      "commitsCount" : 101
+      "commitsCount" : 116
     } ],
     "contributorsPerDay" : [ {
       "timeSlot" : "2025-02-27",
@@ -7122,8 +7122,12 @@
       "commitsCount" : 38
     }, {
       "timeSlot" : "2025-04-09",
-      "contributorsCount" : 5,
-      "commitsCount" : 15
+      "contributorsCount" : 6,
+      "commitsCount" : 28
+    }, {
+      "timeSlot" : "2025-04-10",
+      "contributorsCount" : 1,
+      "commitsCount" : 2
     } ],
     "contributorsPerWeek" : [ {
       "timeSlot" : "2025-02-24",
@@ -7151,8 +7155,8 @@
       "commitsCount" : 41
     }, {
       "timeSlot" : "2025-04-07",
-      "contributorsCount" : 6,
-      "commitsCount" : 61
+      "contributorsCount" : 7,
+      "commitsCount" : 76
     } ],
     "commitsPerExtensions" : [ {
       "extension" : "prefab",
@@ -7203,20 +7207,20 @@
       } ]
     }, {
       "extension" : "unity",
-      "commitsCount" : 95,
-      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "yanis012@outlook.com" ],
+      "commitsCount" : 96,
+      "committers" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount" : 6,
-      "commitsCount30Days" : 86,
-      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "yanis012@outlook.com" ],
+      "commitsCount30Days" : 87,
+      "committers30Days" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount30Days" : 5,
-      "commitsCount90Days" : 95,
-      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "yanis012@outlook.com" ],
+      "commitsCount90Days" : 96,
+      "committers90Days" : [ "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount90Days" : 6,
       "contributorPerExtensionStats" : [ {
         "contributor" : "dragostgames@gmail.com",
-        "fileUpdates30Days" : 5,
-        "fileUpdates90Days" : 5,
-        "fileUpdates" : 5
+        "fileUpdates30Days" : 6,
+        "fileUpdates90Days" : 6,
+        "fileUpdates" : 6
       }, {
         "contributor" : "127026665+flyima256@users.noreply.github.com",
         "fileUpdates30Days" : 15,
@@ -7250,20 +7254,20 @@
       } ]
     }, {
       "extension" : "json",
-      "commitsCount" : 108,
-      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
+      "commitsCount" : 122,
+      "committers" : [ "dragostgames@gmail.com", "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount" : 30,
-      "commitsCount30Days" : 102,
-      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
+      "commitsCount30Days" : 116,
+      "committers30Days" : [ "dragostgames@gmail.com", "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount30Days" : 28,
-      "commitsCount90Days" : 108,
-      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
+      "commitsCount90Days" : 122,
+      "committers90Days" : [ "dragostgames@gmail.com", "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount90Days" : 30,
       "contributorPerExtensionStats" : [ {
         "contributor" : "dragostgames@gmail.com",
-        "fileUpdates30Days" : 11,
-        "fileUpdates90Days" : 11,
-        "fileUpdates" : 11
+        "fileUpdates30Days" : 12,
+        "fileUpdates90Days" : 12,
+        "fileUpdates" : 12
       }, {
         "contributor" : "127026665+flyima256@users.noreply.github.com",
         "fileUpdates30Days" : 28,
@@ -7276,9 +7280,9 @@
         "fileUpdates" : 12
       }, {
         "contributor" : "flyima.tfd@laposte.net",
-        "fileUpdates30Days" : 32,
-        "fileUpdates90Days" : 33,
-        "fileUpdates" : 33
+        "fileUpdates30Days" : 45,
+        "fileUpdates90Days" : 46,
+        "fileUpdates" : 46
       }, {
         "contributor" : "75060235+dragost37@users.noreply.github.com",
         "fileUpdates30Days" : 3,
@@ -7297,20 +7301,20 @@
       } ]
     }, {
       "extension" : "cs",
-      "commitsCount" : 654,
-      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "dragostgames@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
-      "filesCount" : 133,
-      "commitsCount30Days" : 625,
-      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "dragostgames@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
-      "filesCount30Days" : 118,
-      "commitsCount90Days" : 654,
-      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "dragostgames@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
-      "filesCount90Days" : 133,
+      "commitsCount" : 723,
+      "committers" : [ "yanis012@outlook.com", "flyima.tfd@laposte.net", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "127026665+flyima256@users.noreply.github.com", "75060235+dragost37@users.noreply.github.com" ],
+      "filesCount" : 153,
+      "commitsCount30Days" : 694,
+      "committers30Days" : [ "yanis012@outlook.com", "flyima.tfd@laposte.net", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "127026665+flyima256@users.noreply.github.com", "75060235+dragost37@users.noreply.github.com" ],
+      "filesCount30Days" : 139,
+      "commitsCount90Days" : 723,
+      "committers90Days" : [ "yanis012@outlook.com", "flyima.tfd@laposte.net", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "127026665+flyima256@users.noreply.github.com", "75060235+dragost37@users.noreply.github.com" ],
+      "filesCount90Days" : 153,
       "contributorPerExtensionStats" : [ {
         "contributor" : "dragostgames@gmail.com",
-        "fileUpdates30Days" : 88,
-        "fileUpdates90Days" : 88,
-        "fileUpdates" : 88
+        "fileUpdates30Days" : 109,
+        "fileUpdates90Days" : 109,
+        "fileUpdates" : 109
       }, {
         "contributor" : "127026665+flyima256@users.noreply.github.com",
         "fileUpdates30Days" : 111,
@@ -7318,46 +7322,46 @@
         "fileUpdates" : 111
       }, {
         "contributor" : "51228475+miaredjeb@users.noreply.github.com",
-        "fileUpdates30Days" : 87,
-        "fileUpdates90Days" : 87,
-        "fileUpdates" : 87
+        "fileUpdates30Days" : 89,
+        "fileUpdates90Days" : 89,
+        "fileUpdates" : 89
       }, {
         "contributor" : "flyima.tfd@laposte.net",
-        "fileUpdates30Days" : 145,
-        "fileUpdates90Days" : 158,
-        "fileUpdates" : 158
+        "fileUpdates30Days" : 176,
+        "fileUpdates90Days" : 189,
+        "fileUpdates" : 189
       }, {
         "contributor" : "75060235+dragost37@users.noreply.github.com",
         "fileUpdates30Days" : 29,
         "fileUpdates90Days" : 29,
         "fileUpdates" : 29
       }, {
-        "contributor" : "miabenredjeb@gmail.com",
-        "fileUpdates30Days" : 105,
-        "fileUpdates90Days" : 105,
-        "fileUpdates" : 105
-      }, {
         "contributor" : "yanis012@outlook.com",
-        "fileUpdates30Days" : 60,
-        "fileUpdates90Days" : 76,
-        "fileUpdates" : 76
+        "fileUpdates30Days" : 72,
+        "fileUpdates90Days" : 88,
+        "fileUpdates" : 88
+      }, {
+        "contributor" : "miabenredjeb@gmail.com",
+        "fileUpdates30Days" : 108,
+        "fileUpdates90Days" : 108,
+        "fileUpdates" : 108
       } ]
     }, {
       "extension" : "meta",
-      "commitsCount" : 848,
-      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "yanis012@outlook.com" ],
-      "filesCount" : 412,
-      "commitsCount30Days" : 730,
-      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "yanis012@outlook.com" ],
-      "filesCount30Days" : 297,
-      "commitsCount90Days" : 848,
-      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "dragostgames@gmail.com", "yanis012@outlook.com" ],
-      "filesCount90Days" : 412,
+      "commitsCount" : 858,
+      "committers" : [ "flyima.tfd@laposte.net", "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
+      "filesCount" : 422,
+      "commitsCount30Days" : 740,
+      "committers30Days" : [ "flyima.tfd@laposte.net", "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
+      "filesCount30Days" : 307,
+      "commitsCount90Days" : 858,
+      "committers90Days" : [ "flyima.tfd@laposte.net", "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "75060235+dragost37@users.noreply.github.com", "yanis012@outlook.com" ],
+      "filesCount90Days" : 422,
       "contributorPerExtensionStats" : [ {
         "contributor" : "dragostgames@gmail.com",
-        "fileUpdates30Days" : 28,
-        "fileUpdates90Days" : 28,
-        "fileUpdates" : 28
+        "fileUpdates30Days" : 37,
+        "fileUpdates90Days" : 37,
+        "fileUpdates" : 37
       }, {
         "contributor" : "127026665+flyima256@users.noreply.github.com",
         "fileUpdates30Days" : 198,
@@ -7370,9 +7374,9 @@
         "fileUpdates" : 148
       }, {
         "contributor" : "flyima.tfd@laposte.net",
-        "fileUpdates30Days" : 116,
-        "fileUpdates90Days" : 190,
-        "fileUpdates" : 190
+        "fileUpdates30Days" : 117,
+        "fileUpdates90Days" : 191,
+        "fileUpdates" : 191
       }, {
         "contributor" : "75060235+dragost37@users.noreply.github.com",
         "fileUpdates30Days" : 57,
@@ -7438,20 +7442,20 @@
       } ]
     }, {
       "extension" : "puml",
-      "commitsCount" : 20,
-      "committers" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
-      "filesCount" : 5,
-      "commitsCount30Days" : 19,
-      "committers30Days" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
-      "filesCount30Days" : 5,
-      "commitsCount90Days" : 20,
-      "committers90Days" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "dragostgames@gmail.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
-      "filesCount90Days" : 5,
+      "commitsCount" : 30,
+      "committers" : [ "flyima.tfd@laposte.net", "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
+      "filesCount" : 6,
+      "commitsCount30Days" : 29,
+      "committers30Days" : [ "flyima.tfd@laposte.net", "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
+      "filesCount30Days" : 6,
+      "commitsCount90Days" : 30,
+      "committers90Days" : [ "flyima.tfd@laposte.net", "dragostgames@gmail.com", "127026665+flyima256@users.noreply.github.com", "51228475+miaredjeb@users.noreply.github.com", "miabenredjeb@gmail.com", "yanis012@outlook.com" ],
+      "filesCount90Days" : 6,
       "contributorPerExtensionStats" : [ {
         "contributor" : "dragostgames@gmail.com",
-        "fileUpdates30Days" : 4,
-        "fileUpdates90Days" : 4,
-        "fileUpdates" : 4
+        "fileUpdates30Days" : 8,
+        "fileUpdates90Days" : 8,
+        "fileUpdates" : 8
       }, {
         "contributor" : "127026665+flyima256@users.noreply.github.com",
         "fileUpdates30Days" : 2,
@@ -7464,9 +7468,9 @@
         "fileUpdates" : 1
       }, {
         "contributor" : "flyima.tfd@laposte.net",
-        "fileUpdates30Days" : 9,
-        "fileUpdates90Days" : 9,
-        "fileUpdates" : 9
+        "fileUpdates30Days" : 15,
+        "fileUpdates90Days" : 15,
+        "fileUpdates" : 15
       }, {
         "contributor" : "miabenredjeb@gmail.com",
         "fileUpdates30Days" : 1,
@@ -7702,14 +7706,14 @@
       } ]
     }, {
       "extension" : "txt",
-      "commitsCount" : 116,
-      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "yanis012@outlook.com" ],
+      "commitsCount" : 152,
+      "committers" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount" : 53,
-      "commitsCount30Days" : 111,
-      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net" ],
+      "commitsCount30Days" : 147,
+      "committers30Days" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com" ],
       "filesCount30Days" : 48,
-      "commitsCount90Days" : 116,
-      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net", "yanis012@outlook.com" ],
+      "commitsCount90Days" : 152,
+      "committers90Days" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com", "yanis012@outlook.com" ],
       "filesCount90Days" : 53,
       "contributorPerExtensionStats" : [ {
         "contributor" : "127026665+flyima256@users.noreply.github.com",
@@ -7718,9 +7722,9 @@
         "fileUpdates" : 48
       }, {
         "contributor" : "flyima.tfd@laposte.net",
-        "fileUpdates30Days" : 63,
-        "fileUpdates90Days" : 67,
-        "fileUpdates" : 67
+        "fileUpdates30Days" : 99,
+        "fileUpdates90Days" : 103,
+        "fileUpdates" : 103
       }, {
         "contributor" : "yanis012@outlook.com",
         "fileUpdates30Days" : 0,
@@ -7729,15 +7733,15 @@
       } ]
     }, {
       "extension" : "html",
-      "commitsCount" : 589,
-      "committers" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net" ],
-      "filesCount" : 275,
-      "commitsCount30Days" : 589,
-      "committers30Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net" ],
-      "filesCount30Days" : 275,
-      "commitsCount90Days" : 589,
-      "committers90Days" : [ "127026665+flyima256@users.noreply.github.com", "flyima.tfd@laposte.net" ],
-      "filesCount90Days" : 275,
+      "commitsCount" : 800,
+      "committers" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com" ],
+      "filesCount" : 286,
+      "commitsCount30Days" : 800,
+      "committers30Days" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com" ],
+      "filesCount30Days" : 286,
+      "commitsCount90Days" : 800,
+      "committers90Days" : [ "flyima.tfd@laposte.net", "127026665+flyima256@users.noreply.github.com" ],
+      "filesCount90Days" : 286,
       "contributorPerExtensionStats" : [ {
         "contributor" : "127026665+flyima256@users.noreply.github.com",
         "fileUpdates30Days" : 275,
@@ -7745,9 +7749,9 @@
         "fileUpdates" : 275
       }, {
         "contributor" : "flyima.tfd@laposte.net",
-        "fileUpdates30Days" : 314,
-        "fileUpdates90Days" : 314,
-        "fileUpdates" : 314
+        "fileUpdates30Days" : 525,
+        "fileUpdates90Days" : 525,
+        "fileUpdates" : 525
       } ]
     }, {
       "extension" : "jar",
@@ -7958,7 +7962,7 @@
       } ]
     } ]
   },
-  "numberOfExcludedFiles" : 24508,
+  "numberOfExcludedFiles" : 24514,
   "excludedExtensions" : {
     "" : 7742,
     "release" : 1,
@@ -7976,7 +7980,7 @@
     "otf" : 2,
     "cache" : 3,
     "7z" : 2,
-    "png" : 2314,
+    "png" : 2312,
     "ai" : 7,
     "dag_fsmtime" : 1,
     "index" : 2,
@@ -7984,7 +7988,7 @@
     "outputdata" : 1,
     "sln" : 1,
     "asmref" : 5,
-    "meta" : 9712,
+    "meta" : 9719,
     "mixer" : 1,
     "anim" : 8,
     "fbx" : 186,
@@ -7998,7 +8002,7 @@
     "suo" : 1,
     "rsp" : 136,
     "tga" : 9,
-    "puml" : 5,
+    "puml" : 6,
     "plist" : 3,
     "vsidx" : 5,
     "cginc" : 6,
@@ -8082,7 +8086,7 @@
     "xcworkspacedata" : 1,
     "po" : 1
   },
-  "analysisStartTimeMs" : 1744234429597,
-  "maxLinesOfCode" : 107499,
-  "maxFileCount" : 266
+  "analysisStartTimeMs" : 1744298136251,
+  "maxFileCount" : 266,
+  "maxLinesOfCode" : 107505
 }

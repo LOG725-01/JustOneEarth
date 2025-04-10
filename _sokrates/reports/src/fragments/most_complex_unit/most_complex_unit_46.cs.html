@@ -1,27 +1,42 @@
 <html>
 <head>
-    <title>private void OnValidate()</title>
+    <title>private void PopulateDeck()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void OnValidate()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/UI/Menu/ButtonListController.cs [8:18]</i></p>
+<h3 style="margin-bottom: 0">private void PopulateDeck()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [309:334]</i></p>
 <ul>
-    <li><b>11</b> lines of code</li>
+    <li><b>19</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void OnValidate()
+    private void PopulateDeck(GameObject deck, Player player)
     {
-        if (buttonControllers != null)
+        List&lt;System.Type&gt; combinedCardTypes = new();
+
+        // Ajouter les cartes communes
+        combinedCardTypes.AddRange(availableCardTypes);
+
+        // Ajouter les cartes sp&eacute;cifiques en fonction du type du joueur
+        if (player.PlayerType == PlayerType.Civilisation)
+            combinedCardTypes.AddRange(civilisationCardTypes);
+        else if (player.PlayerType == PlayerType.World)
+            combinedCardTypes.AddRange(worldCardTypes);
+
+        // G&eacute;n&eacute;ration al&eacute;atoire du deck
+        System.Random random = new();
+        for (int i = 0; i &lt; 20; i++)
         {
-            if (buttonControllers.Length != panels.Length)
-                print(&quot;error each button should have a panel&quot;);
-        }
-        else if (panels != null) {
-            print(&quot;error each panels should have a button&quot;);
+            int index = random.Next(combinedCardTypes.Count);
+            System.Type cardType = combinedCardTypes[index];
+
+            CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
+            Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
+            card.SetGameStateReference(gameState);
+            player.AddCardInDeck(card);
         }
     }
 

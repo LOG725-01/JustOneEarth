@@ -1,50 +1,49 @@
 <html>
 <head>
-    <title>private void HandleZoom()</title>
+    <title>public override void OnInspectorGUI()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void HandleZoom()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/CameraController.cs [74:107]</i></p>
+<h3 style="margin-bottom: 0">public override void OnInspectorGUI()</h3>
+<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [123:155]</i></p>
 <ul>
-    <li><b>27</b> lines of code</li>
-    <li><b>6</b> McCabe index (conditional complexity)</li>
+    <li><b>28</b> lines of code</li>
+    <li><b>7</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void HandleZoom()
+    public override void OnInspectorGUI()
     {
-        float scroll = Input.GetAxis(&quot;Mouse ScrollWheel&quot;);
+        var readme = (Readme)target;
+        Init();
 
-        if (scroll != 0)
+        foreach (var section in readme.sections)
         {
-            Vector3 zoomDirection = cam.transform.forward;
-            Vector3 targetPosition;
-
-            Ray ray = cam.ScreenPointToRay(Input.mousePosition);
-            if (Physics.Raycast(ray, out RaycastHit hit))
+            if (!string.IsNullOrEmpty(section.heading))
             {
-                targetPosition = hit.point;
-            }
-            else
-            {
-                targetPosition = cam.transform.position + zoomDirection * 10f;
+                GUILayout.Label(section.heading, HeadingStyle);
             }
 
-            float newZoom = Mathf.Clamp(cam.transform.position.y - scroll * zoomSpeed, minZoom, maxZoom);
-
-
-            if ((scroll &gt; 0 &amp;&amp; cam.transform.position.y &lt;= minZoom) ||
-                (scroll &lt; 0 &amp;&amp; cam.transform.position.y &gt;= maxZoom))
+            if (!string.IsNullOrEmpty(section.text))
             {
-                return; 
+                GUILayout.Label(section.text, BodyStyle);
             }
 
-            // Applique le zoom
-            Vector3 direction = (targetPosition - cam.transform.position).normalized;
-            cam.transform.position += direction * scroll * zoomSpeed;
-            cam.transform.position = new Vector3(cam.transform.position.x, newZoom, cam.transform.position.z);
+            if (!string.IsNullOrEmpty(section.linkText))
+            {
+                if (LinkLabel(new GUIContent(section.linkText)))
+                {
+                    Application.OpenURL(section.url);
+                }
+            }
+
+            GUILayout.Space(k_Space);
+        }
+
+        if (GUILayout.Button(&quot;Remove Readme Assets&quot;, ButtonStyle))
+        {
+            RemoveTutorial();
         }
     }
 

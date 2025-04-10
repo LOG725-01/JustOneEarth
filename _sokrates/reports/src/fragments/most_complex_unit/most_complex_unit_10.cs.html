@@ -1,44 +1,54 @@
 <html>
 <head>
-    <title>private void Start()</title>
+    <title>private void ShowOwnedTiles()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void Start()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalAnimatorController.cs [30:57]</i></p>
+<h3 style="margin-bottom: 0">private void ShowOwnedTiles()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/RessourceButtonHandler.cs [19:56]</i></p>
 <ul>
-    <li><b>28</b> lines of code</li>
-    <li><b>8</b> McCabe index (conditional complexity)</li>
+    <li><b>38</b> lines of code</li>
+    <li><b>9</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void Start()
+    private void ShowOwnedTiles(RessourceTypes ressourceTypes)
     {
-        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
-        foreach (AnimationClip clip in clips)
+        if (player == null)
         {
-            switch (clip.name)
-            {
-                case &quot;GoatSheep_turn_90_L&quot;:
-                    turnDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_stand_to_sit&quot;:
-                    sitStandDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_hit_reaction&quot;:
-                    gotHitDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_attack01&quot;:
-                    attackDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_shuffle_R&quot;:
-                    shuffleDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_eating&quot;:
-                    eatDuration = clip.length;
-                    break;
-            }
+            Debug.LogError(&quot;[RessourceButtonHandler] player is null&quot;);
+            return;
+        }
+        List&lt;Tile&gt; filteredTiles = null;
+        switch (ressourceTypes)
+        {
+            case RessourceTypes.Oil:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Deserts).ToList();
+                break;
+            case RessourceTypes.Sun:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Plains).ToList();
+                break;
+            case RessourceTypes.Water:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Lakes).ToList();
+                break;
+            case RessourceTypes.Trees:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Forests).ToList();
+                break;
+            case RessourceTypes.Minerals:
+                filteredTiles = player.ownedTiles.Where(
+                    tile =&gt; tile.tileType == TileType.Mountains).ToList();
+                break;
+        }
+        if (filteredTiles.Count &gt; 0) AudioManager.Instance.RessourceSelect();
+        else AudioManager.Instance.RessourceDecline();
+        foreach(Tile tile in filteredTiles)
+        {
+            tile.SpawnParticle();
         }
     }
 

@@ -1,45 +1,48 @@
 <html>
 <head>
-    <title>static void RemoveTutorial()</title>
+    <title>private IEnumerator RotateTowardsTarget()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">static void RemoveTutorial()</h3>
-<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [24:52]</i></p>
+<h3 style="margin-bottom: 0">private IEnumerator RotateTowardsTarget()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [153:184]</i></p>
 <ul>
     <li><b>26</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    static void RemoveTutorial()
+    private IEnumerator RotateTowardsTarget(Vector3 targetPos)
     {
-        if (EditorUtility.DisplayDialog(&quot;Remove Readme Assets&quot;,
-            
-            $&quot;All contents under {s_ReadmeSourceDirectory} will be removed, are you sure you want to proceed?&quot;,
-            &quot;Proceed&quot;,
-            &quot;Cancel&quot;))
+        Vector3 direction = (targetPos - transform.position).normalized;
+        direction.y = 0;
+
+        if (direction != Vector3.zero)
         {
-            if (Directory.Exists(s_ReadmeSourceDirectory))
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            float rotationSpeed = 200f;
+
+            float angle = SignedAngle(targetRotation);
+
+            if (angle &gt; 0f)
             {
-                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory);
-                FileUtil.DeleteFileOrDirectory(s_ReadmeSourceDirectory + &quot;.meta&quot;);
+                animalAnimator.TurnAnimation(false);
             }
             else
             {
-                Debug.Log($&quot;Could not find the Readme folder at {s_ReadmeSourceDirectory}&quot;);
+                animalAnimator.TurnAnimation(true);
             }
 
-            var readmeAsset = SelectReadme();
-            if (readmeAsset != null)
+            while (Quaternion.Angle(transform.rotation, targetRotation) &gt; 0.1f)
             {
-                var path = AssetDatabase.GetAssetPath(readmeAsset);
-                FileUtil.DeleteFileOrDirectory(path + &quot;.meta&quot;);
-                FileUtil.DeleteFileOrDirectory(path);
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                yield return null;
             }
 
-            AssetDatabase.Refresh();
+            transform.rotation = targetRotation;
+
+            animalAnimator.IdleAnimation();
         }
     }
 

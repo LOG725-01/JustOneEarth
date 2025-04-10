@@ -17,37 +17,37 @@
     } ]
   }, {
     "name" : "Unclassified",
-    "filesCount" : 61,
-    "linesOfCode" : 2913,
+    "filesCount" : 69,
+    "linesOfCode" : 3179,
     "numberOfRegexLineMatches" : 0,
     "fileCountPerExtension" : [ {
       "name" : "  *.cs",
-      "value" : 61,
+      "value" : 69,
       "description" : [ ]
     } ],
     "linesOfCodePerExtension" : [ {
       "name" : "  *.cs",
-      "value" : 2913,
+      "value" : 3179,
       "description" : [ ]
     } ]
   } ],
   "concernsGroup" : null,
-  "linesOfCodePerConcern" : [ {
-    "name" : "TODOs",
-    "value" : 101,
-    "description" : [ ]
-  }, {
-    "name" : "Unclassified",
-    "value" : 2913,
-    "description" : [ ]
-  } ],
   "fileCountPerConcern" : [ {
     "name" : "TODOs",
     "value" : 1,
     "description" : [ ]
   }, {
     "name" : "Unclassified",
-    "value" : 61,
+    "value" : 69,
+    "description" : [ ]
+  } ],
+  "linesOfCodePerConcern" : [ {
+    "name" : "TODOs",
+    "value" : 101,
+    "description" : [ ]
+  }, {
+    "name" : "Unclassified",
+    "value" : 3179,
     "description" : [ ]
   } ]
 } ]

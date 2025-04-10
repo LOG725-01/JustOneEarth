@@ -1,49 +1,45 @@
 <html>
 <head>
-    <title>private Tile GetRandomAvailablePlainTile()</title>
+    <title>private void Start()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private Tile GetRandomAvailablePlainTile()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [246:277]</i></p>
+<h3 style="margin-bottom: 0">private void Start()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalAnimatorController.cs [30:57]</i></p>
 <ul>
     <li><b>28</b> lines of code</li>
-    <li><b>6</b> McCabe index (conditional complexity)</li>
+    <li><b>8</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private Tile GetRandomAvailablePlainTile()
+    private void Start()
     {
-        List&lt;Tile&gt; adjacentTiles = new List&lt;Tile&gt;{currentTile};
-
-        Vector3[] directions = {
-            new Vector3(1, 0, 0),
-            new Vector3(-1, 0, 0),
-            new Vector3(0.5f, 0, 0.87f),
-            new Vector3(0.5f, 0, -0.87f),
-            new Vector3(-0.5f, 0, 0.87f),
-            new Vector3(-0.5f, 0, -0.87f)
-        };
-
-        foreach (Vector3 dir in directions)
+        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
+        foreach (AnimationClip clip in clips)
         {
-            if (Physics.Raycast(transform.position + dir, Vector3.down, out RaycastHit hit, 2f))
+            switch (clip.name)
             {
-                Tile tile = hit.collider.GetComponent&lt;Tile&gt;();
-
-                if (tile != null &amp;&amp; tile.tileType == TileType.Plains)
-                {
-                    adjacentTiles.Add(tile);
-                }
+                case &quot;GoatSheep_turn_90_L&quot;:
+                    turnDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_stand_to_sit&quot;:
+                    sitStandDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_hit_reaction&quot;:
+                    gotHitDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_attack01&quot;:
+                    attackDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_shuffle_R&quot;:
+                    shuffleDuration = clip.length;
+                    break;
+                case &quot;GoatSheep_eating&quot;:
+                    eatDuration = clip.length;
+                    break;
             }
         }
-
-        if (adjacentTiles.Count &gt; 0)
-        {
-            return adjacentTiles[Random.Range(0, adjacentTiles.Count)];
-        }
-        return currentTile;
     }
 
 </code>

@@ -1,40 +1,45 @@
 <html>
 <head>
-    <title>private void Init()</title>
+    <title>private TileType GetRandomTileType()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void Init()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [38:60]</i></p>
+<h3 style="margin-bottom: 0">private TileType GetRandomTileType()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [283:310]</i></p>
 <ul>
-    <li><b>21</b> lines of code</li>
-    <li><b>3</b> McCabe index (conditional complexity)</li>
+    <li><b>23</b> lines of code</li>
+    <li><b>10</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void Init()
+    private TileType GetRandomTileType(Dictionary&lt;TileType, float&gt; probabilities, TileType? excludeType = null)
     {
-        TiredCounter = Random.Range(3, 6);
-        currentTile = GetTileUnder();
-        if (currentTile != null)
+        float roll = UnityEngine.Random.value;
+        float cumulative = 0f;
+
+        if (debug) Debug.Log($&quot;[Board] S&eacute;lection al&eacute;atoire d'une tuile... Roll = {roll:F4}&quot; + (excludeType.HasValue ? $&quot; (exclusion : {excludeType.Value})&quot; : &quot;&quot;));
+
+        foreach (var entry in probabilities)
         {
-            Transform animalContainer = currentTile.transform.Find(&quot;AnimalContainer&quot;);
-            if (animalContainer != null)
+            if (excludeType.HasValue &amp;&amp; entry.Key == excludeType.Value)
             {
-                transform.parent = animalContainer;
+                if (debug) Debug.Log($&quot;[Board] &rarr; Ignor&eacute; : {entry.Key} (exclu)&quot;);
+                continue;
             }
-            else
+
+            cumulative += entry.Value;
+            if (debug) Debug.Log($&quot;[Board] &rarr; Cumul {entry.Key} : {cumulative:F4}&quot;);
+
+            if (roll &lt;= cumulative)
             {
-                // Cr&eacute;er le conteneur s'il n'existe pas encore
-                GameObject container = new GameObject(&quot;AnimalContainer&quot;);
-                container.transform.parent = currentTile.transform;
-                container.transform.localPosition = Vector3.zero;
-                transform.parent = container.transform;
+                if (debug) Debug.Log($&quot;[Board] Tuile s&eacute;lectionn&eacute;e : {entry.Key}&quot;);
+                return entry.Key;
             }
         }
 
-        coroutine = StartCoroutine(MoveRoutine());
+        Debug.LogWarning(&quot;[Board] Aucune tuile s&eacute;lectionn&eacute;e par probabilit&eacute;s, retour par d&eacute;faut : Plains&quot;);
+        return TileType.Plains;
     }
 
 </code>

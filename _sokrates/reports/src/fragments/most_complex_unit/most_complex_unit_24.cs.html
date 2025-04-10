@@ -6,7 +6,7 @@
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
 <h3 style="margin-bottom: 0">private void Update()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [90:110]</i></p>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [98:119]</i></p>
 <ul>
     <li><b>19</b> lines of code</li>
     <li><b>6</b> McCabe index (conditional complexity)</li>
@@ -15,8 +15,9 @@
 <code class="cs">
     private void Update()
     {
+       
         if (!isAiTurn) { 
-        Player player = gameState.GetCurrentPlayingPlayer();
+            Player player = gameState.GetCurrentPlayingPlayer();
 
         if (player != null)
             if (player.GetType() == typeof(AIPlayer))

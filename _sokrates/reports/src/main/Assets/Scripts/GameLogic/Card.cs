@@ -2,18 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Card : AnimationController, IClickable
+public class Card : AnimationController, IClickable, IPointerClickHandler
 {
-    List<ICardEffect> effectList = new List<ICardEffect>();
+    public List<ICardEffect> effectList = new List<ICardEffect>();
     public Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
 
-    [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI ressourceText;
+    [SerializeField] public TextMeshProUGUI titleText;
+    [SerializeField] public TextMeshProUGUI ressourceText;
     private List<ICardCondition> conditions = new List<ICardCondition>();
     private bool addOwnedTile;
     private bool isPersistent;
-
+    private GameState GameStateReference;
 
     public bool debug = false;
     public void InitializeCard(string titleText, string ressourceText, List<ICardEffect> effectList, Dictionary<RessourceTypes, int> cost, 
@@ -68,10 +69,13 @@ public class Card : AnimationController, IClickable
                 return false;
         }
 
-        foreach (var condition in conditions)
+        if(player is HumanPlayer)
         {
-            if (!condition.IsMet(gameState, player))
-                return false;
+            foreach (var condition in conditions)
+            {
+                if (!condition.IsMet(gameState, player))
+                    return false;
+            }
         }
 
         return true;
@@ -100,7 +104,22 @@ public class Card : AnimationController, IClickable
             NormalVisual();
         }
     }
-
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            Player player = GameStateReference.currentInstancePlayer;
+            if (!isPersistent && player.hand.Contains(this))
+            {
+                player.MoveCardFromHandToDiscardPile(this);
+                Transform discardTransform = player.transform.Find("Discard(Clone)");
+                transform.SetParent(discardTransform, false);
+                if (debug) Debug.Log("[Card] Carte d�fauss�e via clic droit.");
+            }
+        }
+    }
+    
     private void SelectedVisual()
     {
         ChangeAnimation("Selected");
@@ -116,8 +135,11 @@ public class Card : AnimationController, IClickable
     {
         conditions.Add(condition);
     }
+    
     public bool GetAddOwnedTile() { return addOwnedTile; }
+    
     public bool GetIsPersistent() { return isPersistent; }
+    
     public bool TryPlay(GameState gameState, Player player)
     {
         if (!CanBePlayed(player.currentRessources, gameState, player))
@@ -129,5 +151,9 @@ public class Card : AnimationController, IClickable
 
         return true;
     }
-
+    
+    public void SetGameStateReference(GameState state)
+    {
+        GameStateReference = state;
+    }
 }

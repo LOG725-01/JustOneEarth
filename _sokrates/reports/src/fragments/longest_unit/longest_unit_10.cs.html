@@ -1,46 +1,18 @@
 <html>
 <head>
-    <title>private void Start()</title>
+    <title>private int MiniMax()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void Start()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalAnimatorController.cs [30:57]</i></p>
+<h3 style="margin-bottom: 0">private int MiniMax()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/AIPlayer.cs [80:115]</i></p>
 <ul>
-    <li><b>28</b> lines of code</li>
-    <li><b>8</b> McCabe index (conditional complexity)</li>
+    <li><b>30</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void Start()
-    {
-        AnimationClip[] clips = animator.runtimeAnimatorController.animationClips;
-        foreach (AnimationClip clip in clips)
-        {
-            switch (clip.name)
-            {
-                case &quot;GoatSheep_turn_90_L&quot;:
-                    turnDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_stand_to_sit&quot;:
-                    sitStandDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_hit_reaction&quot;:
-                    gotHitDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_attack01&quot;:
-                    attackDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_shuffle_R&quot;:
-                    shuffleDuration = clip.length;
-                    break;
-                case &quot;GoatSheep_eating&quot;:
-                    eatDuration = clip.length;
-                    break;
-            }
-        }
-    }
 
 </code>
 </pre>
