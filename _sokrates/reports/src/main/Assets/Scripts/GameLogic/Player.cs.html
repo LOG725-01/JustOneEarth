@@ -39,17 +39,18 @@ public abstract class Player : MonoBehaviour
         { RessourceTypes.Sun, 0 },
         { RessourceTypes.Oil, 0 }
     };
+
     public List&lt;Tile&gt; ownedTiles = new List&lt;Tile&gt;();
     public List&lt;Card&gt; deck = new List&lt;Card&gt;();
     public List&lt;Card&gt; hand = new List&lt;Card&gt;();
     public List&lt;Card&gt; discardPile = new List&lt;Card&gt;();
     public Tile selectedTile = null;
 
-    public const int MaxHandSize = 3;
+    public const int MaxHandSize = 5;
 
     public bool debug = true;
 
-    public abstract Card GetBestPlayableCard();
+    public abstract Card GetBestPlayableCard(GameState gameState);
 
     public void AddCardInDeck(Card card)
     {
@@ -185,6 +186,7 @@ public abstract class Player : MonoBehaviour
             if (debug) Debug.Log(&quot;[Player] Tuile d�s�lectionn�e.&quot;);
         }
     }
+    
     public void ShuffleDiscardIntoDeck()
     {
         deck.AddRange(discardPile);
@@ -199,6 +201,7 @@ public abstract class Player : MonoBehaviour
             deck[randomIndex] = temp;
         }
     }
+    
     public void DrawCard(GameState gameState)
     {
         int nonPersistentCount = hand.FindAll(c =&gt; !c.GetIsPersistent()).Count;

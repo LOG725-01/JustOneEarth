@@ -12,7 +12,6 @@ public class GetOnePointCard : CardData
 
         addOwnedTile = false;
 
-        GainPointEffect GetOnePointEffect = new GainPointEffect(1);
-        effectList.Add(GetOnePointEffect);
+        effectList.Add(new GainPointEffect(1));
     }
 }

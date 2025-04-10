@@ -1,25 +1,49 @@
 <html>
 <head>
-    <title>private bool IsInsideMap()</title>
+    <title>private IEnumerator RotateTowardsTarget()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private bool IsInsideMap()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Board.cs [228:235]</i></p>
+<h3 style="margin-bottom: 0">private IEnumerator RotateTowardsTarget()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/Environnement/AnimalMouvement.cs [153:184]</i></p>
 <ul>
-    <li><b>6</b> lines of code</li>
+    <li><b>26</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private bool IsInsideMap(int q, int r)
+    private IEnumerator RotateTowardsTarget(Vector3 targetPos)
     {
-        bool inside = Math.Abs(q) &lt;= radius &amp;&amp; Math.Abs(r) &lt;= radius &amp;&amp; Math.Abs(-q - r) &lt;= radius;
+        Vector3 direction = (targetPos - transform.position).normalized;
+        direction.y = 0;
 
-        if (debug) Debug.Log($&quot;[Board] V&eacute;rification IsInsideMap({q}, {r}) &rarr; {(inside ? &quot;&Agrave; l&rsquo;int&eacute;rieur&quot; : &quot;Hors limites&quot;)}&quot;);
+        if (direction != Vector3.zero)
+        {
+            Quaternion targetRotation = Quaternion.LookRotation(direction);
+            float rotationSpeed = 200f;
 
-        return inside;
+            float angle = SignedAngle(targetRotation);
+
+            if (angle &gt; 0f)
+            {
+                animalAnimator.TurnAnimation(false);
+            }
+            else
+            {
+                animalAnimator.TurnAnimation(true);
+            }
+
+            while (Quaternion.Angle(transform.rotation, targetRotation) &gt; 0.1f)
+            {
+                transform.rotation = Quaternion.RotateTowards(transform.rotation, targetRotation, rotationSpeed * Time.deltaTime);
+                yield return null;
+            }
+
+            transform.rotation = targetRotation;
+
+            animalAnimator.IdleAnimation();
+        }
     }
 
 </code>

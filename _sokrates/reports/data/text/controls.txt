@@ -2,7 +2,7 @@ goal: Keep the system simple and easy to change
 control metric: LINES_OF_CODE_MAIN
 status: OK
 desired range: [0 - 200000] ±20000
-value: 3014
+value: 3280
 description: Total number of lines of main code
 
 goal: Keep the system simple and easy to change

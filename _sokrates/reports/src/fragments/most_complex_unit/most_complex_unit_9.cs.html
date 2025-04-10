@@ -1,55 +1,129 @@
 <html>
 <head>
-    <title>private void ShowOwnedTiles()</title>
+    <title>public void StartGame()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void ShowOwnedTiles()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/RessourceButtonHandler.cs [19:56]</i></p>
+<h3 style="margin-bottom: 0">public void StartGame()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [182:293]</i></p>
 <ul>
-    <li><b>38</b> lines of code</li>
+    <li><b>92</b> lines of code</li>
     <li><b>9</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void ShowOwnedTiles(RessourceTypes ressourceTypes)
+    public void StartGame()
     {
-        if (player == null)
+        playerType = SceneChanger.PlayerType;
+
+        // set background color depending on the plyer type chosen
+        switch (playerType)
         {
-            Debug.LogError(&quot;[RessourceButtonHandler] player is null&quot;);
-            return;
-        }
-        List&lt;Tile&gt; filteredTiles = null;
-        switch (ressourceTypes)
-        {
-            case RessourceTypes.Oil:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Deserts).ToList();
+            case PlayerType.Civilisation:
+                Camera.main.backgroundColor = new Color(0.54f, 0.6f, 0.65f);
                 break;
-            case RessourceTypes.Sun:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Plains).ToList();
-                break;
-            case RessourceTypes.Water:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Lakes).ToList();
-                break;
-            case RessourceTypes.Trees:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Forests).ToList();
-                break;
-            case RessourceTypes.Minerals:
-                filteredTiles = player.ownedTiles.Where(
-                    tile =&gt; tile.tileType == TileType.Mountains).ToList();
+            case PlayerType.World:
+                Camera.main.backgroundColor = new Color(0.188f, 0.54f, 0.81f);
                 break;
         }
-        if (filteredTiles.Count &gt; 0) AudioManager.Instance.RessourceSelect();
-        else AudioManager.Instance.RessourceDecline();
-        foreach(Tile tile in filteredTiles)
+        
+
+        PlayerTurnUi.Instance.SetTurn(playerType);
+
+        humanPlayerInstance = Instantiate(humanPlayerPrefab);
+        humanPlayerInstance.name = &quot;humanPlayer&quot;;
+        humanPlayerInstance.PlayerType = playerType;
+
+        RessourceButtonHandler.Instance.Player = humanPlayerInstance;
+
+        GameObject humanPlayerDeck = Instantiate(deckPrefab);
+        humanPlayerDeck.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerHand = Instantiate(handPrefab);
+        humanPlayerHand.transform.SetParent(humanPlayerInstance.gameObject.transform);
+        GameObject humanPlayerDiscard = Instantiate(discardPrefab);
+        humanPlayerDiscard.transform.SetParent(humanPlayerInstance.gameObject.transform);
+
+        humanPlayerInstance.debug = debugValues.player;
+        aiPlayerInstance = Instantiate(aiPlayerPrefab);
+        aiPlayerInstance.name = &quot;aiPlayer&quot;;
+
+        GameObject aiPlayerDeck = Instantiate(deckPrefab);
+        aiPlayerDeck.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerHand = Instantiate(handPrefab);
+        aiPlayerHand.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        GameObject aiPlayerDiscard = Instantiate(discardPrefab);
+        aiPlayerDiscard.transform.SetParent(aiPlayerInstance.gameObject.transform);
+        gameState = new GameObject(&quot;GameState&quot;).AddComponent&lt;GameState&gt;();
+        if (board != null)
         {
-            tile.SpawnParticle();
+            Board boardObject = Instantiate(board);
+            board = boardObject.GetComponent&lt;Board&gt;();
+            board.debug = debugValues.board;
+            board.debugAnimal = debugValues.animal;
+            board.debugTile = debugValues.tile;
+            board.OnBoardGenerated += () =&gt;
+            {
+                if (debugValues.gameManager) Debug.Log($&quot;[OnBoardGenerated] Invoker&quot;);
+                var allTiles = board.GetAllTiles();
+                InitializePlayerStartingResources(humanPlayerInstance, allTiles);
+                AssignStartingTiles(humanPlayerInstance, allTiles, 3);
+                RegisterObserversToPlayer(humanPlayerInstance);
+
+                InitializePlayerStartingResources(aiPlayerInstance, allTiles);
+                AssignStartingTiles(aiPlayerInstance, allTiles, 3);
+                RegisterObserversToPlayer(aiPlayerInstance);
+            };
+            board.CreateBoard();
         }
+
+        if (cloudSpawnerPrefab != null)
+        {
+            GameObject cloudSpawnerObject = Instantiate(cloudSpawnerPrefab, board.transform);
+            CloudSpawner cloudSpawner = cloudSpawnerObject.GetComponent&lt;CloudSpawner&gt;();
+            cloudSpawner.debug = debugValues.cloud;
+            cloudSpawner.Initialize(board);
+        }
+        gameState.SetBoard(board);
+
+        PlayerInputDetection.Instance.GameState = gameState;
+
+        switch (playerType)
+        {
+            case PlayerType.Civilisation:
+                aiPlayerInstance.PlayerType = PlayerType.World;
+                gameState.PlayerCivilisation = humanPlayerInstance;
+                gameState.PlayerWorld = aiPlayerInstance;
+                break;
+            case PlayerType.World:
+                aiPlayerInstance.PlayerType = PlayerType.Civilisation;
+                gameState.PlayerWorld = humanPlayerInstance;
+                gameState.PlayerCivilisation = aiPlayerInstance;
+                break;
+        }
+        gameState.SetFirstPlayer(playerType);
+        gameState.currentInstancePlayer = humanPlayerInstance;
+        gameState.debug = debugValues.gameState;
+
+        PopulateDeck(humanPlayerDeck, humanPlayerInstance);
+        PopulateDeck(aiPlayerDeck, aiPlayerInstance);
+
+        AddPersistentCardToHand(humanPlayerInstance);
+        AddPersistentCardToHand(aiPlayerInstance);
+
+        gameState.DrawCardToHand(humanPlayerInstance);
+        gameState.DrawCardToHand(aiPlayerInstance);
+
+
+        playerInputNotifiers.Clear();
+        playerInputNotifiers.AddRange(FindObjectsOfType&lt;PlayerInputNotifier&gt;(true));
+
+        foreach (var notifier in playerInputNotifiers)
+        {
+            notifier.OnGameObjectClicked += HandlePlayerInput;
+        }
+
+        gameStarted = true;
     }
 
 </code>

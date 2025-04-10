@@ -1,51 +1,18 @@
 <html>
 <head>
-    <title>public override void OnInspectorGUI()</title>
+    <title>public void ComputeRessources()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">public override void OnInspectorGUI()</h3>
-<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [123:155]</i></p>
+<h3 style="margin-bottom: 0">public void ComputeRessources()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Player.cs [88:120]</i></p>
 <ul>
     <li><b>28</b> lines of code</li>
-    <li><b>7</b> McCabe index (conditional complexity)</li>
+    <li><b>13</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    public override void OnInspectorGUI()
-    {
-        var readme = (Readme)target;
-        Init();
-
-        foreach (var section in readme.sections)
-        {
-            if (!string.IsNullOrEmpty(section.heading))
-            {
-                GUILayout.Label(section.heading, HeadingStyle);
-            }
-
-            if (!string.IsNullOrEmpty(section.text))
-            {
-                GUILayout.Label(section.text, BodyStyle);
-            }
-
-            if (!string.IsNullOrEmpty(section.linkText))
-            {
-                if (LinkLabel(new GUIContent(section.linkText)))
-                {
-                    Application.OpenURL(section.url);
-                }
-            }
-
-            GUILayout.Space(k_Space);
-        }
-
-        if (GUILayout.Button(&quot;Remove Readme Assets&quot;, ButtonStyle))
-        {
-            RemoveTutorial();
-        }
-    }
 
 </code>
 </pre>

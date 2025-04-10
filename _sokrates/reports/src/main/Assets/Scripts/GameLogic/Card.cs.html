@@ -12,23 +12,24 @@
     </style>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Card.cs (<b>108</b> lines of code) (<a href="Card.cs">raw</a>):</h3>
+<h3 style="margin-bottom: 0">Assets/Scripts/GameLogic/Card.cs (<b>131</b> lines of code) (<a href="Card.cs">raw</a>):</h3>
 <div id="editor">using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
+using UnityEngine.EventSystems;
 
-public class Card : AnimationController, IClickable
+public class Card : AnimationController, IClickable, IPointerClickHandler
 {
-    List&lt;ICardEffect&gt; effectList = new List&lt;ICardEffect&gt;();
+    public List&lt;ICardEffect&gt; effectList = new List&lt;ICardEffect&gt;();
     public Dictionary&lt;RessourceTypes, int&gt; cost = new Dictionary&lt;RessourceTypes, int&gt;();
 
-    [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI ressourceText;
+    [SerializeField] public TextMeshProUGUI titleText;
+    [SerializeField] public TextMeshProUGUI ressourceText;
     private List&lt;ICardCondition&gt; conditions = new List&lt;ICardCondition&gt;();
     private bool addOwnedTile;
     private bool isPersistent;
-
+    private GameState GameStateReference;
 
     public bool debug = false;
     public void InitializeCard(string titleText, string ressourceText, List&lt;ICardEffect&gt; effectList, Dictionary&lt;RessourceTypes, int&gt; cost, 
@@ -83,10 +84,13 @@ public class Card : AnimationController, IClickable
                 return false;
         }
 
-        foreach (var condition in conditions)
+        if(player is HumanPlayer)
         {
-            if (!condition.IsMet(gameState, player))
-                return false;
+            foreach (var condition in conditions)
+            {
+                if (!condition.IsMet(gameState, player))
+                    return false;
+            }
         }
 
         return true;
@@ -115,7 +119,22 @@ public class Card : AnimationController, IClickable
             NormalVisual();
         }
     }
-
+    
+    public void OnPointerClick(PointerEventData eventData)
+    {
+        if (eventData.button == PointerEventData.InputButton.Right)
+        {
+            Player player = GameStateReference.currentInstancePlayer;
+            if (!isPersistent &amp;&amp; player.hand.Contains(this))
+            {
+                player.MoveCardFromHandToDiscardPile(this);
+                Transform discardTransform = player.transform.Find(&quot;Discard(Clone)&quot;);
+                transform.SetParent(discardTransform, false);
+                if (debug) Debug.Log(&quot;[Card] Carte d�fauss�e via clic droit.&quot;);
+            }
+        }
+    }
+    
     private void SelectedVisual()
     {
         ChangeAnimation(&quot;Selected&quot;);
@@ -131,8 +150,11 @@ public class Card : AnimationController, IClickable
     {
         conditions.Add(condition);
     }
+    
     public bool GetAddOwnedTile() { return addOwnedTile; }
+    
     public bool GetIsPersistent() { return isPersistent; }
+    
     public bool TryPlay(GameState gameState, Player player)
     {
         if (!CanBePlayed(player.currentRessources, gameState, player))
@@ -144,7 +166,11 @@ public class Card : AnimationController, IClickable
 
         return true;
     }
-
+    
+    public void SetGameStateReference(GameState state)
+    {
+        GameStateReference = state;
+    }
 }
 </div>
 <script src="https://www.zeljkoobrenovic.com/tools/common/lib/ace/ace.js" type="text/javascript" charset="utf-8"></script>

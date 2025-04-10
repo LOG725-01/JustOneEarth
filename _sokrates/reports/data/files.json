@@ -43,7 +43,7 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
   "extension" : "cs",
-  "linesOfCode" : 15,
+  "linesOfCode" : 92,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -55,7 +55,7 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
   "extension" : "cs",
-  "linesOfCode" : 108,
+  "linesOfCode" : 131,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -149,15 +149,21 @@
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
   "extension" : "cs",
-  "linesOfCode" : 18,
+  "linesOfCode" : 19,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
   "extension" : "cs",
-  "linesOfCode" : 20,
+  "linesOfCode" : 21,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -169,17 +175,53 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
   "extension" : "cs",
-  "linesOfCode" : 16,
+  "linesOfCode" : 15,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
   "extension" : "cs",
+  "linesOfCode" : 11,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
+  "extension" : "cs",
+  "linesOfCode" : 15,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/WaterSurge.cs",
+  "extension" : "cs",
   "linesOfCode" : 12,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/WoodSurge.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs",
+  "extension" : "cs",
+  "linesOfCode" : 12,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs",
   "extension" : "cs",
   "linesOfCode" : 14,
   "components" : [ "primary::Assets" ],
@@ -205,13 +247,13 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
   "extension" : "cs",
-  "linesOfCode" : 305,
+  "linesOfCode" : 343,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
   "extension" : "cs",
-  "linesOfCode" : 108,
+  "linesOfCode" : 118,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::Unclassified" ]
 }, {
@@ -292,6 +334,12 @@
   "linesOfCode" : 101,
   "components" : [ "primary::Assets" ],
   "concerns" : [ "::TODOs" ]
+}, {
+  "relativePath" : "Assets/Scripts/UI/FinalScreenUI.cs",
+  "extension" : "cs",
+  "linesOfCode" : 24,
+  "components" : [ "primary::Assets" ],
+  "concerns" : [ "::Unclassified" ]
 }, {
   "relativePath" : "Assets/Scripts/UI/MaxScoreUpdate.cs",
   "extension" : "cs",

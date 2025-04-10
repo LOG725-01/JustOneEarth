@@ -1,44 +1,41 @@
 <html>
 <head>
-    <title>protected override void OnHeaderGUI()</title>
+    <title>public void PressButton()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">protected override void OnHeaderGUI()</h3>
-<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [95:121]</i></p>
+<h3 style="margin-bottom: 0">public void PressButton()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/UI/Menu/ButtonListController.cs [36:59]</i></p>
 <ul>
     <li><b>24</b> lines of code</li>
-    <li><b>2</b> McCabe index (conditional complexity)</li>
+    <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    protected override void OnHeaderGUI()
+    public void PressButton(int button)
     {
-        var readme = (Readme)target;
-        Init();
-
-        var iconWidth = Mathf.Min(EditorGUIUtility.currentViewWidth / 3f - 20f, 128f);
-
-        GUILayout.BeginHorizontal(&quot;In BigTitle&quot;);
+        for (int i = 0; i &lt; buttonControllers.Length; i++)
         {
-            if (readme.icon != null)
-            {
-                GUILayout.Space(k_Space);
-                GUILayout.Label(readme.icon, GUILayout.Width(iconWidth), GUILayout.Height(iconWidth));
+            if (i == button) {
+                bool isActive = panels[i].activeSelf;
+                if (isActive)
+                {
+                    AudioManager.Instance.UiClose();
+                    buttonControllers[i].NormalAnimation(true);
+                }
+                else 
+                {
+                    AudioManager.Instance.UiOpen();
+                    buttonControllers[i].PressAnimation(); 
+                }
+                panels[i].SetActive(!isActive);
             }
-            GUILayout.Space(k_Space);
-            GUILayout.BeginVertical();
-            {
-
-                GUILayout.FlexibleSpace();
-                GUILayout.Label(readme.title, TitleStyle);
-                GUILayout.FlexibleSpace();
+            else { 
+                buttonControllers[i].NormalAnimation(true);
+                panels[i].SetActive(false);
             }
-            GUILayout.EndVertical();
-            GUILayout.FlexibleSpace();
         }
-        GUILayout.EndHorizontal();
     }
 
 </code>

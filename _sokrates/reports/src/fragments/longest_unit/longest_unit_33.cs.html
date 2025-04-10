@@ -1,37 +1,38 @@
 <html>
 <head>
-    <title>private void Update()</title>
+    <title>public void ChangeInfo()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void Update()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [90:110]</i></p>
+<h3 style="margin-bottom: 0">public void ChangeInfo()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/UI/TileInfo.cs [22:43]</i></p>
 <ul>
-    <li><b>19</b> lines of code</li>
-    <li><b>6</b> McCabe index (conditional complexity)</li>
+    <li><b>20</b> lines of code</li>
+    <li><b>5</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void Update()
+    public void ChangeInfo(GameObject tileObject)
     {
-        if (!isAiTurn) { 
-        Player player = gameState.GetCurrentPlayingPlayer();
-
-        if (player != null)
-            if (player.GetType() == typeof(AIPlayer))
-            {
-                isAiTurn = true;
-                StartCoroutine(AITurn());
-            }
-            else if (player is HumanPlayer)
-            {
-
-            }
-        }
-        if (Input.GetButtonDown(&quot;Cancel&quot;))
+        if (tileObject.TryGetComponent&lt;Tile&gt;(out var tile))
         {
-            HandleEscapePress();
+            string resourceType = &quot;&quot;;
+            int resources = 0;
+            foreach (var item in tile.producedRessources)
+            {
+                if (item.Value &gt; 0)
+                {
+                    resourceType = item.Key.ToString();
+                    resources = item.Value;
+                    break;
+                }
+            }
+
+            string ownerName = tile.owner != null ? tile.owner.PlayerType.ToString() : &quot;Aucun&quot;;
+            bool isOwner = tile.owner != null;
+
+            SetTexts(tile.tileType.ToString(), resources, resourceType, isOwner, &quot;&quot;, ownerName);
         }
     }
 

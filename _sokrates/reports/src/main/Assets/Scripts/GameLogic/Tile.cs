@@ -45,19 +45,19 @@ public class Tile : MonoBehaviour, IClickable
         switch (tileType)
         {
             case TileType.Forests:
-                producedRessources[RessourceTypes.Trees] = Random.Range(3, 7);
+                producedRessources[RessourceTypes.Trees] = Random.Range(1, 3);
                 if (debug) Debug.Log($"[Tile] Ressource g�n�r�e : Trees => {producedRessources[RessourceTypes.Trees]}");
                 break;
             case TileType.Mountains:
-                producedRessources[RessourceTypes.Minerals] = Random.Range(2, 6);
+                producedRessources[RessourceTypes.Minerals] = Random.Range(1, 3);
                 if (debug) Debug.Log($"[Tile] Ressource g�n�r�e : Minerals => {producedRessources[RessourceTypes.Minerals]}");
                 break;
             case TileType.Lakes:
-                producedRessources[RessourceTypes.Water] = Random.Range(4, 8);
+                producedRessources[RessourceTypes.Water] = Random.Range(1, 3);
                 if (debug) Debug.Log($"[Tile] Ressource g�n�r�e : Water => {producedRessources[RessourceTypes.Water]}");
                 break;
             case TileType.Plains:
-                producedRessources[RessourceTypes.Sun] = Random.Range(1, 5);
+                producedRessources[RessourceTypes.Sun] = Random.Range(1, 3);
                 if (debug) Debug.Log($"[Tile] Ressource g�n�r�e : Sun => {producedRessources[RessourceTypes.Sun]}");
                 break;
             case TileType.Deserts:

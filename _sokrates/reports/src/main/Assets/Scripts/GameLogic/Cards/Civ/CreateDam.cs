@@ -9,7 +9,7 @@ public class CreateDam : CardData
     private void OnEnable()
     {
         cardName = "Dam";
-        description = "Get +5 Water. Costs -4 Sun, -2 woods";
+        description = "Get +5 Water. Costs -4 Sun, -2 woods. Only on lakes.";
         cost.Add(RessourceTypes.Sun, 0);
         cost.Add(RessourceTypes.Trees, 0);
 

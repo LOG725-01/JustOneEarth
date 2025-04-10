@@ -1,30 +1,27 @@
 <html>
 <head>
-    <title>static void SelectReadmeAutomatically()</title>
+    <title>private void OnValidate()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">static void SelectReadmeAutomatically()</h3>
-<p style="margin-top: 4px">in <i>Assets/TutorialInfo/Scripts/Editor/ReadmeEditor.cs [54:67]</i></p>
+<h3 style="margin-bottom: 0">private void OnValidate()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/UI/Menu/ButtonListController.cs [8:18]</i></p>
 <ul>
-    <li><b>13</b> lines of code</li>
+    <li><b>11</b> lines of code</li>
     <li><b>4</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    static void SelectReadmeAutomatically()
+    private void OnValidate()
     {
-        if (!SessionState.GetBool(s_ShowedReadmeSessionStateName, false))
+        if (buttonControllers != null)
         {
-            var readme = SelectReadme();
-            SessionState.SetBool(s_ShowedReadmeSessionStateName, true);
-
-            if (readme &amp;&amp; !readme.loadedLayout)
-            {
-                LoadLayout();
-                readme.loadedLayout = true;
-            }
+            if (buttonControllers.Length != panels.Length)
+                print(&quot;error each button should have a panel&quot;);
+        }
+        else if (panels != null) {
+            print(&quot;error each panels should have a button&quot;);
         }
     }
 

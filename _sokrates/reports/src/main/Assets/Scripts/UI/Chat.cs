@@ -20,6 +20,12 @@ public class Chat : AnimationController
         else Instance = this;
         Close();
     }
+
+    private void Start()
+    {
+        Clean();
+    }
+
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.T) && !isOpened)
@@ -32,10 +38,6 @@ public class Chat : AnimationController
         {
             EventSystem.current.SetSelectedGameObject(null);
         }
-    }
-    private void Start()
-    {
-        Clean();
     }
 
     public void Clean()

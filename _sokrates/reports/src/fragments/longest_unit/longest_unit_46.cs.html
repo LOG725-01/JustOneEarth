@@ -1,33 +1,32 @@
 <html>
 <head>
-    <title>private void OnEnable()</title>
+    <title>private void SetTexts()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void OnEnable()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Cards/Civ/CreateVillage.cs [5:20]</i></p>
+<h3 style="margin-bottom: 0">private void SetTexts()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/UI/TileInfo.cs [45:59]</i></p>
 <ul>
-    <li><b>13</b> lines of code</li>
-    <li><b>1</b> McCabe index (conditional complexity)</li>
+    <li><b>15</b> lines of code</li>
+    <li><b>2</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void OnEnable()
+    private void SetTexts(
+        string tileType, 
+        int resources, 
+        string resourceType, 
+        bool isOwner = true, 
+        string condition = &quot;&quot;, 
+        string owner = &quot;Civilisation&quot;)
     {
-        cardName = &quot;Village&quot;;
-        description = &quot;Get +2 point&quot;;
-        cost.Add(RessourceTypes.Trees, 10);
-        cost.Add(RessourceTypes.Minerals, 3);
-        GainPointEffect gainPointEffect = new GainPointEffect(2);
-        effectList.Add(gainPointEffect);
-        targetType = CardTargetType.NeutralTileOnly;
-
-        conditionList.Add(new TileMustBeOfType(TileType.Plains));
-
-        GameObject prefab = Resources.Load&lt;GameObject&gt;(&quot;Structures/village&quot;);
-        effectList.Add(new PlaceStructureEffect(prefab, new Vector3(0, 120, 0)));
-
+        tileTypeText.text = tileType;
+        ressourceText.text = &quot;+ &quot; + resources.ToString() + &quot; &quot; + resourceType;
+        if (isOwner) conditionText.text = string.Empty;
+        else conditionText.text = condition;
+        ownerText.text = &quot;Owner : &quot; + owner;
+        tileInfoObject.SetActive(true);
     }
 
 </code>

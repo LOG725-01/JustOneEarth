@@ -1,31 +1,18 @@
 <html>
 <head>
-    <title>void Update()</title>
+    <title>private SimpleGameState SimulatePlay()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">void Update()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/UI/Chat.cs [23:35]</i></p>
+<h3 style="margin-bottom: 0">private SimpleGameState SimulatePlay()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/AIPlayer.cs [60:72]</i></p>
 <ul>
     <li><b>13</b> lines of code</li>
-    <li><b>5</b> McCabe index (conditional complexity)</li>
+    <li><b>2</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.T) &amp;&amp; !isOpened)
-        {
-            Open();
-            chatInput.Select();
-            chatInput.ActivateInputField();
-        }
-        if (!isOpened &amp;&amp; EventSystem.current.currentSelectedGameObject == chatInput.gameObject)
-        {
-            EventSystem.current.SetSelectedGameObject(null);
-        }
-    }
 
 </code>
 </pre>

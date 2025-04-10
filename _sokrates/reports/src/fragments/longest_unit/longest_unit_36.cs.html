@@ -1,43 +1,18 @@
 <html>
 <head>
-    <title>private void PopulateDeck()</title>
+    <title>public void OnClick()</title>
     <link rel="stylesheet" charset="UTF-8" href="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/styles/docco.min.css">
     <script charset="UTF-8" type="application/javascript" src="https://d2bb1mtyn3kglb.cloudfront.net/lib/highlight/highlight.min.js"></script>
 </head>
 <body style="font-family: 'DejaVu Sans', Arial, Helvetica, sans-serif">
-<h3 style="margin-bottom: 0">private void PopulateDeck()</h3>
-<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/GameManager.cs [265:289]</i></p>
+<h3 style="margin-bottom: 0">public void OnClick()</h3>
+<p style="margin-top: 4px">in <i>Assets/Scripts/GameLogic/Card.cs [84:106]</i></p>
 <ul>
-    <li><b>18</b> lines of code</li>
-    <li><b>4</b> McCabe index (conditional complexity)</li>
+    <li><b>19</b> lines of code</li>
+    <li><b>7</b> McCabe index (conditional complexity)</li>
 </ul>
 <pre>
 <code class="cs">
-    private void PopulateDeck(GameObject deck, Player player)
-    {
-        List&lt;System.Type&gt; combinedCardTypes = new();
-
-        // Ajouter les cartes communes
-        combinedCardTypes.AddRange(availableCardTypes);
-
-        // Ajouter les cartes sp&eacute;cifiques en fonction du type du joueur
-        if (player.PlayerType == PlayerType.Civilisation)
-            combinedCardTypes.AddRange(civilisationCardTypes);
-        else if (player.PlayerType == PlayerType.World)
-            combinedCardTypes.AddRange(worldCardTypes);
-
-        // G&eacute;n&eacute;ration al&eacute;atoire du deck
-        System.Random random = new();
-        for (int i = 0; i &lt; 20; i++)
-        {
-            int index = random.Next(combinedCardTypes.Count);
-            System.Type cardType = combinedCardTypes[index];
-
-            CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
-            Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
-            player.AddCardInDeck(card);
-        }
-    }
 
 </code>
 </pre>

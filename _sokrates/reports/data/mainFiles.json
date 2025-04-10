@@ -50,10 +50,10 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/AIPlayer.cs",
   "extension" : "cs",
-  "linesOfCode" : 15,
-  "unitsCount" : 2,
-  "unitsMcCabeIndexSum" : 2,
-  "linesOfCodeInUnits" : 10
+  "linesOfCode" : 92,
+  "unitsCount" : 5,
+  "unitsMcCabeIndexSum" : 15,
+  "linesOfCodeInUnits" : 82
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Board.cs",
   "extension" : "cs",
@@ -64,10 +64,10 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Card.cs",
   "extension" : "cs",
-  "linesOfCode" : 108,
-  "unitsCount" : 12,
-  "unitsMcCabeIndexSum" : 29,
-  "linesOfCodeInUnits" : 91
+  "linesOfCode" : 131,
+  "unitsCount" : 14,
+  "unitsMcCabeIndexSum" : 36,
+  "linesOfCodeInUnits" : 112
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/CardConditions/ICardCondition.cs",
   "extension" : "cs",
@@ -174,19 +174,26 @@
   "unitsMcCabeIndexSum" : 1,
   "linesOfCodeInUnits" : 13
 }, {
-  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/MechanicalBurst.cs",
   "extension" : "cs",
-  "linesOfCode" : 18,
+  "linesOfCode" : 14,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
-  "linesOfCodeInUnits" : 12
+  "linesOfCodeInUnits" : 10
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/OilRefinery.cs",
+  "extension" : "cs",
+  "linesOfCode" : 19,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 13
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/Civ/SolarFarm.cs",
   "extension" : "cs",
-  "linesOfCode" : 20,
+  "linesOfCode" : 21,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
-  "linesOfCodeInUnits" : 12
+  "linesOfCodeInUnits" : 13
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/FreeCard.cs",
   "extension" : "cs",
@@ -197,17 +204,38 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/GetOnePointCard.cs",
   "extension" : "cs",
-  "linesOfCode" : 16,
+  "linesOfCode" : 15,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
-  "linesOfCodeInUnits" : 13
+  "linesOfCodeInUnits" : 12
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/MineralSurge.cs",
+  "extension" : "cs",
+  "linesOfCode" : 11,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 8
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/SuperPointBurst.cs",
+  "extension" : "cs",
+  "linesOfCode" : 15,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 12
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/WaterSurge.cs",
   "extension" : "cs",
   "linesOfCode" : 12,
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
   "linesOfCodeInUnits" : 9
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/WoodSurge.cs",
+  "extension" : "cs",
+  "linesOfCode" : 13,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 10
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Cards/World/Earthquake.cs",
   "extension" : "cs",
@@ -215,6 +243,27 @@
   "unitsCount" : 1,
   "unitsMcCabeIndexSum" : 1,
   "linesOfCodeInUnits" : 10
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/NaturalBurst.cs",
+  "extension" : "cs",
+  "linesOfCode" : 12,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 9
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheLake.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 11
+}, {
+  "relativePath" : "Assets/Scripts/GameLogic/Cards/World/SpiritOfTheMountains.cs",
+  "extension" : "cs",
+  "linesOfCode" : 14,
+  "unitsCount" : 1,
+  "unitsMcCabeIndexSum" : 1,
+  "linesOfCodeInUnits" : 11
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/Enum/PlayerType.cs",
   "extension" : "cs",
@@ -239,17 +288,17 @@
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GameManager.cs",
   "extension" : "cs",
-  "linesOfCode" : 305,
-  "unitsCount" : 13,
-  "unitsMcCabeIndexSum" : 48,
-  "linesOfCodeInUnits" : 253
+  "linesOfCode" : 343,
+  "unitsCount" : 14,
+  "unitsMcCabeIndexSum" : 52,
+  "linesOfCodeInUnits" : 283
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GameState.cs",
   "extension" : "cs",
-  "linesOfCode" : 108,
-  "unitsCount" : 11,
-  "unitsMcCabeIndexSum" : 21,
-  "linesOfCodeInUnits" : 90
+  "linesOfCode" : 118,
+  "unitsCount" : 12,
+  "unitsMcCabeIndexSum" : 23,
+  "linesOfCodeInUnits" : 100
 }, {
   "relativePath" : "Assets/Scripts/GameLogic/GenerationConfig.cs",
   "extension" : "cs",
@@ -341,6 +390,13 @@
   "unitsCount" : 15,
   "unitsMcCabeIndexSum" : 25,
   "linesOfCodeInUnits" : 87
+}, {
+  "relativePath" : "Assets/Scripts/UI/FinalScreenUI.cs",
+  "extension" : "cs",
+  "linesOfCode" : 24,
+  "unitsCount" : 3,
+  "unitsMcCabeIndexSum" : 5,
+  "linesOfCodeInUnits" : 14
 }, {
   "relativePath" : "Assets/Scripts/UI/MaxScoreUpdate.cs",
   "extension" : "cs",
