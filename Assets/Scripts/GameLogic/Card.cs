@@ -6,11 +6,11 @@ using UnityEngine.EventSystems;
 
 public class Card : AnimationController, IClickable, IPointerClickHandler
 {
-    List<ICardEffect> effectList = new List<ICardEffect>();
+    public List<ICardEffect> effectList = new List<ICardEffect>();
     public Dictionary<RessourceTypes, int> cost = new Dictionary<RessourceTypes, int>();
 
-    [SerializeField] private TextMeshProUGUI titleText;
-    [SerializeField] private TextMeshProUGUI ressourceText;
+    [SerializeField] public TextMeshProUGUI titleText;
+    [SerializeField] public TextMeshProUGUI ressourceText;
     private List<ICardCondition> conditions = new List<ICardCondition>();
     private bool addOwnedTile;
     private bool isPersistent;
@@ -69,10 +69,13 @@ public class Card : AnimationController, IClickable, IPointerClickHandler
                 return false;
         }
 
-        foreach (var condition in conditions)
+        if(player is HumanPlayer)
         {
-            if (!condition.IsMet(gameState, player))
-                return false;
+            foreach (var condition in conditions)
+            {
+                if (!condition.IsMet(gameState, player))
+                    return false;
+            }
         }
 
         return true;
@@ -101,6 +104,7 @@ public class Card : AnimationController, IClickable, IPointerClickHandler
             NormalVisual();
         }
     }
+    
     public void OnPointerClick(PointerEventData eventData)
     {
         if (eventData.button == PointerEventData.InputButton.Right)
@@ -115,6 +119,7 @@ public class Card : AnimationController, IClickable, IPointerClickHandler
             }
         }
     }
+    
     private void SelectedVisual()
     {
         ChangeAnimation("Selected");
@@ -130,8 +135,11 @@ public class Card : AnimationController, IClickable, IPointerClickHandler
     {
         conditions.Add(condition);
     }
+    
     public bool GetAddOwnedTile() { return addOwnedTile; }
+    
     public bool GetIsPersistent() { return isPersistent; }
+    
     public bool TryPlay(GameState gameState, Player player)
     {
         if (!CanBePlayed(player.currentRessources, gameState, player))
@@ -143,6 +151,7 @@ public class Card : AnimationController, IClickable, IPointerClickHandler
 
         return true;
     }
+    
     public void SetGameStateReference(GameState state)
     {
         GameStateReference = state;
