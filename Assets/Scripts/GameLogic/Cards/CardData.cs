@@ -16,6 +16,7 @@ public class CardData : ScriptableObject
         EnemyTileOnly,
         Any
     }
+    
     public CardTargetType targetType = CardTargetType.Any;
 
     public void InjectDefaultConditionIfNeeded()

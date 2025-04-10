@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Text;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -122,11 +123,38 @@ public class GameManager : MonoBehaviour
         yield return new WaitForSeconds(2);
         Player player = gameState.GetCurrentPlayingPlayer();
         AIPlayer aiPlayer = (AIPlayer)player;
-        gameState = gameState.PlayCard(aiPlayer.GetBestPlayableCard(), aiPlayerInstance);
+        Card playedCard = aiPlayer.GetBestPlayableCard(gameState);
+        gameState = gameState.PlayCard(playedCard, aiPlayerInstance);
         gameState.DrawCardToHand(player);
+        addAIPlayedCardToChat(playedCard);
         isAiTurn = false;
+    }
 
-        
+    private void addAIPlayedCardToChat(Card card)
+    {
+        if (card != null)
+        {
+            if (card != null)
+            {
+                StringBuilder details = new StringBuilder();
+                details.Append("-------------------------");
+                details.Append(card.titleText.text + "\n");
+
+                details.Append("Cost: ");
+                foreach (var cost in card.cost)
+                {
+                    details.Append(cost.Value.ToString() + " " + cost.Key.ToString() + "\n");
+                }
+
+                details.Append("Effects: " + card.ressourceText.text + "\n");
+
+                Chat.Instance.AddAnnouncement("AI", "played\n" + details.ToString().Trim());
+            }
+        }
+        else
+        {
+            Chat.Instance.AddAnnouncement("AI", "has no playable cards to play this turn.");
+        }
     }
 
     private void HandleEscapePress()
@@ -150,6 +178,7 @@ public class GameManager : MonoBehaviour
             isMenuOpen = inGameMenu.IsMenuOpen();
         }
     }
+    
     public void StartGame()
     {
         playerType = SceneChanger.PlayerType;
@@ -206,6 +235,10 @@ public class GameManager : MonoBehaviour
                 InitializePlayerStartingResources(humanPlayerInstance, allTiles);
                 AssignStartingTiles(humanPlayerInstance, allTiles, 3);
                 RegisterObserversToPlayer(humanPlayerInstance);
+
+                InitializePlayerStartingResources(aiPlayerInstance, allTiles);
+                AssignStartingTiles(aiPlayerInstance, allTiles, 3);
+                RegisterObserversToPlayer(aiPlayerInstance);
             };
             board.CreateBoard();
         }
@@ -312,6 +345,7 @@ public class GameManager : MonoBehaviour
         //freeCard.SetGameStateReference(gameState);
         player.hand.Add(freeCard);
     }
+    
     private void InitializePlayerStartingResources(Player player, List<Tile> tiles)
     {
         Dictionary<RessourceTypes, int> totalResources = new();
@@ -376,7 +410,6 @@ public class GameManager : MonoBehaviour
         player.ComputeRessources(gameState);
     }
 
-
     void RegisterObserversToPlayer(Player player)
     {
         Observer[] observers = FindObjectsOfType<Observer>();
@@ -387,6 +420,7 @@ public class GameManager : MonoBehaviour
         }
         player.NotifyObservers();
     }
+    
     private void DeselectCurrentTile()
     {
         gameState.currentInstancePlayer.DeselectTile();
