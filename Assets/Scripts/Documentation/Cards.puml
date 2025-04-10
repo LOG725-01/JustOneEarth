@@ -115,6 +115,19 @@ class MineralSurge {
     - void OnEnable()
 }
 
+class SuperPointBurst {
+    - void OnEnable()
+}
+
+class WaterSurge {
+    - void OnEnable()
+}
+
+class WoodSurge {
+    - void OnEnable()
+}
+
+
 Package Civilisation {
     class CreateDam {
         - void OnEnable()
@@ -128,12 +141,25 @@ Package Civilisation {
     class SolarFarm {
         - void OnEnable()
     }
+    class MechanicalBurst {
+        - void OnEnable()
+    }
 }
 
 Package World {
     class Earthquake {
         - void OnEnable()
     }
+    class NaturalBurst {
+    - void OnEnable()
+    }
+    class SpiritOfTheLake {
+    - void OnEnable()
+    }
+    class SpiritOfTheMountains {
+        - void OnEnable()
+    }
+
 }
 
 CardData --^ ScriptableObject
@@ -141,11 +167,21 @@ CardData --^ ScriptableObject
 CardData ^-- FreeCard
 CardData ^-- GetOnePointCard
 CardData ^-- MineralSurge
+
+CardData ^-- SuperPointBurst
+CardData ^-- WaterSurge
+CardData ^-- WoodSurge
+
 CardData ^-- Civilisation.CreateDam
 CardData ^-- Civilisation.CreateVillage
 CardData ^-- Civilisation.OilRefinery
 CardData ^-- Civilisation.SolarFarm
+CardData ^-- Civilisation.MechanicalBurst
+
 CardData ^-- World.Earthquake
+CardData ^-- World.NaturalBurst
+CardData ^-- World.SpiritOfTheLake
+CardData ^-- World.SpiritOfTheMountains
 
 CardData --o RessourceTypes
 CardData --o ICardEffect
@@ -161,13 +197,20 @@ Civilisation.SolarFarm --o CardEffects.GainRessourceOfType
 Civilisation.SolarFarm --o CardEffects.PlaceStructureEffect
 Civilisation.CreateVillage --o CardEffects.GainPointEffect
 Civilisation.CreateVillage --o CardEffects.PlaceStructureEffect
+Civilisation.MechanicalBurst --o CardEffects.GainPointEffect
 
 World.Earthquake --o CardEffects.DestroyStructureEffect
 World.Earthquake --o CardEffects.GainPointEffect
+World.NaturalBurst --o CardEffects.GainPointEffect
+World.SpiritOfTheMountains --o CardEffects.GainPointEffect
+World.SpiritOfTheLake --o CardEffects.GainPointEffect
 
 FreeCard --o CardEffects.NextTurnEffect
 GetOnePointCard --o CardEffects.GainPointEffect
 MineralSurge --o CardEffects.GainRessourceOfType
+WaterSurge --o CardEffects.GainRessourceOfType
+SuperPointBurst --o CardEffects.GainPointEffect
+WoodSurge --o CardEffects.GainRessourceOfType
 
 
 CreateDam --o CardConditions.TileMustBeOfType
@@ -176,6 +219,10 @@ SolarFarm --o CardConditions.TileMustBeOfType
 OilRefinery --o CardConditions.TileMustBeOfType
 
 World.Earthquake --o CardConditions.TileMustHaveStructure
+World.SpiritOfTheLake --o CardConditions.TileMustBeOfType
+World.SpiritOfTheMountains --o CardConditions.TileMustBeOfType
 
 MineralSurge --o CardConditions.TileMustBeOfType
+WaterSurge --o CardConditions.TileMustBeOfType
+WoodSurge --o CardConditions.TileMustBeOfType
 @enduml
