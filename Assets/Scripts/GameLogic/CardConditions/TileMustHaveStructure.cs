@@ -4,6 +4,5 @@ public class TileMustHaveStructure : ICardCondition
     {
         return player.selectedTile != null && player.selectedTile.HasStructure();
     }
-
     public string GetConditionDescription() => "La tuile doit contenir une structure.";
 }

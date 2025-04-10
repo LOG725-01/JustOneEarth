@@ -69,14 +69,11 @@ public class Card : AnimationController, IClickable, IPointerClickHandler
                 return false;
         }
 
-        if(player is HumanPlayer)
-        {
-            foreach (var condition in conditions)
+        foreach (var condition in conditions)
             {
                 if (!condition.IsMet(gameState, player))
                     return false;
             }
-        }
 
         return true;
     }

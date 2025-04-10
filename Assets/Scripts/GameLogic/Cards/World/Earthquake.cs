@@ -5,7 +5,7 @@ public class Earthquake : CardData
     private void OnEnable()
     {
         cardName = "Earthquake";
-        description = "Destroy an enemy tile.Cost -5 minerals ! +5 Points ! ";
+        description = "Destroy a building on an enemy tile.Cost -5 minerals ! +5 Points ! ";
         cost.Add(RessourceTypes.Minerals, 5);
         targetType = CardTargetType.EnemyTileOnly;
 

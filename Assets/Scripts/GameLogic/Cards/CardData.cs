@@ -24,10 +24,13 @@ public class CardData : ScriptableObject
         switch (targetType)
         {
             case CardTargetType.NeutralTileOnly:
-                conditionList.Add(new OnlyOnNeutralTile());
+                if (!conditionList.Exists(c => c is OnlyOnNeutralTile))
+                    conditionList.Add(new OnlyOnNeutralTile());
                 break;
+
             case CardTargetType.EnemyTileOnly:
-                conditionList.Add(new OnlyOnEnemyTile());
+                if (!conditionList.Exists(c => c is OnlyOnEnemyTile))
+                    conditionList.Add(new OnlyOnEnemyTile());
                 break;
         }
     }

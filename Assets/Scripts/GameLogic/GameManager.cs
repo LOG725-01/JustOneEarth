@@ -120,13 +120,26 @@ public class GameManager : MonoBehaviour
 
     private IEnumerator AITurn()
     {
+        
         yield return new WaitForSeconds(2);
         Player player = gameState.GetCurrentPlayingPlayer();
         AIPlayer aiPlayer = (AIPlayer)player;
+        aiPlayer.selectedTile = null;
+        aiPlayer.DiscardUnplayableCards(gameState);
+
         Card playedCard = aiPlayer.GetBestPlayableCard(gameState);
-        gameState = gameState.PlayCard(playedCard, aiPlayerInstance);
-        gameState.DrawCardToHand(player);
-        addAIPlayedCardToChat(playedCard);
+
+        if (playedCard != null)
+        {
+            gameState = gameState.PlayCard(playedCard, aiPlayerInstance);
+            gameState.DrawCardToHand(player);
+            addAIPlayedCardToChat(playedCard);
+        }
+        else
+        {
+            Debug.LogWarning("[AI] No card could be played this turn.");
+        }
+
         isAiTurn = false;
     }
 

@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using System.Text;
 using UnityEngine;
 
@@ -11,8 +12,8 @@ public class AIPlayer : Player {
         public int opponentPoints;
     }
 
-    public override Card GetBestPlayableCard(GameState gameState) {
-
+    public override Card GetBestPlayableCard(GameState gameState)
+    {
         SimpleGameState currentState = new SimpleGameState
         {
             aiPoints = this.Points,
@@ -20,28 +21,58 @@ public class AIPlayer : Player {
         };
 
         Card bestCard = null;
+        Tile bestTile = null;
         int bestScore = int.MinValue;
 
-        // Apply minimax to playable cards
         foreach (Card card in hand)
         {
-            if (card.CanBePlayed(currentRessources, gameState, this))
-            {
-                SimpleGameState newState = SimulatePlay(currentState, card, true);
+            if (card.GetIsPersistent()) continue;
 
-                // Minimax search with a depth of 2
+            foreach (Tile tile in gameState.GetCurrentBoard().GetAllTiles())
+            {
+                if (tile.owner == this) continue;
+
+                selectedTile = tile;
+
+                if (!card.CanBePlayed(currentRessources, gameState, this))
+                    continue;
+
+                var newState = SimulatePlay(currentState, card, true);
                 int score = MiniMax(newState, depth: 2, isMaximizing: false, gameState);
 
                 if (score > bestScore)
                 {
                     bestScore = score;
                     bestCard = card;
+                    bestTile = tile;
                 }
             }
         }
 
+        // Fallback: skip card
+        if (bestCard == null)
+        {
+            foreach (Card card in hand)
+            {
+                if (card.ressourceText.text.ToLower().Contains("skip") && card.CanBePlayed(currentRessources, gameState, this))
+                {
+                    bestCard = card;
+                    break;
+                }
+            }
+        }
+
+        // Appliquer la bonne tile avant retour
+        selectedTile = bestTile;
+
+        if (selectedTile == null)
+            Debug.LogWarning("[AI] Aucun tile sélectionné !");
+        else
+            Debug.Log("[AI] Tile finale sélectionnée : " + selectedTile.name);
+
         return bestCard;
     }
+
 
     // Heuristic to value points higher.
     private int EstimateCardValue(Card card)
@@ -113,4 +144,45 @@ public class AIPlayer : Player {
             return minEval;
         }
     }
+
+    public void DiscardUnplayableCards(GameState gameState)
+    {
+        List<Card> toDiscard = new List<Card>();
+
+        foreach (var card in hand)
+        {
+            if (card.GetIsPersistent()) continue;
+
+            bool canPlaySomewhere = false;
+
+            foreach (Tile tile in gameState.GetCurrentBoard().GetAllTiles())
+            {
+                if (tile.owner == this) continue;
+
+                selectedTile = tile;
+
+                if (card.CanBePlayed(currentRessources, gameState, this))
+                {
+                    canPlaySomewhere = true;
+                    break;
+                }
+            }
+
+            if (!canPlaySomewhere)
+            {
+                toDiscard.Add(card);
+            }
+        }
+
+        foreach (var card in toDiscard)
+        {
+            MoveCardFromHandToDiscardPile(card);
+            Transform discardTransform = transform.Find("Discard(Clone)");
+            card.transform.SetParent(discardTransform, false);
+            if (debug) Debug.Log("[AI] Carte défaussée : " + card.titleText.text);
+        }
+
+        selectedTile = null;
+    }
+
 }

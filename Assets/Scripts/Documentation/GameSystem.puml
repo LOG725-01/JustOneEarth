@@ -108,7 +108,11 @@ class HumanPlayer {
 }
 
 class AIPlayer {
+    - SimpleGameState : struct 
     + GetBestPlayableCard() : Card
+    + DiscardUnplayableCards(GameState gameState)  : Card
+    - EstimateCardValue(Card card)  : int
+    - SimulatePlay(SimpleGameState state, Card card, bool isAI)  : SimpleGameState
     - MiniMax() : int
 }
 note left of AIPlayer::GetBestPlayableCard
