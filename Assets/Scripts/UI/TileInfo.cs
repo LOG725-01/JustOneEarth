@@ -54,7 +54,7 @@ public class TileInfo : MonoBehaviour
         ressourceText.text = "+ " + resources.ToString() + " " + resourceType;
         if (isOwner) conditionText.text = string.Empty;
         else conditionText.text = condition;
-        ownerText.text = "Propriétaire : " + owner;
+        ownerText.text = "Owner : " + owner;
         tileInfoObject.SetActive(true);
     }
 
