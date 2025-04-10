@@ -9,10 +9,14 @@ class AudioManager  {
     - GameObject MusicSource
     - AudioClip uiClose
     - AudioClip uiOpen
+    - AudioClip ressourceSelect
+    - AudioClip ressourceDecline
     - void SetAudioClip(AudioSource audioSource, AudioClip clip, float volume, bool loop)
     - float PlayAudioClip(AudioClip clip, Vector3 position, float volume)
     + void UiClose()
     + void UiOpen()
+    + void RessourceSelect()
+    + void RessourceDecline()
 }
 
 class AudioMixerManager  {
