@@ -285,6 +285,7 @@ public class GameManager : MonoBehaviour
 
             CardData cardData = ScriptableObject.CreateInstance(cardType) as CardData;
             Card card = gameState.CreateCardGameObject(cardData, deck, cardPrefab);
+            card.SetGameStateReference(gameState);
             player.AddCardInDeck(card);
         }
     }
@@ -298,7 +299,7 @@ public class GameManager : MonoBehaviour
             : player.transform.Find("Hand(Clone)");
 
         Card freeCard = gameState.CreateCardGameObject(freeCardData, handTransform.gameObject, cardPrefab);
-
+        //freeCard.SetGameStateReference(gameState);
         player.hand.Add(freeCard);
     }
     private void InitializePlayerStartingResources(Player player, List<Tile> tiles)
