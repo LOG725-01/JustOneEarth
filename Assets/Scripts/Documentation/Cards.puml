@@ -1,0 +1,181 @@
+@startuml Cards
+allow_mixing
+skinparam ComponentBackgroundColor LightSkyBlue
+
+enum TileType {
+    Forests
+    Mountains
+    Lakes
+    Plains
+    Deserts
+    None
+}
+
+enum RessourceTypes {
+    Trees
+    Minerals
+    Water
+    Sun
+    Oil
+}
+
+Package CardConditions {
+    interface ICardCondition {
+        bool IsMet(GameState gameState, Player player)
+        string GetConditionDescription()
+    }
+
+    class OnlyOnEnemyTile {
+    }
+
+    class OnlyOnNeutralTile {
+    }
+
+    class TileMustBeOfType {
+        - HashSet<TileType> allowedTypes
+        + TileMustBeOfType(params TileType[] types)
+    }
+
+    class TileMustHaveStructure {
+    }
+
+    ICardCondition ^-- OnlyOnEnemyTile
+    ICardCondition ^-- OnlyOnNeutralTile
+    ICardCondition ^-- TileMustBeOfType
+    ICardCondition ^-- TileMustHaveStructure
+
+    TileMustBeOfType --o TileType
+}
+
+Package CardEffects {
+    interface ICardEffect {
+        void ApplyEffect(GameState gameState)
+    }
+
+    class DestroyStructureEffect {
+    }
+
+    class GainPointEffect {
+        - int points
+        + GainPointEffect(int points)
+    }
+
+    class PlaceStructureEffect {
+        - GameObject structurePrefab
+        - Vector3 rotation
+        + PlaceStructureEffect(GameObject prefab, Vector3 rotationEuler)
+    }
+
+    class GainRessourceOfType {
+        - RessourceTypes ressourceType
+        - int amount
+
+        public GainRessourceOfType(RessourceTypes ressourceType, int amount)
+    }
+
+    class NextTurnEffect {
+    }
+
+    ICardEffect ^-- DestroyStructureEffect
+    ICardEffect ^-- GainPointEffect
+    ICardEffect ^-- PlaceStructureEffect
+    ICardEffect ^-- GainRessourceOfType
+    ICardEffect ^-- NextTurnEffect
+
+    GainRessourceOfType --o RessourceTypes
+}
+
+enum CardTargetType {
+    NeutralTileOnly
+    EnemyTileOnly
+    Any
+}
+
+class CardData {
+    + string cardName
+    + string description
+    + Dictionary<RessourceTypes, int> cost
+    + List<ICardEffect> effectList
+    + List<ICardCondition> conditionList
+    + bool addOwnedTile
+    + bool isPersistent
+    + CardTargetType targetType
+    + void InjectDefaultConditionIfNeeded()
+}
+
+class FreeCard {
+    - void OnEnable()
+}
+
+class GetOnePointCard {
+    - void OnEnable()
+}
+
+class MineralSurge {
+    - void OnEnable()
+}
+
+Package Civilisation {
+    class CreateDam {
+        - void OnEnable()
+    }
+    class CreateVillage {
+        - void OnEnable()
+    }
+    class OilRefinery {
+        - void OnEnable()
+    }
+    class SolarFarm {
+        - void OnEnable()
+    }
+}
+
+Package World {
+    class Earthquake {
+        - void OnEnable()
+    }
+}
+
+CardData --^ ScriptableObject
+
+CardData ^-- FreeCard
+CardData ^-- GetOnePointCard
+CardData ^-- MineralSurge
+CardData ^-- Civilisation.CreateDam
+CardData ^-- Civilisation.CreateVillage
+CardData ^-- Civilisation.OilRefinery
+CardData ^-- Civilisation.SolarFarm
+CardData ^-- World.Earthquake
+
+CardData --o RessourceTypes
+CardData --o ICardEffect
+CardData --o ICardCondition
+CardData --o CardTargetType
+
+
+Civilisation.CreateDam --o CardEffects.GainRessourceOfType
+Civilisation.CreateDam --o CardEffects.PlaceStructureEffect
+Civilisation.OilRefinery --o CardEffects.GainRessourceOfType
+Civilisation.OilRefinery --o CardEffects.PlaceStructureEffect
+Civilisation.SolarFarm --o CardEffects.GainRessourceOfType
+Civilisation.SolarFarm --o CardEffects.PlaceStructureEffect
+Civilisation.CreateVillage --o CardEffects.GainPointEffect
+Civilisation.CreateVillage --o CardEffects.PlaceStructureEffect
+
+World.Earthquake --o CardEffects.DestroyStructureEffect
+World.Earthquake --o CardEffects.GainPointEffect
+
+FreeCard --o CardEffects.NextTurnEffect
+GetOnePointCard --o CardEffects.GainPointEffect
+MineralSurge --o CardEffects.GainRessourceOfType
+
+
+CreateDam --o CardConditions.TileMustBeOfType
+CreateVillage --o CardConditions.TileMustBeOfType
+SolarFarm --o CardConditions.TileMustBeOfType
+OilRefinery --o CardConditions.TileMustBeOfType
+
+World.Earthquake --o CardConditions.TileMustHaveStructure
+
+MineralSurge --o CardConditions.TileMustBeOfType
+@enduml
