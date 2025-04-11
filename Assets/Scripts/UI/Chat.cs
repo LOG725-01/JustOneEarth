@@ -108,10 +108,12 @@ public class Chat : AnimationController
         AddChatMessage("player0", message);
         chatInput.text = "";
     }
+    
     public bool IsChatInputSelected()
     {
         return chatInput.isFocused;
     }
+    
     public bool IsOpened()
     {
         return isOpened;
